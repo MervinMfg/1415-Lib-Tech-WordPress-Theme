@@ -1,0 +1,2210 @@
+/*
+ * Lib Tech DIY Snowboard Builder - http://lib-tech.com/diy
+ * Author: brian.behrens@mervin.com - http://www.mervin.com
+ */
+/* Custom Fonts */
+@font-face {
+  font-family: 'Altehaas Grotesk Bold';
+  src: url("../fonts/Altehaas-Grotesk-Bold/Altehaas-Grotesk-Bold.eot");
+  src: url("../fonts/Altehaas-Grotesk-Bold/Altehaas-Grotesk-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Altehaas-Grotesk-Bold/Altehaas-Grotesk-Bold.woff") format("woff"), url("../fonts/Altehaas-Grotesk-Bold/Altehaas-Grotesk-Bold.ttf") format("truetype"), url("../fonts/Altehaas-Grotesk-Bold/Altehaas-Grotesk-Bold.svg#Altehaas-Grotesk-Bold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* DOM Styles */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000363}}
+html,
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000368}}
+body {
+  background: #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000371}}
+input {
+  margin: 0;
+  padding: 10px;
+  border: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-appearance: none;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+}
+
+/* GLOBAL ELEMENTS */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000384}}
+.responsive-image {
+  width: 100%;
+  background-size: 100% 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000388}}
+#div-blocker {
+  width: 100%;
+  height: 100%;
+  background: black url("../img/loader.gif") no-repeat center center;
+  position: fixed;
+  z-index: 70;
+  top: 0;
+  left: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\0000397}}
+#ie-blocker {
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: rgba(0, 0, 0, 0.95);
+  padding: 10%;
+  display: block;
+  position: fixed;
+  z-index: 60;
+  top: 0;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003109}}
+#ie-blocker h2 {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003112}}
+#ie-blocker h3 {
+  margin-bottom: 10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003116}}
+#header {
+  height: 80px;
+  background: #000;
+  position: relative;
+  z-index: 30;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003122}}
+#header .logo {
+  width: 119px;
+  height: 52px;
+  background: url("../img/diy/header-diy-logo-mobile.png") no-repeat;
+  background-size: 100%;
+  margin: 0 auto;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003130}}
+#header .logo a {
+  width: 100%;
+  height: 52px;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  font-size: 0;
+  text-align: start;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003136}}
+#header .flag {
+  position: absolute;
+  width: 178px;
+  height: 107px;
+  background-size: 100%;
+  left: 306px;
+  top: -107px;
+  -webkit-transition: all 300ms ease-in-out;
+  -moz-transition: all 300ms ease-in-out;
+  -ms-transition: all 300ms ease-in-out;
+  -o-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003145}}
+#header .mobile-flyout-nav {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003150}}
+#header .mobile-flyout-nav ul > li {
+  float: left;
+  padding-right: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003154}}
+#header .mobile-flyout-nav ul > li a {
+  width: 24px;
+  height: 26px;
+  background-image: url("../img/diy/sprite-mobile.png");
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  font-size: 0;
+  text-align: start;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003163}}
+#header .mobile-flyout-nav ul > li a.display-board:hover, #header .mobile-flyout-nav ul > li a.display-board:active, #header .mobile-flyout-nav ul > li a.display-board:focus, #header .mobile-flyout-nav ul > li a.display-board.selected {
+  background-position: -24px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003170}}
+#header .mobile-flyout-nav ul > li a.display-receipt {
+  background-position: 0px -26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003173}}
+#header .mobile-flyout-nav ul > li a.display-receipt:hover, #header .mobile-flyout-nav ul > li a.display-receipt:active, #header .mobile-flyout-nav ul > li a.display-receipt:focus, #header .mobile-flyout-nav ul > li a.display-receipt.selected {
+  background-position: -24px -26px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003183}}
+#header .top-section {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003186}}
+#header .pagination {
+  width: 100%;
+  height: 30px;
+  background: url("../img/diy/left-menu-bg.gif");
+  text-align: center;
+  letter-spacing: 0px;
+  -webkit-box-shadow: 1px 1px 10px black;
+  -moz-box-shadow: 1px 1px 10px black;
+  -ms-box-shadow: 1px 1px 10px black;
+  -o-box-shadow: 1px 1px 10px black;
+  box-shadow: 1px 1px 10px black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003194}}
+#header .pagination .label {
+  width: 55px;
+  background: none;
+  color: #000;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 4px 6px 0;
+  display: inline-block;
+  vertical-align: top;
+  text-align: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003205}}
+#header .pagination .controls {
+  display: inline-block;
+  vertical-align: top;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003210}}
+#header .pagination .controls .bx-pager .bx-pager-item {
+  float: left;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  margin: 0 0px;
+  display: inline-block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003218}}
+#header .pagination .controls .bx-pager .bx-pager-item.selected {
+  background: #000;
+  background: rgba(0, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003222}}
+#header .pagination .controls .bx-pager .bx-pager-item.alert {
+  background: #000;
+  background: rgba(204, 0, 0, 0.5);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003226}}
+#header .pagination .controls .bx-pager .bx-pager-item:nth-child(6) {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003229}}
+#header .pagination .controls .bx-pager .bx-pager-item:nth-child(6).show {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003233}}
+#header .pagination .controls .bx-pager .bx-pager-item a {
+  background: #000;
+  display: block;
+  width: 15px;
+  height: 15px;
+  margin: 7px;
+  outline: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  text-decoration: none;
+  display: block;
+  font-size: 0;
+  text-align: start;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border-radius: 7px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003243}}
+#header .pagination .controls .bx-pager .bx-pager-item a:hover, #header .pagination .controls .bx-pager .bx-pager-item a:focus, #header .pagination .controls .bx-pager .bx-pager-item a.active {
+  background: #fff;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003254}}
+body.step7 #header .mobile-flyout-nav {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003257}}
+#advance-arrow {
+  display: block;
+  width: 17px;
+  height: 26px;
+  background-image: url("../img/diy/sprite-mobile.png");
+  background-repeat: no-repeat;
+  background-position: -68px 0px;
+  position: fixed;
+  z-index: 40;
+  right: -17px;
+  top: 13px;
+  cursor: pointer;
+  -webkit-transition: right 200ms ease-in-out;
+  -moz-transition: right 200ms ease-in-out;
+  -ms-transition: right 200ms ease-in-out;
+  -o-transition: right 200ms ease-in-out;
+  transition: right 200ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003272}}
+#advance-arrow:hover, #advance-arrow:active, #advance-arrow:focus {
+  background-position: -85px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003277}}
+#advance-arrow.show {
+  right: 13px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003281}}
+#info-box {
+  width: 80%;
+  visibility: hidden;
+  position: absolute;
+  z-index: 10;
+  top: 90px;
+  left: 10%;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0;
+  -webkit-transform: matrix(0.8, 0, 0, 0.8, 0, 0);
+  -ms-transform: scale(0.8, 0.8);
+  transform: scale(0.8, 0.8);
+  transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003296}}
+#info-box.show {
+  visibility: visible;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
+  -ms-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003304}}
+#info-box .diamond {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003307}}
+#info-box .box {
+  background: #000;
+  padding: 10px;
+  -webkit-box-shadow: 2px 2px 20px black;
+  -moz-box-shadow: 2px 2px 20px black;
+  -ms-box-shadow: 2px 2px 20px black;
+  -o-box-shadow: 2px 2px 20px black;
+  box-shadow: 2px 2px 20px black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003312}}
+#info-box .box h2 {
+  font-weight: 700;
+  font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+  display: none;
+  position: relative;
+  z-index: 10;
+  font-size: 1.125em;
+  text-align: center;
+  margin-bottom: 5px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003322}}
+#info-box .box h3 {
+  text-align: center;
+  font-size: 1em;
+  display: none;
+  position: relative;
+  z-index: 10;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003329}}
+#info-box .box .contour {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003332}}
+#info-box .box .contour img {
+  max-width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003336}}
+#info-box .box .sizes {
+  display: none;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003340}}
+#info-box .box .sizes p {
+  color: #fff;
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003344}}
+#info-box .box .sizes p span {
+  font-size: 1em;
+  font-weight: 700;
+  margin-left: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003351}}
+#info-box .box h4 {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003354}}
+#info-box .box h5 {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003361}}
+#info-box.step1 .box h2, #info-box.step1 .box .sizes {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003370}}
+#info-box.step3 .box h2, #info-box.step3 .box h3, #info-box.step4 .box h2, #info-box.step4 .box h3, #info-box.step5 .box h2, #info-box.step5 .box h3 {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003376}}
+#left-menu {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003379}}
+#board-display,
+#mobile-receipt {
+  position: absolute;
+  z-index: 20;
+  background: url("../img/diy/left-menu-bg.gif");
+  left: -80%;
+  width: 75%;
+  top: 80px;
+  -webkit-box-shadow: 1px 0px 20px black;
+  -moz-box-shadow: 1px 0px 20px black;
+  -ms-box-shadow: 1px 0px 20px black;
+  -o-box-shadow: 1px 0px 20px black;
+  box-shadow: 1px 0px 20px black;
+  -webkit-transition: left 200ms ease-in-out;
+  -moz-transition: left 200ms ease-in-out;
+  -ms-transition: left 200ms ease-in-out;
+  -o-transition: left 200ms ease-in-out;
+  transition: left 200ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003390}}
+#board-display.show,
+#mobile-receipt.show {
+  left: 0px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003395}}
+#board-display .board-name {
+  color: #000;
+  font-size: 1.125em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003403}}
+#board-display .board-menu-left-button,
+#board-display .board-menu-right-button {
+  width: 38px;
+  height: 49px;
+  display: block;
+  position: absolute;
+  z-index: 20;
+  cursor: pointer;
+  margin-top: -25px;
+  top: 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003414}}
+#board-display .board-menu-left-button {
+  left: 5px;
+  background: url("../img/diy/arrow-left-w.png");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003418}}
+#board-display .board-menu-left-button:hover {
+  background: url("../img/diy/arrow-left-y.png");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003422}}
+#board-display .board-menu-right-button {
+  right: 5px;
+  background: url("../img/diy/arrow-right-w.png");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003426}}
+#board-display .board-menu-right-button:hover {
+  background: url("../img/diy/arrow-right-y.png");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003430}}
+#board-display .board-preview {
+  position: relative;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003435}}
+#board-display .board-preview .board-views .preview-top,
+#board-display .board-preview .board-views .preview-side,
+#board-display .board-preview .board-views .preview-base {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-opacity: 0;
+  -moz-opacity: 0;
+  -ms-opacity: 0;
+  -o-opacity: 0;
+  opacity: 0;
+  -webkit-transition: left 300ms ease-in-out;
+  -moz-transition: left 300ms ease-in-out;
+  -ms-transition: left 300ms ease-in-out;
+  -o-transition: left 300ms ease-in-out;
+  transition: left 300ms ease-in-out;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003446}}
+#board-display .board-preview .board-views .preview-top .board,
+#board-display .board-preview .board-views .preview-side .board,
+#board-display .board-preview .board-views .preview-base .board {
+  position: relative;
+  background-size: 100%;
+  background-position-y: 100%;
+  background-repeat: no-repeat no-repeat;
+  background-position-x: 4px;
+  text-align: center;
+  margin: 0 0 0 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003455}}
+#board-display .board-preview .board-views .preview-top .board .board-image,
+#board-display .board-preview .board-views .preview-side .board .board-image,
+#board-display .board-preview .board-views .preview-base .board .board-image {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003458}}
+#board-display .board-preview .board-views .preview-top .board .board-image .board-text,
+#board-display .board-preview .board-views .preview-side .board .board-image .board-text,
+#board-display .board-preview .board-views .preview-base .board .board-image .board-text {
+  position: absolute;
+  display: block;
+  top: 80%;
+  left: 24%;
+  z-index: 10;
+  width: 240%;
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  transform: rotate(270deg);
+  -webkit-transform-origin: 0% 0%;
+  -moz-transform-origin: 0% 0%;
+  -ms-transform-origin: 0% 0%;
+  -o-transform-origin: 0% 0%;
+  transform-origin: 0% 0%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003477}}
+#board-display .board-preview .board-views .preview-top .board .board-image .board-text p,
+#board-display .board-preview .board-views .preview-side .board .board-image .board-text p,
+#board-display .board-preview .board-views .preview-base .board .board-image .board-text p {
+  color: black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003480}}
+#board-display .board-preview .board-views .preview-top .board .board-image .board-text .rotate-one,
+#board-display .board-preview .board-views .preview-side .board .board-image .board-text .rotate-one,
+#board-display .board-preview .board-views .preview-base .board .board-image .board-text .rotate-one {
+  margin: 0;
+  outline: 0px solid transparent;
+  color: white;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003485}}
+#board-display .board-preview .board-views .preview-top .board .board-image .board-text .rotate-one .board-text-custom,
+#board-display .board-preview .board-views .preview-side .board .board-image .board-text .rotate-one .board-text-custom,
+#board-display .board-preview .board-views .preview-base .board .board-image .board-text .rotate-one .board-text-custom {
+  font-family: 'Altehaas Grotesk Bold';
+  text-transform: uppercase;
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  font-size: 50px;
+  line-height: 1.2em;
+  white-space: nowrap;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003501}}
+#board-display .board-preview .board-views .preview-side .sidewall-top {
+  position: absolute;
+  z-index: 10;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003505}}
+#board-display .board-preview .board-views .preview-side .sidewall-bottom {
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003508}}
+#board-display .board-preview .board-views .preview-side .sidewall-hidden {
+  visibility: hidden !important;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003514}}
+#board-display .board-preview .board-views .preview-base .custom-base-logo {
+  display: none;
+  position: absolute;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003520}}
+#board-display .board-preview.top .board-views .preview-top, #board-display .board-preview.all .board-views .preview-top {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003524}}
+#board-display .board-preview.side .board-views .preview-side, #board-display .board-preview.all .board-views .preview-side {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003528}}
+#board-display .board-preview.base .board-views .preview-base, #board-display .board-preview.all .board-views .preview-base {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003533}}
+#board-display .board-preview.all .board-menu-left-button,
+#board-display .board-preview.all .board-menu-right-button {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003541}}
+body.step7 #board-display {
+  background: none;
+  left: 50%;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -ms-box-shadow: none;
+  -o-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003546}}
+body.step7 #board-display .board-name {
+  visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003549}}
+body.step7 #board-display .board-menu-left-button,
+body.step7 #board-display .board-menu-right-button {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003553}}
+body.step7 #board-display .board-preview {
+  margin: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003557}}
+body.step7 #board-display .board-preview .board-views .preview-top {
+  left: 0;
+  width: 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003561}}
+body.step7 #board-display .board-preview .board-views .preview-side {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003564}}
+body.step7 #board-display .board-preview .board-views .preview-base {
+  left: 50%;
+  width: 50%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003571}}
+body.step7 #mobile-receipt {
+  left: -80%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003577}}
+body.accept-buy #board-display {
+  display: none;
+}
+
+/* RECEIPTS */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003585}}
+#mobile-receipt h1,
+.step7-buy .board-reciept h1 {
+  font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-size: 1.125em;
+  font-weight: 700;
+  padding-bottom: 10px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003592}}
+#mobile-receipt h2,
+.step7-buy .board-reciept h2 {
+  font-size: 1em;
+  font-weight: 700;
+  font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+  line-height: 1.1em;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003599}}
+#mobile-receipt h2 span,
+.step7-buy .board-reciept h2 span {
+  font-weight: 400;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003602}}
+#mobile-receipt h2.base .text-color, #mobile-receipt h2.base .base-color,
+.step7-buy .board-reciept h2.base .text-color,
+.step7-buy .board-reciept h2.base .base-color {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003607}}
+#mobile-receipt p,
+.step7-buy .board-reciept p {
+  text-align: right;
+  font-weight: 700;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003612}}
+#mobile-receipt hr,
+.step7-buy .board-reciept hr {
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #fff;
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003618}}
+#mobile-receipt h3,
+.step7-buy .board-reciept h3 {
+  color: #fff;
+  font-size: .875em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003622}}
+#mobile-receipt h3.subtotal-cost,
+.step7-buy .board-reciept h3.subtotal-cost {
+  text-align: right;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003627}}
+#mobile-receipt {
+  padding: 20px;
+  color: #000;
+  overflow-y: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003632}}
+#mobile-receipt h1, #mobile-receipt h2, #mobile-receipt h3 {
+  color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003635}}
+#mobile-receipt hr {
+  border-top: 1px solid #000;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003639}}
+.board-reciept {
+  text-shadow: 2px 2px 4px #000;
+}
+
+/* CAROUSEL */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003644}}
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003650}}
+.carousel {
+  padding-top: 100px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003656}}
+.carousel ul {
+  position: absolute;
+  cursor: ew-resize !important;
+  cursor: -webkit-grab !important;
+  cursor: -moz-grab !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003662}}
+.carousel ul.dragging {
+  cursor: -webkit-grabbing !important;
+  cursor: -moz-grabbing !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003666}}
+.carousel ul li.item {
+  padding: 0 20px;
+  float: left;
+  -webkit-transform: translateZ(0);
+  /* fix Safari flicker on css transitions */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003672}}
+.carousel ul li.item img.selectedShape {
+  -webkit-transform: matrix(1.1, 0, 0, 1.1, 0, 0) !important;
+  -ms-transform: scale(1.1, 1.1) !important;
+  transform: scale(1.1, 1.1) !important;
+  transition-duration: .2s;
+  -webkit-transition-duration: .2s;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003683}}
+.bx-wrapper {
+  background-color: transparent !important;
+  background: transparent !important;
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  *zoom: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003691}}
+.bx-wrapper .bx-viewport {
+  overflow: visible !important;
+  background: transparent;
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003697}}
+.bx-loading {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003700}}
+.bx-clone {
+  display: none !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003703}}
+ul.bx-div-slider {
+  -webkit-backface-visibility: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003706}}
+ul.bx-div-slider li {
+  background-size: cover;
+  background-position: center bottom;
+}
+
+/* OVERVIEW */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003713}}
+#overview {
+  width: 100%;
+  height: 100%;
+  background: black url("../img/diy/bg-overview.jpg") no-repeat top center;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  -ms-opacity: 1;
+  -o-opacity: 1;
+  opacity: 1;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003725}}
+#overview .overview-content h1 {
+  text-align: center;
+  padding: 20px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003729}}
+#overview .overview-content h3 {
+  text-shadow: 2px 2px 4px #000;
+  padding: 0 20px 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003733}}
+#overview .overview-content h3 span {
+  color: #FFFF00;
+  font-size: 1.2em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003738}}
+#overview .overview-content .left-column {
+  padding: 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003741}}
+#overview .overview-content .left-column h4 {
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 5px;
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003746}}
+#overview .overview-content .left-column ul {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003749}}
+#overview .overview-content .left-column ul li {
+  text-shadow: 2px 2px 4px #000;
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003753}}
+#overview .overview-content .left-column ul li strong {
+  color: #FFFF00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003758}}
+#overview .overview-content .left-column p {
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003761}}
+#overview .overview-content .left-column p strong {
+  color: #FFFF00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003766}}
+#overview .overview-content .right-column {
+  text-align: center;
+  padding: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003770}}
+#overview .overview-content .right-column a {
+  background: #FFFF00;
+  padding: 10px 20px;
+  color: #000;
+  display: inline-block;
+  font-size: 3em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003777}}
+#overview .overview-content .right-column .overview-video {
+  padding-top: 20px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003783}}
+.step1-board,
+.step2-size,
+.step3-top,
+.step4-sidewall,
+.step5-base,
+.step5b-base-text,
+.step6-badge,
+.step7-buy {
+  background-size: cover;
+  background-position: center bottom;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003794}}
+.step2-size,
+.step5b-base-text,
+.step6-badge,
+.step7-buy {
+  overflow-y: auto;
+}
+
+/* STEP 1 - SHAPE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003801}}
+.step1-board {
+  background-image: url("../img/diy/bg-step1-mobile.jpg");
+}
+
+/* STEP 2 - SIZE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003805}}
+.step2-size {
+  background-image: url("../img/diy/bg-step2-mobile.jpg");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003808}}
+.step2-size .board-info {
+  text-shadow: 2px 2px 4px #000;
+  color: #fff;
+  width: 100%;
+  padding: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003814}}
+.step2-size .board-info .board {
+  font-size: 1.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+  color: #FFFF00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003821}}
+.step2-size .board-info .shape-desc {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003824}}
+.step2-size .board-info .board-tagline {
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003829}}
+.step2-size .board-info .board-desc {
+  font-size: 1em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003832}}
+.step2-size .board-info .contour-title {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003835}}
+.step2-size .board-info .contour-desc {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003839}}
+.step2-size .size-info {
+  width: 100%;
+  padding: 0 20px 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003843}}
+.step2-size .size-info h3.size-cta {
+  text-shadow: 2px 2px 4px #000;
+  padding-bottom: 20px;
+  font-size: 1.125em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003848}}
+.step2-size .size-info .size-holder {
+  position: relative;
+  width: 100%;
+  display: block;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003855}}
+.step2-size .size-info .size-holder .sizes .size-item {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  margin: 0 20px 20px 0;
+  padding: 10px;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003868}}
+.step2-size .size-info .size-holder .sizes .size-item.selected, .step2-size .size-info .size-holder .sizes .size-item:hover {
+  background-color: #ffff00;
+  color: #000;
+  border-color: #000;
+  text-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003878}}
+.step2-size .size-info .size-detail-table {
+  margin: 0;
+  float: left;
+  width: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003883}}
+.step2-size .size-info .size-detail-table .table-data {
+  padding: 0px;
+  color: white;
+  height: 100%;
+  overflow: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003889}}
+.step2-size .size-info .size-detail-table .table-data .info-list {
+  width: auto;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003893}}
+.step2-size .size-info .size-detail-table .table-data .info-list .length-list,
+.step2-size .size-info .size-detail-table .table-data .info-list .side-list,
+.step2-size .size-info .size-detail-table .table-data .info-list .waist-list,
+.step2-size .size-info .size-detail-table .table-data .info-list .flex-list {
+  float: left;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  width: 100%;
+  min-width: 65px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003904}}
+.step2-size .size-info .size-detail-table .table-data .info-list .length-list li,
+.step2-size .size-info .size-detail-table .table-data .info-list .side-list li,
+.step2-size .size-info .size-detail-table .table-data .info-list .waist-list li,
+.step2-size .size-info .size-detail-table .table-data .info-list .flex-list li {
+  padding: 5px 0px 5px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003907}}
+.step2-size .size-info .size-detail-table .table-data .info-list .length-list li:first-child,
+.step2-size .size-info .size-detail-table .table-data .info-list .side-list li:first-child,
+.step2-size .size-info .size-detail-table .table-data .info-list .waist-list li:first-child,
+.step2-size .size-info .size-detail-table .table-data .info-list .flex-list li:first-child {
+  width: 100%;
+  color: black;
+  background-color: #666666;
+  text-transform: uppercase;
+  font-size: 80%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003914}}
+.step2-size .size-info .size-detail-table .table-data .info-list .length-list li.selected,
+.step2-size .size-info .size-detail-table .table-data .info-list .side-list li.selected,
+.step2-size .size-info .size-detail-table .table-data .info-list .waist-list li.selected,
+.step2-size .size-info .size-detail-table .table-data .info-list .flex-list li.selected {
+  color: yellow;
+  font-weight: 700;
+}
+
+/* STEP 3 - TOP */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003926}}
+.step3-top {
+  background-image: url("../img/diy/bg-step3-mobile.jpg");
+}
+
+/* STEP 4 - SIDEWALL */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003930}}
+.step4-sidewall {
+  background-image: url("../img/diy/bg-step4-mobile.jpg");
+}
+
+/* STEP 5 - BASE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003934}}
+.step5-base {
+  background-image: url("../img/diy/bg-step5-mobile.jpg");
+}
+
+/* STEP 5b - CUSTOM BASE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003938}}
+.step5b-base-text {
+  background-image: url("../img/diy/bg-step5-mobile.jpg");
+  padding: 20px 20px 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003943}}
+.step5b-base-text #knifecut-base-controls p {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003951}}
+.step5b-base-text #knifecut-base-controls .knifecut-input {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003954}}
+.step5b-base-text #knifecut-base-controls .knifecut-input #board-text-input {
+  font-family: "Altehaas Grotesk Bold", Impact, Arial, sans-serif;
+  background: #fff;
+  width: 100%;
+  max-width: 290px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003961}}
+.step5b-base-text #knifecut-base-controls .letter-color,
+.step5b-base-text #knifecut-base-controls .base-color {
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003965}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color,
+.step5b-base-text #knifecut-base-controls .base-color div.color {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  float: left;
+  border: 1px solid white;
+  margin: 0 10px 10px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003973}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-grey,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-grey {
+  background-color: #999999;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003976}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-orange,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-orange {
+  background-color: #FF6600;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003979}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-yellow,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-yellow {
+  background-color: #FFCC00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003982}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-black,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-black {
+  background-color: #000000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003985}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-white,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-white {
+  background-color: #FFFFFF;
+  border: 1px solid black;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003989}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-green,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-green {
+  background-color: #99CC00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003992}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-blue,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-blue {
+  background-color: #0099FF;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\00003995}}
+.step5b-base-text #knifecut-base-controls .letter-color div.color.box-red,
+.step5b-base-text #knifecut-base-controls .base-color div.color.box-red {
+  background-color: #CC3333;
+}
+
+/* STEP 6 - BADGE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031003}}
+.step6-badge {
+  background-image: url("../img/diy/bg-step6-mobile.jpg");
+  padding: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031007}}
+.step6-badge .board-badge {
+  width: 250px;
+  height: 250px;
+  background: url("../img/diy/board-badge.png");
+  background-size: 100%;
+  position: relative;
+  margin: 0 auto 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .7em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031019}}
+.step6-badge .board-badge .badge-text {
+  position: absolute;
+  top: 45%;
+  left: 20%;
+  width: 60%;
+  margin: 0 auto;
+  word-wrap: break-word;
+  line-height: 100%;
+  color: #fff;
+  max-height: 60px;
+  overflow: hidden;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031032}}
+.step6-badge .board-badge .badge-size {
+  width: 60%;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  font-size: 320%;
+  font-weight: 700;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031042}}
+.step6-badge .board-badge-input-holder {
+  width: 100%;
+  max-width: 330px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031047}}
+.step6-badge .board-badge-input-holder p {
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.125em;
+  text-transform: uppercase;
+  color: #fff;
+  clear: both;
+  text-shadow: 2px 2px 4px #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031056}}
+.step6-badge .board-badge-input-holder #board-badge-input {
+  width: 100%;
+  font-weight: 700;
+}
+
+/* STEP 7 - BUY */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031063}}
+.step7-buy {
+  background-image: url("../img/diy/bg-step7-mobile.jpg");
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031066}}
+.step7-buy .board-reciept,
+.step7-buy .buttonholder {
+  width: 50%;
+  padding: 20px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031072}}
+.step7-buy .terms,
+.step7-buy .terms-international,
+.step7-buy .cart-error {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031079}}
+.step7-buy .terms,
+.step7-buy .terms-international {
+  display: none;
+  text-shadow: 2px 2px 4px #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031084}}
+.step7-buy .terms h1,
+.step7-buy .terms-international h1 {
+  font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031090}}
+.step7-buy .terms p strong,
+.step7-buy .terms-international p strong {
+  color: #FFFF00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031094}}
+.step7-buy .cart-error {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031097}}
+.step7-buy .buttonholder {
+  text-align: center;
+  padding-top: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031101}}
+.step7-buy .buttonholder .buy-button,
+.step7-buy .buttonholder .agree-button {
+  width: 100%;
+  background-color: #ffff00;
+  color: #000000;
+  padding: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  border: 1px solid #000;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031113}}
+.step7-buy .buttonholder .buy-button:hover,
+.step7-buy .buttonholder .agree-button:hover {
+  background-color: #000000;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031119}}
+.step7-buy .buttonholder .buy-button span {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031122}}
+.step7-buy .buttonholder .agree-button {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031125}}
+.step7-buy .buttonholder .social-icons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031130}}
+.step7-buy .buttonholder .social-icons p {
+  padding: 10px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  clear: both;
+  text-shadow: 2px 2px 4px #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031137}}
+.step7-buy .buttonholder .social-icons p span {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031142}}
+.step7-buy .buttonholder .social-icons a {
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+  padding: 0 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031150}}
+.step7-buy .buttonholder .share-url p {
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  clear: both;
+  text-shadow: 2px 2px 4px #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031158}}
+.step7-buy .buttonholder .share-url #share-url-input {
+  width: 100%;
+  text-transform: none;
+  font-size: 1em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031167}}
+body.accept-buy .step7-buy .board-reciept,
+body.accept-buy .step7-buy .buttonholder {
+  width: 100%;
+  padding: 20px;
+  color: #fff;
+}
+
+/* SHARE STYLES */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031177}}
+html.diy-share {
+  overflow-y: auto;
+  height: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031181}}
+body.diy-share {
+  background-image: url("../img/diy/bg-step7.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031187}}
+body.diy-share .wrapper {
+  padding: 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031190}}
+body.diy-share .wrapper #header-share {
+  padding-top: 20px;
+  text-align: center;
+  max-width: 350px;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031196}}
+body.diy-share .wrapper #header-share img {
+  max-width: 100%;
+  height: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031201}}
+body.diy-share .wrapper #header-share-print {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031204}}
+body.diy-share .wrapper .step7-buy {
+  background-image: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031207}}
+body.diy-share .wrapper .step7-buy .board-reciept,
+body.diy-share .wrapper .step7-buy .buttonholder {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031213}}
+body.diy-share .wrapper .step7-buy .board-reciept {
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031217}}
+body.diy-share .wrapper .step7-buy .buttonholder .build-button {
+  width: 100%;
+  background-color: #000000;
+  color: #ffff00;
+  padding: 10px;
+  font-size: 28px;
+  font-weight: 700;
+  border: 1px solid #ffff00;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-style: normal;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031231}}
+body.diy-share .wrapper .step7-buy .buttonholder .build-button:hover {
+  background-color: #ffff00;
+  color: #000000;
+  border-color: #000;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031237}}
+body.diy-share .wrapper .step7-buy .buttonholder p.or {
+  margin: 5px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031240}}
+body.diy-share .wrapper .step7-buy .buttonholder .social-icons {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031245}}
+body.diy-share .wrapper #board-display {
+  display: block;
+  position: static;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031250}}
+body.diy-share .wrapper #board-display .board-name {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031254}}
+body.diy-share .wrapper #board-display .board-preview .preview-top,
+body.diy-share .wrapper #board-display .board-preview .preview-side,
+body.diy-share .wrapper #board-display .board-preview .preview-base {
+  display: block;
+  width: 33%;
+  float: left;
+  position: relative;
+  left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031265}}
+body.diy-share .wrapper .print-disclaimer {
+  display: none;
+}
+
+/* ----------------------------------------------------------------------------
+   Media Queries -
+   Various Style beyond mobile
+   Tablet / Desktop are they heavy hitters here
+-------------------------------------------------------------------------------*/
+/* Phone landscape Styles
+-------------------------------------------------------------------------------*/
+/* Tablet Styles
+-------------------------------------------------------------------------------*/
+/* iPad Landscape & Desktop Styles
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: 769px) {
+  /* GLOBAL */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031290}}
+  #header {
+    background: url("../img/diy/header-bar-bg.png") repeat-x;
+    position: absolute;
+    height: 63px;
+    width: 100%;
+    font-weight: bold;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031297}}
+  #header .logo {
+    width: 343px;
+    height: 175px;
+    background: url("../img/diy/header-diy-logo.png") no-repeat;
+    position: absolute;
+    z-index: 30;
+    left: 0px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031305}}
+  #header .logo a {
+    height: 175px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031309}}
+  #header .flag {
+    background: url("../img/diy/header-flag.png");
+    z-index: 20;
+    top: 0px;
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031315}}
+  #header .flag a {
+    display: block;
+    width: 100%;
+    height: 121px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031321}}
+  #header .top-section {
+    width: 100%;
+    display: block;
+    font-size: 28px;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    z-index: 10;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031332}}
+  #header .pagination {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031335}}
+  #header .mobile-flyout-nav,
+  #header .mobile-flyout-nav.show {
+    display: none;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031340}}
+  #advance-arrow {
+    background: yellow url("../img/diy/advance-arrow.gif") no-repeat center center;
+    height: 100%;
+    width: 40px;
+    right: -40px;
+    top: 0px;
+    z-index: 25;
+    -webkit-transition: right 200ms ease-in-out;
+    -moz-transition: right 200ms ease-in-out;
+    -ms-transition: right 200ms ease-in-out;
+    -o-transition: right 200ms ease-in-out;
+    transition: right 200ms ease-in-out;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031350}}
+  #advance-arrow:hover, #advance-arrow:active, #advance-arrow:focus {
+    background-position: center center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031355}}
+  #advance-arrow.show {
+    right: 0px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031359}}
+  #info-box {
+    width: 200px;
+    top: 45%;
+    left: 50%;
+    margin-left: -50px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031365}}
+  #info-box.offset {
+    left: 65%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031368}}
+  #info-box.show {
+    margin-left: 50px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031371}}
+  #info-box .diamond {
+    height: 45px;
+    width: 45px;
+    background: url(../img/diy/info-box-diamond.png);
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031380}}
+  #info-box .box {
+    padding: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031383}}
+  #info-box .box h2 {
+    text-align: left;
+    font-size: 1.5625em;
+    margin: 0 0 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031388}}
+  #info-box .box h3 {
+    font-size: 1.125em;
+    text-align: left;
+    margin: 0 0 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031393}}
+  #info-box .box .contour {
+    margin: 0 0 5px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031396}}
+  #info-box .box h4 {
+    font-weight: normal;
+    font-size: 1em;
+    margin: 0 0 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031401}}
+  #info-box .box .sizes {
+    text-align: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031404}}
+  #info-box .box .sizes p {
+    font-size: 1.125em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031407}}
+  #info-box .box .sizes p span {
+    font-size: 1.25em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031412}}
+  #info-box .box h5 {
+    font-weight: normal;
+    font-size: 1em;
+    color: #fff;
+    text-transform: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031422}}
+  #info-box.step1 .box h2, #info-box.step1 .box h3, #info-box.step1 .box .contour, #info-box.step1 .box h4, #info-box.step1 .box .sizes {
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031431}}
+  #info-box.step3 .box h2, #info-box.step3 .box h3, #info-box.step3 .box h5, #info-box.step4 .box h2, #info-box.step4 .box h3, #info-box.step4 .box h5, #info-box.step5 .box h2, #info-box.step5 .box h3, #info-box.step5 .box h5 {
+    display: block;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031437}}
+  #board-display {
+    left: 90px;
+    top: 166px;
+    width: 15%;
+    background: none;
+    display: block;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+    box-shadow: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031445}}
+  #board-display.hide {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031448}}
+  #board-display .board-name {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031451}}
+  #board-display .board-menu-left-button {
+    left: -10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031454}}
+  #board-display .board-menu-right-button {
+    right: -10px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031461}}
+  body.step7 #board-display {
+    left: 50%;
+    width: 45%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031467}}
+  body.step7 #board-display .board-preview .board-views .preview-top {
+    width: 33%;
+    left: 0px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031471}}
+  body.step7 #board-display .board-preview .board-views .preview-side {
+    width: 33%;
+    left: 33%;
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031476}}
+  body.step7 #board-display .board-preview .board-views .preview-base {
+    width: 33%;
+    left: 66%;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031484}}
+  body.accept-buy #board-display {
+    display: block;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031488}}
+  #mobile-receipt {
+    display: none;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031491}}
+  #left-menu {
+    width: 276px;
+    background: yellow url("../img/diy/left-menu-bg.gif");
+    color: #000;
+    padding: 10px 0 16px 0px;
+    margin: 0px;
+    display: block;
+    position: absolute;
+    z-index: 25;
+    top: 25%;
+    left: -195px;
+    text-transform: uppercase;
+    -webkit-box-shadow: 1px 1px 8px #666666;
+    -moz-box-shadow: 1px 1px 8px #666666;
+    -ms-box-shadow: 1px 1px 8px #666666;
+    -o-box-shadow: 1px 1px 8px #666666;
+    box-shadow: 1px 1px 8px #666666;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-transition: left 200ms ease-in-out;
+    -moz-transition: left 200ms ease-in-out;
+    -ms-transition: left 200ms ease-in-out;
+    -o-transition: left 200ms ease-in-out;
+    transition: left 200ms ease-in-out;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031508}}
+  #left-menu.open {
+    left: 0px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031511}}
+  #left-menu .menu-close {
+    position: absolute !important;
+    right: 13px;
+    top: 13px;
+    float: right !important;
+    z-index: 10;
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031519}}
+  #left-menu .menu-header {
+    padding: 0 0 6px 30px;
+    color: black;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031527}}
+  #left-menu ul.menu-options {
+    width: 100%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031530}}
+  #left-menu ul.menu-options li {
+    cursor: pointer;
+    border-bottom: 1px solid #000;
+    padding: 10px 0 10px 0;
+    height: 42px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031536}}
+  #left-menu ul.menu-options li:first-child {
+    border-top: 1px solid #000;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031539}}
+  #left-menu ul.menu-options li div {
+    float: left;
+    position: relative;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031543}}
+  #left-menu ul.menu-options li div.menu-x {
+    width: 10%;
+    text-align: center;
+    visibility: hidden;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031548}}
+  #left-menu ul.menu-options li div.menu-title {
+    width: 60%;
+    text-align: right;
+    padding-right: 3%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031553}}
+  #left-menu ul.menu-options li div.menu-label {
+    width: 30%;
+    padding-left: 12px;
+    line-height: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031559}}
+  #left-menu ul.menu-options li.selected {
+    background: url("../img/diy/left-menu-bg-selected-option.png");
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031562}}
+  #left-menu ul.menu-options li.selected div.menu-label {
+    font-weight: 700;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031568}}
+  #left-menu ul.menu-options li.complete div.menu-x {
+    visibility: visible;
+    font-weight: 700;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031572}}
+  #left-menu ul.menu-options li.complete div.menu-title {
+    line-height: 17px;
+    margin-top: -6px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031578}}
+  #left-menu ul.menu-options li.alert {
+    background: url("../img/diy/left-menu-bg-alert-option.png");
+    font-weight: 600;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031582}}
+  #left-menu ul.menu-options li.menu5b {
+    height: 0px;
+    padding: 0px;
+    border-bottom: 0px;
+    overflow: hidden;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031590}}
+  #left-menu ul.menu-options li.menu5b.show {
+    height: 42px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #000;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031596}}
+  #left-menu ul.menu-options li.menu5b.complete div.menu-title {
+    line-height: 1.3em;
+    margin-top: 0px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031602}}
+  #left-menu ul.menu-options li.menu7 {
+    background-color: black;
+    color: #ffff00;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031607}}
+  #left-menu ul.menu-options li.menu7 div.menu-x {
+    height: 42px;
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031612}}
+  #left-menu ul.menu-options li.menu7 div.menu-label img {
+    width: 16px;
+    margin: auto;
+    height: auto;
+    margin-top: -1px;
+    margin-left: 15%;
+    padding-top: 0px;
+    line-height: 30px;
+    position: absolute;
+  }
+
+  /* OVERVIEW */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031629}}
+  #overview {
+    background: black url("../img/diy/bg-overview.jpg") no-repeat top right;
+    overflow-y: auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031633}}
+  #overview .overview-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031637}}
+  #overview .overview-content h1 {
+    text-align: left;
+    padding: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031641}}
+  #overview .overview-content .left-column {
+    width: 50%;
+    padding: 0 10px 0 20px;
+    float: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031646}}
+  #overview .overview-content .left-column h4 {
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031649}}
+  #overview .overview-content .left-column ul {
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031652}}
+  #overview .overview-content .left-column p {
+    font-size: .8em;
+    padding-top: 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031657}}
+  #overview .overview-content .right-column {
+    width: 50%;
+    padding: 60px 20px 0 10px;
+    float: left;
+  }
+
+  /* CAROUSEL */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031669}}
+  .carousel {
+    padding-top: 166px;
+  }
+
+  /* STEP 1 - SHAPE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031673}}
+  .step1-board {
+    background-image: url("../img/diy/bg-step1.jpg");
+  }
+
+  /* STEP 2 - SIZE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031677}}
+  .step2-size {
+    background-image: url("../img/diy/bg-step2.jpg");
+    padding: 166px 0 0 30%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031681}}
+  .step2-size .board-info {
+    padding: 0 5% 0 0;
+    width: 45%;
+    float: left;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031686}}
+  .step2-size .board-info .board {
+    font-size: 2em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031689}}
+  .step2-size .board-info .shape-desc {
+    display: block;
+    font-size: 1.25em;
+    margin-bottom: 40px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031694}}
+  .step2-size .board-info .shape-desc span {
+    font-weight: 900;
+    color: #ffff00;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031699}}
+  .step2-size .board-info .board-tagline {
+    font-size: 1.75em;
+    margin: 0 0 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031703}}
+  .step2-size .board-info .board-desc {
+    font-size: 1.125em;
+    margin: 0 0 40px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031707}}
+  .step2-size .board-info .contour-title {
+    display: block;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #ffff00;
+    margin: 0 0 10px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031715}}
+  .step2-size .board-info .contour-desc {
+    display: block;
+    font-size: 1em;
+    font-weight: 400;
+    color: #fff;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031722}}
+  .step2-size .size-info {
+    width: 50%;
+    float: left;
+    padding: 58px 0 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031728}}
+  .step2-size .size-info .size-detail-table .table-data .info-list .side-list,
+  .step2-size .size-info .size-detail-table .table-data .info-list .waist-list,
+  .step2-size .size-info .size-detail-table .table-data .info-list .flex-list,
+  .step2-size .size-info .size-detail-table .table-data .info-list .length-list {
+    min-width: 65px;
+    background-color: black;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031735}}
+  .step2-size .size-info .size-detail-table .table-data .info-list .side-list li:first-child,
+  .step2-size .size-info .size-detail-table .table-data .info-list .waist-list li:first-child,
+  .step2-size .size-info .size-detail-table .table-data .info-list .flex-list li:first-child,
+  .step2-size .size-info .size-detail-table .table-data .info-list .length-list li:first-child {
+    font-size: 100%;
+  }
+
+  /* STEP 3 - TOP */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031743}}
+  .step3-top {
+    background-image: url("../img/diy/bg-step3.jpg");
+    padding-left: 30%;
+  }
+
+  /* STEP 3 - SIDEWALL */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031748}}
+  .step4-sidewall {
+    background-image: url("../img/diy/bg-step4.jpg");
+    padding-left: 30%;
+  }
+
+  /* STEP 5a - BASE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031753}}
+  .step5-base {
+    background-image: url("../img/diy/bg-step5.jpg");
+    padding-left: 30%;
+  }
+
+  /* STEP 5b - KNIFECUT BASE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031758}}
+  .step5b-base-text {
+    background-image: url("../img/diy/bg-step5.jpg");
+    padding: 166px 0 0 30%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031763}}
+  .step5b-base-text #knifecut-base-controls .knifecut-input {
+    margin-bottom: 40px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031766}}
+  .step5b-base-text #knifecut-base-controls .letter-color,
+  .step5b-base-text #knifecut-base-controls .base-color {
+    padding-bottom: 30px;
+  }
+
+  /* STEP 6 - BADGE */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031773}}
+  .step6-badge {
+    background-image: url("../img/diy/bg-step6.jpg");
+    padding: 166px 0 20px 30%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031777}}
+  .step6-badge .board-badge {
+    width: 350px;
+    height: 350px;
+    font-size: 1em;
+  }
+
+  /* STEP 7 - BUY */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031784}}
+  .step7-buy {
+    background-image: url("../img/diy/bg-step7.jpg");
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031787}}
+  .step7-buy .board-reciept,
+  .step7-buy .terms,
+  .step7-buy .terms-international,
+  .step7-buy .cart-error,
+  .step7-buy .buttonholder,
+  .step7-buy .buttonholder.terms {
+    width: 50%;
+    padding: 166px 0 0 120px;
+    max-width: 470px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031798}}
+  .step7-buy .board-reciept h1 {
+    font-size: 1.75em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031801}}
+  .step7-buy .board-reciept h2 {
+    font-size: 1.125em;
+    line-height: 1.5em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031805}}
+  .step7-buy .board-reciept h2.base .text-color, .step7-buy .board-reciept h2.base .base-color {
+    display: block;
+    padding-left: 20px;
+    font-size: .9em;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031812}}
+  .step7-buy .board-reciept hr {
+    margin: 1em 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031815}}
+  .step7-buy .board-reciept h3 {
+    float: left;
+    font-size: 1.5em;
+    width: 40%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031820}}
+  .step7-buy .board-reciept h3.subtotal-cost {
+    float: right;
+    width: 60%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031826}}
+  .step7-buy .buttonholder {
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031830}}
+  .step7-buy .buttonholder .buy-button span {
+    display: inline;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031833}}
+  .step7-buy .buttonholder .social-icons p span {
+    display: inline;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031836}}
+  .step7-buy .buttonholder .share-url #share-url-input {
+    font-size: 1.5em;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031841}}
+  body.accept-buy .step7-buy .buttonholder {
+    padding: 20px 0 0 120px;
+    width: 50%;
+  }
+
+  /* SHARE STYLES */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031848}}
+  body.diy-share .wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+    position: relative;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031853}}
+  body.diy-share .wrapper #header-share {
+    width: 40%;
+    margin: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031858}}
+  body.diy-share .wrapper .step7-buy .board-reciept,
+  body.diy-share .wrapper .step7-buy .buttonholder,
+  body.diy-share .wrapper .step7-buy .terms,
+  body.diy-share .wrapper .step7-buy .terms-international,
+  body.diy-share .wrapper .step7-buy .cart-error {
+    width: 40%;
+    margin: 0;
+    padding: 0 0 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031868}}
+  body.diy-share .wrapper #board-display {
+    position: fixed;
+    width: 50%;
+    bottom: 0px;
+    top: auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031875}}
+  body.diy-share .wrapper #board-display .board-preview .preview-top,
+  body.diy-share .wrapper #board-display .board-preview .preview-side,
+  body.diy-share .wrapper #board-display .board-preview .preview-base {
+    width: 33%;
+    left: 0;
+  }
+}
+/* Desktop Styles
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: 1100px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031890}}
+  #info-box {
+    width: 300px;
+    top: 50%;
+  }
+}
+/* iPad Landscape Specific Styles
+-------------------------------------------------------------------------------*/
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031899}}
+  #left-menu.open .menu-close {
+    display: block;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031902}}
+  .board-text {
+    font-size: 320%;
+    line-height: 78%;
+    text-transform: uppercase;
+    font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    overflow: hidden;
+    top: 90%;
+  }
+}
+/* Print Specific Styles
+-------------------------------------------------------------------------------*/
+@media print {
+  /* DIY SHARE PRINT */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031918}}
+  body.diy-share .wrapper {
+    width: 100%;
+    max-width: 100%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031921}}
+  body.diy-share .wrapper #header-share {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031924}}
+  body.diy-share .wrapper #header-share-print {
+    display: block;
+    padding-top: 10%;
+    text-align: center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031930}}
+  body.diy-share .wrapper .step7-buy .board-reciept {
+    padding-top: 10%;
+    color: #000;
+    margin: 0 auto;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031935}}
+  body.diy-share .wrapper .step7-buy .board-reciept h1, body.diy-share .wrapper .step7-buy .board-reciept h2, body.diy-share .wrapper .step7-buy .board-reciept h3, body.diy-share .wrapper .step7-buy .board-reciept p {
+    color: #000;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031939}}
+  body.diy-share .wrapper .step7-buy .buttonholder {
+    display: none;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031943}}
+  body.diy-share .wrapper #board-display {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    left: 50% !important;
+    right: auto !important;
+    top: 0;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031954}}
+  body.diy-share .wrapper #board-display .board-preview {
+    left: 0 !important;
+    margin: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031957}}
+  body.diy-share .wrapper #board-display .board-preview .preview-top,
+  body.diy-share .wrapper #board-display .board-preview .preview-side,
+  body.diy-share .wrapper #board-display .board-preview .preview-base {
+    position: relative;
+    left: 0 !important;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031970}}
+  body.diy-share .wrapper .print-disclaimer {
+    display: block;
+    color: #000;
+    text-align: center;
+    padding-top: 40px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/libtech\.snowboardbuilder\.scss}line{font-family:\000031976}}
+  body.diy-share .wrapper #region-selector {
+    display: none;
+  }
+}

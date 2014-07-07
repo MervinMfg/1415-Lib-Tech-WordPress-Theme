@@ -1,0 +1,26 @@
+{
+  "name": "Lib-Tech",
+  "description": "Lib Tech Website",
+  "version": "2.2.2",
+  "private": true,
+  "author": "brian.behrens@mervin.com",
+  "homepage": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-cli": "~0.1.13",
+    "grunt-shell": "~0.7.0",
+    "grunt-contrib-sass": "~0.7.3",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-cssmin": "~0.9.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-jshint": "~0.10.0"
+  }
+}
