@@ -7,21 +7,21 @@ Template Name: Bindings Detail
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
 ?>
-        <div class="bg-product-details-top"></div>
-        <section class="product-details bg-product-details <?php echo $slug; ?>">
-        	<div class="section-content">
+		<div class="bg-product-details-top"></div>
+		<section class="product-details bg-product-details <?php echo $slug; ?>">
+			<div class="section-content">
 				<h1><?php the_title(); ?></h1>
 				<div class="product-images">
 					<ul id="image-list">
-			       		<?php
-			       			$thumbnailImages = Array();
+						<?php
+							$thumbnailImages = Array();
 							if(get_field('libtech_binding_options')):
 								while(the_repeater_field('libtech_binding_options')):
 									$optionName = get_sub_field('libtech_binding_options_color');
 									$optionImage = get_sub_field('libtech_binding_options_img');
 									$optionImageThumb = wp_get_attachment_image_src($optionImage, 'thumbnail', false);
-					       			$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
-					       			$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
+									$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
+									$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
 
 									// get variations
 									$optionVariations = get_sub_field('libtech_binding_options_variations');
@@ -44,18 +44,20 @@ Template Name: Bindings Detail
 						?>
 						<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" /></a></li>
 						<?php
-							$additionalImages = get_sub_field('libtech_binding_options_images');
-		       				// loop through additional images
-		       				for ($i = 0; $i < count($additionalImages); $i++) {
-		       					$optionImage = $additionalImages[$i]['libtech_binding_options_images_img'];
-								$optionImageThumb = wp_get_attachment_image_src($optionImage, 'thumbnail', false);
-		       					$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
-		       					$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
-		       					array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionName, $optionVariationSizes, $optionVariationSKUs));
-				       	?>
-				       	<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" /></a></li>
-				       	<?php
-				       				}
+									$additionalImages = get_sub_field('libtech_binding_options_images');
+									if ($additionalImages) :
+										// loop through additional images
+										for ($i = 0; $i < count($additionalImages); $i++) {
+											$optionImage = $additionalImages[$i]['libtech_binding_options_images_img'];
+											$optionImageThumb = wp_get_attachment_image_src($optionImage, 'thumbnail', false);
+											$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
+											$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
+											array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionName, $optionVariationSizes, $optionVariationSKUs));
+						?>
+						<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" /></a></li>
+						<?php
+										}
+									endif;
 								endwhile;
 							endif;
 						?>

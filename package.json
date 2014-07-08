@@ -1,16 +1,20 @@
 {
-  "name": "Lib-Tech",
-  "description": "Lib Tech Website",
-  "version": "2.2.2",
+  "name": "1415-Lib-Tech-WordPress-Theme",
+  "description": "Lib Tech theme template for custom WordPress website.",
+  "version": "1.0.0",
   "private": true,
-  "author": "brian.behrens@mervin.com",
-  "homepage": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme",
+  "homepage": "https://github.com/MervinMfg/1415-Lib-Tech-WordPress-Theme",
+  "contributors": [
+    {
+      "name": "Brian Behrens (http://brainbrian.com)"
+    }
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme.git"
+    "url": "https://github.com/MervinMfg/1415-Lib-Tech-WordPress-Theme.git"
   },
   "bugs": {
-    "url": "https://github.com/MervinMfg/Lib-Tech-WordPress-Theme/issues"
+    "url": "https://github.com/MervinMfg/1415-Lib-Tech-WordPress-Theme/issues"
   },
   "devDependencies": {
     "grunt": "~0.4.4",
