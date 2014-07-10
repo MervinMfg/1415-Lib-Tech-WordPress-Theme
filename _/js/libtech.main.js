@@ -23,7 +23,7 @@ LIBTECH.main = {
 		// check body class and init proper class
 		if ($body.hasClass('home')) {
 			self.homeInit();
-		} else if ($body.hasClass('page-template-page-templatespage-home-sport-php')) {
+		} else if ($body.hasClass('page-template-page-templateshome-sport-php')) {
 			self.homeSportInit();
 		} else if ($body.hasClass('page-template-page-templatespage-overview-products-php')) {
 			self.productOverviewInit();
@@ -60,6 +60,8 @@ LIBTECH.main = {
 			self.passItOnInit();
 		} else if ($body.hasClass('page-template-page-templatespage-lib-legs-php')) {
 			self.libLegsInit();
+		} else if ($body.hasClass('page-template-page-templatesstorm-factory-php')) {
+			self.stormFactoryInit();
 		}
 		/* Chrome Webfont Fix Styles
 			- https://code.google.com/p/chromium/issues/detail?id=336476
@@ -1536,6 +1538,29 @@ LIBTECH.main = {
 			infiniteLoop: false,
 			hideControlOnEnd: true
 		});
+	},
+	stormFactoryInit: function () {
+		var self = this;
+		//$('.video-header .video-player').fitVids();
+		// set up large featured images/videos
+		self.utilities.featuredSliderInit();
+		console.log('oh hi');
+		// set up product slider
+		/*var slider = $('.product-slider .bxslider').bxSlider({
+			slideWidth: 220,
+			minSlides: 2,
+			maxSlides: 8,
+			slideMargin: 10,
+			auto: true,
+			autoHover: true,
+			speed: 500,
+			controls: true,
+			pager: false,
+			mode: 'horizontal',
+			moveSlides: 2,
+			infiniteLoop: false,
+			hideControlOnEnd: true
+		});*/
 	},
 	shoppingCartInit: function () {
 		var self, lang, regionCookie;

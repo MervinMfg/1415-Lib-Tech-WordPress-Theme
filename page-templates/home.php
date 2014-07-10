@@ -1,111 +1,12 @@
 <?php
 /*
-Template Name: Homepage Template
+Template Name: Homepage
 */
 get_header(); 
 ?>
 
-		<section class="featured-slider bg2">
-			<div class="section-content">
-				<div class="slider-wrapper">
-					<ul class="bxslider">
+		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
-						<?php
-							if(get_field('libtech_homepage_banners')):
-								$featuresArray = array();
-								$promosArray = array();
-								$snowArray = array();
-								$skiArray = array();
-								$surfArray = array();
-								$skateArray = array();
-
-								function renderBanner($banner) {
-									if (strpos($banner['link'],'vimeo.com') !== false) : // display vimeo image/video
-										echo '<li><a href="' . $banner['link'] . '" class="video-link"><div class="video-image"><img src="' . $banner['image'][0] . '" alt="' . $banner['altText'] . '" width="' . $banner['image'][1] . '" height="' . $banner['image'][2] . '" /></div></a></li>';
-									else: // display standard image
-										echo '<li><a href="' . $banner['link'] . '"><img src="' . $banner['image'][0] . '" alt="' . $banner['altText'] . '" width="' . $banner['image'][1] . '" height="' . $banner['image'][2] . '" /></a></li>';
-									endif;
-								}
-
-								while(the_repeater_field('libtech_homepage_banners')):
-									$bannerImage = get_sub_field('libtech_homepage_banners_image');
-		       						$bannerImage = wp_get_attachment_image_src($bannerImage, 'full', false);
-		       						$bannerlink = get_sub_field('libtech_homepage_banners_link_url');
-		       						$bannerAltText = get_sub_field('libtech_homepage_banners_alt_text');
-		       						$bannerCategory = get_sub_field('libtech_homepage_banners_cat');
-
-		       						$banner = array(
-										"image" => $bannerImage,
-										"link" => $bannerlink,
-										"altText" => $bannerAltText,
-										"category" => $bannerCategory
-									);
-
-									switch ($banner['category']) {
-										case 'features':
-											array_push($featuresArray, $banner);
-											break;
-										case 'promos':
-											array_push($promosArray, $banner);
-											break;
-										case 'snow':
-											array_push($snowArray, $banner);
-											break;
-										case 'ski':
-											array_push($skiArray, $banner);
-											break;
-										case 'surf':
-											array_push($surfArray, $banner);
-											break;
-										case 'skate':
-											array_push($skateArray, $banner);
-											break;
-									}
-								endwhile;
-								// display featured banners
-								if(!empty($featuresArray)):
-									foreach( $featuresArray as $banner):
-			       						renderBanner($banner);
-									endforeach;
-								endif;
-								// display promos
-								if(!empty($promosArray)):
-									shuffle($promosArray);
-									renderBanner($promosArray[0]);
-								endif;
-								// display surf
-								if(!empty($surfArray)):
-									shuffle($surfArray);
-									renderBanner($surfArray[0]);
-								endif;
-								// display skate
-								if(!empty($skateArray)):
-									shuffle($skateArray);
-									renderBanner($skateArray[0]);
-								endif;
-								// display snow
-								if(!empty($snowArray)):
-									shuffle($snowArray);
-									renderBanner($snowArray[0]);
-								endif;
-								// display ski
-								if(!empty($skiArray)):
-									shuffle($skiArray);
-									renderBanner($skiArray[0]);
-								endif;
-							else:
-						?>
-
-						<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/_/img/placeholder-slider.jpg" alt="Have Kiker make a banner!" /></a></li>
-
-						<?php
-							endif;
-						?>
-					</ul>
-				</div>
-			</div><!-- END .section-content -->
-			<div class="clearfix"></div>
-		</section><!-- END .featured-slider -->
 		<div class="bg-product-snow-top"></div>
 		<section class="product-slider bg-product-snow">
 			<div class="section-content">
