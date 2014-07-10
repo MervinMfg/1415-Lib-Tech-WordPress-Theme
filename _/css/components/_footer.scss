@@ -1,0 +1,242 @@
+/* ==========================================================================
+   COMPONENTS/_FOOTER.SCSS
+   ========================================================================== */
+
+footer {
+	background: #999 url('../img/bg-footer.jpg') center top;
+	clear: both;
+
+	.footer-top {
+		background: #333 url('../img/bg-footer-top.jpg') repeat-x center top;
+		width: 100%;
+		height: 10px;
+	}
+	.footer-wrapper {
+		padding: 20px;
+		position: relative;
+	}
+	.h2 {
+		color: #000;
+		font-size: 1.375em; /* 22 / 16 */
+		padding-bottom: 10px;
+	}
+	a {
+		color: #333 !important;
+		font-style: normal;
+		font-weight: 700;
+		text-transform: uppercase;
+		font-size: .875em; /* 14 / 16 */
+
+		&:hover {
+			color: #fff !important;
+		}
+	}
+	.region-selector,
+	.social-links,
+	.sports,
+	.shop,
+	.about,
+	.support,
+	.search,
+	.search,
+	.subscribe {
+		padding-bottom: 20px;
+	}
+	.region-selector,
+	.social-links {
+		width: 100%;
+		float: left;
+
+
+	}
+	.region-selector {
+		display: block;
+	}
+	.sports,
+	.shop,
+	.about,
+	.support {
+		width: 50%;
+		float: left;
+	}
+	.logo {
+		display: none;
+	}
+	.search,
+	.subscribe {
+		width: 100%;
+		float: left;
+		clear: both;
+	}
+	.search {
+		form {
+			.text-input {
+				width: 61%;
+				float: left;
+			}
+			.submit {
+				width: 35%;
+				float: left;
+			}
+		}
+	}
+	.subscribe {
+		form {
+			.email {
+				width: 71%;
+				float: left;
+			}
+			.submit {
+				width: 25%;
+				float: left;
+			}
+		}
+	}
+	.footer-copy {
+		font-size: .75em; /* 12 / 16 */
+		color: #333;
+		font-weight: 700;
+		font-style: italic;
+	}
+}
+.ski footer .h2,
+.surf footer .h2,
+.skate footer .h2 {
+	color: #000;
+}
+.social-links {
+	li {
+		padding: 0 5px 5px 0;
+		float: left;
+
+		a {
+			background: url('../img/sprite.png');
+			width: 31px;
+			height: 31px;
+			display: block;
+			text-indent: 100%;
+			white-space: nowrap;
+			overflow: hidden;
+
+			&:hover,
+			&:focus {
+				@include vendorize(opacity, 0.8);
+				filter:alpha(opacity=80);
+			}
+			&.facebook {
+				background-position:-219px 0;
+			}
+			&.twitter {
+				background-position:-254px 0;
+			}
+			&.vimeo {
+				background-position:-289px 0;
+			}
+			&.instagram {
+				background-position:-359px 0;
+			}
+			&.rss {
+				background-position:-324px 0;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: $breakpoint-small) {
+	footer {
+		.region-selector {
+			width: 25%;
+			float: left;
+		}
+		.social-links {
+			width: 40%;
+			float: left;
+		}
+		.nav-footer {
+			width: 100%;
+			clear: left;
+		}
+		.sports {
+			width: 25%;
+		}
+		.shop {
+			width: 25%;
+		}
+		.about {
+			width: 25%;
+		}
+		.support {
+			width: 25%;
+		}
+		.logo {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: 140px;
+			display: block;
+			text-align: right;
+		}
+		.search {
+			display: none;
+		}
+		.subscribe {
+			width: 50%;
+			float: left;
+			padding-bottom: 0;
+		}
+		.footer-copy {
+			width: 50%;
+			float: left;
+			padding-top: 35px;
+			text-align: right;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	footer {
+		.footer-wrapper {
+			width: 980px;
+			margin: 0 auto;
+		}
+		.region-and-social {
+			width: 20%;
+			float: left;
+
+			.region-selector,
+			.social-links {
+				width: 100%;
+			}
+		}
+		.nav-footer {
+			clear: none;
+		}
+		.sports {
+			width: 10%;
+		}
+		.shop {
+			width: 15%;
+		}
+		.about {
+			width: 15%;
+		}
+		.support {
+			width: 15%;
+		}
+		.logo {
+			position: absolute;
+			top: 0px;
+			right: 20px;
+			width: 25%;
+		}
+		.subscribe {
+			position: absolute;
+			top: 170px;
+			right: 20px;
+			width: 25%;
+		}
+		.footer-copy {
+			padding: 0;
+			width: 100%;
+		}
+	}
+}

@@ -15,7 +15,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 <head id="www-lib-tech-com" data-template-set="lib-tech-wordpress-theme">
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<!--[if IE ]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
 	<title>Lib Tech's DIY Board Builder - Build your dream snowboard!</title>
 	<meta name="description" content="Lib Tech's DIY Snowboard Builder offers you the opportunity to order a custom, one of a kind, dream snowboard handmade in the USA. Customize your snowboard's shape, size, graphics and more in this online, custom snowboard building tool." />
@@ -34,27 +34,13 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 	<meta itemprop="name" content="Lib Tech's DIY Board Builder - Build your dream snowboard!" />
 	<meta itemprop="description" content="This dream snowboard project is probably going to cause us some headaches, but you are going to be stoked! Lib Tech's DIY Board Builder offers you the opportunity to order a custom, one of a kind, dream snowboard that will be guided through our experiMENTAL Division’s prototyping process and handcrafted to your specifications in the USA." />
 	<meta itemprop="image" content="<?php bloginfo('template_directory'); ?>/_/img/diy/social-share.png" />
+	<!-- Google Site Verification -->
+	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@libtechnologies">
 	<!-- Fav Icon -->
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico" />
-	<!-- Styles -->
-	<?php
-		// Figure out what our server name is
-		$host = $_SERVER['SERVER_NAME'];
-		// check if we are in the staging environment
-		if ($host == 'localhost' || $host == 'libtech.staging.wpengine.com') {
-			// if staging, provide the CSS files individually for easier debugging
-			include get_template_directory() . '/_/inc/css-main.php';
-			echo "\t" . '<link href="' . get_bloginfo('template_directory') . '/_/css/libtech.snowboardbuilder.dev.css" rel="stylesheet" type="text/css" />' . "\n";
-		} else {
-			// if production, provide the compiled and minified CSS files
-			echo '<link href="' . get_bloginfo('template_directory') . '/_/css/lib/libtech.main.lib.min.css" rel="stylesheet" type="text/css" />' . "\n\t";
-			echo '<link href="' . get_bloginfo('template_directory') . '/style.min.css" rel="stylesheet" type="text/css" />' . "\n\t";
-			echo '<link href="' . get_bloginfo('template_directory') . '/_/css/libtech.snowboardbuilder.min.css" rel="stylesheet" type="text/css" />' . "\n";
-		}
-	?>
 	<!-- Mobile -->
 	<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -63,12 +49,9 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/diy/apple-touch-icon-precomposed.png">
 	<!-- Misc. -->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<!-- Google Site Verification -->
-	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
-	<!-- JavaScript Includes -->
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/lib/modernizr-2.6.2.min.js"></script>
+	<?php include get_template_directory() . '/_/inc/header-includes-diy-builder.php'; ?>
 	<!--[if lt IE 9]>
-	<script src="<?php bloginfo('template_directory'); ?>/_/js/lib/respond.min.js"></script>
+		<script src="<?php bloginfo('template_directory'); ?>/_/js/lib/respond.min.js"></script>
 	<![endif]-->
 	<!-- WordPress Head -->
 	<?php wp_head(); ?>
@@ -501,25 +484,10 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 		<p><a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
 	</div>
 	<![endif]-->
+
 	<!-- JavaScript includes -->
-	<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_/js/lib/jquery-1.11.1.min.js"><\/script>')</script>
-	<?php
-        // Figure out what our server name is
-        $host = $_SERVER['SERVER_NAME'];
-        // check if we are in the staging environment
-        if ($host == 'localhost' || $host == 'libtech.staging.wpengine.com') {
-            // if staging, provide the JS files individually for easier debugging
-            include get_template_directory() . '/_/inc/js-snowboardbuilder.php';
-        } else {
-            // if production, provide the compiled and uglified JS files
-            echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/_/js/lib/libtech.main.lib.min.js"></script>' . "\n\t";
-            echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/_/js/lib/libtech.snowboardbuilder.lib.min.js"></script>' . "\n\t";
-            echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/_/js/libtech.main.min.js"></script>' . "\n\t";
-            echo '<script type="text/javascript" src="' . get_bloginfo('template_directory') . '/_/js/libtech.snowboardbuilder.min.js"></script>' . "\n";
-        }
-    ?>
+<?php include get_template_directory() . '/_/inc/footer-includes-diy-builder.php'; ?>
+
 	<!-- Init the main JS -->
 	<script type="text/javascript">
 		$(document).ready(function(){

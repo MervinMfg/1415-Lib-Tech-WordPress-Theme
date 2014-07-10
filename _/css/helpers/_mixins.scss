@@ -1,0 +1,24 @@
+/* ==========================================================================
+   HELPERS/_MIXINS.SCSS
+   ========================================================================== */
+
+// SASS Mixins
+@mixin transition($property, $duration: 300ms, $easing: ease-in-out) {
+	-webkit-transition: $property $duration $easing;
+	-moz-transition: $property $duration $easing;
+	-ms-transition: $property $duration $easing;
+	-o-transition: $property $duration $easing;
+	transition: $property $duration $easing;
+}
+@mixin vendorize($property, $value) {
+	-webkit-#{$property}: $value;
+	-moz-#{$property}: $value;
+	-ms-#{$property}: $value;
+	-o-#{$property}: $value;
+	#{$property}: $value;
+}
+@mixin hoverActiveFocus($property, $value) {
+	&:hover, &:active, &:focus {
+		#{$property}: $value;
+	}
+}

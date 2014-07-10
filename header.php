@@ -173,6 +173,8 @@
 	<meta itemprop="name" content="<?php echo $GLOBALS['pageTitle']; ?>" />
 	<meta itemprop="description" content="<?php echo $pageDescription; ?>" />
 	<meta itemprop="image" content="<?php echo $GLOBALS['pageImage']; ?>" />
+	<!-- Google Site Verification -->
+	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@libtechnologies">
@@ -182,32 +184,15 @@
 	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<?php bloginfo('atom_url'); ?>" />
 	<!-- Fav Icon -->
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico" />
-	<!-- Styles -->
-	<?php
-		// Figure out what our server name is
-		$host = $_SERVER['SERVER_NAME'];
-		// check if we are in the staging environment
-		if ($host == 'localhost' || $host == 'libtech.staging.wpengine.com' || $host == 'libtech.dev') {
-			// if staging, provide the CSS files individually for easier debugging
-			include get_template_directory() . '/_/inc/css-main.php';
-		} else {
-			// if production, provide the compiled and minified CSS files
-			echo '<link href="' . get_template_directory_uri() . '/_/css/lib/libtech.main.lib.min.css" rel="stylesheet" type="text/css" />' . "\n\t";
-			echo '<link href="' . get_template_directory_uri() . '/style.min.css" rel="stylesheet" type="text/css" />' . "\n";
-		}
-	?>
 	<!--  Mobile Meta Info -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/apple-touch-icon-precomposed.png">
 	<!-- Misc. -->
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<!-- Google Site Verification -->
-	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
-	<!-- JavaScript Includes -->
-	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/modernizr-2.6.2.min.js"></script>
+	<?php include get_template_directory() . '/_/inc/header-includes.php'; ?>
 	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.min.js"></script>
 	<![endif]-->
 	<!-- WordPress Head -->
 	<?php wp_head(); ?>

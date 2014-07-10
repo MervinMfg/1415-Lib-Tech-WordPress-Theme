@@ -1,0 +1,440 @@
+/* ==========================================================================
+   COMPONENTS/_HEADER.SCSS
+   ========================================================================== */
+
+header {
+	position: relative;
+	border-top: solid 1px #999;
+	overflow: hidden;
+
+	a,
+	.snow a,
+	.ski a,
+	.surf a,
+	.skate a {
+		color: #fff;
+	}
+	a:hover,
+	a:focus,
+	.current-menu-item a {
+		color: $snowColor;
+		text-decoration: none;
+	}
+	.snow a:hover,
+	.snow a:focus,
+	.snow.current-menu-item a,
+	.snow .current-menu-item a {
+		color: $snowColor;
+	}
+	.ski a:hover,
+	.ski a:focus,
+	.ski.current-menu-item a,
+	.ski .current-menu-item a {
+		color: $skiColor;
+	}
+	.surf a:hover,
+	.surf a:focus,
+	.surf.current-menu-item a,
+	.surf .current-menu-item a {
+		color: $surfColor;
+	}
+	.skate a:hover,
+	.skate a:focus,
+	.skate.current-menu-item a,
+	.skate .current-menu-item a {
+		color: $skateColor;
+	}
+
+	.logo-wrapper {
+		background: url('../img/bg-dark-texture.png') center top;
+		position: relative;
+		z-index: 3;
+		padding-bottom: 6px;
+
+		#logo {
+			width: 191px;
+			height: 74px;
+			display: block;
+			position: relative;
+			z-index: 10;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	.nav-main,
+	.nav-product,
+	.nav-sub {
+		font-family: $kraftsmenFont;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	.nav-main {
+		height: 36px;
+		font-size: 1.625em; /* 24 / 16 */
+		background: url('../img/bg-main-menu.png') repeat-x center top;
+		line-height: 1.125em;
+		position: relative;
+		z-index: 4;
+
+		li {
+			display: inline-block;
+			padding: 0 4%;
+
+			a {
+				font-style: normal;
+			}
+		}
+	}
+	.nav-sub-wrapper {
+		margin-top: -20px;
+		position: relative;
+		z-index: 2;
+		background: url('../img/bg-sub-menu.png') repeat-x center bottom;
+		padding: 20px 0;
+	}
+	.nav-product {
+		font-size: 1.375em; /* 22 / 16 */
+		background: url('../img/bg-product-menu-snow.png') repeat-x center bottom;
+		padding-top: 20px;
+		margin-top: -20px;
+		position: relative;
+		z-index: 2;
+
+		ul {
+			padding-bottom: 15px;
+
+			li {
+				padding: 10px;
+				display: inline-block;
+
+				a {
+					font-style: normal;
+					color: #000;
+				}
+				a:hover,
+				a:focus,
+				&.current-menu-item a {
+					color: #666;
+				}
+			}
+		}
+	}
+	.nav-sub {
+		position: relative;
+		z-index: 1;
+		padding-top: 8px;
+
+		ul {
+			padding-bottom: 10px;
+
+			li {
+				padding: 10px;
+				display: inline-block;
+
+				a {
+					font-style: normal;
+					font-size: 1.125em; /* 18 / 16 */
+				}
+			}
+		}
+	}
+	.nav-sub-wrapper {
+		.mobile-btn {
+			background: url('../img/sprite.png') -176px 0px;
+			width: 23px;
+			height: 23px;
+			cursor: pointer;
+			margin: 0 auto;
+		}
+		&.ski .mobile-btn {
+			background-position: -176px -41px;
+		}
+		&.surf .mobile-btn {
+			background-position: -176px -82px;
+		}
+		&.skate .mobile-btn {
+			background-position: -176px -123px;
+		}
+	}
+	.nav-utility {
+		position: absolute;
+		z-index: 100;
+		top: 0;
+		right: 0;
+		padding: 30px 10px 0 0;
+
+		a {
+			font-size: 1em; /* 16 */
+			font-weight: bold;
+			font-style: normal;
+			text-transform: uppercase;
+		}
+		.search {
+			display: none;
+			padding: 3px 0 0 10px;
+
+			a {
+				display: block;
+				width: 26px;
+				height: 17px;
+				background: url('../img/sprite.png') -130px 0px;
+				text-indent: 100%;
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			#header-search {
+				position: absolute;
+				top: 4px;
+				right: 0px;
+				width: 25%;
+				visibility: hidden;
+				@include vendorize(opacity, 0);
+				@include transition(opacity);
+
+				&.visible {
+					visibility: visible;
+					@include vendorize(opacity, 1);
+				}
+				.text-input {
+					width: 100%;
+					position: absolute;
+					top: 0px;
+					right: -5px;
+					padding-right: 35px;
+				}
+				.submit {
+					width: 26px;
+					height: 17px;
+					background: url('../img/sprite.png') -130px -37px;
+					position: absolute;
+					top: 8px;
+					right: 0px;
+					text-indent: 100%;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
+		}
+		.link-dealer {
+			display: none;
+		}
+		.link-account {
+			display: none;
+			padding-right: 10px;
+		}
+		#quick-cart {
+			width: 61px;
+			height: 22px;
+			background:url('../img/sprite.png') -49px 0px;
+			float: left;
+
+			a {
+				display: block;
+				width: 31px;
+				height: 20px;
+				padding: 2px 0 0 30px;
+
+				span{
+					width: 30px;
+					height: 16px;
+					font-size: 12px;
+					font-weight: bold;
+					text-align: center;
+					display: block;
+				}
+				&:hover span,
+				&:focus span {
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+.snow header .nav-main .snow a {
+	color: $snowColor;
+}
+.ski header .nav-main .ski a {
+	color: $skiColor;
+}
+.surf header .nav-main .surf a {
+	color: $surfColor;
+}
+.skate header .nav-main .skate a {
+	color: $skateColor;
+}
+.home,
+.blog,
+.page-template-page-templatespage-environmental-php,
+.page-template-page-templatespage-technology-overview-php {
+	header .nav-main {
+		.snow a,
+		.ski a,
+		.surf a,
+		.skate a {
+			color: #fff;
+		}
+		.snow a {
+			&:hover,
+			&:focus {
+				color: $snowColor;
+			}
+		}
+		.ski a {
+			&:hover,
+			&:focus {
+				color: $skiColor;
+			}
+		}
+		.surf a {
+			&:hover,
+			&:focus {
+				color: $surfColor;
+			}
+		}
+		.skate a {
+			&:hover,
+			&:focus {
+				color: $skateColor;
+			}
+		}
+	}	
+}
+.snow header a,
+.ski header a,
+.surf header a,
+.skate header a {
+	color: #fff;
+}	
+.ski .nav-product {
+	background-image: url('../img/bg-product-menu-ski.png');
+}
+.surf .nav-product {
+	background-image: url('../img/bg-product-menu-surf.png');
+}
+.skate .nav-product {
+	background-image: url('../img/bg-product-menu-skate.png');
+}
+.snow header .nav-utility a:hover {
+	color: $snowColor;
+}
+.ski header .nav-utility a:hover {
+	color: $skiColor;
+}
+.surf header .nav-utility a:hover {
+	color: $surfColor;
+}
+.skate header .nav-utility a:hover {
+	color: $skateColor;
+}
+
+
+.region-selector {
+	float: left;
+	padding-right: 10px;
+	display: none;
+
+	li a {
+		display: block;
+		width: 38px;
+		height: 20px;
+		background: url('../img/sprite.png');
+		display: none;
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.country-us {
+		background-position: 0px 0px;
+	}
+	.country-ca {
+		background-position: 0px -40px;
+	}
+	.country-int {
+		background-position: 0px -80px;
+	}
+	.country-us.selected,
+	.country-ca.selected,
+	.country-int.selected {
+		display: block;
+	}
+}
+
+@media screen and (min-width: $breakpoint-small) {
+	header {
+		.logo-wrapper {
+			text-align: center;
+			position: static;
+			padding-bottom: 0;
+
+			#logo {
+				display: inline-block;
+			}
+		}
+		.nav-main {
+			margin-top: -40px;
+			li {
+				padding: 0;
+
+				&.ski {
+					padding: 0 130px 0 40px;
+				}
+				&.surf {
+					padding: 0 40px 0 130px;
+				}
+			}
+		}
+		.nav-product {
+			ul li {
+				padding: 5px 10px;
+				display: inline-block;
+			}
+		}
+		.nav-sub {
+			font-size: 1.125em; /* 18 / 16 */
+			ul {
+				padding-bottom: 5px;
+
+				li {
+					display: inline-block;
+					padding: 0 10px;
+				}
+			}
+		}
+		.nav-sub-wrapper .mobile-btn {
+			display: none;
+		}
+		.nav-utility {
+			padding: 9px 0 0 0;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			width: 90%;
+			margin-left: -45%;
+
+			.link-dealer {
+				display: block;
+				float: left;
+			}
+			#quick-cart {
+				float: right;
+			}
+			.search {
+				display: block;
+				float: right;
+			}
+			.region-selector {
+				display: block;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	header .nav-utility .link-account {
+		display: block;
+		float: right;
+	}
+}

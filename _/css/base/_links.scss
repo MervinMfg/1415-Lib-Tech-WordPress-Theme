@@ -1,0 +1,20 @@
+/* ==========================================================================
+   BASE/_LINKS.SCSS
+   ========================================================================== */
+
+// Inline Text
+a {
+	color: $snowColor;
+	font-style: italic;
+	text-decoration: none;
+}
+a:hover,
+a:focus,
+a.selected {
+	color: #fff;
+	text-decoration: underline;
+}
+/*	j.mp/webkit-tap-highlight-color */
+a:link {
+	-webkit-tap-highlight-color: #fcd700;
+} 

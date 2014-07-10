@@ -1,6 +1,6 @@
 <?php 
 /*
-Template Name: Redirect Template
+Template Name: Redirect
 */
 
    $redirect_url = get_field('libtech_redirect_url');

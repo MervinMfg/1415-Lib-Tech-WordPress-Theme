@@ -1,356 +1,17 @@
-/*   
-Theme Name: 1415 Lib Tech WordPress Theme
-Theme URI: https://github.com/MervinMfg/1415-Lib-Tech-WordPress-Theme
-Author: Brian Behrens @brianbehrens - Mervin Mfg.
-Author URI: http://www.mervin.com
-Description: Lib Tech Wordpress theme built on top of a modified version of The HTML5 Reset Theme 2.0.
-Version: 1.0.0
-Tags: responsive-layout, featured-images, flexible-header, full-width-template, microformats, post-formats, accessibility-ready
-Text Domain: mervinmfg
-*/
-
-$snowColor: #FFFF00;
-$skiColor: #0099FF;
-$surfColor: #FF6600;
-$skateColor: #66CC00;
-$bodyFont: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
-$kraftsmenFont: "Duke Fill", Impact, Arial, sans-serif;
-
-// SASS Mixins
-@mixin transition($property, $duration: 300ms, $easing: ease-in-out) {
-	-webkit-transition: $property $duration $easing;
-	-moz-transition: $property $duration $easing;
-	-ms-transition: $property $duration $easing;
-	-o-transition: $property $duration $easing;
-	transition: $property $duration $easing;
-}
-@mixin vendorize($property, $value) {
-	-webkit-#{$property}: $value;
-	-moz-#{$property}: $value;
-	-ms-#{$property}: $value;
-	-o-#{$property}: $value;
-	#{$property}: $value;
-}
-
-/* Reset Styles
--------------------------------------------------------------------------------*/
-html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline;
-	background: transparent;
-}
-/* reset the default cursor */
-html, body { cursor: default; }
-code { cursor: text; }
-a, label, button, input[type=button], input[type="radio"], input[type="submit"], input[type="checkbox"], .clickable { cursor: pointer; }
-button[disabled], input[disabled] { cursor: default; }
-
-article, aside, figure, footer, header, hgroup, nav, section, details, summary {display: block;}
-
-/* Responsive images and other embedded objects */
-img, object, embed { max-width: 100%; }
-
-/* force a vertical scrollbar to prevent a jumpy page */
-html { overflow-y: scroll; }
-
-/* we use a lot of ULs that aren't bulleted. 
-	don't forget to restore the bullets within content. */
-ul { list-style: none; }
-
-blockquote, q {quotes: none;}
-
-blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
-
-a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-
-del {text-decoration: line-through;}
-
-abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
-
-/* tables still need cellspacing="0" in the markup */
-table {border-collapse: collapse; border-spacing: 0;}
-th {font-weight: bold; vertical-align: bottom;}
-td {font-weight: normal; vertical-align: top;}
-
-hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
-
-input, select {vertical-align: middle;}
-
-pre {
-	white-space: pre; /* CSS2 */
-	white-space: pre-wrap; /* CSS 2.1 */
-	white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
-	word-wrap: break-word; /* IE */
-}
-
-input[type="radio"] {vertical-align: text-bottom;}
-input[type="checkbox"] {vertical-align: bottom;}
-.ie7 input[type="checkbox"] {vertical-align: baseline;}
-.ie6 input {vertical-align: text-bottom;}
-
-select, input, textarea {font: 99% sans-serif;}
-
-table {font-size: inherit; font: 100%;}
-
-small {font-size: 85%;}
-
-strong {font-weight: bold;}
-
-td, td img {vertical-align: top;} 
-
-sub, sup {font-size: 75%; line-height: 0; position: relative;}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
-
-/* standardize any monospaced elements */
-pre, code, kbd, samp {font-family: monospace, sans-serif;}
-
-/* Webkit browsers add a 2px margin outside the chrome of form elements */
-button, input, select, textarea {margin: 0;}
-
-/* make buttons play nice in IE */
-button {width: auto; overflow: visible;}
- 
-/* scale images in IE7 more attractively */
-.ie7 img {-ms-interpolation-mode: bicubic;}
-
-/* prevent BG image flicker upon hover */
-.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
-
-/* let's clear some floats */
-.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
-.clearfix:after { clear: both; }  
-.clearfix { zoom: 1; }
-
-/* apply a natural box layout model to all elements */
-/* http://paulirish.com/2012/box-sizing-border-box-ftw/ */
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
-.chromeframe {position: absolute; top: 0;}
-
-
-/* And here begins the Wordpress fun.
--------------------------------------------------------------------------------*/
-
-#page-wrap {width: 960px; margin: 20px auto;}
-
-.post {}
-
-.entry-content {}
-.entry-content a {}
-.entry-content a:hover {}
-
-#meta {}
-.postmetadata {}
-
-#sidebar {}
-
-.navgation {}
-.next-posts {}
-.prev-posts {}
-
-#searchform {}
-#s {}
-#searchsubmt {}
-	
-ol.commentlist {list-style: none;}
-ol.commentlist li {}
-ol.commentlist li.alt {}
-ol.commentlist li.bypostauthor {}
-ol.commentlist li.byuser {}
-ol.commentlist li.comment-author-admin {}
-ol.commentlist li.comment {border-bottom: 1px dotted #666; padding: 10px;}
-ol.commentlist li.comment div.comment-author {}
-ol.commentlist li.comment div.vcard {}
-ol.commentlist li.comment div.vcard cite.fn {font-style: normal;}
-ol.commentlist li.comment div.vcard cite.fn a.url {}
-ol.commentlist li.comment div.vcard img.avatar {float:right; margin: 0 0 10px 10px;}
-ol.commentlist li.comment div.vcard img.avatar-32 {}
-ol.commentlist li.comment div.vcard img.photo {}
-ol.commentlist li.comment div.vcard span.says {}
-ol.commentlist li.comment div.commentmetadata {}
-ol.commentlist li.comment div.comment-meta {font-size: 10px;}
-ol.commentlist li.comment div.comment-meta a {color: #ccc;}
-ol.commentlist li.comment p {}
-ol.commentlist li.comment ul {}
-ol.commentlist li.comment div.reply {font-size: 11px;}
-ol.commentlist li.comment div.reply a {font-weight: bold;}
-ol.commentlist li.comment ul.children {list-style: none; margin: 10px 0 0;}
-ol.commentlist li.comment ul.children li {}
-ol.commentlist li.comment ul.children li.alt {}
-ol.commentlist li.comment ul.children li.bypostauthor {}
-ol.commentlist li.comment ul.children li.byuser {}
-ol.commentlist li.comment ul.children li.comment {}
-ol.commentlist li.comment ul.children li.comment-author-admin {}
-ol.commentlist li.comment ul.children li.depth-2 {border-left: 5px solid #555; margin: 0 0 10px 10px;}
-ol.commentlist li.comment ul.children li.depth-3 {border-left: 5px solid #999; margin: 0 0 10px 10px;}
-ol.commentlist li.comment ul.children li.depth-4 {border-left: 5px solid #bbb; margin: 0 0 10px 10px;}
-ol.commentlist li.comment ul.children li.depth-5 {}
-ol.commentlist li.comment ul.children li.odd {}
-ol.commentlist li.even {background: #fff;}
-ol.commentlist li.odd {background: #f6f6f6;}
-ol.commentlist li.parent {border-left: 5px solid #111;}
-ol.commentlist li.thread-alt {}
-ol.commentlist li.thread-even {}
-ol.commentlist li.thread-odd {}
+/* ==========================================================================
+   COMPONENTS/_GLOBAL.SCSS
+   ========================================================================== */
 
 /* General Styles
 -------------------------------------------------------------------------------*/
-@font-face {
-    font-family: 'Duke Fill';
-    src: url('_/fonts/Duke-Fill/Duke-Fill.eot');
-    src: url('_/fonts/Duke-Fill/Duke-Fill.eot?#iefix') format('embedded-opentype'),
-         url('_/fonts/Duke-Fill/Duke-Fill.woff') format('woff'),
-         url('_/fonts/Duke-Fill/Duke-Fill.ttf') format('truetype'),
-         url('_/fonts/Duke-Fill/Duke-Fill.svg#dukefill') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'PT Sans Narrow';
-    src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.eot');
-    src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.eot?#iefix') format('embedded-opentype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.woff') format('woff'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.ttf') format('truetype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.svg#pt_sans_narrowregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'PT Sans Narrow';
-    src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.eot');
-    src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.eot?#iefix') format('embedded-opentype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.woff') format('woff'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.ttf') format('truetype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.svg#pt_sans_narrowbold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-}
-
-body, select, input, textarea {color: #333;}
-
-/*	j.mp/webkit-tap-highlight-color */
-a:link {-webkit-tap-highlight-color: #fcd700;} 
 
 ins {background-color: #fcd700; color: #000; text-decoration: none;}
 mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: bold;}
 
-/* Mozilla dosen't style place holders by default */
-input:-moz-placeholder { color:#a9a9a9; }
-textarea:-moz-placeholder { color:#a9a9a9; }
-
-::-moz-selection{
-	background: $snowColor;
-	color: #000;
-	text-shadow: none;
-}
-::selection {
-	background: $snowColor;
-	color: #000;
-	text-shadow: none;
-} 
-
 body {
 	background: #000;
-	color: #ccc;
-	font-family: $bodyFont;
 }
-h1, h2, .h1, .h2 {
-	font-family: $kraftsmenFont;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 2.375em; /* 38 / 16 */
-	line-height: 1;
-	color: $snowColor;
-}
-h3, .h3 {
-	text-transform: uppercase;
-	font-size: 1.375em; /* 22 / 16 */
-	line-height: 1;
-	font-weight: 700;
-	color: #fff;
-}
-h4, .h4 {
-	text-transform: uppercase;
-    font-size: 1em; /* 16 / 16 */
-    font-weight: 700;
-    line-height: 1;
-    color: $snowColor;
-}
-h5, .h5 {
-	text-transform: uppercase;
-    font-size: .875em; /* 14 / 16 */
-    line-height: 1;
-    font-weight: 700;
-    color: #999;
-}
-p, .p {
-    font-size: .875em; /* 14 / 16 */
-    line-height: 1.32;
-}
-a {
-	color: $snowColor;
-	font-style: italic;
-	text-decoration: none;
-}
-a:hover,
-a:focus,
-a.selected {
-	color: #fff;
-	text-decoration: underline;
-}
-.text-input {
-	padding: 5px 2%;
-	background: #fff;
-	color: #666;
-	font-style: italic;
-	font-size: 1em;
-	text-transform: uppercase;
-	outline: none;
-	border: none;
-	border-radius: 0;
-	box-sizing: content-box;
-	font-family: $bodyFont;
-}
-.submit {
-	padding: 5px;
-	background: #000;
-	color: #fff;
-	font-size: 1em;
-	text-transform: uppercase;
-	text-align: center;
-	font-weight: 700;
-	border: none;
-	cursor: pointer;
-	-webkit-font-smoothing: antialiased;
-	-webkit-appearance: none;
-	border-radius: 0;
-	font-family: $bodyFont;
-}
-.select {
-	font-family: $bodyFont;
-	font-size: 1.25em;
-	font-style: italic;
-	text-transform: uppercase;
-	background: #fff;
-	width: 100%;
-	padding: 10px;
-	line-height: 1;
-	border: 0;
-	border-radius: 0;
-	-webkit-appearance: none;
-	margin-bottom: 10px;
 
-	&.alert {
-		color: #cc0000;
-	}
-	&.hidden {
-		display: none;
-	}
-}
 .bg1, .bg2, .bg3, .bg-product-snow, .bg-product-ski, .bg-product-surf, .bg-product-skate, .bg-product-details, .bg-product-outerwear {
 	background-color: #000;
 	background-position: center top;
@@ -366,717 +27,57 @@ a.selected {
 }
 .bg1 {}
 .bg1-top {
-	background-image: url('_/img/bg1-top.png');
+	background-image: url('../img/bg1-top.png');
 }
 .bg2 {
-	background-image: url('_/img/bg2.png');
+	background-image: url('../img/bg2.png');
 }
 .bg2-top {
-	background-image: url('_/img/bg2-top.png');
+	background-image: url('../img/bg2-top.png');
 }
 .bg3 {
-	background-image: url('_/img/bg3.jpg');
+	background-image: url('../img/bg3.jpg');
 }
 .bg3-top {
-	background-image: url('_/img/bg3-top.png');
+	background-image: url('../img/bg3-top.png');
 }
 .bg-product-snow {
-	background-image: url('_/img/bg-product-snow.png');
+	background-image: url('../img/bg-product-snow.png');
 }
 .bg-product-snow-top {
-	background-image: url('_/img/bg-product-snow-top.png');
+	background-image: url('../img/bg-product-snow-top.png');
 }
 .bg-product-ski {
-	background-image: url('_/img/bg-product-ski.png');
+	background-image: url('../img/bg-product-ski.png');
 }
 .bg-product-ski-top {
-	background-image: url('_/img/bg-product-ski-top.png');
+	background-image: url('../img/bg-product-ski-top.png');
 }
 .bg-product-surf {
-	background-image: url('_/img/bg-product-surf.png');
+	background-image: url('../img/bg-product-surf.png');
 }
 .bg-product-surf-top {
-	background-image: url('_/img/bg-product-surf-top.png');
+	background-image: url('../img/bg-product-surf-top.png');
 }
 .bg-product-skate {
-	background-image: url('_/img/bg-product-skate.png');
+	background-image: url('../img/bg-product-skate.png');
 }
 .bg-product-skate-top {
-	background-image: url('_/img/bg-product-skate-top.png');
+	background-image: url('../img/bg-product-skate-top.png');
 }
 .bg-product-details {
-	background-image: url('_/img/bg-product-details.jpg');
+	background-image: url('../img/bg-product-details.jpg');
 }
 .bg-product-details-top {
-	background-image: url('_/img/bg-product-details-top.png');
+	background-image: url('../img/bg-product-details-top.png');
 }
 .bg-product-outerwear {
-	background-image: url('_/img/bg-product-outerwear.jpg');
+	background-image: url('../img/bg-product-outerwear.jpg');
 }
 .bg-product-outerwear-top {
-	background-image: url('_/img/bg-product-outerwear-top.png');
-}
-.us-price, .ca-price {
-	color: #fff;
-
-	&.strike {
-		text-decoration: line-through;
-	}
-	span {
-		color: $snowColor;
-	}
-}
-.ski .us-price span, .ski .ca-price span {
-	color: $skiColor;
-}
-.surf .us-price span, .surf .ca-price span {
-	color: $surfColor;
-}
-.skate .us-price span, .skate .ca-price span {
-	color: $skateColor;
+	background-image: url('../img/bg-product-outerwear-top.png');
 }
 
-/* SKI General Styles
--------------------------------------------------------------------------------*/
-.ski h1, .ski .h1, .ski h2, .ski .h2, .ski h4, .ski .h4, .ski a {
-	color: $skiColor;
-}
-.ski ::-moz-selection{
-	background: $skiColor;
-	color: #000;
-	text-shadow: none;
-}
-.ski ::selection {
-	background: $skiColor;
-	color: #000;
-	text-shadow: none;
-}
-/* SURF General Styles
--------------------------------------------------------------------------------*/
-.surf h1, .surf .h1, .surf h2, .surf .h2, .surf h4, .surf .h4, .surf a {
-	color: $surfColor;
-}
-.surf ::-moz-selection{
-	background: $surfColor;
-	color: #000;
-	text-shadow: none;
-}
-.surf ::selection {
-	background: $surfColor;
-	color: #000;
-	text-shadow: none;
-}
-/* SKATE General Styles
--------------------------------------------------------------------------------*/
-.skate h1, .skate .h1, .skate h2, .skate .h2, .skate h4, .skate .h4, .skate a {
-	color: $skateColor;
-}
-.skate ::-moz-selection{
-	background: $skateColor;
-	color: #000;
-	text-shadow: none;
-}
-.skate ::selection {
-	background: $skateColor;
-	color: #000;
-	text-shadow: none;
-}
-
-/* Header Styles
--------------------------------------------------------------------------------*/
-header {
-	position: relative;
-	border-top: solid 1px #999;
-	overflow: hidden;
-
-	a,
-	.snow a,
-	.ski a,
-	.surf a,
-	.skate a {
-		color: #fff;
-	}
-	a:hover,
-	a:focus,
-	.current-menu-item a {
-		color: $snowColor;
-		text-decoration: none;
-	}
-	.snow a:hover,
-	.snow a:focus,
-	.snow.current-menu-item a,
-	.snow .current-menu-item a {
-		color: $snowColor;
-	}
-	.ski a:hover,
-	.ski a:focus,
-	.ski.current-menu-item a,
-	.ski .current-menu-item a {
-		color: $skiColor;
-	}
-	.surf a:hover,
-	.surf a:focus,
-	.surf.current-menu-item a,
-	.surf .current-menu-item a {
-		color: $surfColor;
-	}
-	.skate a:hover,
-	.skate a:focus,
-	.skate.current-menu-item a,
-	.skate .current-menu-item a {
-		color: $skateColor;
-	}
-
-	.logo-wrapper {
-		background: url('_/img/bg-dark-texture.png') center top;
-		position: relative;
-		z-index: 3;
-		padding-bottom: 6px;
-
-		#logo {
-			width: 191px;
-			height: 74px;
-			display: block;
-			position: relative;
-			z-index: 10;
-
-			img {
-				width: 100%;
-				height: auto;
-			}
-		}
-	}
-	.nav-main,
-	.nav-product,
-	.nav-sub {
-		font-family: $kraftsmenFont;
-		text-transform: uppercase;
-		text-align: center;
-	}
-	.nav-main {
-		height: 36px;
-		font-size: 1.625em; /* 24 / 16 */
-		background: url('_/img/bg-main-menu.png') repeat-x center top;
-		line-height: 1.125em;
-		position: relative;
-		z-index: 4;
-
-		li {
-			display: inline-block;
-			padding: 0 4%;
-
-			a {
-				font-style: normal;
-			}
-		}
-	}
-	.nav-sub-wrapper {
-		margin-top: -20px;
-		position: relative;
-		z-index: 2;
-		background: url('_/img/bg-sub-menu.png') repeat-x center bottom;
-		padding: 20px 0;
-	}
-	.nav-product {
-		font-size: 1.375em; /* 22 / 16 */
-		background: url('_/img/bg-product-menu-snow.png') repeat-x center bottom;
-		padding-top: 20px;
-		margin-top: -20px;
-		position: relative;
-		z-index: 2;
-
-		ul {
-			padding-bottom: 15px;
-
-			li {
-				padding: 10px;
-				display: inline-block;
-
-				a {
-					font-style: normal;
-					color: #000;
-				}
-				a:hover,
-				a:focus,
-				&.current-menu-item a {
-					color: #666;
-				}
-			}
-		}
-	}
-	.nav-sub {
-		position: relative;
-		z-index: 1;
-		padding-top: 8px;
-
-		ul {
-			padding-bottom: 10px;
-
-			li {
-				padding: 10px;
-				display: inline-block;
-
-				a {
-					font-style: normal;
-					font-size: 1.125em; /* 18 / 16 */
-				}
-			}
-		}
-	}
-	.nav-sub-wrapper {
-		.mobile-btn {
-			background: url('_/img/sprite.png') -176px 0px;
-			width: 23px;
-			height: 23px;
-			cursor: pointer;
-			margin: 0 auto;
-		}
-		&.ski .mobile-btn {
-			background-position: -176px -41px;
-		}
-		&.surf .mobile-btn {
-			background-position: -176px -82px;
-		}
-		&.skate .mobile-btn {
-			background-position: -176px -123px;
-		}
-	}
-	.nav-utility {
-		position: absolute;
-		z-index: 100;
-		top: 0;
-		right: 0;
-		padding: 30px 10px 0 0;
-
-		a {
-			font-size: 1em; /* 16 */
-			font-weight: bold;
-			font-style: normal;
-			text-transform: uppercase;
-		}
-		.search {
-			display: none;
-			padding: 3px 0 0 10px;
-
-			a {
-				display: block;
-				width: 26px;
-				height: 17px;
-				background: url('_/img/sprite.png') -130px 0px;
-				text-indent: 100%;
-				white-space: nowrap;
-				overflow: hidden;
-			}
-
-			#header-search {
-				position: absolute;
-				top: 4px;
-				right: 0px;
-				width: 25%;
-				visibility: hidden;
-				@include vendorize(opacity, 0);
-				@include transition(opacity);
-
-				&.visible {
-					visibility: visible;
-					@include vendorize(opacity, 1);
-				}
-				.text-input {
-					width: 100%;
-					position: absolute;
-					top: 0px;
-					right: -5px;
-					padding-right: 35px;
-				}
-				.submit {
-					width: 26px;
-					height: 17px;
-					background: url('_/img/sprite.png') -130px -37px;
-					position: absolute;
-					top: 8px;
-					right: 0px;
-					text-indent: 100%;
-					white-space: nowrap;
-					overflow: hidden;
-				}
-			}
-		}
-		.link-dealer {
-			display: none;
-		}
-		.link-account {
-			display: none;
-			padding-right: 10px;
-		}
-		#quick-cart {
-			width: 61px;
-			height: 22px;
-			background:url('_/img/sprite.png') -49px 0px;
-			float: left;
-
-			a {
-				display: block;
-				width: 31px;
-				height: 20px;
-				padding: 2px 0 0 30px;
-
-				span{
-					width: 30px;
-					height: 16px;
-					font-size: 12px;
-					font-weight: bold;
-					text-align: center;
-					display: block;
-				}
-				&:hover span,
-				&:focus span {
-					color: #fff;
-				}
-			}
-		}
-	}
-}
-.snow header .nav-main .snow a {
-	color: $snowColor;
-}
-.ski header .nav-main .ski a {
-	color: $skiColor;
-}
-.surf header .nav-main .surf a {
-	color: $surfColor;
-}
-.skate header .nav-main .skate a {
-	color: $skateColor;
-}
-.home,
-.blog,
-.page-template-page-templatespage-environmental-php,
-.page-template-page-templatespage-technology-overview-php {
-	header .nav-main {
-		.snow a,
-		.ski a,
-		.surf a,
-		.skate a {
-			color: #fff;
-		}
-		.snow a {
-			&:hover,
-			&:focus {
-				color: $snowColor;
-			}
-		}
-		.ski a {
-			&:hover,
-			&:focus {
-				color: $skiColor;
-			}
-		}
-		.surf a {
-			&:hover,
-			&:focus {
-				color: $surfColor;
-			}
-		}
-		.skate a {
-			&:hover,
-			&:focus {
-				color: $skateColor;
-			}
-		}
-	}	
-}
-.snow header a,
-.ski header a,
-.surf header a,
-.skate header a {
-	color: #fff;
-}	
-.ski .nav-product {
-	background-image: url('_/img/bg-product-menu-ski.png');
-}
-.surf .nav-product {
-	background-image: url('_/img/bg-product-menu-surf.png');
-}
-.skate .nav-product {
-	background-image: url('_/img/bg-product-menu-skate.png');
-}
-.snow header .nav-utility a:hover {
-	color: $snowColor;
-}
-.ski header .nav-utility a:hover {
-	color: $skiColor;
-}
-.surf header .nav-utility a:hover {
-	color: $surfColor;
-}
-.skate header .nav-utility a:hover {
-	color: $skateColor;
-}
-.region-selector {
-	float: left;
-	padding-right: 10px;
-	display: none;
-
-	li a {
-		display: block;
-		width: 38px;
-		height: 20px;
-		background: url('_/img/sprite.png');
-		display: none;
-		text-indent: 100%;
-		white-space: nowrap;
-		overflow: hidden;
-	}
-	.country-us {
-		background-position: 0px 0px;
-	}
-	.country-ca {
-		background-position: 0px -40px;
-	}
-	.country-int {
-		background-position: 0px -80px;
-	}
-	.country-us.selected,
-	.country-ca.selected,
-	.country-int.selected {
-		display: block;
-	}
-}
-/* Footer Styles
--------------------------------------------------------------------------------*/
-footer {
-	background: #999 url('_/img/bg-footer.jpg') center top;
-	clear: both;
-
-	.footer-top {
-		background: #333 url('_/img/bg-footer-top.jpg') repeat-x center top;
-		width: 100%;
-		height: 10px;
-	}
-	.footer-wrapper {
-		padding: 20px;
-		position: relative;
-	}
-	.h2 {
-		color: #000;
-		font-size: 1.375em; /* 22 / 16 */
-		padding-bottom: 10px;
-	}
-	a {
-		color: #333 !important;
-		font-style: normal;
-		font-weight: 700;
-		text-transform: uppercase;
-		font-size: .875em; /* 14 / 16 */
-
-		&:hover {
-			color: #fff !important;
-		}
-	}
-	.region-selector,
-	.social-links,
-	.sports,
-	.shop,
-	.about,
-	.support,
-	.search,
-	.search,
-	.subscribe {
-		padding-bottom: 20px;
-	}
-	.region-selector,
-	.social-links {
-		width: 100%;
-		float: left;
-
-
-	}
-	.region-selector {
-		display: block;
-	}
-	.sports,
-	.shop,
-	.about,
-	.support {
-		width: 50%;
-		float: left;
-	}
-	.logo {
-		display: none;
-	}
-	.search,
-	.subscribe {
-		width: 100%;
-		float: left;
-		clear: both;
-	}
-	.search {
-		form {
-			.text-input {
-				width: 61%;
-				float: left;
-			}
-			.submit {
-				width: 35%;
-				float: left;
-			}
-		}
-	}
-	.subscribe {
-		form {
-			.email {
-				width: 71%;
-				float: left;
-			}
-			.submit {
-				width: 25%;
-				float: left;
-			}
-		}
-	}
-	.footer-copy {
-		font-size: .75em; /* 12 / 16 */
-		color: #333;
-		font-weight: 700;
-		font-style: italic;
-	}
-}
-.ski footer .h2,
-.surf footer .h2,
-.skate footer .h2 {
-	color: #000;
-}
-.social-links {
-	li {
-		padding: 0 5px 5px 0;
-		float: left;
-
-		a {
-			background: url('_/img/sprite.png');
-			width: 31px;
-			height: 31px;
-			display: block;
-			text-indent: 100%;
-			white-space: nowrap;
-			overflow: hidden;
-
-			&:hover,
-			&:focus {
-				@include vendorize(opacity, 0.8);
-				filter:alpha(opacity=80);
-			}
-			&.facebook {
-				background-position:-219px 0;
-			}
-			&.twitter {
-				background-position:-254px 0;
-			}
-			&.vimeo {
-				background-position:-289px 0;
-			}
-			&.instagram {
-				background-position:-359px 0;
-			}
-			&.rss {
-				background-position:-324px 0;
-			}
-		}
-	}
-}
-
-/* Region Selector Styles
--------------------------------------------------------------------------------*/
-#region-selector {
-	visibility: hidden;
-	background: #000;
-   	background: rgba(0, 0, 0, 0.92); 
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: 9999;
-	@include vendorize(opacity, 0);
-	@include transition(opacity, 500ms);
-
-	&.visible {
-		visibility: visible;
-		@include vendorize(opacity, 1);
-	}
-	.choose-region {
-		padding: 10px;
-
-		.h1 {
-			padding: 10px;
-		}
-
-		ul {
-			li {
-				padding: 10px;
-				clear: both;
-
-				.flag {
-					width: 35%;
-					float: left;
-				}
-				.copy {
-					width: 65%;
-					float: left;
-
-					h3 {
-						padding: 0 0 5px 20px;
-						line-height: 1em;
-					}
-					p {
-						padding-left: 20px;
-					}
-				}
-				&:hover,
-				&:focus {
-					cursor: pointer;
-					background: #333333;
-				}
-			}
-		}
-	}
-}
-/* Shopping Cart Styles
--------------------------------------------------------------------------------*/
-#shopatronCart {display: none;} /* hide shopatron api key */
-.shopping-cart {
-	.section-content {
-		padding: 0 20px;
-
-		p {
-			margin-bottom: 1em;
-		}
-		#shopping-cart {
-			min-height:250px;
-
-			& > span {
-				display:block;
-				background: url(_/img/loader.gif) center center no-repeat #000;
-				width: 64px;
-				height: 20px;
-			}
-		}
-		.us-ca-cart-details {
-			display: block;
-		}
-		.int-cart-details {
-			display: none;
-		}
-	}
-}
-body.international .shopping-cart .section-content {
-	.us-ca-cart-details {
-		display: none;
-	}
-	.int-cart-details {
-		display: block;
-	}
-}
 /* Default Page Styles
 -------------------------------------------------------------------------------*/
 .page-template-default {
@@ -1168,7 +169,7 @@ body.international .shopping-cart .section-content {
 				float: right;
 				width: 41px;
 				height: 41px;
-				background: url('_/img/sprite.png') no-repeat -265px -46px;
+				background: url('../img/sprite.png') no-repeat -265px -46px;
 				text-indent: -9999px;
 				padding: 5px;
 				position: absolute;
@@ -1220,7 +221,7 @@ body.international .shopping-cart .section-content {
 					float: right;
 					width: 41px;
 					height: 41px;
-					background: url('_/img/sprite.png') no-repeat -214px -46px;
+					background: url('../img/sprite.png') no-repeat -214px -46px;
 					text-indent: -9999px;
 					padding: 5px;
 				}
@@ -1285,7 +286,7 @@ body.international .shopping-cart .section-content {
 				width: 100%;
 
 				.fluid-width-video-wrapper {
-					background: #000 url('_/img/loader.gif') no-repeat center center;
+					background: #000 url('../img/loader.gif') no-repeat center center;
 				}
 			}
 		}
@@ -1681,7 +682,7 @@ body.international .shopping-cart .section-content {
 		&.product {
 			.grid-item-wrapper {
 				.item-link {
-					background-image: url('_/img/bg-grid-item-stone.jpg');
+					background-image: url('../img/bg-grid-item-stone.jpg');
 					background-size: 100%;
 					position: relative;
 
@@ -1705,7 +706,7 @@ body.international .shopping-cart .section-content {
 				}
 			}
 			&:nth-child(even) .grid-item-wrapper .item-link {
-				background-image: url('_/img/bg-grid-item-wood.jpg');
+				background-image: url('../img/bg-grid-item-wood.jpg');
 			}
 		}
 		&.team {
@@ -2267,7 +1268,7 @@ body.international .shopping-cart .section-content {
 
 		ul li {
 			&.loading {
-				background: url(_/img/loader.gif) center center no-repeat #000;
+				background: url(../img/loader.gif) center center no-repeat #000;
 				width: 64px;
 				height: 20px;
 				margin-bottom: 20px;
@@ -3277,7 +2278,7 @@ body.international .shopping-cart .section-content {
 			text-align: center;
 
 			&.loading {
-				background: url(_/img/loader.gif) center center no-repeat;
+				background: url(../img/loader.gif) center center no-repeat;
 			}
 			img {
 				max-height: 600px;
@@ -3309,7 +2310,7 @@ body.international .shopping-cart .section-content {
 		}
 		.gallery-viewer-prev {
 			left: 10px;
-			background: url(_/img/sprite.png) no-repeat 10px -120px;
+			background: url(../img/sprite.png) no-repeat 10px -120px;
 
 			&:hover,
 			&:focus {
@@ -3318,7 +2319,7 @@ body.international .shopping-cart .section-content {
 		}
 		.gallery-viewer-next {
 			right: 10px;
-			background: url(_/img/sprite.png) no-repeat -52px -120px;
+			background: url(../img/sprite.png) no-repeat -52px -120px;
 
 			&:hover,
 			&:focus {
@@ -3760,7 +2761,7 @@ body.international .shopping-cart .section-content {
 				.frame-wrapper {
 					margin-bottom: 10px;
 					width: 100%;
-					background: #000 url('_/img/loading.gif') no-repeat center center;
+					background: #000 url('../img/loading.gif') no-repeat center center;
 				}
 				.video-info {
 					display: none;
@@ -4339,177 +3340,32 @@ body.skate .ripper-videos .section-content .featured-videos {
 	padding-top: 10px;
 	margin-top: 0;
 }
+/* Storm Factory Styles
+-------------------------------------------------------------------------------*/
+.storm-factory-overview {
+	.section-content {
+		padding: 0 20px;
+
+		img {
+			padding-bottom: 20px;
+		}
+		h3 {
+			margin-bottom: 10px;
+		}
+	}
+}
 
 /* Print Styles
 -------------------------------------------------------------------------------*/
 @media print {
 }
 
-
 /* Media Queries
 -------------------------------------------------------------------------------*/
 
-/* Phone landscape Styles
--------------------------------------------------------------------------------*/
-@media only screen and (min-width : 321px) {
-	#region-selector {
-		.width-fix {
-			max-width: 940px;
-			display: table;
-			height: 100%;
-			margin: 0 auto;
-		}
-		.choose-region {
-			display: table-cell;
-			vertical-align: middle;
-
-			ul li {
-				width: 33.33%;
-				padding: 0;
-				float: left;
-				clear: none;
-				text-align: center;
-
-				.flag {
-					width: 100%;
-					padding: 10px 10px 0 10px;
-
-					img {
-						width: 100%;
-					}
-				}
-				.copy {
-					width: 100%;
-					padding: 0 10px 10px 10px;
-
-					h3, p {
-						padding-left: 0;
-					}
-				}
-			}
-		}
-	}
-}
 /* Tablet Styles
 -------------------------------------------------------------------------------*/
-@media screen and (min-width: 600px) {
-	/* Header Styles */
-	header {
-		.logo-wrapper {
-			text-align: center;
-			position: static;
-			padding-bottom: 0;
-
-			#logo {
-				display: inline-block;
-			}
-		}
-		.nav-main {
-			margin-top: -40px;
-			li {
-				padding: 0;
-
-				&.ski {
-					padding: 0 130px 0 40px;
-				}
-				&.surf {
-					padding: 0 40px 0 130px;
-				}
-			}
-		}
-		.nav-product {
-			ul li {
-				padding: 5px 10px;
-				display: inline-block;
-			}
-		}
-		.nav-sub {
-			font-size: 1.125em; /* 18 / 16 */
-			ul {
-				padding-bottom: 5px;
-
-				li {
-					display: inline-block;
-					padding: 0 10px;
-				}
-			}
-		}
-		.nav-sub-wrapper .mobile-btn {
-			display: none;
-		}
-		.nav-utility {
-			padding: 9px 0 0 0;
-			position: absolute;
-			top: 0;
-			left: 50%;
-			width: 90%;
-			margin-left: -45%;
-
-			.link-dealer {
-				display: block;
-				float: left;
-			}
-			#quick-cart {
-				float: right;
-			}
-			.search {
-				display: block;
-				float: right;
-			}
-			.region-selector {
-				display: block;
-			}
-		}
-	}
-	/* Footer Styles */
-	footer {
-		.region-selector {
-			width: 25%;
-			float: left;
-		}
-		.social-links {
-			width: 40%;
-			float: left;
-		}
-		.nav-footer {
-			width: 100%;
-			clear: left;
-		}
-		.sports {
-			width: 25%;
-		}
-		.shop {
-			width: 25%;
-		}
-		.about {
-			width: 25%;
-		}
-		.support {
-			width: 25%;
-		}
-		.logo {
-			position: absolute;
-			top: 0px;
-			right: 0px;
-			width: 140px;
-			display: block;
-			text-align: right;
-		}
-		.search {
-			display: none;
-		}
-		.subscribe {
-			width: 50%;
-			float: left;
-			padding-bottom: 0;
-		}
-		.footer-copy {
-			width: 50%;
-			float: left;
-			padding-top: 35px;
-			text-align: right;
-		}
-	}
+@media screen and (min-width: $breakpoint-small) {
 	/* Takeover Styles */
 	.takeover .takeover-content .expanded .message img {
 		width: 100%;
@@ -4876,23 +3732,7 @@ body.skate .ripper-videos .section-content .featured-videos {
 	}
 }
 
-@media screen and (min-width: 768px) {
-	/* General Styles */
-	h1, h2, .h1, .h2 {
-		font-size: 3.125em; /* 50 / 16 */
-	}
-	h3, .h3 {
-		font-size: 1.875em; /* 30 / 16 */
-	}
-	h4, .h4 {
-	    font-size: 1.5em; /* 24 / 16 */
-	}
-	h5, .h5 {
-	    font-size: 1em; /* 16 / 16 */
-	}
-	p, .p {
-	    font-size: 1em; /* 16 / 16 */
-	}
+@media screen and (min-width: $breakpoint-medium) {
 	/* homepage styles */
 	.homepage-posts {
 		.homepage-post {
@@ -5265,59 +4105,7 @@ body.skate .ripper-videos .section-content .featured-videos {
 
 /* Desktop Styles
 -------------------------------------------------------------------------------*/
-@media screen and (min-width: 980px) {
-	/* Header Styles */
-	header .nav-utility .link-account {
-		display: block;
-		float: right;
-	}
-	/* Footer Styles */
-	footer {
-		.footer-wrapper {
-			width: 980px;
-			margin: 0 auto;
-		}
-		.region-and-social {
-			width: 20%;
-			float: left;
-
-			.region-selector,
-			.social-links {
-				width: 100%;
-			}
-		}
-		.nav-footer {
-			clear: none;
-		}
-		.sports {
-			width: 10%;
-		}
-		.shop {
-			width: 15%;
-		}
-		.about {
-			width: 15%;
-		}
-		.support {
-			width: 15%;
-		}
-		.logo {
-			position: absolute;
-			top: 0px;
-			right: 20px;
-			width: 25%;
-		}
-		.subscribe {
-			position: absolute;
-			top: 170px;
-			right: 20px;
-			width: 25%;
-		}
-		.footer-copy {
-			padding: 0;
-			width: 100%;
-		}
-	}
+@media screen and (min-width: $breakpoint-large) {
 	/* General styles */
 	.video-header.video .section-content {
 		h1, .video-text {
@@ -5699,7 +4487,7 @@ body.skate .ripper-videos .section-content .featured-videos {
 	}
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $breakpoint-xlarge) {
 	/* homepage styles */
 	.homepage-posts {
 		.homepage-post {
@@ -5796,7 +4584,7 @@ body.skate .ripper-videos .section-content .featured-videos {
 		}
 	}
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $breakpoint-xxlarge) {
 	.section-content {
 		max-width: 1640px;
 		margin: 0 auto;
@@ -5997,199 +4785,4 @@ body.skate .ripper-videos .section-content .featured-videos {
 			}
 		}
 	}
-}
-
-/* Shopatron Shopping Cart
--------------------------------------------------------------------------------*/
-/* hide shopatron api key */
-#shopatronCart {
-	display: none;
-}
-/* custom */
-.shopping-cart-wrapper { }
-body.international .shopping-cart-wrapper { display: none; }
-.shopping-cart-wrapper h1 { padding-bottom: 20px; }
-.shopping-cart-wrapper p {
-	padding-bottom: 20px;
-}
-.shopping-cart-wrapper a {
-	color: $snowColor;
-}
-/* Default */
-.shptrn_quantity {
-	overflow:hidden;
-	background:#e6e6e6;
-	border:1px solid #cdcdcd;
-	padding:8px 10px 0;
-}
-.shptrn_no_items_in_cart {
-	background:#fff4cc;
-	border:2px solid #ffac4c;
-	color:#960;
-	font-weight:700;
-	text-align:center;
-	font-size:14px;
-	padding:15px;
-}
-#shptrn_cart_items {
-	font-size:12px;
-	color:#4c4c4c;
-	border:1px solid #cdcdcd;
-	background:#f2f2f2;
-}
-#shptrn_cart_items_header {
-	overflow:hidden;
-	background-color:#d9d9d9;
-	background-image:0;
-	border-bottom:1px solid #ccc;
-	text-shadow:0 1px 1px #fff;
-	padding:5px 10px;
-}
-#shptrn_cart_items_header label {
-	float:left;
-	font-weight:700;
-}
-#shptrn_ch_item {
-	width:35%;
-}
-#shptrn_ch_item_price {
-	width:20%;
-	text-align:right;
-}
-.shptrn_cart_item {
-	border-bottom:1px solid #ccc;
-	border-top:1px solid #fff;
-	padding:10px;
-}
-.shptrn_cart_item table {
-	width:100%;
-	border-spacing:0;
-}
-.shptrn_cart_item a {
-	color:#4c4c4c;
-}
-.shptrn_cart_item a:hover {
-	color:#991f1f;
-}
-.shptrn_ci_image {
-	width:84px;
-}
-.shptrn_ci_image * {
-	line-height:0;
-}
-.shptrn_ci_image table {
-	border:2px solid gray;
-	background:#fff;
-}
-.shptrn_ci_image td {
-	width:80px;
-	height:80px;
-	text-align:center;
-}
-.shptrn_ci_image img {
-	max-width:80px;
-	max-height:80px;
-}
-.shptrn_ci_details {
-	padding:0 10px;
-}
-.shptrn_ci_details ul {
-	font-size:11px;
-	margin:5px 0 0;
-}
-.shptrn_ci_qty input[type="text"] {
-	background:#fff;
-	border:1px solid #cdcdcd;
-	width:25px;
-	text-align:right;
-	font-size:11px;
-	margin:0 5px 0 0;
-	padding:5px;
-}
-.shptrn_ci_qty button {
-	border:1px solid #cdcdcd;
-	border-radius:5px;
-	background:#e6e6e6;
-	margin:0 3px 0 0;
-	padding:3px 5px;
-}
-.shptrn_ci_qty button:hover {
-	background:#f2f2f2;
-	box-shadow:0 1px 1px #b2b2b2;
-	border-color:#b3b3b3;
-}
-.shptrn_ci_qty button:active {
-	box-shadow:inset 0 1px 1px #b2b2b2;
-}
-.shptrn_ci_price {
-	width:20%;
-	font-weight:700;
-	font-size:13px;
-	text-align:right;
-}
-#shptrn_checkout_detail_row {
-	overflow:hidden;
-}
-#shptrn_checkout_detail_content {
-	float:right;
-	width:400px;
-	font-size:12px;
-	border:1px solid #cdcdcd;
-	background:#f2f2f2;
-}
-.shptrn_cart_price_row {
-	overflow:hidden;
-	background:#f2f2f2;
-	color:#4c4c4c;
-	border-bottom:1px solid #ccc;
-	border-top:1px solid #fff;
-	padding:10px;
-}
-.shptrn_cart_price_row.total {
-	font-size:16px;
-	font-weight:700;
-}
-.shptrn_cart_price_row.checkout {
-	text-align:right;
-	background:#dadada;
-}
-.shptrn_cart_pricel_row span {
-	display:block;
-}
-.shptrn_cart_price_row span.left {
-	float:left;
-}
-.shptrn_cart_price_row span.right {
-	float:right;
-}
-.shptrn_checkout_button button {
-	font-size:14px;
-	font-weight:700;
-	border-radius:10px;
-	box-shadow:0 2px 1px #7f7f7f;
-	border:1px solid maroon;
-	background-color:#b20000;
-	background-image:0;
-	color:#fff;
-	text-transform:uppercase;
-	text-shadow:0 1px 1px #4d0000;
-	padding:10px 30px;
-}
-.shptrn_atc_button button:hover,.shptrn_checkout_button button:hover {
-	background-color:#e50000;
-	background-image:0;
-}
-.shptrn_atc_button button:active,.shptrn_checkout_button button:active {
-	background-color:maroon;
-	background-image:0;
-}
-#shptrn_ch_part_num,.shptrn_ci_part_num {
-	width:15%;
-}
-#shptrn_ch_item_qty,.shptrn_ci_qty {
-	width:30%;
-}
-.shptrn_ci_details h3,.shptrn_quick_cart {
-	font-size:12px;
-	font-weight:700;
 }

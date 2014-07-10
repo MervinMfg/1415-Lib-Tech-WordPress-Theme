@@ -1544,9 +1544,8 @@ LIBTECH.main = {
 		//$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
 		self.utilities.featuredSliderInit();
-		console.log('oh hi');
 		// set up product slider
-		/*var slider = $('.product-slider .bxslider').bxSlider({
+		var slider = $('.product-slider .bxslider').bxSlider({
 			slideWidth: 220,
 			minSlides: 2,
 			maxSlides: 8,
@@ -1560,7 +1559,7 @@ LIBTECH.main = {
 			moveSlides: 2,
 			infiniteLoop: false,
 			hideControlOnEnd: true
-		});*/
+		});
 	},
 	shoppingCartInit: function () {
 		var self, lang, regionCookie;

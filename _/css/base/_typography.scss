@@ -1,0 +1,141 @@
+/* ==========================================================================
+   BASE/_TYPOGRAPHY.SCSS
+   ========================================================================== */
+
+body {
+	color: #CCC;
+	font-family: $bodyFont;
+}
+select, input, textarea {
+	color: #333;
+}
+// Headings
+h1, h2, .h1, .h2 {
+	font-family: $kraftsmenFont;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 2.375em; /* 38 / 16 */
+	line-height: 1;
+	color: $snowColor;
+}
+h3, .h3 {
+	text-transform: uppercase;
+	font-size: 1.375em; /* 22 / 16 */
+	line-height: 1;
+	font-weight: 700;
+	color: #fff;
+}
+h4, .h4 {
+	text-transform: uppercase;
+    font-size: 1em; /* 16 / 16 */
+    font-weight: 700;
+    line-height: 1;
+    color: $snowColor;
+}
+h5, .h5 {
+	text-transform: uppercase;
+    font-size: .875em; /* 14 / 16 */
+    line-height: 1;
+    font-weight: 700;
+    color: #999;
+}
+p, .p {
+    font-size: .875em; /* 14 / 16 */
+    line-height: 1.32;
+}
+// Selections
+::-moz-selection{
+	background: $snowColor;
+	color: #000;
+	text-shadow: none;
+}
+::selection {
+	background: $snowColor;
+	color: #000;
+	text-shadow: none;
+} 
+/* SKI General Styles
+-------------------------------------------------------------------------------*/
+.ski h1, .ski .h1, .ski h2, .ski .h2, .ski h4, .ski .h4, .ski a {
+	color: $skiColor;
+}
+.ski ::-moz-selection{
+	background: $skiColor;
+	color: #000;
+	text-shadow: none;
+}
+.ski ::selection {
+	background: $skiColor;
+	color: #000;
+	text-shadow: none;
+}
+/* SURF General Styles
+-------------------------------------------------------------------------------*/
+.surf h1, .surf .h1, .surf h2, .surf .h2, .surf h4, .surf .h4, .surf a {
+	color: $surfColor;
+}
+.surf ::-moz-selection{
+	background: $surfColor;
+	color: #000;
+	text-shadow: none;
+}
+.surf ::selection {
+	background: $surfColor;
+	color: #000;
+	text-shadow: none;
+}
+/* SKATE General Styles
+-------------------------------------------------------------------------------*/
+.skate h1, .skate .h1, .skate h2, .skate .h2, .skate h4, .skate .h4, .skate a {
+	color: $skateColor;
+}
+.skate ::-moz-selection{
+	background: $skateColor;
+	color: #000;
+	text-shadow: none;
+}
+.skate ::selection {
+	background: $skateColor;
+	color: #000;
+	text-shadow: none;
+}
+/* PRICE General Styles
+-------------------------------------------------------------------------------*/
+.us-price, .ca-price {
+	color: #fff;
+
+	&.strike {
+		text-decoration: line-through;
+	}
+	span {
+		color: $snowColor;
+	}
+}
+.ski .us-price span, .ski .ca-price span {
+	color: $skiColor;
+}
+.surf .us-price span, .surf .ca-price span {
+	color: $surfColor;
+}
+.skate .us-price span, .skate .ca-price span {
+	color: $skateColor;
+}
+/* Media Queries
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: $breakpoint-medium) {
+	h1, h2, .h1, .h2 {
+		font-size: 3.125em; /* 50 / 16 */
+	}
+	h3, .h3 {
+		font-size: 1.875em; /* 30 / 16 */
+	}
+	h4, .h4 {
+	    font-size: 1.5em; /* 24 / 16 */
+	}
+	h5, .h5 {
+	    font-size: 1em; /* 16 / 16 */
+	}
+	p, .p {
+	    font-size: 1em; /* 16 / 16 */
+	}
+}

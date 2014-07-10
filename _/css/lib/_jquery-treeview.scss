@@ -1,35 +1,39 @@
+/* ==========================================================================
+   LIB/_JQUERY-TREEVIEW.SCSS
+   ========================================================================== */
+
 /* Treeview styles
 -------------------------------------------------------------------------------*/
 .treeview, .treeview ul { 
-	padding:  0;
-	margin: 0;
-	list-style: none;
-	font-size: 16px;
-	text-transform:uppercase;
+  padding:  0;
+  margin: 0;
+  list-style: none;
+  font-size: 16px;
+  text-transform:uppercase;
 }
 .treeview li a {color: #FFFFFF;}
 .treeview li li a {color: #999999;}
 .treeview li li li a {color: #CCCCCC;}
 .treeview ul {
-	background-color: transparent;
-	margin-top: 4px;
+  background-color: transparent;
+  margin-top: 4px;
 }
 .treeview .hitarea {
-	background: url('../../img/treeview.png') -64px -18px no-repeat;
-	height: 22px;
-	width: 16px;
-	margin-left: -16px;
-	float: left;
-	cursor: pointer;
+  background: url('../img/treeview.png') -64px -18px no-repeat;
+  height: 22px;
+  width: 16px;
+  margin-left: -16px;
+  float: left;
+  cursor: pointer;
 }
 /* fix for IE6 */
 * html .hitarea {
-	display: inline;
-	float:none;
+  display: inline;
+  float:none;
 }
 .treeview li { 
-	margin: 0;
-	padding: 3px 0pt 3px 16px;
+  margin: 0;
+  padding: 3px 0pt 3px 16px;
 }
 .treeview a.selected { color: #FFFF00; }
 .ski .treeview a.selected { color: #0099FF; }

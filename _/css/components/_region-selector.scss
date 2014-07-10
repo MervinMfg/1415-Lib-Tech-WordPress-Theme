@@ -1,0 +1,102 @@
+/* ==========================================================================
+   COMPONENTS/_REGION-SELECTOR.SCSS
+   ========================================================================== */
+
+/* Region Selector Styles
+-------------------------------------------------------------------------------*/
+#region-selector {
+	visibility: hidden;
+	background: #000;
+   	background: rgba(0, 0, 0, 0.92); 
+	width: 100%;
+	height: 100%;
+	min-height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	@include vendorize(opacity, 0);
+	@include transition(opacity, 500ms);
+
+	&.visible {
+		visibility: visible;
+		@include vendorize(opacity, 1);
+	}
+	.choose-region {
+		padding: 10px;
+
+		.h1 {
+			padding: 10px;
+		}
+
+		ul {
+			li {
+				padding: 10px;
+				clear: both;
+
+				.flag {
+					width: 35%;
+					float: left;
+				}
+				.copy {
+					width: 65%;
+					float: left;
+
+					h3 {
+						padding: 0 0 5px 20px;
+						line-height: 1em;
+					}
+					p {
+						padding-left: 20px;
+					}
+				}
+				&:hover,
+				&:focus {
+					cursor: pointer;
+					background: #333333;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width : $breakpoint-xsmall) {
+	// Phone landscape Styles
+	#region-selector {
+		.width-fix {
+			max-width: 940px;
+			display: table;
+			height: 100%;
+			margin: 0 auto;
+		}
+		.choose-region {
+			display: table-cell;
+			vertical-align: middle;
+
+			ul li {
+				width: 33.33%;
+				padding: 0;
+				float: left;
+				clear: none;
+				text-align: center;
+
+				.flag {
+					width: 100%;
+					padding: 10px 10px 0 10px;
+
+					img {
+						width: 100%;
+					}
+				}
+				.copy {
+					width: 100%;
+					padding: 0 10px 10px 10px;
+
+					h3, p {
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,23 +1,25 @@
 module.exports = function (grunt) {
     // VARIABLES
-    var mainLibJS = [
-        '_/js/lib/jquery.fitvids.js',
+    var headerScripts = [
+        '_/js/lib/modernizr-2.7.2.js'
+    ];
+    var footerScripts = [
+        '_/js/lib/jquery-1.11.1.js',
+        '_/js/lib/jquery.fitvids-1.1.0.js',
         '_/js/lib/jquery.bxslider.js',
         '_/js/lib/jquery.magnific-popup.js',
         '_/js/lib/jquery.treeview.js',
         '_/js/lib/jquery.isotope.js',
-        '_/js/lib/froogaloop.js'
+        '_/js/lib/jquery.unveil.js',
+        '_/js/lib/froogaloop.js',
+        '_/js/libtech.main.js',
+        '_/js/components/*.js'
     ];
-    var snowboardbuilderLibJS = [
+    var diyBuilderScripts = [
         '_/js/lib/GSAP/utils/Draggable.js',
         '_/js/lib/GSAP/plugins/ThrowPropsPlugin.js',
-        '_/js/lib/GSAP/TweenMax.js'
-    ];
-    var mainLibCSS = [
-        '_/css/lib/jquery.bxslider.css',
-        '_/css/lib/jquery.isotope.css',
-        '_/css/lib/jquery.magnific-popup.css',
-        '_/css/lib/jquery.treeview.css'
+        '_/js/lib/GSAP/TweenMax.js',
+        '_/js/libtech.snowboardbuilder.js'
     ];
     // PROJECT CONFIG
     grunt.initConfig({
@@ -25,63 +27,66 @@ module.exports = function (grunt) {
         sass: {
             dev: {
                 files: {
-                    'style.dev.css': 'style.scss',
-                    '_/css/libtech.snowboardbuilder.dev.css': '_/css/libtech.snowboardbuilder.scss'
+                    '_/css/libtech.main.css': '_/css/libtech.main.scss',
+                    '_/css/libtech.snowboardbuilder.css': '_/css/libtech.snowboardbuilder.scss'
                 },
                 options: {
                     style: 'expanded',
+                    sourcemap: true,
+                    trace: true,
                     debugInfo: true,
                     lineNumbers: true
                 }
             },
-            dist: {
+            prod: {
                 files: {
-                    'style.css': 'style.scss',
+                    '_/css/libtech.main.min.css': '_/css/libtech.main.scss',
                     '_/css/libtech.snowboardbuilder.min.css': '_/css/libtech.snowboardbuilder.scss'
                 },
                 options: {
                     style: 'compact',
-                    debug: false
+                    sourcemap: false,
+                    trace: false,
+                    debugInfo: false,
+                    lineNumbers: false
                 }
             }
         },
         concat: {
-            dist: {
+            prod: {
                 files: {
-                    '_/css/lib/libtech.main.lib.min.css': mainLibCSS,
-                    '_/js/lib/libtech.main.lib.min.js': mainLibJS,
-                    '_/js/lib/libtech.snowboardbuilder.lib.min.js': snowboardbuilderLibJS,
+                    '_/js/libtech.header.min.js': headerScripts,
+                    '_/js/libtech.footer.min.js': footerScripts,
+                    '_/js/libtech.footer-diy-builder.min.js': diyBuilderScripts
                 }
             },
         },
         cssmin: {
-            dist: {
+            prod: {
                 options: {
-                    banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) 2012, <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
+                    banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
                 },
                 files: {
-                    'style.min.css': ['style.css'],
-                    '_/css/lib/libtech.main.lib.min.css': ['_/css/lib/libtech.main.lib.min.css'],
+                    '_/css/libtech.main.min.css': ['_/css/libtech.main.min.css'],
                     '_/css/libtech.snowboardbuilder.min.css': ['_/css/libtech.snowboardbuilder.min.css']
                 }
             }
         },
         uglify: {
             options: {
-                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) 2012, <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
+                banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
             },
-            dist: {
+            prod: {
                 files: {
-                    '_/js/lib/libtech.main.lib.min.js': ['_/js/lib/libtech.main.lib.min.js'],
-                    '_/js/libtech.main.min.js': ['_/js/libtech.main.js'],
-                    '_/js/lib/libtech.snowboardbuilder.lib.min.js': ['_/js/lib/libtech.snowboardbuilder.lib.min.js'],
-                    '_/js/libtech.snowboardbuilder.min.js': ['_/js/libtech.snowboardbuilder.js']
+                    '_/js/libtech.header.min.js': ['_/js/libtech.header.min.js'],
+                    '_/js/libtech.footer.min.js': ['_/js/libtech.footer.min.js'],
+                    '_/js/libtech.footer-diy-builder.min.js': ['_/js/libtech.footer-diy-builder.min.js']
                 }
             }
         },
         watch: {
             markup: {
-                files: ['*.php', 'page-templates/*.php'],
+                files: ['*.php', 'page-templates/*.php', '_/inc/**/*.php'],
                 options: {
                     livereload: true,
                 }
@@ -93,7 +98,7 @@ module.exports = function (grunt) {
                 }
             },
             sass: {
-                files: ['*.scss', '_/css/*.scss', '_/css/**/*.scss'],
+                files: ['_/css/*.scss', '_/css/**/*.scss'],
                 tasks: ['sass'],
                 options: {
                     livereload: true
@@ -110,39 +115,34 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     // GRUNT TASKS
     grunt.registerTask('run', ['sass:dev', 'scriptblock']);//default
-    grunt.registerTask('build', ['sass:dist', 'concat', 'cssmin', 'uglify']);
+    grunt.registerTask('build', ['sass:prod', 'concat', 'cssmin', 'uglify']);
     // Automate creation of scriptblock to be loaded in footer
-    grunt.registerTask('scriptblock', function(){
-        var html, files, htmlMain, htmlCSS;
-        // GENERATE MAIN SITE SCRIPT INCLUDES
-        html = htmlCSS = '<?php // AUTO-GENERATED BY GRUNT. To change this block edit Gruntfile.js, not this file! ?>\n';
-        mainLibJS.forEach(function(path) {
-            files = grunt.file.expand(path);
-            files.forEach(function(file){
-                html += '<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/' + file + '"></script>\n\t';
+    grunt.registerTask('scriptblock', function () {
+        var scriptHeader, scriptFooter, scriptDIYBuilder, headerFiles, footerFiles, diyBuilderFiles;
+        scriptHeader = scriptFooter = scriptDIYBuilder = '<?php // AUTO-GENERATED BY GRUNT. To change this block edit Gruntfile.js, not this file! ?>\n';
+        // generate header script includes
+        headerScripts.forEach(function (path) {
+            headerFiles = grunt.file.expand(path);
+            headerFiles.forEach(function (file) {
+                scriptHeader += '\t<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/' + file + '"></script>\n';
             });
+            grunt.file.write('_/inc/header-scripts.php', scriptHeader);
         });
-        htmlMain = html;
-        htmlMain += '<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.main.js"></script>\n';
-        grunt.file.write('_/inc/js-main.php', htmlMain);
-        // GENERATE SNOWBOARD BUIDLER SCRIPT INCLUDES
-        snowboardbuilderLibJS.forEach(function(path) {
-            files = grunt.file.expand(path);
-            files.forEach(function(file){
-                html += '<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/' + file + '"></script>\n\t';
+        // generate footer script includes
+        footerScripts.forEach(function (path) {
+            footerFiles = grunt.file.expand(path);
+            footerFiles.forEach(function (file) {
+                scriptFooter += '\t<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/' + file + '"></script>\n';
             });
+            grunt.file.write('_/inc/footer-scripts.php', scriptFooter);
         });
-        html += '<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.main.js"></script>\n\t';
-        html += '<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.snowboardbuilder.js"></script>\n';
-        grunt.file.write('_/inc/js-snowboardbuilder.php', html);
-        // GENERATE MAIN CSS INCLUDES
-        mainLibCSS.forEach(function(path) {
-            files = grunt.file.expand(path);
-            files.forEach(function(file){
-                htmlCSS += '<link href="<?php echo get_template_directory_uri(); ?>/' + file + '" rel="stylesheet" type="text/css" />' + "\n\t";
+        // generate diy builder script includes
+        diyBuilderScripts.forEach(function (path) {
+            diyBuilderFiles = grunt.file.expand(path);
+            diyBuilderFiles.forEach(function (file) {
+                scriptDIYBuilder += '\t<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/' + file + '"></script>\n';
             });
+            grunt.file.write('_/inc/footer-scripts-diy-builder.php', scriptDIYBuilder);
         });
-        htmlCSS += '<link href="<?php echo get_template_directory_uri(); ?>/style.dev.css" rel="stylesheet" type="text/css" />\n';
-        grunt.file.write('_/inc/css-main.php', htmlCSS);
     });
 };
