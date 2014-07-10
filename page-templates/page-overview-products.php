@@ -9,10 +9,11 @@ get_header();
         $post_objects = get_field('libtech_featured_products');
         if( $post_objects ):
         ?>
-        <div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-        <section class="featured-product-slider bg-product-<?php echo $GLOBALS['sport']; ?> <?php echo strtolower(get_the_title()); ?>">
+        <div class="<?php if (get_the_title() == "Outerwear") echo 'bg-product-outerwear-top '; ?>bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
+        <section class="featured-product-slider <?php if (get_the_title() == "Outerwear") echo 'bg-product-outerwear '; ?>bg-product-<?php echo $GLOBALS['sport']; ?> <?php echo strtolower(get_the_title()); ?>">
             <div class="section-content">
                 <ul class="product-listing bxslider">
+
                     <?php if($post_objects[0]->post_type == 'libtech_snowboards') : ?>
                     <li>
                         <div class="product-image">
@@ -28,15 +29,33 @@ get_header();
                             <a href="/snowboarding/snowboard-builder/" class="buy build h4">Build Your Own!</a>
                         </div>
                     </li>
+                    <?php endif; ?>
+
+                    <?php if($post_objects[0]->post_type == 'libtech_outerwear') : ?>
+                    <li class="storm-factory-slide">
+                        <div class="product-image">
+                            <a href="/storm-factory/"><img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-jesse-burtner-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" /></a>
+                        </div>
+                        <div class="product-copy">
+                            <div class="title h2">Storm Factory</div>
+                            <p class="slogan h4">Storms don't suck... They blow!</p>
+                            <div class="description">
+                                <p>Huge winter storms generated in the North Pacific's Aleutian Low "Storm Factory" relentlessly pound the entire western half of North America delivering snow from the coastal ranges all the way to the rockies. Storm Factory outerwear is inspired by a lifetime building and riding boards directly in the Cyclones's path. Storms dont suck, they blow!</p>
+                            </div>
+                            <div class="price"></div>
+                            <a href="/storm-factory/" class="buy h4">Storm Factory</a>
+                        </div>
+                    </li>
+                    <?php endif; ?>
+
                     <?php
-                    endif;
                     // get each related product
                     foreach( $post_objects as $post_object):
                         $postType = $post_object->post_type;
                         // get variable values
                         $imageID = get_field('libtech_product_image', $post_object->ID);
                         // check which image size to use based on post type
-                        if($postType == "libtech_snowboards" || $postType == "libtech_nas" || $postType == "libtech_skateboards") {
+                        if($postType == "libtech_snowboards" || $postType == "libtech_nas" || $postType == "libtech_skateboards" || $postType == "libtech_outerwear") {
                             $productImage = wp_get_attachment_image_src($imageID, 'square-large');
                         } else {
                             $productImage = wp_get_attachment_image_src($imageID, 'square-medium');
@@ -91,7 +110,7 @@ get_header();
                 break;
             case "Outerwear":
                 $postType = "libtech_outerwear";
-                $imageSize = "square-medium";
+                $imageSize = "square-large";
                 break;
             case "Apparel":
                 $postType = "libtech_apparel";
@@ -303,6 +322,9 @@ get_header();
                     }
                     break;
                 case "libtech_outerwear":
+                    // set waterproofing
+                    $productArray['waterproof'] = str_replace('/', '_', get_field('libtech_outerwear_waterproof'));
+                    $filterList .= " " . $productArray['waterproof'];
                     if(get_field('libtech_outerwear_variations')):
                         while(the_repeater_field('libtech_outerwear_variations')):
                             $variationSize = get_sub_field('libtech_outerwear_variations_size');
@@ -623,6 +645,35 @@ get_header();
                             <li data-filter=".jackets">Jackets</li>
                             <li data-filter=".pants">Pants</li>
                             <li data-filter=".layers">Layers</li>
+                        </ul>
+                    </li>
+                    <li class="filters outerwear-waterproof">
+                        <p class="select-title">Waterproof</p>
+                        <p class="selected-items">Select</p>
+                        <ul>
+                            <?php
+                            $waterproofArray = Array();
+                            foreach ($productsArray as $product):
+                                if (in_array($product['waterproof'], $waterproofArray) == false) {
+                                    array_push($waterproofArray, $product['waterproof']);
+                                }
+                            endforeach;
+                            array_multisort($waterproofArray, SORT_ASC);
+                            foreach ($waterproofArray as $waterproof):
+                            ?>
+                            <li data-filter=".<?php echo $waterproof; ?>"><?php echo str_replace('_', '/', $waterproof); ?></li>
+                            <?php
+                            endforeach;
+                            ?>
+                        </ul>
+                    </li>
+                    <li class="filters outerwear-fit">
+                        <p class="select-title">Fit</p>
+                        <p class="selected-items">Select</p>
+                        <ul>
+                            <li data-filter=".ripper-fit">Ripper</li>
+                            <li data-filter=".true-action-fit">True Action</li>
+                            <li data-filter=".street-fit">Street</li>
                         </ul>
                     </li>
                     <li class="filters pricing">

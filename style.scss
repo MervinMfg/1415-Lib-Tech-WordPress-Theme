@@ -205,7 +205,7 @@ ol.commentlist li.thread-odd {}
     src: url('_/fonts/Duke-Fill/Duke-Fill.eot?#iefix') format('embedded-opentype'),
          url('_/fonts/Duke-Fill/Duke-Fill.woff') format('woff'),
          url('_/fonts/Duke-Fill/Duke-Fill.ttf') format('truetype'),
-         url('_/fonts/Duke-Fill/Duke-Fill.svg#Duke-Fill') format('svg');
+         url('_/fonts/Duke-Fill/Duke-Fill.svg#dukefill') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -215,7 +215,7 @@ ol.commentlist li.thread-odd {}
     src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.eot?#iefix') format('embedded-opentype'),
          url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.woff') format('woff'),
          url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.ttf') format('truetype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.svg#PT-Sans-Narrow') format('svg');
+         url('_/fonts/PT-Sans/PT-Sans-Narrow-Regular.svg#pt_sans_narrowregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -225,7 +225,7 @@ ol.commentlist li.thread-odd {}
     src: url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.eot?#iefix') format('embedded-opentype'),
          url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.woff') format('woff'),
          url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.ttf') format('truetype'),
-         url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.svg#PT-Sans-Narrow') format('svg');
+         url('_/fonts/PT-Sans/PT-Sans-Narrow-Bold.svg#pt_sans_narrowbold') format('svg');
     font-weight: bold;
     font-style: normal;
 }
@@ -351,12 +351,12 @@ a.selected {
 		display: none;
 	}
 }
-.bg1, .bg2, .bg3, .bg-product-snow, .bg-product-ski, .bg-product-surf, .bg-product-skate, .bg-product-details {
+.bg1, .bg2, .bg3, .bg-product-snow, .bg-product-ski, .bg-product-surf, .bg-product-skate, .bg-product-details, .bg-product-outerwear {
 	background-color: #000;
 	background-position: center top;
 	padding-bottom: 50px;
 }
-.bg1-top, .bg2-top, .bg3-top, .bg-product-snow-top, .bg-product-ski-top, .bg-product-surf-top, .bg-product-skate-top, .bg-product-details-top {
+.bg1-top, .bg2-top, .bg3-top, .bg-product-snow-top, .bg-product-ski-top, .bg-product-surf-top, .bg-product-skate-top, .bg-product-details-top, .bg-product-outerwear-top {
 	clear: both;
 	width: 100%;
 	height: 50px;
@@ -409,6 +409,12 @@ a.selected {
 }
 .bg-product-details-top {
 	background-image: url('_/img/bg-product-details-top.png');
+}
+.bg-product-outerwear {
+	background-image: url('_/img/bg-product-outerwear.jpg');
+}
+.bg-product-outerwear-top {
+	background-image: url('_/img/bg-product-outerwear-top.png');
 }
 .us-price, .ca-price {
 	color: #fff;
@@ -1826,7 +1832,6 @@ body.international .shopping-cart .section-content {
 	&.accessories .section-content ul.product-listing > li .product-image img,
 	&.luggage .section-content ul.product-listing > li .product-image img,
 	&.apparel .section-content ul.product-listing > li .product-image img,
-	&.outerwear .section-content ul.product-listing > li .product-image img,
 	&.bindings .section-content ul.product-listing > li .product-image img {
 		width: 90%;
 		margin-left: 5%;
@@ -1835,6 +1840,20 @@ body.international .shopping-cart .section-content {
 	&.luggage .section-content ul.product-listing > li .product-copy .description,
 	&.accessories .section-content ul.product-listing > li .product-copy .description {
 		display: none;
+	}
+	&.outerwear .section-content ul.product-listing > li.storm-factory-slide .product-copy .description {
+		display: block;
+	}
+	&.outerwear .section-content ul.product-listing > li .product-copy {
+		.title,
+		.slogan,
+		.description,
+		.price .us-price,
+		.price .us-price span,
+		.price .ca-price,
+		.price .ca-price span {
+			color: #fff;
+		}
 	}
 }
 .international .featured-product-slider .section-content ul.product-listing > li .product-copy {
@@ -1870,7 +1889,6 @@ body.international .shopping-cart .section-content {
 			}
 			&.bindings li.product-item img,
 			&.surfboards li.product-item img,
-			&.outerwear li.product-item img,
 			&.apparel li.product-item img,
 			&.accessories li.product-item img,
 			&.luggage li.product-item img {
@@ -2065,6 +2083,20 @@ body.international .shopping-cart .section-content {
 
 			& > li {
 				width: 7.35em;
+			}
+		}
+		&.outerwear-waterproof > ul {
+			right: 0;
+
+			& > li {
+				width: 4.5em;
+			}
+		}
+		&.outerwear-fit > ul {
+			right: 0;
+
+			& > li {
+				width: 6em;
 			}
 		}
 		&:hover,
@@ -2559,6 +2591,13 @@ body.international .shopping-cart .section-content {
 				margin: 0 0 5px 0;
 			}
 		}
+		.wp-caption {
+			width: auto !important;
+			
+			img {
+				height: auto;
+			}
+		}
 	}
 	.product-awards {
 		padding-bottom: 20px;
@@ -2666,6 +2705,20 @@ body.international .shopping-cart .section-content {
 				}
 			}
 		}
+		.outerwear-fit {
+			padding-top: 20px;
+
+			li {
+				padding-bottom: 20px;
+
+				h3 {
+					margin-bottom: 10px;
+				}
+				a {
+					text-transform: uppercase;
+				}
+			}
+		}
 	}
 	.product-tech-major {
 		/* check .tech-major */
@@ -2729,6 +2782,84 @@ body.international .shopping-cart .section-content {
 	}
 	.product-tech-minor {
 		/* check .tech-minor */
+	}
+}
+.snow .product-extras .product-tech-major ul strong {
+	color: $snowColor;
+}
+.ski .product-extras .product-tech-major ul strong {
+	color: $skiColor;
+}
+// Select correct fit on outerwear details
+.snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3,
+.snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p,
+.snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3,
+.snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p,
+.snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3,
+.snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p {
+	color: $snowColor;	
+}
+.ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3,
+.ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p,
+.ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3,
+.ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p,
+.ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3,
+.ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p {
+	color: $skiColor;	
+}
+// OUTERWEAR SPEC TABLE DISPLAY
+// BASED ON OUTERWEAR TYPE
+.single-libtech_outerwear .product-extras {
+	&.jackets .product-specs,
+	&.layers .product-specs {
+		table {
+			thead th {
+				&:nth-child(2), &:nth-child(3) {
+					display: table-cell;
+				}
+				&:nth-child(4), &:nth-child(5) {
+					display: none;
+				}
+			}
+			tbody tr td {
+				&:nth-child(2), &:nth-child(3) {
+					display: table-cell;
+				}
+				&:nth-child(4), &:nth-child(5) {
+					display: none;
+				}
+			}
+		}
+	}
+	&.pants .product-specs {
+		table {
+			thead th {
+				&:nth-child(2), &:nth-child(3) {
+					display: none;
+				}
+				&:nth-child(4), &:nth-child(5) {
+					display: table-cell;
+				}
+			}
+			tbody tr td {
+				&:nth-child(2), &:nth-child(3) {
+					display: none;
+				}
+				&:nth-child(4), &:nth-child(5) {
+					display: table-cell;
+				}
+			}
+		}
+	}
+	.product-tech-major {
+		ul {
+			list-style: square;
+			padding-left: 20px;
+
+			strong {
+				text-transform: uppercase;
+			}
+		}
 	}
 }
 .ski .product-extras .product-mobile-nav li a {
@@ -2800,6 +2931,14 @@ body.international .shopping-cart .section-content {
 		}
 	}
 }
+
+
+
+
+
+
+
+
 .product-replated-top {
 	display: none;
 }
@@ -2991,6 +3130,9 @@ body.international .shopping-cart .section-content {
 			}
 		}
 	}
+}
+.single-libtech_outerwear .tech-minor > ul > li > img {
+	width: 100%;
 }
 .tech-faq {
 	.section-content {
@@ -4554,6 +4696,12 @@ body.skate .ripper-videos .section-content .featured-videos {
 			}
 		}
 	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 50%;
+		display: block;
+		float: left;
+		padding-right: 20px;
+	}
 	.tech-overview .section-content .tech-sport {
 		img {
 			width: 50%;
@@ -4820,6 +4968,46 @@ body.skate .ripper-videos .section-content .featured-videos {
 			clear: both;
 		}
 	}
+	.single-libtech_outerwear .product-extras {
+		.product-desc-awards {
+			width: 60%;
+			float: left;
+		}
+		.product-tech-major {
+			width: 40%;
+			float: right;
+			clear: none;
+
+			h2 {
+				padding-left: 20px;
+			}
+			ul {
+				padding-left: 40px;
+			}
+		}
+		.product-specs {
+			width: 100%;
+			float: none;
+
+			h2 {
+				margin-left: 0;
+			}
+			table {
+				width: 60%;
+				float: left;
+				margin-left: 0;
+			}
+			.outerwear-fit {
+				width: 40%;
+				float: left;
+				padding-top: 0;
+
+				li {
+					padding-left: 20px;
+				}
+			}
+		}
+	}
 	.product-video {
 		h2 {
 			width: 35%;
@@ -4871,7 +5059,6 @@ body.skate .ripper-videos .section-content .featured-videos {
 			}
 		}
 	}
-
 	.single-libtech_surfboards .tech-major ul li {
 		.tech-image {
 			width: 30%;
@@ -4880,8 +5067,6 @@ body.skate .ripper-videos .section-content .featured-videos {
 			width: 70%;
 		}
 	}
-
-
 	.tech-faq .faq-list ul {
 		width: 50%;
 		float: left;
@@ -5290,6 +5475,25 @@ body.skate .ripper-videos .section-content .featured-videos {
 			clear: none;
 		}
 	}
+	.single-libtech_outerwear .product-extras {
+		.product-desc-awards {
+			width: 60%;
+			float: left;
+
+			.product-description {
+				width: 100%;
+				clear: none;
+
+				p {
+					padding-right: 0;
+				}
+			}
+			.product-awards {
+				width: 100%;
+				float: none;
+			}
+		}
+	}
 	.product-related ul li {
 		width: 20%;
 
@@ -5345,6 +5549,11 @@ body.skate .ripper-videos .section-content .featured-videos {
 			vertical-align: top;
 			text-align: left;
 		}
+	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 33.3%;
+		display: block;
+		float: left;
 	}
 	.tech-surf {
 		h2 {
@@ -5538,6 +5747,32 @@ body.skate .ripper-videos .section-content .featured-videos {
 			}
 		}
 	}
+	// OUTERWEAR SPEC TABLE DISPLAY
+	// SHOW WHOLE TABLE
+	.single-libtech_outerwear .product-extras {
+		&.jackets .product-specs,
+		&.layers .product-specs,
+		&.pants .product-specs {
+			table {
+				thead th {
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5) {
+						display: table-cell;
+					}
+				}
+				tbody tr td {
+					&:nth-child(2),
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5) {
+						display: table-cell;
+					}
+				}
+			}
+		}
+	}
 	/* Dealer Locator */
 	.dealer-locator .section-content {
 		.dealer-copy {
@@ -5618,7 +5853,6 @@ body.skate .ripper-videos .section-content .featured-videos {
 				}
 			}
 		}
-
 		.product-tech-construction {
 			width: 60%;
 			float: right;
@@ -5660,6 +5894,12 @@ body.skate .ripper-videos .section-content .featured-videos {
 			}
 		}
 	}
+	.single-libtech_outerwear .product-extras {
+		.product-desc-awards-specs {
+			width: auto;
+			float: none;
+		}
+	}
 	.product-related ul li {
 		width: 16.66%;
 
@@ -5676,6 +5916,11 @@ body.skate .ripper-videos .section-content .featured-videos {
 			vertical-align: top;
 			text-align: left;
 		}
+	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 25%;
+		display: block;
+		float: left;
 	}
 	/* Dealer Locator */
 	.dealer-locator .section-content {

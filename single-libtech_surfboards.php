@@ -246,12 +246,11 @@ Template Name: Surfboard Detail
 					<img src="" class="surfboard-bottom" />
 					<div class="clearfix"></div>
 				</div>
-				
 			</div><!-- END .section-content -->
 		</section><!-- END .product-zoom -->
 		<div class="bg2-top"></div>
 		<section class="product-extras bg2 info">
-			<div class="section-content">
+			<div class="section-content clearfix">
 				<div class="product-mobile-nav">
 					<ul>
 						<li><a href="#info" class="h3 selected" id="info">Info</a></li>
@@ -392,43 +391,52 @@ Template Name: Surfboard Detail
 					</ul>
 					<div class="clearfix"></div>
 				</div><!-- END .product-tech-major -->
-				<div class="product-tech-minor tech-minor">
+
+				<?php // display minor technology if there is any
+				$technology = get_field('libtech_product_technology');
+				if( $technology ):
+					$technologyMajor = Array();
+					$technologyMinor = Array();
+					foreach( $technology as $techItem):
+						$title = get_the_title($techItem->ID);
+						$content = apply_filters('the_content', $techItem->post_content);
+						$techType = get_field("libtech_technology_type", $techItem->ID);
+						$videoID = get_field("libtech_technology_video", $techItem->ID);
+						$imageID = get_field("libtech_technology_icon", $techItem->ID);
+						$imageFile = wp_get_attachment_image_src($imageID, 'full');
+						if ($techType == "Major") {
+							array_push($technologyMajor, Array($title, $content, $videoID));
+						} else {
+							array_push($technologyMinor, Array($title, $content, $imageFile));
+						}
+					endforeach;
+					// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
+					if (count($technologyMinor) > 0) :
+				?>
+	        	<div class="product-tech-minor tech-minor">
 					<h2>Ingredients</h2>
 					<ul>
-						<?php
-						$args = array( 'post_type' => 'libtech_technology', 'posts_per_page' => -1, 'orderby' => 'menu_order', 'order' => 'ASC' );
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							// check if item is minor
-							if(get_field("libtech_technology_type") == "Minor"):
-								// check if product is related to the tech
-								$relatedItems = get_field('libtech_technology_related_products');
-								if( $relatedItems ):
-									foreach( $relatedItems as $relatedItem ):
-										if( $relatedItem->ID == $thePostID ):
-											$imageID = get_field("libtech_technology_icon");
-											$imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
-						?>
+						<?php foreach( $technologyMinor as $techItem): ?>
 
 						<li>
 							<div class="tech-pad">
-								<h4><img src="<?php echo $imageFile[0]; ?>" /><span><?php the_title(); ?></span></h4>
+								<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
 								<div class="tech-copy">
-									<?php the_content(); ?>
+									<?php echo $techItem[1]; ?>
 								</div>
 							</div>
 						</li>
 
-						<?php
-										endif;
-									endforeach;
-								endif;
-							endif;
-						endwhile;
-						wp_reset_query();
-						?>
+						<?php endforeach; ?>
 					</ul>
+					<div class="clearfix"></div>
 				</div><!-- END .product-tech-minor -->
+				
+				<?
+					endif; // end tech minor check
+				endif;// end technology check
+				?>
+
 			</div><!-- END .section-content -->
 		</section><!-- END .product-extras -->
 

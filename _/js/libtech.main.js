@@ -832,6 +832,10 @@ LIBTECH.main = {
 				techConstructionSlider.reloadSlider();
 			}
 		});
+		// init gallery
+		if ($('.gallery')) {
+			self.utilities.galleryInit();
+		}
 		// check for browser resize and see if desktop zoom should occur
 		$(window).on('resize.productZoom', function () {
 			if (self.utilities.getMediaWidth() >= 600) { // if not mobile, trigger zoom on click
