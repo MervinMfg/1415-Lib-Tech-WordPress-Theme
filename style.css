@@ -1237,8 +1237,8 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   header .logo-wrapper #logo { display: inline-block; }
   header .nav-main { margin-top: -40px; }
   header .nav-main li { padding: 0; }
-  header .nav-main li.skate { padding: 0 130px 0 40px; }
-  header .nav-main li.snow { padding: 0 40px 0 130px; }
+  header .nav-main li.ski { padding: 0 130px 0 40px; }
+  header .nav-main li.surf { padding: 0 40px 0 130px; }
   header .nav-product ul li { padding: 5px 10px; display: inline-block; }
   header .nav-sub { font-size: 1.125em; /* 18 / 16 */ }
   header .nav-sub ul { padding-bottom: 5px; }

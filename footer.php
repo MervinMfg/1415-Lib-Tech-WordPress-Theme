@@ -94,20 +94,19 @@
 					<div class="sports">
 						<p class="h2">Sports</p>
 						<ul>
-							<li><a href="/surfing/">Surf</a></li>
-							<li><a href="/skateboarding/">Skate</a></li>
 							<li><a href="/snowboarding/">Snow</a></li>
 							<li><a href="/skiing/">Ski</a></li>
+							<li><a href="/surfing/">Surf</a></li>
+							<li><a href="/skateboarding/">Skate</a></li>
 						</ul>
 					</div>
 					<div class="shop">
 						<p class="h2">Shop</p>
 						<ul>
-							<li><a href="/surfboards/">Waterboards</a></li>
-							<li><a href="/skateboards/">Skateboards</a></li>
 							<li><a href="/snowboards/">Snowboards</a></li>
-							<li><a href="/skis/">NAS</a></li>
-							<li><a href="/bindings/">Bindings</a></li>
+							<li><a href="/skis/">Skis</a></li>
+							<li><a href="/surfboards/">Surfboards</a></li>
+							<li><a href="/skateboards/">Skateboards</a></li>
 							<li><a href="/outerwear/">Outerwear</a></li>
 							<li><a href="/apparel/">Apparel</a></li>
 							<li><a href="/accessories/">Accessories</a></li>
