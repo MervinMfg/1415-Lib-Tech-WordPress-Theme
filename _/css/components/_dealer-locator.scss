@@ -1,0 +1,66 @@
+/* ==========================================================================
+   COMPONENTS/_DEALER-LOCATOR.SCSS
+   ========================================================================== */
+
+.dealer-locator {
+	.section-content {
+		padding: 0 20px;
+
+		h1 {
+			margin-bottom: 20px;
+		}
+		.dealer-copy {
+			p {
+				margin-bottom: 10px;
+			}
+		}
+		iframe {
+			display: none;
+			width: 920px;
+			margin-top: 10px;
+		}
+		.iframe-fallback {
+			margin-top: 40px;
+			p {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+.dealer-locator-map {
+	width: 920px;
+	margin: 0 auto;
+}
+@media screen and (min-width: $breakpoint-large) {
+	.dealer-locator .section-content {
+		iframe {
+			display: block;
+		}
+		.iframe-fallback {
+			display: none;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.dealer-locator .section-content {
+		.dealer-copy {
+			float: right;
+			width: 20%;
+		}
+		iframe {
+			width: 79%;
+			margin-top: 0;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxlarge) {
+	.dealer-locator .section-content {
+		.dealer-copy {
+			width: 30%;
+
+		}
+		iframe {
+			width: 70%;
+		}
+	}
+}

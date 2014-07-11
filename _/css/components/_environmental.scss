@@ -1,0 +1,102 @@
+/* ==========================================================================
+   COMPONENTS/_ENVIRONMENTAL.SCSS
+   ========================================================================== */
+
+.enviro-video {
+	.section-content {
+		padding: 0 20px;
+
+		h1 {
+			margin-bottom: 20px;
+		}
+		.video-player {
+			margin-bottom: 20px;
+		}
+		.video-copy {
+			h3 {
+				margin-bottom: .5em;
+			}
+			p {
+				margin-bottom: 1em;
+			}
+		}
+	}
+}
+.enviro-content {
+	.section-content {
+		padding: 0 20px;
+
+		.enviro-bullets {
+			list-style: square;
+			font-size: 1em;
+			margin-bottom: 40px;
+
+			li {
+				margin-left: 25px;
+				margin-bottom: 10px;
+			}
+		}
+		.enviro-more {
+			img {
+				margin-bottom: 10px;
+			}
+			h3 {
+				margin-bottom: .5em;
+			}
+			p {
+				margin-bottom: 1em;
+			}
+		}
+		.enviro-norm {
+			display: none;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.enviro-video .section-content {
+		.video-player {
+			width: 50%;
+			float: left;
+		}
+		.video-copy {
+			width: 50%;
+			float: left;
+
+			h3 {
+				padding-left: 20px;
+			}
+			p {
+				padding-left: 20px;
+			}
+		}
+	}
+	.enviro-content .section-content {
+		.enviro-bullets {
+			width: 50%;
+			float: left;
+		}
+		.enviro-more {
+			width: 50%;
+			float: right;
+
+			img {
+				padding-left: 20px;
+			}
+			h3 {
+				padding-left: 20px;
+			}
+			p {
+				padding-left: 20px;
+			}
+		}
+		.enviro-norm {
+			display: block;
+			float: left;
+			width: 50%;
+
+			img {
+				height: auto;
+			}
+		}
+	}
+}

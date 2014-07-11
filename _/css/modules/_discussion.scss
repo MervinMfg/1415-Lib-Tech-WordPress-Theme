@@ -1,0 +1,29 @@
+/* ==========================================================================
+   MODULES/_DISCUSSION.SCSS
+   ========================================================================== */
+
+.discussion-top {
+	display: none;
+}
+.discussion {
+	display: none;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	h2 {
+		padding-bottom: 20px;
+	}
+	.discussion-thread {
+		.fb_iframe_widget,
+		.fb_iframe_widget span,
+		.fb_iframe_widget iframe {
+			width: 100% !important;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.discussion-top,
+	.discussion {
+		display: block;
+	}
+}

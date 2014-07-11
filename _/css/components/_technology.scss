@@ -1,0 +1,339 @@
+/* ==========================================================================
+   COMPONENTS/_TECHNOLOGY.SCSS
+   ========================================================================== */
+
+.tech-overview {
+	.section-content {
+		padding: 0 20px;
+
+		.tech-header {
+			margin-bottom: 20px;
+		}
+		.tech-sport {
+			clear: both;
+			padding-bottom: 20px;
+
+			h1 {
+				margin-bottom: 20px;
+			}
+			h3 {
+				margin-bottom: 10px;
+			}
+			img {
+				width: 100%;
+				margin-bottom: 10px;
+			}
+			.tech-copy {
+				h3, p {
+					margin-bottom: 10px;
+				}
+				h3 {
+					font-size: 1em;
+				}
+			}	
+		}
+	}
+}
+.tech-major {
+	.section-content {
+		padding: 0 20px;
+	}
+	h2 {
+		margin-bottom: 10px;
+	}
+	ul {
+		li {
+			margin-bottom: 20px;
+
+			.tech-video,
+			.tech-image {
+				margin-bottom: 10px;
+			}
+			.tech-copy {
+				margin-bottom: 20px;
+
+				h4, h5, p {
+					margin-bottom: 5px;
+				}
+				.tech-found-on {
+					display: none;
+					margin: 10px 0 20px;
+
+					ul li {
+						width: 50%;
+						float: left;
+					}
+				}
+				ul {
+					list-style: square;
+					padding-left: 25px;
+
+					li {
+						margin-bottom: 3px;
+						
+					}
+				}
+			}
+		}
+	}
+}
+.single-libtech_surfboards .tech-major h2 {
+	display: none;
+}
+.single-libtech_bindings .product-extras .product-tech-major,
+.single-libtech_bindings .product-extras.info .product-tech-major,
+.single-libtech_bindings .product-extras.tech .product-tech-major,
+.single-libtech_bindings .product-extras.specs .product-tech-major {
+	display: none;
+}
+.tech-minor {
+	clear: both;
+
+	.section-content {
+		padding: 0 20px;
+	}
+
+	h2 {
+		margin-bottom: 10px;
+	}
+}
+.tech-minor,
+.tech-minor .section-content {
+	& > ul > li {
+		padding-bottom: 20px;
+
+		h4 {
+			img {
+				width: 25%;
+				height: auto;
+				vertical-align: middle;
+				display: inline-block;
+				padding-bottom: 10px;
+			}
+			& > span {
+				width: 75%;
+				padding-left: 20px;
+				display: inline-block;
+			}
+		}
+		.tech-copy {
+			clear: both;
+
+			ul {
+				margin-left: 25px;
+				list-style: square;
+			}
+		}
+	}
+}
+.single-libtech_outerwear .tech-minor > ul > li > img {
+	width: 100%;
+}
+.tech-faq {
+	.section-content {
+		padding: 0 10px;
+	}
+	h2 {
+		padding: 0 10px;
+		margin-bottom: 20px;
+	}
+	.faq-list {
+		width: 100%;
+
+		ul {
+			li {
+				max-width: 100%;
+				width: 100%;
+				padding-right: 10px;
+				padding-left: 10px;
+			}
+		}
+	}
+}
+.tech-surf {
+	.section-content {
+		padding: 0 20px;
+	}
+	h2 {
+		margin-bottom: 20px;
+	}
+	.ddd-image {
+		padding-bottom: 20px;
+
+		img {
+			height: auto;
+		}
+	}
+	ul {
+		list-style: square;
+
+		li {
+			margin: 0 0 10px 20px;
+		}
+	}
+	p {
+		margin-bottom: 10px;
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.tech-minor,
+	.tech-minor .section-content {
+		& > ul > li {
+			width: 48%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+
+			.tech-pad {
+				padding: 10px;
+			}
+		}
+	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 50%;
+		display: block;
+		float: left;
+		padding-right: 20px;
+	}
+	.tech-overview .section-content .tech-sport {
+		img {
+			width: 50%;
+			float: left;
+		}
+		.tech-copy {
+			width: 50%;
+			float: right;
+
+			h3, p {
+				padding-left: 20px;
+			}
+			h3 {
+				font-size: 1.375em;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.tech-major ul li {
+		.tech-video,
+		.tech-image {
+			width: 50%;
+			float: left;
+			margin-bottom: 0;
+		}
+		.tech-copy {
+			width: 50%;
+			float: left;
+			margin-bottom: 0;
+
+			h4, h5, p, ul {
+				margin-left: 20px;
+			}
+			ul {
+				margin-bottom: 0;
+			}
+		}
+	}
+	.single-libtech_surfboards .tech-major ul li {
+		.tech-image {
+			width: 30%;
+		}
+		.tech-copy {
+			width: 70%;
+		}
+	}
+	.tech-faq .faq-list ul {
+		width: 50%;
+		float: left;
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.tech-major ul li {
+		padding-right: 40px;
+	}
+	.tech-major .section-content ul li {
+		margin-bottom: 10px;
+		width: 50%;
+		padding-right: 0;
+		float: left;
+
+		.tech-video {
+			width: 100%;
+			float: none;
+		}
+		&:nth-child(odd) {
+			clear: left;
+
+			.tech-video {
+				padding-right: 20px;
+			}
+		}
+		&:nth-child(even) {
+			clear: right;
+
+			.tech-video {
+				padding-left: 20px;
+			}
+		}
+		.tech-copy {
+			width: 100%;
+			float: none;
+
+			h4, h5, p {
+				margin-left: 20px;
+			}
+			.tech-found-on {
+				display: block;
+			}
+		}
+	}
+	.tech-minor,
+	.tech-minor .section-content {
+		& > ul > li {
+			width: 33%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+		}
+	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 33.3%;
+		display: block;
+		float: left;
+	}
+	.tech-surf {
+		h2 {
+			width: 60%;
+			float: left;
+		}
+		ul {
+			width: 60%;
+			float: left;
+
+			li {
+				padding-right: 20px;
+			}
+		}
+		.ddd-image {
+			width: 40%;
+			float: right;
+			padding-bottom: 0;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxlarge) {
+	.tech-minor,
+	.tech-minor .section-content {
+		& > ul > li {
+			width: 24%;
+			display: inline-block;
+			vertical-align: top;
+			text-align: left;
+		}
+	}
+	.single-libtech_outerwear .tech-minor > ul > li {
+		width: 25%;
+		display: block;
+		float: left;
+	}
+}

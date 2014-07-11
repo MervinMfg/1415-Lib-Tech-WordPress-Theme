@@ -1,0 +1,326 @@
+/* ==========================================================================
+   COMPONENTS/_PRODUCT-OVERVIEW.SCSS
+   ========================================================================== */
+
+.product-overview {
+	.section-content {
+		h1 {
+			padding: 0 0 20px 20px;
+		}
+		ul.product-listing {
+			li.product-item {
+				width: 18%;
+				float: left;
+				overflow: hidden;
+				text-align: center;
+				padding-bottom: 40px;
+
+				img {
+					width: 140%;
+					max-width: 200%;
+					margin-left: -20%;
+					height: auto;
+					padding-bottom: 10px;
+				}
+			}
+			&.bindings li.product-item img,
+			&.surfboards li.product-item img,
+			&.apparel li.product-item img,
+			&.accessories li.product-item img,
+			&.luggage li.product-item img {
+				width: 90%;
+				margin-left: 0;
+			}
+		}
+	}
+}
+.international .product-overview .section-content ul.product-listing li.product-item .price {
+	display: none;
+}
+.product-filtering {
+	display: none;
+	padding: 0 10px 20px 20px;
+	height: 100px;
+
+	& > li.filters {
+		width: 100px;
+		cursor: pointer;
+		float: left;
+	}
+
+	& > li {
+		position: relative;
+		margin-right: 10px;
+
+		& > p {
+			background: #000;
+			color: #fff;
+			padding: 2px 5px;
+			text-transform: uppercase;
+			font-size: .875em; /* 14 / 16 */
+
+			&.select-title {
+				cursor: default;
+			}
+			&.selected-items {
+				background: $snowColor;
+				color: #000;
+				font-weight: 900;
+			}
+		}
+		& > ul {
+			display: none;
+			position: absolute;
+			top: 55px;
+			z-index: 999;
+			padding: 2px;
+
+			li {
+				padding: .1em .25em;
+				text-transform: uppercase;
+				font-size: .875em; /* 14 / 16 */
+				color: #000;
+				float: left;
+				width: 80px;
+				text-align: center;
+
+				&:hover,
+				&:focus {
+					background: #333;
+					color: $snowColor;
+				}
+				&.selected {
+					background: #000;
+					color: $snowColor;
+				}
+			}
+		}
+		&.ripper > ul > li {
+			width: 5em;
+		}
+		&.categories > ul {
+			left: -110px;
+
+			& > li {
+				width: 9.22em;
+			}
+		}
+		&.skate-categories > ul {
+			right: -110px;
+
+			& > li {
+				width: 11.27em;
+			}
+		}
+		&.outerwear-categories > ul {
+			right: -78px;
+
+			& > li {
+				width: 6em;
+			}
+		}
+		&.apparel-categories > ul {
+			right: -110px;
+
+			& > li {
+				width: 6.08em;
+			}
+		}
+		&.accessory-categories > ul {
+			right: -110px;
+
+			& > li {
+				width: 14.7em;
+			}
+		}
+		&.luggage-categories > ul {
+			right: -110px;
+
+			& > li {
+				width: 7.35em;
+			}
+		}
+		&.contours > ul > li {
+			width: 4em;
+		}
+		&.size > ul {
+			left: -330px;
+
+			& > li {
+				width: 2.4em;
+			}
+		}
+		&.nas-size > ul {
+			left: 0;
+
+			& > li {
+				width: 3.76em;
+			}
+		}
+		&.surf-size > ul {
+			right: 0;
+
+			& > li {
+				width: 6.82em;
+			}
+		}
+		&.outerwear-size > ul {
+			left: 0;
+
+			& > li {
+				width: 4.5em;
+			}
+		}
+		&.apparel-sports > ul {
+			left: 0;
+
+			& > li {
+				width: 79px;
+			}
+		}
+		&.width > ul {
+			right: 0;
+
+			& > li {
+				width: 6em;
+			}
+		}
+		&.skate-width > ul {
+			left: 0;
+
+			& > li {
+				width: 3.22em;
+			}
+		}
+		&.nas-width > ul {
+			right: -46px;
+
+			& > li {
+				width: 6em;
+			}
+		}
+		&.pricing > ul {
+			right: 0;
+
+			& > li {
+				width: 6em;
+			}
+		}
+		&.bindings-pricing > ul {
+			right: 0;
+
+			& > li {
+				width: 6.82em;
+			}
+		}
+		&.accessories-pricing > ul,
+		&.luggage-pricing > ul {
+			right: 0;
+
+			& > li {
+				width: 7.35em;
+			}
+		}
+		&.outerwear-waterproof > ul {
+			right: 0;
+
+			& > li {
+				width: 4.5em;
+			}
+		}
+		&.outerwear-fit > ul {
+			right: 0;
+
+			& > li {
+				width: 6em;
+			}
+		}
+		&:hover,
+		&:focus {
+			& > p.selected-items {
+				padding-bottom: 14px;
+				margin-bottom: 0;
+			}
+			& > ul {
+				display: block;
+				background: $snowColor;
+			}
+		}
+	}
+	& > li.details {
+		text-align: left;
+
+		& > p {
+			text-align: left;
+			background: none;
+			display: inline-block;
+			
+			&:first-child {
+				font-weight: bold;
+				color: $snowColor;
+			}
+		}
+	}
+}
+.ski .product-filtering > li > p.selected-items,
+.ski .product-filtering > li:hover > ul,
+.ski .product-filtering > li:focus > ul {
+	background: $skiColor;
+}
+.ski .product-filtering > li > ul > li:hover,
+.ski .product-filtering > li > ul > li:focus,
+.ski .product-filtering > li > ul > li.selected,
+.ski .product-filtering > li:first-child > p:first-child {
+	color: $skiColor;
+}
+.surf .product-filtering > li > p.selected-items,
+.surf .product-filtering > li:hover > ul,
+.surf .product-filtering > li:focus > ul {
+	background: $surfColor;
+}
+.surf .product-filtering > li > ul > li:hover,
+.surf .product-filtering > li > ul > li:focus,
+.surf .product-filtering > li > ul > li.selected,
+.surf .product-filtering > li:first-child > p:first-child {
+	color: $surfColor;
+}
+.skate .product-filtering > li > p.selected-items,
+.skate .product-filtering > li:hover > ul,
+.skate .product-filtering > li:focus > ul {
+	background: $skateColor;
+}
+.skate .product-filtering > li > ul > li:hover,
+.skate .product-filtering > li > ul > li:focus,
+.skate .product-filtering > li > ul > li.selected,
+.skate .product-filtering > li:first-child > p:first-child {
+	color: $skateColor;
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.product-filtering {
+		display: block;
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.product-overview .section-content h1 {
+		float: left;
+	}
+	.product-filtering {
+		float: right;
+		height: 75px;
+
+		& > li.details {
+			float: left;
+
+			& > p {
+				text-align: right;
+				background: none;
+				display: block;
+				
+				&:first-child {
+					font-weight: bold;
+					color: $snowColor;
+				}
+			}
+		}
+	}
+}

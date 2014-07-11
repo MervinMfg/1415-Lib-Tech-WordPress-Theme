@@ -1,0 +1,125 @@
+/* ==========================================================================
+   COMPONENTS/_SURF-FINS.SCSS
+   ========================================================================== */
+
+.fins-adjusting {
+	.section-content {
+		padding: 0 20px;
+
+		h1 {
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+		.bx-wrapper .bx-viewport {
+			background: none;
+			min-height: 100px;
+		}
+		.bx-controls {
+			padding: 0 0 20px;
+		}
+		.fins-positioning {
+			padding: 0 0 20px;
+
+			li {
+				.fin-image {
+					img {
+						height: auto;
+						margin-bottom: 10px;
+					}
+				}
+				.fin-description {
+					p {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
+}
+.fins-includes {
+	.section-content {
+		padding: 0 10px;
+
+		h2 {
+			margin-bottom: 10px;
+			padding: 0 10px;
+		}
+		.fins-breakdown li {
+			width: 50%;
+			float: left;
+
+			div {
+				padding: 0 10px;
+
+				img {
+					height: auto;
+				}
+			}
+		}
+		.fins-more-info {
+			padding: 0 10px;
+			
+			p {
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+.fins-candy {
+	.section-content {
+		padding: 0 20px;
+
+		h2 {
+			margin-bottom: 20px;
+		}
+		p {
+			margin-bottom: 10px;
+			max-width: 500px;
+		}
+		img {
+			height: auto;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.fins-candy {
+		.section-content {
+			ul li {
+				width: 50%;
+				float: left;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.fins-adjusting {
+		.section-content {
+			.fins-positioning {
+				li {
+					.fin-image {
+						width: 60%;
+						float: left;
+
+						img {
+							margin-bottom: 0;
+						}
+					}
+					.fin-description {
+						width: 40%;
+						float: left;
+					}
+				}
+			}
+		}
+	}
+	.fins-includes {
+		.section-content {
+			.fins-breakdown li {
+				width: 25%;
+				float: left;
+			}
+		}
+	}
+}
