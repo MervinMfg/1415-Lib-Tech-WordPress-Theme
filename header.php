@@ -63,7 +63,7 @@
 	// get post type for checking sport
 	$postType = get_post_type($post->ID);
 	// check for the appropriate sport
-	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || in_category( '220' ) || post_is_in_descendant_category( '220' ) || is_page('passitonproject') || is_page('mt-baker-legendary-banked-slalom')) {
+	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || in_category( '220' ) || post_is_in_descendant_category( '220' )) {
 		$GLOBALS['sport'] = "snow";
 	} else if (is_tree('6884') || is_tree('18938') || $postType == "libtech_nas" || $postType == "libtech_team_nas" || in_category( '828' ) || post_is_in_descendant_category( '828' )) {
 		$GLOBALS['sport'] = "ski";
@@ -71,6 +71,15 @@
 		$GLOBALS['sport'] = "surf";
 	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || in_category( '190' ) || post_is_in_descendant_category( '190' ) || is_page('environmental')) {
 		$GLOBALS['sport'] = "skate";
+	} else if (is_page('storm-factory')) {
+		// storm factory needs to be ski or snow, default to snow
+		if (isset($_COOKIE["libtech_sport"])) { // check cookie for stored sport
+			if($_COOKIE['libtech_sport'] == "ski") {
+				$GLOBALS['sport'] = "ski";
+			} else {
+				$GLOBALS['sport'] = "snow";
+			}
+		}
 	} else {
 		if (isset($_COOKIE["libtech_sport"])) { // check cookie for stored sport
 			$GLOBALS['sport'] = $_COOKIE['libtech_sport'];
@@ -160,8 +169,8 @@
 	<meta name="keywords" content="snowboards, skateboards, snowskates, waterboards, surfboards, NAS, Outerwear, Goggles, Clothing, Apparel, Accessories, Lib Tech, Lib Technologies, surf, skate, snow, skateboard, deck, skateboarding, p2, skate technology, tech" />
 	<meta name="author" content="Lib Tech" />
 	<meta name="Copyright" content="Copyright Lib Tech <?php echo date('Y'); ?>. All Rights Reserved." />
-	<!-- Application-specific meta tags -->
-	<!-- FB Meta Data -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
 	<meta property="og:title" content="<?php echo $GLOBALS['pageTitle']; ?>" />
 	<meta property="og:description" content="<?php echo $pageDescription; ?>" />
 	<meta property="og:url" content="<? the_permalink(); ?>" />
@@ -169,25 +178,16 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Lib Technologies" />
 	<meta property="fb:app_id" content="352899581451617"/>
-	<!-- Google+ Meta Data -->
 	<meta itemprop="name" content="<?php echo $GLOBALS['pageTitle']; ?>" />
 	<meta itemprop="description" content="<?php echo $pageDescription; ?>" />
 	<meta itemprop="image" content="<?php echo $GLOBALS['pageImage']; ?>" />
-	<!-- Google Site Verification -->
-	<meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
-	<!-- Twitter -->
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@libtechnologies">
-	<!-- RSS FEEDS -->
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
 	<link rel="alternate" type="text/xml" title="RSS .92" href="<?php bloginfo('rss_url'); ?>" />
 	<link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="<?php bloginfo('atom_url'); ?>" />
-	<!-- Fav Icon -->
 	<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/_/img/favicon.ico" />
-	<!--  Mobile Meta Info -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/apple-touch-icon-precomposed.png">
-	<!-- Misc. -->
+	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/apple-touch-icon-precomposed.png" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php include get_template_directory() . '/_/inc/header-includes.php'; ?>

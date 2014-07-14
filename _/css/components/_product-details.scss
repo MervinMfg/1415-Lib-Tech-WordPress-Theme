@@ -650,48 +650,53 @@
 }
 // OUTERWEAR SPEC TABLE DISPLAY
 // BASED ON OUTERWEAR TYPE
+.single-libtech_outerwear,
+.page-template-page-templatesstorm-factory-php {
+	.product-extras {
+		&.jackets .product-specs,
+		&.layers .product-specs {
+			table {
+				thead th {
+					&:nth-child(2), &:nth-child(3) {
+						display: table-cell;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						display: none;
+					}
+				}
+				tbody tr td {
+					&:nth-child(2), &:nth-child(3) {
+						display: table-cell;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						display: none;
+					}
+				}
+			}
+		}
+		&.pants .product-specs {
+			table {
+				thead th {
+					&:nth-child(2), &:nth-child(3) {
+						display: none;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						display: table-cell;
+					}
+				}
+				tbody tr td {
+					&:nth-child(2), &:nth-child(3) {
+						display: none;
+					}
+					&:nth-child(4), &:nth-child(5) {
+						display: table-cell;
+					}
+				}
+			}
+		}
+	}
+}
 .single-libtech_outerwear .product-extras {
-	&.jackets .product-specs,
-	&.layers .product-specs {
-		table {
-			thead th {
-				&:nth-child(2), &:nth-child(3) {
-					display: table-cell;
-				}
-				&:nth-child(4), &:nth-child(5) {
-					display: none;
-				}
-			}
-			tbody tr td {
-				&:nth-child(2), &:nth-child(3) {
-					display: table-cell;
-				}
-				&:nth-child(4), &:nth-child(5) {
-					display: none;
-				}
-			}
-		}
-	}
-	&.pants .product-specs {
-		table {
-			thead th {
-				&:nth-child(2), &:nth-child(3) {
-					display: none;
-				}
-				&:nth-child(4), &:nth-child(5) {
-					display: table-cell;
-				}
-			}
-			tbody tr td {
-				&:nth-child(2), &:nth-child(3) {
-					display: none;
-				}
-				&:nth-child(4), &:nth-child(5) {
-					display: table-cell;
-				}
-			}
-		}
-	}
 	.product-tech-major {
 		ul {
 			list-style: square;
@@ -905,25 +910,30 @@
 				padding-left: 40px;
 			}
 		}
-		.product-specs {
-			width: 100%;
-			float: none;
+	}
+	.single-libtech_outerwear,
+	.page-template-page-templatesstorm-factory-php {
+		.product-extras {
+			.product-specs {
+				width: 100%;
+				float: none;
 
-			h2 {
-				margin-left: 0;
-			}
-			table {
-				width: 60%;
-				float: left;
-				margin-left: 0;
-			}
-			.outerwear-fit {
-				width: 40%;
-				float: left;
-				padding-top: 0;
+				h2 {
+					margin-left: 0;
+				}
+				table {
+					width: 60%;
+					float: left;
+					margin-left: 0;
+				}
+				.outerwear-fit {
+					width: 40%;
+					float: left;
+					padding-top: 0;
 
-				li {
-					padding-left: 20px;
+					li {
+						padding-left: 20px;
+					}
 				}
 			}
 		}
@@ -1041,25 +1051,27 @@
 	}
 	// OUTERWEAR SPEC TABLE DISPLAY
 	// SHOW WHOLE TABLE
-	.single-libtech_outerwear .product-extras {
-		&.jackets .product-specs,
-		&.layers .product-specs,
-		&.pants .product-specs {
-			table {
-				thead th {
-					&:nth-child(2),
-					&:nth-child(3),
-					&:nth-child(4),
-					&:nth-child(5) {
-						display: table-cell;
+	.single-libtech_outerwear {
+		.product-extras {
+			&.jackets .product-specs,
+			&.layers .product-specs,
+			&.pants .product-specs {
+				table {
+					thead th {
+						&:nth-child(2),
+						&:nth-child(3),
+						&:nth-child(4),
+						&:nth-child(5) {
+							display: table-cell;
+						}
 					}
-				}
-				tbody tr td {
-					&:nth-child(2),
-					&:nth-child(3),
-					&:nth-child(4),
-					&:nth-child(5) {
-						display: table-cell;
+					tbody tr td {
+						&:nth-child(2),
+						&:nth-child(3),
+						&:nth-child(4),
+						&:nth-child(5) {
+							display: table-cell;
+						}
 					}
 				}
 			}

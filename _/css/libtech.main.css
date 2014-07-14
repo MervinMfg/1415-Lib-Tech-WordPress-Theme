@@ -3748,226 +3748,251 @@ body.international .shopping-cart-wrapper {
   color: #0099ff;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003658}}
-.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003660}}
+.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(3) {
   display: table-cell;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003661}}
-.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003663}}
+.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(5) {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003666}}
-.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003668}}
+.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(3) {
   display: table-cell;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003669}}
-.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003671}}
+.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(5) {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003678}}
-.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003680}}
+.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(3) {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003681}}
-.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003683}}
+.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(5) {
   display: table-cell;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003686}}
-.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003688}}
+.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(2),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(3) {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003689}}
-.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003691}}
+.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(4),
+.page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(5) {
   display: table-cell;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003696}}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003701}}
 .single-libtech_outerwear .product-extras .product-tech-major ul {
   list-style: square;
   padding-left: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003700}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003705}}
 .single-libtech_outerwear .product-extras .product-tech-major ul strong {
   text-transform: uppercase;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003706}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003711}}
 .ski .product-extras .product-mobile-nav li a {
   background: #0099ff;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003709}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003714}}
 .ski .product-extras .product-mobile-nav li a.selected {
   color: #0099ff;
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003714}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003719}}
 .surf .product-extras .product-mobile-nav li a {
   background: #ff6600;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003717}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003722}}
 .surf .product-extras .product-mobile-nav li a.selected {
   color: #ff6600;
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003722}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003727}}
 .skate .product-extras .product-mobile-nav li a {
   background: #66cc00;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003725}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003730}}
 .skate .product-extras .product-mobile-nav li a.selected {
   color: #66cc00;
   background: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003732}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003737}}
 .product-video-top.specs, .product-video-top.tech,
 .product-gallery-top.specs,
 .product-gallery-top.tech {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003738}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003743}}
 .product-video .section-content,
 .product-gallery .section-content {
   padding-left: 20px;
   padding-right: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003742}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003747}}
 .product-video.specs, .product-video.tech,
 .product-gallery.specs,
 .product-gallery.tech {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003745}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003750}}
 .product-video h2,
 .product-gallery h2 {
   margin-bottom: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003750}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003755}}
 .product-video .video-player {
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003753}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003758}}
 .product-video .video-copy {
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003756}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003761}}
 .product-video .video-copy .quote {
   line-height: 1.32em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003759}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003764}}
 .product-video .video-copy .quote:first-line {
   font-size: 1.4em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003762}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003767}}
 .product-video .video-copy .quote:before {
   content: '“';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003765}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003770}}
 .product-video .video-copy .quote:after {
   content: '”';
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003769}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003774}}
 .product-video .video-copy .quote-attribution {
   text-align: right;
   line-height: 1.32em;
 }
 
 @media screen and (min-width: 600px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003777}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003782}}
   .product-details.hide {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003780}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003785}}
   .product-details h1 {
     text-align: left;
     width: 40%;
     float: right;
     clear: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003786}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003791}}
   .product-details .product-images {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003790}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003795}}
   .product-details .product-images .bx-wrapper {
     max-width: 640px !important;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003793}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003798}}
   .product-details .product-images .surf-images {
     max-width: 700px;
     margin: 0 auto;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003798}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003803}}
   .product-details .product-details-right {
     width: 40%;
     float: right;
     clear: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003803}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003808}}
   .product-details h3 {
     text-align: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003806}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003811}}
   .product-details h3, .product-details .image-list-thumbs, .product-details .product-price, .product-details .product-stock-alert, .product-details .product-variations, .product-details .product-buy, .product-details .product-quick-specs, .product-details .product-share {
     max-width: 540px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003814}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003819}}
   .single-libtech_snowboards .product-details h1,
   .single-libtech_skateboards .product-details h1,
   .single-libtech_nas .product-details h1 {
     width: 50%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003817}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003822}}
   .single-libtech_snowboards .product-details .product-images,
   .single-libtech_skateboards .product-details .product-images,
   .single-libtech_nas .product-details .product-images {
     width: 50%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003820}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003825}}
   .single-libtech_snowboards .product-details .product-images .bx-wrapper,
   .single-libtech_skateboards .product-details .product-images .bx-wrapper,
   .single-libtech_nas .product-details .product-images .bx-wrapper {
     max-width: 540px !important;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003824}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003829}}
   .single-libtech_snowboards .product-details .product-details-right,
   .single-libtech_skateboards .product-details .product-details-right,
   .single-libtech_nas .product-details .product-details-right {
     width: 50%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003829}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003834}}
   .single-libtech_surfboards .product-details .product-images {
     padding-top: 10px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003832}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003837}}
   .product-zoom.show {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003836}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003841}}
   .product-extras .product-mobile-nav {
     display: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003839}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003844}}
   .product-extras.info .product-specs, .product-extras.info .product-tech-major, .product-extras.info .product-tech-construction, .product-extras.info .product-tech-minor, .product-extras.specs .product-description, .product-extras.specs .product-awards, .product-extras.specs .product-tech-major, .product-extras.specs .product-tech-construction, .product-extras.specs .product-tech-minor, .product-extras.tech .product-description, .product-extras.tech .product-awards, .product-extras.tech .product-specs {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003856}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003861}}
   .product-video-top.specs, .product-video-top.tech,
   .product-gallery-top.specs,
   .product-gallery-top.tech {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003862}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003867}}
   .product-video.specs, .product-video.tech,
   .product-gallery.specs,
   .product-gallery.tech {
@@ -3975,279 +4000,285 @@ body.international .shopping-cart-wrapper {
   }
 }
 @media screen and (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003868}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003873}}
   .product-details .product-share {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003872}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003877}}
   .product-extras .product-desc-awards {
     width: 40%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003876}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003881}}
   .product-extras .product-specs {
     width: 60%;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003880}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003885}}
   .product-extras .product-specs h2, .product-extras .product-specs table {
     margin-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003884}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003889}}
   .product-extras .product-tech-major {
     clear: both;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003887}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003892}}
   .product-extras .product-tech-construction {
     clear: both;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003892}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003897}}
   .single-libtech_outerwear .product-extras .product-desc-awards {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003896}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003901}}
   .single-libtech_outerwear .product-extras .product-tech-major {
     width: 40%;
     float: right;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003901}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003906}}
   .single-libtech_outerwear .product-extras .product-tech-major h2 {
     padding-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003904}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003909}}
   .single-libtech_outerwear .product-extras .product-tech-major ul {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003908}}
-  .single-libtech_outerwear .product-extras .product-specs {
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003917}}
+  .single-libtech_outerwear .product-extras .product-specs,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs {
     width: 100%;
     float: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003912}}
-  .single-libtech_outerwear .product-extras .product-specs h2 {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003921}}
+  .single-libtech_outerwear .product-extras .product-specs h2,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 {
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003915}}
-  .single-libtech_outerwear .product-extras .product-specs table {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003924}}
+  .single-libtech_outerwear .product-extras .product-specs table,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs table {
     width: 60%;
     float: left;
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003920}}
-  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003929}}
+  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit {
     width: 40%;
     float: left;
     padding-top: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003925}}
-  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit li {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003934}}
+  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit li,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit li {
     padding-left: 20px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003932}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003942}}
   .product-video h2 {
     width: 35%;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003936}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003946}}
   .product-video h2 span {
     padding-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003940}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003950}}
   .product-video .video-player {
     width: 65%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003944}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003954}}
   .product-video .video-copy {
     width: 35%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003948}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003958}}
   .product-video .video-copy .quote,
   .product-video .video-copy .quote-attribution {
     padding-left: 20px;
   }
 }
 @media screen and (min-width: 980px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003957}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003967}}
   .product-extras .product-desc-awards-specs {
     width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003960}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003970}}
   .product-extras .product-desc-awards-specs .product-desc-awards {
     width: 100%;
     float: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003964}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003974}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003968}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003978}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description p {
     padding-right: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003972}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003982}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-awards {
     width: 40%;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003977}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003987}}
   .product-extras .product-desc-awards-specs .product-specs {
     width: 40%;
     float: right;
     clear: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003982}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003992}}
   .product-extras .product-desc-awards-specs .product-specs h2, .product-extras .product-desc-awards-specs .product-specs table {
     margin-left: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003987}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003997}}
   .product-extras .product-tech-construction {
     float: left;
     width: 60%;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003992}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031002}}
   .product-extras .product-tech-construction .construction-slideshow {
     padding-right: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\00003996}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031006}}
   .product-extras .product-tech-major {
     width: 60%;
     float: left;
     clear: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031003}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031013}}
   .single-libtech_outerwear .product-extras .product-desc-awards {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031007}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031017}}
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description {
     width: 100%;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031011}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031021}}
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description p {
     padding-right: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031015}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031025}}
   .single-libtech_outerwear .product-extras .product-desc-awards .product-awards {
     width: 100%;
     float: none;
   }
 }
 @media screen and (min-width: 1200px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031026}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031036}}
   .product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(9) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031031}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031041}}
   .product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(9) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031036}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031046}}
   .product-extras .product-specs table tfoot tr td:nth-child(5), .product-extras .product-specs table tfoot tr td:nth-child(6), .product-extras .product-specs table tfoot tr td:nth-child(8), .product-extras .product-specs table tfoot tr td:nth-child(9) {
     display: table-cell;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031050}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031061}}
   .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031058}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031069}}
   .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5) {
     display: table-cell;
   }
 }
 @media screen and (min-width: 1400px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031071}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031083}}
   .product-extras .product-desc-awards-specs {
     width: 40%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031076}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031088}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description {
     width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031078}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031090}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description p {
     padding-right: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031082}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031094}}
   .product-extras .product-desc-awards-specs .product-desc-awards .product-awards {
     width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031086}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031098}}
   .product-extras .product-desc-awards-specs .product-specs {
     width: 100%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031090}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031102}}
   .product-extras .product-desc-awards-specs .product-specs table thead th:nth-child(7) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031093}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031105}}
   .product-extras .product-desc-awards-specs .product-specs table tbody tr td:nth-child(7) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031096}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031108}}
   .product-extras .product-desc-awards-specs .product-specs table tfoot tr td:nth-child(7) {
     display: table-cell;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031102}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031114}}
   .product-extras .product-tech-construction {
     width: 60%;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031106}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031118}}
   .product-extras .product-tech-construction h2 {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031109}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031121}}
   .product-extras .product-tech-construction .construction-slideshow {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031113}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031125}}
   .product-extras .product-tech-major {
     width: 60%;
     float: right;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031118}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031130}}
   .product-extras .product-tech-major h2 {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031122}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031134}}
   .product-extras .product-tech-major ul {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031125}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031137}}
   .product-extras .product-tech-major ul li {
     padding-right: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031130}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031142}}
   .product-extras .product-tech-minor.hesho {
     width: 60%;
     float: right;
     clear: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031135}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031147}}
   .product-extras .product-tech-minor.hesho h2, .product-extras .product-tech-minor.hesho ul {
     padding-left: 40px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031150}}
   .product-extras .product-tech-minor.hesho ul li {
     width: 48%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_product-details\.scss}line{font-family:\000031156}}
   .single-libtech_outerwear .product-extras .product-desc-awards-specs {
     width: auto;
     float: none;
@@ -4395,25 +4426,26 @@ body.international .shopping-cart-wrapper {
   list-style: square;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003129}}
-.single-libtech_outerwear .tech-minor > ul > li > img {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003131}}
+.single-libtech_outerwear .tech-minor > ul > li > img,
+.page-template-page-templatesstorm-factory-php .tech-minor > ul > li > img {
   width: 100%;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003133}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003136}}
 .tech-faq .section-content {
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003139}}
 .tech-faq h2 {
   padding: 0 10px;
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003140}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003143}}
 .tech-faq .faq-list {
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003144}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003147}}
 .tech-faq .faq-list ul li {
   max-width: 100%;
   width: 100%;
@@ -4421,37 +4453,37 @@ body.international .shopping-cart-wrapper {
   padding-left: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003154}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003157}}
 .tech-surf .section-content {
   padding: 0 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003157}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003160}}
 .tech-surf h2 {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003160}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003163}}
 .tech-surf .ddd-image {
   padding-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003163}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003166}}
 .tech-surf .ddd-image img {
   height: auto;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003167}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003170}}
 .tech-surf ul {
   list-style: square;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003170}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003173}}
 .tech-surf ul li {
   margin: 0 0 10px 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003174}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003177}}
 .tech-surf p {
   margin-bottom: 10px;
 }
 
 @media screen and (min-width: 600px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003181}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003184}}
   .tech-minor > ul > li,
   .tech-minor .section-content > ul > li {
     width: 48%;
@@ -4459,126 +4491,127 @@ body.international .shopping-cart-wrapper {
     vertical-align: top;
     text-align: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003187}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003190}}
   .tech-minor > ul > li .tech-pad,
   .tech-minor .section-content > ul > li .tech-pad {
     padding: 10px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003192}}
-  .single-libtech_outerwear .tech-minor > ul > li {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003197}}
+  .single-libtech_outerwear .tech-minor > ul > li,
+  .page-template-page-templatesstorm-factory-php .tech-minor > ul > li {
     width: 50%;
     display: block;
     float: left;
     padding-right: 20px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003199}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003205}}
   .tech-overview .section-content .tech-sport img {
     width: 50%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003203}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003209}}
   .tech-overview .section-content .tech-sport .tech-copy {
     width: 50%;
     float: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003207}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003213}}
   .tech-overview .section-content .tech-sport .tech-copy h3, .tech-overview .section-content .tech-sport .tech-copy p {
     padding-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003210}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003216}}
   .tech-overview .section-content .tech-sport .tech-copy h3 {
     font-size: 1.375em;
   }
 }
 @media screen and (min-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003218}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003224}}
   .tech-major ul li .tech-video,
   .tech-major ul li .tech-image {
     width: 50%;
     float: left;
     margin-bottom: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003224}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003230}}
   .tech-major ul li .tech-copy {
     width: 50%;
     float: left;
     margin-bottom: 0;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003229}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003235}}
   .tech-major ul li .tech-copy h4, .tech-major ul li .tech-copy h5, .tech-major ul li .tech-copy p, .tech-major ul li .tech-copy ul {
     margin-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003232}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003238}}
   .tech-major ul li .tech-copy ul {
     margin-bottom: 0;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003238}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003244}}
   .single-libtech_surfboards .tech-major ul li .tech-image {
     width: 30%;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003241}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003247}}
   .single-libtech_surfboards .tech-major ul li .tech-copy {
     width: 70%;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003245}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003251}}
   .tech-faq .faq-list ul {
     width: 50%;
     float: left;
   }
 }
 @media screen and (min-width: 980px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003251}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003257}}
   .tech-major ul li {
     padding-right: 40px;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003254}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003260}}
   .tech-major .section-content ul li {
     margin-bottom: 10px;
     width: 50%;
     padding-right: 0;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003260}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003266}}
   .tech-major .section-content ul li .tech-video {
     width: 100%;
     float: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003264}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003270}}
   .tech-major .section-content ul li:nth-child(odd) {
     clear: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003267}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003273}}
   .tech-major .section-content ul li:nth-child(odd) .tech-video {
     padding-right: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003277}}
   .tech-major .section-content ul li:nth-child(even) {
     clear: right;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003274}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003280}}
   .tech-major .section-content ul li:nth-child(even) .tech-video {
     padding-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003278}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003284}}
   .tech-major .section-content ul li .tech-copy {
     width: 100%;
     float: none;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003282}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003288}}
   .tech-major .section-content ul li .tech-copy h4, .tech-major .section-content ul li .tech-copy h5, .tech-major .section-content ul li .tech-copy p {
     margin-left: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003285}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003291}}
   .tech-major .section-content ul li .tech-copy .tech-found-on {
     display: block;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003292}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003298}}
   .tech-minor > ul > li,
   .tech-minor .section-content > ul > li {
     width: 33%;
@@ -4587,28 +4620,29 @@ body.international .shopping-cart-wrapper {
     text-align: left;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003299}}
-  .single-libtech_outerwear .tech-minor > ul > li {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003307}}
+  .single-libtech_outerwear .tech-minor > ul > li,
+  .page-template-page-templatesstorm-factory-php .tech-minor > ul > li {
     width: 33.3%;
     display: block;
     float: left;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003305}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003314}}
   .tech-surf h2 {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003318}}
   .tech-surf ul {
     width: 60%;
     float: left;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003313}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003322}}
   .tech-surf ul li {
     padding-right: 20px;
   }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003317}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003326}}
   .tech-surf .ddd-image {
     width: 40%;
     float: right;
@@ -4616,7 +4650,7 @@ body.international .shopping-cart-wrapper {
   }
 }
 @media screen and (min-width: 1400px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003336}}
   .tech-minor > ul > li,
   .tech-minor .section-content > ul > li {
     width: 24%;
@@ -4625,8 +4659,9 @@ body.international .shopping-cart-wrapper {
     text-align: left;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003334}}
-  .single-libtech_outerwear .tech-minor > ul > li {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_technology\.scss}line{font-family:\00003345}}
+  .single-libtech_outerwear .tech-minor > ul > li,
+  .page-template-page-templatesstorm-factory-php .tech-minor > ul > li {
     width: 25%;
     display: block;
     float: left;
@@ -6346,14 +6381,87 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   padding: 0 20px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\000039}}
-.storm-factory-overview .section-content img {
+.storm-factory-overview .section-content .storm-image img {
   padding-bottom: 20px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000312}}
-.storm-factory-overview .section-content h3 {
+.storm-factory-overview .section-content .storm-copy h3 {
   margin-bottom: 10px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000320}}
+.page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000323}}
+.page-template-page-templatesstorm-factory-php .product-extras .product-specs .sizing-header {
+  margin-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000326}}
+.page-template-page-templatesstorm-factory-php .product-extras .product-specs table {
+  margin-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000329}}
+.page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit {
+  padding-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000338}}
+  .storm-factory-overview .section-content .storm-image {
+    float: left;
+    width: 40%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000342}}
+  .storm-factory-overview .section-content .storm-image img {
+    padding-bottom: 0;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000346}}
+  .storm-factory-overview .section-content .storm-copy {
+    float: left;
+    width: 60%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000350}}
+  .storm-factory-overview .section-content .storm-copy h3,
+  .storm-factory-overview .section-content .storm-copy p {
+    padding-left: 20px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000366}}
+  .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(5) {
+    display: table-cell;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000374}}
+  .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(5) {
+    display: table-cell;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000384}}
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 {
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000387}}
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs .sizing-header,
+  .page-template-page-templatesstorm-factory-php .product-extras .product-specs .pants-sizing {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\0000398}}
+  .storm-factory-overview .section-content .storm-image {
+    float: left;
+    width: 529px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\00003102}}
+  .storm-factory-overview .section-content .storm-copy {
+    float: left;
+    width: 600px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_storm-factory\.scss}line{font-family:\00003106}}
+  .storm-factory-overview .section-content .storm-copy h3,
+  .storm-factory-overview .section-content .storm-copy p {
+    padding-left: 20px;
+  }
+}
 /* ==========================================================================
    MODULES/_FEATURED-SLIDER.SCSS
    ========================================================================== */

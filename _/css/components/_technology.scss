@@ -126,8 +126,11 @@
 		}
 	}
 }
-.single-libtech_outerwear .tech-minor > ul > li > img {
-	width: 100%;
+.single-libtech_outerwear,
+.page-template-page-templatesstorm-factory-php {
+	.tech-minor > ul > li > img {
+		width: 100%;
+	}
 }
 .tech-faq {
 	.section-content {
@@ -189,11 +192,14 @@
 			}
 		}
 	}
-	.single-libtech_outerwear .tech-minor > ul > li {
-		width: 50%;
-		display: block;
-		float: left;
-		padding-right: 20px;
+	.single-libtech_outerwear,
+	.page-template-page-templatesstorm-factory-php {
+		.tech-minor > ul > li {
+			width: 50%;
+			display: block;
+			float: left;
+			padding-right: 20px;
+		}
 	}
 	.tech-overview .section-content .tech-sport {
 		img {
@@ -296,10 +302,13 @@
 			text-align: left;
 		}
 	}
-	.single-libtech_outerwear .tech-minor > ul > li {
-		width: 33.3%;
-		display: block;
-		float: left;
+	.single-libtech_outerwear,
+	.page-template-page-templatesstorm-factory-php {
+		.tech-minor > ul > li {
+			width: 33.3%;
+			display: block;
+			float: left;
+		}
 	}
 	.tech-surf {
 		h2 {
@@ -331,9 +340,12 @@
 			text-align: left;
 		}
 	}
-	.single-libtech_outerwear .tech-minor > ul > li {
-		width: 25%;
-		display: block;
-		float: left;
+	.single-libtech_outerwear,
+	.page-template-page-templatesstorm-factory-php {
+		.tech-minor > ul > li {
+			width: 25%;
+			display: block;
+			float: left;
+		}
 	}
 }
