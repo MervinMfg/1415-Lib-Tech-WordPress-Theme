@@ -203,12 +203,12 @@
 			<div class="takeover-content">
 				<div class="expanded">
 					<a href="#close-takeover" class="close">Close</a>
-					<a href="/2014/06/19/ryan-carlson-ripping-on-his-new-ringer-pro-model/" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-waterboards-ryan-carlson-ringer.jpg" alt="Lib Tech Waterboards - Introducing Ryan Carlson's Pro Model, The Ringer" /></a>
+					<a href="/surfboards/extension-ramp/" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-waterboards-extension-ramp.jpg" alt="Lib Tech Waterboards - Jamie Lynn - 6ft 6in Extension Ramp" /></a>
 				</div>
 				<div class="contracted">
-					<a href="#the-ringer">
+					<a href="#the-extension-ramp">
 						<p class="view-more">View More</p>
-						<p class="message">Lib Tech Waterboards - Introducing The Ringer</p>
+						<p class="message">Lib Tech Waterboards - Introducing The Extension Ramp</p>
 						<div class="clearfix"></div>
 					</a>
 				</div>
