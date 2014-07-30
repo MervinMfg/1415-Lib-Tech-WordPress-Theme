@@ -64,7 +64,18 @@ get_header();
                         $productTitle = get_the_title($post_object->ID);
                         $productContent = apply_filters('the_content', $post_object->post_content);
                         $productTag = get_field('libtech_product_slogan', $post_object->ID);
-                        $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                        // check if we're surf because of varrying fin costs
+                        if ($postType == "libtech_surfboards") {
+                            // check fin pricing and what to display by default
+                            if (get_field('libtech_product_price_us_5fin', $post_object->ID) == "") {
+                                $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                            } else {
+                                $productPrice = getPrice( get_field('libtech_product_price_us_5fin', $post_object->ID), get_field('libtech_product_price_ca_5fin', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                            }
+                        } else {
+                            // grab default price of all other products
+                            $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                        }
                     ?>
                     <li>
                         <div class="product-image">
@@ -149,8 +160,18 @@ get_header();
             $imageID = get_field('libtech_product_image');
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
             $productArray['available'] = "No";
-            $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
-
+            // check if we're surf because of varrying fin costs
+            if ($postType == "libtech_surfboards") {
+                // check fin pricing and what to display by default
+                if (get_field('libtech_product_price_us_5fin') == "") {
+                    $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                } else {
+                    $productArray['price'] = getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                }
+            } else {
+                // grab default price of all other products
+                $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+            }
             switch ($productArray['postType']) {
                 case "libtech_snowboards":
                     // BEGIN SETTING UP SNOWBOARD FILTER CLASSES
