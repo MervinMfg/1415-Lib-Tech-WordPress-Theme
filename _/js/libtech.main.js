@@ -7,7 +7,8 @@ var LIBTECH = LIBTECH || {};
 
 LIBTECH.main = {
 	config: {
-		menuState: 'closed'
+		menuState: 'closed',
+		wpImgPath: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/'
 	},
 	init: function () {
 		var self, $body;
@@ -1714,7 +1715,7 @@ LIBTECH.main = {
 			});
 		},
 		socialContentGridItemsInit: function () {
-			var self, instagramUsername, facebookUsername;
+			var instagramUsername, facebookUsername;
 			// add randomize function
 			$.fn.randomize = function (selector) {
 				var $elems = selector ? $(this).find(selector) : $(this).children(),
@@ -1792,7 +1793,7 @@ LIBTECH.main = {
 							postMessage = postData.message;
 							if(postMessage == undefined) postMessage = "";
 							// set up facebook list item
-							listItem = '<li class="grid-item facebook item-' + totalItems + '"><div class="grid-item-wrapper"><a href="' + postData.link + '" target="_blank" class="item-link"><div class="facebook-wrapper"><div class="facebook-header"><div class="facebook-profile"><img src="https://graph.facebook.com/' + facebookUsername + '/picture" /></div><p class="facebook-name">' + postData.from.name + '</p><p class="facebook-time">' + postDate + '</p><div class="clearfix"></div></div><div class="facebook-photo"><img src="' + postImage + '" /></div><p class="facebook-excerpt">' + postMessage + '</p></div><div class="facebook-aspect-ratio"><img src="/wp-content/themes/libtech/_/img/square.gif" /></div><div class="clearfix"></div></a></div></li>';
+							listItem = '<li class="grid-item facebook item-' + totalItems + '"><div class="grid-item-wrapper"><a href="' + postData.link + '" target="_blank" class="item-link"><div class="facebook-wrapper"><div class="facebook-header"><div class="facebook-profile"><img src="https://graph.facebook.com/' + facebookUsername + '/picture" /></div><p class="facebook-name">' + postData.from.name + '</p><p class="facebook-time">' + postDate + '</p><div class="clearfix"></div></div><div class="facebook-photo"><img src="' + postImage + '" /></div><p class="facebook-excerpt">' + postMessage + '</p></div><div class="facebook-aspect-ratio"><img src="' + LIBTECH.main.config.wpImgPath + 'square.gif" /></div><div class="clearfix"></div></a></div></li>';
 							// add list item to content grid
 							$('.content-grid ul').append(listItem);
 							totalItems++;
