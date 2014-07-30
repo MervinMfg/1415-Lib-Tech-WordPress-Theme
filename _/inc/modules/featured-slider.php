@@ -86,16 +86,6 @@
 									endif;
 								} else {
 									// we're on the main homepage, render each sport
-									// display surf
-									if(!empty($surfArray)):
-										shuffle($surfArray);
-										renderBanner($surfArray[0]);
-									endif;
-									// display skate
-									if(!empty($skateArray)):
-										shuffle($skateArray);
-										renderBanner($skateArray[0]);
-									endif;
 									// display snow
 									if(!empty($snowArray)):
 										shuffle($snowArray);
@@ -105,6 +95,16 @@
 									if(!empty($skiArray)):
 										shuffle($skiArray);
 										renderBanner($skiArray[0]);
+									endif;
+									// display surf
+									if(!empty($surfArray)):
+										shuffle($surfArray);
+										renderBanner($surfArray[0]);
+									endif;
+									// display skate
+									if(!empty($skateArray)):
+										shuffle($skateArray);
+										renderBanner($skateArray[0]);
 									endif;
 								}
 							else:
