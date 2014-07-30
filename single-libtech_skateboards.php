@@ -425,7 +425,7 @@ Template Name: Skateboard Detail
 					// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 					if (count($technologyMinor) > 0) :
 				?>
-	        	<div class="product-tech-minor tech-minor">
+	        	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?>">
 					<h2>Ingredients</h2>
 					<ul>
 						<?php foreach( $technologyMinor as $techItem): ?>
