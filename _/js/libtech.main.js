@@ -783,6 +783,7 @@ LIBTECH.main = {
 				zoomThumbSlider.destroySlider();
 				zoomThumbSlider = null;
 			}
+			slider.reloadSlider();
 		}
 		// BEGIN EXECUTING DETAIL CODE
 		$(".product-tech-major").fitVids();
@@ -818,6 +819,11 @@ LIBTECH.main = {
 			controls: true,
 			pager: false,
 			mode: 'horizontal'
+		});
+		$(window).load(function () {
+			slider.reloadSlider();
+			thumbSlider.reloadSlider();
+			if (typeof techConstructionSlider === 'undefined') techConstructionSlider.reloadSlider();
 		});
 		// navigation when displayed below 600px (mobile phone)
 		$('.product-extras .product-mobile-nav ul li a').click(function (e) {
