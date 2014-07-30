@@ -141,12 +141,12 @@ LIBTECH.main = {
 		$("body").append('<div id="shopatronCart">' + shopAPIKeyString + '</div>');
 		// request the shopatron api
 		$.ajax({
-			url: "//mediacdn.shopatron.com/media/js/product/shopatronAPI-2.2.0.min.js",
+			url: "//mediacdn.shopatron.com/media/js/product/shopatronAPI-2.5.0.min.js",
 			dataType: "script",
 			success: function (data) {
 				// request other aditional api for quick cart and shopping cart
 				$.ajax({
-					url: "//mediacdn.shopatron.com/media/js/product/shopatronJST-2.2.0.min.js",
+					url: "//mediacdn.shopatron.com/media/js/product/shopatronJST-2.5.0.min.js",
 					dataType: "script",
 					success: function (data) {
 						// init the shopatron page elements
