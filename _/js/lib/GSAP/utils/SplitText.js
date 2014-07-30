@@ -1,6 +1,6 @@
 /*!
- * VERSION: beta 0.2.3
- * DATE: 2013-07-10
+ * VERSION: beta 0.2.4
+ * DATE: 2014-07-17
  * UPDATES AND DOCS AT: http://www.greensock.com
  *
  * @license Copyright (c) 2008-2014, GreenSock. All rights reserved.
@@ -10,6 +10,7 @@
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
+var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window; //helps ensure compatibility with AMD/RequireJS and CommonJS/Node
 (function(window) {
 	
 	"use strict";
@@ -351,5 +352,19 @@
 	};
 
 	SplitText.selector = window.$ || window.jQuery || function(e) { if (window.$) { SplitText.selector = window.$; return window.$(e); } return _doc ? _doc.getElementById((e.charAt(0) === "#") ? e.substr(1) : e) : e; };
+	SplitText.version = "0.2.4";
 	
-})(window || {});
+})(_gsScope);
+
+//export to AMD/RequireJS and CommonJS/Node (precursor to full modular build system coming at a later date)
+(function(name) {
+	"use strict";
+	var getGlobal = function() {
+		return (_gsScope.GreenSockGlobals || _gsScope)[name];
+	};
+	if (typeof(define) === "function" && define.amd) { //AMD
+		define(["TweenLite"], getGlobal);
+	} else if (typeof(module) !== "undefined" && module.exports) { //node
+		module.exports = getGlobal();
+	}
+}("SplitText"));

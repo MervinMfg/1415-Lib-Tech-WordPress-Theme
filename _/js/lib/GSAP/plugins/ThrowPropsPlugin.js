@@ -1,6 +1,6 @@
 /*!
- * VERSION: 0.9.5
- * DATE: 2014-04-16
+ * VERSION: 0.9.6
+ * DATE: 2014-07-17
  * UPDATES AND DOCS AT: http://www.greensock.com
  *
  * @license Copyright (c) 2008-2014, GreenSock. All rights reserved.
@@ -10,11 +10,12 @@
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
-(window._gsQueue || (window._gsQueue = [])).push( function() {
+var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window; //helps ensure compatibility with AMD/RequireJS and CommonJS/Node
+(_gsScope._gsQueue || (_gsScope._gsQueue = [])).push( function() {
 
 	"use strict";
 
-	window._gsDefine("plugins.ThrowPropsPlugin", ["plugins.TweenPlugin", "TweenLite", "easing.Ease", "utils.VelocityTracker"], function(TweenPlugin, TweenLite, Ease, VelocityTracker) {
+	_gsScope._gsDefine("plugins.ThrowPropsPlugin", ["plugins.TweenPlugin", "TweenLite", "easing.Ease", "utils.VelocityTracker"], function(TweenPlugin, TweenLite, Ease, VelocityTracker) {
 		
 		var ThrowPropsPlugin = function(props, priority) {
 				TweenPlugin.call(this, "throwProps");
@@ -177,7 +178,7 @@
 
 
 		p.constructor = ThrowPropsPlugin;
-		ThrowPropsPlugin.version = "0.9.5";
+		ThrowPropsPlugin.version = "0.9.6";
 		ThrowPropsPlugin.API = 2;
 		ThrowPropsPlugin._autoCSS = true; //indicates that this plugin can be inserted into the "css" object using the autoCSS feature of TweenLite
 		ThrowPropsPlugin.defaultResistance = 100;
@@ -201,7 +202,7 @@
 		};
 
 		ThrowPropsPlugin._cssRegister = function() {
-			var CSSPlugin = (window.GreenSockGlobals || window).com.greensock.plugins.CSSPlugin;
+			var CSSPlugin = (_gsScope.GreenSockGlobals || _gsScope).com.greensock.plugins.CSSPlugin;
 			if (!CSSPlugin) {
 				return;
 			}
@@ -418,7 +419,7 @@
  * VelocityTracker
  * ----------------------------------------------------------------
  */
-	window._gsDefine("utils.VelocityTracker", ["TweenLite"], function(TweenLite) {
+	_gsScope._gsDefine("utils.VelocityTracker", ["TweenLite"], function(TweenLite) {
 
 		var _first,	_initted, _time1, _time2,
 			_capsExp = /([A-Z])/g,
@@ -629,4 +630,18 @@
 	}, true);
 
 
-}); if (window._gsDefine) { window._gsQueue.pop()(); }
+}); if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); }
+
+//export to AMD/RequireJS and CommonJS/Node (precursor to full modular build system coming at a later date)
+(function(name) {
+	"use strict";
+	var getGlobal = function() {
+		return (_gsScope.GreenSockGlobals || _gsScope)[name];
+	};
+	if (typeof(define) === "function" && define.amd) { //AMD
+		define(["TweenLite"], getGlobal);
+	} else if (typeof(module) !== "undefined" && module.exports) { //node
+		require("../TweenLite.js");
+		module.exports = getGlobal();
+	}
+}("ThrowPropsPlugin"));

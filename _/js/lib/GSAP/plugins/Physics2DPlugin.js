@@ -1,6 +1,6 @@
 /*!
- * VERSION: 0.1.1
- * DATE: 2013-03-27
+ * VERSION: 0.1.2
+ * DATE: 2014-07-17
  * UPDATES AND DOCS AT: http://www.greensock.com
  *
  * @license Copyright (c) 2008-2014, GreenSock. All rights reserved.
@@ -10,7 +10,8 @@
  * 
  * @author: Jack Doyle, jack@greensock.com
  */
-(window._gsQueue || (window._gsQueue = [])).push( function() {
+var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window; //helps ensure compatibility with AMD/RequireJS and CommonJS/Node
+(_gsScope._gsQueue || (_gsScope._gsQueue = [])).push( function() {
 	
 	"use strict";
 
@@ -29,10 +30,11 @@
 				}
 			},
 			_random = Math.random(),
-			_rootFramesTimeline = window._gsDefine.globals.com.greensock.core.Animation._rootFramesTimeline,
+			_rootFramesTimeline = _gsScope._gsDefine.globals.com.greensock.core.Animation._rootFramesTimeline,
 
-			Physics2DPlugin = window._gsDefine.plugin({
+			Physics2DPlugin = _gsScope._gsDefine.plugin({
 				propName: "physics2D",
+				version: "0.1.2",
 				API: 2,
 
 				//called when the tween renders for the first time. This is where initial values should be recorded and any setup routines should run.
@@ -182,4 +184,4 @@
 			}});
 		};
 
-}); if (window._gsDefine) { window._gsQueue.pop()(); }
+}); if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); }
