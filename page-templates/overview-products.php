@@ -819,6 +819,17 @@ get_header();
                     	endif;
                     endforeach;
                     ?>
+
+                    <?php if (get_the_title() == "Snowboards") : ?>
+                    <li class="product-item Narrow Standard Wide mens womens youth snowboards BTX EC2_BTX C2_BTX XC2_BTX C3_BTX available 130 140 145 148 151 153 154 155 156 157 159 161 161_5 164_5 165 169">
+                        <a href="/snowboarding/snowboard-builder/">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" />
+                            <h5>DIY Board Builder</h5>
+                            <div class="price"><?php echo getPrice(639.95, 664.95, 'no', 0); ?></div>
+                        </a>
+                    </li>
+                    <?php endif; ?>
+
                 </ul>
             </div>
             <div class="clearfix"></div>
