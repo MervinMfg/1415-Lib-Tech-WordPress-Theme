@@ -11,6 +11,15 @@ get_header();
 		<section class="product-slider bg-product-snow">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
+					<li>
+						<a href="/snowboarding/snowboard-builder/">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" />
+							<div class="product-peek">
+								<p class="product-title">DIY Board Builder</p>
+								<p class="product-type">Build your dream snowboard!</p>
+							</div>
+						</a>
+					</li>
 					<?php
 						$post_objects = get_field('libtech_homepage_featured_products');
 						if( $post_objects ):
