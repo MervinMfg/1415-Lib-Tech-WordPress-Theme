@@ -31,7 +31,7 @@ get_header();
 						} else {
 							$postType = "libtech_snowboards";
 						}
-						// Get Snowboards
+						// Get Products
 						$args = array(
 							'post_type' => $postType,
 							'posts_per_page' => -1,
@@ -151,12 +151,30 @@ get_header();
 							$postType = "libtech_team_snow";
 						}
 						// GET TEAM MEMBERS
-						remove_all_filters('posts_orderby'); // make sure you can order random - fix regarding Post Types Order plugin
-						$args = array(
-							'post_type' => $postType,
-							'posts_per_page' => 3,
-							'orderby' => 'rand'
-						);
+						// make sure you can order random - fix regarding Post Types Order plugin
+						remove_all_filters('posts_orderby');
+						// check if snow, only grab main rippers
+						if ($postType == "libtech_team_snow") {
+							$args = array(
+								'post_type' => $postType,
+								'posts_per_page' => 3,
+								'orderby' => 'rand',
+								'tax_query' => array(
+									array(
+									'taxonomy' => 'libtech_team_snow_cat',
+									'field' => 'slug',
+									'terms' => 'rippers',
+									'include_children' => false
+									)
+								)
+							);
+						} else {
+							$args = array(
+								'post_type' => $postType,
+								'posts_per_page' => 3,
+								'orderby' => 'rand'
+							);
+						}
 						$loop = new WP_Query( $args );
 						$i=0;
 						while ( $loop->have_posts() ) : $loop->the_post();
