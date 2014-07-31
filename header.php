@@ -79,6 +79,8 @@
 			} else {
 				$GLOBALS['sport'] = "snow";
 			}
+		} else {
+			$GLOBALS['sport'] = "snow";
 		}
 	} else {
 		if (isset($_COOKIE["libtech_sport"])) { // check cookie for stored sport
