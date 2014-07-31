@@ -104,52 +104,111 @@ get_header();
         // find product post type to query
         switch (get_the_title()) {
             case "Snowboards":
-                $postType = "libtech_snowboards";
                 $imageSize = "square-large";
+                $args = array(
+                    'post_type' => "libtech_snowboards",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Skis":
-                $postType = "libtech_nas";
                 $imageSize = "square-large";
+                $args = array(
+                    'post_type' => "libtech_nas",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Surfboards":
-                $postType = "libtech_surfboards";
                 $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_surfboards",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Skateboards":
-                $postType = "libtech_skateboards";
                 $imageSize = "square-large";
+                $args = array(
+                    'post_type' => "libtech_skateboards",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Outerwear":
-                $postType = "libtech_outerwear";
                 $imageSize = "square-large";
+                $args = array(
+                    'post_type' => array( 'libtech_outerwear', 'libtech_apparel' ),
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        'relation' => 'OR',
+                        array(
+                            'taxonomy' => 'libtech_outerwear_categories',
+                            'field' => 'slug',
+                            'terms' => array('jackets', 'pants'),
+                            'include_children' => false
+                        ),
+                        array(
+                            'taxonomy' => 'libtech_apparel_categories',
+                            'field' => 'slug',
+                            'terms' => 'layers',
+                            'include_children' => false
+                        )
+                    )
+                );
                 break;
             case "Apparel":
-                $postType = "libtech_apparel";
                 $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_apparel",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Accessories":
-                $postType = "libtech_accessories";
                 $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_accessories",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Luggage":
-                $postType = "libtech_luggage";
                 $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_luggage",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             case "Bindings":
-                $postType = "libtech_bindings";
                 $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_bindings",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
                 break;
             default:
-                $postType = "libtech_snowboards";
                 $imageSize = "square-large";
+                $args = array(
+                    'post_type' => "libtech_snowboards",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC'
+                );
         }
         // Get Products
-        $args = array(
-            'post_type' => $postType,
-            'posts_per_page' => -1,
-            'orderby' => 'menu_order',
-            'order' => 'ASC'
-        );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
             $productArray = Array();
@@ -161,7 +220,7 @@ get_header();
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
             $productArray['available'] = "No";
             // check if we're surf because of varrying fin costs
-            if ($postType == "libtech_surfboards") {
+            if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
                 if (get_field('libtech_product_price_us_5fin') == "") {
                     $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
@@ -482,9 +541,11 @@ get_header();
                             <li data-filter=".splitboards">Splitboards</li>
                             <li data-filter=".snowskates">Snowskates</li>
                             <li data-filter=".fundamentals">fundaMENTALS</li>
-                            <li data-filter=".travis-rice-collection">T. Rice Collection</li>
-                            <li data-filter=".early-release">Early Release</li>
                             <li data-filter=".libited">Libited</li>
+                            <li data-filter=".experimental-division">experiMENTAL</li>
+                            <li data-filter=".early-release">Early Release</li>
+                            <li data-filter=".travis-rice-collection">T. Rice Collection</li>
+                            <li data-filter=".jamie-lynn-collection">Jamie's Collection</li>
                         </ul>
                     </li>
                     <li class="filters contours">
@@ -675,8 +736,11 @@ get_header();
                             <?php
                             $waterproofArray = Array();
                             foreach ($productsArray as $product):
-                                if (in_array($product['waterproof'], $waterproofArray) == false) {
-                                    array_push($waterproofArray, $product['waterproof']);
+                                // make sure we're not in 'layers' within apparel
+                                if (array_key_exists('waterproof', $product)) {
+                                    if (in_array($product['waterproof'], $waterproofArray) == false) {
+                                        array_push($waterproofArray, $product['waterproof']);
+                                    }
                                 }
                             endforeach;
                             array_multisort($waterproofArray, SORT_ASC);
@@ -802,12 +866,7 @@ get_header();
                 </ul>
                 <div class="clearfix"></div>
                 <ul class="product-listing <?php echo strtolower(get_the_title()); ?>">
-                    <?php
-                    foreach ($productsArray as $product):
-                    	if ($GLOBALS['language'] != "us" &&  $product['title'] == "superBANANA") :
-                    		// do nothing, hide board from CA and INT
-                    	else:
-                    ?>
+                    <?php foreach ($productsArray as $product): ?>
                     <li class="product-item<?php echo $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
                             <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" />
@@ -815,10 +874,7 @@ get_header();
                             <div class="price"><?php echo $product['price']; ?></div>
                         </a>
                     </li>
-                    <?php
-                    	endif;
-                    endforeach;
-                    ?>
+                    <?php endforeach; ?>
 
                     <?php if (get_the_title() == "Snowboards") : ?>
                     <li class="product-item Narrow Standard Wide mens womens youth snowboards BTX EC2_BTX C2_BTX XC2_BTX C3_BTX available 130 140 145 148 151 153 154 155 156 157 159 161 161_5 164_5 165 169">
