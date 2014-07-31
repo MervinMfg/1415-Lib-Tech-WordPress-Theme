@@ -4785,65 +4785,27 @@ body.international .shopping-cart-wrapper {
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\000039}}
 .dealer-locator .section-content h1 {
-  margin-bottom: 20px;
+  max-width: 1032px;
+  margin: 0 auto 20px;
 }
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000313}}
+.dealer-locator .section-content .dealer-copy {
+  max-width: 1032px;
+  color: #000;
+  margin: 0 auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000318}}
 .dealer-locator .section-content .dealer-copy p {
   margin-bottom: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000317}}
-.dealer-locator .section-content iframe {
-  display: none;
-  width: 920px;
-  margin-top: 10px;
-}
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000322}}
-.dealer-locator .section-content .iframe-fallback {
-  margin-top: 40px;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000324}}
-.dealer-locator .section-content .iframe-fallback p {
-  margin-bottom: 10px;
-}
-
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000330}}
-.dealer-locator-map {
-  width: 920px;
-  margin: 0 auto;
+.dealer-locator .section-content iframe {
+  width: 100%;
+  height: 700px;
+  margin-top: 10px;
+  background: none;
 }
 
-@media screen and (min-width: 980px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000336}}
-  .dealer-locator .section-content iframe {
-    display: block;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000339}}
-  .dealer-locator .section-content .iframe-fallback {
-    display: none;
-  }
-}
-@media screen and (min-width: 1200px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000346}}
-  .dealer-locator .section-content .dealer-copy {
-    float: right;
-    width: 20%;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000350}}
-  .dealer-locator .section-content iframe {
-    width: 79%;
-    margin-top: 0;
-  }
-}
-@media screen and (min-width: 1400px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000358}}
-  .dealer-locator .section-content .dealer-copy {
-    width: 30%;
-  }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dealer-locator\.scss}line{font-family:\0000362}}
-  .dealer-locator .section-content iframe {
-    width: 70%;
-  }
-}
 /* ==========================================================================
    COMPONENTS/_BLOG.SCSS
    ========================================================================== */
