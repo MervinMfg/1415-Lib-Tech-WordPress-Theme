@@ -821,9 +821,15 @@ LIBTECH.main = {
 			mode: 'horizontal'
 		});
 		$(window).load(function () {
-			slider.reloadSlider();
-			thumbSlider.reloadSlider();
-			if (typeof techConstructionSlider === 'undefined') techConstructionSlider.reloadSlider();
+			if (typeof slider !== 'undefined') {
+				if (slider.length > 0) slider.reloadSlider();
+			}
+			if (typeof thumbSlider !== 'undefined') {
+				if (thumbSlider.length > 0) thumbSlider.reloadSlider();
+			}
+			if (typeof techConstructionSlider !== 'undefined') {
+				if (techConstructionSlider.length > 0) techConstructionSlider.reloadSlider();
+			}
 		});
 		// navigation when displayed below 600px (mobile phone)
 		$('.product-extras .product-mobile-nav ul li a').click(function (e) {
@@ -958,16 +964,30 @@ LIBTECH.main = {
 				selectedSize = $('#product-variation-size').val();
 
 				if (selectedGraphic == "Logo" || selectedGraphic == -1) {
-					if (selectedSize == -1 || selectedSize.indexOf("3 Fin") !== -1) {
+					if (selectedSize.indexOf("3 Fin") !== -1) {
 						$('.product-price .price-logo').addClass('active');
-					} else {
+					} else if (selectedSize.indexOf("5 Fin") !== -1) {
 						$('.product-price .price-logo-five').addClass('active');
+					} else {
+						var defaultFinValue = $('#product-variation-size option:eq(1)').val();
+						if (defaultFinValue.indexOf("3 Fin") !== -1) {
+							$('.product-price .price-logo').addClass('active');
+						} else {
+							$('.product-price .price-logo-five').addClass('active');
+						}
 					}
 				} else {
-					if (selectedSize == -1 || selectedSize.indexOf("3 Fin") !== -1) {
+					if (selectedSize.indexOf("3 Fin") !== -1) {
 						$('.product-price .price-graphic').addClass('active');
-					} else {
+					} else if (selectedSize.indexOf("5 Fin") !== -1) {
 						$('.product-price .price-graphic-five').addClass('active');
+					} else {
+						var defaultFinValue = $('#product-variation-size option:eq(1)').val();
+						if (defaultFinValue.indexOf("3 Fin") !== -1) {
+							$('.product-price .price-graphic').addClass('active');
+						} else {
+							$('.product-price .price-graphic-five').addClass('active');
+						}
 					}
 				}
 				// remove active class from availability alerts
