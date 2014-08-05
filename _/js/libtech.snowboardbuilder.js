@@ -333,7 +333,7 @@ var LIBTECH = LIBTECH || {};
 
 LIBTECH.snowboardbuilder = {
 	config: {
-		baseImgPath: 'http://cdn.lib-tech.com/wp-content/themes/libtech/_/img/diy/',
+		baseImgPath: 'http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/',
 		topGraphicImg: 0, // top
 		sidewallTopImg: 0,
 		sidewallBottomImg: 0,

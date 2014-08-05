@@ -8,7 +8,7 @@ var LIBTECH = LIBTECH || {};
 LIBTECH.main = {
 	config: {
 		menuState: 'closed',
-		wpImgPath: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/',
+		wpImgPath: 'http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/',
 		shop: ''
 	},
 	init: function () {
