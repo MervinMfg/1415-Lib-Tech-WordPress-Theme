@@ -1,5 +1,5 @@
 /**
- * 1415 Lib Tech WordPress Theme - Shop - http://www.gnu.com
+ * 1415 Lib Tech WordPress Theme - Shop - http://www.lib-tech.com
  * Author: brian.behrens@mervin.com - http://www.mervin.com
  */
 
@@ -99,7 +99,7 @@ LIBTECH.Shop.prototype = {
 			complete: function () {}
 		});
 		// check for the region
-		regionCookie = self.utilities.cookie.getCookie('libtech_region');
+		regionCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_region');
 		if (regionCookie !== null || regionCookie !== "") {
 			lang = regionCookie;
 		} else {

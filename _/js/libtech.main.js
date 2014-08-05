@@ -8,15 +8,16 @@ var LIBTECH = LIBTECH || {};
 LIBTECH.main = {
 	config: {
 		menuState: 'closed',
-		wpImgPath: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/'
+		wpImgPath: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/',
+		shop: ''
 	},
 	init: function () {
-		var self, $body, shop;
+		var self, $body, shop, regionSelector;
 		self = this;
 		$body = $('body');
 		// init global compontents
-		shop = new LIBTECH.Shop(); // init shopatron JS
-		self.regionSelectorInit(); // init the region selector
+		self.config.shop = new LIBTECH.Shop(); // init shopatron JS
+		regionSelector = new LIBTECH.RegionSelector(); // init the region selector
 		self.sportCookieInit(); // init/check the sport cookie
 		self.searchInit(); // init header search bar
 		$(window).load(function () {
@@ -181,98 +182,6 @@ LIBTECH.main = {
 			});
 		});
 	},
-	regionSelectorInit: function () {
-		// check language cookie on load
-		var self, lang, regionCookie;
-		self = this;
-		regionCookie = self.utilities.cookie.getCookie('libtech_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
-		}
-		if (lang) {
-			if (lang === 'ca') {
-				$(".country-ca").addClass("selected");
-				$("body").removeClass("international");
-				self.takeoverInit();
-			} else if (lang === 'int') {
-				$("body").addClass("international");
-				$(".country-int").addClass("selected");
-				self.takeoverInit();
-			} else {
-				$(".country-us").addClass("selected");
-				$("body").removeClass("international");
-				self.takeoverInit();
-			}
-		} else {
-			if (navigator.cookieEnabled === true) {
-				// if no region cookie has been set, open selector if on product page
-				if ($('body').hasClass('page-template-page-templatespage-snowboard-builder-php') || $('body').hasClass('page-template-page-templatespage-snowboard-builder-share-php') || $('body').hasClass('page-template-page-templatespage-shopping-cart-php') || $('body').hasClass('page-template-page-templatespage-overview-products-php') || $('body').hasClass('single-libtech_snowboards') || $('body').hasClass('single-libtech_nas') || $('body').hasClass('single-libtech_surfboards') || $('body').hasClass('single-libtech_skateboards') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_outerwear')) {
-					self.regionSelectorOverlayInit();
-					self.takeoverInit(false);
-				} else {
-					self.takeoverInit();
-				}
-				// pick us by default, but don't set cookie
-				$(".country-us").addClass("selected");
-			} else {
-				// cookies are disabled
-				$(".country-us").addClass("selected");
-				self.takeoverInit();
-			}
-		}
-		// add click events
-		$(".region-selector").click(function (e) {
-			e.preventDefault();
-			e.stopPropagation(); // kill even from firing further
-			if (navigator.cookieEnabled === false) {
-				alert('Enable cookies in your browser in order to select your region.');
-			} else {
-				self.regionSelectorOverlayInit();
-			}
-		});
-	},
-	regionSelectorOverlayInit: function () {
-		var self = this;
-		$('#region-selector').toggleClass('visible');
-		// add click events
-		$("#region-selector .us").click(function (e) {
-			e.preventDefault();
-			self.utilities.cookie.setCookie('libtech_region', 'us', 60);
-			window.location.reload();
-		});
-		$("#region-selector .ca").click(function (e) {
-			e.preventDefault();
-			self.utilities.cookie.setCookie('libtech_region', 'ca', 60);
-			window.location.reload();
-		});
-		$("#region-selector .int").click(function (e) {
-			e.preventDefault();
-			self.utilities.cookie.setCookie('libtech_region', 'int', 60);
-			window.location.reload();
-		});
-		// listen for escape key
-		$(document).keyup(function (e) {
-			if (e.keyCode == 27) {
-				$('#region-selector').toggleClass('visible');
-				// kill event listeners
-				$(document).unbind('keyup');
-				$(document).unbind('click');
-				$('#region-selector .choose-region ul li').unbind('click');
-			}
-		});
-		// don't hide if clicked within region selector
-		$('#region-selector .choose-region ul li').click(function (e) {
-			e.stopPropagation();
-		});
-		// hide if clicked anywhere outside region selector
-		$(document).click(function () {
-			$('#region-selector').toggleClass('visible');
-			// kill event listeners
-			$(document).unbind('keyup');
-			$(document).unbind('click');
-			$('#region-selector .choose-region ul li').unbind('click');
-		});
-	},
 	sportCookieInit: function () {
 		var self, sport;
 		self = this;
@@ -292,47 +201,6 @@ LIBTECH.main = {
 			}
 			self.utilities.cookie.setCookie('libtech_sport', sport, 30);
 		}
-	},
-	takeoverInit: function (showTakeover) {
-		var self = this;
-		if (typeof (showTakeover) === 'undefined') showTakeover = true;
-		// make sure we're not on an international page, we don't show it there
-		//if ($('body').hasClass('international') === false) {
-			// on click of takeover, check expansion / contraction
-			$('.takeover').on('click.takeover', function (e) {
-				var contracted, expanded;
-				contracted = $('.takeover .takeover-content .contracted');
-				expanded = $('.takeover .takeover-content .expanded');
-
-				if (contracted.hasClass('hide')) {
-					$('.takeover').height(expanded.height());
-					$('.takeover').animate({
-						height: contracted.height()
-					}, 500, function () {
-						$('.takeover').height('auto');
-					});
-				} else {
-					$('.takeover').height(contracted.height());
-					$('.takeover').animate({
-						height: expanded.height()
-					}, 500, function () {
-						$('.takeover').height('auto');
-					});
-				}
-				contracted.toggleClass('hide');
-				expanded.toggleClass('show');
-			});
-			// check if we should diplay the takeover or not based on cookies
-			if (navigator.cookieEnabled !== false && showTakeover === true) {
-				var takeoverCookie = self.utilities.cookie.getCookie('libtech_takeover');
-				if (takeoverCookie !== 'ExtensionRamp') {
-					self.utilities.cookie.setCookie('libtech_takeover', 'ExtensionRamp', 7);
-					setTimeout(function () {
-						$('.takeover').click();
-					}, 2000);
-				}
-			}
-		//}
 	},
 	homeInit: function () {
 		var self = this;
@@ -631,7 +499,7 @@ LIBTECH.main = {
 			$('.product-buy .cart-success').removeClass('hidden');
 			$('.product-buy .cart-failure').addClass('hidden');
 			// update quickcart
-			self.quickCartInit();
+			self.config.shop.quickCartInit();
 		}
 		function addToCartError() {
 			$('.product-buy .cart-failure').removeClass('hidden');
