@@ -487,7 +487,11 @@ Template Name: Surfboard Detail
 		<section class="<?php echo $sectionClass; ?> product-gallery">
 			<div class="section-content">
 				<h2>Gallery</h2>
-				<?php the_field('libtech_surfboard_gallery'); ?>
+				<?php 
+					$image_ids = get_field('libtech_surfboard_gallery', false, false);
+					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
+					echo do_shortcode( $shortcode );
+				?>
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-gallery -->
