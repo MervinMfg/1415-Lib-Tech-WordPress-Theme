@@ -205,12 +205,12 @@
 			<div class="takeover-content">
 				<div class="expanded">
 					<a href="#close-takeover" class="close">Close</a>
-					<a href="/surfboards/extension-ramp/" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-waterboards-extension-ramp.jpg" alt="Lib Tech Waterboards - Jamie Lynn - 6ft 6in Extension Ramp" /></a>
+					<a href="/snowboards/#filter=.jamie-lynn-collection" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-snowboards-jamie-lynn.jpg" alt="Lib Tech Snowboards - Jamie Lynn Collection" /></a>
 				</div>
 				<div class="contracted">
-					<a href="#the-extension-ramp">
+					<a href="#jamie-lynn-collection">
 						<p class="view-more">View More</p>
-						<p class="message">Lib Tech Waterboards - Introducing The Extension Ramp</p>
+						<p class="message">Lib Tech Snowboards - The Jamie Lynn Collection</p>
 						<div class="clearfix"></div>
 					</a>
 				</div>
