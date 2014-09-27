@@ -194,7 +194,10 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<?php include get_template_directory() . '/_/inc/header-includes.php'; ?>
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond-1.4.2.min.js"></script>
+		<link href="http://cdn.lib-tech.com/respond-proxy/" id="respond-proxy" rel="respond-proxy" />
+		<link href="<?php echo get_template_directory_uri(); ?>/_/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.proxy.js"></script>
 	<![endif]-->
 	<!-- WordPress Head -->
 	<?php wp_head(); ?>
