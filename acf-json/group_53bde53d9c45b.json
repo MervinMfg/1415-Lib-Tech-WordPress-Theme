@@ -2,7 +2,99 @@
     "key": "group_53bde53d9c45b",
     "title": "Featured Slider",
     "fields": [
-
+        {
+            "key": "field_53bde54858d68",
+            "label": "Slider",
+            "name": "libtech_featured_silder",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Slide",
+            "sub_fields": [
+                {
+                    "key": "field_53bde55a58d69",
+                    "label": "Image",
+                    "name": "libtech_featured_silder_image",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "(1600px x 640px)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                },
+                {
+                    "key": "field_53bde59f58d6a",
+                    "label": "Link URL",
+                    "name": "libtech_featured_silder_link_url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53bde5b358d6b",
+                    "label": "Alt Text",
+                    "name": "libtech_featured_silder_alt_text",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_53bde5c158d6c",
+                    "label": "Category",
+                    "name": "libtech_featured_silder_cat",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "Featured category will always show. 1 will be pulled at random from each remaining category. ",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "features": "Features",
+                        "promos": "Promos",
+                        "snow": "Snow",
+                        "ski": "Ski",
+                        "surf": "Surf",
+                        "skate": "Skate"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                }
+            ]
+        }
     ],
     "location": [
         [

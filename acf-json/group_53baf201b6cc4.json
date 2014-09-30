@@ -2,7 +2,190 @@
     "key": "group_53baf201b6cc4",
     "title": "Skateboard Options",
     "fields": [
-
+        {
+            "key": "field_5272997b01636",
+            "label": "Options",
+            "name": "libtech_skateboard_options",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Option",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_5272999901637",
+                    "label": "Name",
+                    "name": "libtech_skateboard_options_name",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_52729be901638",
+                    "label": "Images",
+                    "name": "libtech_skateboard_options_images",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Image",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_52729c0b01639",
+                            "label": "Image",
+                            "name": "libtech_skateboard_options_images_img",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "return_format": "id"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_52729c420163a",
+                    "label": "Variations",
+                    "name": "libtech_skateboard_options_variations",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Variation",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_52729c600163b",
+                            "label": "Width",
+                            "name": "libtech_skateboard_options_variations_width",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_52729cde0163d",
+                            "label": "SKU",
+                            "name": "libtech_skateboard_options_variations_sku",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_52729cef0163e",
+                            "label": "Availability US",
+                            "name": "libtech_skateboard_options_variations_availability_us",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_52729d110163f",
+                            "label": "Availability CA",
+                            "name": "libtech_skateboard_options_variations_availability_ca",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_53a9e7f4eb4d1",
+                            "label": "Availability EUR",
+                            "name": "libtech_skateboard_options_variations_availability_eur",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        }
+                    ]
+                }
+            ]
+        }
     ],
     "location": [
         [
