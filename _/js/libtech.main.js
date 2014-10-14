@@ -65,6 +65,8 @@ LIBTECH.main = {
 			self.libLegsInit();
 		} else if ($body.hasClass('page-template-page-templatesstorm-factory-php')) {
 			self.stormFactoryInit();
+		} else if ($body.hasClass('page-template-page-templatesdttd-php')) {
+			self.dttdInit();
 		}
 		/* Chrome Webfont Fix Styles
 			- https://code.google.com/p/chromium/issues/detail?id=336476
@@ -1396,6 +1398,12 @@ LIBTECH.main = {
 			infiniteLoop: false,
 			hideControlOnEnd: true
 		});
+	},
+	dttdInit: function () {
+		var self = this;
+		$('.dttd-video .video-player').fitVids();
+		// set up large featured images/videos
+		self.utilities.featuredSliderInit(false);
 	},
 	shoppingCartInit: function () {
 		

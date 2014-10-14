@@ -1,0 +1,44 @@
+{
+    "key": "group_543c570c5f970",
+    "title": "DTTD",
+    "fields": [
+        {
+            "key": "field_543c571692aee",
+            "label": "Contest Products",
+            "name": "libtech_dttd_products",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "post_type": [
+                "libtech_snowboards",
+                "libtech_outerwear"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search",
+                "post_type",
+                "taxonomy"
+            ],
+            "elements": "",
+            "max": "",
+            "return_format": "object"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/dttd.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": ""
+}

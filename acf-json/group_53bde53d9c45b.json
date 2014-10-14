@@ -117,6 +117,13 @@
                 "operator": "==",
                 "value": "page-templates\/storm-factory.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/dttd.php"
+            }
         ]
     ],
     "menu_order": 0,

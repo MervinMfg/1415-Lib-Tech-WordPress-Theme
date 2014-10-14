@@ -6426,6 +6426,180 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   }
 }
 /* ==========================================================================
+   COMPONENTS/_DTTD.SCSS
+   ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\000036}}
+.dttd-details .section-content {
+  padding: 20px 20px 0;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000310}}
+.dttd-details .title {
+  padding-bottom: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000313}}
+.dttd-details .dttd-times {
+  color: yellow;
+  font-weight: 700;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000317}}
+.dttd-details .dttd-times p {
+  font-size: 1.875em;
+  /* 30 / 16 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000320}}
+.dttd-details .dttd-times ul li {
+  width: 50%;
+  float: left;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 1.875em;
+  /* 30 / 16 */
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000327}}
+.dttd-details .dttd-times ul li:nth-child(odd) {
+  text-align: right;
+  padding-right: 10px;
+  padding-left: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000332}}
+.dttd-details .dttd-times ul li span {
+  color: #ccc;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000337}}
+.dttd-details .entry-share {
+  display: none;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000341}}
+.page-template-page-templatesdttd-php .featured-slider {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000346}}
+.dttd-contest .section-content {
+  padding: 0 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000349}}
+.dttd-contest .h3 {
+  text-transform: none;
+  padding-bottom: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000353}}
+.dttd-contest .h3 a {
+  text-transform: uppercase;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000357}}
+.dttd-contest .dttd-iou {
+  display: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000360}}
+.dttd-contest .product-listing {
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000363}}
+.dttd-contest .product-listing .product-item {
+  width: 50%;
+  float: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000367}}
+.dttd-contest .product-listing .product-item a {
+  padding: 10px;
+  text-align: center;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000372}}
+.dttd-contest .product-listing .product-item a img {
+  height: auto;
+}
+
+@media screen and (min-width: 600px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000381}}
+  .dttd-video .section-content {
+    padding: 0 20px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000384}}
+  .dttd-video .video-player {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000393}}
+  .dttd-details .title img.downtown {
+    max-width: 47%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\0000396}}
+  .dttd-details .title img.throwdown {
+    max-width: 53%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003101}}
+  .dttd-details .dttd-times p {
+    display: inline-block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003104}}
+  .dttd-details .dttd-times ul {
+    display: inline-block;
+    padding-left: 5px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003108}}
+  .dttd-details .dttd-times ul li {
+    width: auto;
+    float: none;
+    padding: 0;
+    display: inline-block;
+    padding: 0 5px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003115}}
+  .dttd-details .dttd-times ul li:nth-child(odd) {
+    padding: 0 5px;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003121}}
+  .dttd-details .entry-share {
+    display: block;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003124}}
+  .dttd-details .entry-share li {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    padding-top: 20px;
+  }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003133}}
+  .dttd-contest .product-listing {
+    text-align: center;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003136}}
+  .dttd-contest .product-listing .product-item {
+    width: 33.33%;
+  }
+}
+@media screen and (min-width: 980px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003144}}
+  .dttd-contest .dttd-iou {
+    display: block;
+    float: left;
+    width: 35%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003149}}
+  .dttd-contest .product-listing {
+    float: left;
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1200px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003157}}
+  .dttd-contest .dttd-iou {
+    width: 25%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/components\/_dttd\.scss}line{font-family:\00003160}}
+  .dttd-contest .product-listing {
+    width: 75%;
+  }
+}
+/* ==========================================================================
    MODULES/_FEATURED-SLIDER.SCSS
    ========================================================================== */
 @media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/bbehrens\/Projects\/Lib-Tech-WordPress\/wp-content\/themes\/1415-Lib-Tech-WordPress-Theme\/_\/css\/modules\/_featured-slider\.scss}line{font-family:\000035}}
