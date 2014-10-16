@@ -483,39 +483,6 @@ function register_custom_post_types() {
     register_taxonomy( 'libtech_snowboard_categories', 'libtech_snowboards', $args );
     // END SNOWBOARDS
 
-    // START BINDINGS
-    $labels = array(
-        'name' => _x('Bindings', 'post type general name'),
-        'singular_name' => _x('Binding', 'post type singular name'),
-        'add_new' => _x('Add New', 'libtech_bindings'),
-        'add_new_item' => __('Add New Binding'),
-        'edit_item' => __('Edit Binding'),
-        'new_item' => __('New Binding'),
-        'all_items' => __('All Bindings'),
-        'view_item' => __('View Binding'),
-        'search_items' => __('Search Bindings'),
-        'not_found' =>  __('No Binding Found'),
-        'not_found_in_trash' => __('No Bindings Found In Trash'), 
-        'parent_item_colon' => '',
-        'menu_name' => 'Bindings'
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
-        'query_var' => true,
-        'rewrite' => array("slug" => "bindings"),
-        'capability_type' => 'page',
-        'has_archive' => false, 
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
-    register_post_type('libtech_bindings',$args);
-    // END BINDINGS
-
     // START SKIS
     $labels = array(
         'name' => _x('Skis', 'post type general name'),
