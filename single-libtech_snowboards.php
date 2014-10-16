@@ -392,7 +392,7 @@ Template Name: Snowboard Detail
         	<div class="section-content">
 				<h2><span>Video</span></h2>
 				<div class="video-player">
-					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				</div>
 				<div class="video-copy">
 					<p class="quote h3"><?php the_field('libtech_product_video_quote'); ?></p>
