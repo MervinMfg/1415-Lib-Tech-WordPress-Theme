@@ -2,7 +2,24 @@
     "key": "group_53baf2020db7e",
     "title": "Redirect",
     "fields": [
-
+        {
+            "key": "field_519d060c67b77",
+            "label": "Redirect URL",
+            "name": "libtech_redirect_url",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "formatting": "none",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "readonly": 0,
+            "disabled": 0
+        }
     ],
     "location": [
         [

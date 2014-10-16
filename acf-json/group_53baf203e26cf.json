@@ -2,7 +2,119 @@
     "key": "group_53baf203e26cf",
     "title": "NAS Variations",
     "fields": [
-
+        {
+            "key": "field_500f22c2c36f2",
+            "label": "Variations",
+            "name": "libtech_nas_variations",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Variation",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_500f22c2c37f6",
+                    "label": "Length",
+                    "name": "libtech_nas_variations_length",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_500f22c2c38ef",
+                    "label": "SKU",
+                    "name": "libtech_nas_variations_sku",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_507da34a142e9",
+                    "label": "Availability US",
+                    "name": "libtech_nas_variations_availability_us",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Yes": "Yes",
+                        "No": "No"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "Yes",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_507da34a16a1e",
+                    "label": "Availability CA",
+                    "name": "libtech_nas_variations_availability_ca",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Yes": "Yes",
+                        "No": "No"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "Yes",
+                    "layout": "horizontal"
+                },
+                {
+                    "key": "field_53a9e8b71943d",
+                    "label": "Availability EUR",
+                    "name": "libtech_nas_variations_availability_eur",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Yes": "Yes",
+                        "No": "No"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "Yes",
+                    "layout": "horizontal"
+                }
+            ]
+        }
     ],
     "location": [
         [

@@ -2,7 +2,212 @@
     "key": "group_53baf2049b5e9",
     "title": "Snowboard Options",
     "fields": [
-
+        {
+            "key": "field_50072174bd0f7",
+            "label": "Options",
+            "name": "libtech_snowboard_options",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Option",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_50072174bd1f2",
+                    "label": "Name",
+                    "name": "libtech_snowboard_options_name",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_50072174bd2e6",
+                    "label": "Images",
+                    "name": "libtech_snowboard_options_images",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Image",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_51f0554b8bbc6",
+                            "label": "Image",
+                            "name": "libtech_snowboard_options_images_img",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "return_format": "id"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_50072174bd3d8",
+                    "label": "Variations",
+                    "name": "libtech_snowboard_options_variations",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Variation",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_50072174bd4ca",
+                            "label": "Width",
+                            "name": "libtech_snowboard_options_variations_width",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Narrow": "Narrow",
+                                "Standard": "Standard",
+                                "Mid Wide": "Mid Wide",
+                                "Wide": "Wide",
+                                "Ultra Wide": "Ultra Wide"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "Standard",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_50072174bd603",
+                            "label": "Length",
+                            "name": "libtech_snowboard_options_variations_length",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_50072174bd6e4",
+                            "label": "SKU",
+                            "name": "libtech_snowboard_options_variations_sku",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_507cb0a5cb47f",
+                            "label": "Availability US",
+                            "name": "libtech_snowboard_options_variations_availability_us",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_507cb0a5cdba0",
+                            "label": "Availability CA",
+                            "name": "libtech_snowboard_options_variations_availability_ca",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_53a9e8d75b285",
+                            "label": "Availability EUR",
+                            "name": "libtech_snowboard_options_variations_availability_eur",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "No",
+                            "layout": "vertical"
+                        }
+                    ]
+                }
+            ]
+        }
     ],
     "location": [
         [

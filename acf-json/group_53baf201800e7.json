@@ -2,7 +2,81 @@
     "key": "group_53baf201800e7",
     "title": "LBS Details",
     "fields": [
-
+        {
+            "key": "field_52f282da6f202",
+            "label": "Video ID",
+            "name": "libtech_lbs_video_id",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Enter Vimeo ID",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52f282ea6f203",
+            "label": "Title",
+            "name": "libtech_lbs_video_title",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52f283016f204",
+            "label": "Details",
+            "name": "libtech_lbs_video_details",
+            "prefix": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "new_lines": "br",
+            "readonly": 0,
+            "disabled": 0,
+            "rows": ""
+        },
+        {
+            "key": "field_52f283176f205",
+            "label": "Products",
+            "name": "libtech_lbs_products",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "libtech_snowboards"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": "",
+            "elements": [
+                "post_type"
+            ]
+        }
     ],
     "location": [
         [

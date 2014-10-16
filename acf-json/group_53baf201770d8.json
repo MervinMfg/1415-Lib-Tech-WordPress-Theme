@@ -2,7 +2,27 @@
     "key": "group_53baf201770d8",
     "title": "FAQ Type",
     "fields": [
-
+        {
+            "key": "field_533dcc174e1e5",
+            "label": "Type",
+            "name": "libtech_faq_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "choices": {
+                "general": "General",
+                "snow": "Snow",
+                "ski": "Ski",
+                "surf": "Surf",
+                "skate": "Skate"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "general",
+            "layout": "horizontal"
+        }
     ],
     "location": [
         [

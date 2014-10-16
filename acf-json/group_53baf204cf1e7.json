@@ -2,7 +2,19 @@
     "key": "group_53baf204cf1e7",
     "title": "Award Details",
     "fields": [
-
+        {
+            "key": "field_50070d417a31e",
+            "label": "Image",
+            "name": "libtech_award_image",
+            "prefix": "",
+            "type": "image",
+            "instructions": "100x100 PNG",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "return_format": "id",
+            "library": "all"
+        }
     ],
     "location": [
         [

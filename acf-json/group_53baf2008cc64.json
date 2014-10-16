@@ -2,7 +2,134 @@
     "key": "group_53baf2008cc64",
     "title": "Lib Legs",
     "fields": [
-
+        {
+            "key": "field_5384c46f18960",
+            "label": "Video ID",
+            "name": "libtech_liblegs_video_id",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5384c4b818961",
+            "label": "Banners",
+            "name": "libtech_liblegs_banners",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "(940px x 530px)",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Banner",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_5384c4e018962",
+                    "label": "Image",
+                    "name": "libtech_liblegs_banners_image",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_5384c4f718963",
+                    "label": "Link URL",
+                    "name": "libtech_liblegs_banners_link_url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_5384c50918964",
+                    "label": "Alt Text",
+                    "name": "libtech_liblegs_banners_alt_text",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5384c52318965",
+            "label": "Featured Product",
+            "name": "libtech_liblegs_featured_product",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "libtech_skateboards"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "max": "",
+            "elements": [
+                "post_type"
+            ]
+        },
+        {
+            "key": "field_5384c54618966",
+            "label": "Blog Category",
+            "name": "libtech_liblegs_category_slug",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Blog Category Slug",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
     ],
     "location": [
         [

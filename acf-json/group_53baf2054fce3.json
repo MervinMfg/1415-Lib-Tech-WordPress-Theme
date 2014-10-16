@@ -2,7 +2,60 @@
     "key": "group_53baf2054fce3",
     "title": "Product Pricing",
     "fields": [
-
+        {
+            "key": "field_4fff589d0e480",
+            "label": "US Price",
+            "name": "libtech_product_price_us",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "0.00",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_4fff589d0e952",
+            "label": "CA Price",
+            "name": "libtech_product_price_ca",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "0.00",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_53a9bc78b21a2",
+            "label": "EUR Price",
+            "name": "libtech_product_price_eur",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "0.00",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
     ],
     "location": [
         [

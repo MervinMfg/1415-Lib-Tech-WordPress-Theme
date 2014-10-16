@@ -1,10 +1,10 @@
 {
-    "key": "group_543c570c5f970",
-    "title": "DTTD",
+    "key": "group_543c84b4a0ac8",
+    "title": "Downtown Throwdown",
     "fields": [
         {
-            "key": "field_543c571692aee",
-            "label": "Contest Products",
+            "key": "field_543c84bb6264f",
+            "label": "DTTD Products",
             "name": "libtech_dttd_products",
             "prefix": "",
             "type": "relationship",

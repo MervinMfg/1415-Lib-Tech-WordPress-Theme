@@ -2,7 +2,43 @@
     "key": "group_53baf20472a47",
     "title": "NAS Details",
     "fields": [
-
+        {
+            "key": "field_50176af27dd3a",
+            "label": "Shape",
+            "name": "libtech_nas_shape",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Directional": "Directional",
+                "Twin": "Twin"
+            },
+            "default_value": "",
+            "layout": "horizontal",
+            "other_choice": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_50176af27e072",
+            "label": "Contour",
+            "name": "libtech_nas_contour",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "All Terrain \/ Pow reCURVE": "All Terrain \/ Pow reCURVE",
+                "Jib \/ Freestyle reCURVE": "Jib \/ Freestyle reCURVE",
+                "Traditional Camber": "Traditional Camber"
+            },
+            "default_value": "",
+            "layout": "vertical",
+            "other_choice": 0,
+            "save_other_choice": 0
+        }
     ],
     "location": [
         [

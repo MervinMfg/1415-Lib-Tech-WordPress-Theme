@@ -2,7 +2,69 @@
     "key": "group_53baf20198310",
     "title": "Partnership Details",
     "fields": [
-
+        {
+            "key": "field_52e9a296918db",
+            "label": "Website Link",
+            "name": "libtech_partners_link",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_52e9a2ab918dc",
+            "label": "Logo",
+            "name": "libtech_partners_logo",
+            "prefix": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "id"
+        },
+        {
+            "key": "field_52e9a2d3918dd",
+            "label": "Photos",
+            "name": "libtech_partners_photos",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Photo",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_52e9a2e7918de",
+                    "label": "Image",
+                    "name": "libtech_partners_photos_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "id"
+                }
+            ]
+        }
     ],
     "location": [
         [

@@ -2,14 +2,33 @@
     "key": "group_53baf202d5460",
     "title": "Specifications Type",
     "fields": [
-
+        {
+            "key": "field_50230c4b5af96",
+            "label": "Specifications Table",
+            "name": "libtech_specs_table",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Which specs table?",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Snowboards": "Snowboards",
+                "NAS": "NAS",
+                "Skateboards": "Skateboards",
+                "T-Shirts": "T-Shirts"
+            },
+            "default_value": "",
+            "layout": "vertical",
+            "other_choice": 0,
+            "save_other_choice": 0
+        }
     ],
     "location": [
         [
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "default"
+                "value": "page-templates\/page-specifications.php"
             }
         ]
     ],

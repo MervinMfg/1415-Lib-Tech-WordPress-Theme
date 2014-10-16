@@ -2,7 +2,24 @@
     "key": "group_53baf201aedcc",
     "title": "Team Overview",
     "fields": [
-
+        {
+            "key": "field_528d50fcb1207",
+            "label": "Video",
+            "name": "libtech_team_overview_video",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
     ],
     "location": [
         [

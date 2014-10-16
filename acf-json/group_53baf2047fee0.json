@@ -2,7 +2,82 @@
     "key": "group_53baf2047fee0",
     "title": "Technology Details",
     "fields": [
-
+        {
+            "key": "field_5008489bb794d",
+            "label": "Type",
+            "name": "libtech_technology_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select if the technology is a major or minor piece of technology. Major items require a video.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Major": "Major",
+                "Minor": "Minor"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5008489bb7d7b",
+            "label": "Icon",
+            "name": "libtech_technology_icon",
+            "prefix": "",
+            "type": "image",
+            "instructions": "Upload a PNG, square aspect ration, minimum of 100x100 pixels.",
+            "required": 0,
+            "conditional_logic": 0,
+            "preview_size": "thumbnail",
+            "library": "all",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5008489bb80ac",
+            "label": "Video",
+            "name": "libtech_technology_video",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Enter a Vimeo Video ID (only if major tech item)",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5008489bb83b9",
+            "label": "Related Products",
+            "name": "libtech_technology_related_products",
+            "prefix": "",
+            "type": "relationship",
+            "instructions": "Select the products this technology is corresponds with.",
+            "required": 0,
+            "conditional_logic": 0,
+            "return_format": "object",
+            "post_type": [
+                "libtech_snowboards",
+                "libtech_bindings",
+                "libtech_nas",
+                "libtech_surfboards",
+                "libtech_skateboards"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search",
+                "post_type"
+            ],
+            "max": "-1",
+            "elements": [
+                "post_type"
+            ]
+        }
     ],
     "location": [
         [

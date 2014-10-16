@@ -2,7 +2,80 @@
     "key": "group_53baf20321445",
     "title": "Luggage Details",
     "fields": [
-
+        {
+            "key": "field_50198398d4c4c",
+            "label": "Volume",
+            "name": "libtech_luggage_volume",
+            "prefix": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "none",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_50196dde86c1f",
+            "label": "Images",
+            "name": "libtech_luggage_images",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "table",
+            "button_label": "Add Image",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_50196dde86d1c",
+                    "label": "Image",
+                    "name": "libtech_luggage_images_image",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_51e830d9b3d26",
+                    "label": "Color",
+                    "name": "libtech_luggage_images_color",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Black": "Black",
+                        "Yellow": "Yellow",
+                        "Mike Parillo Print": "Mike Parillo Print"
+                    },
+                    "default_value": [],
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                }
+            ]
+        }
     ],
     "location": [
         [

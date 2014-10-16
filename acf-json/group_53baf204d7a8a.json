@@ -2,7 +2,50 @@
     "key": "group_53baf204d7a8a",
     "title": "Snowboard Details",
     "fields": [
-
+        {
+            "key": "field_5017657143c93",
+            "label": "Board Shape",
+            "name": "libtech_snowboard_shape",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "Directional": "Directional",
+                "Directional Twin": "Directional Twin",
+                "True Twin": "True Twin",
+                "Tapered": "Tapered"
+            },
+            "default_value": "",
+            "layout": "horizontal",
+            "other_choice": 0,
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_5017657144042",
+            "label": "Board Contour",
+            "name": "libtech_snowboard_contour",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "BTX": "BTX",
+                "!BTX!": "!BTX!",
+                "C1 BTX": "C1 BTX",
+                "C2 BTX": "C2 BTX",
+                "C3 BTX": "C3 BTX",
+                "XC2 BTX": "XC2 BTX",
+                "EC2 BTX": "EC2 BTX",
+                "TT": "TT"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        }
     ],
     "location": [
         [

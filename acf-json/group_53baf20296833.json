@@ -2,7 +2,266 @@
     "key": "group_53baf20296833",
     "title": "Binding Details",
     "fields": [
-
+        {
+            "key": "field_505ab3af169e1",
+            "label": "Flex",
+            "name": "libtech_binding_flex",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select the level of binding flex.",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5,
+                "6": 6,
+                "7": 7,
+                "8": 8,
+                "9": 9,
+                "10": 10
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": 5,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_505ab3af190f4",
+            "label": "Rider Type",
+            "name": "libtech_binding_rider_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "choices": {
+                "All Mountain Beast": "All Mountain Beast",
+                "Park\/Mountain": "Park\/Mountain",
+                "Backcountry Splitboard Fans": "Backcountry Splitboard Fans"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical"
+        },
+        {
+            "key": "field_505ab3af1b81d",
+            "label": "Options",
+            "name": "libtech_binding_options",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "row_min": "",
+            "row_limit": "",
+            "layout": "row",
+            "button_label": "Add Option",
+            "min": 0,
+            "max": 0,
+            "sub_fields": [
+                {
+                    "key": "field_505ab3af1df25",
+                    "label": "Color",
+                    "name": "libtech_binding_options_color",
+                    "prefix": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "choices": {
+                        "Black": "Black",
+                        "Grey": "Grey",
+                        "Red": "Red",
+                        "Charcoal": "Charcoal",
+                        "Wild": "Wild",
+                        "Silver": "Silver"
+                    },
+                    "default_value": {
+                        "Black": "Black"
+                    },
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "disabled": 0,
+                    "readonly": 0
+                },
+                {
+                    "key": "field_505ab3af2061f",
+                    "label": "Image",
+                    "name": "libtech_binding_options_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "return_format": "id"
+                },
+                {
+                    "key": "field_505ab3af22d39",
+                    "label": "Additional Images",
+                    "name": "libtech_binding_options_images",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Additional Image",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_505ab3af2543f",
+                            "label": "Additional Image",
+                            "name": "libtech_binding_options_images_img",
+                            "prefix": "",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "return_format": "id"
+                        }
+                    ]
+                },
+                {
+                    "key": "field_505ab3af27b51",
+                    "label": "Variations",
+                    "name": "libtech_binding_options_variations",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "column_width": "",
+                    "row_min": "",
+                    "row_limit": "",
+                    "layout": "table",
+                    "button_label": "Add Variations",
+                    "min": 0,
+                    "max": 0,
+                    "sub_fields": [
+                        {
+                            "key": "field_505ab3af2a25d",
+                            "label": "Size",
+                            "name": "libtech_binding_options_variations_size",
+                            "prefix": "",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "S\/M": "S\/M",
+                                "M\/L": "M\/L",
+                                "S": "S",
+                                "M": "M",
+                                "L": "L"
+                            },
+                            "default_value": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "ajax": 0,
+                            "placeholder": "",
+                            "disabled": 0,
+                            "readonly": 0
+                        },
+                        {
+                            "key": "field_505ab3af2c96c",
+                            "label": "SKU",
+                            "name": "libtech_binding_options_variations_sku",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "formatting": "none",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_505ab3af2f083",
+                            "label": "Availability US",
+                            "name": "libtech_binding_options_variations_availability_us",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "Yes",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_505ab3af317b7",
+                            "label": "Availability CA",
+                            "name": "libtech_binding_options_variations_availability_ca",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "Yes",
+                            "layout": "vertical"
+                        },
+                        {
+                            "key": "field_53a9e82ed7cae",
+                            "label": "Availability EUR",
+                            "name": "libtech_binding_options_variations_availability_eur",
+                            "prefix": "",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "column_width": "",
+                            "choices": {
+                                "Yes": "Yes",
+                                "No": "No"
+                            },
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "Yes",
+                            "layout": "vertical"
+                        }
+                    ]
+                }
+            ]
+        }
     ],
     "location": [
         [

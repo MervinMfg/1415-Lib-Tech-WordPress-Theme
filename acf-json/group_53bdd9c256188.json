@@ -2,7 +2,34 @@
     "key": "group_53bdd9c256188",
     "title": "Outerwear Details",
     "fields": [
-
+        {
+            "key": "field_53bdd9cfccf1d",
+            "label": "Technology Details",
+            "name": "libtech_outerwear_technology",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "default_value": "",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "tabs": "all"
+        },
+        {
+            "key": "field_53bdd9efccf1e",
+            "label": "Gallery",
+            "name": "libtech_outerwear_gallery",
+            "prefix": "",
+            "type": "gallery",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "min": "",
+            "max": "",
+            "preview_size": "thumbnail",
+            "library": "all"
+        }
     ],
     "location": [
         [
