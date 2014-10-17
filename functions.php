@@ -189,7 +189,7 @@ function libtech_excerpt($length_callback='libtech_excerptlength_home') {
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
-    echo $output;
+    return $output;
 }
 // removes auto paragraph wrapper
 remove_filter('the_excerpt', 'wpautop');

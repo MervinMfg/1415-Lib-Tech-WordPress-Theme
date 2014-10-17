@@ -71,53 +71,85 @@ switch ($GLOBALS['sport']) {
                         </ul>
                         <?php endif; ?>
 
+                        <div class="related-posts">
+                            <h2>RELATED POSTS</h2>
+                                <ul>
+                                    <?php
+                                        // RELATED POSTS BY CATEGORY
+                                        // Only grab posts with shared categories and within the same year
+                                        $relatedPosts = Array();
+                                        if ($post) {
+                                            $categories = get_the_category($post->ID);
+                                            if ($categories) {
+                                                $category_ids = array();
+                                                foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
+                                                $args = array(
+                                                    'category__in' => $category_ids,
+                                                    'post__not_in' => array($post->ID),
+                                                    'posts_per_page' => 10,
+                                                    'ignore_sticky_posts' => 1,
+                                                    'date_query' => array(
+                                                        array(
+                                                            'year' => get_the_time('Y')
+                                                        )
+                                                    )
+                                                );
+                                            } else {
+                                                $args = array(
+                                                    'posts_per_page' => 10,
+                                                    'ignore_sticky_posts' => 1
+                                                );
+                                            }
+                                        } else {
+                                            $args = array(
+                                                'posts_per_page' => 10,
+                                                'ignore_sticky_posts' => 1
+                                            );
+                                        }
+                                        $my_query = new WP_Query( $args );
+                                        if( $my_query->have_posts() ) {
+                                            while( $my_query->have_posts() ) {
+                                                $my_query->the_post();
+                                                $postImage = get_post_image('square-medium');
+                                                // get the main parent category
+                                                $category = get_the_category();
+                                                $catTree = get_category_parents($category[0]->term_id, true, '!', true);
+                                                $topCat = preg_split('/!/', $catTree);
+                                                $mainCategory = $topCat[0];
+                                                array_push($relatedPosts, Array('id' => get_the_ID(), 'title' => get_the_title(), 'url' => get_permalink(), 'image' => $postImage, 'dateTime' => get_the_time('c'), 'displayTime' => get_the_time('F jS, Y'), 'excerpt' => libtech_excerpt('libtech_excerptlength_home'), 'postClass' => get_post_class('blog-post')));
+                                            }
+                                        }
+                                        wp_reset_query();
+                                        // randomize posts
+                                        shuffle($relatedPosts);
+                                        $i = 1;
+                                        // loop through posts and break after 2
+                                        foreach ($relatedPosts as $relatedPost) :
+                                    ?>
 
-                        <?php
-                        // GET THOSE RELATED POSTS BY CATEGORY
-                        $orig_post = $post;
-                        global $post;
-                        $categories = get_the_category($post->ID);
-                        if ($categories) {
-                            $category_ids = array();
-                            foreach($categories as $individual_category) $category_ids[] = $individual_category->term_id;
-                            $args=array(
-                                'category__in' => $category_ids,
-                                'post__not_in' => array($post->ID),
-                                'posts_per_page' => 2, // Number of related posts that will be shown.
-                                'ignore_sticky_posts' => 1,
-                                'orderby' => 'rand'
-                            );
-                            $my_query = new WP_Query( $args );
-                            if( $my_query->have_posts() ) {
-                                echo '<div class="related-posts"><h2>RELATED POSTS</h2><ul>';
-                                while( $my_query->have_posts() ) {
-                                    $my_query->the_post();
-                                    $postImage = get_post_image('square-medium');
-                        ?>
-
-                                    <li <?php post_class('blog-post'); ?> id="post-<?php the_ID(); ?>">
+                                    <li class="post blog-post" id="post-<?php echo $relatedPost['id']; ?>">
                                         <div class="post-wrapper">
-                                            <a href="<?php the_permalink() ?>">
-                                                <img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
-                                                <h3 class="post-title"><?php the_title(); ?></h3>
+                                            <a href="<?php echo $relatedPost['url']; ?>">
+                                                <img src="<?php echo $relatedPost['image'][0]; ?>" alt="Image From <?php echo $relatedPost['title']; ?>" />
+                                                <h3 class="post-title"><?php echo $relatedPost['title']; ?></h3>
                                                 <p class="post-meta">
-                                                    <time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span><fb:comments-count href=<?php the_permalink() ?>></fb:comments-count> Comments</span>
+                                                    <time datetime="<?php echo $relatedPost['dateTime']; ?>"><?php echo $relatedPost['displayTime']; ?></time> | <span><fb:comments-count href=<?php echo $relatedPost['url']; ?>></fb:comments-count> Comments</span>
                                                 </p>
-                                                <p class="post-excerpt"><?php libtech_excerpt('libtech_excerptlength_home'); ?></p>
+                                                <p class="post-excerpt"><?php echo $relatedPost['excerpt']; ?></p>
                                                 <p class="post-more">READ MORE</p>
                                             </a>
                                         </div>
                                     </li>
-
-                        <?
-                                }
-                                echo '</ul></div>';
-                            }
-                        }
-                        $post = $orig_post;
-                        wp_reset_query();
-                        // END RELATED Posts
-                        ?>
+                                    
+                                    <?
+                                            $i++;
+                                            if ($i == 3) {
+                                                break; // onto the 3rd post, so break
+                                            }
+                                        endforeach;
+                                    ?>
+                                </ul>
+                            </div>
                         <div class="clearfix" id="sidebar-end"></div>
                     </div>
                 </div>

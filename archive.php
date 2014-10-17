@@ -48,7 +48,7 @@ get_header(); ?>
 									<p class="post-meta">
 										<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span><fb:comments-count href=<?php the_permalink() ?>></fb:comments-count> Comments</span>
 									</p>
-									<p class="post-excerpt"><?php libtech_excerpt('libtech_excerptlength_home'); ?></p>
+									<p class="post-excerpt"><?php echo libtech_excerpt('libtech_excerptlength_home'); ?></p>
 									<p class="post-more">READ MORE</p>
 								</a>
 							</div>
