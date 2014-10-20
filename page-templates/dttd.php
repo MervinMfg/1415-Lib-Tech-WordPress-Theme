@@ -30,7 +30,7 @@ get_header();
 
 		<div class="bg2-top"></div>
 
-		<?php if (date("m.d.y") == "10.18.14") : ?>
+		<?php if (date("m.d.y") > "10.17.14") : ?>
 		
 		<section class="dttd-video bg2">
 			<div class="section-content">
