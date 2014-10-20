@@ -27,25 +27,26 @@ module.exports = function (grunt) {
         sass: {
             dev: {
                 files: {
-                    '_/css/libtech.main.css': '_/css/libtech.main.scss',
-                    '_/css/libtech.snowboardbuilder.css': '_/css/libtech.snowboardbuilder.scss'
+                    '_/compiled/libtech.main.css': '_/css/libtech.main.scss',
+                    '_/compiled/libtech.snowboardbuilder.css': '_/css/libtech.snowboardbuilder.scss'
                 },
                 options: {
                     style: 'expanded',
-                    sourcemap: true,
+                    sourcemap: 'auto',
                     trace: true,
                     debugInfo: true,
-                    lineNumbers: true
+                    lineNumbers: true,
+                    update: true
                 }
             },
             prod: {
                 files: {
-                    '_/css/libtech.main.min.css': '_/css/libtech.main.scss',
-                    '_/css/libtech.snowboardbuilder.min.css': '_/css/libtech.snowboardbuilder.scss'
+                    '_/css/libtech.main.css': '_/css/libtech.main.scss',
+                    '_/css/libtech.snowboardbuilder.css': '_/css/libtech.snowboardbuilder.scss'
                 },
                 options: {
                     style: 'compact',
-                    sourcemap: false,
+                    sourcemap: 'none',
                     trace: false,
                     debugInfo: false,
                     lineNumbers: false
@@ -67,8 +68,8 @@ module.exports = function (grunt) {
                     banner: '/*! <%= pkg.name %> v<%= pkg.version %> | (c) <%= grunt.template.today("yyyy") %> Mervin Mfg. | mervin.com */\n'
                 },
                 files: {
-                    '_/css/libtech.main.min.css': ['_/css/libtech.main.min.css'],
-                    '_/css/libtech.snowboardbuilder.min.css': ['_/css/libtech.snowboardbuilder.min.css']
+                    '_/css/libtech.main.min.css': ['_/css/libtech.main.css'],
+                    '_/css/libtech.snowboardbuilder.min.css': ['_/css/libtech.snowboardbuilder.css']
                 }
             }
         },
@@ -99,7 +100,7 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['_/css/*.scss', '_/css/**/*.scss'],
-                tasks: ['sass'],
+                tasks: ['sass:dev'],
                 options: {
                     livereload: true
                 }
