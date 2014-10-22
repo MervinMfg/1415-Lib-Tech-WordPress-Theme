@@ -35,7 +35,7 @@ get_header();
 		<section class="dttd-video bg2">
 			<div class="section-content">
 				<div class="video-player">
-					<iframe width="640" height="360" src="//www.youtube.com/embed/QZhciwhiqgE" frameborder="0" allowfullscreen></iframe>
+					<iframe width="640" height="360" src="//www.youtube.com/embed/QZhciwhiqgE?autoplay=1" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</section>
