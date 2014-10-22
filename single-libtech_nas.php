@@ -140,8 +140,8 @@ Template Name: NAS Detail
         	<div class="section-content clearfix">
         		<div class="product-mobile-nav">
         			<ul>
-        				<li><a href="#info" class="h3 selected" id="info">Info</a></li>
-        				<li><a href="#specs" class="h3" id="specs">Specs</a></li>
+        				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
+        				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
         				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
         			</ul>
         		</div>
