@@ -376,16 +376,22 @@
 
 	.product-mobile-nav {
 		padding-bottom: 20px;
+		width: 100%;
 
 		li {
-			display: inline-block;
-			margin-right: 8px;
+			float: left;
+			width: 33.33%;
 
+			&.margin {
+				padding-right: 2%;
+			}
 			a {
 				background: $snowColor;
 				padding: 5px 10px;
 				color: #000;
 				display: inline-block;
+				width: 100%;
+				text-align: center;
 
 				&.selected {
 					background: none;
@@ -393,6 +399,7 @@
 					text-decoration: none;
 					cursor: default;
 				}
+				
 			}
 		}
 	}

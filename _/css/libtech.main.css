@@ -833,9 +833,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls .bx-wrapper .bx-viewport { background: none; }
 
 .product-extras { padding-right: 20px; padding-left: 20px; }
-.product-extras .product-mobile-nav { padding-bottom: 20px; }
-.product-extras .product-mobile-nav li { display: inline-block; margin-right: 8px; }
-.product-extras .product-mobile-nav li a { background: #FFFF00; padding: 5px 10px; color: #000; display: inline-block; }
+.product-extras .product-mobile-nav { padding-bottom: 20px; width: 100%; }
+.product-extras .product-mobile-nav li { float: left; width: 33.33%; }
+.product-extras .product-mobile-nav li.margin { padding-right: 2%; }
+.product-extras .product-mobile-nav li a { background: #FFFF00; padding: 5px 10px; color: #000; display: inline-block; width: 100%; text-align: center; }
 .product-extras .product-mobile-nav li a.selected { background: none; color: #FFFF00; text-decoration: none; cursor: default; }
 .product-extras.info .product-specs, .product-extras.info .product-tech-major, .product-extras.info .product-tech-minor, .product-extras.info .product-tech-construction { display: none; }
 .product-extras.specs .product-description, .product-extras.specs .product-awards, .product-extras.specs .product-tech-major, .product-extras.specs .product-tech-minor, .product-extras.specs .product-tech-construction { display: none; }
