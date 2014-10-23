@@ -1216,16 +1216,23 @@ body.international .shopping-cart-wrapper { display: none; }
 .search .section-content .gsc-control-cse .gs-result .gs-title b { color: #FFFF00; font-size: 1em !important; /* 22 / 16 */ }
 .search .section-content .gsc-control-cse .gs-result .gs-image-box { margin-right: 10px; }
 .search .section-content .gsc-control-cse .gs-result .gs-visibleUrl { color: #ccc; }
-.search .section-content .gsc-control-cse .gsc-cursor-box { padding-top: 20px; }
-.search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor { background: #fff; color: #000; text-transform: uppercase; font-weight: bold; font-style: normal; font-size: 1.375em !important; /* 22 / 16 */ }
-.search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor .gsc-cursor-page { margin: 10px; }
+.search .section-content .gsc-control-cse .gsc-cursor-box { padding-top: 35px; text-align: center; }
+.search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor { color: #000; text-transform: uppercase; font-weight: bold; font-style: normal; font-size: 1.375em !important; /* 22 / 16 */ padding: 10px 3px; }
+.search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor .gsc-cursor-page { margin: 10px; text-decoration: none; }
+.search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor .gsc-cursor-page:hover, .search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor .gsc-cursor-page:focus { text-decoration: underline; }
 .search .section-content .gsc-control-cse .gsc-cursor-box .gsc-cursor .gsc-cursor-page.gsc-cursor-current-page { color: #666; }
 
-.ski .search .section-content .gsc-control-cse .gs-result .gs-title b { color: #0099FF; }
+.ski .gsc-cursor { background: #0099FF; }
+.ski .search .section-content .gsc-control-cse .gs-result .gs-title b, .ski .gs-spelling a { color: #0099FF; }
 
-.surf .search .section-content .gsc-control-cse .gs-result .gs-title b { color: #FF6600; }
+.surf .gsc-cursor { background: #FF6600; }
+.surf .search .section-content .gsc-control-cse .gs-result .gs-title b, .surf .gs-spelling a { color: #FF6600; }
 
-.skate .search .section-content .gsc-control-cse .gs-result .gs-title b { color: #66CC00; }
+.snow .gsc-cursor { background: #FFFF00; }
+.snow .search .section-content .gsc-control-cse .gs-result .gs-title b, .snow .gs-spelling a { color: #FFFF00; }
+
+.skate .gsc-cursor { background: #66CC00; }
+.skate .search .section-content .gsc-control-cse .gs-result .gs-title b, .skate .gs-spelling a { color: #66CC00; }
 
 /* ========================================================================== COMPONENTS/_RIPPERS.SCSS ========================================================================== */
 .team-members .section-content { padding-left: 10px; padding-right: 10px; }

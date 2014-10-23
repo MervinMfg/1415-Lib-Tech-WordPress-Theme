@@ -30,17 +30,25 @@
 				}
 			}
 			.gsc-cursor-box {
-				padding-top: 20px;
+				padding-top: 35px;
+				text-align: center;
 				.gsc-cursor {
-					background: #fff;
 					color: #000;
 					text-transform: uppercase;
 					font-weight: bold;
 					font-style: normal;
 					font-size: 1.375em !important; /* 22 / 16 */
-
+					padding: 10px 3px;
+					
 					.gsc-cursor-page {
 						margin: 10px;
+						text-decoration: none;
+
+						&:hover,
+						&:focus {
+							text-decoration: underline;
+						}
+
 
 						&.gsc-cursor-current-page {
 							color: #666;
@@ -51,12 +59,40 @@
 		}
 	}
 }
-.ski .search .section-content .gsc-control-cse .gs-result .gs-title b {
-	color: $skiColor;
+
+.ski {
+	.gsc-cursor {
+		background: $skiColor;
+	}
+	.search .section-content .gsc-control-cse .gs-result .gs-title b,
+	.gs-spelling a {
+		color: $skiColor;
+	}
 }
-.surf .search .section-content .gsc-control-cse .gs-result .gs-title b {
-	color: $surfColor;
+.surf {
+	.gsc-cursor {
+		background: $surfColor;
+	}
+	.search .section-content .gsc-control-cse .gs-result .gs-title b,
+	.gs-spelling a {
+		color: $surfColor;
+	}
 }
-.skate .search .section-content .gsc-control-cse .gs-result .gs-title b {
-	color: $skateColor;
+.snow {
+	.gsc-cursor {
+		background: $snowColor;
+	}
+	.search .section-content .gsc-control-cse .gs-result .gs-title b,
+	.gs-spelling a {
+		color: $snowColor;
+	}
+}
+.skate {
+	.gsc-cursor {
+		background: $skateColor;
+	}
+	.search .section-content .gsc-control-cse .gs-result .gs-title b,
+	.gs-spelling a {
+		color: $skateColor;
+	}
 }
