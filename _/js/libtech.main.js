@@ -660,7 +660,7 @@ LIBTECH.main = {
 		});
 		// init gallery
 		if ($('.gallery')) {
-			self.utilities.galleryInit();
+			new LIBTECH.Gallery();
 		}
 		// check for browser resize and see if desktop zoom should occur
 		$(window).on('resize.productZoom', function () {
@@ -693,7 +693,7 @@ LIBTECH.main = {
 		if ($('body').hasClass('single-libtech_surfboards')) {
 			// init gallery
 			if ($('.gallery')) {
-				self.utilities.galleryInit();
+				new LIBTECH.Gallery();
 			}
 			// check thumbnails on right
 			$('#image-list-thumbs li a').on('click', function (e) {
@@ -1221,7 +1221,7 @@ LIBTECH.main = {
 		$(".blog-post .entry-content").fitVids();
 		// init gallery
 		if ($('.gallery')) {
-			self.utilities.galleryInit();
+			new LIBTECH.Gallery();
 			// listen for update and fix break when taller image is loaded
 			$(".gallery").on("galleryUpdate", function (e) {
 				checkPageWidth();
@@ -1246,7 +1246,7 @@ LIBTECH.main = {
 		new LIBTECH.ContentGrid();
 		// init gallery
 		if ($('.gallery')) {
-			self.utilities.galleryInit();
+			new LIBTECH.Gallery();
 		}
 		// assign a click event to the video thumbnails
 		$('.video-thumbnails li a').click(function () {
@@ -1548,151 +1548,6 @@ LIBTECH.main = {
 				window.location.hash = 'filter=' + encodeURIComponent(filterList);
 			} else {
 				window.location.hash = 'all';
-			}
-		},
-		galleryInit: function () {
-			var gallerySlider, totalItems;
-			// check for gallery
-			if ($('.gallery')) {
-				// determine total items in gallery
-				totalItems = $('.gallery .gallery-thumbnails li').length;
-				// set up gallery slider for thumbnails
-				gallerySlider = $('.gallery .gallery-thumbnails').bxSlider({
-					slideWidth: 100,
-					minSlides: 2,
-					maxSlides: 20,
-					slideMargin: 10,
-					controls: true,
-					pager: false,
-					mode: 'horizontal',
-					moveSlides: 2,
-					infiniteLoop: false,
-					hideControlOnEnd: true,
-					onSliderLoad: function (currentIndex) {
-						var currentSlide = $('.gallery .gallery-thumbnails li').eq(currentIndex);
-						loadGalleryImage(currentSlide.find('.gallery-icon a'));
-					}
-				});
-				// assign click events to gallery thumbnails
-				$('.gallery .gallery-thumbnails li .gallery-icon a').on('click.gallery', function (e) {
-					e.preventDefault();
-					e.stopPropagation(); // kill even from firing further
-					loadGalleryImage($(this));
-				});
-				// assign click event to gallery viewer image, advance slideshow
-				$('.gallery .gallery-viewer .gallery-viewer-image').on('click.galleryViewer', function (e) {
-					e.preventDefault();
-					e.stopPropagation();
-					showNext();
-				});
-				$('.gallery .gallery-viewer .gallery-viewer-prev').on('click.galleryViewer', function (e) {
-					showPrevious();
-				});
-				$('.gallery .gallery-viewer .gallery-viewer-next').on('click.galleryViewer', function (e) {
-					showNext();
-				});
-
-				// assign keyboard events to gallery
-				$(document).on('keyup.gallery', function (e) {
-					var code, currentIndex, newIndex, slideIndex;
-					// get the code
-					code = (e.keyCode ? e.keyCode : e.which);
-					// check which arrow key
-					if (code == 39) {
-						// right arrow
-						showNext();
-					} else if (code == 37) {
-						// left arrow
-						showPrevious();
-					}
-				});
-				// resize gallery based on new image height, it's responsive
-				$(window).on('resize.gallery', function () {
-					var imgHeight = $('.gallery .gallery-viewer .gallery-viewer-image img').height();
-					$('.gallery .gallery-viewer .gallery-viewer-image').clearQueue();
-					$('.gallery .gallery-viewer .gallery-viewer-image').animate({
-						height: imgHeight
-					}, 500);
-				});
-			}
-			function showNext() {
-				var currentIndex, newIndex, maxSlideIndex;
-				// find current item
-				currentIndex = $('.gallery .gallery-thumbnails li .gallery-icon a.selected').parent().parent().index();
-				// determine next index
-				newIndex = currentIndex + 1;
-				if (totalItems == newIndex) {
-					newIndex = 0;
-				}
-				// select new image
-				$('.gallery .gallery-thumbnails li').eq(newIndex).find('.gallery-icon a').click();
-				// determine slider index
-				slideIndex = Math.ceil((newIndex + 1) / 2) - 1;
-				// determine max slide index you can advance to based on visible width of gallery
-				maxSlideIndex = Math.floor(((110 * totalItems - 10) - $('.gallery').width()) / 220);
-				// don't let slide index exceed max index based on browser width, we move 2 at a time
-				if (slideIndex > maxSlideIndex) {
-					slideIndex = maxSlideIndex;
-				}
-				// advance thumbnails to new slide index
-				gallerySlider.goToSlide(slideIndex);
-			}
-			function showPrevious() {
-				var currentIndex, newIndex, maxSlideIndex;
-				// find current item
-				currentIndex = $('.gallery .gallery-thumbnails li .gallery-icon a.selected').parent().parent().index();
-				// determine next index
-				newIndex = currentIndex - 1;
-				if (newIndex < 0) {
-					newIndex = totalItems - 1;
-				}
-				// select new image
-				$('.gallery .gallery-thumbnails li').eq(newIndex).find('.gallery-icon a').click();
-				// determine slider index
-				slideIndex = Math.ceil((newIndex + 1) / 2) - 1;
-				// determine max slide index you can advance to based on visible width of gallery
-				maxSlideIndex = Math.floor(((110 * totalItems - 10) - $('.gallery').width()) / 220);
-				// don't let slide index exceed max index based on browser width, we move 2 at a time
-				if (slideIndex > maxSlideIndex) {
-					slideIndex = maxSlideIndex;
-				}
-				// advance thumbnails to new slide index
-				gallerySlider.goToSlide(slideIndex);
-			}
-			// gallery functionality to load new images
-			function loadGalleryImage(imageLink) {
-				var largeImage, largeImageCaption;
-				// trigger loading image
-				$(".gallery .gallery-viewer .gallery-viewer-image").addClass('loading');
-				// set classes for selected image
-				$('.gallery .gallery-thumbnails li .gallery-icon a').each(function () {
-					$(this).removeClass('selected');
-				});
-				$(imageLink).addClass('selected');
-				// get the image src
-				largeImage = '<a href="' + $(imageLink).attr('href') + '" target="_blank"><img src="' + $(imageLink).attr('href') + '" /></a>';
-				$('.gallery .gallery-viewer .gallery-viewer-image').html(largeImage);
-				// get the image caption
-				largeImageCaption = $(imageLink).parent().parent().find('.gallery-caption').html();
-				if (largeImageCaption === undefined) {
-					largeImageCaption = $(imageLink).find('img').attr('alt');
-				}
-				largeImageCaption = '<p>' + largeImageCaption + '</p>';
-				$('.gallery .gallery-viewer .gallery-viewer-caption').html(largeImageCaption);
-				// wait for load and set the correct height
-				$(".gallery .gallery-viewer .gallery-viewer-image img").one('load', function () {
-					var imgHeight = $('.gallery .gallery-viewer .gallery-viewer-image img').height();
-					$('.gallery .gallery-viewer .gallery-viewer-image').stop().animate({
-						height: imgHeight
-					}, 500, function () {
-						$(".gallery").trigger("galleryUpdate"); // let anything listening know the gallery has been updated
-					});
-					$(".gallery").trigger("galleryUpdate"); // let anything listening know the gallery has been updated
-					// gallery load complete
-					$(".gallery .gallery-viewer .gallery-viewer-image").removeClass('loading');
-				}).each(function () {
-					if (this.complete) $(this).load();
-				});
 			}
 		}
 	}
