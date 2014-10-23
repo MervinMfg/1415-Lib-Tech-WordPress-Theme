@@ -12,6 +12,7 @@ module.exports = function (grunt) {
         '_/js/lib/jquery.isotope.js',
         '_/js/lib/jquery.unveil.js',
         '_/js/lib/froogaloop.js',
+        '_/js/lib/clamp-0.5.1.js',
         '_/js/libtech.main.js',
         '_/js/components/*.js'
     ];

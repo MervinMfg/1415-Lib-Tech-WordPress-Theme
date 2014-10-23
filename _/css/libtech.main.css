@@ -1257,7 +1257,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .ripper-videos .section-content { padding: 0 10px; }
 .ripper-videos .section-content .featured-videos h2 { padding: 0 10px; }
 .ripper-videos .section-content .featured-videos .video-player { padding: 10px 10px 0; }
-.ripper-videos .section-content .featured-videos .video-player .frame-wrapper { margin-bottom: 10px; width: 100%; background: #000 url("../img/loading.gif") no-repeat center center; }
+.ripper-videos .section-content .featured-videos .video-player .frame-wrapper { margin-bottom: 10px; width: 100%; background: #000 url("../img/loader.gif") no-repeat center center; }
 .ripper-videos .section-content .featured-videos .video-player .video-info { display: none; }
 .ripper-videos .section-content .featured-videos .video-player .video-info.selected { display: block; }
 .ripper-videos .section-content .featured-videos .video-player .video-info h3 { color: #000; background: #fff100; padding: 3px 5px; display: inline-block; margin-bottom: 10px; }
