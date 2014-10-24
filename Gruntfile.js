@@ -11,6 +11,8 @@ module.exports = function (grunt) {
         '_/js/lib/jquery.treeview.js',
         '_/js/lib/jquery.isotope.js',
         '_/js/lib/jquery.unveil.js',
+        '_/js/lib/GSAP/TweenMax.js',
+        '_/js/lib/GSAP/plugins/ScrollToPlugin.js',
         '_/js/lib/froogaloop.js',
         '_/js/lib/clamp-0.5.1.js',
         '_/js/libtech.main.js',
@@ -19,7 +21,6 @@ module.exports = function (grunt) {
     var diyBuilderScripts = [
         '_/js/lib/GSAP/utils/Draggable.js',
         '_/js/lib/GSAP/plugins/ThrowPropsPlugin.js',
-        '_/js/lib/GSAP/TweenMax.js',
         '_/js/libtech.snowboardbuilder.js'
     ];
     // PROJECT CONFIG

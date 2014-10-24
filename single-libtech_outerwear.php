@@ -68,7 +68,7 @@ Template Name: Outerwear Detail
 						<ul id="image-list-thumbs">
 							<?php if($thumbnailImages): $i = 0; foreach ($thumbnailImages as $thumbnail) { ?>
 
-							<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-sku="<?php echo $thumbnail[2]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
+							<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-color="<?php echo $thumbnail[2]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
 							
 							<?php $i ++; }; endif; ?>
 						</ul>
@@ -157,6 +157,7 @@ Template Name: Outerwear Detail
 						}
 						?>
 						<li><span>Sizes</span> <?php echo $sizes; ?></li>
+						<li><a href="#sizing-chart" class="sizing-chart-link">View Sizing Chart</a></li>
 					</ul>
 					<ul class="product-share">
 						<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
@@ -291,7 +292,7 @@ Template Name: Outerwear Detail
 				endif;// end technology check
 				?>
 
-				<div class="product-specs">
+				<div id="sizing-chart" class="product-specs">
 					<h2>Sizing</h2>
 					<table>
 						<thead>
