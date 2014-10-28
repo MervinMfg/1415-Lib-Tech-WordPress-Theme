@@ -424,6 +424,7 @@ LIBTECH.ProductDetails.prototype = {
 		});
 	},
 	initBuySurf: function () {
+		var self = this;
 		// check thumbnails on right
 		$('#image-list-thumbs li a').on('click', function (e) {
 			e.preventDefault();
