@@ -660,8 +660,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .section-content h1 { padding: 0 0 20px 20px; }
 .product-overview .section-content ul.product-listing li.product-item { width: 18%; float: left; overflow: hidden; text-align: center; padding-bottom: 40px; }
 .product-overview .section-content ul.product-listing li.product-item img { width: 140%; max-width: 200%; margin-left: -20%; height: auto; padding-bottom: 10px; }
-.product-overview .section-content ul.product-listing.bindings li.product-item img, .product-overview .section-content ul.product-listing.surfboards li.product-item img, .product-overview .section-content ul.product-listing.apparel li.product-item img, .product-overview .section-content ul.product-listing.accessories li.product-item img, .product-overview .section-content ul.product-listing.luggage li.product-item img { width: 90%; margin-left: 0; }
-.product-overview .section-content .view-all-link { text-align: center; }
+.product-overview .section-content ul.product-listing.bindings li.product-item img, .product-overview .section-content ul.product-listing.surfboards li.product-item img, .product-overview .section-content ul.product-listing.apparel li.product-item img, .product-overview .section-content ul.product-listing.clearance li.product-item img, .product-overview .section-content ul.product-listing.accessories li.product-item img, .product-overview .section-content ul.product-listing.luggage li.product-item img { width: 90%; margin-left: 0; }
+.product-overview .section-content .view-clearance { display: block; text-align: center; }
 
 .international .product-overview .section-content ul.product-listing li.product-item .price { display: none; }
 

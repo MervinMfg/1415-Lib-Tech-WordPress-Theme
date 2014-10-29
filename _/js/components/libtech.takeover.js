@@ -61,4 +61,4 @@ LIBTECH.Takeover.prototype = {
 		contracted.toggleClass('hide');
 		expanded.toggleClass('show');
 	}
-}
+};

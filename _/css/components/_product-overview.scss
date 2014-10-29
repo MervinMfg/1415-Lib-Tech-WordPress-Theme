@@ -26,15 +26,16 @@
 			&.bindings li.product-item img,
 			&.surfboards li.product-item img,
 			&.apparel li.product-item img,
+			&.clearance li.product-item img,
 			&.accessories li.product-item img,
 			&.luggage li.product-item img {
 				width: 90%;
 				margin-left: 0;
 			}
 		}
-		.view-all-link {
+		.view-clearance {
+			display: block;
 			text-align: center;
-			
 		}
 	}
 }

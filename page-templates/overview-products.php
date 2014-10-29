@@ -169,7 +169,34 @@ get_header();
                     'post_type' => "libtech_apparel",
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
-                    'order' => 'ASC'
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'libtech_apparel_categories',
+                            'field' => 'slug',
+                            'terms' => array('sale'),
+                            'include_children' => false,
+                            'operator' => 'NOT IN'
+                        )
+                    )
+                );
+                break;
+            case "Clearance":
+                $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_apparel",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'libtech_apparel_categories',
+                            'field' => 'slug',
+                            'terms' => array('sale'),
+                            'include_children' => false,
+                            'operator' => 'IN'
+                        )
+                    )
                 );
                 break;
             case "Accessories":
@@ -770,7 +797,7 @@ get_header();
                             <li data-filter=".available">Availabile</li>
                         </ul>
                     </li>
-                    <?php elseif (get_the_title() == "Apparel"): ?>
+                    <?php elseif (get_the_title() == "Apparel" || get_the_title() == "Clearance"): ?>
                     <li class="filters apparel-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
@@ -887,6 +914,7 @@ get_header();
                     <?php endif; ?>
 
                 </ul>
+                <?php if (get_the_title() == "Apparel") : ?><a href="/clearance/#filter=.available" class="h4 view-clearance">Check out our clearance items</a><?php endif; ?>
             </div>
             <div class="clearfix"></div>
         </section><!-- end product overview -->
