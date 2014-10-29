@@ -63,6 +63,24 @@ get_header();
 						wp_reset_query();
 					?>
 				</ul>
+
+					<?php
+						switch ($GLOBALS['sport']) {
+							case 'snow':
+								echo '<a href="/snowboards/" class="h4 view-all-link">View all boards</a>';
+								break;
+							case 'surf':
+								echo '<a href="/surfboards/" class="h4 view-all-link">View all boards</a>';
+								break;
+							case 'skate':
+							    echo '<a href="/skateboards/" class="h4 view-all-link">View all boards</a>';
+								break;
+							case 'ski':
+							    echo '<a href="/skis/" class="h4 view-all-link">View all skis</a>';
+							    break;
+						}
+					?>
+
 			</div>
 		</section><!-- END .product-slider -->
 
