@@ -905,6 +905,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(3) { display: none; }
 .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; }
 
+.single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(2), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(2) { display: none; }
+.single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(4), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(4) { display: table-cell; }
+
 .single-libtech_outerwear .product-extras .product-tech-major ul { list-style: square; padding-left: 20px; }
 .single-libtech_outerwear .product-extras .product-tech-major ul strong { text-transform: uppercase; }
 
@@ -947,6 +950,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-zoom.show { display: block; }
   .product-extras .product-mobile-nav { display: none; }
   .product-extras.info .product-specs, .product-extras.info .product-tech-major, .product-extras.info .product-tech-construction, .product-extras.info .product-tech-minor, .product-extras.specs .product-description, .product-extras.specs .product-awards, .product-extras.specs .product-tech-major, .product-extras.specs .product-tech-construction, .product-extras.specs .product-tech-minor, .product-extras.tech .product-description, .product-extras.tech .product-awards, .product-extras.tech .product-specs { display: block; }
+  .single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(2), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(2) { display: table-cell; }
   .product-video-top.specs, .product-video-top.tech, .product-gallery-top.specs, .product-gallery-top.tech { display: block; }
   .product-video.specs, .product-video.tech, .product-gallery.specs, .product-gallery.tech { display: block; } }
 @media screen and (min-width: 768px) { .product-details .product-share { display: block; }

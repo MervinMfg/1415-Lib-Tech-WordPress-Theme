@@ -703,6 +703,20 @@
 		}
 	}
 }
+// SURFBOARD SPECS TABLE
+.single-libtech_surfboards .product-extras .product-specs {
+	table{
+		thead th,
+		tbody tr td {
+			&:nth-child(2) {
+				display: none;
+			}
+			&:nth-child(4) {
+				display: table-cell;
+			}
+		}
+	}
+}
 .single-libtech_outerwear .product-extras {
 	.product-tech-major {
 		ul {
@@ -861,6 +875,17 @@
 		&.tech .product-awards,
 		&.tech .product-specs {
 			display: block;
+		}
+	}
+	// SURFBOARD SPECS TABLE
+	.single-libtech_surfboards .product-extras .product-specs {
+		table{
+			thead th,
+			tbody tr td {
+				&:nth-child(2) {
+					display: table-cell;
+				}
+			}
 		}
 	}
 	.product-video-top,
