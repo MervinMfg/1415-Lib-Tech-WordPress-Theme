@@ -128,6 +128,14 @@
 					padding: 5px 10px;
 					color: #000;
 					display: inline-block;
+					text-decoration: none;
+
+					&:hover,
+					&:focus {
+						background: #000;
+						color: $snowColor;
+					}
+				
 				}
 				img {
 					float: right;
@@ -211,6 +219,13 @@
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $skiColor;
+
+			&:hover,
+			&:focus {
+				background: #000;
+				color: $skiColor;
+			}
+
 		}
 		.cart-success,
 		.cart-failure {
@@ -228,6 +243,12 @@
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $surfColor;
+
+			&:hover,
+			&:focus {
+				background: #000;
+				color: $surfColor;
+			}
 		}
 		.cart-success,
 		.cart-failure {
@@ -245,6 +266,12 @@
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $skateColor;
+
+			&:hover,
+			&:focus {
+				background: #000;
+				color: $skateColor;
+			}
 		}
 		.cart-success,
 		.cart-failure {

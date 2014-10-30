@@ -775,7 +775,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-buy ul li.loading.hidden { display: none; }
 .product-details .product-buy ul li.cart-button { margin-bottom: 10px; }
 .product-details .product-buy ul li.cart-button.hidden { display: none; }
-.product-details .product-buy ul li.cart-button .add-to-cart { background: #FFFF00; padding: 5px 10px; color: #000; display: inline-block; }
+.product-details .product-buy ul li.cart-button .add-to-cart { background: #FFFF00; padding: 5px 10px; color: #000; display: inline-block; text-decoration: none; }
+.product-details .product-buy ul li.cart-button .add-to-cart:hover, .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #FFFF00; }
 .product-details .product-buy ul li.cart-button img { float: right; }
 .product-details .product-buy ul li.find-dealer { font-weight: normal; margin-bottom: 10px; }
 .product-details .product-buy .cart-success, .product-details .product-buy .cart-failure { padding: 10px 10px 0 10px; border: dashed 2px #FFFF00; color: #fff; }
@@ -795,16 +796,19 @@ body.international .shopping-cart-wrapper { display: none; }
 .international .product-details .product-price, .international .product-details .product-variations, .international .product-details .product-buy .cart-button { display: none; }
 
 .ski .product-details .product-buy ul li.cart-button .add-to-cart { background: #0099FF; }
+.ski .product-details .product-buy ul li.cart-button .add-to-cart:hover, .ski .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #0099FF; }
 .ski .product-details .product-buy .cart-success, .ski .product-details .product-buy .cart-failure { border-color: #0099FF; }
 .ski .product-details .product-buy .cart-success p .cart-link { background-color: #0099FF; }
 .ski .product-details .product-quick-specs li span { color: #0099FF; }
 
 .surf .product-details .product-buy ul li.cart-button .add-to-cart { background: #FF6600; }
+.surf .product-details .product-buy ul li.cart-button .add-to-cart:hover, .surf .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #FF6600; }
 .surf .product-details .product-buy .cart-success, .surf .product-details .product-buy .cart-failure { border-color: #FF6600; }
 .surf .product-details .product-buy .cart-success p .cart-link { background-color: #FF6600; }
 .surf .product-details .product-quick-specs li span { color: #FF6600; }
 
 .skate .product-details .product-buy ul li.cart-button .add-to-cart { background: #66CC00; }
+.skate .product-details .product-buy ul li.cart-button .add-to-cart:hover, .skate .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #66CC00; }
 .skate .product-details .product-buy .cart-success, .skate .product-details .product-buy .cart-failure { border-color: #66CC00; }
 .skate .product-details .product-buy .cart-success p .cart-link { background-color: #66CC00; }
 .skate .product-details .product-quick-specs li span { color: #66CC00; }
