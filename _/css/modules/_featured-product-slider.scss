@@ -85,10 +85,38 @@
 						padding: 5px 15px 5px 10px;
 						display: block;
 						float: left;
+						text-decoration: none;
+
+						&:hover,
+						&:focus {
+							background: $snowColor;
+							color: #000;
+						}
 					}
 				}
 			}
 		}
+	}
+	&.bg-product-ski .section-content ul.product-listing li .product-copy a.buy {
+		&:hover,
+		&:focus {
+			background: $skiColor;
+		}
+
+	}
+	&.bg-product-surf .section-content ul.product-listing li .product-copy a.buy {
+		&:hover,
+		&:focus {
+			background: $surfColor;
+		}
+
+	}
+	&.bg-product-skate .section-content ul.product-listing li .product-copy a.buy {
+		&:hover,
+		&:focus {
+			background: $skateColor;
+		}
+
 	}
 	&.surfboards .section-content ul.product-listing > li .product-image img,
 	&.accessories .section-content ul.product-listing > li .product-image img,
