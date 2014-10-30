@@ -169,7 +169,34 @@ get_header();
                     'post_type' => "libtech_apparel",
                     'posts_per_page' => -1,
                     'orderby' => 'menu_order',
-                    'order' => 'ASC'
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'libtech_apparel_categories',
+                            'field' => 'slug',
+                            'terms' => array('sale'),
+                            'include_children' => false,
+                            'operator' => 'NOT IN'
+                        )
+                    )
+                );
+                break;
+            case "Clearance":
+                $imageSize = "square-medium";
+                $args = array(
+                    'post_type' => "libtech_apparel",
+                    'posts_per_page' => -1,
+                    'orderby' => 'menu_order',
+                    'order' => 'ASC',
+                    'tax_query' => array(
+                        array(
+                            'taxonomy' => 'libtech_apparel_categories',
+                            'field' => 'slug',
+                            'terms' => array('sale'),
+                            'include_children' => false,
+                            'operator' => 'IN'
+                        )
+                    )
                 );
                 break;
             case "Accessories":
@@ -219,6 +246,7 @@ get_header();
             $imageID = get_field('libtech_product_image');
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
             $productArray['available'] = "No";
+            $productArray['colorways'] = Array();
             // check if we're surf because of varrying fin costs
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
@@ -422,6 +450,26 @@ get_header();
                             $filterList .= " " . $variationSize;
                         endwhile;
                     endif;
+                    // get colorways
+                    if(get_field('libtech_outerwear_images')):
+                        while(the_repeater_field('libtech_outerwear_images')):
+                            $optionColor = get_sub_field('libtech_outerwear_images_color');
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = 'outerwear/' . str_replace('/', '', strtolower($optionSlug));
+                            $optionImage = get_sub_field('libtech_outerwear_images_image');
+                            $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                            // don't add duplicate colors
+                            $colorFound = false;
+                            foreach ($productArray['colorways'] as $colorway) {
+                                if ($optionColor == $colorway['color']) {
+                                    $colorFound = true;
+                                }
+                            }
+                            if (!$colorFound) {
+                                array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
+                            }
+                        endwhile;
+                    endif;
                     // get categories for outerwear
                     $terms = get_the_terms( $post->ID, 'libtech_outerwear_categories' );
                     if( $terms && !is_wp_error( $terms ) ) {
@@ -491,6 +539,26 @@ get_header();
                             // set overall availability
                             if($variationAvailable == "Yes"){
                                 $productArray['available'] = "Yes";
+                            }
+                        endwhile;
+                    endif;
+                    // get colorways
+                    if(get_field('libtech_luggage_images')):
+                        while(the_repeater_field('libtech_luggage_images')):
+                            $optionColor = get_sub_field('libtech_luggage_images_color');
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = 'luggage/' . str_replace('/', '', strtolower($optionSlug));
+                            $optionImage = get_sub_field('libtech_luggage_images_image');
+                            $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                            // don't add duplicate colors
+                            $colorFound = false;
+                            foreach ($productArray['colorways'] as $colorway) {
+                                if ($optionColor == $colorway['color']) {
+                                    $colorFound = true;
+                                }
+                            }
+                            if (!$colorFound) {
+                                array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
                             }
                         endwhile;
                     endif;
@@ -770,7 +838,7 @@ get_header();
                             <li data-filter=".available">Availabile</li>
                         </ul>
                     </li>
-                    <?php elseif (get_the_title() == "Apparel"): ?>
+                    <?php elseif (get_the_title() == "Apparel" || get_the_title() == "Clearance"): ?>
                     <li class="filters apparel-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
@@ -869,7 +937,12 @@ get_header();
                     <?php foreach ($productsArray as $product): ?>
                     <li class="product-item<?php echo $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
-                            <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" />
+                            <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img" />
+                            <div class="colorways">
+                                <?php if (count($product['colorways']) > 0) : foreach ($product['colorways'] as $colorway) : ?>
+                                <div class="swatch" data-src="<?php echo $colorway['img'][0]; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/colorways/<?php echo $colorway['slug']; ?>.jpg" alt="<?php echo $colorway['color']; ?>" /></div>
+                                <?php endforeach; endif; ?>
+                            </div>
                             <h5><?php echo $product['title']; ?></h5>
                             <div class="price"><?php echo $product['price']; ?></div>
                         </a>
@@ -887,6 +960,7 @@ get_header();
                     <?php endif; ?>
 
                 </ul>
+                <?php if (get_the_title() == "Apparel") : ?><a href="/clearance/#filter=.available" class="h4 view-clearance">Check out our clearance items</a><?php endif; ?>
             </div>
             <div class="clearfix"></div>
         </section><!-- end product overview -->

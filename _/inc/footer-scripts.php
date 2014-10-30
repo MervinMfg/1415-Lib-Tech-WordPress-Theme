@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.content-grid.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.gallery.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-details.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-overview.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.region-selector.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.shop.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.takeover.js"></script>
