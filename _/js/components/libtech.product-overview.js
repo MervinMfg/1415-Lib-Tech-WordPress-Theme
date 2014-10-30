@@ -12,6 +12,7 @@ LIBTECH.ProductOverview.prototype = {
 	init: function () {
 		var self, slider;
 		self = this;
+		self.initColorways();
 		slider = $('.featured-product-slider .bxslider').bxSlider({
 			auto: true,
 			autoHover: true,
@@ -242,5 +243,13 @@ LIBTECH.ProductOverview.prototype = {
 		if (window.location.hash !== '') {
 			$(window).trigger("hashchange");
 		}
+	},
+	initColorways: function () {
+		$('.product-listing .product-item a .colorways .swatch').off('click.colorway'); // remove old listeners
+		$('.product-listing .product-item a .colorways .swatch').on('click.colorway', function (e) {
+			e.preventDefault();
+			// set image src of product image
+			$(this).parent().parent().find('.product-img').attr('src', $(this).attr('data-src'));
+		});
 	}
 };
