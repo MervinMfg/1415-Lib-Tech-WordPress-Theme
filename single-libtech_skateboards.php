@@ -221,7 +221,7 @@ Template Name: Skateboard Detail
 		<div class="bg2-top"></div>
         <section class="product-extras bg2 info">
         	<div class="section-content clearfix">
-        		<div class="product-mobile-nav">
+        		<div class="product-mobile-nav clearfix">
         			<ul>
         				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
         				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
