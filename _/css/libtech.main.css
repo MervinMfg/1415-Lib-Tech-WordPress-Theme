@@ -1569,11 +1569,14 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
 .product-slider .bx-wrapper .bx-loading { background: none; }
 .product-slider ul li a img { width: 140%; max-width: 140%; height: auto; margin-left: -20%; }
 .product-slider ul li a .product-peek { background: #000; padding: 5px; width: 90%; position: absolute; top: 40%; left: 5%; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
-.product-slider ul li a .product-peek .product-title { font-weight: bold; text-transform: uppercase; font-style: normal; }
+.product-slider ul li a .product-peek .product-title { font-weight: bold; text-transform: uppercase; font-style: normal; color: #FFFF00; }
 .product-slider ul li a .product-peek .product-type { color: #fff; }
 .product-slider ul li a:hover .product-peek { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 .product-slider a.view-all-link { display: block; text-align: center; padding-top: 10px; margin-bottom: -10px; color: #000; text-decoration: none; }
 .product-slider a.view-all-link:hover, .product-slider a.view-all-link:focus { color: #999; }
+.product-slider.bg-product-skate .product-peek .product-title { color: #66CC00; }
+.product-slider.bg-product-ski .product-peek .product-title { color: #0099FF; }
+.product-slider.bg-product-surf .product-peek .product-title { color: #FF6600; }
 
 .home .product-slider ul li a img, .surf .product-slider ul li a img { width: 100%; max-width: 100%; height: auto; margin-left: 0; }
 

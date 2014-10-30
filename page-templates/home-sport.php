@@ -43,7 +43,20 @@ get_header();
 							$postType = $post->post_type;
 							$imageID = get_field('libtech_product_image');
 							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
-
+							// check for technology type to display
+							$productType = "";
+							if ($postType == "libtech_snowboards") {
+								$productType = get_field('libtech_snowboard_contour');
+							} else if ($postType == "libtech_nas") {
+								$productType = "Magne-Traction";
+							} else if ($postType == "libtech_skateboards") {
+								// grab first skateboard category for display
+			                    $categories = get_the_terms( $post->ID , 'libtech_skateboard_categories' );
+			                    foreach ( $categories as $category ) {
+									$productType = $category->name;
+			                        break;
+			                    }
+							}
 							if (get_the_title() != "superBANANA") :
 					?>
 
@@ -52,7 +65,7 @@ get_header();
 							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
 							<div class="product-peek">
 								<p class="product-title"><?php the_title(); ?></p>
-								<p class="product-type"><?php the_field('libtech_snowboard_contour'); ?></p>
+								<p class="product-type"><?php echo $productType; ?></p>
 							</div>
 						</a>
 					</li>

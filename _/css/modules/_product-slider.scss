@@ -36,6 +36,7 @@
 						font-weight: bold;
 						text-transform: uppercase;
 						font-style: normal;
+						color: $snowColor;
 					}
 					.product-type {
 						color: #fff;
@@ -59,6 +60,15 @@
 		&:focus {
 			color: #999;
 		}
+	}
+	&.bg-product-skate .product-peek .product-title {
+		color: $skateColor;
+	}
+	&.bg-product-ski .product-peek .product-title {
+		color: $skiColor;
+	}
+	&.bg-product-surf .product-peek .product-title {
+		color: $surfColor;
 	}
 }
 .home,
