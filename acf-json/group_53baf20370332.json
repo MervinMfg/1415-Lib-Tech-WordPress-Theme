@@ -55,6 +55,7 @@
                     "column_width": "",
                     "choices": {
                         "Black": "Black",
+                        "Blonde": "Blonde",
                         "Blue": "Blue",
                         "Brown": "Brown",
                         "Dark Grey": "Dark Grey",
@@ -84,7 +85,7 @@
                         "Red\/Heather Black": "Red\/Heather Black",
                         "Charcoal": "Charcoal",
                         "Charcoal Heather": "Charcoal Heather",
-                        "Charcoal Gray": "Charcoal Gray",
+                        "Charcoal Grey": "Charcoal Grey",
                         "Camo": "Camo",
                         "Desert Brown": "Desert Brown",
                         "Heather Black": "Heather Black",

@@ -44,6 +44,7 @@
                     "column_width": "",
                     "choices": {
                         "Black": "Black",
+                        "Blonde": "Blonde",
                         "Brown": "Brown",
                         "Desert Brown": "Desert Brown",
                         "Blue": "Blue",
@@ -69,7 +70,7 @@
                         "Charcoal Heather": "Charcoal Heather",
                         "Heather Charcoal": "Heather Charcoal",
                         "Charcoal": "Charcoal",
-                        "Charcoal Gray": "Charcoal Gray",
+                        "Charcoal Grey": "Charcoal Grey",
                         "Camo": "Camo",
                         "Green All Over Print": "Green All Over Print",
                         "Parillo Yellow": "Parillo Yellow",

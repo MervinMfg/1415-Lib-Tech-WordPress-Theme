@@ -496,7 +496,27 @@ get_header();
                             $filterList .= " " . $variationSize;
                         endwhile;
                     endif;
-                    // get categories for outerwear
+                    // get colorways
+                    if(get_field('libtech_apparel_images')):
+                        while(the_repeater_field('libtech_apparel_images')):
+                            $optionColor = get_sub_field('libtech_apparel_images_color');
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = 'apparel/' . str_replace('/', '', strtolower($optionSlug));
+                            $optionImage = get_sub_field('libtech_apparel_images_image');
+                            $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                            // don't add duplicate colors
+                            $colorFound = false;
+                            foreach ($productArray['colorways'] as $colorway) {
+                                if ($optionColor == $colorway['color']) {
+                                    $colorFound = true;
+                                }
+                            }
+                            if (!$colorFound) {
+                                array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
+                            }
+                        endwhile;
+                    endif;
+                    // get categories for apparel
                     $terms = get_the_terms( $post->ID, 'libtech_apparel_categories' );
                     if( $terms && !is_wp_error( $terms ) ) {
                         foreach( $terms as $term ) {
