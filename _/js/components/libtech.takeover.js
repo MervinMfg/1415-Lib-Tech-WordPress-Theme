@@ -27,8 +27,8 @@ LIBTECH.Takeover.prototype = {
 		// check if we should diplay the takeover or not based on cookies
 		if (navigator.cookieEnabled !== false && showTakeover === true) {
 			var takeoverCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_takeover');
-			if (takeoverCookie !== 'JamieLynnCollection') {
-				LIBTECH.main.utilities.cookie.setCookie('libtech_takeover', 'JamieLynnCollection', 7);
+			if (takeoverCookie !== 'FrediKalbermattenTeam') {
+				LIBTECH.main.utilities.cookie.setCookie('libtech_takeover', 'FrediKalbermattenTeam', 7);
 				setTimeout(function () {
 					self.show();
 				}, 2000);

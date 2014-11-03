@@ -208,12 +208,12 @@
 			<div class="takeover-content">
 				<div class="expanded">
 					<a href="#close-takeover" class="close">Close</a>
-					<a href="/snowboards/#filter=.jamie-lynn-collection" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-snowboards-jamie-lynn.jpg" alt="Lib Tech Snowboards - Jamie Lynn Collection" /></a>
+					<a href="/snowboarding/team/fredi-kalbermatten/" class="message"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-snowboards-fredi.jpg" alt="Lib Tech Snowboards - Fredi Kalbermatten" /></a>
 				</div>
 				<div class="contracted">
-					<a href="#jamie-lynn-collection">
+					<a href="#open-takeover">
 						<p class="view-more">View More</p>
-						<p class="message">Lib Tech Snowboards - The Jamie Lynn Collection</p>
+						<p class="message">Lib Tech Snowboards Welcomes Fredi Kalbermatten</p>
 						<div class="clearfix"></div>
 					</a>
 				</div>
