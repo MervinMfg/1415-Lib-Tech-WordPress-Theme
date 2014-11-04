@@ -39,7 +39,8 @@
 								width: 100%;
 							}
 							&:hover,
-							&:focus {
+							&:focus,
+							&.active {
 								border-color: #666;
 							}
 						}

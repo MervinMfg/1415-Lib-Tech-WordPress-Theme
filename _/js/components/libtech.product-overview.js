@@ -250,6 +250,8 @@ LIBTECH.ProductOverview.prototype = {
 			e.preventDefault();
 			// set image src of product image
 			$(this).parent().parent().find('.product-img').attr('src', $(this).attr('data-src'));
+			$(this).parent().parent().find('.swatch').removeClass('active');
+			$(this).addClass('active');
 		});
 	}
 };
