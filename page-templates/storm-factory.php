@@ -43,6 +43,7 @@ get_header();
 						wp_reset_query();
 					?>
 				</ul>
+				<a href="/outerwear/" class="h4 view-all-link">View all outerwear</a>
 			</div>
 		</section><!-- END .product-slider -->
 		<div class="bg3-top"></div>
