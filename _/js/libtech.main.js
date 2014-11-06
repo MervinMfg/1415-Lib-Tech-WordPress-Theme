@@ -9,7 +9,8 @@ LIBTECH.main = {
 	config: {
 		menuState: 'closed',
 		wpImgPath: 'http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/',
-		shop: ''
+		shop: null,
+		regionSelector: null
 	},
 	init: function () {
 		var self, $body, shop, regionSelector;
@@ -17,7 +18,7 @@ LIBTECH.main = {
 		$body = $('body');
 		// init global compontents
 		self.config.shop = new LIBTECH.Shop(); // init shopatron JS
-		regionSelector = new LIBTECH.RegionSelector(); // init the region selector
+		self.config.regionSelector = new LIBTECH.RegionSelector(); // init the region selector
 		self.sportCookieInit(); // init/check the sport cookie
 		self.searchInit(); // init header search bar
 		$(window).load(function () {
@@ -49,9 +50,9 @@ LIBTECH.main = {
 			self.blogSingleInit();
 		} else if ($body.hasClass('page-template-page-templatespage-faqs-php')) {
 			self.faqsInit();
-		} else if ($body.hasClass('page-template-page-templatespage-snowboard-builder-php')) {
+		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-php')) {
 			LIBTECH.snowboardbuilder.init();
-		} else if ($body.hasClass('page-template-page-templatespage-snowboard-builder-share-php')) {
+		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-share-php')) {
 			LIBTECH.snowboardbuilder.shareInit();
 		} else if ($body.hasClass('page-template-page-templatespage-partners-php')) {
 			self.partnersInit();

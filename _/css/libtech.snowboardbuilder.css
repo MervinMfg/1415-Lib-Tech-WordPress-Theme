@@ -132,7 +132,6 @@ body.accept-buy #board-display { display: none; }
 
 .bx-clone { display: none !important; }
 
-ul.bx-div-slider { -webkit-backface-visibility: hidden; }
 ul.bx-div-slider li { background-size: cover; background-position: center bottom; }
 
 /* OVERVIEW */

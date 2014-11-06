@@ -123,7 +123,7 @@ LIBTECH.Shop.prototype = {
 			if (navigator.cookieEnabled === false) {
 				alert('Enable cookies in your browser in order to select your region.');
 			} else {
-				self.regionSelectorOverlayInit();
+				LIBTECH.main.config.regionSelector.overlayInit();
 			}
 		});
 	}

@@ -444,7 +444,7 @@ LIBTECH.snowboardbuilder = {
 				if (navigator.cookieEnabled === false) {
 					alert('Enable cookies in your browser in order to select your region.');
 				} else {
-					LIBTECH.main.regionSelectorOverlayInit();
+					LIBTECH.main.config.regionSelector.overlayInit();
 				}
 			});
 			// init the overview
@@ -2019,7 +2019,7 @@ LIBTECH.snowboardbuilder = {
 		}
 		function boardUrl() {
 			var boardBuilderURL = "http://www.lib-tech.com/diy/";
-			if (isComplete() || $('body').hasClass('page-template-page-templatespage-snowboard-builder-share-php')) {
+			if (isComplete() || $('body').hasClass('page-template-page-templatessnowboard-builder-share-php')) {
 				boardBuilderURL += "?shape=" + encodeURIComponent(self.getBoardShape());
 				boardBuilderURL += "&size=" + encodeURIComponent(self.getBoardSize());
 				boardBuilderURL += "&top=" + encodeURIComponent(self.getBoardArtist() + ' ' + self.getBoardDescription());
@@ -2039,7 +2039,7 @@ LIBTECH.snowboardbuilder = {
 		}
 		// Listen for user to click buy
 		$('.step7-buy .buttonholder .buy-button').on('click.step7', function () {
-			if ($('body').hasClass('page-template-page-templatespage-snowboard-builder-share-php')) {
+			if ($('body').hasClass('page-template-page-templatessnowboard-builder-share-php')) {
 				// share page
 				showTerms();
 			} else {
@@ -2245,7 +2245,7 @@ LIBTECH.snowboardbuilder = {
 		} else {
 			headerHeight = $('#header .logo').height();
 		}
-		if ($('body').hasClass('page-template-page-templatespage-snowboard-builder-php')) {
+		if ($('body').hasClass('page-template-page-templatessnowboard-builder-php')) {
 			// VIEWING BUILDER
 			if (self.config.isMobile) {
 				// ON MOBILE
