@@ -444,7 +444,7 @@ LIBTECH.snowboardbuilder = {
 				if (navigator.cookieEnabled === false) {
 					alert('Enable cookies in your browser in order to select your region.');
 				} else {
-					LIBTECH.main.regionSelectorOverlayInit();
+					LIBTECH.main.config.regionSelector.overlayInit();
 				}
 			});
 			// init the overview

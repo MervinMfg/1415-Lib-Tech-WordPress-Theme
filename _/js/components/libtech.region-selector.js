@@ -32,7 +32,7 @@ LIBTECH.RegionSelector.prototype = {
 		} else {
 			if (navigator.cookieEnabled === true) {
 				// if no region cookie has been set, open selector if on product page
-				if ($('body').hasClass('page-template-page-templatespage-snowboard-builder-php') || $('body').hasClass('page-template-page-templatespage-snowboard-builder-share-php') || $('body').hasClass('page-template-page-templatespage-shopping-cart-php') || $('body').hasClass('page-template-page-templatesoverview-products-php') || $('body').hasClass('single-libtech_snowboards') || $('body').hasClass('single-libtech_nas') || $('body').hasClass('single-libtech_surfboards') || $('body').hasClass('single-libtech_skateboards') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_outerwear')) {
+				if ($('body').hasClass('page-template-page-templatessnowboard-builder-php') || $('body').hasClass('page-template-page-templatessnowboard-builder-share-php') || $('body').hasClass('page-template-page-templatespage-shopping-cart-php') || $('body').hasClass('page-template-page-templatesoverview-products-php') || $('body').hasClass('single-libtech_snowboards') || $('body').hasClass('single-libtech_nas') || $('body').hasClass('single-libtech_surfboards') || $('body').hasClass('single-libtech_skateboards') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_outerwear')) {
 					self.overlayInit();
 					takeover = new LIBTECH.Takeover(false);
 				} else {
