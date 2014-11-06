@@ -701,7 +701,7 @@ body.accept-buy {
 	display: none !important;
 }
 ul.bx-div-slider {
-	-webkit-backface-visibility: hidden;
+	// -webkit-backface-visibility: hidden; removed, was breaking chrome v38
 
 	li {
 		background-size: cover;
