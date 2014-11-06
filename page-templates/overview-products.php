@@ -278,6 +278,25 @@ get_header();
                                     $productArray['available'] = "Yes";
                                 }
                             }
+                            // get colorways
+                            $optionColor = get_the_title();
+                            if (get_sub_field('libtech_snowboard_options_name')) {
+                                $optionColor .= " " . get_sub_field('libtech_snowboard_options_name');
+                            }
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = str_replace('&#8243;', '', strtolower($optionSlug));
+                            $optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
+                            $optionSlug = str_replace('.', '_', strtolower($optionSlug));
+                            $optionSlug = 'snowboards/' . str_replace('/', '', strtolower($optionSlug));
+                            // grab image
+                            if(get_sub_field('libtech_snowboard_options_images')):
+                                while(the_repeater_field('libtech_snowboard_options_images')):
+                                    $optionImage = get_sub_field('libtech_snowboard_options_images_img');
+                                    $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                                    array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
+                                    break;
+                                endwhile;
+                            endif;
                         endwhile;
                     endif;
                     // build array of snowboard sizes
@@ -972,7 +991,7 @@ get_header();
                     <?php if (get_the_title() == "Snowboards") : ?>
                     <li class="product-item Narrow Standard Wide mens womens youth snowboards BTX EC2_BTX C2_BTX XC2_BTX C3_BTX available 130 140 145 148 151 153 154 155 156 157 159 161 161_5 164_5 165 169">
                         <a href="/snowboarding/snowboard-builder/">
-                            <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" />
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img" />
                             <h5>DIY Board Builder</h5>
                             <div class="price"><?php echo getPrice(639.95, 664.95, 'no', 0); ?></div>
                         </a>
