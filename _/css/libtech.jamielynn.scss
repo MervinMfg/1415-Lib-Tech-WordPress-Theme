@@ -1,0 +1,21 @@
+/* ==========================================================================
+   LIBTECH.JAMIELYNN.SCSS
+   ========================================================================== */
+
+/**
+ * 1415 Lib Tech WordPress Theme - http://www.lib-tech.com/jamielynn20
+ * Author: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+ *
+ * libtech.jamielynn.css & libtech.jamielynn.min.css are compiled using the imports from this file.
+ *
+ * To add new styles and components, import them in the appropriate sections below.
+ *
+ */
+
+// Helpers
+@import "helpers/mixins";
+@import "helpers/reset";
+
+.jamie-lynn {
+	background: #000;
+}
