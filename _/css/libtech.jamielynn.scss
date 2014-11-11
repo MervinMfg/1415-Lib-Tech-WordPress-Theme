@@ -16,6 +16,394 @@
 @import "helpers/mixins";
 @import "helpers/reset";
 
+// Variables
+$handWritten: "felt-tip-senior", cursive;
+$museoSlab: "museo-slab",serif;
+
+$yellow: #FFCC33;
+$black: #000;
+$white: #FFF;
+$grey: #CCC;
+
+$breakpoint-small: 480px; 
+$breakpoint-medium: 768px;
+$breakpoint-large: 980px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xxlarge: 1400px;
+
+html,
+body {
+	height: 100%;
+}
 .jamie-lynn {
-	background: #000;
+	height: 100%;
+
+	.navigation {
+		display: none;
+	}
+	.section-photo {
+		height: 100%;
+
+		.photo-item {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-size: cover;
+
+			&.then-photo {
+				background-image: url('../img/jamie-lynn/mobile/01-vertical-Jamie-Then.jpg');
+				background-position: center;
+
+				h4 {
+					position: absolute;
+					width: 100%;
+					font-family: $museoSlab;
+					color: $grey;
+					font-weight: 100;
+					text-transform: uppercase;
+					text-align: center;
+					bottom: 7%;
+
+					&.scroll-message {
+						display: none;
+					}
+				}
+			}
+			.logo-wrapper {
+					height: 100%;
+
+					img {
+						display: block;
+						height: 75%;
+						margin: 0 auto;
+						padding-top: 15%;
+					}
+				}
+			&.road-gap-photo {
+				background-image: url('../img/jamie-lynn/mobile/02-vertical-Jamie-Method.jpg');
+				background-position: center;
+			}
+			&.front3-photo {
+				background-image: url('../img/jamie-lynn/mobile/03-vertical-Jamie-Front3.jpg');
+				background-position: center;
+			}
+		}
+	}
+	.section-hide {
+		display: none;
+	}
+	.section-quote {
+		height: auto;
+		background: $black;
+		
+		.quote-item {
+			width: 100%;
+			height: auto;
+			padding: 30px;
+
+			.quote-wrapper {
+
+				blockquote {
+					background-image: url('../img/jamie-lynn/quote-marks.png');
+					background-repeat: no-repeat;
+					background-size: 4em;
+					padding-top: 50px;
+
+					p {
+						font-family: $museoSlab;
+						color: $grey;
+						font-size: 1.5em; /* 24/16 */
+						font-weight: 100;
+						line-height: 1.25;
+						margin-bottom: 30px;
+						padding: 0 15px;
+
+						&.hand-written {
+							display: block;
+							font-family: $handWritten;
+							color: $yellow;
+							font-size: 2.4em;
+							padding-top: 20px;
+							text-align: center;
+							line-height: .75;
+						}
+					}
+				}
+			}
+		}
+	}
+	.section-products {
+		
+		.product-mobile {
+			display: block;
+		}
+		.product-mobile-landscape,
+		.product-tablet,
+		.product-desktop {
+			display: none;
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+	.section-signature {
+		height: auto;
+		background: $black;
+
+		.signature-item {
+			height: 100%;
+
+			img {
+				display: block;
+				width: 100%;
+				padding: 200px 20%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) and (orientation: landscape) {
+	.jamie-lynn {
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/mobile/01-horizontal-Jamie-Then.jpg');
+					background-position: center;
+				}
+				.logo-wrapper {
+
+					img {
+						height: 80%;
+						float: right;
+						padding-top: 5%;
+						padding-right: 20%;
+					}
+				}
+				&.road-gap-photo {
+					background-image: url('../img/jamie-lynn/mobile/02-horizontal-Jamie-Method.jpg');
+					background-position: center;
+				}
+				&.front3-photo {
+					background-image: url('../img/jamie-lynn/mobile/03-horizontal-Jamie-Front3.jpg');
+					background-position: center;
+				}
+			}
+		}
+		.section-products {
+		
+			.product-mobile-landscape {
+				display: block;
+			}
+			.product-mobile,
+			.product-tablet,
+			.product-desktop {
+				display: none;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.jamie-lynn {
+
+		.navigation {
+			display: block;
+			position: fixed;
+			z-index: 3;
+			top: 50%;
+			left: 30px;
+			transform: translateY(-50%);
+
+			li {
+				padding-top: 10px;
+
+				a {
+					display: block;
+					width: 10px;
+					height: 10px;
+					border: 2px solid $yellow;
+					border-radius: 10px;
+
+					&:hover,
+					&:focus {
+						background: $yellow;
+					}
+				}
+			}
+		}
+		.section-photo {
+			.photo-item {
+
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/tablet/01-vertical-Jamie-Then.jpg');
+					background-position: center;
+					h4 {
+						&.mobile-message {
+							display: none;
+						}
+						&.scroll-message {
+							display: block;
+						}
+					}
+				}
+				.logo-wrapper {
+					height: 100%;
+
+					img {
+						height: 100%;
+						float: right;
+						padding: 20% 10%;
+						margin: 0;
+					}
+				}
+				&.road-gap-photo {
+					background-image: url('../img/jamie-lynn/tablet/03-vertical-Jamie-Method.jpg');
+					background-position: center;
+				}
+				&.front3-photo {
+					background-image: url('../img/jamie-lynn/tablet/04-vertical-Jamie-Front3.jpg');
+					background-position: center;
+				}
+			}
+		}
+		.section-hide {
+			display: block;
+
+			.photo-item {
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/tablet/02-vertical-Jamie-Now.jpg');
+					background-position: center;
+				}
+			}
+		}
+		.section-quote {
+			position: relative;
+			height: 100%;
+
+			.quote-item {
+				height: 100%;
+
+				.quote-wrapper{
+					position: absolute;
+					width: 75%;
+					top: 50%;
+					left: 12.5%;
+					transform: translateY(-50%);
+
+					blockquote {
+						width: 600px;
+						background-size: 6em;
+						padding: 0 0 0 100px;
+						margin: 0 auto;
+
+						p {
+							&.hand-written {
+								font-size: 3em;
+							}
+						}
+						.hand-written {
+							font-size: 3em;
+						}
+						&.quote-small {
+							width: 450px;
+
+							p {
+								font-size: 1em;
+								line-height: 1.75;
+
+								&.hand-written {
+									font-size: 3em;
+								}
+							}
+						}
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		.section-products {
+		
+			.product-tablet {
+				display: block;
+			}
+			.product-mobile,
+			.product-mobile-landscape,
+			.product-desktop {
+				display: none;
+			}
+		}
+		.section-signature {
+			height: 100%;
+
+			.signature-item {
+				position: relative;
+				width: auto;
+				height: 100%;
+
+				img {
+					position: absolute;
+					width: 324px;
+					top: 50%;
+					left: 30.864198%;
+					right: 30.864198%;
+					transform: translateY(-50%);
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.jamie-lynn {
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/tablet/01-horizontal-Jamie-Then.jpg');
+					background-position: center;
+				}
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/tablet/02-horizontal-Jamie-Now.jpg');
+					background-position: center;
+				}
+				&.road-gap-photo {
+					background-image: url('../img/jamie-lynn/tablet/03-horizontal-Jamie-Method.jpg');
+					background-position: center;
+				}
+				&.front3-photo {
+					background-image: url('../img/jamie-lynn/tablet/04-horizontal-Jamie-Front3.jpg');
+					background-position: center;
+				}
+				.logo-wrapper {
+					img {
+						height: 100%;
+						padding: 120px;
+					}
+				}
+			}
+		}
+		.section-products {
+		
+			.product-desktop {
+				display: block;
+			}
+			.product-mobile,
+			.product-mobile-landscape,
+			.product-tablet {
+				display: none;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.jamie-lynn .section-quote .quote-item .quote-wrapper {
+		blockquote {
+			width: 750px;
+
+			&.quote-small {
+				width: 550px;
+			}
+		}
+	}
 }
