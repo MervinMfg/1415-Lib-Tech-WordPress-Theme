@@ -132,13 +132,13 @@ html, body { height: 100%; }
 .jamie-lynn .navigation { display: none; }
 .jamie-lynn .section-photo { height: 100%; }
 .jamie-lynn .section-photo .photo-item { position: relative; width: 100%; height: 100%; background-size: cover; }
-.jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/mobile/01-vertical-Jamie-Then.jpg"); background-position: center; }
+.jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/mobile/01-vertical-jamie-then.jpg"); background-position: center; }
 .jamie-lynn .section-photo .photo-item.then-photo h4 { position: absolute; width: 100%; font-family: "museo-slab", serif; color: #CCC; font-weight: 100; text-transform: uppercase; text-align: center; bottom: 7%; }
 .jamie-lynn .section-photo .photo-item.then-photo h4.scroll-message { display: none; }
 .jamie-lynn .section-photo .photo-item .logo-wrapper { height: 100%; }
 .jamie-lynn .section-photo .photo-item .logo-wrapper img { display: block; height: 75%; margin: 0 auto; padding-top: 15%; }
-.jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/mobile/02-vertical-Jamie-Method.jpg"); background-position: center; }
-.jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-vertical-Jamie-Front3.jpg"); background-position: center; }
+.jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/mobile/02-vertical-jamie-method.jpg"); background-position: center; }
+.jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-vertical-jamie-front3.jpg"); background-position: center; }
 .jamie-lynn .section-hide { display: none; }
 .jamie-lynn .section-quote { height: auto; background: #000; }
 .jamie-lynn .section-quote .quote-item { width: 100%; height: auto; padding: 30px; }
@@ -157,23 +157,23 @@ html, body { height: 100%; }
 .jamie-lynn .section-signature .signature-item .signature-dot { visibility: hidden; -webkit-animation: dot  0s; -webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */ animation-delay: 2.5s; -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */ animation-fill-mode: forwards; }
 @-webkit-keyframes dot { from { visibility: hidden; }
   to { visibility: visible; } }
-@media screen and (min-width: 480px) and (orientation: landscape) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/mobile/01-horizontal-Jamie-Then.jpg"); background-position: center; }
+@media screen and (min-width: 480px) and (orientation: landscape) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/mobile/01-horizontal-jamie-then.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper img { height: 80%; float: right; padding-top: 5%; padding-right: 20%; }
-  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/mobile/02-horizontal-Jamie-Method.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-horizontal-Jamie-Front3.jpg"); background-position: center; } }
+  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/mobile/02-horizontal-jamie-method.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-horizontal-jamie-front3.jpg"); background-position: center; } }
 @media screen and (min-width: 768px) { .jamie-lynn .navigation { display: block; position: fixed; z-index: 3; top: 50%; left: 30px; transform: translateY(-50%); }
   .jamie-lynn .navigation li { padding-top: 10px; }
   .jamie-lynn .navigation li a { display: block; width: 10px; height: 10px; border: 2px solid #FFCC33; border-radius: 10px; }
   .jamie-lynn .navigation li a:hover, .jamie-lynn .navigation li a:focus { background: #FFCC33; }
-  .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/tablet/01-vertical-Jamie-Then.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/tablet/01-vertical-jamie-then.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item.then-photo h4.mobile-message { display: none; }
   .jamie-lynn .section-photo .photo-item.then-photo h4.scroll-message { display: block; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper { height: 100%; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper img { height: 100%; float: right; padding: 20% 10%; margin: 0; }
-  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/tablet/03-vertical-Jamie-Method.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/tablet/04-vertical-Jamie-Front3.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/tablet/03-vertical-jamie-method.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/tablet/04-vertical-jamie-front3.jpg"); background-position: center; }
   .jamie-lynn .section-hide { display: block; }
-  .jamie-lynn .section-hide .photo-item.now-photo { background-image: url("../img/jamie-lynn/tablet/02-vertical-Jamie-Now.jpg"); background-position: center; }
+  .jamie-lynn .section-hide .photo-item.now-photo { background-image: url("../img/jamie-lynn/tablet/02-vertical-jamie-now.jpg"); background-position: center; }
   .jamie-lynn .section-quote { position: relative; height: 100%; }
   .jamie-lynn .section-quote .quote-item { height: 100%; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper { position: absolute; width: 75%; top: 50%; left: 12.5%; transform: translateY(-50%); }
@@ -189,10 +189,10 @@ html, body { height: 100%; }
   .jamie-lynn .section-signature { height: 100%; }
   .jamie-lynn .section-signature .signature-item { position: relative; width: auto; height: 100%; }
   .jamie-lynn .section-signature .signature-item .jamie-signature { position: absolute; width: 40%; height: auto; left: 30%; right: 30%; top: 50%; transform: translateY(-50%); } }
-@media screen and (min-width: 980px) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/tablet/01-horizontal-Jamie-Then.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.now-photo { background-image: url("../img/jamie-lynn/tablet/02-horizontal-Jamie-Now.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/tablet/03-horizontal-Jamie-Method.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/tablet/04-horizontal-Jamie-Front3.jpg"); background-position: center; }
+@media screen and (min-width: 980px) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/tablet/01-horizontal-jamie-then.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.now-photo { background-image: url("../img/jamie-lynn/tablet/02-horizontal-jamie-now.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/tablet/03-horizontal-jamie-method.jpg"); background-position: center; }
+  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/tablet/04-horizontal-jamie-front3.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper img { height: 100%; padding: 120px; }
   .jamie-lynn .section-signature .signature-item .jamie-signature { width: 30%; height: auto; left: 35%; right: 35%; } }
 @media screen and (min-width: 1200px) { .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote { width: 750px; }

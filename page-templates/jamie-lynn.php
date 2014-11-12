@@ -146,10 +146,10 @@ getRegionCode();
 		</section>
 		<section id="products" class="section-products">
 			<div class="product-mobile">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/mobile/05-horizontal-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/mobile/05-horizontal-jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 			</div>
 			<div class="product-desktop">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/tablet/05-horizontal-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/tablet/05-horizontal-jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 			</div>
 		</section>
 		<section id="signature" class="section-signature">
