@@ -146,13 +146,7 @@ getRegionCode();
 		</section>
 		<section id="products" class="section-products">
 			<div class="product-mobile">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/mobile/05-vertical-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
-			</div>
-			<div class="product-mobile-landscape">
 				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/mobile/05-horizontal-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
-			</div>
-			<div class="product-tablet">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/tablet/05-vertical-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 			</div>
 			<div class="product-desktop">
 				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/tablet/05-horizontal-Jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
@@ -160,7 +154,18 @@ getRegionCode();
 		</section>
 		<section id="signature" class="section-signature">
 			<div class="signature-item">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-signature.png" alt="Jamie Lynn signature" />
+				<svg class="jamie-signature" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="500px" viewBox="0 0 1000 500" enable-background="new 0 0 1000 500" xml:space="preserve">
+			        <path class="signature-name" fill="none" stroke="#FFCC33" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" d="M295.8,316.6c0,0-52-41-70.9-52
+			            c-18.9-11-182.8-104-195.4-108.7c-12.6-4.7,168.6,41,168.6,41s118.2,33.1,146.5,47.3c28.4,14.2,70.9,36.2,86.7,61.5
+			            c15.8,25.2,37.8,66.2-23.6,64.6s-211.2-12.6-236.4-17.3s-80.4-14.2-41-47.3c31.5-15.8,159.2-53.6,159.2-53.6l104-34.7
+			            c0,0,61.5-17.3,55.2-22.1c-6.3-4.7-28.4-6.3-86.7,41c0,0-20.5,23.6-9.5,34.7c11,11,31.5,12.6,63-4.7s46.7-34.1,52-29.9
+			            c5.3,4.2-21,27.8-14.2,31.5c6.8,3.7,66.7-43.1,72.5-41c5.8,2.1-21.5,34.1-12.6,37.8c8.9,3.7,50.9-34.7,60.9-43.1
+			            c10-8.4,4.7,4.7,4.7,4.7l-20,33.6c0,0-3.2,20.5,25.2,0c14.1-10.2,22.6-21.8,29.4-27.3c13.2-10.6,10.5,1.6,10.5,1.6l-10,16.3
+			            c0,0-1.6,26.8,28.4,3.2c13.8-10.9,25-20.1,32.2-27.6c20.3-21.2,5,3.5,5,3.5s-15.2,26.8-15.2,33.1s-3.2,24.2,25.2,14.7
+			            c28.4-9.5,81.9-34.7,81.9-34.7s45.7-23.6,12.6-26.8c-33.1-3.2-45.7,31.5-45.7,31.5s1.6,22.1,25.2,26.8s59.9,4.7,100.8-3.2
+			            s72.5-18.9,91.4-15.8"/>
+			        <path class="signature-dot" fill="#FFCC33" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
+			    </svg>
 			</div>
 		</section>
 	</div><!-- END .jamie-lynn -->

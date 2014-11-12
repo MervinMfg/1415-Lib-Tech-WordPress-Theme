@@ -146,18 +146,21 @@ html, body { height: 100%; }
 .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote p { font-family: "museo-slab", serif; color: #CCC; font-size: 1.5em; /* 24/16 */ font-weight: 100; line-height: 1.25; margin-bottom: 30px; padding: 0 15px; }
 .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote p.hand-written { display: block; font-family: "felt-tip-senior", cursive; color: #FFCC33; font-size: 2.4em; padding-top: 20px; text-align: center; line-height: .75; }
 .jamie-lynn .section-products .product-mobile { display: block; }
-.jamie-lynn .section-products .product-mobile-landscape, .jamie-lynn .section-products .product-tablet, .jamie-lynn .section-products .product-desktop { display: none; }
+.jamie-lynn .section-products .product-desktop { display: none; }
 .jamie-lynn .section-products img { width: 100%; height: auto; }
 .jamie-lynn .section-signature { height: auto; background: #000; }
 .jamie-lynn .section-signature .signature-item { height: 100%; }
-.jamie-lynn .section-signature .signature-item img { display: block; width: 100%; padding: 200px 20%; margin: 0 auto; }
-
+.jamie-lynn .section-signature .signature-item .jamie-signature { display: block; width: 70%; margin: 0 auto; }
+.jamie-lynn .section-signature .signature-item .signature-name { stroke-dasharray: 2796.57666015625; stroke-dashoffset: 2796.57666015625; -webkit-animation: name 2.5s; -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */ animation-fill-mode: forwards; }
+@-webkit-keyframes name { from { stroke-dashoffset: 2796.57666015625; }
+  to { stroke-dashoffset: 0; } }
+.jamie-lynn .section-signature .signature-item .signature-dot { visibility: hidden; -webkit-animation: dot  0s; -webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */ animation-delay: 2.5s; -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */ animation-fill-mode: forwards; }
+@-webkit-keyframes dot { from { visibility: hidden; }
+  to { visibility: visible; } }
 @media screen and (min-width: 480px) and (orientation: landscape) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/mobile/01-horizontal-Jamie-Then.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper img { height: 80%; float: right; padding-top: 5%; padding-right: 20%; }
   .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/mobile/02-horizontal-Jamie-Method.jpg"); background-position: center; }
-  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-horizontal-Jamie-Front3.jpg"); background-position: center; }
-  .jamie-lynn .section-products .product-mobile-landscape { display: block; }
-  .jamie-lynn .section-products .product-mobile, .jamie-lynn .section-products .product-tablet, .jamie-lynn .section-products .product-desktop { display: none; } }
+  .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/mobile/03-horizontal-Jamie-Front3.jpg"); background-position: center; } }
 @media screen and (min-width: 768px) { .jamie-lynn .navigation { display: block; position: fixed; z-index: 3; top: 50%; left: 30px; transform: translateY(-50%); }
   .jamie-lynn .navigation li { padding-top: 10px; }
   .jamie-lynn .navigation li a { display: block; width: 10px; height: 10px; border: 2px solid #FFCC33; border-radius: 10px; }
@@ -181,17 +184,16 @@ html, body { height: 100%; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote.quote-small p { font-size: 1em; line-height: 1.75; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote.quote-small p.hand-written { font-size: 3em; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote span { display: block; }
-  .jamie-lynn .section-products .product-tablet { display: block; }
-  .jamie-lynn .section-products .product-mobile, .jamie-lynn .section-products .product-mobile-landscape, .jamie-lynn .section-products .product-desktop { display: none; }
+  .jamie-lynn .section-products .product-desktop { display: block; }
+  .jamie-lynn .section-products .product-mobile { display: none; }
   .jamie-lynn .section-signature { height: 100%; }
   .jamie-lynn .section-signature .signature-item { position: relative; width: auto; height: 100%; }
-  .jamie-lynn .section-signature .signature-item img { position: absolute; width: 324px; top: 50%; left: 30.864198%; right: 30.864198%; transform: translateY(-50%); padding: 0; } }
+  .jamie-lynn .section-signature .signature-item .jamie-signature { position: absolute; width: 40%; height: auto; left: 30%; right: 30%; top: 50%; transform: translateY(-50%); } }
 @media screen and (min-width: 980px) { .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/tablet/01-horizontal-Jamie-Then.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item.now-photo { background-image: url("../img/jamie-lynn/tablet/02-horizontal-Jamie-Now.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item.road-gap-photo { background-image: url("../img/jamie-lynn/tablet/03-horizontal-Jamie-Method.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item.front3-photo { background-image: url("../img/jamie-lynn/tablet/04-horizontal-Jamie-Front3.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item .logo-wrapper img { height: 100%; padding: 120px; }
-  .jamie-lynn .section-products .product-desktop { display: block; }
-  .jamie-lynn .section-products .product-mobile, .jamie-lynn .section-products .product-mobile-landscape, .jamie-lynn .section-products .product-tablet { display: none; } }
+  .jamie-lynn .section-signature .signature-item .jamie-signature { width: 30%; height: auto; left: 35%; right: 35%; } }
 @media screen and (min-width: 1200px) { .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote { width: 750px; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote.quote-small { width: 550px; } }

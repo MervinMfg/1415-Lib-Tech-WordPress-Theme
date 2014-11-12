@@ -137,8 +137,6 @@ body {
 		.product-mobile {
 			display: block;
 		}
-		.product-mobile-landscape,
-		.product-tablet,
 		.product-desktop {
 			display: none;
 		}
@@ -154,12 +152,42 @@ body {
 		.signature-item {
 			height: 100%;
 
-			img {
+			.jamie-signature {
 				display: block;
-				width: 100%;
-				padding: 200px 20%;
-				margin: 0 auto;
-			}
+				width: 70%;
+	            margin: 0 auto;
+	        }
+	        .signature-name {
+	            stroke-dasharray: 2796.57666015625;
+	            stroke-dashoffset: 2796.57666015625;
+	            -webkit-animation: name 2.5s;
+	            -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+	            animation-fill-mode: forwards;
+	        }
+	        @-webkit-keyframes name {
+	            from {
+	                stroke-dashoffset: 2796.57666015625;
+	            }
+	            to {
+	                stroke-dashoffset: 0;
+	            }
+	        }
+	        .signature-dot {
+	            visibility: hidden;
+	            -webkit-animation: dot  0s;
+	            -webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */
+	            animation-delay: 2.5s;
+	             -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+	            animation-fill-mode: forwards;
+	        }
+	        @-webkit-keyframes dot {
+	            from {
+	                visibility: hidden;
+	            }
+	            to {
+	                visibility: visible;
+	            }
+	        }
 		}
 	}
 }
@@ -188,17 +216,6 @@ body {
 					background-image: url('../img/jamie-lynn/mobile/03-horizontal-Jamie-Front3.jpg');
 					background-position: center;
 				}
-			}
-		}
-		.section-products {
-		
-			.product-mobile-landscape {
-				display: block;
-			}
-			.product-mobile,
-			.product-tablet,
-			.product-desktop {
-				display: none;
 			}
 		}
 	}
@@ -325,12 +342,10 @@ body {
 		}
 		.section-products {
 		
-			.product-tablet {
+			.product-desktop {
 				display: block;
 			}
-			.product-mobile,
-			.product-mobile-landscape,
-			.product-desktop {
+			.product-mobile {
 				display: none;
 			}
 		}
@@ -342,14 +357,14 @@ body {
 				width: auto;
 				height: 100%;
 
-				img {
+				.jamie-signature {
 					position: absolute;
-					width: 324px;
+					width: 40%;
+					height: auto;
+					left: 30%;
+					right: 30%;
 					top: 50%;
-					left: 30.864198%;
-					right: 30.864198%;
 					transform: translateY(-50%);
-					padding: 0;
 				}
 			}
 		}
@@ -383,15 +398,14 @@ body {
 				}
 			}
 		}
-		.section-products {
-		
-			.product-desktop {
-				display: block;
-			}
-			.product-mobile,
-			.product-mobile-landscape,
-			.product-tablet {
-				display: none;
+		.section-signature {
+			.signature-item {
+				.jamie-signature {
+					width: 30%;
+					height: auto;
+					left: 35%;
+					right: 35%;
+				}
 			}
 		}
 	}
