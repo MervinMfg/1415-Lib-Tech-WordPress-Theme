@@ -10,6 +10,54 @@ LIBTECH.JamieLynn = {
 	init: function () {
 		var self;
 		self = this;
+		// resize video, fill div
+		$(window).resize(function() {
+			self.recalculateFills();
+		});
+		self.recalculateFills();
+	},
+	recalculateFills: function () {
+		var self, browserHeight, browserWidth, fills;
+		self = this;
+		//get pixel size of browser window.
+		browserHeight = Math.round($(window).height());
+		browserWidth = Math.round($(window).width());
+		//jquery all items on page with fill tag
+		fills = $('.fill');
+		//for each fill, recalculate size and position and apply using jQuery
+		fills.each(function () {
+			var videoHeight, videoWidth, new_size;
+			//height of element. not neccessarily video
+			var videoHeight = $(this).height();
+			var videoWidth = $(this).width();
+			//calculate new size
+			var new_size = self.fullBleed(browserWidth, browserHeight, videoWidth, videoHeight);
+			//distance from top and left is half of the difference between the browser width and the size of the element
+			$(this)
+			    .width(new_size.width)
+			    .height(new_size.height)
+				.css("margin-left", ((browserWidth - new_size.width)/2))
+				.css("margin-top", ((browserHeight - new_size.height)/2));
+				
+		});
+	},
+	fullBleed: function (boxWidth, boxHeight, imgWidth, imgHeight) {
+		// Calculate new height and width...
+		var initW = imgWidth;
+		var initH = imgHeight;
+		var ratio = initH / initW;
+		imgWidth = boxWidth;
+		imgHeight = boxWidth * ratio;
+		// If the video is not the right height, then make it so...     	
+		if(imgHeight < boxHeight){
+			imgHeight = boxHeight;
+			imgWidth = imgHeight / ratio;
+		}
+		//  Return new size for video
+		return {
+			width: imgWidth,
+			height: imgHeight
+		};
 	},
 	utilities: {
 		cookie: {

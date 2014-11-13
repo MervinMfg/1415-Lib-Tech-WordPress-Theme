@@ -38,6 +38,10 @@ body {
 .jamie-lynn {
 	height: 100%;
 
+	a {
+		text-decoration: none;
+	}
+
 	.navigation {
 		display: none;
 	}
@@ -51,7 +55,7 @@ body {
 			background-size: cover;
 
 			&.then-photo {
-				background-image: url('../img/jamie-lynn/mobile/01-vertical-jamie-then.jpg');
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-then-mobile-vertical.jpg');
 				background-position: center;
 
 				h4 {
@@ -68,6 +72,12 @@ body {
 						display: none;
 					}
 				}
+				.scroll {
+					position: absolute;
+					bottom: 10px;
+					left: 50%;
+					margin-left: -25px;
+				}
 			}
 			.logo-wrapper {
 					height: 100%;
@@ -80,11 +90,11 @@ body {
 					}
 				}
 			&.road-gap-photo {
-				background-image: url('../img/jamie-lynn/mobile/02-vertical-jamie-method.jpg');
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-method-mobile-vertical.jpg');
 				background-position: center;
 			}
 			&.front3-photo {
-				background-image: url('../img/jamie-lynn/mobile/03-vertical-jamie-front3.jpg');
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-mobile-vertical.jpg');
 				background-position: center;
 			}
 		}
@@ -132,6 +142,42 @@ body {
 			}
 		}
 	}
+	.section-video {
+		height: 100%;
+
+		.video-item {
+			position: relative;
+			height: 100%;
+
+			.play-image {
+				position: absolute;
+				height: 220px;
+				width: 220px;
+				left: 50%;
+				top: 50%;
+				margin: -110px 0 0 -110px;
+				z-index: 4;
+
+				a {
+					img {
+						width: 100%;
+						height: auto;
+					}
+				}
+			}
+
+			.video-image {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-video-mobile-vertical.jpg');
+				background-position: center;
+				width: 100%;
+				height: 100%;
+				background-size: cover;
+			}
+			.video-wrapper {
+				display: none;
+			}
+		}
+	}
 	.section-products {
 		
 		.product-mobile {
@@ -139,6 +185,10 @@ body {
 		}
 		.product-desktop {
 			display: none;
+
+			nav {
+				display: none;
+			}
 		}
 		img {
 			width: 100%;
@@ -196,7 +246,7 @@ body {
 		.section-photo {
 			.photo-item {
 				&.then-photo {
-					background-image: url('../img/jamie-lynn/mobile/01-horizontal-jamie-then.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-then-mobile-horizontal.jpg');
 					background-position: center;
 				}
 				.logo-wrapper {
@@ -209,12 +259,19 @@ body {
 					}
 				}
 				&.road-gap-photo {
-					background-image: url('../img/jamie-lynn/mobile/02-horizontal-jamie-method.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-method-mobile-horizontal.jpg');
 					background-position: center;
 				}
 				&.front3-photo {
-					background-image: url('../img/jamie-lynn/mobile/03-horizontal-jamie-front3.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-mobile-horizontal.jpg');
 					background-position: center;
+				}
+			}
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-video-mobile-horizontal.jpg');
 				}
 			}
 		}
@@ -252,7 +309,7 @@ body {
 			.photo-item {
 
 				&.then-photo {
-					background-image: url('../img/jamie-lynn/tablet/01-vertical-jamie-then.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-then-tablet-vertical.jpg');
 					background-position: center;
 					h4 {
 						&.mobile-message {
@@ -274,11 +331,11 @@ body {
 					}
 				}
 				&.road-gap-photo {
-					background-image: url('../img/jamie-lynn/tablet/03-vertical-jamie-method.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-method-tablet-vertical.jpg');
 					background-position: center;
 				}
 				&.front3-photo {
-					background-image: url('../img/jamie-lynn/tablet/04-vertical-jamie-front3.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-tablet-vertica.jpg');
 					background-position: center;
 				}
 			}
@@ -288,7 +345,7 @@ body {
 
 			.photo-item {
 				&.now-photo {
-					background-image: url('../img/jamie-lynn/tablet/02-vertical-jamie-now.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-now-tablet-vertical.jpg');
 					background-position: center;
 				}
 			}
@@ -340,10 +397,60 @@ body {
 				}
 			}
 		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-video-tablet-vertical.jpg');
+				}
+			}
+		}
 		.section-products {
 		
 			.product-desktop {
 				display: block;
+				padding-bottom: 50px;
+				position: relative;
+
+				nav {
+					display: block;
+					width: 90%;
+					position: absolute;
+					bottom: 10px;
+					left: 5%;
+
+
+					ul {
+						width: 33%;
+						float: left;
+						vertical-align: top;
+
+						li {
+							font-family: $museoSlab;
+							font-size: 1em;
+							padding: 0 0 5px 20%;
+
+							a {
+								padding: 5px;
+								color: $black;
+
+								span {
+									font-weight: 700;
+									font-style: italic;
+									padding-right: 3px;
+								}
+								&:hover,
+								&:focus {
+									color: $yellow;
+
+									span {
+										color: $black;
+									}
+								}
+							}
+							
+						}
+					}
+				}
 			}
 			.product-mobile {
 				display: none;
@@ -362,7 +469,6 @@ body {
 					width: 40%;
 					height: auto;
 					left: 30%;
-					right: 30%;
 					top: 50%;
 					transform: translateY(-50%);
 				}
@@ -375,25 +481,66 @@ body {
 		.section-photo {
 			.photo-item {
 				&.then-photo {
-					background-image: url('../img/jamie-lynn/tablet/01-horizontal-jamie-then.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-then-tablet-horizontal.jpg');
 					background-position: center;
 				}
 				&.now-photo {
-					background-image: url('../img/jamie-lynn/tablet/02-horizontal-jamie-now.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-now-tablet-horizontal.jpg');
 					background-position: center;
 				}
 				&.road-gap-photo {
-					background-image: url('../img/jamie-lynn/tablet/03-horizontal-jamie-method.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-method-tablet-horizontal.jpg');
 					background-position: center;
 				}
 				&.front3-photo {
-					background-image: url('../img/jamie-lynn/tablet/04-horizontal-jamie-front3.jpg');
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-tablet-horizontal.jpg');
 					background-position: center;
 				}
 				.logo-wrapper {
 					img {
 						height: 100%;
-						padding: 120px;
+						padding: 120px 20% 120px 0;
+					}
+				}
+			}
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					display: none;
+				}
+				.video-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					display: block;
+					z-index: 2;
+					overflow: hidden;
+
+					.effect-overlay {
+						background-image: url('../img/jamie-lynn/dots.png');
+						display: block;
+						position: absolute;
+						bottom: 0;
+						z-index: 3;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+		.section-products {
+			.product-desktop {
+				padding-bottom: 30px;
+
+				nav {
+					width: 70%;
+					left: 15%;
+
+					ul {
+						li {
+							padding-bottom: 5px;
+						}
 					}
 				}
 			}
@@ -411,12 +558,64 @@ body {
 	}
 }
 @media screen and (min-width: $breakpoint-xlarge) {
-	.jamie-lynn .section-quote .quote-item .quote-wrapper {
-		blockquote {
-			width: 750px;
+	.jamie-lynn {
+		.section-quote {
+			.quote-item {
+				.quote-wrapper {
 
-			&.quote-small {
-				width: 550px;
+					blockquote {
+						width: 750px;
+
+						p {
+							font-size: 2em;
+
+							&.hand-written {
+								font-size: 4em;
+							}
+						} 
+
+						&.quote-small {
+							width: 550px;
+
+							p {
+								font-size: 1.3em;
+
+								&.hand-written {
+									font-size: 3.5em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.section-products {
+			.product-desktop {
+				padding-bottom: 0;
+
+				nav {
+					width: 60%;
+					bottom: 10px;
+					left: 20%;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxlarge) {
+	.jamie-lynn {
+		.section-products {
+			.product-desktop {
+
+				nav {
+					bottom: 20px;
+
+					ul {
+						li {
+							padding-bottom: 8px;
+						}
+					}
+				}
 			}
 		}
 	}

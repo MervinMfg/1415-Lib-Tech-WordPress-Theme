@@ -58,7 +58,7 @@ getRegionCode();
 			<ul>
 				<li><a href="#then-now"></a></li>
 				<li><a href="#intro"></a></li>
-				<li><a href="#jami-video"></a></li>
+				<li><a href="#jamie-video"></a></li>
 				<li><a href="#method"></a></li>
 				<li><a href="#front3"></a></li>
 				<li><a href="#art"></a></li>
@@ -73,6 +73,7 @@ getRegionCode();
 				</div>
 				<h4 class="mobile-message">Best view on wide screen</h4>
 				<h4 class="scroll-message">Scroll down</h4>
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/arrow.gif" alt="Scroll down arrow" class="scroll" />
 			</div>
 		</section>
 		<section class="section-photo section-hide">
@@ -95,8 +96,15 @@ getRegionCode();
 		</section>
 		<section id="jamie-video" class="section-video">
 			<div class="video-item">
+				<div class="video-image"></div>
 				<div class="video-wrapper">
-					<!-- <iframe src="" /> -->
+					<video width="1280" height="720" autoplay loop preload class="tablet-hide fill">
+						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.mp4" >
+					</video>
+					<span class="effect-overlay"></span>
+				</div>
+				<div class="play-image">
+					<a href="#play-video"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/play-button.png" /></a>
 				</div>
 			</div>
 		</section>
@@ -104,16 +112,14 @@ getRegionCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote class="quote-small">
-						<p>More than the gloveless fingers, spins off the toes, silhouetttes of florescent sirens and dirt rock dna, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
+						<p>More than the gloveless fingers, spins off the toes, silhouettes of florescent sirens and dirt rock dna, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perfect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
 						<p class="hand-written">- Pat Bridges</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
 		<section class="section-photo">
-			<div class="photo-item road-gap-photo">
-
-			</div>
+			<div class="photo-item road-gap-photo"></div>
 		</section>
 		<section id="front3" class="section-quote">
 			<div class="quote-item">
@@ -127,8 +133,7 @@ getRegionCode();
 			</div>
 		</section>
 		<section class="section-photo">
-			<div class="photo-item front3-photo">
-			</div>
+			<div class="photo-item front3-photo"></div>
 		</section>
 		<section id="art" class="section-quote">
 			<div class="quote-item">
@@ -146,10 +151,31 @@ getRegionCode();
 		</section>
 		<section id="products" class="section-products">
 			<div class="product-mobile">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/mobile/05-horizontal-jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-product-mobile-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 			</div>
 			<div class="product-desktop">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/tablet/05-horizontal-jamie-product.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-product-tablet-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<nav class="product-links">
+					<ul>
+						<li><a href="/apparel/alien-tee/"><span>a</span> Alien Tee</a></li>
+						<li><a href="/apparel/red-girl-tee/"><span>b</span> Red Girl Tee</a></li>
+						<li><a href="/apparel/jamie-legend-tee/"><span>c</span> Jamie Legend Tee</a></li>
+						<li><a href="/apparel/pocket-peeper-tee/"><span>d</span> Pocket Peeper Tee</a></li>
+						<li><a href="/apparel/alien-zip-hoodie/"><span>e</span> Alien Zip</a></li>
+					</ul>
+					<ul>
+						<li><a href="/snowboards/jamie-lynn-fundamnmental/"><span>f</span> FunDAMNmental</a></li>
+						<li><a href="/snowboards/jamie-lynn-deflower/"><span>g</span> Deflower</a></li>
+						<li><a href="/snowboards/jamie-lynn-20yr-half-cap/"><span>h</span> Half Cap</a></li>
+						<li><a href="/snowboards/jamie-lynn-phoenix-fundamental/"><span>i</span> fM Phoenix</a></li>
+						<li><a href="/snowboards/jamie-lynn-phoenix/"><span>j</span> Phoenix</a></li>
+					</ul>
+					<ul>
+						<li><a href="/apparel/third-eye-sock/"><span>k</span> Third Eye Sock</a></li>
+						<li><a href="/apparel/jamie-legend-trucker/"><span>l</span> Jamie Legend Hat</a></li>
+						<li><a href="/apparel/cajunga-sock/"><span>m</span> Cajunga Sock</a></li>
+					</ul>
+				</nav>
 			</div>
 		</section>
 		<section id="signature" class="section-signature">
