@@ -9,7 +9,7 @@ get_header();
             <div class="section-content">
                 <h1><?php the_title(); ?></h1>
                 <div class="video-player">
-                    <iframe src="http://player.vimeo.com/video/60610945?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                    <iframe src="http://player.vimeo.com/video/81824622?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                 </div>
                 <div class="video-copy">
                     <?php the_content(); ?>
