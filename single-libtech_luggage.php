@@ -55,7 +55,7 @@ Template Name: Luggage Detail
 						</ul>
 					</div>
 					<div class="product-price">
-						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 					</div>
 
 					<?php
@@ -65,8 +65,10 @@ Template Name: Luggage Detail
 							while(the_repeater_field('libtech_luggage_variations')):
 								$optionColor = get_sub_field('libtech_luggage_variations_color');
 								$optionSKU = get_sub_field('libtech_luggage_variations_sku');
-								if($GLOBALS['language'] == "ca"){
+								if($GLOBALS['currency'] == "CAD"){
 									$optionAvailable = get_sub_field('libtech_luggage_variations_availability_ca');
+								} else if($GLOBALS['currency'] == "EUR"){
+									$optionAvailable = get_sub_field('libtech_luggage_variations_availability_eur');
 								} else {
 									$optionAvailable = get_sub_field('libtech_luggage_variations_availability_us');
 								}

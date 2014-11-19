@@ -92,7 +92,7 @@ Template Name: Snowboard Detail
 						</ul>
 					</div>
 					<div class="product-price">
-						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 					</div>
 					<?php
 						$snowboards = Array();
@@ -107,8 +107,10 @@ Template Name: Snowboard Detail
 									$variationWidth = $optionVariations[$i]['libtech_snowboard_options_variations_width'];
 									$variationLength = $optionVariations[$i]['libtech_snowboard_options_variations_length'];
 									$variationSKU = $optionVariations[$i]['libtech_snowboard_options_variations_sku'];
-									if ($GLOBALS['language'] == "ca") {
+									if ($GLOBALS['currency'] == "CAD") {
 										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
+									} else if ($GLOBALS['currency'] == "EUR") {
+										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
 									} else {
 										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
 									}
@@ -130,8 +132,6 @@ Template Name: Snowboard Detail
 									}else{
 										$variationName = $variationLength;
 									}
-									
-
 									array_push($snowboards, Array($variationName, $variationSKU, $variationAvailable));
 								}
 							endwhile;

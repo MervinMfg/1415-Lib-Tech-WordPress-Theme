@@ -195,29 +195,29 @@ function libtech_excerpt($length_callback='libtech_excerptlength_home') {
 remove_filter('the_excerpt', 'wpautop');
 
 // GET THE REGION CODE BASED ON A COOKIE
-function getRegionCode () {
-    if (isset($_COOKIE["libtech_region"])){
-        if($_COOKIE["libtech_region"] == "ca"){
-            $GLOBALS['language'] = "ca";
-        } else if($_COOKIE["libtech_region"] == "int"){
-            $GLOBALS['language'] = "int";
-        } else{
-            $GLOBALS['language'] = "us";
-        }
+function getCurrencyCode () {
+    if (isset($_COOKIE["libtech_currency"])){
+        $GLOBALS['currency'] = $_COOKIE["libtech_currency"];
     }else{
-        $GLOBALS['language'] = "us";
+        $GLOBALS['currency'] = "USD";
     }
-    return $GLOBALS['language'];
+    return $GLOBALS['currency'];
 }
 
 // GET PRICE DISPLAY
-function getPrice ($usPrice, $caPrice, $sale, $salePercent) {
+function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
     $price = "";
-    if($GLOBALS['language'] == "ca"){
+    if($GLOBALS['currency'] == "CAD"){
         if ($sale == "Yes") {
             $price = '<p class="ca-price strike"><span>$' . $caPrice . '</span> CAD</p><p class="ca-price"><span>$' . round($caPrice * ((100 - $salePercent) / 100), 2) . '</span> CAD (' . $salePercent . '% off)</p>';
         } else {
             $price = '<p class="ca-price"><span>$' . $caPrice . '</span> CAD</p>';
+        }
+    } else if ($GLOBALS['currency'] == "EUR") {
+        if ($sale == "Yes") {
+            $price = '<p class="eur-price strike"><span>$' . $eurPrice . '</span> EUR</p><p class="eur-price"><span>$' . round($eurPrice * ((100 - $salePercent) / 100), 2) . '</span> EUR (' . $salePercent . '% off)</p>';
+        } else {
+            $price = '<p class="eur-price"><span>$' . $eurPrice . '</span> EUR</p>';
         }
     } else {
         if ($sale == "Yes") {
@@ -246,7 +246,7 @@ function getRelatedProducts () {
             $relatedLink = get_permalink($post_object->ID);
             $relatedTitle = get_the_title($post_object->ID);
             // get price
-            $relatedPrice = getPrice(get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID));
+            $relatedPrice = getPrice(get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID));
             // add to related product array
             array_push($relatedProducts, Array($relatedTitle, $relatedLink, $relatedImage, $relatedPrice));
         endforeach;

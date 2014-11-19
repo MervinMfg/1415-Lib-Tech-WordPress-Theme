@@ -9,21 +9,22 @@ LIBTECH.Shop = function () {
 	this.config = {
 		shopKeyUS: "rbb5pr37",
 		shopKeyCanada: "tqwzzawb",
+		shopKeyEurope: "kzg7b2n6",
 		shopKeyInternational: "95tuotu0"
 	};
 	this.init();
 };
 LIBTECH.Shop.prototype = {
 	init: function () {
-		var self, lang, regionCookie, shopAPIKey, shopAPIKeyString;
+		var self, lang, currencyCookie, shopAPIKey, shopAPIKeyString;
 		self = this;
 		// check the language on the cookie
-		regionCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			lang = currencyCookie;
 		}
 		if (lang) {
-			if (lang === 'ca') {
+			if (lang === 'CAD') {
 				shopAPIKey = self.config.shopKeyCanada; // CA Key
 				// set shopatron footer links for Canada
 				$('#link-privacy').attr('href', 'http://libtech-ca.shptron.com/k/privacy');
@@ -34,6 +35,17 @@ LIBTECH.Shop.prototype = {
 				$('#link-ordering').attr('href', 'http://libtech-ca.shptron.com/k/ordering');
 				// set my account in header for Canada
 				$('header .nav-utility .link-account a').attr('href', 'http://libtech-ca.shptron.com/account/?mfg_id=4374.5&language_id=1');
+			} else if (lang === 'EUR') {
+				shopAPIKey = self.config.shopKeyEurope; // EUR Key
+				// set shopatron footer links for Europe
+				$('#link-privacy').attr('href', 'http://libtecheu.shptron.com/k/privacy');
+				$('#link-policies').attr('href', 'http://libtecheu.shptron.com/k/policies');
+				$('#link-login').attr('href', 'http://libtecheu.shptron.com/account/?mfg_id=4374.5&language_id=1');
+				$('#link-safety').attr('href', 'http://libtecheu.shptron.com/k/security');
+				$('#link-returns').attr('href', 'http://libtecheu.shptron.com/k/policies#Returns');
+				$('#link-ordering').attr('href', 'http://libtecheu.shptron.com/k/ordering');
+				// set my account in header for Canada
+				$('header .nav-utility .link-account a').attr('href', 'http://libtecheu.shptron.com/account/?mfg_id=4374.5&language_id=1');
 			} else if (lang === 'int') {
 				shopAPIKey = self.config.shopKeyInternational; // International key
 				// set shopatron footer links for International
@@ -87,7 +99,7 @@ LIBTECH.Shop.prototype = {
 		});
 	},
 	shoppingCartInit: function () {
-		var self, lang, regionCookie;
+		var self, lang, currencyCookie;
 		self = this;
 
 		Shopatron('#shopping-cart').getCart({
@@ -99,17 +111,20 @@ LIBTECH.Shop.prototype = {
 			complete: function () {}
 		});
 		// check for the region
-		regionCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			lang = currencyCookie;
 		} else {
-			lang = 'us';
+			lang = 'USD';
 		}
 		// update links on page
-		if (lang === 'ca') {
+		if (lang === 'CAD') {
 			$("a.link-ordering-info").prop("href", "http://libtech-ca.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://libtech-ca.shptron.com/k/policies#Returns");
-		} else if (lang === 'int') {
+		} else if (lang === 'EUR') {
+			$("a.link-ordering-info").prop("href", "http://libtecheu.shptron.com/k/ordering");
+			$("a.link-return-policy").prop("href", "http://libtecheu.shptron.com/k/policies#Returns");
+		} else if (lang === 'INT') {
 			$("a.link-ordering-info").prop("href", "http://libtech-int.shptron.com/k/ordering");
 			$("a.link-return-policy").prop("href", "http://libtech-int.shptron.com/k/policies#Returns");
 		} else {

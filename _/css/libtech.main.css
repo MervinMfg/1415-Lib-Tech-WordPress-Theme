@@ -275,16 +275,16 @@ header .nav-sub-wrapper.skate .mobile-btn { background-position: -176px -123px; 
 header .nav-utility { position: absolute; z-index: 100; top: 0; right: 0; padding: 30px 10px 0 0; }
 header .nav-utility a { font-size: 1em; /* 16 */ font-weight: bold; font-style: normal; text-transform: uppercase; }
 header .nav-utility .search { display: none; padding: 3px 0 0 10px; }
-header .nav-utility .search a { display: block; width: 26px; height: 17px; background: url("../img/sprite.png") -130px 0px; text-indent: 100%; white-space: nowrap; overflow: hidden; }
+header .nav-utility .search a { display: block; width: 26px; height: 17px; background: url("../img/sprite.png") -130px 0px; text-indent: 110%; white-space: nowrap; overflow: hidden; }
 header .nav-utility .search #header-search { position: absolute; top: 4px; right: 0px; width: 25%; visibility: hidden; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; }
 header .nav-utility .search #header-search.visible { visibility: visible; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 header .nav-utility .search #header-search .text-input { width: 100%; position: absolute; top: 0px; right: -5px; padding-right: 35px; }
-header .nav-utility .search #header-search .submit { width: 26px; height: 17px; background: url("../img/sprite.png") -130px -37px; position: absolute; top: 8px; right: 0px; text-indent: 100%; white-space: nowrap; overflow: hidden; }
+header .nav-utility .search #header-search .submit { width: 26px; height: 17px; background: url("../img/sprite.png") -130px -37px; position: absolute; top: 8px; right: 0px; text-indent: 150%; white-space: nowrap; overflow: hidden; }
 header .nav-utility .link-dealer { display: none; }
 header .nav-utility .link-account { display: none; padding-right: 10px; }
 header .nav-utility #quick-cart { width: 61px; height: 22px; background: url("../img/sprite.png") -49px 0px; float: left; }
 header .nav-utility #quick-cart a { display: block; width: 31px; height: 20px; padding: 2px 0 0 30px; }
-header .nav-utility #quick-cart a span { width: 30px; height: 16px; font-size: 12px; font-weight: bold; text-align: center; display: block; }
+header .nav-utility #quick-cart a span { width: 30px; font-size: 12px; font-weight: bold; text-align: center; display: block; margin-top: 1px; }
 header .nav-utility #quick-cart a:hover span, header .nav-utility #quick-cart a:focus span { color: #fff; }
 
 .snow header .nav-main .snow a { color: #FFFF00; }
@@ -318,11 +318,8 @@ header .nav-utility #quick-cart a:hover span, header .nav-utility #quick-cart a:
 .skate header .nav-utility a:hover { color: #66CC00; }
 
 .region-selector { float: left; padding-right: 10px; display: none; }
-.region-selector li a { display: block; width: 38px; height: 20px; background: url("../img/sprite.png"); display: none; text-indent: 100%; white-space: nowrap; overflow: hidden; }
-.region-selector .country-us { background-position: 0px 0px; }
-.region-selector .country-ca { background-position: 0px -40px; }
-.region-selector .country-int { background-position: 0px -80px; }
-.region-selector .country-us.selected, .region-selector .country-ca.selected, .region-selector .country-int.selected { display: block; }
+.region-selector a { display: block; width: 33px; height: 20px; white-space: nowrap; overflow: hidden; }
+.region-selector a img { width: 100%; height: auto; }
 
 @media screen and (min-width: 600px) { header .logo-wrapper { text-align: center; position: static; padding-bottom: 0; }
   header .logo-wrapper #logo { display: inline-block; }
@@ -351,6 +348,9 @@ footer a:hover { color: #fff !important; }
 footer .region-selector, footer .social-links, footer .sports, footer .shop, footer .about, footer .support, footer .search, footer .search, footer .subscribe { padding-bottom: 20px; }
 footer .region-selector, footer .social-links { width: 100%; float: left; }
 footer .region-selector { display: block; }
+footer .region-selector a { width: auto; height: auto; }
+footer .region-selector a img { width: 20px; height: 12px; margin-right: 5px; }
+footer .region-selector a span { display: none; }
 footer .sports, footer .shop, footer .about, footer .support { width: 50%; float: left; }
 footer .logo { display: none; }
 footer .search, footer .subscribe { width: 100%; float: left; clear: both; }
@@ -462,24 +462,22 @@ body { background: #000; }
 /* ========================================================================== COMPONENTS/_REGION-SELECTOR.SCSS ========================================================================== */
 /* Region Selector Styles
 -------------------------------------------------------------------------------*/
-#region-selector { visibility: hidden; background: #000; background: rgba(0, 0, 0, 0.92); width: 100%; height: 100%; min-height: 100%; position: fixed; top: 0; left: 0; z-index: 9999; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 500ms ease-in-out; -moz-transition: opacity 500ms ease-in-out; -ms-transition: opacity 500ms ease-in-out; -o-transition: opacity 500ms ease-in-out; transition: opacity 500ms ease-in-out; }
-#region-selector.visible { visibility: visible; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
-#region-selector .choose-region { padding: 10px; }
-#region-selector .choose-region .h1 { padding: 10px; }
-#region-selector .choose-region ul li { padding: 10px; clear: both; }
-#region-selector .choose-region ul li .flag { width: 35%; float: left; }
-#region-selector .choose-region ul li .copy { width: 65%; float: left; }
-#region-selector .choose-region ul li .copy h3 { padding: 0 0 5px 20px; line-height: 1em; }
-#region-selector .choose-region ul li .copy p { padding-left: 20px; }
-#region-selector .choose-region ul li:hover, #region-selector .choose-region ul li:focus { cursor: pointer; background: #333333; }
+.wrapper { position: relative; height: 100%; }
 
-@media only screen and (min-width: 321px) { #region-selector .width-fix { max-width: 940px; display: table; height: 100%; margin: 0 auto; }
-  #region-selector .choose-region { display: table-cell; vertical-align: middle; }
-  #region-selector .choose-region ul li { width: 33.33%; padding: 0; float: left; clear: none; text-align: center; }
-  #region-selector .choose-region ul li .flag { width: 100%; padding: 10px 10px 0 10px; }
-  #region-selector .choose-region ul li .flag img { width: 100%; }
-  #region-selector .choose-region ul li .copy { width: 100%; padding: 0 10px 10px 10px; }
-  #region-selector .choose-region ul li .copy h3, #region-selector .choose-region ul li .copy p { padding-left: 0; } }
+#region-selector { visibility: hidden; background: #000; background: rgba(0, 0, 0, 0.92); width: 100%; height: 100%; overflow-y: auto; position: absolute; top: 0; left: 0; z-index: 9999; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 500ms ease-in-out; -moz-transition: opacity 500ms ease-in-out; -ms-transition: opacity 500ms ease-in-out; -o-transition: opacity 500ms ease-in-out; transition: opacity 500ms ease-in-out; }
+#region-selector.visible { visibility: visible; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
+#region-selector .choose-region { padding: 40px; }
+#region-selector .choose-region .h1 { padding-bottom: 40px; }
+#region-selector .choose-region .location-group { padding-bottom: 30px; }
+#region-selector .choose-region .location-group .location-title { padding-bottom: 20px; }
+#region-selector .choose-region .location-group .location-note { padding-bottom: 10px; }
+#region-selector .choose-region .location-group .location-list .location-item { padding-bottom: 10px; }
+#region-selector .choose-region .location-group .location-list .location-item p a { color: #fff; font-style: normal; text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
+#region-selector .choose-region .location-group .location-list .location-item p a span { font-size: 0.8em; font-weight: 400; letter-spacing: 0; padding-right: 5px; }
+#region-selector .choose-region .location-group .location-list .location-item p a img { width: 20px; height: 12px; margin-right: 5px; }
+
+@media only screen and (min-width: 600px) { #region-selector .choose-region { max-width: 768px; margin: 0 auto; padding: 60px; }
+  #region-selector .choose-region .location-group.europe .location-list .location-item { display: inline-block; width: 45%; vertical-align: top; } }
 /* ========================================================================== COMPONENTS/_SHOPATRON.SCSS ========================================================================== */
 /* Shopping Cart Styles
 -------------------------------------------------------------------------------*/

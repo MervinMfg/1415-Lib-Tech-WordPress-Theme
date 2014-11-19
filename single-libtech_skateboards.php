@@ -102,7 +102,7 @@ Template Name: Skateboard Detail
 						</ul>
 					</div>
 					<div class="product-price">
-						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 					</div>
 					<?php
 						$variations = Array();
@@ -125,8 +125,10 @@ Template Name: Skateboard Detail
 										}
 									}
 									$variationSKU = $optionVariations[$i]['libtech_skateboard_options_variations_sku'];
-									if ($GLOBALS['language'] == "ca") {
+									if ($GLOBALS['currency'] == "CAD") {
 										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
+									} else if ($GLOBALS['currency'] == "EUR") {
+										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
 									} else {
 										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
 									}

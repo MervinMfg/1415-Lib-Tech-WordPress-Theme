@@ -46,8 +46,10 @@ Template Name: Accessories Detail
 									$productSize = get_sub_field('libtech_accessories_variations_size');
 									$productColor = get_sub_field('libtech_accessories_variations_color');
 									$productSKU = get_sub_field('libtech_accessories_variations_sku');
-									if ($GLOBALS['language'] == "ca") {
+									if ($GLOBALS['currency'] == "CAD") {
 										$productAvailable = get_sub_field('libtech_accessories_variations_availability_ca');
+									} else if ($GLOBALS['currency'] == "EUR") {
+										$productAvailable = get_sub_field('libtech_accessories_variations_availability_eur');
 									} else {
 										$productAvailable = get_sub_field('libtech_accessories_variations_availability_us');
 									}
@@ -84,7 +86,7 @@ Template Name: Accessories Detail
 						</ul>
 					</div>
 					<div class="product-price">
-						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 					</div>
 					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
 						<select id="product-variation-size" class="select">
