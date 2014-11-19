@@ -68,6 +68,8 @@ LIBTECH.main = {
 			self.stormFactoryInit();
 		} else if ($body.hasClass('page-template-page-templatesdttd-php')) {
 			self.dttdInit();
+		} else if ($body.hasClass('page-template-page-templatesboard-finder-php')) {
+			self.boardFinderInit();
 		}
 		/* Chrome Webfont Fix Styles
 			- https://code.google.com/p/chromium/issues/detail?id=336476
@@ -623,6 +625,10 @@ LIBTECH.main = {
 		$('.dttd-video .video-player').fitVids();
 		// set up large featured images/videos
 		self.utilities.featuredSliderInit(false);
+	},
+	boardFinderInit: function () {
+		var self = this;
+		new LIBTECH.BoardFinder();
 	},
 	utilities: {
 		cookie: {

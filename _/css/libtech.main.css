@@ -1568,6 +1568,9 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .error404 .section-content .img-left-container img { width: 566.4px; }
   .error404 .section-content .img-center-container img { width: 286.4px; }
   .error404 .section-content .img-right-container img { width: 1032.8px; } }
+/* ========================================================================== COMPONENTS/_BOARD-FINDER.SCSS ========================================================================== */
+.board-finder .section-content { padding: 0 20px; }
+
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { padding-top: 60px; margin-top: -40px; }
 .featured-slider .section-content { overflow: hidden; }
