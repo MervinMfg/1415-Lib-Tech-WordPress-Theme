@@ -15,6 +15,11 @@ LIBTECH.JamieLynn = {
 			self.recalculateFills();
 		});
 		self.recalculateFills();
+		// nav selection
+		$('.navigation li a').on('click', function() {
+			$('.navigation li a').removeClass('active');
+			$(this).addClass('active');
+		});
 	},
 	recalculateFills: function () {
 		var self, browserHeight, browserWidth, fills;
@@ -55,8 +60,8 @@ LIBTECH.JamieLynn = {
 		}
 		//  Return new size for video
 		return {
-			width: imgWidth,
-			height: imgHeight
+			width: imgWidth + 16,
+			height: imgHeight + 9
 		};
 	},
 	utilities: {
@@ -95,6 +100,6 @@ LIBTECH.JamieLynn = {
 			// Smooth Page Scrolling, update hash on complete of animation
 			yPosition = $(hash).offset().top;
 			TweenMax.to(window, duration, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { if (updateLocation) window.location = hash; }});
-		}
+		},
 	}
 };

@@ -41,7 +41,6 @@ body {
 	a {
 		text-decoration: none;
 	}
-
 	.navigation {
 		display: none;
 	}
@@ -56,7 +55,7 @@ body {
 
 			&.then-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-then-mobile-vertical.jpg');
-				background-position: center;
+				background-position: 0% 0%;
 
 				h4 {
 					position: absolute;
@@ -66,7 +65,7 @@ body {
 					font-weight: 100;
 					text-transform: uppercase;
 					text-align: center;
-					bottom: 7%;
+					bottom: 40px;
 
 					&.scroll-message {
 						display: none;
@@ -74,21 +73,22 @@ body {
 				}
 				.scroll {
 					position: absolute;
-					bottom: 10px;
+					bottom: 0;
 					left: 50%;
 					margin-left: -25px;
 				}
 			}
 			.logo-wrapper {
-					height: 100%;
+				height: 100%;
+				position: relative;
+				padding-top: 20%;
 
-					img {
-						display: block;
-						height: 75%;
-						margin: 0 auto;
-						padding-top: 15%;
-					}
+				img {
+					display: block;
+					height: 80%;
+					margin: 0 auto;
 				}
+			}
 			&.road-gap-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-method-mobile-vertical.jpg');
 				background-position: center;
@@ -133,9 +133,10 @@ body {
 							font-family: $handWritten;
 							color: $yellow;
 							font-size: 2.4em;
-							padding-top: 20px;
 							text-align: center;
-							line-height: .75;
+							line-height: 1;
+							padding-top: 20px;
+							margin-bottom: 0;
 						}
 					}
 				}
@@ -165,7 +166,6 @@ body {
 					}
 				}
 			}
-
 			.video-image {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-video-mobile-vertical.jpg');
 				background-position: center;
@@ -175,6 +175,66 @@ body {
 			}
 			.video-wrapper {
 				display: none;
+			}
+		}
+	}
+	.section-slide-show {
+		height: 100%;
+		background: $white;
+
+		.slide-show-wrapper {
+			height: 100%;
+
+			.slide {
+				height: 100%;
+				position: relative;
+
+				.art-image {
+					width: 45%;
+					height: auto;
+					position: absolute;
+					left: 10%;
+					top: 50%;
+					transform: translateY(-50%);
+
+					img {
+						display: block;
+						max-height: 650px;
+						width: auto;
+						margin: 0 auto;
+					}
+				}
+				.art-text {
+					width: 40%;
+					height: 650px;
+					position: absolute;
+					right: 0;
+					top: 50%;
+					transform: translateY(-50%);
+
+					.art-description {
+						height: 100%;
+						position: relative;
+
+						.description-wrapper {
+							width: 80%;
+							position: absolute;
+							bottom: 150px;
+							left: 0;
+
+							h3 {
+								font-family: $museoSlab;
+								font-size: 2em;
+								padding-bottom: 20px;
+							}
+							p {
+								font-family: $museoSlab;
+								font-size: 1em;
+								line-height: 1.75;
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -194,50 +254,145 @@ body {
 			width: 100%;
 			height: auto;
 		}
+		h4 {
+			width: 100%;
+			font-family: $museoSlab;
+			font-size: 1em;
+			text-align: center;
+			text-transform: uppercase;
+			margin: 10px 0;
+
+			.view-all {
+				margin: 0 auto;
+				padding: 10px;
+				color: $black;
+
+				&:hover,
+				&:focus {
+					color: $yellow;
+				}
+			}
+		}
 	}
 	.section-signature {
-		height: auto;
+		height: 100%;
 		background: $black;
 
 		.signature-item {
 			height: 100%;
+			width: auto;
+			position: relative;
 
 			.jamie-signature {
 				display: block;
-				width: 70%;
-	            margin: 0 auto;
+				width: 60%;
+				height: 100%;
+				margin: 0 auto;  
 	        }
 	        .signature-name {
 	            stroke-dasharray: 2796.57666015625;
 	            stroke-dashoffset: 2796.57666015625;
-	            -webkit-animation: name 2.5s;
-	            -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+	            -webkit-animation: animateNameWebkit 2.5s;
+	            -moz-animation: animateNameMoz 2.5s;
+	            animation: animateName 2.5s;
+	            -webkit-animation-fill-mode: forwards;
+	            -moz-animation-fill-mode: forwards;
 	            animation-fill-mode: forwards;
 	        }
-	        @-webkit-keyframes name {
-	            from {
+	        @-webkit-keyframes animateNameWebkit {
+	            0% {
 	                stroke-dashoffset: 2796.57666015625;
 	            }
-	            to {
+	            100% {
+	                stroke-dashoffset: 0;
+	            }
+	        }
+	        @-moz-keyframes animateNameMoz {
+	            0% {
+	                stroke-dashoffset: 2796.57666015625;
+	            }
+	            100% {
+	                stroke-dashoffset: 0;
+	            }
+	        }
+	        @keyframes animateName {
+	            0% {
+	                stroke-dashoffset: 2796.57666015625;
+	            }
+	            100% {
 	                stroke-dashoffset: 0;
 	            }
 	        }
 	        .signature-dot {
 	            visibility: hidden;
-	            -webkit-animation: dot  0s;
+	            -webkit-animation: animateDotWebkit  0s;
+	            -moz-animation: animateDotMoz  0s;
+	            animation: animateDot 1s;
 	            -webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */
+	            -moz-animation-delay: 2.5s;
 	            animation-delay: 2.5s;
-	             -webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+				-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+				-moz-animation-fill-mode: forwards;
 	            animation-fill-mode: forwards;
 	        }
-	        @-webkit-keyframes dot {
-	            from {
+	        @-webkit-keyframes animateDotWebkit {
+	            0% {
 	                visibility: hidden;
 	            }
-	            to {
+	            100% {
 	                visibility: visible;
 	            }
 	        }
+	        @-moz-keyframes animateDotMoz {
+	            0% {
+	                visibility: hidden;
+	            }
+	            100% {
+	                visibility: visible;
+	            }
+	        }
+	        @keyframes animateDot {
+	            0% {
+	                visibility: hidden;
+	            }
+	            100% {
+	                visibility: visible;
+	            }
+	        }
+        	img {
+        		position: absolute;
+        		top: 50%;
+        		margin-top: -40.5px;
+        		left: 50%;
+        		margin-left: -162px;
+        	}
+		}
+	}
+}
+// IE FIXES
+.no-smil .jamie-lynn .section-signature .signature-item .signature-name,
+.no-smil .jamie-lynn .section-signature .signature-item .signature-dot {
+	stroke-dasharray: none;
+	stroke-dashoffset: none;
+	animation: none;
+	visibility: visible;
+}
+.ie-lt9 .jamie-lynn {
+
+	.section-quote {
+		.quote-item {
+			.quote-wrapper {
+				blockquote {
+
+					p {
+						padding-top: 30px;
+
+						&.hand-written {
+							padding-top: 0;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -250,12 +405,13 @@ body {
 					background-position: center;
 				}
 				.logo-wrapper {
+					padding-top: 0;
 
 					img {
-						height: 80%;
-						float: right;
-						padding-top: 5%;
-						padding-right: 20%;
+						height: 75%;
+						position: absolute;
+						right: 15%;
+						top: 12.5%;
 					}
 				}
 				&.road-gap-photo {
@@ -283,10 +439,10 @@ body {
 		.navigation {
 			display: block;
 			position: fixed;
-			z-index: 3;
 			top: 50%;
 			left: 30px;
-			transform: translateY(-50%);
+			z-index: 3;
+			margin-top: -85px;
 
 			li {
 				padding-top: 10px;
@@ -299,7 +455,8 @@ body {
 					border-radius: 10px;
 
 					&:hover,
-					&:focus {
+					&:focus,
+					&.active {
 						background: $yellow;
 					}
 				}
@@ -320,16 +477,7 @@ body {
 						}
 					}
 				}
-				.logo-wrapper {
-					height: 100%;
-
-					img {
-						height: 100%;
-						float: right;
-						padding: 20% 10%;
-						margin: 0;
-					}
-				}
+				
 				&.road-gap-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-method-tablet-vertical.jpg');
 					background-position: center;
@@ -337,6 +485,15 @@ body {
 				&.front3-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-tablet-vertica.jpg');
 					background-position: center;
+				}
+				.logo-wrapper {
+					img {
+						height: 75%;
+						position: absolute;
+						right: 20%;
+						top: 12.5%;
+						padding-top: 0;
+					}
 				}
 			}
 		}
@@ -356,13 +513,12 @@ body {
 
 			.quote-item {
 				height: 100%;
+				display: table;
 
 				.quote-wrapper{
-					position: absolute;
-					width: 75%;
-					top: 50%;
-					left: 12.5%;
-					transform: translateY(-50%);
+					display: table-cell;
+					vertical-align: middle;
+					margin: 0 auto;
 
 					blockquote {
 						width: 600px;
@@ -387,6 +543,8 @@ body {
 
 								&.hand-written {
 									font-size: 3em;
+									line-height: 1;
+									margin-bottom: 0;
 								}
 							}
 						}
@@ -418,7 +576,6 @@ body {
 					bottom: 10px;
 					left: 5%;
 
-
 					ul {
 						width: 33%;
 						float: left;
@@ -446,8 +603,7 @@ body {
 										color: $black;
 									}
 								}
-							}
-							
+							}	
 						}
 					}
 				}
@@ -455,22 +611,21 @@ body {
 			.product-mobile {
 				display: none;
 			}
+			h4 {
+				margin-top: 0;
+			}
 		}
 		.section-signature {
 			height: 100%;
 
 			.signature-item {
-				position: relative;
 				width: auto;
 				height: 100%;
 
 				.jamie-signature {
-					position: absolute;
 					width: 40%;
-					height: auto;
-					left: 30%;
-					top: 50%;
-					transform: translateY(-50%);
+					height: 100%;
+					margin: 0 auto;
 				}
 			}
 		}
@@ -495,12 +650,6 @@ body {
 				&.front3-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-front3-tablet-horizontal.jpg');
 					background-position: center;
-				}
-				.logo-wrapper {
-					img {
-						height: 100%;
-						padding: 120px 20% 120px 0;
-					}
 				}
 			}
 		}
@@ -548,16 +697,42 @@ body {
 		.section-signature {
 			.signature-item {
 				.jamie-signature {
-					width: 30%;
-					height: auto;
-					left: 35%;
-					right: 35%;
+					width: 400px;
 				}
+			}
+		}
+	}
+	.no-video .jamie-lynn {
+		.section-video {
+			.video-image {
+				display: block;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-video-tablet-horizontal.jpg');
+				background-position: 50% 50%;
+				width: 100%;
+				height: 100%;
+			}
+			.video-wrapper {
+				display: none;
 			}
 		}
 	}
 }
 @media screen and (min-width: $breakpoint-xlarge) {
+	.jamie-lynn {
+		.section-products {
+			.product-desktop {
+				padding-bottom: 0;
+
+				nav {
+					width: 60%;
+					bottom: 10px;
+					left: 20%;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxlarge) {
 	.jamie-lynn {
 		.section-quote {
 			.quote-item {
@@ -573,7 +748,6 @@ body {
 								font-size: 4em;
 							}
 						} 
-
 						&.quote-small {
 							width: 550px;
 
@@ -591,24 +765,9 @@ body {
 		}
 		.section-products {
 			.product-desktop {
-				padding-bottom: 0;
 
 				nav {
-					width: 60%;
 					bottom: 10px;
-					left: 20%;
-				}
-			}
-		}
-	}
-}
-@media screen and (min-width: $breakpoint-xxlarge) {
-	.jamie-lynn {
-		.section-products {
-			.product-desktop {
-
-				nav {
-					bottom: 20px;
 
 					ul {
 						li {

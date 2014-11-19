@@ -43,11 +43,12 @@ getRegionCode();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Misc. -->
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <script src="//use.typekit.net/ise4yoj.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
     <?php include get_template_directory() . '/_/inc/header-includes-jamie-lynn.php'; ?>
 	<!--[if lt IE 9]>
-		<script src="<?php bloginfo('template_directory'); ?>/_/js/lib/respond.min.js"></script>
+		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond-1.4.2.min.js"></script>
+		<link href="http://cdn.lib-tech.com/respond-proxy/" id="respond-proxy" rel="respond-proxy" />
+		<link href="<?php echo get_template_directory_uri(); ?>/_/img/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+		<script src="<?php echo get_template_directory_uri(); ?>/_/js/lib/respond.proxy.js"></script>
 	<![endif]-->
     <!-- WordPress Head -->
 	<?php wp_head(); ?>
@@ -99,7 +100,9 @@ getRegionCode();
 				<div class="video-image"></div>
 				<div class="video-wrapper">
 					<video width="1280" height="720" autoplay loop preload class="tablet-hide fill">
-						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.mp4" >
+						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.mp4">
+						<source type="video/webm" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.webm">
+						<source type="video/ogv" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.ogv">
 					</video>
 					<span class="effect-overlay"></span>
 				</div>
@@ -145,8 +148,21 @@ getRegionCode();
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
-			<div class="photo-item front3-photo">
+		<section class="section-slide-show">
+			<div class="slide-show-wrapper">
+				<div class="slide">
+					<div class="art-image">
+						<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-blue-girl.jpg" />
+					</div>
+					<div class="art-text">
+						<div class="art-description">
+							<div class="description-wrapper">
+								<h3>Blue Girl</h3>
+								<p>This is copy about blue girl... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section id="products" class="section-products">
@@ -157,26 +173,27 @@ getRegionCode();
 				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-product-tablet-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 				<nav class="product-links">
 					<ul>
-						<li><a href="/apparel/alien-tee/"><span>a</span> Alien Tee</a></li>
-						<li><a href="/apparel/red-girl-tee/"><span>b</span> Red Girl Tee</a></li>
-						<li><a href="/apparel/jamie-legend-tee/"><span>c</span> Jamie Legend Tee</a></li>
-						<li><a href="/apparel/pocket-peeper-tee/"><span>d</span> Pocket Peeper Tee</a></li>
-						<li><a href="/apparel/alien-zip-hoodie/"><span>e</span> Alien Zip</a></li>
+						<li><a href="/apparel/alien-tee/" target="_blank"><span>a</span> Alien Tee</a></li>
+						<li><a href="/apparel/red-girl-tee/" target="_blank"><span>b</span> Red Girl Tee</a></li>
+						<li><a href="/apparel/jamie-legend-tee/" target="_blank"><span>c</span> Jamie Legend Tee</a></li>
+						<li><a href="/apparel/pocket-peeper-tee/" target="_blank"><span>d</span> Pocket Peeper Tee</a></li>
+						<li><a href="/apparel/alien-zip-hoodie/" target="_blank"><span>e</span> Alien Zip</a></li>
 					</ul>
 					<ul>
-						<li><a href="/snowboards/jamie-lynn-fundamnmental/"><span>f</span> FunDAMNmental</a></li>
-						<li><a href="/snowboards/jamie-lynn-deflower/"><span>g</span> Deflower</a></li>
-						<li><a href="/snowboards/jamie-lynn-20yr-half-cap/"><span>h</span> Half Cap</a></li>
-						<li><a href="/snowboards/jamie-lynn-phoenix-fundamental/"><span>i</span> fM Phoenix</a></li>
-						<li><a href="/snowboards/jamie-lynn-phoenix/"><span>j</span> Phoenix</a></li>
+						<li><a href="/snowboards/jamie-lynn-fundamnmental/" target="_blank"><span>f</span> FunDAMNmental</a></li>
+						<li><a href="/snowboards/jamie-lynn-deflower/" target="_blank"><span>g</span> Deflower</a></li>
+						<li><a href="/snowboards/jamie-lynn-20yr-half-cap/" target="_blank"><span>h</span> Half Cap</a></li>
+						<li><a href="/snowboards/jamie-lynn-phoenix-fundamental/" target="_blank"><span>i</span> fM Phoenix</a></li>
+						<li><a href="/snowboards/jamie-lynn-phoenix/" target="_blank"><span>j</span> Phoenix</a></li>
 					</ul>
 					<ul>
-						<li><a href="/apparel/third-eye-sock/"><span>k</span> Third Eye Sock</a></li>
-						<li><a href="/apparel/jamie-legend-trucker/"><span>l</span> Jamie Legend Hat</a></li>
-						<li><a href="/apparel/cajunga-sock/"><span>m</span> Cajunga Sock</a></li>
+						<li><a href="/apparel/third-eye-sock/" target="_blank"><span>k</span> Third Eye Sock</a></li>
+						<li><a href="/apparel/jamie-legend-trucker/" target="_blank"><span>l</span> Jamie Legend Hat</a></li>
+						<li><a href="/apparel/cajunga-sock/" target="_blank"><span>m</span> Cajunga Sock</a></li>
 					</ul>
 				</nav>
 			</div>
+			<h4><a href="#" class="view-all">View all products</a></h4>
 		</section>
 		<section id="signature" class="section-signature">
 			<div class="signature-item">
@@ -191,6 +208,7 @@ getRegionCode();
 			            c28.4-9.5,81.9-34.7,81.9-34.7s45.7-23.6,12.6-26.8c-33.1-3.2-45.7,31.5-45.7,31.5s1.6,22.1,25.2,26.8s59.9,4.7,100.8-3.2
 			            s72.5-18.9,91.4-15.8"/>
 			        <path class="signature-dot" fill="#FFCC33" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
+			        <image src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-signature.png"/>
 			    </svg>
 			</div>
 		</section>
@@ -198,13 +216,16 @@ getRegionCode();
 
 	<?php wp_footer(); ?>
 	
-	<!--[if lte IE 8]>
-	<div id="ie-blocker">
-		<h2>We do not support your browser.</h2>
-		<p><a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
-	</div>
-	<![endif]-->
-	
+	<!-- TYPEKIT -->
+	<script>
+		(function(d) {
+			var config = {
+				kitId: 'ise4yoj',
+				scriptTimeout: 3000
+			},
+			h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='//use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+		})(document);
+	</script>
 	<!-- JavaScript includes -->
 <?php include get_template_directory() . '/_/inc/footer-includes-jamie-lynn.php'; ?>
 
