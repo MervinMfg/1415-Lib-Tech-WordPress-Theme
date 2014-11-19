@@ -181,7 +181,7 @@ header {
 				width: 26px;
 				height: 17px;
 				background: url('../img/sprite.png') -130px 0px;
-				text-indent: 100%;
+				text-indent: 110%;
 				white-space: nowrap;
 				overflow: hidden;
 			}
@@ -213,7 +213,7 @@ header {
 					position: absolute;
 					top: 8px;
 					right: 0px;
-					text-indent: 100%;
+					text-indent: 150%;
 					white-space: nowrap;
 					overflow: hidden;
 				}
@@ -240,11 +240,11 @@ header {
 
 				span{
 					width: 30px;
-					height: 16px;
 					font-size: 12px;
 					font-weight: bold;
 					text-align: center;
 					display: block;
+					margin-top: 1px;
 				}
 				&:hover span,
 				&:focus span {
@@ -330,39 +330,24 @@ header {
 .skate header .nav-utility a:hover {
 	color: $skateColor;
 }
-
-
 .region-selector {
 	float: left;
 	padding-right: 10px;
 	display: none;
 
-	li a {
+	a {
 		display: block;
-		width: 38px;
+		width: 33px;
 		height: 20px;
-		background: url('../img/sprite.png');
-		display: none;
-		text-indent: 100%;
 		white-space: nowrap;
 		overflow: hidden;
-	}
-	.country-us {
-		background-position: 0px 0px;
-	}
-	.country-ca {
-		background-position: 0px -40px;
-	}
-	.country-int {
-		background-position: 0px -80px;
-	}
-	.country-us.selected,
-	.country-ca.selected,
-	.country-int.selected {
-		display: block;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 }
-
 @media screen and (min-width: $breakpoint-small) {
 	header {
 		.logo-wrapper {

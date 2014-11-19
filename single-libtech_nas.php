@@ -26,8 +26,10 @@ Template Name: NAS Detail
 								while(the_repeater_field('libtech_nas_variations')):
 									$variationLength = get_sub_field('libtech_nas_variations_length');
 									$variationSKU = get_sub_field('libtech_nas_variations_sku');
-									if ($GLOBALS['language'] == "ca") {
+									if ($GLOBALS['currency'] == "CAD") {
 										$variationAvailable = get_sub_field('libtech_nas_variations_availability_ca');
+									} else if ($GLOBALS['currency'] == "EUR") {
+										$variationAvailable = get_sub_field('libtech_nas_variations_availability_eur');
 									} else {
 										$variationAvailable = get_sub_field('libtech_nas_variations_availability_us');
 									}
@@ -78,7 +80,7 @@ Template Name: NAS Detail
 						</ul>
 					</div>
 					<div class="product-price">
-						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 					</div>
 					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
 						<select id="product-variation" class="select">

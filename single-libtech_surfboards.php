@@ -49,8 +49,10 @@ Template Name: Surfboard Detail
 					$length = floor($length/12) . "’" . ($length - (floor($length/12)*12)) . "”"; // convert from inches to feet + inches
 					$fins = $variationOptions[$i]['libtech_surfboard_variations_options_fins'];
 					$sku = $variationOptions[$i]['libtech_surfboard_variations_options_sku'];
-					if ($GLOBALS['language'] == "ca") {
+					if ($GLOBALS['currency'] == "CAD") {
 						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_ca'];
+					} else if ($GLOBALS['currency'] == "EUR") {
+						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
 					} else {
 						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_us'];
 					}
@@ -160,16 +162,16 @@ Template Name: Surfboard Detail
 
 					<div class="product-price">
 						<div class="price-logo<?php echo $threeFinClass; ?>">
-							<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+							<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 						</div>
 						<div class="price-graphic">
-							<?php echo getPrice( get_field('libtech_product_price_us_graphic'), get_field('libtech_product_price_ca_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+							<?php echo getPrice( get_field('libtech_product_price_us_graphic'), get_field('libtech_product_price_ca_graphic'), get_field('libtech_product_price_eur_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 						</div>
 						<div class="price-logo-five<?php echo $fiveFinClass; ?>">
-							<?php echo getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+							<?php echo getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_price_eur_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 						</div>
 						<div class="price-graphic-five">
-							<?php echo getPrice( get_field('libtech_product_price_us_5fin_graphic'), get_field('libtech_product_price_ca_5fin_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+							<?php echo getPrice( get_field('libtech_product_price_us_5fin_graphic'), get_field('libtech_product_price_ca_5fin_graphic'), get_field('libtech_product_price_eur_5fin_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 						</div>
 						<div class="clearfix"></div>
 					</div>

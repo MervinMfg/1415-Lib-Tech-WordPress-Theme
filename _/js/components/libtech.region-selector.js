@@ -11,23 +11,19 @@ LIBTECH.RegionSelector = function () {
 LIBTECH.RegionSelector.prototype = {
 	init: function () {
 		// check language cookie on load
-		var self, lang, regionCookie, takover;
+		var self, $body, regionCookie, currencyCookie, takover;
 		self = this;
+		$body = $('body');
 		regionCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_region');
-		if (regionCookie !== null || regionCookie !== "") {
-			lang = regionCookie;
-		}
-		if (lang) {
-			if (lang === 'ca') {
-				$(".country-ca").addClass("selected");
-				$("body").removeClass("international");
-			} else if (lang === 'int') {
-				$("body").addClass("international");
-				$(".country-int").addClass("selected");
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		// check if cookies are set
+		if (regionCookie !== null || currencyCookie !== null) {
+			if (currencyCookie !== 'INT') {
+				$body.removeClass("international");
 			} else {
-				$(".country-us").addClass("selected");
-				$("body").removeClass("international");
+				$body.addClass("international");
 			}
+			$(".region-selector a").html(regionCookie);
 			takeover = new LIBTECH.Takeover();
 		} else {
 			if (navigator.cookieEnabled === true) {
@@ -38,11 +34,9 @@ LIBTECH.RegionSelector.prototype = {
 				} else {
 					takeover = new LIBTECH.Takeover();
 				}
-				// pick us by default, but don't set cookie
-				$(".country-us").addClass("selected");
+				// US picked by default, but don't set cookie
 			} else {
-				// cookies are disabled
-				$(".country-us").addClass("selected");
+				// cookies are disabled, US picked by default
 				takeover = new LIBTECH.Takeover();
 			}
 		}
@@ -60,53 +54,39 @@ LIBTECH.RegionSelector.prototype = {
 	overlayInit: function () {
 		var self = this;
 		$('#region-selector').toggleClass('visible');
+		// scroll to top
+		LIBTECH.main.utilities.pageScroll('#region-selector', 0.5);
 		// add click events
-		$("#region-selector .us").click(function (e) {
+		$("#region-selector .location-group .location-list a").on('click.region', function (e) {
+			var selectedCurrency, selectedRegion;
 			e.preventDefault();
-			LIBTECH.main.utilities.cookie.setCookie('libtech_region', 'us', 60);
-			window.location.reload();
-		});
-		$("#region-selector .ca").click(function (e) {
-			e.preventDefault();
-			LIBTECH.main.utilities.cookie.setCookie('libtech_region', 'ca', 60);
-			window.location.reload();
-		});
-		$("#region-selector .int").click(function (e) {
-			e.preventDefault();
-			LIBTECH.main.utilities.cookie.setCookie('libtech_region', 'int', 60);
+			selectedCurrency = $(this).attr('data-currency');
+			selectedRegion = $(this).html();
+			LIBTECH.main.utilities.cookie.setCookie('libtech_currency', selectedCurrency, 60);
+			LIBTECH.main.utilities.cookie.setCookie('libtech_region', selectedRegion, 60);
 			window.location.reload();
 		});
 		// listen for escape key
-		$(document).keyup(function (e) {
+		$(document).on('keyup.region', function (e) {
 			if (e.keyCode == 27) {
-				$('#region-selector').toggleClass('visible');
-				// kill event listeners
-				$(document).unbind('keyup');
-				$(document).unbind('click');
-				$('#region-selector .choose-region ul li').unbind('click');
+				self.overlayUninit();				
 			}
 		});
 		// don't hide if clicked within region selector
-		$('#region-selector .choose-region ul li').click(function (e) {
+		$('#region-selector .choose-region').on('click.region', function (e) {
 			e.stopPropagation();
 		});
 		// hide if clicked anywhere outside region selector
-		$(document).click(function () {
-			$('#region-selector').toggleClass('visible');
-			// kill event listeners
-			$(document).unbind('keyup');
-			$(document).unbind('click');
-			$('#region-selector .choose-region ul li').unbind('click');
+		$(document).on('click.region', function () {
+			self.overlayUninit();
 		});
 	},
 	overlayUninit: function () {
 		var self = this;
-		$('#region-selector').toggleClass('hide');
-		$('#main').toggleClass('hide');
+		$('#region-selector').toggleClass('visible');
 		// kill event listeners
-		$("#region-selector .location-group .location-list a").off('click.region');
 		$(document).off('keyup.region').off('click.region');
 		$('#region-selector .choose-region').off('click.region');
-		$('#region-selector .btn-close').off('click.region');
+		$("#region-selector .location-group .location-list a").off('click.region');
 	}
 };

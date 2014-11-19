@@ -4,14 +4,18 @@
 
 /* Region Selector Styles
 -------------------------------------------------------------------------------*/
+.wrapper {
+	position: relative;
+	height: 100%;
+}
 #region-selector {
 	visibility: hidden;
 	background: #000;
    	background: rgba(0, 0, 0, 0.92); 
 	width: 100%;
 	height: 100%;
-	min-height: 100%;
-	position: fixed;
+	overflow-y: auto;
+	position: absolute;
 	top: 0;
 	left: 0;
 	z-index: 9999;
@@ -23,79 +27,59 @@
 		@include vendorize(opacity, 1);
 	}
 	.choose-region {
-		padding: 10px;
+		padding: 40px;
 
 		.h1 {
-			padding: 10px;
+			padding-bottom: 40px;
 		}
+		.location-group {
+			padding-bottom: 30px;
+			
+			.location-title {
+				padding-bottom: 20px;
+			}
+			.location-note {
+				padding-bottom: 10px;
+			}
+			.location-list {
+				.location-item {
+					padding-bottom: 10px;
 
-		ul {
-			li {
-				padding: 10px;
-				clear: both;
+					p a {
+						color: #fff;
+						font-style: normal;
+						text-transform: uppercase;
+						font-weight: 700;
+						letter-spacing: 0.05em;
 
-				.flag {
-					width: 35%;
-					float: left;
-				}
-				.copy {
-					width: 65%;
-					float: left;
-
-					h3 {
-						padding: 0 0 5px 20px;
-						line-height: 1em;
+						span {
+							font-size: 0.8em;
+							font-weight: 400;
+							letter-spacing: 0;
+							padding-right: 5px;
+						}
+						img {
+							width: 20px;
+							height: 12px;
+							margin-right: 5px;
+						}
 					}
-					p {
-						padding-left: 20px;
-					}
-				}
-				&:hover,
-				&:focus {
-					cursor: pointer;
-					background: #333333;
 				}
 			}
 		}
 	}
 }
-
-@media only screen and (min-width : $breakpoint-xsmall) {
-	// Phone landscape Styles
+@media only screen and (min-width : $breakpoint-small) {
 	#region-selector {
-		.width-fix {
-			max-width: 940px;
-			display: table;
-			height: 100%;
-			margin: 0 auto;
-		}
 		.choose-region {
-			display: table-cell;
-			vertical-align: middle;
+			max-width: $breakpoint-medium;
+			margin: 0 auto;
+			padding: 60px;
 
-			ul li {
-				width: 33.33%;
-				padding: 0;
-				float: left;
-				clear: none;
-				text-align: center;
-
-				.flag {
-					width: 100%;
-					padding: 10px 10px 0 10px;
-
-					img {
-						width: 100%;
-					}
-				}
-				.copy {
-					width: 100%;
-					padding: 0 10px 10px 10px;
-
-					h3, p {
-						padding-left: 0;
-					}
-				}
+			.location-group.europe .location-list .location-item {
+				display: inline-block;
+				width: 45%;
+				vertical-align: top;
 			}
 		}
 	}

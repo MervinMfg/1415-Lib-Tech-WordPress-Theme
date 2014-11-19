@@ -35,7 +35,7 @@ LIBTECH.main = {
 			self.productDetailInit();
 		} else if ($body.hasClass('page-template-page-templatespage-technology-detail-php')) {
 			self.technologyDetailInit();
-		} else if ($body.hasClass('page-template-page-templatespage-environmental-php')) {
+		} else if ($body.hasClass('page-template-page-templatesenvironmental-php')) {
 			self.environmentalInit();
 		} else if ($body.hasClass('page-template-page-templatespage-environmental-detail-php')) {
 			self.environmentalDetailInit();

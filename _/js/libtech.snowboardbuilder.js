@@ -457,8 +457,8 @@ LIBTECH.snowboardbuilder = {
 				// set the first section
 				self.setCurrentSection();
 				// set region
-				if (LIBTECH.main.utilities.cookie.getCookie('libtech_region') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_region') !== undefined) {
-					self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_region'));
+				if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
+					self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
 				}
 			});
 			// make sure overview video fits
@@ -471,8 +471,8 @@ LIBTECH.snowboardbuilder = {
 	shareInit: function () {
 		var self = this;
 		self.config.isSharePage = true;
-		if (LIBTECH.main.utilities.cookie.getCookie('libtech_region') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_region') !== undefined) {
-			self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_region'));
+		if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
+			self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
 		}
 		self.buildShare();
 		$(window).on('load', function () {

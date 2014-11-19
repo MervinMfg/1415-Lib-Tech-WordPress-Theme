@@ -5,6 +5,7 @@ Template Name: Search
 get_header(); 
 ?>
 
+		<div class="bg2-top"></div>
 		<section class="search bg2">
 			<div class="section-content">
 				<h1>Search Results</h1>

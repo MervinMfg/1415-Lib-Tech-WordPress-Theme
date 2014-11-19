@@ -51,6 +51,20 @@ footer {
 	}
 	.region-selector {
 		display: block;
+
+		a {
+			width: auto;
+			height: auto;
+
+			img {
+				width: 20px;
+				height: 12px;
+				margin-right: 5px;
+			}
+			span {
+				display: none;
+			}
+		}
 	}
 	.sports,
 	.shop,

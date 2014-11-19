@@ -68,13 +68,13 @@ get_header();
                         if ($postType == "libtech_surfboards") {
                             // check fin pricing and what to display by default
                             if (get_field('libtech_product_price_us_5fin', $post_object->ID) == "") {
-                                $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                                $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
                             } else {
-                                $productPrice = getPrice( get_field('libtech_product_price_us_5fin', $post_object->ID), get_field('libtech_product_price_ca_5fin', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                                $productPrice = getPrice( get_field('libtech_product_price_us_5fin', $post_object->ID), get_field('libtech_product_price_ca_5fin', $post_object->ID), get_field('libtech_product_price_eur_5fin', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
                             }
                         } else {
                             // grab default price of all other products
-                            $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                            $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
                         }
                     ?>
                     <li>
@@ -251,13 +251,13 @@ get_header();
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
                 if (get_field('libtech_product_price_us_5fin') == "") {
-                    $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                    $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
                 } else {
-                    $productArray['price'] = getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                    $productArray['price'] = getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_price_eur_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
                 }
             } else {
                 // grab default price of all other products
-                $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
             }
             switch ($productArray['postType']) {
                 case "libtech_snowboards":
@@ -268,8 +268,10 @@ get_header();
                             $optionVariations = get_sub_field('libtech_snowboard_options_variations');
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
-                                if ($GLOBALS['language'] == "ca") {
+                                if ($GLOBALS['currency'] == "CAD") {
                                     $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
+                                } else if ($GLOBALS['currency'] == "EUR") {
+                                    $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
                                 } else {
                                     $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
                                 }
@@ -336,8 +338,10 @@ get_header();
                             $optionVariations = get_sub_field('libtech_binding_options_variations');
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
-                                if($GLOBALS['language'] == "ca"){
+                                if($GLOBALS['currency'] == "CAD"){
                                     $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_ca'];
+                                } else if($GLOBALS['currency'] == "EUR"){
+                                    $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_eur'];
                                 } else {
                                     $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_us'];
                                 }
@@ -353,8 +357,10 @@ get_header();
                     // get nas availability
                     if(get_field('libtech_nas_variations')):
                         while(the_repeater_field('libtech_nas_variations')):
-                            if ($GLOBALS['language'] == "ca") {
+                            if ($GLOBALS['currency'] == "CAD") {
                                 $variationAvailable = get_sub_field('libtech_nas_variations_availability_ca');
+                            } else if ($GLOBALS['currency'] == "EUR") {
+                                $variationAvailable = get_sub_field('libtech_nas_variations_availability_eur');
                             } else {
                                 $variationAvailable = get_sub_field('libtech_nas_variations_availability_us');
                             }
@@ -421,8 +427,10 @@ get_header();
                             for ($i = 0; $i < count($optionVariations); $i++) {
                                 $variationWidth = str_replace('.', '_', $optionVariations[$i]['libtech_skateboard_options_variations_width']);
                                 // get skateboard availability
-                                if ($GLOBALS['language'] == "ca") {
+                                if ($GLOBALS['currency'] == "CAD") {
                                     $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
+                                } else if ($GLOBALS['currency'] == "EUR") {
+                                    $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
                                 } else {
                                     $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
                                 }
@@ -456,8 +464,10 @@ get_header();
                         while(the_repeater_field('libtech_outerwear_variations')):
                             $variationSize = get_sub_field('libtech_outerwear_variations_size');
                             // get outerwear availability
-                            if ($GLOBALS['language'] == "ca") {
+                            if ($GLOBALS['currency'] == "CAD") {
                                 $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_ca');
+                            } else if ($GLOBALS['currency'] == "EUR") {
+                                $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_eur');
                             } else {
                                 $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_us');
                             }
@@ -502,8 +512,10 @@ get_header();
                         while(the_repeater_field('libtech_apparel_variations')):
                             $variationSize = get_sub_field('libtech_apparel_variations_size');
                             // get outerwear availability
-                            if ($GLOBALS['language'] == "ca") {
+                            if ($GLOBALS['currency'] == "CAD") {
                                 $variationAvailable = get_sub_field('libtech_apparel_variations_availability_ca');
+                            } else if ($GLOBALS['currency'] == "EUR") {
+                                $variationAvailable = get_sub_field('libtech_apparel_variations_availability_eur');
                             } else {
                                 $variationAvailable = get_sub_field('libtech_apparel_variations_availability_us');
                             }
@@ -547,8 +559,10 @@ get_header();
                     if(get_field('libtech_accessories_variations')):
                         while(the_repeater_field('libtech_accessories_variations')):
                             // get outerwear availability
-                            if ($GLOBALS['language'] == "ca") {
+                            if ($GLOBALS['currency'] == "CAD") {
                                 $variationAvailable = get_sub_field('libtech_accessories_variations_availability_ca');
+                            } else if ($GLOBALS['currency'] == "EUR") {
+                                $variationAvailable = get_sub_field('libtech_accessories_variations_availability_eur');
                             } else {
                                 $variationAvailable = get_sub_field('libtech_accessories_variations_availability_us');
                             }
@@ -570,8 +584,10 @@ get_header();
                     if(get_field('libtech_luggage_variations')):
                         while(the_repeater_field('libtech_luggage_variations')):
                             // get outerwear availability
-                            if ($GLOBALS['language'] == "ca") {
+                            if ($GLOBALS['currency'] == "CAD") {
                                 $variationAvailable = get_sub_field('libtech_luggage_variations_availability_ca');
+                            } else if ($GLOBALS['currency'] == "EUR") {
+                                $variationAvailable = get_sub_field('libtech_luggage_variations_availability_eur');
                             } else {
                                 $variationAvailable = get_sub_field('libtech_luggage_variations_availability_us');
                             }
@@ -993,7 +1009,7 @@ get_header();
                         <a href="/snowboarding/snowboard-builder/">
                             <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img" />
                             <h5>DIY Board Builder</h5>
-                            <div class="price"><?php echo getPrice(639.95, 664.95, 'no', 0); ?></div>
+                            <div class="price"><?php echo getPrice(639.95, 664.95, 664.95, 'no', 0); ?></div>
                         </a>
                     </li>
                     <?php endif; ?>

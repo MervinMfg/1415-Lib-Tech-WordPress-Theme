@@ -1,6 +1,6 @@
 <?php
 	// GET THE REGION
-	getRegionCode();
+	getCurrencyCode();
 	// GET THE PAGE TITLE
 	$GLOBALS['pageTitle'] = "";
 	if (function_exists('is_tag') && is_tag()) {
@@ -108,8 +108,8 @@
 	// set up classes to add to body
 	$bodyClass = $GLOBALS['sport'];
 	// check for international, will be removed by JS if imporoperly cached
-	if (isset($_COOKIE["libtech_region"])) {
-		if ($_COOKIE["libtech_region"] == "int") {
+	if (isset($_COOKIE["libtech_currency"])) {
+		if ($_COOKIE["libtech_currency"] == "INT") {
 			$bodyClass .= " international";
 		}
 	}
@@ -285,11 +285,7 @@
 			</div>
 			<div class="nav-utility">
 				<div class="region-selector">
-					<ul>
-						<li><a href="#country-us" class="country-us">UNITED STATES</a></li>
-						<li><a href="#country-ca" class="country-ca">CANADA</a></li>
-						<li><a href="#country-int" class="country-int">INTERNATIONAL</a></li>
-					</ul>
+					<a href="#region-selector"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/usa.gif" alt="USA Flag" />United States <span>(USD)</span></a>
 				</div>
 				<div class="link-dealer">
 					<a href="<?php echo $dealerURL; ?>">Find a dealer</a>
