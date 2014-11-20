@@ -27,6 +27,7 @@ module.exports = function (grunt) {
         '_/js/lib/jquery-1.11.1.js',
         '_/js/lib/GSAP/TweenMax.js',
         '_/js/lib/GSAP/plugins/ScrollToPlugin.js',
+        '_/js/lib/jquery.scrollmagic-1.3.0.js',
         '_/js/lib/froogaloop.js',
         '_/js/libtech.jamielynn.js'
     ];

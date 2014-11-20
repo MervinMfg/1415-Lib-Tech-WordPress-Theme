@@ -33,10 +33,10 @@ LIBTECH.JamieLynn = {
 		fills.each(function () {
 			var videoHeight, videoWidth, new_size;
 			//height of element. not neccessarily video
-			var videoHeight = $(this).height();
-			var videoWidth = $(this).width();
+			videoHeight = $(this).height();
+			videoWidth = $(this).width();
 			//calculate new size
-			var new_size = self.fullBleed(browserWidth, browserHeight, videoWidth, videoHeight);
+			new_size = self.fullBleed(browserWidth, browserHeight, videoWidth, videoHeight);
 			//distance from top and left is half of the difference between the browser width and the size of the element
 			$(this)
 			    .width(new_size.width)
