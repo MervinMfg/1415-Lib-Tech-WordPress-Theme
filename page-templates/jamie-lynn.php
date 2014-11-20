@@ -3,7 +3,7 @@
 Template Name: Jamie Lynn 20 Year
 */
 // GET THE REGION
-getRegionCode();
+getCurrencyCode();
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js diy-share" <?php language_attributes(); ?>> <![endif]-->
