@@ -1570,6 +1570,41 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .error404 .section-content .img-right-container img { width: 1032.8px; } }
 /* ========================================================================== COMPONENTS/_BOARD-FINDER.SCSS ========================================================================== */
 .board-finder .section-content { padding: 0 20px; }
+.board-finder .section-content h1 { text-align: center; padding-bottom: 40px; }
+.board-finder .section-content h2 { text-align: center; padding-bottom: 40px; }
+.board-finder .section-content h3 { text-align: center; padding-bottom: 30px; }
+.board-finder .section-content h3 span { display: block; }
+.board-finder .section-content h4 { color: #fff; font-size: 1.25em; padding-bottom: 10px; }
+.board-finder .section-content p { padding-bottom: 20px; }
+.board-finder .section-content .bf-step-1 { padding: 40px 0; }
+.board-finder .section-content .bf-step-1 .selection-who ul { width: 100%; display: table; }
+.board-finder .section-content .bf-step-1 .selection-who ul li { display: table-cell; width: 50%; height: 30px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; border: 1px solid #000; }
+.board-finder .section-content .bf-step-1 .selection-who ul li.left { padding-right: 5px; }
+.board-finder .section-content .bf-step-1 .selection-who ul li.right { padding-left: 5px; }
+.board-finder .section-content .bf-step-1 .selection-who ul li a { display: block; background: #FFFF00; color: #000; }
+.board-finder .section-content .bf-step-2 { padding: 40px 0; }
+.board-finder .section-content .bf-step-2 .selection-measurements-left .weight-measurement .weight-metric { display: none; }
+.board-finder .section-content .bf-step-2 .selection-measurements-right .height-measurement .height-metric { display: none; }
+.board-finder .section-content .bf-step-2 .selection-measurements-right .button-next a { width: 49%; height: 30px; display: block; background: #FFFF00; color: #000; line-height: 30px; font-size: 1.5em; text-align: center; }
+.board-finder .section-content .bf-step-3 { padding: 40px 0; }
+.board-finder .section-content .bf-step-3 .selection-ability ul { width: 100%; display: table; }
+.board-finder .section-content .bf-step-3 .selection-ability ul li { display: table-cell; width: 33.3333%; height: 30px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
+.board-finder .section-content .bf-step-3 .selection-ability ul li.left { padding-right: 5px; }
+.board-finder .section-content .bf-step-3 .selection-ability ul li.center { padding: 0 5px; }
+.board-finder .section-content .bf-step-3 .selection-ability ul li.right { padding-left: 5px; }
+.board-finder .section-content .bf-step-3 .selection-ability ul li a { display: block; background: #FFFF00; color: #000; }
+.board-finder .section-content .bf-step-4 { padding: 40px 0; }
+.board-finder .section-content .bf-step-4 .product-filtering { width: 100%; display: table; padding: 0; }
+.board-finder .section-content .bf-step-4 .product-filtering li { display: table-cell; margin: 0; width: 33.3333%; }
+.board-finder .section-content .bf-step-4 .product-filtering li.left { padding-right: 5px; }
+.board-finder .section-content .bf-step-4 .product-filtering li.center { padding: 0 5px; }
+.board-finder .section-content .bf-step-4 .product-filtering li.right { padding-left: 5px; }
+.board-finder .section-content .bf-step-5 .selection-why ul { width: 100%; display: table; padding-bottom: 30px; }
+.board-finder .section-content .bf-step-5 .selection-why ul li { display: table-cell; width: 33.3333%; height: 30px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
+.board-finder .section-content .bf-step-5 .selection-why ul li.left { padding-right: 5px; }
+.board-finder .section-content .bf-step-5 .selection-why ul li.center { padding: 0 5px; }
+.board-finder .section-content .bf-step-5 .selection-why ul li.right { padding-left: 5px; }
+.board-finder .section-content .bf-step-5 .selection-why ul li a { display: block; background: #FFFF00; color: #000; }
 
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { padding-top: 60px; margin-top: -40px; }
