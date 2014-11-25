@@ -1018,7 +1018,8 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-extras .product-tech-minor.hesho { width: 60%; float: right; clear: none; }
   .product-extras .product-tech-minor.hesho h2, .product-extras .product-tech-minor.hesho ul { padding-left: 40px; }
   .product-extras .product-tech-minor.hesho ul li { width: 48%; }
-  .single-libtech_outerwear .product-extras .product-desc-awards-specs { width: auto; float: none; } }
+  .single-libtech_outerwear .product-extras .product-desc-awards-specs { width: auto; float: none; }
+  .product-video .section-content { max-width: 1680px; } }
 /* ========================================================================== COMPONENTS/_TECHNOLOGY.SCSS ========================================================================== */
 .tech-overview .section-content { padding: 0 20px; }
 .tech-overview .section-content .tech-header { margin-bottom: 20px; }
