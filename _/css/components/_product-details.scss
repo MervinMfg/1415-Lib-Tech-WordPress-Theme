@@ -71,6 +71,23 @@
 			}
 		}
 	}
+	.product-details-right {
+		.product-note-wrapper {
+
+			padding-bottom: 10px;
+
+			.product-note {
+				text-align: center;
+				padding-bottom: 25px;
+				max-width: 540px;
+				margin-top:-20px;
+
+				span {
+					display: block;
+				}
+			}
+		}
+	}
 	.product-price {
 		font-size: 1.4em;
 		padding-bottom: 20px;
@@ -1084,6 +1101,18 @@
 			.product-awards {
 				width: 100%;
 				float: none;
+			}
+		}
+	}
+	.product-details {
+		.product-details-right {
+			.product-note-wrapper {
+				.product-note {
+
+					span {
+						display: inline;
+					}
+				}
 			}
 		}
 	}

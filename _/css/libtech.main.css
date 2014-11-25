@@ -761,6 +761,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .image-list-thumbs li { float: left; }
 .product-details .image-list-thumbs li a img { -webkit-opacity: 0.65; -moz-opacity: 0.65; -ms-opacity: 0.65; -o-opacity: 0.65; opacity: 0.65; -webkit-transition: opacity 200ms ease-in-out; -moz-transition: opacity 200ms ease-in-out; -ms-transition: opacity 200ms ease-in-out; -o-transition: opacity 200ms ease-in-out; transition: opacity 200ms ease-in-out; }
 .product-details .image-list-thumbs li a:hover img, .product-details .image-list-thumbs li a:focus img, .product-details .image-list-thumbs li a.active img { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
+.product-details .product-details-right .product-note-wrapper { padding-bottom: 10px; }
+.product-details .product-details-right .product-note-wrapper .product-note { text-align: center; padding-bottom: 25px; max-width: 540px; margin-top: -20px; }
+.product-details .product-details-right .product-note-wrapper .product-note span { display: block; }
 .product-details .product-price { font-size: 1.4em; padding-bottom: 20px; font-weight: bold; }
 .product-details .product-price .price-logo, .product-details .product-price .price-graphic, .product-details .product-price .price-logo-five, .product-details .product-price .price-graphic-five { display: none; }
 .product-details .product-price .price-logo.active, .product-details .product-price .price-graphic.active, .product-details .product-price .price-logo-five.active, .product-details .product-price .price-graphic-five.active { display: block; }
@@ -994,7 +997,8 @@ body.international .shopping-cart-wrapper { display: none; }
   .single-libtech_outerwear .product-extras .product-desc-awards { width: 60%; float: left; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description { width: 100%; clear: none; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description p { padding-right: 0; }
-  .single-libtech_outerwear .product-extras .product-desc-awards .product-awards { width: 100%; float: none; } }
+  .single-libtech_outerwear .product-extras .product-desc-awards .product-awards { width: 100%; float: none; }
+  .product-details .product-details-right .product-note-wrapper .product-note span { display: inline; } }
 @media screen and (min-width: 1200px) { .product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(9) { display: table-cell; }
   .product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(9) { display: table-cell; }
   .product-extras .product-specs table tfoot tr td:nth-child(5), .product-extras .product-specs table tfoot tr td:nth-child(6), .product-extras .product-specs table tfoot tr td:nth-child(8), .product-extras .product-specs table tfoot tr td:nth-child(9) { display: table-cell; }
