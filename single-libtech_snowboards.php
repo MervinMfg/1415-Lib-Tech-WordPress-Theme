@@ -95,11 +95,11 @@ Template Name: Snowboard Detail
 						<?php
 							if (get_field('libtech_snowboard_colorways')) {
 								// check for base / colorway disclaimer
-								if (in_array('Random Bases', get_field('libtech_snowboard_colorways'))) {
-									echo '<p class="small product-note">Bases come in random colorways</p>';
-								}
 								if (in_array('Alternate Colorways', get_field('libtech_snowboard_colorways'))) {
 									echo '<p class="small product-note">Alternate Colorways</p>';
+								}
+								if (in_array('Random Bases', get_field('libtech_snowboard_colorways'))) {
+									echo '<p class="small product-note">Bases come in random colorways</p>';
 								}
 								if (in_array('Random Assorted Bananas', get_field('libtech_snowboard_colorways'))) {
 									echo '<p class="small product-note">You can not order a specific colorway when <span>choosing a Random Assorted Banana online</span></p>';
