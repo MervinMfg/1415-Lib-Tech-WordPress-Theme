@@ -16,14 +16,14 @@ getCurrencyCode();
 	<!--[if IE ]>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
-    <title>Jamie Lynn 20 Year Anniversary - Lib Tech</title>
-	<meta name="description" content="Lib Tech's tribute to Jamie Lynn's 20 year anniversary." />
+    <title>Jamie Lynn - 20 Years with Lib Tech Snowboards</title>
+	<meta name="description" content="A tribute to Jamie Lynn's professional snowboarding career with Lib Tech Snowboards. Archived photos, video, art and more to celebrate Jamie's iconic career." />
 	<meta name="author" content="Lib Tech" />
     <meta name="copyright" content="Copyright Lib Tech <?php echo date('Y'); ?>. All Rights Reserved." />
 	<!-- FB Meta Data -->
 	<meta property="og:title" content="Jamie Lynn 20 Year Anniversary - Lib Tech" />
 	<meta property="og:description" content="Lib Tech's tribute to Jamie Lynn's 20 year anniversary." />
-	<meta property="og:url" content="<?php echo $page_url; ?>" />
+	<meta property="og:url" content="<?php the_permalink(); ?>" />
 	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/social-share.jpg" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Lib Technologies" />
@@ -57,17 +57,18 @@ getCurrencyCode();
 	<div class="jamie-lynn">
 		<nav class="navigation">
 			<ul>
-				<li><a href="#then-now"></a></li>
-				<li><a href="#intro"></a></li>
-				<li><a href="#jamie-video"></a></li>
-				<li><a href="#method"></a></li>
-				<li><a href="#front3"></a></li>
-				<li><a href="#art"></a></li>
-				<li><a href="#products"></a></li>
-				<li><a href="#signature"></a></li>
+				<li><a href="#20-year"><span class="title">20 Year</span><span class="circle"></span></a></li>
+				<li><a href="#intro"><span class="title">Intro</span><span class="circle"></span></a></li>
+				<li><a href="#film"><span class="title">Film</span><span class="circle"></span></a></li>
+				<li><a href="#method"><span class="title">Method</span><span class="circle"></span></a></li>
+				<li><a href="#style"><span class="title">Style</span><span class="circle"></span></a></li>
+				<li><a href="#passion"><span class="title">Passion</span><span class="circle"></span></a></li>
+				<li><a href="#inspiration"><span class="title">Inspiration</span><span class="circle"></span></a></li>
+				<li><a href="#creativity"><span class="title">Creativity</span><span class="circle"></span></a></li>
+				<li><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
 			</ul>
 		</nav>
-		<section id="then-now" class="section-photo">
+		<section id="20-year" class="section-photo">
 			<div class="photo-item then-photo">
 				<div class="logo-wrapper">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-20-logo.png" alt="Jamie Lynn 20 year anniversary logo" />
@@ -88,14 +89,14 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>he could have left, <span>he could have quit, </span><span>he could have done some weak ass shit, </span><span>but he doesn't know how</span></p>
-						<p>it's been over 20 years and,</p>
-						<p class="hand-written">he has done it all</p>
+						<p>He could have left. <span>He could have quit.</span> <span>He could have done some weak ass shit, </span><span>but he doesn't know how.</span></p>
+						<p>It's been over 20 years and,</p>
+						<p class="hand-written">he has done it all.</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section id="jamie-video" class="section-video">
+		<section id="film" class="section-video">
 			<div class="video-item">
 				<div class="video-image"></div>
 				<div class="video-wrapper">
@@ -122,9 +123,9 @@ getCurrencyCode();
 			</div>
 		</section>
 		<section class="section-photo">
-			<div class="photo-item road-gap-photo"></div>
+			<div class="photo-item method-photo"></div>
 		</section>
-		<section id="front3" class="section-quote">
+		<section id="style" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
@@ -136,9 +137,36 @@ getCurrencyCode();
 			</div>
 		</section>
 		<section class="section-photo">
-			<div class="photo-item front3-photo"></div>
+			<div class="photo-item style-photo"></div>
 		</section>
-		<section id="art" class="section-quote">
+		<section id="passion" class="section-quote">
+			<div class="quote-item">
+				<div class="quote-wrapper">
+					<blockquote>
+						<p>I like Jamie's constant pursuit of creative freedom, his style and his raw passion for things he is into is a true inspiration to me. And that he still sends it like 1993 was yesterday, makes it so much fun to shred with [him].</p>
+						<p>With or without gloves.</p>
+						<p class="hand-written">- Terje Håkonsen</p>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+		<section class="section-photo">
+			<div class="photo-item passion-photo"></div>
+		</section>
+		<section id="inspiration" class="section-quote">
+			<div class="quote-item">
+				<div class="quote-wrapper">
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						<p class="hand-written">- Mark Landvik</p>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+		<section class="section-photo">
+			<div class="photo-item inspiration-photo"></div>
+		</section>
+		<section id="creativity" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
@@ -167,10 +195,10 @@ getCurrencyCode();
 		</section>
 		<section id="products" class="section-products">
 			<div class="product-mobile">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-product-mobile-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-lynn-product-mobile-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 			</div>
 			<div class="product-desktop">
-				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-product-tablet-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/backgrounds/jamie-lynn-product-tablet-horizontal.jpg" alt="Jamie Lynn 20 year anniversary product photo" />
 				<nav class="product-links">
 					<ul>
 						<li><a href="/apparel/alien-tee/" target="_blank"><span>a</span> Alien Tee</a></li>
@@ -193,23 +221,40 @@ getCurrencyCode();
 					</ul>
 				</nav>
 			</div>
-			<h4><a href="#" class="view-all">View all products</a></h4>
+			<h4><a href="/snowboarding/jamie-lynn-collection/" class="view-all">View all products</a></h4>
 		</section>
-		<section id="signature" class="section-signature">
+		<section id="share" class="section-share">
 			<div class="signature-item">
 				<svg class="jamie-signature" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px" height="500px" viewBox="0 0 1000 500" enable-background="new 0 0 1000 500" xml:space="preserve">
-			        <path class="signature-name" fill="none" stroke="#FFCC33" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" d="M295.8,316.6c0,0-52-41-70.9-52
-			            c-18.9-11-182.8-104-195.4-108.7c-12.6-4.7,168.6,41,168.6,41s118.2,33.1,146.5,47.3c28.4,14.2,70.9,36.2,86.7,61.5
-			            c15.8,25.2,37.8,66.2-23.6,64.6s-211.2-12.6-236.4-17.3s-80.4-14.2-41-47.3c31.5-15.8,159.2-53.6,159.2-53.6l104-34.7
-			            c0,0,61.5-17.3,55.2-22.1c-6.3-4.7-28.4-6.3-86.7,41c0,0-20.5,23.6-9.5,34.7c11,11,31.5,12.6,63-4.7s46.7-34.1,52-29.9
-			            c5.3,4.2-21,27.8-14.2,31.5c6.8,3.7,66.7-43.1,72.5-41c5.8,2.1-21.5,34.1-12.6,37.8c8.9,3.7,50.9-34.7,60.9-43.1
-			            c10-8.4,4.7,4.7,4.7,4.7l-20,33.6c0,0-3.2,20.5,25.2,0c14.1-10.2,22.6-21.8,29.4-27.3c13.2-10.6,10.5,1.6,10.5,1.6l-10,16.3
-			            c0,0-1.6,26.8,28.4,3.2c13.8-10.9,25-20.1,32.2-27.6c20.3-21.2,5,3.5,5,3.5s-15.2,26.8-15.2,33.1s-3.2,24.2,25.2,14.7
-			            c28.4-9.5,81.9-34.7,81.9-34.7s45.7-23.6,12.6-26.8c-33.1-3.2-45.7,31.5-45.7,31.5s1.6,22.1,25.2,26.8s59.9,4.7,100.8-3.2
-			            s72.5-18.9,91.4-15.8"/>
-			        <path class="signature-dot" fill="#FFCC33" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
-			        <image src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-signature.png"/>
-			    </svg>
+					<path class="signature-name" fill="none" stroke="#FFCC33" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" d="M295.8,316.6c0,0-52-41-70.9-52
+						c-18.9-11-182.8-104-195.4-108.7c-12.6-4.7,168.6,41,168.6,41s118.2,33.1,146.5,47.3c28.4,14.2,70.9,36.2,86.7,61.5
+						c15.8,25.2,37.8,66.2-23.6,64.6s-211.2-12.6-236.4-17.3s-80.4-14.2-41-47.3c31.5-15.8,159.2-53.6,159.2-53.6l104-34.7
+						c0,0,61.5-17.3,55.2-22.1c-6.3-4.7-28.4-6.3-86.7,41c0,0-20.5,23.6-9.5,34.7c11,11,31.5,12.6,63-4.7s46.7-34.1,52-29.9
+						c5.3,4.2-21,27.8-14.2,31.5c6.8,3.7,66.7-43.1,72.5-41c5.8,2.1-21.5,34.1-12.6,37.8c8.9,3.7,50.9-34.7,60.9-43.1
+						c10-8.4,4.7,4.7,4.7,4.7l-20,33.6c0,0-3.2,20.5,25.2,0c14.1-10.2,22.6-21.8,29.4-27.3c13.2-10.6,10.5,1.6,10.5,1.6l-10,16.3
+						c0,0-1.6,26.8,28.4,3.2c13.8-10.9,25-20.1,32.2-27.6c20.3-21.2,5,3.5,5,3.5s-15.2,26.8-15.2,33.1s-3.2,24.2,25.2,14.7
+						c28.4-9.5,81.9-34.7,81.9-34.7s45.7-23.6,12.6-26.8c-33.1-3.2-45.7,31.5-45.7,31.5s1.6,22.1,25.2,26.8s59.9,4.7,100.8-3.2
+						s72.5-18.9,91.4-15.8"/>
+					<path class="signature-dot" fill="#FFCC33" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
+					<image src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-signature.png"/>
+				</svg>
+			</div>
+			<div class="share-details">
+				<ul class="share-links">
+					<li class="share-link libtech"><a href="/snowboarding/" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/lib-tech-logo.png" alt="Lib Technologies" /></a></li>
+					<li class="share-link facebook"><a href="http://www.facebook.com/libtech" target="_blank" title="Share on Facebook"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/facebook-logo.png" alt="Facebook" /></a></li>
+					<li class="share-link twitter"><a href="http://www.twitter.com/libtechnologies" target="_blank" title="Share on Twitter"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/twitter-logo.png" alt="Twitter" /></a></li>
+				</ul>
+				<p class="hashtag">#jamielynn20</p>
+			</div>
+		</section>
+		<section class="section-photo section-hide">
+			<div class="photo-item tradition-photo">
+				<div class="tradition-message">
+					<p class="part-1">Part Two.</p>
+					<p class="part-2">the<span>Tradition</span></p>
+					<p class="part-3">coming soon...</p>
+				</div>
 			</div>
 		</section>
 	</div><!-- END .jamie-lynn -->
