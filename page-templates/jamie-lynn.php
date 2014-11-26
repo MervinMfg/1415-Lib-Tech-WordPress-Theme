@@ -124,6 +124,14 @@ getCurrencyCode();
 		</section>
 		<section class="section-photo">
 			<div class="photo-item method-photo"></div>
+			<div class="caption-item">
+				<ul>
+					<li><span>Photo</span> Trevor Graves</li>
+					<li><span>Taken</span> 1997</li>
+					<li><span>At</span> Mt. Baker</li>
+				</ul>
+				<div class="icon"></div>
+			</div>
 		</section>
 		<section id="style" class="section-quote">
 			<div class="quote-item">

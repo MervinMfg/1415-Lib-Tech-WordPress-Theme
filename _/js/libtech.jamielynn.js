@@ -6,7 +6,9 @@
 var LIBTECH = LIBTECH || {};
 
 LIBTECH.JamieLynn = {
-	config: {},
+	config: {
+		scrollController: null
+	},
 	init: function () {
 		var self;
 		self = this;
@@ -16,10 +18,50 @@ LIBTECH.JamieLynn = {
 		});
 		self.recalculateFills();
 		// nav selection
-		$('.navigation li a').on('click', function() {
+		$('.navigation li a').on('click', function (e) {
+			e.preventDefault();
+
 			$('.navigation li a').removeClass('active');
 			$(this).addClass('active');
+
+			var url = $(this).attr('href');
+			self.utilities.pageScroll(url, 1);
 		});
+		self.config.scrollController = new ScrollMagic({ vertical: true });
+		self.scrollingInit();		
+	},
+	scrollingInit: function () {
+		var self = this;
+
+		/*if (typeof self.config.scene !== 'undefined') {
+			self.config.scrollController.removeScene(self.config.scene);
+		}
+		// fix intro photos for 2 full windows
+		new ScrollScene({triggerElement: ".then-photo", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2 }).setPin(".then-photo").setClassToggle(".now-photo", 'fixed-photo').addTo(self.config.scrollController);
+		// fade then photo in over the course of 1 window
+		tween = new TweenMax.from('.now-photo', 0.5, {opacity: 0, ease: Linear.easeNone});
+		new ScrollScene({triggerElement: ".then-photo", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() }).setTween(tween).addTo(self.config.scrollController);
+		// fix video below intro quote
+		new ScrollScene({triggerElement: "#intro", offset: $(window).height()/2, duration: $(window).innerHeight()*2}).setClassToggle("#jamie-video .video-item", 'fixed-video').addTo(self.config.scrollController);
+		// fix method quote at top of window
+		new ScrollScene({triggerElement: "#method", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin("#method", {pushFollowers: false}).addTo(self.config.scrollController);
+		// fix method photo
+		new ScrollScene({triggerElement: ".method-photo", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight()}).setPin(".method-photo", {pushFollowers: false}).addTo(self.config.scrollController);
+		// fix style quote at top of window
+		new ScrollScene({triggerElement: "#style", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin("#style", {pushFollowers: false}).addTo(self.config.scrollController);
+		// fix style photo at top of window
+		new ScrollScene({triggerElement: ".style-photo", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin(".style-photo", {pushFollowers: false}).addTo(self.config.scrollController);
+		// fix art quote at top of window
+		new ScrollScene({triggerElement: "#art", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin("#art", {pushFollowers: false}).addTo(self.config.scrollController);*/
+		// new ScrollScene({triggerElement: ".now-photo", offset: $(window).height() /2 }).setPin(".now-photo").addTo(self.config.scrollController);
+		/*
+		tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
+		self.config.scene = new ScrollScene({triggerElement: '.follow', offset: $(window).height()/2*-1, duration: $('.follow').outerHeight() + $('.site-footer').outerHeight()}).setTween(tween).addTo(self.config.scrollController);
+
+		if ($('html').hasClass('ie-lt9') !== true) {
+			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
+			self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
+		}*/
 	},
 	recalculateFills: function () {
 		var self, browserHeight, browserWidth, fills;
