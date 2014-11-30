@@ -64,10 +64,13 @@ getCurrencyCode();
 				<li><a href="#style"><span class="title">Style</span><span class="circle"></span></a></li>
 				<li><a href="#passion"><span class="title">Passion</span><span class="circle"></span></a></li>
 				<li><a href="#inspiration"><span class="title">Inspiration</span><span class="circle"></span></a></li>
+				<li><a href="#music"><span class="title">Music</span><span class="circle"></span></a></li>
+				<li><a href="#now"><span class="title">Now</span><span class="circle"></span></a></li>
 				<li><a href="#creativity"><span class="title">Creativity</span><span class="circle"></span></a></li>
 				<li><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
 			</ul>
 		</nav>
+		<!-- 20 Year -->
 		<section id="20-year" class="section-photo">
 			<div class="photo-item then-photo">
 				<div class="logo-wrapper">
@@ -77,6 +80,14 @@ getCurrencyCode();
 				<h4 class="scroll-message">Scroll down</h4>
 				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/arrow.gif" alt="Scroll down arrow" class="scroll" />
 			</div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Trevor Graves</li>
+					<li class="caption-item"><span>Taken</span> Circa 1996</li>
+					<li class="caption-item"><span>In</span> Fiji</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
 		</section>
 		<section class="section-photo section-hide">
 			<div class="photo-item now-photo">
@@ -84,7 +95,16 @@ getCurrencyCode();
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-20-logo.png" alt="Jamie Lynn 20 year anniversary logo" />
 				</div>
 			</div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Tim Zimmerman</li>
+					<li class="caption-item"><span>Taken</span> 2012</li>
+					<li class="caption-item"><span>At</span> Baldface</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
 		</section>
+		<!-- Intro -->
 		<section id="intro" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
@@ -96,6 +116,7 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
+		<!-- Film - https://vimeo.com/112238604 -->
 		<section id="film" class="section-video">
 			<div class="video-item">
 				<div class="video-image"></div>
@@ -112,6 +133,7 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
+		<!-- Method -->
 		<section id="method" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
@@ -124,15 +146,16 @@ getCurrencyCode();
 		</section>
 		<section class="section-photo">
 			<div class="photo-item method-photo"></div>
-			<div class="caption-item">
-				<ul>
-					<li><span>Photo</span> Trevor Graves</li>
-					<li><span>Taken</span> 1997</li>
-					<li><span>At</span> Mt. Baker</li>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Trevor Graves</li>
+					<li class="caption-item"><span>Taken</span> 1997</li>
+					<li class="caption-item"><span>At</span> Mt. Baker</li>
 				</ul>
-				<div class="icon"></div>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
 			</div>
 		</section>
+		<!-- Style -->
 		<section id="style" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
@@ -146,7 +169,16 @@ getCurrencyCode();
 		</section>
 		<section class="section-photo">
 			<div class="photo-item style-photo"></div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Trevor Graves</li>
+					<li class="caption-item"><span>Taken</span> 1995</li>
+					<li class="caption-item"><span>In</span> Greece</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
 		</section>
+		<!-- Passion -->
 		<section id="passion" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
@@ -160,12 +192,21 @@ getCurrencyCode();
 		</section>
 		<section class="section-photo">
 			<div class="photo-item passion-photo"></div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Chris Brunkhart</li>
+					<li class="caption-item"><span>Taken</span> Circa 1995</li>
+					<li class="caption-item"><span>In</span> Utah</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
 		</section>
+		<!-- Inspiration -->
 		<section id="inspiration" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						<p>His style is what influenced me to want to pursue what I did in life, and my life has changed significantly because of it.</p>
 						<p class="hand-written">- Mark Landvik</p>
 					</blockquote>
 				</div>
@@ -173,7 +214,60 @@ getCurrencyCode();
 		</section>
 		<section class="section-photo">
 			<div class="photo-item inspiration-photo"></div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Scott Needham<span class="web-link"> - <a href="http://snp5000.com" target="_blank">snp5000.com</a></span></li>
+					<li class="caption-item"><span>Taken</span> Circa 1998</li>
+					<li class="caption-item"><span>At</span> Bear Mountain</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
 		</section>
+		<!-- Music -->
+		<section id="music" class="section-quote">
+			<div class="quote-item">
+				<div class="quote-wrapper">
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						<p class="hand-written">- Wes Makepeace</p>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+		<section class="section-photo">
+			<div class="photo-item music-photo"></div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> Tim Zimmerman</li>
+					<li class="caption-item"><span>Taken</span> 2013</li>
+					<li class="caption-item"><span>In</span> Japan</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
+		</section>
+		<!-- Now -->
+		<section id="now" class="section-quote">
+			<div class="quote-item">
+				<div class="quote-wrapper">
+					<blockquote>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						<p class="hand-written">- E-Stone</p>
+					</blockquote>
+				</div>
+			</div>
+		</section>
+		<section class="section-photo">
+			<div class="photo-item now-photo"></div>
+			<div class="caption">
+				<ul class="caption-list">
+					<li class="caption-item"><span>Photo</span> E-Stone</li>
+					<li class="caption-item"><span>Taken</span> 2014</li>
+					<li class="caption-item"><span>At</span> Holy Bowly</li>
+				</ul>
+				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
+			</div>
+		</section>
+		<!-- Creativity -->
 		<section id="creativity" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">

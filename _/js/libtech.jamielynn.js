@@ -28,7 +28,9 @@ LIBTECH.JamieLynn = {
 			self.utilities.pageScroll(url, 1);
 		});
 		self.config.scrollController = new ScrollMagic({ vertical: true });
-		self.scrollingInit();		
+		self.scrollingInit();
+
+		self.captionsInit();
 	},
 	scrollingInit: function () {
 		var self = this;
@@ -62,6 +64,20 @@ LIBTECH.JamieLynn = {
 			navOffset = Math.floor($(window).height() / 2) - ($('.site-header').outerHeight() + $('.site-header').position().top) + 1;
 			self.config.scene = new ScrollScene({triggerElement: ".product-navigation", offset: navOffset}).setPin(".product-navigation").addTo(self.config.scrollController);
 		}*/
+	},
+	captionsInit: function () {
+		// if touch, do on click. if not, do on hover
+		if ($('html').hasClass('touch')) {
+			$('.section-photo .caption .caption-icon').on('click', function (e) {
+				$(this).parent().toggleClass('active');
+			});
+		} else {
+			$('.section-photo .caption .caption-icon').on('mouseenter', function (e) {
+				$(this).parent().addClass('active');
+			}).on('mouseleave', function () {
+				$(this).parent().removeClass('active');
+			});
+		}
 	},
 	recalculateFills: function () {
 		var self, browserHeight, browserWidth, fills;
