@@ -241,6 +241,7 @@ get_header();
             $productArray = Array();
             $filterList = ""; // start list of items to filter by
             $productArray['postType'] = $post->post_type;
+            $productArray['slug'] = $post->post_name;
             $productArray['title'] = get_the_title();
             $productArray['link'] = get_permalink($post->ID);
             $imageID = get_field('libtech_product_image');
@@ -990,7 +991,7 @@ get_header();
                 <div class="clearfix"></div>
                 <ul class="product-listing <?php echo strtolower(get_the_title()); ?>">
                     <?php foreach ($productsArray as $product): ?>
-                    <li class="product-item<?php echo $product['filterList']; ?>">
+                    <li class="product-item <?php echo $product['slug'] . $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
                             <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img" />
                             <div class="colorways">

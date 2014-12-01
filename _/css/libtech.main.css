@@ -670,6 +670,8 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .international .product-overview .section-content ul.product-listing li.product-item .price { display: none; }
 
+.currency-int .product-overview .section-content ul.product-listing li.product-item.superbanana, .currency-eur .product-overview .section-content ul.product-listing li.product-item.superbanana { display: none; }
+
 .product-filtering { display: none; padding: 0 10px 20px 20px; height: 100px; }
 .product-filtering > li.filters { width: 100px; cursor: pointer; float: left; }
 .product-filtering > li { position: relative; margin-right: 10px; }

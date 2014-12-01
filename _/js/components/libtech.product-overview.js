@@ -10,7 +10,7 @@ LIBTECH.ProductOverview = function () {
 };
 LIBTECH.ProductOverview.prototype = {
 	init: function () {
-		var self, slider;
+		var self, slider, currencyCookie;
 		self = this;
 		self.initColorways();
 		slider = $('.featured-product-slider .bxslider').bxSlider({
@@ -36,6 +36,11 @@ LIBTECH.ProductOverview.prototype = {
 				}
 			}
 		});
+		// hide superbanana if currency other than USD
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		if (currencyCookie !== 'USD') {
+			$('.product-overview .product-listing .product-item.superbanana').remove();
+		}
 		// BEGIN SETTING UP ISOTOPE
 		productListing = $('.product-overview .product-listing');
 		// adjust initial item widths
