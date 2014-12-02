@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Jamie Lynn Products
+Template Name: Jamie Lynn Collection
 */
 get_header();
 ?>
