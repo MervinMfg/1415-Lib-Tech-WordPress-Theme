@@ -65,7 +65,7 @@ getCurrencyCode();
 				<li><a href="#passion"><span class="title">Passion</span><span class="circle"></span></a></li>
 				<li><a href="#inspiration"><span class="title">Inspiration</span><span class="circle"></span></a></li>
 				<li><a href="#music"><span class="title">Music</span><span class="circle"></span></a></li>
-				<li><a href="#now"><span class="title">Now</span><span class="circle"></span></a></li>
+				<li><a href="#steady"><span class="title">Steady</span><span class="circle"></span></a></li>
 				<li><a href="#creativity"><span class="title">Creativity</span><span class="circle"></span></a></li>
 				<li><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
 			</ul>
@@ -183,7 +183,7 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>I like Jamie's constant pursuit of creative freedom, his style and his raw passion for things he is into is a true inspiration to me. And that he still sends it like 1993 was yesterday, makes it so much fun to shred with [him].</p>
+						<p>I like Jamie's constant pursuit of creative freedom, his style and his raw passion for things he is into is a true inspiration to me. And that he still sends it like 1993 was yesterday, makes it so much fun to shred with him.</p>
 						<p>With or without gloves.</p>
 						<p class="hand-written">- Terje Håkonsen</p>
 					</blockquote>
@@ -227,8 +227,9 @@ getCurrencyCode();
 		<section id="music" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
-					<blockquote>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+					<blockquote class="quote-small">
+						<p>He takes everything to the edge and then past it; snowboarding, surfing, skating,  artwork, and guitar is no exception. Apparently we love the same music, so Tittyfish is a no brainer. I'm inspired and honored to be making music with him.</p>
+						<p>He is a true brother, Temple too... total bad asses, I'm just happier when they are around.</p>
 						<p class="hand-written">- Wes Makepeace</p>
 					</blockquote>
 				</div>
@@ -246,7 +247,7 @@ getCurrencyCode();
 			</div>
 		</section>
 		<!-- Now -->
-		<section id="now" class="section-quote">
+		<section id="steady" class="section-quote">
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
@@ -257,7 +258,7 @@ getCurrencyCode();
 			</div>
 		</section>
 		<section class="section-photo">
-			<div class="photo-item now-photo"></div>
+			<div class="photo-item steady-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
 					<li class="caption-item"><span>Photo</span> E-Stone</li>

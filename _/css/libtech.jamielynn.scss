@@ -106,8 +106,8 @@ body {
 			&.music-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg');
 			}
-			&.now-photo {
-				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-mobile-vertical.jpg');
+			&.steady-photo {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg');
 			}
 		}
 		.caption {
@@ -495,7 +495,6 @@ body {
 		.quote-item {
 			.quote-wrapper {
 				blockquote {
-
 					p {
 						padding-top: 30px;
 
@@ -541,8 +540,8 @@ body {
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg');
 				}
-				&.now-photo {
-					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-mobile-horizontal.jpg');
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg');
 				}
 			}
 			.caption {
@@ -652,8 +651,8 @@ body {
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg');
 				}
-				&.now-photo {
-					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg');
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg');
 				}
 				&.tradition-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg');
@@ -756,7 +755,7 @@ body {
 							font-size: 3em;
 						}
 						&.quote-small {
-							width: 450px;
+							width: 460px;
 
 							p {
 								font-size: 1em;
@@ -889,8 +888,8 @@ body {
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg');
 				}
-				&.now-photo {
-					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg');
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg');
 				}
 				&.tradition-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg');
@@ -1013,13 +1012,13 @@ body {
 							}
 						} 
 						&.quote-small {
-							width: 550px;
+							width: 565px;
 
 							p {
 								font-size: 1.3em;
 
 								&.hand-written {
-									font-size: 3.5em;
+									font-size: 4em;
 								}
 							}
 						}
