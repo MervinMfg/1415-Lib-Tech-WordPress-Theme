@@ -6,7 +6,9 @@
             // we're on dev, so include the JavaScript individually for easier debugging
             include 'footer-scripts.php';
         } else {
+            // include script version for file versioning on production environment
+            include_once 'script-version.php';
             // if production, provide the compiled and uglified JS files
-            echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/_/js/libtech.footer.min.js"></script>' . "\n";
+            echo '<script type="text/javascript" src="' . get_template_directory_uri() . '/_/js/libtech.footer.min.js?v=' . $GLOBALS['SCRIPT_VERSION'] . '"></script>' . "\n";
         }
     ?>
