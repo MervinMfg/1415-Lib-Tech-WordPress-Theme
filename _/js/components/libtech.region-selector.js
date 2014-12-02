@@ -23,6 +23,8 @@ LIBTECH.RegionSelector.prototype = {
 			} else {
 				$body.addClass("international");
 			}
+			var currencyClass = "currency-" + currencyCookie;
+			$body.addClass(currencyClass.toLowerCase());
 			$(".region-selector a").html(regionCookie);
 			takeover = new LIBTECH.Takeover();
 		} else {

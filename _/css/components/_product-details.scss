@@ -71,6 +71,23 @@
 			}
 		}
 	}
+	.product-details-right {
+		.product-note-wrapper {
+
+			padding-bottom: 10px;
+
+			.product-note {
+				text-align: center;
+				padding-bottom: 25px;
+				max-width: 540px;
+				margin-top:-20px;
+
+				span {
+					display: block;
+				}
+			}
+		}
+	}
 	.product-price {
 		font-size: 1.4em;
 		padding-bottom: 20px;
@@ -1087,6 +1104,18 @@
 			}
 		}
 	}
+	.product-details {
+		.product-details-right {
+			.product-note-wrapper {
+				.product-note {
+
+					span {
+						display: inline;
+					}
+				}
+			}
+		}
+	}
 }
 @media screen and (min-width: $breakpoint-xlarge) {
 	.product-extras .product-specs {
@@ -1216,5 +1245,8 @@
 			width: auto;
 			float: none;
 		}
+	}
+	.product-video .section-content {
+		max-width: 1680px;
 	}
 }
