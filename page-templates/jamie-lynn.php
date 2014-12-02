@@ -122,9 +122,9 @@ getCurrencyCode();
 				<div class="video-image"></div>
 				<div class="video-wrapper">
 					<video width="1280" height="720" autoplay loop preload class="tablet-hide fill">
-						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.mp4">
-						<source type="video/webm" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.webm">
-						<source type="video/ogv" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamieseamless.ogv">
+						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.mp4">
+						<source type="video/webm" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.webm">
+						<source type="video/ogv" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.ogv">
 					</video>
 					<span class="effect-overlay"></span>
 				</div>
