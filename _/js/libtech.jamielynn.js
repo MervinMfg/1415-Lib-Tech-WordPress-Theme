@@ -31,6 +31,8 @@ LIBTECH.JamieLynn = {
 		self.scrollingInit();
 
 		self.captionsInit();
+
+		self.galleryInit();
 	},
 	scrollingInit: function () {
 		var self = this;
@@ -78,6 +80,19 @@ LIBTECH.JamieLynn = {
 				$(this).parent().removeClass('active');
 			});
 		}
+	},
+	galleryInit: function () {
+		var gallery = $(".section-gallery .gallery-wrapper").owlCarousel({
+			items: 1,
+			dots: false,
+			nav: true,
+			navText: ['<','>'],
+			lazyLoad: true,
+			autoplay: false,
+			autoplayTimeout: 8000,
+			autoplayHoverPause: true,
+			loop: true
+		});
 	},
 	recalculateFills: function () {
 		var self, browserHeight, browserWidth, fills;

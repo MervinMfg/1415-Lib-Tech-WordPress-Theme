@@ -279,17 +279,117 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
-		<section class="section-slide-show">
-			<div class="slide-show-wrapper">
-				<div class="slide">
-					<div class="art-image">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-blue-girl.jpg" />
+		<section class="section-gallery">
+			<div class="mobile-gallery"></div>
+			<div class="gallery-wrapper owl-carousel owl-theme">
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-blue-girl.jpg" class="owl-lazy" />
 					</div>
-					<div class="art-text">
-						<div class="art-description">
-							<div class="description-wrapper">
-								<h3>Blue Girl</h3>
-								<p>This is copy about blue girl... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Blue Girl</h3>
+								<p class="item-year">2005</p>
+								<p class="item-content">A common subject in Jamie's work, shows appreciation for the beauty of the female figure.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-painting.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Painting</h3>
+								<p class="item-year">XXXX</p>
+								<p class="item-content">A young Jamie Lynn. Bold lines and attention to detail. Defining style for decades.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-alien.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Alien</h3>
+								<p class="item-year">1998</p>
+								<p class="item-content">A self portrait first seen in the 90's and more recently revived as a throwback.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-cat.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Cat</h3>
+								<p class="item-year">2002</p>
+								<p class="item-content">Jamie likes to paint cats and women. Which ever will sit still, long enough for him to finish.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-rainier.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Rainier</h3>
+								<p class="item-year">2000</p>
+								<p class="item-content">Scenery of the North West as seen through the mind of Jamie. A tribute to Mt Rainier.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-blue-girl-alien.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Blue Girl Alien</h3>
+								<p class="item-year">1999</p>
+								<p class="item-content">A piece that found a home on the wall of Seattle's iconic board shop, Snowboard Connetion for 5 years.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-guitar.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Guitar</h3>
+								<p class="item-year">1998</p>
+								<p class="item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-image">
+						<img data-src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/art/jamie-lynn-art-wave.jpg" class="owl-lazy" />
+					</div>
+					<div class="gallery-text">
+						<div class="text-wrapper">
+							<div class="text-vertical">
+								<h3 class="item-title">Wave</h3>
+								<p class="item-year">1996</p>
+								<p class="item-content">Surfing off the west coast of Kauai. Jamie often paints his favorite surf break, Polihale.</p>
 							</div>
 						</div>
 					</div>

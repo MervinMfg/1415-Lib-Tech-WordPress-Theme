@@ -15,6 +15,9 @@
 // Helpers
 @import "helpers/mixins";
 @import "helpers/reset";
+// Libraries
+@import "lib/owl-carousel";
+@import "lib/owl-theme-default";
 
 // Variables
 $handWritten: "felt-tip-senior", cursive;
@@ -260,65 +263,21 @@ body {
 			}
 		}
 	}
-	.section-slide-show {
+	.section-gallery {
 		height: 100%;
 		background: $white;
 		position: relative;
 
-		.slide-show-wrapper {
+		.mobile-gallery {
+			position: relative;
+			width: 100%;
 			height: 100%;
-
-			.slide {
-				height: 100%;
-				position: relative;
-
-				.art-image {
-					width: 45%;
-					height: auto;
-					position: absolute;
-					left: 10%;
-					top: 50%;
-					transform: translateY(-50%);
-
-					img {
-						display: block;
-						max-height: 650px;
-						width: auto;
-						margin: 0 auto;
-					}
-				}
-				.art-text {
-					width: 40%;
-					height: 650px;
-					position: absolute;
-					right: 0;
-					top: 50%;
-					transform: translateY(-50%);
-
-					.art-description {
-						height: 100%;
-						position: relative;
-
-						.description-wrapper {
-							width: 80%;
-							position: absolute;
-							bottom: 150px;
-							left: 0;
-
-							h3 {
-								font-family: $museoSlab;
-								font-size: 2em;
-								padding-bottom: 20px;
-							}
-							p {
-								font-family: $museoSlab;
-								font-size: 1em;
-								line-height: 1.75;
-							}
-						}
-					}
-				}
-			}
+			background-size: cover;
+			background-position: center;
+			background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg');
+		}
+		.gallery-wrapper {
+			display: none;
 		}
 	}
 	.section-products {
@@ -557,6 +516,11 @@ body {
 				}
 			}
 		}
+		.section-gallery {
+			.mobile-gallery {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg');
+			}
+		}
 		.section-share .share-details {
 			top: 70%;
 		}
@@ -785,6 +749,105 @@ body {
 				}
 			}
 		}
+		.section-gallery {
+			height: 100%;
+			background: $white;
+			position: relative;
+
+			.mobile-gallery {
+				display: none;
+			}
+			.gallery-wrapper {
+				display: block;
+				height: 100%;
+				position: relative;
+				background-size: cover;
+				background-position: center;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+
+				.owl-stage-outer,
+				.owl-stage,
+				.owl-item {
+					height: 100%;
+				}
+				.owl-nav {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					padding-left: 20px;
+
+					.owl-prev,
+					.owl-next {
+						color: #333333;
+						font-family: $handWritten;
+						font-weight: 700;
+						font-size: 2em;
+						background: none;
+
+						&:hover,
+						&:focus {
+							color: $yellow;
+						}
+					}
+				}
+				.gallery-item {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					display: table;
+
+					.gallery-image {
+						width: 50%;
+						display: table-cell;
+						vertical-align: middle;
+						text-align: center;
+						padding: 20px 0 20px 20px;
+						
+						img {
+							display: inline-block;
+							max-height: 650px;
+							width: auto;
+							margin: 0 auto;
+							@include vendorize(opacity, 0);
+							@include transition(opacity, 300ms);
+						}
+					}
+					.gallery-text {
+						width: 50%;
+						display: table-cell;
+						position: relative;
+
+						.text-wrapper {
+							width: 100%;
+							height: 50%;
+							position: relative;
+
+							.text-vertical {
+								width: 75%;
+								position: absolute;
+								bottom: 0;
+								left: 20px;
+							}
+							.item-title {
+								font-family: $museoSlab;
+								font-size: 2em;
+								padding-bottom: 15px;
+							}
+							.item-year {
+								font-style: italic;
+								padding-bottom: 10px;
+							}
+							.item-year,
+							.item-content {
+								font-family: $museoSlab;
+								font-size: 1.125em;
+								line-height: 1.75;
+							}
+						}
+					}
+				}
+			}
+		}
 		.section-products {
 		
 			.product-desktop {
@@ -904,7 +967,7 @@ body {
 		}
 		.section-photo .photo-item,
 		.section-quote,
-		.section-slide-show,
+		.section-gallery,
 		.section-products,
 		.section-share {
 			z-index: 2;

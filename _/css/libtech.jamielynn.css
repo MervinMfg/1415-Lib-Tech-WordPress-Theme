@@ -126,6 +126,98 @@ ol.commentlist li.odd { background: #f6f6f6; }
 
 ol.commentlist li.parent { border-left: 5px solid #111; }
 
+/*  Owl Carousel - Animate Plugin */
+.owl-carousel .animated { -webkit-animation-duration: 1000ms; animation-duration: 1000ms; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
+
+.owl-carousel .owl-animated-in { z-index: 0; }
+
+.owl-carousel .owl-animated-out { z-index: 1; }
+
+.owl-carousel .fadeOut { -webkit-animation-name: fadeOut; animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOut { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+@keyframes fadeOut { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+/*  Owl Carousel - Auto Height Plugin */
+.owl-height { -webkit-transition: height 500ms ease-in-out; -moz-transition: height 500ms ease-in-out; -ms-transition: height 500ms ease-in-out; -o-transition: height 500ms ease-in-out; transition: height 500ms ease-in-out; }
+
+/*  Core Owl Carousel CSS File */
+.owl-carousel { display: none; width: 100%; -webkit-tap-highlight-color: transparent; /* position relative and z-index fix webkit rendering fonts issue */ position: relative; z-index: 1; }
+
+.owl-carousel .owl-stage { position: relative; -ms-touch-action: pan-Y; }
+
+.owl-carousel .owl-stage:after { content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0; }
+
+.owl-carousel .owl-stage-outer { position: relative; overflow: hidden; /* fix for flashing background */ -webkit-transform: translate3d(0px, 0px, 0px); }
+
+.owl-carousel .owl-item { position: relative; min-height: 1px; float: left; -webkit-backface-visibility: hidden; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; }
+
+.owl-carousel .owl-item img { display: block; width: 100%; -webkit-transform-style: preserve-3d; }
+
+.owl-carousel .owl-nav.disabled, .owl-carousel .owl-dots.disabled { display: none; }
+
+.owl-carousel .owl-nav .owl-prev, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-dot { cursor: pointer; cursor: hand; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.owl-carousel.owl-loaded { display: block; }
+
+.owl-carousel.owl-loading { opacity: 0; display: block; }
+
+.owl-carousel.owl-hidden { opacity: 0; }
+
+.owl-carousel.owl-refresh .owl-item { display: none; }
+
+.owl-carousel.owl-drag .owl-item { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+.owl-carousel.owl-grab { cursor: move; cursor: -webkit-grab; cursor: -o-grab; cursor: -ms-grab; cursor: grab; }
+
+.owl-carousel.owl-rtl { direction: rtl; }
+
+.owl-carousel.owl-rtl .owl-item { float: right; }
+
+/* No Js */
+.no-js .owl-carousel { display: block; }
+
+/*  Owl Carousel - Lazy Load Plugin */
+.owl-carousel .owl-item .owl-lazy { opacity: 0; -webkit-transition: opacity 400ms ease; -moz-transition: opacity 400ms ease; -ms-transition: opacity 400ms ease; -o-transition: opacity 400ms ease; transition: opacity 400ms ease; }
+
+.owl-carousel .owl-item img { transform-style: preserve-3d; }
+
+/*  Owl Carousel - Video Plugin */
+.owl-carousel .owl-video-wrapper { position: relative; height: 100%; background: #000; }
+
+.owl-carousel .owl-video-play-icon { position: absolute; height: 80px; width: 80px; left: 50%; top: 50%; margin-left: -40px; margin-top: -40px; background: url("../img/lib/owl.video.play.png") no-repeat; cursor: pointer; z-index: 1; -webkit-backface-visibility: hidden; -webkit-transition: scale 100ms ease; -moz-transition: scale 100ms ease; -ms-transition: scale 100ms ease; -o-transition: scale 100ms ease; transition: scale 100ms ease; }
+
+.owl-carousel .owl-video-play-icon:hover { -webkit-transition: scale(1.3, 1.3); -moz-transition: scale(1.3, 1.3); -ms-transition: scale(1.3, 1.3); -o-transition: scale(1.3, 1.3); transition: scale(1.3, 1.3); }
+
+.owl-carousel .owl-video-playing .owl-video-tn, .owl-carousel .owl-video-playing .owl-video-play-icon { display: none; }
+
+.owl-carousel .owl-video-tn { opacity: 0; height: 100%; background-position: center center; background-repeat: no-repeat; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; -webkit-transition: opacity 400ms ease; -moz-transition: opacity 400ms ease; -ms-transition: opacity 400ms ease; -o-transition: opacity 400ms ease; transition: opacity 400ms ease; }
+
+.owl-carousel .owl-video-frame { position: relative; z-index: 1; height: 100%; width: 100%; }
+
+/*  Default theme - Owl Carousel CSS File */
+.owl-theme .owl-nav { margin-top: 10px; text-align: center; -webkit-tap-highlight-color: transparent; }
+
+.owl-theme .owl-nav [class*='owl-'] { color: white; font-size: 14px; margin: 5px; padding: 4px 7px; background: #d6d6d6; display: inline-block; cursor: pointer; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+.owl-theme .owl-nav [class*='owl-']:hover { background: #869791; color: white; text-decoration: none; }
+
+.owl-theme .owl-nav .disabled { opacity: 0.5; cursor: default; }
+
+.owl-theme .owl-nav.disabled + .owl-dots { margin-top: 10px; }
+
+.owl-theme .owl-dots { text-align: center; -webkit-tap-highlight-color: transparent; }
+
+.owl-theme .owl-dots .owl-dot { display: inline-block; zoom: 1; *display: inline; }
+
+.owl-theme .owl-dots .owl-dot span { width: 18px; height: 18px; margin: 5px 7px; background: #fff; display: block; -webkit-backface-visibility: visible; -webkit-transition: opacity 200ms ease; -moz-transition: opacity 200ms ease; -ms-transition: opacity 200ms ease; -o-transition: opacity 200ms ease; transition: opacity 200ms ease; -webkit-border-radius: 30px; -moz-border-radius: 30px; border-radius: 30px; border: 1px solid #ccc; }
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span { background: #FFFF00; }
+
+/* don't hide images while loading, show loader */
+.owl-carousel .owl-item .owl-lazy { opacity: 1; }
+
 html, body { height: 100%; }
 
 .jamie-lynn { height: 100%; }
@@ -168,16 +260,9 @@ html, body { height: 100%; }
 .jamie-lynn .section-video .video-item .play-image a img { width: 100%; height: auto; }
 .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg"); background-position: center; width: 100%; height: 100%; background-size: cover; }
 .jamie-lynn .section-video .video-item .video-wrapper { display: none; }
-.jamie-lynn .section-slide-show { height: 100%; background: #FFF; position: relative; }
-.jamie-lynn .section-slide-show .slide-show-wrapper { height: 100%; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide { height: 100%; position: relative; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-image { width: 45%; height: auto; position: absolute; left: 10%; top: 50%; transform: translateY(-50%); }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-image img { display: block; max-height: 650px; width: auto; margin: 0 auto; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-text { width: 40%; height: 650px; position: absolute; right: 0; top: 50%; transform: translateY(-50%); }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-text .art-description { height: 100%; position: relative; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-text .art-description .description-wrapper { width: 80%; position: absolute; bottom: 150px; left: 0; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-text .art-description .description-wrapper h3 { font-family: "museo-slab", serif; font-size: 2em; padding-bottom: 20px; }
-.jamie-lynn .section-slide-show .slide-show-wrapper .slide .art-text .art-description .description-wrapper p { font-family: "museo-slab", serif; font-size: 1em; line-height: 1.75; }
+.jamie-lynn .section-gallery { height: 100%; background: #FFF; position: relative; }
+.jamie-lynn .section-gallery .mobile-gallery { position: relative; width: 100%; height: 100%; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg"); }
+.jamie-lynn .section-gallery .gallery-wrapper { display: none; }
 .jamie-lynn .section-products .product-mobile { display: block; }
 .jamie-lynn .section-products .product-desktop { display: none; }
 .jamie-lynn .section-products .product-desktop nav { display: none; }
@@ -226,6 +311,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-photo .photo-item.steady-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg"); }
   .jamie-lynn .section-photo .caption .caption-list { text-align: center; }
   .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg"); }
+  .jamie-lynn .section-gallery .mobile-gallery { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg"); }
   .jamie-lynn .section-share .share-details { top: 70%; } }
 @media screen and (min-width: 768px) { .jamie-lynn .navigation { display: block; position: fixed; top: 50%; right: 20px; z-index: 10; margin-top: -150px; }
   .jamie-lynn .navigation li { padding-top: 10px; text-align: right; }
@@ -271,6 +357,22 @@ html, body { height: 100%; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote span { display: block; }
   .jamie-lynn #intro blockquote { padding-left: 0; }
   .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg"); }
+  .jamie-lynn .section-gallery { height: 100%; background: #FFF; position: relative; }
+  .jamie-lynn .section-gallery .mobile-gallery { display: none; }
+  .jamie-lynn .section-gallery .gallery-wrapper { display: block; height: 100%; position: relative; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg"); }
+  .jamie-lynn .section-gallery .gallery-wrapper .owl-stage-outer, .jamie-lynn .section-gallery .gallery-wrapper .owl-stage, .jamie-lynn .section-gallery .gallery-wrapper .owl-item { height: 100%; }
+  .jamie-lynn .section-gallery .gallery-wrapper .owl-nav { position: absolute; top: 50%; left: 50%; padding-left: 20px; }
+  .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-prev, .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-next { color: #333333; font-family: "felt-tip-senior", cursive; font-weight: 700; font-size: 2em; background: none; }
+  .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-prev:hover, .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-prev:focus, .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-next:hover, .jamie-lynn .section-gallery .gallery-wrapper .owl-nav .owl-next:focus { color: #FFCC33; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item { width: 100%; height: 100%; position: relative; display: table; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image { width: 50%; display: table-cell; vertical-align: middle; text-align: center; padding: 20px 0 20px 20px; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { display: inline-block; max-height: 650px; width: auto; margin: 0 auto; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text { width: 50%; display: table-cell; position: relative; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper { width: 100%; height: 50%; position: relative; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .text-vertical { width: 75%; position: absolute; bottom: 0; left: 20px; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-title { font-family: "museo-slab", serif; font-size: 2em; padding-bottom: 15px; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-year { font-style: italic; padding-bottom: 10px; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-year, .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-content { font-family: "museo-slab", serif; font-size: 1.125em; line-height: 1.75; }
   .jamie-lynn .section-products .product-desktop { display: block; padding-bottom: 50px; position: relative; }
   .jamie-lynn .section-products .product-desktop nav { display: block; width: 90%; position: absolute; bottom: 10px; left: 5%; }
   .jamie-lynn .section-products .product-desktop nav ul { width: 33%; float: left; vertical-align: top; }
@@ -296,7 +398,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-photo .photo-item.steady-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg"); }
   .jamie-lynn .section-photo .photo-item.tradition-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg"); }
   .jamie-lynn .section-photo .caption .caption-icon { right: 10px; left: auto; }
-  .jamie-lynn .section-photo .photo-item, .jamie-lynn .section-quote, .jamie-lynn .section-slide-show, .jamie-lynn .section-products, .jamie-lynn .section-share { z-index: 2; position: relative; }
+  .jamie-lynn .section-photo .photo-item, .jamie-lynn .section-quote, .jamie-lynn .section-gallery, .jamie-lynn .section-products, .jamie-lynn .section-share { z-index: 2; position: relative; }
   .jamie-lynn .section-video .video-item.fixed-video { position: fixed; top: 0; left: 0; z-index: 1; }
   .jamie-lynn .section-video .video-item .video-image { display: none; }
   .jamie-lynn .section-video .video-item .video-wrapper { position: relative; width: 100%; height: 100%; display: block; overflow: hidden; }
