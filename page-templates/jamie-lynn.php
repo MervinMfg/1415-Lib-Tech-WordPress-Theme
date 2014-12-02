@@ -57,7 +57,7 @@ getCurrencyCode();
 	<div class="jamie-lynn">
 		<nav class="navigation">
 			<ul>
-				<li><a href="#20-year"><span class="title">20 Year</span><span class="circle"></span></a></li>
+				<li><a href="#legacy"><span class="title">Legacy</span><span class="circle"></span></a></li>
 				<li><a href="#intro"><span class="title">Intro</span><span class="circle"></span></a></li>
 				<li><a href="#film"><span class="title">Film</span><span class="circle"></span></a></li>
 				<li><a href="#method"><span class="title">Method</span><span class="circle"></span></a></li>
@@ -71,7 +71,7 @@ getCurrencyCode();
 			</ul>
 		</nav>
 		<!-- 20 Year -->
-		<section id="20-year" class="section-photo">
+		<section id="legacy" class="section-photo">
 			<div class="photo-item then-photo">
 				<div class="logo-wrapper">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-20-logo.png" alt="Jamie Lynn 20 year anniversary logo" />
