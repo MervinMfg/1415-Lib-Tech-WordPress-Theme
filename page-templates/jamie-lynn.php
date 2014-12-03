@@ -21,16 +21,16 @@ getCurrencyCode();
 	<meta name="author" content="Lib Tech" />
     <meta name="copyright" content="Copyright Lib Tech <?php echo date('Y'); ?>. All Rights Reserved." />
 	<!-- FB Meta Data -->
-	<meta property="og:title" content="Jamie Lynn 20 Year Anniversary - Lib Tech" />
-	<meta property="og:description" content="Lib Tech's tribute to Jamie Lynn's 20 year anniversary." />
+	<meta property="og:title" content="Jamie Lynn - 20 Years with Lib Tech Snowboards" />
+	<meta property="og:description" content="A tribute to Jamie Lynn's professional snowboarding career with Lib Tech Snowboards. Archived photos, video, art and more to celebrate Jamie's iconic career." />
 	<meta property="og:url" content="<?php the_permalink(); ?>" />
 	<meta property="og:image" content="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/social-share.jpg" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="Lib Technologies" />
 	<meta property="fb:app_id" content="352899581451617"/>
 	<!-- Google+ Meta Data -->
-	<meta itemprop="name" content="Jamie Lynn 20 Year Anniversary - Lib Tech" />
-	<meta itemprop="description" content="Lib Tech's tribute to Jamie Lynn's 20 year anniversary." />
+	<meta itemprop="name" content="Jamie Lynn - 20 Years with Lib Tech Snowboards" />
+	<meta itemprop="description" content="A tribute to Jamie Lynn's professional snowboarding career with Lib Tech Snowboards. Archived photos, video, art and more to celebrate Jamie's iconic career." />
 	<meta itemprop="image" content="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/social-share.jpg" />
 	<!-- Google Site Verification -->
     <meta name="google-site-verification" content="wE_gDgt0-MYrOnCO0K7VH2HP7af_DuxpDK1EJFdohFc" />
