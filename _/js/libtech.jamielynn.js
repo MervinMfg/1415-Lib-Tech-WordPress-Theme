@@ -30,11 +30,12 @@ LIBTECH.JamieLynn = {
 		self.config.scrollController = new ScrollMagic({ vertical: true });
 		//self.scrollingInit();
 		self.captionsInit();
-		self.galleryInit();
 		// wait for vid player to load to start video
 		$('#video-player').load(function(){
 			self.videoInit();
 		});
+		self.galleryInit();
+		self.shareInit();
 	},
 	scrollingInit: function () {
 		var self = this;
@@ -132,6 +133,24 @@ LIBTECH.JamieLynn = {
 			autoplayTimeout: 8000,
 			autoplayHoverPause: true,
 			loop: true
+		});
+	},
+	shareInit: function () {
+		var shareUrl, twitterMessage;
+		shareUrl = 'http://' + window.location.hostname + window.location.pathname;
+		twitterMessage = "A tribute to Jamie Lynn's professional snowboarding career with @LibTechnologies Snowboards - ";
+		// facebook share
+		$('.section-share .share-links .facebook a').on('click', function (e) {
+			e.preventDefault();
+			FB.ui({
+				method: 'share',
+				href: shareUrl,
+			}, function(response){});
+		});
+		// twitter share
+		$('.section-share .share-links .twitter a').on('click', function (e) {
+			e.preventDefault();
+			window.open('http://twitter.com/share?url=' + shareUrl + '&text=' + twitterMessage + '&', 'twitterwindow', 'height=450, width=550, top='+($(window).height()/2 - 225) +', left='+$(window).width()/2 +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
 		});
 	},
 	recalculateFills: function () {
