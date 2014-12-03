@@ -28,16 +28,18 @@ LIBTECH.JamieLynn = {
 			self.utilities.pageScroll(url, 1);
 		});
 		self.config.scrollController = new ScrollMagic({ vertical: true });
-		self.scrollingInit();
-
+		//self.scrollingInit();
 		self.captionsInit();
-
 		self.galleryInit();
+		// wait for vid player to load to start video
+		$('#video-player').load(function(){
+			self.videoInit();
+		});
 	},
 	scrollingInit: function () {
 		var self = this;
 
-		/*if (typeof self.config.scene !== 'undefined') {
+		if (typeof self.config.scene !== 'undefined') {
 			self.config.scrollController.removeScene(self.config.scene);
 		}
 		// fix intro photos for 2 full windows
@@ -56,7 +58,7 @@ LIBTECH.JamieLynn = {
 		// fix style photo at top of window
 		new ScrollScene({triggerElement: ".style-photo", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin(".style-photo", {pushFollowers: false}).addTo(self.config.scrollController);
 		// fix art quote at top of window
-		new ScrollScene({triggerElement: "#art", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin("#art", {pushFollowers: false}).addTo(self.config.scrollController);*/
+		new ScrollScene({triggerElement: "#art", offset: $(window).innerHeight() / 2, duration: $(window).innerHeight() * 2}).setPin("#art", {pushFollowers: false}).addTo(self.config.scrollController);
 		// new ScrollScene({triggerElement: ".now-photo", offset: $(window).height() /2 }).setPin(".now-photo").addTo(self.config.scrollController);
 		/*
 		tween = new TweenMax.to('.follow', 1, {backgroundPosition: "50% 30%", ease: Linear.easeNone});
@@ -79,6 +81,44 @@ LIBTECH.JamieLynn = {
 			}).on('mouseleave', function () {
 				$(this).parent().removeClass('active');
 			});
+		}
+	},
+	videoInit: function () {
+		var self, loopVideo, player;
+		self = this;
+		loopVideo = $('#video-loop')[0];
+		player = $f($('#video-player')[0]);
+		// wait until player is ready
+		player.addEvent('ready', function() {
+			player.addEvent('finish', removeVideo);
+		});
+		// listen for click to activate player
+		$('.section-video .play-image a').on('click', function (e) {
+			showVideo();
+		});
+		function showVideo() {
+			TweenMax.to($('.section-video .film'), 0.5, {opacity: 1, display: 'block'});
+			loopVideo.pause();
+			player.api('play');
+			// listen for esc key
+			$(document).on('keyup.video', function (e) {
+				if (e.keyCode == 27) {
+					removeVideo();
+				}
+			});
+			// listen for click to close
+			$('.section-video .film .arrow-left').on('click.video', function (e) {
+				removeVideo();
+			});
+		}
+		function removeVideo() {
+			player.api('pause');
+			// kill event listeners
+			$(document).off('keyup.video');
+			$('.section-video .film .arrow-left').off('click.video');
+			// animate video away
+			TweenMax.to($('.section-video .film'), 0.5, {opacity: 0, display: 'none'});
+			loopVideo.play();
 		}
 	},
 	galleryInit: function () {

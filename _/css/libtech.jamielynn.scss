@@ -1,4 +1,4 @@
-/* ==========================================================================
+	/* ==========================================================================
    LIBTECH.JAMIELYNN.SCSS
    ========================================================================== */
 
@@ -228,6 +228,25 @@ body {
 		background-image: none;
 		padding-top: 0;
 	}
+	.arrow-left,
+	.arrow-right {
+		display: block;
+		width: 33px;
+		height: 28px;
+		overflow: hidden;
+
+		img {
+			width: 66px;
+			height: 28px;
+			max-width: 200%;
+		}
+		&:hover,
+		&:focus {
+			img {
+				margin-left: -33px;
+			}
+		}
+	}
 	.section-video {
 		height: 100%;
 
@@ -237,16 +256,25 @@ body {
 
 			.play-image {
 				position: absolute;
-				height: 220px;
-				width: 220px;
-				left: 50%;
-				top: 50%;
-				margin: -110px 0 0 -110px;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
 				z-index: 4;
 
 				a {
+					display: relative;
+					display: block;
+					width: 100%;
+					height: 100%;
+
 					img {
-						width: 100%;
+						position: absolute;
+						width: 150px;
+						height: 150px;
+						top: 50%;
+						left: 50%;
+						margin: -75px 0 0 -75px;
 						height: auto;
 					}
 				}
@@ -260,6 +288,32 @@ body {
 			}
 			.video-wrapper {
 				display: none;
+			}
+			.film {
+				display: none;
+				position: absolute;
+				z-index: 100;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				@include vendorize(opacity, 0);
+
+				.arrow-left {
+					position: absolute;
+					top: 20px;
+					left: 20px;
+
+					img {
+						margin-left: -33px;
+					}
+					&:hover,
+					&:focus {
+						img {
+							margin-left: 0px;
+						}
+					}
+				}
 			}
 		}
 	}

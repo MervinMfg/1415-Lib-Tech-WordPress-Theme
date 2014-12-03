@@ -1,4 +1,4 @@
-/* ========================================================================== LIBTECH.JAMIELYNN.SCSS ========================================================================== */
+	/* ========================================================================== LIBTECH.JAMIELYNN.SCSS ========================================================================== */
 /** 1415 Lib Tech WordPress Theme - http://www.lib-tech.com/jamielynn20 Author: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com  libtech.jamielynn.css & libtech.jamielynn.min.css are compiled using the imports from this file.  To add new styles and components, import them in the appropriate sections below.  */
 /* ========================================================================== HELPERS/_MIXINS.SCSS ========================================================================== */
 /* ========================================================================== HELPERS/_RESET.SCSS ========================================================================== */
@@ -254,12 +254,20 @@ html, body { height: 100%; }
 .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote p { font-family: "museo-slab", serif; color: #CCC; font-size: 1.5em; /* 24/16 */ font-weight: 100; line-height: 1.25; margin-bottom: 30px; padding: 0 15px; }
 .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote p.hand-written { display: block; font-family: "felt-tip-senior", cursive; color: #FFCC33; font-size: 2.4em; text-align: center; line-height: 1; padding-top: 20px; margin-bottom: 0; }
 .jamie-lynn #intro blockquote { background-image: none; padding-top: 0; }
+.jamie-lynn .arrow-left, .jamie-lynn .arrow-right { display: block; width: 33px; height: 28px; overflow: hidden; }
+.jamie-lynn .arrow-left img, .jamie-lynn .arrow-right img { width: 66px; height: 28px; max-width: 200%; }
+.jamie-lynn .arrow-left:hover img, .jamie-lynn .arrow-left:focus img, .jamie-lynn .arrow-right:hover img, .jamie-lynn .arrow-right:focus img { margin-left: -33px; }
 .jamie-lynn .section-video { height: 100%; }
 .jamie-lynn .section-video .video-item { position: relative; height: 100%; }
-.jamie-lynn .section-video .video-item .play-image { position: absolute; height: 220px; width: 220px; left: 50%; top: 50%; margin: -110px 0 0 -110px; z-index: 4; }
-.jamie-lynn .section-video .video-item .play-image a img { width: 100%; height: auto; }
+.jamie-lynn .section-video .video-item .play-image { position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 4; }
+.jamie-lynn .section-video .video-item .play-image a { display: relative; display: block; width: 100%; height: 100%; }
+.jamie-lynn .section-video .video-item .play-image a img { position: absolute; width: 150px; height: 150px; top: 50%; left: 50%; margin: -75px 0 0 -75px; height: auto; }
 .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg"); background-position: center; width: 100%; height: 100%; background-size: cover; }
 .jamie-lynn .section-video .video-item .video-wrapper { display: none; }
+.jamie-lynn .section-video .video-item .film { display: none; position: absolute; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
+.jamie-lynn .section-video .video-item .film .arrow-left { position: absolute; top: 20px; left: 20px; }
+.jamie-lynn .section-video .video-item .film .arrow-left img { margin-left: -33px; }
+.jamie-lynn .section-video .video-item .film .arrow-left:hover img, .jamie-lynn .section-video .video-item .film .arrow-left:focus img { margin-left: 0px; }
 .jamie-lynn .section-gallery { height: 100%; background: #FFF; position: relative; }
 .jamie-lynn .section-gallery .mobile-gallery { position: relative; width: 100%; height: 100%; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg"); }
 .jamie-lynn .section-gallery .gallery-wrapper { display: none; }

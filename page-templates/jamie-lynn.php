@@ -116,12 +116,12 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
-		<!-- Film - https://vimeo.com/112238604 -->
+		<!-- Film -->
 		<section id="film" class="section-video">
 			<div class="video-item">
 				<div class="video-image"></div>
 				<div class="video-wrapper">
-					<video width="1280" height="720" autoplay loop preload class="tablet-hide fill">
+					<video id="video-loop" width="1280" height="720" autoplay loop preload class="tablet-hide fill">
 						<source type="video/mp4" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.mp4">
 						<source type="video/webm" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.webm">
 						<source type="video/ogv" src="<?php bloginfo('template_directory'); ?>/_/video/jamie-lynn/jamie-lynn-20-year-loop.ogv">
@@ -129,7 +129,11 @@ getCurrencyCode();
 					<span class="effect-overlay"></span>
 				</div>
 				<div class="play-image">
-					<a href="#play-video"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/play-button.png" /></a>
+					<a href="#video-player"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/play-button.png" alt="Play Film" /></a>
+				</div>
+				<div class="film">
+					<a href="#film" class="arrow-left"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/arrow-left.png" alt="Close Film" /></a>
+					<iframe id="video-player" src="//player.vimeo.com/video/112238604?api=1&player_id=video-player&title=0&byline=0&portrait=0&color=FFCC33" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
 			</div>
 		</section>
