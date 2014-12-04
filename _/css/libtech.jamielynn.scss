@@ -18,6 +18,7 @@
 // Libraries
 @import "lib/owl-carousel";
 @import "lib/owl-theme-default";
+@import "lib/animate";
 
 // Variables
 $handWritten: "felt-tip-senior", cursive;
@@ -40,6 +41,13 @@ body {
 }
 .jamie-lynn {
 	height: 100%;
+
+	.loading {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background: $white;
+	}
 
 	a {
 		text-decoration: none;
@@ -229,11 +237,16 @@ body {
 		padding-top: 0;
 	}
 	.arrow-left,
-	.arrow-right {
-		display: block;
+	.arrow-right,
+	.owl-carousel .owl-nav .owl-prev,
+	.owl-carousel .owl-nav .owl-next {
+		display: inline-block;
 		width: 33px;
 		height: 28px;
 		overflow: hidden;
+		margin: 0 20px 0 0;
+		padding: 0;
+		background: none;
 
 		img {
 			width: 66px;
@@ -244,6 +257,15 @@ body {
 		&:focus {
 			img {
 				margin-left: -33px;
+			}
+		}
+	}
+	.arrow-right,
+	.owl-carousel .owl-nav .owl-next {
+		&:hover,
+		&:focus {
+			img {
+				margin-left: -39px;
 			}
 		}
 	}
@@ -386,76 +408,76 @@ body {
 				height: 100%;
 				margin: 0 auto;  
 			}
-			.signature-name {
-				stroke-dasharray: 2796.57666015625;
-				stroke-dashoffset: 2796.57666015625;
-				-webkit-animation: animateNameWebkit 2.5s;
-				-moz-animation: animateNameMoz 2.5s;
-				animation: animateName 2.5s;
-				-webkit-animation-fill-mode: forwards;
-				-moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-			}
-			@-webkit-keyframes animateNameWebkit {
-				0% {
-					stroke-dashoffset: 2796.57666015625;
-				}
-				100% {
-					stroke-dashoffset: 0;
-				}
-			}
-			@-moz-keyframes animateNameMoz {
-				0% {
-					stroke-dashoffset: 2796.57666015625;
-				}
-				100% {
-					stroke-dashoffset: 0;
-				}
-			}
-			@keyframes animateName {
-				0% {
-					stroke-dashoffset: 2796.57666015625;
-				}
-				100% {
-					stroke-dashoffset: 0;
-				}
-			}
-			.signature-dot {
-				visibility: hidden;
-				-webkit-animation: animateDotWebkit  0s;
-				-moz-animation: animateDotMoz  0s;
-				animation: animateDot 1s;
-				-webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */
-				-moz-animation-delay: 2.5s;
-				animation-delay: 2.5s;
-				-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
-				-moz-animation-fill-mode: forwards;
-				animation-fill-mode: forwards;
-			}
-			@-webkit-keyframes animateDotWebkit {
-				0% {
-					visibility: hidden;
-				}
-				100% {
-					visibility: visible;
-				}
-			}
-			@-moz-keyframes animateDotMoz {
-				0% {
-					visibility: hidden;
-				}
-				100% {
-					visibility: visible;
-				}
-			}
-			@keyframes animateDot {
-				0% {
-					visibility: hidden;
-				}
-				100% {
-					visibility: visible;
-				}
-			}
+			// .signature-name {
+			// 	stroke-dasharray: 2796.57666015625;
+			// 	stroke-dashoffset: 2796.57666015625;
+			// 	-webkit-animation: animateNameWebkit 2.5s;
+			// 	-moz-animation: animateNameMoz 2.5s;
+			// 	animation: animateName 2.5s;
+			// 	-webkit-animation-fill-mode: forwards;
+			// 	-moz-animation-fill-mode: forwards;
+			// 	animation-fill-mode: forwards;
+			// }
+			// @-webkit-keyframes animateNameWebkit {
+			// 	0% {
+			// 		stroke-dashoffset: 2796.57666015625;
+			// 	}
+			// 	100% {
+			// 		stroke-dashoffset: 0;
+			// 	}
+			// }
+			// @-moz-keyframes animateNameMoz {
+			// 	0% {
+			// 		stroke-dashoffset: 2796.57666015625;
+			// 	}
+			// 	100% {
+			// 		stroke-dashoffset: 0;
+			// 	}
+			// }
+			// @keyframes animateName {
+			// 	0% {
+			// 		stroke-dashoffset: 2796.57666015625;
+			// 	}
+			// 	100% {
+			// 		stroke-dashoffset: 0;
+			// 	}
+			// }
+			// .signature-dot {
+			// 	visibility: hidden;
+			// 	-webkit-animation: animateDotWebkit  0s;
+			// 	-moz-animation: animateDotMoz  0s;
+			// 	animation: animateDot 1s;
+			// 	-webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */
+			// 	-moz-animation-delay: 2.5s;
+			// 	animation-delay: 2.5s;
+			// 	-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
+			// 	-moz-animation-fill-mode: forwards;
+			// 	animation-fill-mode: forwards;
+			// }
+			// @-webkit-keyframes animateDotWebkit {
+			// 	0% {
+			// 		visibility: hidden;
+			// 	}
+			// 	100% {
+			// 		visibility: visible;
+			// 	}
+			// }
+			// @-moz-keyframes animateDotMoz {
+			// 	0% {
+			// 		visibility: hidden;
+			// 	}
+			// 	100% {
+			// 		visibility: visible;
+			// 	}
+			// }
+			// @keyframes animateDot {
+			// 	0% {
+			// 		visibility: hidden;
+			// 	}
+			// 	100% {
+			// 		visibility: visible;
+			// 	}
+			// }
 			img {
 				position: absolute;
 				top: 50%;
@@ -588,7 +610,7 @@ body {
 			position: fixed;
 			top: 50%;
 			right: 20px;
-			z-index: 10;
+			z-index: 20;
 			margin-top: -150px;
 
 			li {
@@ -824,30 +846,27 @@ body {
 				.owl-item {
 					height: 100%;
 				}
+
+				.owl-item {
+					visibility: hidden;
+
+					&.animated,
+					&.active {
+						visibility: visible;
+					}
+				}
 				.owl-nav {
 					position: absolute;
-					top: 50%;
+					top: 55%;
 					left: 50%;
 					padding-left: 20px;
-
-					.owl-prev,
-					.owl-next {
-						color: #333333;
-						font-family: $handWritten;
-						font-weight: 700;
-						font-size: 2em;
-						background: none;
-
-						&:hover,
-						&:focus {
-							color: $yellow;
-						}
-					}
+					z-index: 1;
 				}
 				.gallery-item {
 					width: 100%;
 					height: 100%;
 					position: relative;
+					z-index: 10;
 					display: table;
 
 					.gallery-image {
@@ -856,6 +875,8 @@ body {
 						vertical-align: middle;
 						text-align: center;
 						padding: 20px 0 20px 20px;
+						z-index: 10;
+						position: relative;
 						
 						img {
 							display: inline-block;
@@ -873,7 +894,7 @@ body {
 
 						.text-wrapper {
 							width: 100%;
-							height: 50%;
+							height: 55%;
 							position: relative;
 
 							.text-vertical {
@@ -881,6 +902,7 @@ body {
 								position: absolute;
 								bottom: 0;
 								left: 20px;
+								max-width: 500px;
 							}
 							.item-title {
 								font-family: $museoSlab;
@@ -976,6 +998,67 @@ body {
 }
 @media screen and (min-width: $breakpoint-large) {
 	.jamie-lynn {
+		&.scroll-animation {
+			height: 10000px;
+
+			.loading {
+				display: none;
+			}
+			.section-photo,
+			.section-video,
+			.section-gallery {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: none;
+			}
+			#legacy {
+				display: block;
+			}
+			#legacy-now {
+				@include vendorize(opacity, 0);
+			}
+			.section-quote,
+			.section-share {
+				position: fixed;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.section-products {
+				position: fixed;
+				bottom: -200%;
+				left: 0;
+				width: 100%;
+			}
+
+			#legacy { z-index: 1; }
+			#legacy-now { z-index: 2; }
+			#film { z-index: 3; }
+			#method-photo { z-index: 4; }
+			#style-photo { z-index: 5; }
+			#passion-photo { z-index: 6; }
+			#inspiration-photo { z-index: 7; }
+			#music-photo { z-index: 8; }
+			#steady-photo { z-index: 9; }
+			#gallery { z-index: 10; }
+			#products { z-index: 12; }
+			#tradition-photo { z-index: 12; }
+
+			#intro,
+			#method,
+			#style,
+			#passion,
+			#inspiration,
+			#music,
+			#steady,
+			#creativity,
+			#share { z-index: 15; }
+
+		}
 		.section-photo {
 			.photo-item {
 				&.fixed-photo {

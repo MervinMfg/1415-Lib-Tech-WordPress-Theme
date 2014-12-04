@@ -7,11 +7,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 .owl-theme .owl-nav [class*='owl-'] {
-  color: white;
+  color: #FFF;
   font-size: 14px;
   margin: 5px;
   padding: 4px 7px;
-  background: #d6d6d6;
+  background: #D6D6D6;
   display: inline-block;
   cursor: pointer;
   -webkit-border-radius: 3px;
@@ -20,7 +20,7 @@
 }
 .owl-theme .owl-nav [class*='owl-']:hover {
   background: #869791;
-  color: white;
+  color: #FFF;
   text-decoration: none;
 }
 .owl-theme .owl-nav .disabled {
@@ -40,10 +40,10 @@
   *display: inline;
 }
 .owl-theme .owl-dots .owl-dot span {
-  width: 18px;
-  height: 18px;
+  width: 10px;
+  height: 10px;
   margin: 5px 7px;
-  background: #fff;
+  background: #D6D6D6;
   display: block;
   -webkit-backface-visibility: visible;
   -webkit-transition: opacity 200ms ease;
@@ -54,12 +54,9 @@
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   border-radius: 30px;
-  border: 1px solid #ccc;
 }
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
-  background: #FFFF00;
+  background: #869791;
 }
-/* don't hide images while loading, show loader */
-.owl-carousel .owl-item .owl-lazy {
-  opacity: 1;
-}
+
+/*# sourceMappingURL=owl.theme.default.css.map */

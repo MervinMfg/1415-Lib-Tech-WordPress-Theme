@@ -22,7 +22,6 @@
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
@@ -31,11 +30,12 @@
   0% {
     opacity: 1;
   }
-
   100% {
     opacity: 0;
   }
 }
+
+/*# sourceMappingURL=owl.animate.css.map */
 
 /* 
  *  Owl Carousel - Auto Height Plugin
@@ -47,6 +47,8 @@
   -o-transition: height 500ms ease-in-out;
   transition: height 500ms ease-in-out;
 }
+
+/*# sourceMappingURL=owl.autoheight.css.map */
 
 /* 
  *  Core Owl Carousel CSS File
@@ -143,6 +145,8 @@
   display: block;
 }
 
+/*# sourceMappingURL=owl.carousel.css.map */
+
 /* 
  *  Owl Carousel - Lazy Load Plugin
  */
@@ -157,6 +161,8 @@
 .owl-carousel .owl-item img {
   transform-style: preserve-3d;
 }
+
+/*# sourceMappingURL=owl.lazyload.css.map */
 
 /* 
  *  Owl Carousel - Video Plugin
@@ -174,7 +180,7 @@
   top: 50%;
   margin-left: -40px;
   margin-top: -40px;
-  background: url("../img/lib/owl.video.play.png") no-repeat;
+  background: url("owl.video.play.png") no-repeat;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;
@@ -216,3 +222,5 @@
   height: 100%;
   width: 100%;
 }
+
+/*# sourceMappingURL=owl.video.css.map */

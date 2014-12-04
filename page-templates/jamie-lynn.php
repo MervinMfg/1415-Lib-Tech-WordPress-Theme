@@ -89,7 +89,7 @@ getCurrencyCode();
 				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
 			</div>
 		</section>
-		<section class="section-photo section-hide">
+		<section id="legacy-now" class="section-photo section-hide">
 			<div class="photo-item now-photo">
 				<div class="logo-wrapper">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-20-logo.png" alt="Jamie Lynn 20 year anniversary logo" />
@@ -109,8 +109,10 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>He could have left. <span>He could have quit.</span> <span>He could have done some weak ass shit, </span><span>but he doesn't know how.</span></p>
-						<p>It's been over 20 years and,</p>
+						<div class="quote-text">
+							<p>He could have left. <span>He could have quit.</span> <span>He could have done some weak ass shit, </span><span>but he doesn't know how.</span></p>
+							<p>It's been over 20 years and,</p>
+						</div>
 						<p class="hand-written">he has done it all.</p>
 					</blockquote>
 				</div>
@@ -142,13 +144,15 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote class="quote-small">
-						<p>More than the gloveless fingers, spins off the toes, silhouettes of florescent sirens and dirt rock dna, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perfect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
+						<div class="quote-text">
+							<p>More than the gloveless fingers, spins off the toes, silhouettes of florescent sirens and dirt rock dna, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perfect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
+						</div>
 						<p class="hand-written">- Pat Bridges</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="method-photo" class="section-photo">
 			<div class="photo-item method-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -164,14 +168,16 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>Jamie style can be compared to true confidence. Confidence is silent. He lets the are of his actions speak for him.</p>
-						<p>No words required.</p>
+						<div class="quote-text">
+							<p>Jamie style can be compared to true confidence. Confidence is silent. He lets the are of his actions speak for him.</p>
+							<p>No words required.</p>
+						</div>
 						<p class="hand-written">- Trevor Graves</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="style-photo" class="section-photo">
 			<div class="photo-item style-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -187,14 +193,16 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>I like Jamie's constant pursuit of creative freedom, his style and his raw passion for things he is into is a true inspiration to me. And that he still sends it like 1993 was yesterday, makes it so much fun to shred with him.</p>
-						<p>With or without gloves.</p>
+						<div class="quote-text">
+							<p>I like Jamie's constant pursuit of creative freedom, his style and his raw passion for things he is into is a true inspiration to me. And that he still sends it like 1993 was yesterday, makes it so much fun to shred with him.</p>
+							<p>With or without gloves.</p>
+						</div>
 						<p class="hand-written">- Terje Håkonsen</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="passion-photo" class="section-photo">
 			<div class="photo-item passion-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -210,13 +218,15 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>His style is what influenced me to want to pursue what I did in life, and my life has changed significantly because of it.</p>
+						<div class="quote-text">
+							<p>His style is what influenced me to want to pursue what I did in life, and my life has changed significantly because of it.</p>
+						</div>
 						<p class="hand-written">- Mark Landvik</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="inspiration-photo" class="section-photo">
 			<div class="photo-item inspiration-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -232,14 +242,16 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote class="quote-small">
-						<p>He takes everything to the edge and then past it; snowboarding, surfing, skating,  artwork, and guitar is no exception. Apparently we love the same music, so Tittyfish is a no brainer. I'm inspired and honored to be making music with him.</p>
-						<p>He is a true brother, Temple too... total bad asses, I'm just happier when they are around.</p>
+						<div class="quote-text">
+							<p>He takes everything to the edge and then past it; snowboarding, surfing, skating,  artwork, and guitar is no exception. Apparently we love the same music, so Tittyfish is a no brainer. I'm inspired and honored to be making music with him.</p>
+							<p>He is a true brother, Temple too... total bad asses, I'm just happier when they are around.</p>
+						</div>
 						<p class="hand-written">- Wes Makepeace</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="music-photo" class="section-photo">
 			<div class="photo-item music-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -255,13 +267,15 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						<div class="quote-text">
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+						</div>
 						<p class="hand-written">- E-Stone</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-photo">
+		<section id="steady-photo" class="section-photo">
 			<div class="photo-item steady-photo"></div>
 			<div class="caption">
 				<ul class="caption-list">
@@ -277,13 +291,15 @@ getCurrencyCode();
 			<div class="quote-item">
 				<div class="quote-wrapper">
 					<blockquote>
-						<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rat tail and live fast and loose.</p>
+						<div class="quote-text">
+							<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rat tail and live fast and loose.</p>
+						</div>
 						<p class="hand-written">- Barrett Christy</p>
 					</blockquote>
 				</div>
 			</div>
 		</section>
-		<section class="section-gallery">
+		<section id="gallery" class="section-gallery">
 			<div class="mobile-gallery"></div>
 			<div class="gallery-wrapper owl-carousel owl-theme">
 				<div class="gallery-item">
@@ -308,7 +324,7 @@ getCurrencyCode();
 						<div class="text-wrapper">
 							<div class="text-vertical">
 								<h3 class="item-title">Painting</h3>
-								<p class="item-year">XXXX</p>
+								<p class="item-year">1996</p>
 								<p class="item-content">A young Jamie Lynn. Bold lines and attention to detail. Defining style for decades.</p>
 							</div>
 						</div>
@@ -442,7 +458,7 @@ getCurrencyCode();
 						c0,0-1.6,26.8,28.4,3.2c13.8-10.9,25-20.1,32.2-27.6c20.3-21.2,5,3.5,5,3.5s-15.2,26.8-15.2,33.1s-3.2,24.2,25.2,14.7
 						c28.4-9.5,81.9-34.7,81.9-34.7s45.7-23.6,12.6-26.8c-33.1-3.2-45.7,31.5-45.7,31.5s1.6,22.1,25.2,26.8s59.9,4.7,100.8-3.2
 						s72.5-18.9,91.4-15.8"/>
-					<path class="signature-dot" fill="#FFCC33" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
+					<path class="signature-dot" fill="none" stroke="#FFCC33" stroke-width="16" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" d="M701.9,188.4c12.9,0,12.9-20,0-20C689,168.4,689,188.4,701.9,188.4L701.9,188.4z"/>
 					<image src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-signature.png"/>
 				</svg>
 			</div>
@@ -455,7 +471,7 @@ getCurrencyCode();
 				<p class="hashtag">#jamielynn20</p>
 			</div>
 		</section>
-		<section class="section-photo section-hide">
+		<section id="tradition-photo" class="section-photo section-hide">
 			<div class="photo-item tradition-photo">
 				<div class="tradition-message">
 					<p class="part-1">Part Two.</p>
@@ -464,6 +480,7 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
+		<div class="loading"></div>
 	</div><!-- END .jamie-lynn -->
 
 	<?php wp_footer(); ?>
