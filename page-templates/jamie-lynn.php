@@ -482,6 +482,11 @@ getCurrencyCode();
 		</section>
 		<div class="loading"></div>
 	</div><!-- END .jamie-lynn -->
+	<div class="responsive-check">
+		<div class="breakpoint-small"></div>
+		<div class="breakpoint-medium"></div>
+		<div class="breakpoint-large"></div>
+	</div><!-- .responsive-check -->
 
 	<?php wp_footer(); ?>
 	

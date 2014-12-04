@@ -126,6 +126,33 @@ ol.commentlist li.odd { background: #f6f6f6; }
 
 ol.commentlist li.parent { border-left: 5px solid #111; }
 
+/* ========================================================================== BASE/_UTILITY.SCSS ========================================================================== */
+.block { display: block; }
+
+.hide { display: none; }
+
+.offscreen { display: block; left: -999999px; position: absolute; top: -999999px; }
+
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute; }
+
+.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto; color: #21759b; display: block; font-size: 14px; font-weight: bold; height: auto; line-height: normal; padding: 15px 23px 14px; position: absolute; left: 5px; top: 5px; text-decoration: none; text-transform: none; width: auto; z-index: 100000; }
+
+.clearfix { *zoom: 1; }
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+.hr { border-top: 1px solid #666; display: block; border-radius: 2px; }
+.hr hr { display: none; }
+
+.responsive-check .breakpoint-small, .responsive-check .breakpoint-medium, .responsive-check .breakpoint-large { display: none; }
+
+@media screen and (min-width: 480px) { .responsive-check .breakpoint-small { display: block; } }
+@media screen and (min-width: 768px) { .responsive-check .breakpoint-small { display: none; }
+  .responsive-check .breakpoint-medium { display: block; } }
+@media screen and (min-width: 1056px) { .responsive-check .breakpoint-small, .responsive-check .breakpoint-medium { display: none; }
+  .responsive-check .breakpoint-large { display: block; } }
 /*  Owl Carousel - Animate Plugin */
 .owl-carousel .animated { -webkit-animation-duration: 1000ms; animation-duration: 1000ms; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
 
@@ -968,7 +995,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-share .signature-item { width: auto; height: 100%; }
   .jamie-lynn .section-share .signature-item .jamie-signature { width: 40%; height: 100%; margin: 0 auto; }
   .jamie-lynn .section-share .share-details { top: 65%; } }
-@media screen and (min-width: 980px) { .jamie-lynn.scroll-animation { height: 10000px; }
+@media screen and (min-width: 1056px) { .jamie-lynn.scroll-animation { height: 10000px; }
   .jamie-lynn.scroll-animation .loading { display: none; }
   .jamie-lynn.scroll-animation .section-photo, .jamie-lynn.scroll-animation .section-video, .jamie-lynn.scroll-animation .section-gallery { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; }
   .jamie-lynn.scroll-animation #legacy { display: block; }

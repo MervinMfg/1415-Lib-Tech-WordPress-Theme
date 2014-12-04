@@ -12,29 +12,34 @@
  *
  */
 
+// VARIABLES
+// Fonts
+$handWritten: "felt-tip-senior", cursive;
+$museoSlab: "museo-slab", serif;
+// Colors
+$yellow: #FFCC33;
+$black: #000;
+$white: #FFF;
+$grey: #CCC;
+// Breakpoints
+$breakpoint-small: 480px; 
+$breakpoint-medium: 768px;
+$breakpoint-large: 1056px; //  - surpass real ipad size
+$breakpoint-xlarge: 1200px;
+$breakpoint-xxlarge: 1400px;
+
+// IMPORTS
 // Helpers
 @import "helpers/mixins";
 @import "helpers/reset";
+// Base
+@import "base/utility";
 // Libraries
 @import "lib/owl-carousel";
 @import "lib/owl-theme-default";
 @import "lib/animate";
 
-// Variables
-$handWritten: "felt-tip-senior", cursive;
-$museoSlab: "museo-slab", serif;
-
-$yellow: #FFCC33;
-$black: #000;
-$white: #FFF;
-$grey: #CCC;
-
-$breakpoint-small: 480px; 
-$breakpoint-medium: 768px;
-$breakpoint-large: 980px; // 1056px - surpass real ipad size
-$breakpoint-xlarge: 1200px;
-$breakpoint-xxlarge: 1400px;
-
+// JAMIE STYLES
 html,
 body {
 	height: 100%;
