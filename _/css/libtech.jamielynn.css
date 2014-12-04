@@ -826,6 +826,7 @@ html, body { height: 100%; }
 .jamie-lynn .section-photo .caption .caption-list .caption-item { display: inline-block; font-family: "museo-slab", serif; font-size: 0.6875em; margin-right: 5px; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 500ms ease-in-out; -moz-transition: opacity 500ms ease-in-out; -ms-transition: opacity 500ms ease-in-out; -o-transition: opacity 500ms ease-in-out; transition: opacity 500ms ease-in-out; -webkit-transition-delay: 400ms; -moz-transition-delay: 400ms; -ms-transition-delay: 400ms; -o-transition-delay: 400ms; transition-delay: 400ms; }
 .jamie-lynn .section-photo .caption .caption-list .caption-item span { font-weight: 700; }
 .jamie-lynn .section-photo .caption .caption-list .caption-item span.web-link { font-weight: 300; color: #000; display: none; }
+.jamie-lynn .section-photo .caption .caption-list .caption-item span.hide-vertical { font-weight: 300; display: none; }
 .jamie-lynn .section-photo .caption .caption-icon { width: 25px; position: absolute; top: 50%; right: 5px; margin-top: -10px; cursor: pointer; overflow: hidden; }
 .jamie-lynn .section-photo .caption .caption-icon img { width: 50px; height: 20px; max-width: 200%; }
 .jamie-lynn .section-photo .caption.active .caption-list { top: 0; }
@@ -889,6 +890,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-photo .photo-item.music-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg"); }
   .jamie-lynn .section-photo .photo-item.steady-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg"); }
   .jamie-lynn .section-photo .caption .caption-list { text-align: center; }
+  .jamie-lynn .section-photo .caption .caption-list .caption-item span.hide-vertical { display: inline; }
   .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg"); }
   .jamie-lynn .section-gallery .mobile-gallery { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg"); }
   .jamie-lynn .section-share .share-details { top: 70%; } }
@@ -997,6 +999,8 @@ html, body { height: 100%; }
   .jamie-lynn .section-photo .photo-item.steady-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg"); }
   .jamie-lynn .section-photo .photo-item.tradition-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg"); }
   .jamie-lynn .section-photo .caption .caption-icon { right: 10px; left: auto; }
+  .jamie-lynn .section-photo .caption .caption-list { text-align: center; }
+  .jamie-lynn .section-photo .caption .caption-list .caption-item span.hide-vertical { display: inline; }
   .jamie-lynn .section-photo .photo-item, .jamie-lynn .section-quote, .jamie-lynn .section-gallery, .jamie-lynn .section-products, .jamie-lynn .section-share { z-index: 2; position: relative; }
   .jamie-lynn .section-video .video-item.fixed-video { position: fixed; top: 0; left: 0; z-index: 1; }
   .jamie-lynn .section-video .video-item .video-image { display: none; }

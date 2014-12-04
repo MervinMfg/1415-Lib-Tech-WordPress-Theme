@@ -208,7 +208,7 @@ getCurrencyCode();
 				<ul class="caption-list">
 					<li class="caption-item"><span>Photo</span> Chris Brunkhart</li>
 					<li class="caption-item"><span>Taken</span> Circa 1995</li>
-					<li class="caption-item"><span>In</span> Utah</li>
+					<li class="caption-item"><span>In</span> <span class="hide-vertical">Washington / </span>Utah</li>
 				</ul>
 				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
 			</div>

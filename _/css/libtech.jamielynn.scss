@@ -156,6 +156,10 @@ body {
 							color: $black;
 							display: none;
 						}
+						&.hide-vertical {
+							font-weight: 300;
+							display: none;
+						}
 					}
 				}
 			}
@@ -408,76 +412,6 @@ body {
 				height: 100%;
 				margin: 0 auto;  
 			}
-			// .signature-name {
-			// 	stroke-dasharray: 2796.57666015625;
-			// 	stroke-dashoffset: 2796.57666015625;
-			// 	-webkit-animation: animateNameWebkit 2.5s;
-			// 	-moz-animation: animateNameMoz 2.5s;
-			// 	animation: animateName 2.5s;
-			// 	-webkit-animation-fill-mode: forwards;
-			// 	-moz-animation-fill-mode: forwards;
-			// 	animation-fill-mode: forwards;
-			// }
-			// @-webkit-keyframes animateNameWebkit {
-			// 	0% {
-			// 		stroke-dashoffset: 2796.57666015625;
-			// 	}
-			// 	100% {
-			// 		stroke-dashoffset: 0;
-			// 	}
-			// }
-			// @-moz-keyframes animateNameMoz {
-			// 	0% {
-			// 		stroke-dashoffset: 2796.57666015625;
-			// 	}
-			// 	100% {
-			// 		stroke-dashoffset: 0;
-			// 	}
-			// }
-			// @keyframes animateName {
-			// 	0% {
-			// 		stroke-dashoffset: 2796.57666015625;
-			// 	}
-			// 	100% {
-			// 		stroke-dashoffset: 0;
-			// 	}
-			// }
-			// .signature-dot {
-			// 	visibility: hidden;
-			// 	-webkit-animation: animateDotWebkit  0s;
-			// 	-moz-animation: animateDotMoz  0s;
-			// 	animation: animateDot 1s;
-			// 	-webkit-animation-delay: 2.5s; /* Chrome, Safari, Opera */
-			// 	-moz-animation-delay: 2.5s;
-			// 	animation-delay: 2.5s;
-			// 	-webkit-animation-fill-mode: forwards; /* Chrome, Safari, Opera */
-			// 	-moz-animation-fill-mode: forwards;
-			// 	animation-fill-mode: forwards;
-			// }
-			// @-webkit-keyframes animateDotWebkit {
-			// 	0% {
-			// 		visibility: hidden;
-			// 	}
-			// 	100% {
-			// 		visibility: visible;
-			// 	}
-			// }
-			// @-moz-keyframes animateDotMoz {
-			// 	0% {
-			// 		visibility: hidden;
-			// 	}
-			// 	100% {
-			// 		visibility: visible;
-			// 	}
-			// }
-			// @keyframes animateDot {
-			// 	0% {
-			// 		visibility: hidden;
-			// 	}
-			// 	100% {
-			// 		visibility: visible;
-			// 	}
-			// }
 			img {
 				position: absolute;
 				top: 50%;
@@ -525,7 +459,6 @@ body {
 	visibility: visible;
 }
 .ie-lt9 .jamie-lynn {
-
 	.section-quote {
 		.quote-item {
 			.quote-wrapper {
@@ -582,6 +515,10 @@ body {
 			.caption {
 				.caption-list {
 					text-align: center;
+
+					.caption-item span.hide-vertical {
+						display: inline;
+					}
 				}
 			}
 		}
@@ -1099,6 +1036,13 @@ body {
 				.caption-icon {
 					right: 10px;
 					left: auto;
+				}
+				.caption-list {
+					text-align: center;
+
+					.caption-item span.hide-vertical {
+						display: inline;
+					}
 				}
 			}
 		}
