@@ -183,6 +183,10 @@ LIBTECH.JamieLynn = {
 				.add(TweenMax.to($('#gallery'), 4, {top: '-100%', ease:Linear.easeNone, delay: 4}))
 				.add(TweenMax.to($('#products'), 4, {bottom: '0%', ease:Linear.easeNone, delay: -4}))
 				.add(TweenMax.to($('#share'), 1, {top: '0%', ease:Linear.easeNone, delay: 4}))
+
+				.add(TweenMax.from($('#share .share-details .share-links'), 1, {opacity: 0, y: '40px', ease:Linear.easeNone, delay: -1}))
+				.add(TweenMax.from($('#share .share-details .hashtag'), 1, {opacity: 0, y: '80px', ease:Linear.easeNone, delay: -1}))
+
 				.add(TweenMax.to($('#products'), 0.1, {display: 'none'}))
 				.add(TweenMax.to($('#tradition-photo'), 0.1, {display: 'block'}))
 				.add(TweenMax.to($('#share'), 1, {top: '-100%', ease:Linear.easeNone, delay: 2}))
@@ -276,11 +280,14 @@ LIBTECH.JamieLynn = {
 		}
 	},
 	galleryInit: function () {
-		var gallery = $(".section-gallery .gallery-wrapper").owlCarousel({
+		var gallery, arrowLeft, arrowRight;
+		arrowLeft = '<img src="http://' + window.location.host + '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/arrow-left.png" alt="Previous" />';
+		arrowRight = '<img src="http://' + window.location.host + '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/arrow-right.png" alt="Next" />';
+		gallery = $(".section-gallery .gallery-wrapper").owlCarousel({
 			items: 1,
 			dots: false,
 			nav: true,
-			navText: ['<img src="http://libtech.dev:8888/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/arrow-left.png" />','<img src="http://libtech.dev:8888/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/arrow-right.png" />'],
+			navText: [arrowLeft, arrowRight],
 			lazyLoad: true,
 			autoplay: false,
 			mouseDrag: false,
