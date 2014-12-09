@@ -39,6 +39,18 @@ LIBTECH.JamieLynn = {
 		});
 		// resize looped video
 		self.recalculateFills();
+		// preload images
+		if(self.utilities.responsiveCheck() == "medium" || self.utilities.responsiveCheck() == "large") {
+			// preload lazy load images in gallery
+			$( ".section-gallery .gallery-item .gallery-image img" ).each(function( index ) {
+				var galleryImage = new Image();
+				galleryImage.src = $(this).attr('data-src');
+			});
+		}
+		// hide preloader when site load complete
+		$(window).on('load', function () {
+			TweenMax.to($('.jamie-lynn .loading'), 1, {opacity: 0, display: 'none'});
+		});
 	},
 	scrollingInit: function () {
 		var self, $signatureName, $signatureDot, pageHeight, signatureTween, sectionsTween;
@@ -75,6 +87,8 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
+			$('#share .share-details .share-links').removeAttr('style');
+			$('#share .share-details .hashtag').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-1').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-2').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-3').removeAttr('style');

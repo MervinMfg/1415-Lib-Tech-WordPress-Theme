@@ -51,9 +51,17 @@ body {
 		position: fixed;
 		height: 100%;
 		width: 100%;
-		background: $white;
-	}
+		background: $black;
+		z-index: 100;
+		display: table;
 
+		.vertical-center {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			padding: 60px;
+		}
+	}
 	a {
 		text-decoration: none;
 	}
@@ -943,9 +951,6 @@ body {
 		&.scroll-animation {
 			height: 10000px;
 
-			.loading {
-				display: none;
-			}
 			.section-photo,
 			.section-video,
 			.section-gallery {

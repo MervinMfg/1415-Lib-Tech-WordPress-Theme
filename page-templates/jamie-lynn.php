@@ -70,6 +70,11 @@ getCurrencyCode();
 				<li><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
 			</ul>
 		</nav>
+		<div class="loading">
+			<div class="vertical-center">
+				<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/preloader.gif" alt="Loading..." />
+			</div>
+		</div>
 		<!-- 20 Year -->
 		<section id="legacy" class="section-photo">
 			<div class="photo-item then-photo">
@@ -480,7 +485,6 @@ getCurrencyCode();
 				</div>
 			</div>
 		</section>
-		<div class="loading"></div>
 	</div><!-- END .jamie-lynn -->
 	<div class="responsive-check">
 		<div class="breakpoint-small"></div>

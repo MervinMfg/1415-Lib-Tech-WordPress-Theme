@@ -831,7 +831,8 @@ Copyright (c) 2014 Daniel Eden
 html, body { height: 100%; }
 
 .jamie-lynn { height: 100%; }
-.jamie-lynn .loading { position: fixed; height: 100%; width: 100%; background: #FFF; }
+.jamie-lynn .loading { position: fixed; height: 100%; width: 100%; background: #000; z-index: 100; display: table; }
+.jamie-lynn .loading .vertical-center { display: table-cell; vertical-align: middle; text-align: center; padding: 60px; }
 .jamie-lynn a { text-decoration: none; }
 .jamie-lynn .navigation { display: none; }
 .jamie-lynn .section-photo { height: 100%; position: relative; }
@@ -996,7 +997,6 @@ html, body { height: 100%; }
   .jamie-lynn .section-share .signature-item .jamie-signature { width: 40%; height: 100%; margin: 0 auto; }
   .jamie-lynn .section-share .share-details { top: 65%; } }
 @media screen and (min-width: 1056px) { .jamie-lynn.scroll-animation { height: 10000px; }
-  .jamie-lynn.scroll-animation .loading { display: none; }
   .jamie-lynn.scroll-animation .section-photo, .jamie-lynn.scroll-animation .section-video, .jamie-lynn.scroll-animation .section-gallery { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; }
   .jamie-lynn.scroll-animation #legacy { display: block; }
   .jamie-lynn.scroll-animation #legacy-now { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
