@@ -860,7 +860,7 @@ html, body { height: 100%; }
 .jamie-lynn .section-photo .caption.active .caption-list { top: 0; }
 .jamie-lynn .section-photo .caption.active .caption-list .caption-item { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 .jamie-lynn .section-photo .caption.active .caption-icon img { margin-left: -25px; }
-.jamie-lynn .section-hide { display: none; }
+.jamie-lynn #legacy-now, .jamie-lynn #tradition-photo { display: none; }
 .jamie-lynn .section-quote { height: auto; background: #000; }
 .jamie-lynn .section-quote .quote-item { width: 100%; height: auto; padding: 30px; }
 .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote { background-image: url("../img/jamie-lynn/quote-marks.png"); background-repeat: no-repeat; background-size: 4em; padding-top: 50px; }
@@ -929,7 +929,6 @@ html, body { height: 100%; }
   .jamie-lynn .navigation li a:hover .title, .jamie-lynn .navigation li a:focus .title { padding-right: 20px; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
   .jamie-lynn .navigation li a:hover .circle, .jamie-lynn .navigation li a:focus .circle { background: #FFCC33; }
   .jamie-lynn .navigation li a.active .circle { background: #FFCC33; }
-  .jamie-lynn .section-photo.section-hide { display: block; }
   .jamie-lynn .section-photo .photo-item.then-photo { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg"); background-position: center; }
   .jamie-lynn .section-photo .photo-item.then-photo h4.mobile-message { display: none; }
   .jamie-lynn .section-photo .photo-item.then-photo h4.scroll-message { display: block; }
@@ -954,6 +953,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-photo .caption.active .caption-list { top: 0; }
   .jamie-lynn .section-photo .caption.active .caption-list .caption-item { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
   .jamie-lynn .section-photo .caption.active .caption-icon img { margin-left: -25px; }
+  .jamie-lynn #tradition-photo { display: block; }
   .jamie-lynn .section-quote { position: relative; height: 100%; }
   .jamie-lynn .section-quote .quote-item { height: 100%; display: table; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper { display: table-cell; vertical-align: middle; margin: 0 auto; }
@@ -1000,6 +1000,7 @@ html, body { height: 100%; }
   .jamie-lynn.scroll-animation .section-photo, .jamie-lynn.scroll-animation .section-video, .jamie-lynn.scroll-animation .section-gallery { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; }
   .jamie-lynn.scroll-animation #legacy { display: block; }
   .jamie-lynn.scroll-animation #legacy-now { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
+  .jamie-lynn.scroll-animation #tradition-photo { display: none; }
   .jamie-lynn.scroll-animation .section-quote, .jamie-lynn.scroll-animation .section-share { position: fixed; top: 100%; left: 0; width: 100%; height: 100%; }
   .jamie-lynn.scroll-animation .section-products { position: fixed; bottom: -200%; left: 0; width: 100%; }
   .jamie-lynn.scroll-animation #legacy { z-index: 1; }

@@ -205,7 +205,8 @@ body {
 			}
 		}
 	}
-	.section-hide {
+	#legacy-now,
+	#tradition-photo {
 		display: none;
 	}
 	.section-quote {
@@ -606,9 +607,6 @@ body {
 			}
 		}
 		.section-photo {
-			&.section-hide {
-				display: block;
-			}
 			.photo-item {
 				&.then-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg');
@@ -716,6 +714,9 @@ body {
 					}
 				}
 			}
+		}
+		#tradition-photo {
+			display: block;
 		}
 		.section-quote {
 			position: relative;
@@ -966,6 +967,9 @@ body {
 			}
 			#legacy-now {
 				@include vendorize(opacity, 0);
+			}
+			#tradition-photo {
+				display: none;
 			}
 			.section-quote,
 			.section-share {

@@ -94,7 +94,7 @@ getCurrencyCode();
 				<div class="caption-icon"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/caption-icon.png" alt="View Caption" /></div>
 			</div>
 		</section>
-		<section id="legacy-now" class="section-photo section-hide">
+		<section id="legacy-now" class="section-photo">
 			<div class="photo-item now-photo">
 				<div class="logo-wrapper">
 					<img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/jamie-20-logo.png" alt="Jamie Lynn 20 year anniversary logo" />
@@ -476,7 +476,7 @@ getCurrencyCode();
 				<p class="hashtag">#jamielynn20</p>
 			</div>
 		</section>
-		<section id="tradition-photo" class="section-photo section-hide">
+		<section id="tradition-photo" class="section-photo">
 			<div class="photo-item tradition-photo">
 				<div class="tradition-message">
 					<p class="part-1">Part Two.</p>
