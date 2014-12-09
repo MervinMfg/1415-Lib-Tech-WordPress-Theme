@@ -116,7 +116,6 @@ LIBTECH.JamieLynn = {
 					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
 				}
 				scrollDuration = scrollPercentage * 10;
-				TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}, onComplete: function () { window.location = url; }});
 			} else {
 				scrollY = $(url).offset().top;
 				if (currentScrollY < scrollY) {
@@ -125,8 +124,12 @@ LIBTECH.JamieLynn = {
 					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
 				}
 				scrollDuration = scrollPercentage * 5;
-				TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}, onComplete: function () { window.location = url; }});
 			}
+			// max scroll duration of 1.5 seconds
+			if (scrollDuration > 1.5) {
+				scrollDuration = 1.5;
+			}
+			TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}});
 		});
 		windowHeight = $(window).height();
 		// reset old navigation scenes
@@ -143,38 +146,38 @@ LIBTECH.JamieLynn = {
 			self.config.scrollController.removeScene(self.config.navScene10);
 			self.config.scrollController.removeScene(self.config.navScene11);
 		}
-		if(self.utilities.responsiveCheck() == "large") {
-			self.config.navScene1 = new ScrollScene({duration: windowHeight})
+		if(self.utilities.responsiveCheck() == "large" || self.utilities.responsiveCheck() == "medium") {
+			self.config.navScene1 = new ScrollScene({offset: -1, duration: windowHeight + 1})
 				.setClassToggle($(".navigation .legacy a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene2 = new ScrollScene({offset: windowHeight, duration: windowHeight})
+			self.config.navScene2 = new ScrollScene({offset: windowHeight - 1, duration: windowHeight + 1})
 				.setClassToggle($(".navigation .intro a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene3 = new ScrollScene({offset: windowHeight*2, duration: windowHeight})
+			self.config.navScene3 = new ScrollScene({offset: windowHeight*2 - 1, duration: windowHeight + 1})
 				.setClassToggle($(".navigation .film a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene4 = new ScrollScene({offset: windowHeight*3, duration: windowHeight*2})
+			self.config.navScene4 = new ScrollScene({offset: windowHeight*3 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .method a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene5 = new ScrollScene({offset: windowHeight*5, duration: windowHeight*2})
+			self.config.navScene5 = new ScrollScene({offset: windowHeight*5 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .style a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene6 = new ScrollScene({offset: windowHeight*7, duration: windowHeight*2})
+			self.config.navScene6 = new ScrollScene({offset: windowHeight*7 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .passion a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene7 = new ScrollScene({offset: windowHeight*9, duration: windowHeight*2})
+			self.config.navScene7 = new ScrollScene({offset: windowHeight*9 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .inspiration a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene8 = new ScrollScene({offset: windowHeight*11, duration: windowHeight*2})
+			self.config.navScene8 = new ScrollScene({offset: windowHeight*11 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .music a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene9 = new ScrollScene({offset: windowHeight*13, duration: windowHeight*2})
+			self.config.navScene9 = new ScrollScene({offset: windowHeight*13 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .steady a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene10 = new ScrollScene({offset: windowHeight*15, duration: windowHeight*2})
+			self.config.navScene10 = new ScrollScene({offset: windowHeight*15 - 1, duration: windowHeight*2 + 1})
 				.setClassToggle($(".navigation .creativity a"), "active")
 				.addTo(self.config.scrollController);
-			self.config.navScene11 = new ScrollScene({offset: windowHeight*17, duration: $('#products').height()})
+			self.config.navScene11 = new ScrollScene({offset: windowHeight*17 - 1, duration: $('#products').height() + 1})
 				.setClassToggle($(".navigation .products a"), "active")
 				.addTo(self.config.scrollController);
 		}

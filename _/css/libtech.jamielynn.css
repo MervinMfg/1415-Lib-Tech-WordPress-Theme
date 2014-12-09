@@ -924,7 +924,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-share .share-details { top: 70%; } }
 @media screen and (min-width: 768px) { .jamie-lynn .navigation { display: block; position: fixed; top: 50%; right: 20px; z-index: 20; margin-top: -150px; }
   .jamie-lynn .navigation li { padding-top: 10px; text-align: right; }
-  .jamie-lynn .navigation li a .title { display: inline-block; color: #FFCC33; font-family: "museo-slab", serif; text-transform: uppercase; font-size: 0.78em; padding-right: 10px; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: all 200ms ease-in-out; -moz-transition: all 200ms ease-in-out; -ms-transition: all 200ms ease-in-out; -o-transition: all 200ms ease-in-out; transition: all 200ms ease-in-out; }
+  .jamie-lynn .navigation li a .title { display: inline-block; color: #FFCC33; font-family: "museo-slab", serif; text-transform: uppercase; font-size: 0.78em; padding-right: 10px; font-weight: 700; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: all 200ms ease-in-out; -moz-transition: all 200ms ease-in-out; -ms-transition: all 200ms ease-in-out; -o-transition: all 200ms ease-in-out; transition: all 200ms ease-in-out; }
   .jamie-lynn .navigation li a .circle { display: inline-block; width: 10px; height: 10px; border: 2px solid #FFCC33; border-radius: 10px; }
   .jamie-lynn .navigation li a:hover .title, .jamie-lynn .navigation li a:focus .title { padding-right: 20px; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
   .jamie-lynn .navigation li a:hover .circle, .jamie-lynn .navigation li a:focus .circle { background: #FFCC33; }

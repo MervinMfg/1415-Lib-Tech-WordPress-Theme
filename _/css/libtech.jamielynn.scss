@@ -555,7 +555,6 @@ body {
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.jamie-lynn {
-
 		.navigation {
 			display: block;
 			position: fixed;
@@ -576,6 +575,7 @@ body {
 						text-transform: uppercase;
 						font-size: 0.78em;
 						padding-right: 10px;
+						font-weight: 700;
 
 						@include vendorize(opacity, 0);
 						@include transition(all, 200ms);
