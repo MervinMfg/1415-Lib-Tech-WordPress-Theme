@@ -57,17 +57,17 @@ getCurrencyCode();
 	<div class="jamie-lynn">
 		<nav class="navigation">
 			<ul>
-				<li><a href="#legacy"><span class="title">Legacy</span><span class="circle"></span></a></li>
-				<li><a href="#intro"><span class="title">Intro</span><span class="circle"></span></a></li>
-				<li><a href="#film"><span class="title">Film</span><span class="circle"></span></a></li>
-				<li><a href="#method"><span class="title">Method</span><span class="circle"></span></a></li>
-				<li><a href="#style"><span class="title">Style</span><span class="circle"></span></a></li>
-				<li><a href="#passion"><span class="title">Passion</span><span class="circle"></span></a></li>
-				<li><a href="#inspiration"><span class="title">Inspiration</span><span class="circle"></span></a></li>
-				<li><a href="#music"><span class="title">Music</span><span class="circle"></span></a></li>
-				<li><a href="#steady"><span class="title">Steady</span><span class="circle"></span></a></li>
-				<li><a href="#creativity"><span class="title">Creativity</span><span class="circle"></span></a></li>
-				<li><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
+				<li class="legacy"><a href="#legacy"><span class="title">Legacy</span><span class="circle"></span></a></li>
+				<li class="intro"><a href="#intro"><span class="title">Intro</span><span class="circle"></span></a></li>
+				<li class="film"><a href="#film"><span class="title">Film</span><span class="circle"></span></a></li>
+				<li class="method"><a href="#method"><span class="title">Method</span><span class="circle"></span></a></li>
+				<li class="style"><a href="#style"><span class="title">Style</span><span class="circle"></span></a></li>
+				<li class="passion"><a href="#passion"><span class="title">Passion</span><span class="circle"></span></a></li>
+				<li class="inspiration"><a href="#inspiration"><span class="title">Inspiration</span><span class="circle"></span></a></li>
+				<li class="music"><a href="#music"><span class="title">Music</span><span class="circle"></span></a></li>
+				<li class="steady"><a href="#steady"><span class="title">Steady</span><span class="circle"></span></a></li>
+				<li class="creativity"><a href="#creativity"><span class="title">Creativity</span><span class="circle"></span></a></li>
+				<li class="products"><a href="#products"><span class="title">Products</span><span class="circle"></span></a></li>
 			</ul>
 		</nav>
 		<div class="loading">

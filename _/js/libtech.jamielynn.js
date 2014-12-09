@@ -10,35 +10,43 @@ LIBTECH.JamieLynn = {
 		scrollController: null,
 		signatureScene: null,
 		sectionsScene: null,
+		navScene1: null,
+		navScene2: null,
+		navScene3: null,
+		navScene4: null,
+		navScene5: null,
+		navScene6: null,
+		navScene7: null,
+		navScene8: null,
+		navScene9: null,
+		navScene10: null,
+		navScene11: null,
 		responsiveSize: null
 	},
 	init: function () {
 		var self = this;
-		// nav selection
-		$('.navigation li a').on('click', function (e) {
-			e.preventDefault();
-			$('.navigation li a').removeClass('active');
-			$(this).addClass('active');
-			var url = $(this).attr('href');
-			self.utilities.pageScroll(url, 1);
-		});
 		self.config.scrollController = new ScrollMagic({ vertical: true });
+		self.loadingInit();
 		self.scrollingInit();
 		self.captionsInit();
-		// wait for vid player to load to start video
-		$('#video-player').load(function(){
-			self.videoInit();
-		});
 		self.galleryInit();
 		self.shareInit();
+		$(window).on('load', function () {
+			self.navigationInit();
+			self.videoInit();
+		});
 		// call scroll again on resize
 		$(window).on('resize', function () {
 			self.scrollingInit();
+			self.navigationInit();
 			// resize video
 			self.recalculateFills();
 		});
 		// resize looped video
 		self.recalculateFills();
+	},
+	loadingInit: function () {
+		var self = this;
 		// preload images
 		if(self.utilities.responsiveCheck() == "medium" || self.utilities.responsiveCheck() == "large") {
 			// preload lazy load images in gallery
@@ -49,8 +57,127 @@ LIBTECH.JamieLynn = {
 		}
 		// hide preloader when site load complete
 		$(window).on('load', function () {
+			$(this).scrollTop(0);
 			TweenMax.to($('.jamie-lynn .loading'), 1, {opacity: 0, display: 'none'});
 		});
+	},
+	navigationInit: function () {
+		var self = this;
+		$('.navigation li a').off('click.navigation');
+		// nav selection
+		$('.navigation li a').on('click.navigation', function (e) {
+			var url, currentScrollY, totalHeight, scrollY, scrollPercentage, scrollDuration, windowHeight;
+			e.preventDefault();
+			$('.navigation li a').removeClass('active');
+			$(this).addClass('active').blur();
+			url = $(this).attr('href');
+			currentScrollY = $(window).scrollTop();
+			totalHeight = $(document).height();
+			// check browsers size and scroll appropriately
+			if(self.utilities.responsiveCheck() == "large") {
+				switch (url) {
+					case '#legacy':
+						scrollY = 0;
+						break;
+					case '#intro':
+						scrollY = totalHeight * 0.075;
+						break;
+					case '#film':
+						scrollY = totalHeight * 0.105;
+						break;
+					case '#method':
+						scrollY = totalHeight * 0.175;
+						break;
+					case '#style':
+						scrollY = totalHeight * 0.270;
+						break;
+					case '#passion':
+						scrollY = totalHeight * 0.360;
+						break;
+					case '#inspiration':
+						scrollY = totalHeight * 0.455;
+						break;
+					case '#music':
+						scrollY = totalHeight * 0.547;
+						break;
+					case '#steady':
+						scrollY = totalHeight * 0.643;
+						break;
+					case '#creativity':
+						scrollY = totalHeight * 0.738;
+						break;
+					case '#products':
+						scrollY = totalHeight * 0.8240;
+						break;
+				}
+				if (currentScrollY < scrollY) {
+					scrollPercentage = (scrollY - currentScrollY) / totalHeight;
+				} else {
+					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
+				}
+				scrollDuration = scrollPercentage * 10;
+				TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}, onComplete: function () { window.location = url; }});
+			} else {
+				scrollY = $(url).offset().top;
+				if (currentScrollY < scrollY) {
+					scrollPercentage = (scrollY - currentScrollY) / totalHeight;
+				} else {
+					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
+				}
+				scrollDuration = scrollPercentage * 5;
+				TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}, onComplete: function () { window.location = url; }});
+			}
+		});
+		windowHeight = $(window).height();
+		// reset old navigation scenes
+		if (typeof self.config.navScene1 !== 'undefined') {
+			self.config.scrollController.removeScene(self.config.navScene1);
+			self.config.scrollController.removeScene(self.config.navScene2);
+			self.config.scrollController.removeScene(self.config.navScene3);
+			self.config.scrollController.removeScene(self.config.navScene4);
+			self.config.scrollController.removeScene(self.config.navScene5);
+			self.config.scrollController.removeScene(self.config.navScene6);
+			self.config.scrollController.removeScene(self.config.navScene7);
+			self.config.scrollController.removeScene(self.config.navScene8);
+			self.config.scrollController.removeScene(self.config.navScene9);
+			self.config.scrollController.removeScene(self.config.navScene10);
+			self.config.scrollController.removeScene(self.config.navScene11);
+		}
+		if(self.utilities.responsiveCheck() == "large") {
+			self.config.navScene1 = new ScrollScene({duration: windowHeight})
+				.setClassToggle($(".navigation .legacy a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene2 = new ScrollScene({offset: windowHeight, duration: windowHeight})
+				.setClassToggle($(".navigation .intro a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene3 = new ScrollScene({offset: windowHeight*2, duration: windowHeight})
+				.setClassToggle($(".navigation .film a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene4 = new ScrollScene({offset: windowHeight*3, duration: windowHeight*2})
+				.setClassToggle($(".navigation .method a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene5 = new ScrollScene({offset: windowHeight*5, duration: windowHeight*2})
+				.setClassToggle($(".navigation .style a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene6 = new ScrollScene({offset: windowHeight*7, duration: windowHeight*2})
+				.setClassToggle($(".navigation .passion a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene7 = new ScrollScene({offset: windowHeight*9, duration: windowHeight*2})
+				.setClassToggle($(".navigation .inspiration a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene8 = new ScrollScene({offset: windowHeight*11, duration: windowHeight*2})
+				.setClassToggle($(".navigation .music a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene9 = new ScrollScene({offset: windowHeight*13, duration: windowHeight*2})
+				.setClassToggle($(".navigation .steady a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene10 = new ScrollScene({offset: windowHeight*15, duration: windowHeight*2})
+				.setClassToggle($(".navigation .creativity a"), "active")
+				.addTo(self.config.scrollController);
+			self.config.navScene11 = new ScrollScene({offset: windowHeight*17, duration: $('#products').height()})
+				.setClassToggle($(".navigation .products a"), "active")
+				.addTo(self.config.scrollController);
+		}
 	},
 	scrollingInit: function () {
 		var self, $signatureName, $signatureDot, pageHeight, signatureTween, sectionsTween;
@@ -234,6 +361,8 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
+			$('#share .share-details .share-links').removeAttr('style');
+			$('#share .share-details .hashtag').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-1').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-2').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-3').removeAttr('style');

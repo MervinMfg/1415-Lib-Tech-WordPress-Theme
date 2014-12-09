@@ -878,7 +878,7 @@ html, body { height: 100%; }
 .jamie-lynn .section-video .video-item .play-image a img { position: absolute; width: 150px; height: 150px; top: 50%; left: 50%; margin: -75px 0 0 -75px; height: auto; }
 .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg"); background-position: center; width: 100%; height: 100%; background-size: cover; }
 .jamie-lynn .section-video .video-item .video-wrapper { display: none; }
-.jamie-lynn .section-video .video-item .film { display: none; position: absolute; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
+.jamie-lynn .section-video .video-item .film { display: none; position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
 .jamie-lynn .section-video .video-item .film .arrow-left { position: absolute; top: 20px; left: 20px; }
 .jamie-lynn .section-video .video-item .film .arrow-left img { margin-left: -33px; }
 .jamie-lynn .section-video .video-item .film .arrow-left:hover img, .jamie-lynn .section-video .video-item .film .arrow-left:focus img { margin-left: 0px; }
