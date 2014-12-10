@@ -449,7 +449,7 @@ getCurrencyCode();
 					</ul>
 				</nav>
 			</div>
-			<h4><a href="/snowboarding/jamie-lynn-collection/" class="view-all">View all products</a></h4>
+			<h4><a href="/snowboarding/jamie-lynn-collection/" class="view-all" target="_blank">View all products</a></h4>
 		</section>
 		<section id="share" class="section-share">
 			<div class="signature-item">
