@@ -68,6 +68,8 @@ LIBTECH.main = {
 			self.stormFactoryInit();
 		} else if ($body.hasClass('page-template-page-templatesdttd-php')) {
 			self.dttdInit();
+		} else if ($body.hasClass('page-template-page-templatesjamie-lynn-collection-php')) {
+			self.jamieLynnCollectionInit();
 		}
 		/* Chrome Webfont Fix Styles
 			- https://code.google.com/p/chromium/issues/detail?id=336476
@@ -623,6 +625,13 @@ LIBTECH.main = {
 		$('.dttd-video .video-player').fitVids();
 		// set up large featured images/videos
 		self.utilities.featuredSliderInit(false);
+	},
+	jamieLynnCollectionInit: function () {
+		var self = this;
+		// set up large featured images/videos
+		self.utilities.featuredSliderInit(false);
+		// init product overview code
+		new LIBTECH.ProductOverview();
 	},
 	utilities: {
 		cookie: {
