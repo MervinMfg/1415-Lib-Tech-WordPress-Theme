@@ -152,6 +152,49 @@ get_header();
                     wp_reset_query();
                     ?>
                 </ul>
+                <div class="clearfix"></div>
+                <h1>Skateboards</h1>
+                <div class="clearfix"></div>
+                <ul class="product-listing skateboards">
+
+                    <?php
+                    // GET SKATEBOARDS
+                    $imageSize = "square-large";
+                    $args = array(
+                        'post_type' => "libtech_skateboards",
+                        'posts_per_page' => -1,
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC',
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'libtech_skateboard_categories',
+                                'field' => 'slug',
+                                'terms' => array('jamie-lynn-collection'),
+                                'include_children' => false
+                            )
+                        )
+                    );
+                    $loop = new WP_Query( $args );
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                        $imageID = get_field('libtech_product_image');
+                        $productImage = wp_get_attachment_image_src($imageID, $imageSize);
+                        // grab default price of all other products
+                        $productPrice = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                    ?>
+
+                    <li class="product-item">
+                        <a href="<? echo the_permalink(); ?>">
+                            <img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo the_title(); ?> Image" class="product-img" />
+                            <h5><?php the_title(); ?></h5>
+                            <div class="price"><?php echo $productPrice; ?></div>
+                        </a>
+                    </li>
+
+                    <?php
+                    endwhile;
+                    wp_reset_query();
+                    ?>
+                </ul>
             </div>
             <div class="clearfix"></div>
         </section><!-- end product overview -->
