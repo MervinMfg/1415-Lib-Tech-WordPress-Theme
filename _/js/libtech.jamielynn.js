@@ -396,11 +396,15 @@ LIBTECH.JamieLynn = {
 		});
 		// listen for click to activate player
 		$('.section-video .play-image a').on('click', function (e) {
+			e.preventDefault();
 			showVideo();
 		});
 		function showVideo() {
-			TweenMax.to($('.section-video .film'), 0.5, {opacity: 1, display: 'block'});
-			loopVideo.pause();
+			TweenMax.to($('.film-container'), 0.5, {opacity: 1, display: 'block'});
+			// pause loop video if we're at large size
+			if (self.utilities.responsiveCheck() == "large") {
+				loopVideo.pause();
+			}
 			player.api('play');
 			// listen for esc key
 			$(document).on('keyup.video', function (e) {
@@ -409,18 +413,30 @@ LIBTECH.JamieLynn = {
 				}
 			});
 			// listen for click to close
-			$('.section-video .film .arrow-left').on('click.video', function (e) {
+			$('.film-container .arrow-left').on('click.video', function (e) {
+				e.preventDefault();
 				removeVideo();
 			});
 		}
 		function removeVideo() {
+			// make sure we're at the video position
+			if (self.utilities.responsiveCheck() == "large") {
+				var totalHeight = $(document).height();
+				var scrollY = totalHeight * 0.105;
+				$(window).scrollTop(scrollY);
+			} else {
+				$(window).scrollTop($('#film').position().top);
+			}
 			player.api('pause');
 			// kill event listeners
 			$(document).off('keyup.video');
-			$('.section-video .film .arrow-left').off('click.video');
+			$('.film-container .arrow-left').off('click.video');
 			// animate video away
-			TweenMax.to($('.section-video .film'), 0.5, {opacity: 0, display: 'none'});
-			loopVideo.play();
+			TweenMax.to($('.film-container'), 0.5, {opacity: 0, display: 'none'});
+			// play loop video if we're at large size
+			if (self.utilities.responsiveCheck() == "large") {
+				loopVideo.play();
+			}
 		}
 	},
 	galleryInit: function () {

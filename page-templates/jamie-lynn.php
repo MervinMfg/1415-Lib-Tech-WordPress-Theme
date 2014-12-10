@@ -138,12 +138,12 @@ getCurrencyCode();
 				<div class="play-image">
 					<a href="#video-player"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/play-button.png" alt="Play Film" /></a>
 				</div>
-				<div class="film">
-					<a href="#film" class="arrow-left"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/arrow-left.png" alt="Close Film" /></a>
-					<iframe id="video-player" src="//player.vimeo.com/video/112238604?api=1&player_id=video-player&title=0&byline=0&portrait=0&color=FFCC33" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-				</div>
 			</div>
 		</section>
+		<div class="film-container">
+			<a href="#film" class="arrow-left"><img src="<?php bloginfo('template_directory'); ?>/_/img/jamie-lynn/arrow-left.png" alt="Close Film" /></a>
+			<iframe id="video-player" src="//player.vimeo.com/video/112238604?api=1&player_id=video-player&title=0&byline=0&portrait=0&color=FFCC33" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		</div>
 		<!-- Method -->
 		<section id="method" class="section-quote">
 			<div class="quote-item">
