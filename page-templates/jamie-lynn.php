@@ -273,9 +273,9 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote>
 						<div class="quote-text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet rhoncus feugiat. Sed laoreet tortor nec velit luctus, sed vehicula nibh interdum. Fusce vitae ullamcorper ipsum.</p>
+							<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rat tail and live fast and loose.</p>
 						</div>
-						<p class="hand-written">- E-Stone</p>
+						<p class="hand-written">- Barrett Christy</p>
 					</blockquote>
 				</div>
 			</div>
@@ -297,9 +297,9 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote>
 						<div class="quote-text">
-							<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rat tail and live fast and loose.</p>
+							<p>Jamie's ability to express his creativity is as evident in his art as it is in his riding. When I think of Jamie, it's a colorful, powerful image of a positive spirit; his inspiration is inexhaustible.</p>
 						</div>
-						<p class="hand-written">- Barrett Christy</p>
+						<p class="hand-written">- Bryan Iguchi</p>
 					</blockquote>
 				</div>
 			</div>
@@ -316,7 +316,7 @@ getCurrencyCode();
 							<div class="text-vertical">
 								<h3 class="item-title">Blue Girl</h3>
 								<p class="item-year">2005</p>
-								<p class="item-content">A common subject in Jamie's work, shows appreciation for the beauty of the female figure.</p>
+								<p class="item-content">A common subject in Jamie's work, shows his appreciation for the beauty of the female figure.</p>
 							</div>
 						</div>
 					</div>
@@ -358,7 +358,7 @@ getCurrencyCode();
 							<div class="text-vertical">
 								<h3 class="item-title">Cat</h3>
 								<p class="item-year">2002</p>
-								<p class="item-content">Jamie likes to paint cats and women. Which ever will sit still, long enough for him to finish.</p>
+								<p class="item-content">Jamie likes to paint cats and women. Whichever will sit still, long enough for him to finish.</p>
 							</div>
 						</div>
 					</div>
@@ -400,7 +400,7 @@ getCurrencyCode();
 							<div class="text-vertical">
 								<h3 class="item-title">Guitar</h3>
 								<p class="item-year">1998</p>
-								<p class="item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+								<p class="item-content">Jamie is a lifestyle guitarist. He doesn't stop to play it, rather he incorporates it into everything he does, and that includes his artwork.</p>
 							</div>
 						</div>
 					</div>
