@@ -297,7 +297,8 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote>
 						<div class="quote-text">
-							<p>Jamie's ability to express his creativity is as evident in his art as it is in his riding. When I think of Jamie, it's a colorful, powerful image of a positive spirit; his inspiration is inexhaustible.</p>
+							<p>Jamie's ability to express his creativity is as evident in his art as it is in his riding.</p>
+							<p>When I think of Jamie, it's a colorful, powerful image of a positive spirit; his inspiration is inexhaustible.</p>
 						</div>
 						<p class="hand-written">- Bryan Iguchi</p>
 					</blockquote>
