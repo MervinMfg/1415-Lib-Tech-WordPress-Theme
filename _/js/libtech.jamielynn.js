@@ -214,6 +214,8 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-products').removeAttr('style');
 			$('.jamie-lynn .section-quote').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper').removeAttr('style');
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .quote-text'), 0, {y: '0px'});
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .hand-written'), 0, {y: '0px'});
 			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
@@ -361,6 +363,8 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-products').removeAttr('style');
 			$('.jamie-lynn .section-quote').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper').removeAttr('style');
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .quote-text'), 0, {y: '0px'});
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .hand-written'), 0, {y: '0px'});
 			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
