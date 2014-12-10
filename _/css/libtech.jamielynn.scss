@@ -832,6 +832,7 @@ body {
 						img {
 							display: inline-block;
 							max-height: 650px;
+							max-width: 80%;
 							width: auto;
 							margin: 0 auto;
 							@include vendorize(opacity, 0);
@@ -840,6 +841,7 @@ body {
 					}
 					.gallery-text {
 						width: 50%;
+						height: 100%;
 						display: table-cell;
 						position: relative;
 
