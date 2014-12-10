@@ -10,7 +10,7 @@ get_header();
         <div class="bg3-top"></div>
         <section class="product-overview bg3">
             <div class="section-content">
-                <h1><?php the_title(); ?> Snowboards</h1>
+                <h1>Snowboards</h1>
                 <div class="clearfix"></div>
                 <ul class="product-listing snowboards">
 
@@ -82,7 +82,7 @@ get_header();
                     ?>
                 </ul>
                 <div class="clearfix"></div>
-                <h1><?php the_title(); ?> Apparel</h1>
+                <h1>Apparel</h1>
                 <div class="clearfix"></div>
                 <ul class="product-listing apparel">
 
