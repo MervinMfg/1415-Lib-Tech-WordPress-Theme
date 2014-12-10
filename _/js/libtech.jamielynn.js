@@ -27,23 +27,22 @@ LIBTECH.JamieLynn = {
 		var self = this;
 		self.config.scrollController = new ScrollMagic({ vertical: true });
 		self.loadingInit();
-		self.scrollingInit();
-		self.captionsInit();
-		self.galleryInit();
-		self.shareInit();
-		$(window).on('load', function () {
-			self.navigationInit();
-			self.videoInit();
-		});
-		// call scroll again on resize
-		$(window).on('resize', function () {
+		$(window).on('load.jamielynn', function () {
 			self.scrollingInit();
 			self.navigationInit();
-			// resize video
+			self.captionsInit();
+			self.videoInit();
+			self.galleryInit();
+			self.shareInit();
+			$(this).off('load.jamielynn');
+		});
+		// call scroll again on resize
+		$(window).on('resize.jamielynn', function () {
+			self.scrollingInit();
+			self.navigationInit();
+			// resize loop video
 			self.recalculateFills();
 		});
-		// resize looped video
-		self.recalculateFills();
 	},
 	loadingInit: function () {
 		var self = this;
@@ -56,9 +55,11 @@ LIBTECH.JamieLynn = {
 			});
 		}
 		// hide preloader when site load complete
-		$(window).on('load', function () {
+		$(window).on('load.preloader', function () {
+			// make sure we're at the top, user may have been scrolling while loading
 			$(this).scrollTop(0);
-			TweenMax.to($('.jamie-lynn .loading'), 1, {opacity: 0, display: 'none'});
+			$(this).off('load.preloader');
+			TweenMax.to($('.jamie-lynn .loading'), 1, {opacity: 0, display: 'none', delay: 0.1});
 		});
 	},
 	navigationInit: function () {
@@ -115,7 +116,7 @@ LIBTECH.JamieLynn = {
 				} else {
 					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
 				}
-				scrollDuration = scrollPercentage * 10;
+				scrollDuration = scrollPercentage * 15;
 			} else {
 				scrollY = $(url).offset().top;
 				if (currentScrollY < scrollY) {
@@ -129,7 +130,13 @@ LIBTECH.JamieLynn = {
 			if (scrollDuration > 1.5) {
 				scrollDuration = 1.5;
 			}
-			TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0}});
+			// round values
+			scrollDuration = scrollDuration.toFixed(2);
+			scrollY = Math.round(scrollY);
+			// Scroll Browser
+			// need to set autoKill false because of an issue with Safari regarding changing the document height on the fly
+			// tiggers a scroll override event - http://greensock.com/forums/topic/7205-scrollto-bug-in-182-in-safari-602-mountain-lion/ 
+			TweenMax.to(window, scrollDuration, {scrollTo:{y: scrollY, x: 0, autoKill: false}});
 		});
 		windowHeight = $(window).height();
 		// reset old navigation scenes
@@ -202,7 +209,6 @@ LIBTECH.JamieLynn = {
 				self.config.scrollController.removeScene(self.config.sectionsScene);
 			}
 			// RESET DOM ELEMENTS
-			TweenMax.killAll();
 			$('path.signature-name').removeAttr('style');
 			$('path.signature-dot').removeAttr('style');
 			$('.jamie-lynn').removeClass('scroll-animation');
@@ -351,7 +357,6 @@ LIBTECH.JamieLynn = {
 				self.config.scrollController.removeScene(self.config.sectionsScene);
 			}
 			// RESET DOM ELEMENTS
-			TweenMax.killAll();
 			$('path.signature-name').removeAttr('style');
 			$('path.signature-dot').removeAttr('style');
 			$('.jamie-lynn').removeClass('scroll-animation');
@@ -394,6 +399,8 @@ LIBTECH.JamieLynn = {
 		self = this;
 		loopVideo = $('#video-loop')[0];
 		player = $f($('#video-player')[0]);
+		// resize loop video
+		self.recalculateFills();
 		// wait until player is ready
 		player.addEvent('ready', function() {
 			player.addEvent('finish', removeVideo);
@@ -516,7 +523,7 @@ LIBTECH.JamieLynn = {
 			imgHeight = boxHeight;
 			imgWidth = imgHeight / ratio;
 		}
-		// Return new size for video
+		// Return new size
 		return {
 			width: imgWidth + 16,
 			height: imgHeight + 9
