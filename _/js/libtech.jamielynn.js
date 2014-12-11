@@ -482,7 +482,7 @@ LIBTECH.JamieLynn = {
 	},
 	shareInit: function () {
 		var shareUrl, twitterMessage;
-		shareUrl = 'http://' + window.location.hostname + window.location.pathname;
+		shareUrl = 'http://lib-tech.com/jamielynn20';
 		twitterMessage = "A tribute to Jamie Lynn's professional snowboarding career with @LibTechnologies Snowboards - ";
 		// facebook share
 		$('.section-share .share-links .facebook a').on('click', function (e) {
