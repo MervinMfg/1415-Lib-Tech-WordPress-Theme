@@ -80,7 +80,6 @@ body {
 			height: 100%;
 			background-repeat: no-repeat;
 			background-position: center;
-			//background-attachment: fixed;
 			@include vendorize(background-size, cover);
 
 			&.then-photo {
@@ -122,6 +121,7 @@ body {
 				}
 			}
 			&.method-photo {
+				background-position: left bottom;
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg');
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale')";
@@ -137,6 +137,7 @@ body {
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.inspiration-photo {
+				background-position: left top;
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg');
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale')";
@@ -147,6 +148,7 @@ body {
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.steady-photo {
+				background-position: left top;
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg');
 				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale');
 				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale')";
@@ -706,6 +708,7 @@ body {
 					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.tradition-photo {
+					background-position: top center;
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg');
 					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale');
 					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale')";
