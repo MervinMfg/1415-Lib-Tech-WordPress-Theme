@@ -673,6 +673,56 @@ body {
 							font-style: italic;
 							font-size: 1.125em;
 						}
+						.email-signup {
+							width: 100%;
+							text-align: center;
+							padding-top: 30px;
+
+							.input-text {
+								width: 220px;
+								height: 32px;
+								border: none;
+								margin: 0;
+								padding: 2px 5px;
+								text-align: right;
+								font-family: $museoSlab;
+								font-size: 1em;
+								display: inline;
+								-webkit-font-smoothing: antialiased;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								appearance: none;
+
+								&:focus {
+									outline: none;
+								}
+							}
+							.submit {
+								display: inline;
+								color: $white;
+								background: $black;
+								border: none;
+								margin: 0;
+								padding: 0;
+								font-family: $museoSlab;
+								text-transform: uppercase;
+								cursor: pointer;
+								-webkit-font-smoothing: antialiased;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								appearance: none;
+								font-size: 1em;
+								font-weight: 700;
+								padding: 2px 10px;
+								height: 32px;
+
+								&:hover,
+								&:focus {
+									background: $yellow;
+									color: $black;
+								}
+							}
+						}
 					}
 				}
 				.logo-wrapper {

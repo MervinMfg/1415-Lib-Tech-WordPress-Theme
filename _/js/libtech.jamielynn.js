@@ -228,9 +228,14 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
 			$('#share .share-details .share-links').removeAttr('style');
 			$('#share .share-details .hashtag').removeAttr('style');
+			TweenMax.to($('#tradition-photo .tradition-message .part-1'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .part-2'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .part-3'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .email-signup'), 0, {y: '0px'});
 			$('#tradition-photo .tradition-message .part-1').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-2').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-3').removeAttr('style');
+			$('#tradition-photo .tradition-message .email-signup').removeAttr('style');
 			// check if SVG is available, run signature stuff if it is
 			if ($('html').hasClass('no-smil') !== true) {
 				// JAMIE SIGNATURE SCROLL ANIMATION
@@ -344,7 +349,8 @@ LIBTECH.JamieLynn = {
 				.add(TweenMax.to($('#share'), 1, {top: '-100%', delay: 3}))
 				.add(TweenMax.from($('#tradition-photo .tradition-message .part-1'), 1, {y: '40px', opacity: 0, delay: -0.5}))
 				.add(TweenMax.from($('#tradition-photo .tradition-message .part-2'), 1, {y: '80px', opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#tradition-photo .tradition-message .part-3'), 1, {y: '80px', opacity: 0, delay: -0.5}));
+				.add(TweenMax.from($('#tradition-photo .tradition-message .part-3'), 1, {y: '80px', opacity: 0, delay: -0.5}))
+				.add(TweenMax.from($('#tradition-photo .tradition-message .email-signup'), 1, {y: '80px', opacity: 0, delay: -0.5}));
 			// build scene
 			self.config.sectionsScene = new ScrollScene({triggerElement: ".jamie-lynn", offset: $(window).height()/2, duration: $('.scroll-animation').height() - $(window).height()})
 				.setTween(sectionsTween)
@@ -377,9 +383,14 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
 			$('#share .share-details .share-links').removeAttr('style');
 			$('#share .share-details .hashtag').removeAttr('style');
+			TweenMax.to($('#tradition-photo .tradition-message .part-1'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .part-2'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .part-3'), 0, {y: '0px'});
+			TweenMax.to($('#tradition-photo .tradition-message .email-signup'), 0, {y: '0px'});
 			$('#tradition-photo .tradition-message .part-1').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-2').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-3').removeAttr('style');
+			$('#tradition-photo .tradition-message .email-signup').removeAttr('style');
 		}
 	},
 	captionsInit: function () {

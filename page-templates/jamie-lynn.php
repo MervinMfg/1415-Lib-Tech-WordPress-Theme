@@ -483,6 +483,14 @@ getCurrencyCode();
 					<p class="part-1">Part Two.</p>
 					<p class="part-2">the<span>Tradition</span></p>
 					<p class="part-3">coming soon...</p>
+					<div class="email-signup">
+						<form target="_blank" class="validate clearfix" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" method="post" action="http://mervin.us1.list-manage1.com/subscribe/post?u=86253f560bfb6feb1f80233bb&amp;id=c0ed21a3a8">
+							<fieldset>
+								<input type="hidden" value="2" name="group[22][2]">
+								<input type="text" name="EMAIL" placeholder="Enter email for updates " class="input-text"><input type="submit" class="submit" id="mc-embedded-subscribe" name="subscribe" value="Enter">
+							</fieldset>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>
