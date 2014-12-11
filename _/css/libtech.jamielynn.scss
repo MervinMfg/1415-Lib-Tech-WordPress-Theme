@@ -43,6 +43,7 @@ $breakpoint-xxlarge: 1400px;
 html,
 body {
 	height: 100%;
+	background-color: $white;
 }
 .jamie-lynn {
 	height: 100%;
@@ -71,17 +72,22 @@ body {
 	.section-photo {
 		height: 100%;
 		position: relative;
+		background-color: $black;
 
 		.photo-item {
 			position: relative;
 			width: 100%;
 			height: 100%;
-			background-size: cover;
+			background-repeat: no-repeat;
 			background-position: center;
+			background-attachment: fixed;
+			@include vendorize(background-size, cover);
 
 			&.then-photo {
-				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg');
 				background-position: 0% 0%;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg', sizingMethod='scale')";
 
 				h4 {
 					position: absolute;
@@ -117,21 +123,33 @@ body {
 			}
 			&.method-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.style-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.passion-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.inspiration-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.music-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			&.steady-photo {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 		}
 		.caption {
@@ -320,11 +338,15 @@ body {
 				}
 			}
 			.video-image {
-				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg');
-				background-position: center;
 				width: 100%;
 				height: 100%;
-				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+				@include vendorize(background-size, cover);
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg', sizingMethod='scale')";
 			}
 			.video-wrapper {
 				display: none;
@@ -366,16 +388,19 @@ body {
 			position: relative;
 			width: 100%;
 			height: 100%;
-			background-size: cover;
+			background-repeat: no-repeat;
 			background-position: center;
+			background-attachment: fixed;
+			@include vendorize(background-size, cover);
 			background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg');
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg', sizingMethod='scale')";
 		}
 		.gallery-wrapper {
 			display: none;
 		}
 	}
 	.section-products {
-		
 		.product-mobile {
 			display: block;
 		}
@@ -473,6 +498,10 @@ body {
 	visibility: visible;
 }
 .ie-lt9 .jamie-lynn {
+	.section-photo {
+		height: 100%;
+		position: relative;
+	}
 	.section-quote {
 		.quote-item {
 			.quote-wrapper {
@@ -494,8 +523,10 @@ body {
 		.section-photo {
 			.photo-item {
 				&.then-photo {
-					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg');
 					background-position: center;
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				.logo-wrapper {
 					padding-top: 0;
@@ -509,21 +540,33 @@ body {
 				}
 				&.method-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.style-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.passion-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.inspiration-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.steady-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 			}
 			.caption {
@@ -540,12 +583,16 @@ body {
 			.video-item {
 				.video-image {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg', sizingMethod='scale')";
 				}
 			}
 		}
 		.section-gallery {
 			.mobile-gallery {
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg', sizingMethod='scale')";
 			}
 		}
 		.section-share .share-details {
@@ -609,8 +656,10 @@ body {
 		.section-photo {
 			.photo-item {
 				&.then-photo {
-					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg');
 					background-position: center;
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg', sizingMethod='scale')";
 
 					h4 {
 						&.mobile-message {
@@ -623,27 +672,43 @@ body {
 				}
 				&.now-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.method-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.style-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.passion-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.inspiration-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.steady-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 				&.tradition-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale')";
 
 					.tradition-message {
 						font-family: $museoSlab;
@@ -823,6 +888,8 @@ body {
 			.video-item {
 				.video-image {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg', sizingMethod='scale')";
 				}
 			}
 		}
@@ -841,9 +908,13 @@ body {
 				display: block;
 				height: 100%;
 				position: relative;
-				background-size: cover;
+				background-repeat: no-repeat;
 				background-position: center;
-				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+				background-attachment: fixed;
+				@include vendorize(background-size, cover);
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg', sizingMethod='scale')";
 
 				.owl-stage-outer,
 				.owl-stage,
@@ -928,8 +999,7 @@ body {
 				@include vendorize(opacity, 1);
 			}
 		}
-		.section-products {
-		
+		.section-products {	
 			.product-desktop {
 				display: block;
 				padding-bottom: 50px;
@@ -996,6 +1066,75 @@ body {
 			}
 			.share-details {
 				top: 65%;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) and (orientation: landscape) {
+	.jamie-lynn {
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.method-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.style-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.passion-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.inspiration-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-inspiration-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-inspiration-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.music-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.tradition-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.section-gallery {
+			.gallery-wrapper {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale')";
 			}
 		}
 	}
@@ -1073,30 +1212,48 @@ body {
 				}
 				&.then-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.now-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.method-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.style-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.passion-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.inspiration-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.music-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.steady-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 				&.tradition-photo {
 					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale')";
 				}
 			}
 			.caption {
@@ -1137,7 +1294,6 @@ body {
 					width: 100%;
 					height: 100%;
 					display: block;
-					//z-index: 2;
 					overflow: hidden;
 
 					.effect-overlay {
@@ -1150,6 +1306,13 @@ body {
 						height: 100%;
 					}
 				}
+			}
+		}
+		.section-gallery {
+			.gallery-wrapper {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale')";
 			}
 		}
 		.section-products {
@@ -1181,6 +1344,8 @@ body {
 			.video-image {
 				display: block;
 				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale')";
 				background-position: 50% 50%;
 				width: 100%;
 				height: 100%;
