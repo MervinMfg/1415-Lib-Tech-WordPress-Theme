@@ -174,7 +174,7 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote>
 						<div class="quote-text">
-							<p>Jamie style can be compared to true confidence. Confidence is silent. He lets the art of his actions speak for him.</p>
+							<p>Jamie's style can be compared to true confidence. Confidence is silent. He lets the art of his actions speak for him.</p>
 							<p>No words required.</p>
 						</div>
 						<p class="hand-written">- Trevor Graves</p>
