@@ -781,6 +781,9 @@ body {
 			background: $white;
 			position: relative;
 
+			* {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
 			.mobile-gallery {
 				display: none;
 			}
@@ -797,19 +800,10 @@ body {
 				.owl-item {
 					height: 100%;
 				}
-
-				.owl-item {
-					visibility: hidden;
-
-					&.animated,
-					&.active {
-						visibility: visible;
-					}
-				}
 				.owl-nav {
 					position: absolute;
 					top: 55%;
-					left: 50%;
+					left: 60%;
 					padding-left: 20px;
 					z-index: 1;
 				}
@@ -818,32 +812,36 @@ body {
 					height: 100%;
 					position: relative;
 					z-index: 10;
-					display: table;
 
 					.gallery-image {
-						width: 50%;
-						display: table-cell;
-						vertical-align: middle;
+						width: 60%;
+						height: 100%;
 						text-align: center;
 						padding: 20px 0 20px 20px;
 						z-index: 10;
 						position: relative;
+						float: left;
 						
 						img {
-							display: inline-block;
-							max-height: 650px;
-							max-width: 80%;
+							position: relative;
+							top: 50%;
+							@include vendorize(transform, translateY(-50%));
+							padding: 40px;
 							width: auto;
+							height: auto;
+							max-width: 100%;
 							margin: 0 auto;
-							@include vendorize(opacity, 0);
-							@include transition(opacity, 300ms);
+							@include vendorize(opacity, 1);
 						}
 					}
 					.gallery-text {
-						width: 50%;
+						width: 40%;
 						height: 100%;
-						display: table-cell;
+						float: left;
 						position: relative;
+						@include vendorize(opacity, 0);
+						@include transition(opacity, 500ms);
+						@include vendorize(transition-delay, 600ms);
 
 						.text-wrapper {
 							width: 100%;
@@ -875,6 +873,77 @@ body {
 						}
 					}
 				}
+				/*
+				.gallery-item {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					z-index: 10;
+					display: table;
+
+					.gallery-image {
+						width: 60%;
+						display: table-cell;
+						vertical-align: middle;
+						text-align: center;
+						padding: 20px 0 20px 20px;
+						z-index: 10;
+						position: relative;
+						
+						img {
+							display: inline-block;
+							padding: 40px;
+							width: auto;
+							height: auto;
+							max-width: 100%;
+							margin: 0 auto;
+							@include vendorize(opacity, 1);
+						}
+					}
+					.gallery-text {
+						width: 40%;
+						height: 100%;
+						display: table-cell;
+						position: relative;
+						@include vendorize(opacity, 0);
+						@include transition(opacity, 500ms);
+						-webkit-transition-delay: 600ms;
+						transition-delay: 600ms;
+
+						.text-wrapper {
+							width: 100%;
+							height: 55%;
+							position: relative;
+
+							.text-vertical {
+								width: 75%;
+								position: absolute;
+								bottom: 0;
+								left: 20px;
+								max-width: 500px;
+							}
+							.item-title {
+								font-family: $museoSlab;
+								font-size: 2em;
+								padding-bottom: 15px;
+							}
+							.item-year {
+								font-style: italic;
+								padding-bottom: 10px;
+							}
+							.item-year,
+							.item-content {
+								font-family: $museoSlab;
+								font-size: 1.125em;
+								line-height: 1.75;
+							}
+						}
+					}
+				}
+				*/
+			}
+			.owl-item.active .gallery-item .gallery-text {
+				@include vendorize(opacity, 1);
 			}
 		}
 		.section-products {
@@ -1200,5 +1269,38 @@ body {
 				}
 			}
 		}
+	}
+}
+/* Gallery Fixes for height issues */
+.ie-lt9 .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+	max-height: 70%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	position: static;
+}
+@media screen and (min-height: 400px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 360px;
+	}
+}
+@media screen and (min-height: 600px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 560px;
+	}
+}
+@media screen and (min-height: 800px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 760px;
+	}
+}
+@media screen and (min-height: 1000px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 960px;
+	}
+}
+@media screen and (min-height: 1200px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 1160px;
 	}
 }

@@ -150,7 +150,7 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote class="quote-small">
 						<div class="quote-text">
-							<p>More than the gloveless fingers, spins off the toes, silhouettes of florescent sirens and dirt rock dna, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perfect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
+							<p>More than the gloveless fingers, spins off the toes, silhouettes of florescent sirens and dirt rock DNA, Jamie Lynn's method is his legacy. While every person who has taken flight on a snowboard has aspired to throw the perfect method air, Jamie simply grabs between the bindings as if his board were a tool, instinctively extends his trailing leg with purpose and completes this economy of motion with his left arm providing a subtle counterpoint. To the rest of us it is perfect, but to Jamie it is just a method.</p>
 						</div>
 						<p class="hand-written">- Pat Bridges</p>
 					</blockquote>
@@ -273,7 +273,7 @@ getCurrencyCode();
 				<div class="quote-wrapper">
 					<blockquote>
 						<div class="quote-text">
-							<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rat tail and live fast and loose.</p>
+							<p>He weaves his creativity through all that he does, inspiring men, women, and children to take life by the rattail and live fast and loose.</p>
 						</div>
 						<p class="hand-written">- Barrett Christy</p>
 					</blockquote>
@@ -330,7 +330,7 @@ getCurrencyCode();
 						<div class="text-wrapper">
 							<div class="text-vertical">
 								<h3 class="item-title">Painting</h3>
-								<p class="item-year">1996</p>
+								<p class="item-year">Photo: Trevor Graves, 1996</p>
 								<p class="item-content">A young Jamie Lynn. Bold lines and attention to detail. Defining style for decades.</p>
 							</div>
 						</div>

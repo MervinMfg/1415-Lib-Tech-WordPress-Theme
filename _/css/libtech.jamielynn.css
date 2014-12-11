@@ -967,21 +967,88 @@ html, body { height: 100%; }
   .jamie-lynn #intro blockquote { padding-left: 0; }
   .jamie-lynn .section-video .video-item .video-image { background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg"); }
   .jamie-lynn .section-gallery { height: 100%; background: #FFF; position: relative; }
+  .jamie-lynn .section-gallery * { -webkit-transform: translate3d(0, 0, 0); }
   .jamie-lynn .section-gallery .mobile-gallery { display: none; }
-  .jamie-lynn .section-gallery .gallery-wrapper { display: block; height: 100%; position: relative; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg"); }
+  .jamie-lynn .section-gallery .gallery-wrapper { display: block; height: 100%; position: relative; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg"); 				/*
+				.gallery-item {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					z-index: 10;
+					display: table;
+
+					.gallery-image {
+						width: 60%;
+						display: table-cell;
+						vertical-align: middle;
+						text-align: center;
+						padding: 20px 0 20px 20px;
+						z-index: 10;
+						position: relative;
+						
+						img {
+							display: inline-block;
+							padding: 40px;
+							width: auto;
+							height: auto;
+							max-width: 100%;
+							margin: 0 auto;
+							@include vendorize(opacity, 1);
+						}
+					}
+					.gallery-text {
+						width: 40%;
+						height: 100%;
+						display: table-cell;
+						position: relative;
+						@include vendorize(opacity, 0);
+						@include transition(opacity, 500ms);
+						-webkit-transition-delay: 600ms;
+						transition-delay: 600ms;
+
+						.text-wrapper {
+							width: 100%;
+							height: 55%;
+							position: relative;
+
+							.text-vertical {
+								width: 75%;
+								position: absolute;
+								bottom: 0;
+								left: 20px;
+								max-width: 500px;
+							}
+							.item-title {
+								font-family: $museoSlab;
+								font-size: 2em;
+								padding-bottom: 15px;
+							}
+							.item-year {
+								font-style: italic;
+								padding-bottom: 10px;
+							}
+							.item-year,
+							.item-content {
+								font-family: $museoSlab;
+								font-size: 1.125em;
+								line-height: 1.75;
+							}
+						}
+					}
+				}
+				*/ }
   .jamie-lynn .section-gallery .gallery-wrapper .owl-stage-outer, .jamie-lynn .section-gallery .gallery-wrapper .owl-stage, .jamie-lynn .section-gallery .gallery-wrapper .owl-item { height: 100%; }
-  .jamie-lynn .section-gallery .gallery-wrapper .owl-item { visibility: hidden; }
-  .jamie-lynn .section-gallery .gallery-wrapper .owl-item.animated, .jamie-lynn .section-gallery .gallery-wrapper .owl-item.active { visibility: visible; }
-  .jamie-lynn .section-gallery .gallery-wrapper .owl-nav { position: absolute; top: 55%; left: 50%; padding-left: 20px; z-index: 1; }
-  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item { width: 100%; height: 100%; position: relative; z-index: 10; display: table; }
-  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image { width: 50%; display: table-cell; vertical-align: middle; text-align: center; padding: 20px 0 20px 20px; z-index: 10; position: relative; }
-  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { display: inline-block; max-height: 650px; max-width: 80%; width: auto; margin: 0 auto; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; }
-  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text { width: 50%; height: 100%; display: table-cell; position: relative; }
+  .jamie-lynn .section-gallery .gallery-wrapper .owl-nav { position: absolute; top: 55%; left: 60%; padding-left: 20px; z-index: 1; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item { width: 100%; height: 100%; position: relative; z-index: 10; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image { width: 60%; height: 100%; text-align: center; padding: 20px 0 20px 20px; z-index: 10; position: relative; float: left; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { position: relative; top: 50%; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); padding: 40px; width: auto; height: auto; max-width: 100%; margin: 0 auto; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
+  .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text { width: 40%; height: 100%; float: left; position: relative; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 500ms ease-in-out; -moz-transition: opacity 500ms ease-in-out; -ms-transition: opacity 500ms ease-in-out; -o-transition: opacity 500ms ease-in-out; transition: opacity 500ms ease-in-out; -webkit-transition-delay: 600ms; -moz-transition-delay: 600ms; -ms-transition-delay: 600ms; -o-transition-delay: 600ms; transition-delay: 600ms; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper { width: 100%; height: 55%; position: relative; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .text-vertical { width: 75%; position: absolute; bottom: 0; left: 20px; max-width: 500px; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-title { font-family: "museo-slab", serif; font-size: 2em; padding-bottom: 15px; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-year { font-style: italic; padding-bottom: 10px; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-year, .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-text .text-wrapper .item-content { font-family: "museo-slab", serif; font-size: 1.125em; line-height: 1.75; }
+  .jamie-lynn .section-gallery .owl-item.active .gallery-item .gallery-text { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
   .jamie-lynn .section-products .product-desktop { display: block; padding-bottom: 50px; position: relative; }
   .jamie-lynn .section-products .product-desktop nav { display: block; width: 90%; position: absolute; bottom: 10px; left: 5%; }
   .jamie-lynn .section-products .product-desktop nav ul { width: 33%; float: left; vertical-align: top; }
@@ -1050,3 +1117,11 @@ html, body { height: 100%; }
   .jamie-lynn .section-quote .quote-item .quote-wrapper blockquote.quote-small p.hand-written { font-size: 4em; }
   .jamie-lynn .section-products .product-desktop nav { bottom: 10px; }
   .jamie-lynn .section-products .product-desktop nav ul li { padding-bottom: 8px; } }
+/* Gallery Fixes for height issues */
+.ie-lt9 .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 70%; max-width: 100%; width: auto; height: auto; position: static; }
+
+@media screen and (min-height: 400px) { .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 360px; } }
+@media screen and (min-height: 600px) { .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 560px; } }
+@media screen and (min-height: 800px) { .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 760px; } }
+@media screen and (min-height: 1000px) { .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 960px; } }
+@media screen and (min-height: 1200px) { .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img { max-height: 1160px; } }

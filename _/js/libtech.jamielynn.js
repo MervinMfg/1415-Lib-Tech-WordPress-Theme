@@ -75,7 +75,7 @@ LIBTECH.JamieLynn = {
 			currentScrollY = $(window).scrollTop();
 			totalHeight = $(document).height();
 			// check browsers size and scroll appropriately
-			if(self.utilities.responsiveCheck() == "large") {
+			if(self.utilities.responsiveCheck() == "large" && $('html').hasClass('ie-lt9') !== true) {
 				switch (url) {
 					case '#legacy':
 						scrollY = 0;
@@ -199,7 +199,8 @@ LIBTECH.JamieLynn = {
 			$el.css("stroke-dashoffset", lineLength);
 		}
 		// if we're large or bigger, do the scroll
-		if ( self.utilities.responsiveCheck() == "large" ) {
+		// if not ie8 or less, don't scroll
+		if ( self.utilities.responsiveCheck() == "large" && $('html').hasClass('ie-lt9') !== true ) {
 			self.config.responsiveSize = "large";
 			// if scene already exists, remove it
 			if (typeof self.config.signatureScene !== 'undefined') {
@@ -230,22 +231,23 @@ LIBTECH.JamieLynn = {
 			$('#tradition-photo .tradition-message .part-1').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-2').removeAttr('style');
 			$('#tradition-photo .tradition-message .part-3').removeAttr('style');
-			// if not ie8 or less, run fixed scroll code
-			if ($('html').hasClass('ie-lt9') !== true) {}
-			// JAMIE SIGNATURE SCROLL ANIMATION
-			$signatureName = $("path.signature-name");
-			$signatureDot = $("path.signature-dot");
-			// prepare SVG
-			pathPrepare($signatureName);
-			pathPrepare($signatureDot);
-			// build tween
-			signatureTween = new TimelineMax()
-				.add(TweenMax.to($signatureName, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-				.add(TweenMax.to($signatureDot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}));
-			// build scene
-			self.config.signatureScene = new ScrollScene({triggerElement: "#share", offset: $(window).height()/4, duration: $(window).height()/4, tweenChanges: true})
-				.setTween(signatureTween)
-				.addTo(self.config.scrollController);
+			// check if SVG is available, run signature stuff if it is
+			if ($('html').hasClass('no-smil') !== true) {
+				// JAMIE SIGNATURE SCROLL ANIMATION
+				$signatureName = $("path.signature-name");
+				$signatureDot = $("path.signature-dot");
+				// prepare SVG
+				pathPrepare($signatureName);
+				pathPrepare($signatureDot);
+				// build tween
+				signatureTween = new TimelineMax()
+					.add(TweenMax.to($signatureName, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
+					.add(TweenMax.to($signatureDot, 0.1, {strokeDashoffset: 0, ease:Linear.easeNone}));
+				// build scene
+				self.config.signatureScene = new ScrollScene({triggerElement: "#share", offset: $(window).height()/4, duration: $(window).height()/4, tweenChanges: true})
+					.setTween(signatureTween)
+					.addTo(self.config.scrollController);
+			}
 			// JAMIE SCROLLING SECTIONS
 			$('.jamie-lynn').addClass('scroll-animation');
 			// add browser height for 21 sections
@@ -413,7 +415,7 @@ LIBTECH.JamieLynn = {
 		function showVideo() {
 			TweenMax.to($('.film-container'), 0.5, {opacity: 1, display: 'block'});
 			// pause loop video if we're at large size
-			if (self.utilities.responsiveCheck() == "large") {
+			if (self.utilities.responsiveCheck() == "large" && $('html').hasClass('ie-lt9') !== true) {
 				loopVideo.pause();
 			}
 			player.api('play');
@@ -431,7 +433,7 @@ LIBTECH.JamieLynn = {
 		}
 		function removeVideo() {
 			// make sure we're at the video position
-			if (self.utilities.responsiveCheck() == "large") {
+			if (self.utilities.responsiveCheck() == "large" && $('html').hasClass('ie-lt9') !== true) {
 				var totalHeight = $(document).height();
 				var scrollY = totalHeight * 0.105;
 				$(window).scrollTop(scrollY);
@@ -445,7 +447,7 @@ LIBTECH.JamieLynn = {
 			// animate video away
 			TweenMax.to($('.film-container'), 0.5, {opacity: 0, display: 'none'});
 			// play loop video if we're at large size
-			if (self.utilities.responsiveCheck() == "large") {
+			if (self.utilities.responsiveCheck() == "large" && $('html').hasClass('ie-lt9') !== true) {
 				loopVideo.play();
 			}
 		}
@@ -463,10 +465,8 @@ LIBTECH.JamieLynn = {
 			autoplay: false,
 			mouseDrag: false,
 			loop: true,
-			animateIn: 'fadeIn',
-			animateOut: 'fadeOut',
-			smartSpeed: 450,
-			navSpeed: 200
+			smartSpeed: 800,
+			navSpeed: 800
 		});
 	},
 	shareInit: function () {
