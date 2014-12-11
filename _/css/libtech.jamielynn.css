@@ -974,74 +974,7 @@ html, body { height: 100%; }
   .jamie-lynn .section-gallery { height: 100%; background: #FFF; position: relative; }
   .jamie-lynn .section-gallery * { -webkit-transform: translate3d(0, 0, 0); }
   .jamie-lynn .section-gallery .mobile-gallery { display: none; }
-  .jamie-lynn .section-gallery .gallery-wrapper { display: block; height: 100%; position: relative; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg"); 				/*
-				.gallery-item {
-					width: 100%;
-					height: 100%;
-					position: relative;
-					z-index: 10;
-					display: table;
-
-					.gallery-image {
-						width: 60%;
-						display: table-cell;
-						vertical-align: middle;
-						text-align: center;
-						padding: 20px 0 20px 20px;
-						z-index: 10;
-						position: relative;
-						
-						img {
-							display: inline-block;
-							padding: 40px;
-							width: auto;
-							height: auto;
-							max-width: 100%;
-							margin: 0 auto;
-							@include vendorize(opacity, 1);
-						}
-					}
-					.gallery-text {
-						width: 40%;
-						height: 100%;
-						display: table-cell;
-						position: relative;
-						@include vendorize(opacity, 0);
-						@include transition(opacity, 500ms);
-						-webkit-transition-delay: 600ms;
-						transition-delay: 600ms;
-
-						.text-wrapper {
-							width: 100%;
-							height: 55%;
-							position: relative;
-
-							.text-vertical {
-								width: 75%;
-								position: absolute;
-								bottom: 0;
-								left: 20px;
-								max-width: 500px;
-							}
-							.item-title {
-								font-family: $museoSlab;
-								font-size: 2em;
-								padding-bottom: 15px;
-							}
-							.item-year {
-								font-style: italic;
-								padding-bottom: 10px;
-							}
-							.item-year,
-							.item-content {
-								font-family: $museoSlab;
-								font-size: 1.125em;
-								line-height: 1.75;
-							}
-						}
-					}
-				}
-				*/ }
+  .jamie-lynn .section-gallery .gallery-wrapper { display: block; height: 100%; position: relative; background-size: cover; background-position: center; background-image: url("../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg"); }
   .jamie-lynn .section-gallery .gallery-wrapper .owl-stage-outer, .jamie-lynn .section-gallery .gallery-wrapper .owl-stage, .jamie-lynn .section-gallery .gallery-wrapper .owl-item { height: 100%; }
   .jamie-lynn .section-gallery .gallery-wrapper .owl-nav { position: absolute; top: 55%; left: 60%; padding-left: 20px; z-index: 1; }
   .jamie-lynn .section-gallery .gallery-wrapper .gallery-item { width: 100%; height: 100%; position: relative; z-index: 10; }
