@@ -767,6 +767,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-details-right .product-note-wrapper { padding-bottom: 10px; }
 .product-details .product-details-right .product-note-wrapper .product-note { text-align: center; padding-bottom: 25px; max-width: 540px; margin-top: -20px; }
 .product-details .product-details-right .product-note-wrapper .product-note span { display: block; }
+.product-details .product-details-right .holiday-delivery { padding-bottom: 10px; margin-top: -10px; }
 .product-details .product-price { font-size: 1.4em; padding-bottom: 20px; font-weight: bold; }
 .product-details .product-price .price-logo, .product-details .product-price .price-graphic, .product-details .product-price .price-logo-five, .product-details .product-price .price-graphic-five { display: none; }
 .product-details .product-price .price-logo.active, .product-details .product-price .price-graphic.active, .product-details .product-price .price-logo-five.active, .product-details .product-price .price-graphic-five.active { display: block; }
