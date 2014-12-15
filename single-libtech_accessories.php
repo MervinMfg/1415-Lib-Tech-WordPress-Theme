@@ -129,6 +129,7 @@ Template Name: Accessories Detail
 							?>
 						</select>
 					</div>
+					<p class="holiday-delivery">Orders must be placed by noon PST 12/18 for 12/24 <strong>Holiday Delivery</strong></p>
 					<div class="product-buy">
 						<ul>
 							<?php if($isProductAvailable == "Yes"): ?>
