@@ -486,18 +486,20 @@ LIBTECH.snowboardbuilder = {
 			}, 500, "mervinsbb");
 		});
 	},
-	bbSetRegion: function (sReg) {
+	bbSetRegion: function (currencyCode) {
 		var self = this;
-		self.config.bbRegionCurrency = (sReg != 'ca') ? "USD" : "CAD";
-		self.config.bbRegion = sReg;
-	},
-	bbGetRegion: function () {
-		var self = this;
-		if (self.config.bbRegion === '' || self.config.bbRegion === undefined || self.config.bbRegion === null) {
-			self.config.bbRegion = "US";
+		if (currencyCode == "INT") {
+			self.config.bbRegionCurrency = "USD";
+		} else if (currencyCode == "USD" || currencyCode == "CAD") {
+			self.config.bbRegionCurrency = currencyCode;
+		} else {
+			self.config.bbRegionCurrency = "USD";
 		}
-		self.config.bbRegion = self.config.bbRegion.toUpperCase();
-		return self.config.bbRegion;
+		if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "INT") {
+			self.config.bbRegion = currencyCode;
+		} else {
+			self.config.bbRegion = "USD";
+		}
 	},
 	setKnifeCutPrice: function (nKC) {
 		var self = this;
@@ -544,7 +546,7 @@ LIBTECH.snowboardbuilder = {
 		$('.step2-size .size-info .size-detail-table .table-data').html(self.printSizeInfo(boardData[boardNum].ContactLength, boardData[boardNum].Sidecut, boardData[boardNum].WaistWidth, boardData[boardNum].Flex) + "");
 		$('.step2-size .size-info .size-detail-table .table-data').clone().wrap('<p>').parent().html();
 		// set price
-		if (self.bbGetRegion() == "CA") {
+		if (self.config.bbRegion == "CAD") {
 			self.setBoardPrice(boardData[boardNum].BasePriceCA);
 		} else {
 			self.setBoardPrice(boardData[boardNum].BasePriceUS);
@@ -733,7 +735,7 @@ LIBTECH.snowboardbuilder = {
 				// KNIFE CUT BASE
 				self.config.isKnifecut = true;
 				self.setBoardBaseDesc($('.board-text-custom').val());
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
 					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
 				} else {
@@ -1048,7 +1050,7 @@ LIBTECH.snowboardbuilder = {
 				self.setCustomTextColor(knifecutTextColor);
 				self.config.isKnifecut = true;
 				// set knifecut price
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
 					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
 				} else {
@@ -1566,7 +1568,7 @@ LIBTECH.snowboardbuilder = {
 				// set contour image
 				$('#info-box .contour img').attr('src', self.config.baseImgPath + boardData[nNum].ContourImage);
 				// get the price for the board
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					price = boardData[nNum].BasePriceCA;
 				} else {
 					price = boardData[nNum].BasePriceUS;
@@ -1949,7 +1951,7 @@ LIBTECH.snowboardbuilder = {
 			// show
 			$(".step7-buy .buttonholder .agree-button").css('display', 'block');
 			// determine which terms to show based on region
-			if(self.bbGetRegion() == 'US' || self.bbGetRegion() == 'CA') {
+			if(self.config.bbRegion == 'USD' || self.config.bbRegion == 'CAD') {
 				$(".step7-buy .terms").css('display', 'block');
 				$(".step7-buy .terms-international").css('display', 'none');
 			} else {
