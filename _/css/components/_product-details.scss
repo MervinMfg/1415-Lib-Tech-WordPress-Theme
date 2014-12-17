@@ -237,23 +237,40 @@
 	}
 }
 .ski .product-details {
-	.product-buy {
-		ul li.cart-button .add-to-cart {
-			background: $skiColor;
+	h1 {
+		padding-bottom: 5px;
+	}
+	.nas-tech {
+		color: #CCC;
+		padding-top: 0;
+		font-style: italic;
+	}
+	.nas-product-images {
+		padding-bottom: 30px;
+	}
+	.nas-details-left {
+		.holiday-delivery {
+			padding-bottom: 10px;
+			margin-top: -10px;
+		}
+		.product-buy {
+			ul li.cart-button .add-to-cart {
+				background: $skiColor;
 
-			&:hover,
-			&:focus {
-				background: #000;
-				color: $skiColor;
+				&:hover,
+				&:focus {
+					background: #000;
+					color: $skiColor;
+				}
+
 			}
-
-		}
-		.cart-success,
-		.cart-failure {
-			border-color: $skiColor;
-		}
-		.cart-success p .cart-link {
-			background-color: $skiColor;
+			.cart-success,
+			.cart-failure {
+				border-color: $skiColor;
+			}
+			.cart-success p .cart-link {
+				background-color: $skiColor;
+			}
 		}
 	}
 	.product-quick-specs li span {
@@ -882,8 +899,7 @@
 		}
 	}
 	.single-libtech_snowboards,
-	.single-libtech_skateboards,
-	.single-libtech_nas {
+	.single-libtech_skateboards {
 		.product-details {
 			h1 {
 				width: 50%;
@@ -899,6 +915,24 @@
 				width: 50%;
 			}
 		}
+	}
+	.single-libtech_nas {
+		.product-details {
+			h1 {
+				text-align: center;
+				width: auto;
+				float: none;
+			}
+			h3 {
+				max-width: 100%;
+				text-align: center;
+			}
+			.nas-tech {
+				max-width: 100%;
+				text-align: center;
+			}
+		}
+
 	}
 	.single-libtech_surfboards .product-details .product-images {
 		padding-top: 10px;
@@ -971,6 +1005,44 @@
 		}
 		.product-tech-construction {
 			clear: both;
+		}
+	}
+	.single-libtech_nas {
+		.product-details {
+			h1 {
+				width: auto;
+				float: left;
+				display: inline-block;
+			}
+			h3 {
+				max-width: 540px;
+				text-align: left;
+			}
+			.nas-tech {
+				float: left;
+				display: inline-block;
+				padding: 18px 0 20px 20px;
+
+			}
+			.nas-product-images {
+				margin: 0 auto;
+				padding: 60px;
+			}
+			.nas-details-left {
+				width: 47.5%;
+				float: left;
+			}
+			.nas-details-right {
+				width: 47.5%;
+				float: right;
+				padding-top: 45px;
+
+				.product-share {
+					li {
+						width: 100px;
+					}
+				}
+			}
 		}
 	}
 	.single-libtech_outerwear .product-extras {
@@ -1087,6 +1159,28 @@
 			width: 60%;
 			float: left;
 			clear: none;
+		}
+	}
+	.single-libtech_nas {
+		.product-details {
+			.section-content {
+				max-width: $breakpoint-xlarge;
+
+				.nas-details-left {
+					width: 55%;
+					float: left;
+				}
+				.nas-details-right {
+					width: 40%;
+					float: right;	
+
+					.product-share {
+						li {
+							width: 100px;
+						}
+					}
+				}
+			}
 		}
 	}
 	.single-libtech_outerwear .product-extras {

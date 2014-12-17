@@ -11,7 +11,9 @@ Template Name: NAS Detail
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>
-				<div class="product-images">
+				<h3 class="nas-tech">With Magne-traction</h3>
+				<h3><?php the_field('libtech_product_slogan'); ?></h3>
+				<!--<div class="product-images">
 					<ul id="image-list">
 			       		<?php
 							// get product image
@@ -70,10 +72,14 @@ Template Name: NAS Detail
 			       		?>
 			       		<li><a href="<?php echo $productImageFull[0]; ?>" title="<?php the_title(); ?>"><img src="<?php echo $productImageMedium[0]; ?>" alt="<?php the_title(); ?>" width="<?php echo $productImageMedium[1]; ?>" height="<?php echo $productImageMedium[2]; ?>" /></a></li>
 					</ul>
-				</div><!-- END .product-images -->
+				</div> END .product-images -->
 
-				<div class="product-details-right">
-					<h3><?php the_field('libtech_product_slogan'); ?></h3>
+				<div class="nas-product-images">
+					<ul class="nas-image-list">
+						<li class="nas-image"><img src="<?php bloginfo('template_directory'); ?>/_/img/nas/nas-placeholder.png" alt="nas placeholder" />
+				</div><!-- .nas-product-images -->
+
+				<div class="nas-details-left">
 					<div class="image-list-thumbs hidden">
 						<ul id="image-list-thumbs">
 							<li><a href="<?php echo $productImageFull[0]; ?>" title="<?php the_title(); ?>" data-sku="<?php echo $productSkus; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $productImageThumb[0]; ?>" alt="<?php the_title(); ?>" data-sub-alt="Sizes: <?php echo $sizes; ?>" width="<?php echo $productImageThumb[1]; ?>" height="<?php echo $productImageThumb[2]; ?>" /></a></li>
@@ -111,6 +117,8 @@ Template Name: NAS Detail
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
 					</div>
+				</div><!-- .nas-details-left -->
+				<div class="nas-details-right">
 					<ul class="product-quick-specs">
 						<li><span>Shape</span> <?php the_field('libtech_nas_shape'); ?></li>
 						<li><span>Contour</span> <?php the_field('libtech_nas_contour'); ?></li>
@@ -122,7 +130,7 @@ Template Name: NAS Detail
 						<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
 						<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
 					</ul>
-				</div><!-- END .product-details-right -->
+				</div><!-- END .nas-details-right -->
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section>
