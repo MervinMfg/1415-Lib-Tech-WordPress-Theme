@@ -84,31 +84,31 @@ LIBTECH.JamieLynn = {
 						scrollY = totalHeight * 0.075;
 						break;
 					case '#film':
-						scrollY = totalHeight * 0.105;
+						scrollY = totalHeight * 0.120;
 						break;
 					case '#method':
-						scrollY = totalHeight * 0.175;
+						scrollY = totalHeight * 0.167;
 						break;
 					case '#style':
 						scrollY = totalHeight * 0.270;
 						break;
 					case '#passion':
-						scrollY = totalHeight * 0.360;
+						scrollY = totalHeight * 0.367;
 						break;
 					case '#inspiration':
-						scrollY = totalHeight * 0.455;
+						scrollY = totalHeight * 0.466;
 						break;
 					case '#music':
-						scrollY = totalHeight * 0.547;
+						scrollY = totalHeight * 0.562;
 						break;
 					case '#steady':
-						scrollY = totalHeight * 0.643;
+						scrollY = totalHeight * 0.665;
 						break;
 					case '#creativity':
-						scrollY = totalHeight * 0.738;
+						scrollY = totalHeight * 0.765;
 						break;
 					case '#products':
-						scrollY = totalHeight * 0.8240;
+						scrollY = totalHeight * 0.846;
 						break;
 				}
 				if (currentScrollY < scrollY) {
@@ -116,7 +116,7 @@ LIBTECH.JamieLynn = {
 				} else {
 					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
 				}
-				scrollDuration = scrollPercentage * 15;
+				scrollDuration = scrollPercentage * 25;
 			} else {
 				scrollY = $(url).offset().top;
 				if (currentScrollY < scrollY) {
@@ -124,11 +124,12 @@ LIBTECH.JamieLynn = {
 				} else {
 					scrollPercentage = (currentScrollY - scrollY) / totalHeight;
 				}
-				scrollDuration = scrollPercentage * 5;
+				scrollDuration = scrollPercentage * 10;
 			}
-			// max scroll duration of 1.5 seconds
-			if (scrollDuration > 1.5) {
-				scrollDuration = 1.5;
+			console.log(scrollDuration);
+			// max scroll duration of 3 seconds
+			if (scrollDuration > 3) {
+				scrollDuration = 3;
 			}
 			// round values
 			scrollDuration = scrollDuration.toFixed(2);
@@ -152,6 +153,10 @@ LIBTECH.JamieLynn = {
 			self.config.scrollController.removeScene(self.config.navScene9);
 			self.config.scrollController.removeScene(self.config.navScene10);
 			self.config.scrollController.removeScene(self.config.navScene11);
+		}
+		if (self.utilities.responsiveCheck() == "large") {
+			// increased scroll size by 1.5 percent on large
+			windowHeight = windowHeight * 1.55;
 		}
 		if(self.utilities.responsiveCheck() == "large" || self.utilities.responsiveCheck() == "medium") {
 			self.config.navScene1 = new ScrollScene({offset: -1, duration: windowHeight + 1})
@@ -220,11 +225,9 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-share').removeAttr('style');
 			$('.jamie-lynn .section-products').removeAttr('style');
 			$('.jamie-lynn .section-quote').removeAttr('style');
-			$('.jamie-lynn .section-quote .quote-wrapper').removeAttr('style');
-			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .quote-text'), 0, {y: '0px'});
-			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .hand-written'), 0, {y: '0px'});
-			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
-			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper'), 0, {y: '0%', opacity: 0});
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .quote-text'), 0, {y: '40px', opacity: 0});
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .hand-written'), 0, {y: '60px', opacity: 0});
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
 			$('#share .share-details .share-links').removeAttr('style');
 			$('#share .share-details .hashtag').removeAttr('style');
@@ -254,91 +257,104 @@ LIBTECH.JamieLynn = {
 					.addTo(self.config.scrollController);
 			}
 			// JAMIE SCROLLING SECTIONS
+			// Turn off default overwrite to hide error messaging
+			// https://github.com/janpaepke/ScrollMagic/wiki/WARNING:-tween-was-overwritten-by-another
+			TweenLite.defaultOverwrite = false;
+			// begin animation
 			$('.jamie-lynn').addClass('scroll-animation');
 			// add browser height for 21 sections
-			pageHeight = $(window).height() * $('.jamie-lynn section').length;
+			pageHeight = $(window).height() * $('.jamie-lynn section').length * 1.5;
 			$('.jamie-lynn').height(pageHeight);
 			sectionsTween = new TimelineMax()
 				.add(TweenMax.to($('#legacy-now'), 2, {opacity: 1, display: 'block', delay: 0.2})) // draw word for 0.9
 				.add(TweenMax.to($('#intro'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#intro .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#intro .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#intro .quote-wrapper .quote-text'), 4, {y: '40px', delay: -2}))
-				.add(TweenMax.from($('#intro .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#legacy'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#legacy-now'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#film'), 0.1, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#intro'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#intro .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#intro .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#intro .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#intro .quote-wrapper .quote-text'), 5, {y: '0px', delay: -2.5}))
+				.add(TweenMax.to($('#intro .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#intro .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#legacy'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#legacy-now'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#film'), 0.1, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#intro'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#method'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#method .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#method .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#method .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#method .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#method .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#method .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#film'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#method-photo'), 0.01, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#method'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#method .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#method .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#method .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#method .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#method .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#method .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#method .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#film'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#method-photo'), 0.01, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#method'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#style'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#style .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#style .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#style .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#style .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#style .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#style .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#method-photo'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#style-photo'), 0.01, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#style'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#style .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#style .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#style .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#style .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#style .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#style .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#style .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#method-photo'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#style-photo'), 0.01, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#style'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#passion'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#passion .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#passion .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#passion .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#passion .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#passion .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#passion .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#style-photo'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#passion-photo'), 0.01, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#passion'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#passion .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#passion .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#passion .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#passion .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#passion .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#passion .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#passion .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#style-photo'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#passion-photo'), 0.01, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#passion'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#inspiration'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#inspiration .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#passion-photo'), 0.1, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#inspiration-photo'), 0.1, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#inspiration'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#inspiration .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#inspiration .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#passion-photo'), 0.1, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#inspiration-photo'), 0.1, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#inspiration'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#music'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#music .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#music .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#music .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#music .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#music .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#music .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#inspiration-photo'), 0.1, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#music-photo'), 0.1, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#music'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#music .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#music .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#music .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#music .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#music .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#music .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#music .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#inspiration-photo'), 0.1, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#music-photo'), 0.1, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#music'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#steady'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#steady .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#steady .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#steady .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#steady .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#steady .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#steady .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#music-photo'), 0.01, {display: 'none', delay: -0.2}))
-				.add(TweenMax.to($('#steady-photo'), 0.01, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#steady'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#steady .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#steady .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#steady .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#steady .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#steady .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#steady .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#steady .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#music-photo'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#steady-photo'), 0.01, {display: 'block', delay: -1.2}))
+				.add(TweenMax.to($('#steady'), 2, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#creativity'), 1, {top: '0%', delay: 4}))
-				.add(TweenMax.from($('#creativity .quote-wrapper'), 1, {opacity: 0, delay: -1}))
-				.add(TweenMax.from($('#creativity .quote-wrapper .quote-text'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#creativity .quote-wrapper .hand-written'), 1, {opacity: 0, delay: -0.5}))
-				.add(TweenMax.from($('#creativity .quote-wrapper blockquote'), 4, {backgroundPosition: "0 80px", delay: -1}))
-				.add(TweenMax.from($('#creativity .quote-wrapper .quote-text'), 4, {y: '40px', delay: -4}))
-				.add(TweenMax.from($('#creativity .quote-wrapper .hand-written'), 4, {y: '80px', delay: -4}))
-				.add(TweenMax.to($('#steady-photo'), 0.01, {display: 'none', delay: -1}))
-				.add(TweenMax.to($('#gallery'), 0.01, {display: 'block', delay: -1}))
-				.add(TweenMax.to($('#creativity'), 1, {top: '-100%', delay: -0.2}))
+				.add(TweenMax.to($('#creativity .quote-wrapper'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.to($('#creativity .quote-wrapper .quote-text'), 1, {opacity: 1, delay: -0.75}))
+				.add(TweenMax.to($('#creativity .quote-wrapper .hand-written'), 1, {opacity: 1, delay: -0.5}))
+				.add(TweenMax.from($('#creativity .quote-wrapper blockquote'), 5, {backgroundPosition: "0 80px", delay: -1}))
+				.add(TweenMax.to($('#creativity .quote-wrapper .quote-text'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#creativity .quote-wrapper .hand-written'), 5, {y: '0px', delay: -5}))
+				.add(TweenMax.to($('#creativity .quote-wrapper'), 1, {y: '15%', delay: -0.2}))
+				.add(TweenMax.to($('#steady-photo'), 0.01, {display: 'none', delay: -1.2}))
+				.add(TweenMax.to($('#gallery'), 0.01, {display: 'block', delay: -5}))
+				.add(TweenMax.to($('#creativity'), 1, {top: '-100%', delay: -1.2}))
 				.add(TweenMax.to($('#gallery'), 4, {top: '-100%', delay: 4}))
 				.add(TweenMax.to($('#products'), 4, {bottom: '0%', delay: -4}))
 				.add(TweenMax.to($('#share'), 1, {top: '0%', delay: 4}))
@@ -346,7 +362,7 @@ LIBTECH.JamieLynn = {
 				.add(TweenMax.from($('#share .share-details .hashtag'), 1, {y: '80px', opacity: 0, delay: -0.5}))
 				.add(TweenMax.to($('#products'), 0.1, {display: 'none', delay: -0.2}))
 				.add(TweenMax.to($('#tradition-photo'), 0.1, {display: 'block', delay: -0.2}))
-				.add(TweenMax.to($('#share'), 1, {top: '-100%', delay: 3}))
+				.add(TweenMax.to($('#share'), 2, {top: '-100%', delay: 3}))
 				.add(TweenMax.from($('#tradition-photo .tradition-message .part-1'), 1, {y: '40px', opacity: 0, delay: -0.5}))
 				.add(TweenMax.from($('#tradition-photo .tradition-message .part-2'), 1, {y: '80px', opacity: 0, delay: -0.5}))
 				.add(TweenMax.from($('#tradition-photo .tradition-message .part-3'), 1, {y: '80px', opacity: 0, delay: -0.5}))
@@ -375,9 +391,10 @@ LIBTECH.JamieLynn = {
 			$('.jamie-lynn .section-share').removeAttr('style');
 			$('.jamie-lynn .section-products').removeAttr('style');
 			$('.jamie-lynn .section-quote').removeAttr('style');
-			$('.jamie-lynn .section-quote .quote-wrapper').removeAttr('style');
+			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper'), 0, {y: '0px'});
 			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .quote-text'), 0, {y: '0px'});
 			TweenMax.to($('.jamie-lynn .section-quote .quote-wrapper .hand-written'), 0, {y: '0px'});
+			$('.jamie-lynn .section-quote .quote-wrapper').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .quote-text').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper .hand-written').removeAttr('style');
 			$('.jamie-lynn .section-quote .quote-wrapper blockquote').removeAttr('style');
