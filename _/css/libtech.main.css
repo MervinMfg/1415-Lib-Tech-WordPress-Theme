@@ -791,6 +791,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-quick-specs { margin-bottom: 40px; }
 .product-details .product-quick-specs li { margin-bottom: 5px; }
 .product-details .product-quick-specs li span { color: #FFFF00; text-transform: uppercase; padding-right: 10px; }
+.product-details .product-quick-specs li span.us-sizes, .product-details .product-quick-specs li span.eu-sizes { color: #CCC; }
 .product-details .product-description { margin-bottom: 40px; max-width: 540px; }
 .product-details .product-description p { font-size: 1.1em; margin-bottom: 10px; }
 .product-details .product-description ul { list-style: square; margin: 0 0 10px 25px; font-size: 1.1em; }
@@ -798,25 +799,36 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-share { display: none; }
 .product-details .product-share li { float: left; width: 125px; margin-bottom: 5px; }
 
+.currency-eur .product-details .product-quick-specs li span.us-sizes { display: none; }
+
+.currency-usd .product-details .product-quick-specs li span.eu-sizes, .currency-cad .product-details .product-quick-specs li span.eu-sizes, .currency-int .product-details .product-quick-specs li span.eu-sizes { display: none; }
+
 .international .product-details .product-price, .international .product-details .product-variations, .international .product-details .product-buy .cart-button { display: none; }
 
-.ski .product-details .product-buy ul li.cart-button .add-to-cart { background: #0099FF; }
-.ski .product-details .product-buy ul li.cart-button .add-to-cart:hover, .ski .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #0099FF; }
-.ski .product-details .product-buy .cart-success, .ski .product-details .product-buy .cart-failure { border-color: #0099FF; }
-.ski .product-details .product-buy .cart-success p .cart-link { background-color: #0099FF; }
+.ski .product-details h1 { padding-bottom: 5px; }
+.ski .product-details .nas-tech { color: #CCC; padding-top: 0; font-style: italic; }
+.ski .product-details .nas-product-images { padding-bottom: 30px; }
+.ski .product-details .nas-details-left .holiday-delivery { padding-bottom: 10px; margin-top: -10px; }
+.ski .product-details .nas-details-left .product-buy ul li.cart-button .add-to-cart { background: #0099FF; }
+.ski .product-details .nas-details-left .product-buy ul li.cart-button .add-to-cart:hover, .ski .product-details .nas-details-left .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #0099FF; }
+.ski .product-details .nas-details-left .product-buy .cart-success, .ski .product-details .nas-details-left .product-buy .cart-failure { border-color: #0099FF; }
+.ski .product-details .nas-details-left .product-buy .cart-success p .cart-link { background-color: #0099FF; }
 .ski .product-details .product-quick-specs li span { color: #0099FF; }
+.ski .product-details .product-quick-specs li span.us-sizes, .ski .product-details .product-quick-specs li span.eu-sizes { color: #CCC; }
 
 .surf .product-details .product-buy ul li.cart-button .add-to-cart { background: #FF6600; }
 .surf .product-details .product-buy ul li.cart-button .add-to-cart:hover, .surf .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #FF6600; }
 .surf .product-details .product-buy .cart-success, .surf .product-details .product-buy .cart-failure { border-color: #FF6600; }
 .surf .product-details .product-buy .cart-success p .cart-link { background-color: #FF6600; }
 .surf .product-details .product-quick-specs li span { color: #FF6600; }
+.surf .product-details .product-quick-specs li span.us-sizes, .surf .product-details .product-quick-specs li span.eu-sizes { color: #CCC; }
 
 .skate .product-details .product-buy ul li.cart-button .add-to-cart { background: #66CC00; }
 .skate .product-details .product-buy ul li.cart-button .add-to-cart:hover, .skate .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #66CC00; }
 .skate .product-details .product-buy .cart-success, .skate .product-details .product-buy .cart-failure { border-color: #66CC00; }
 .skate .product-details .product-buy .cart-success p .cart-link { background-color: #66CC00; }
 .skate .product-details .product-quick-specs li span { color: #66CC00; }
+.skate .product-details .product-quick-specs li span.us-sizes, .skate .product-details .product-quick-specs li span.eu-sizes { color: #CCC; }
 
 .single-libtech_apparel .product-details .product-images ul li a, .single-libtech_accessories .product-details .product-images ul li a, .single-libtech_accessories .product-details .product-images ul li a, .single-libtech_luggage .product-details .product-images ul li a, .single-libtech_bindings .product-details .product-images ul li a { width: 100%; margin-left: 0; }
 
@@ -957,10 +969,13 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-details .product-details-right { width: 40%; float: right; clear: right; }
   .product-details h3 { text-align: left; }
   .product-details h3, .product-details .image-list-thumbs, .product-details .product-price, .product-details .product-stock-alert, .product-details .product-variations, .product-details .product-buy, .product-details .product-quick-specs, .product-details .product-share { max-width: 540px; }
-  .single-libtech_snowboards .product-details h1, .single-libtech_skateboards .product-details h1, .single-libtech_nas .product-details h1 { width: 50%; }
-  .single-libtech_snowboards .product-details .product-images, .single-libtech_skateboards .product-details .product-images, .single-libtech_nas .product-details .product-images { width: 50%; }
-  .single-libtech_snowboards .product-details .product-images .bx-wrapper, .single-libtech_skateboards .product-details .product-images .bx-wrapper, .single-libtech_nas .product-details .product-images .bx-wrapper { max-width: 540px !important; }
-  .single-libtech_snowboards .product-details .product-details-right, .single-libtech_skateboards .product-details .product-details-right, .single-libtech_nas .product-details .product-details-right { width: 50%; }
+  .single-libtech_snowboards .product-details h1, .single-libtech_skateboards .product-details h1 { width: 50%; }
+  .single-libtech_snowboards .product-details .product-images, .single-libtech_skateboards .product-details .product-images { width: 50%; }
+  .single-libtech_snowboards .product-details .product-images .bx-wrapper, .single-libtech_skateboards .product-details .product-images .bx-wrapper { max-width: 540px !important; }
+  .single-libtech_snowboards .product-details .product-details-right, .single-libtech_skateboards .product-details .product-details-right { width: 50%; }
+  .single-libtech_nas .product-details h1 { text-align: center; width: auto; float: none; }
+  .single-libtech_nas .product-details h3 { max-width: 100%; text-align: center; }
+  .single-libtech_nas .product-details .nas-tech { max-width: 100%; text-align: center; }
   .single-libtech_surfboards .product-details .product-images { padding-top: 10px; }
   .product-zoom.show { display: block; }
   .product-extras .product-mobile-nav { display: none; }
@@ -974,6 +989,13 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-extras .product-specs h2, .product-extras .product-specs table { margin-left: 40px; }
   .product-extras .product-tech-major { clear: both; }
   .product-extras .product-tech-construction { clear: both; }
+  .single-libtech_nas .product-details h1 { width: auto; float: left; display: inline-block; }
+  .single-libtech_nas .product-details h3 { max-width: 540px; text-align: left; }
+  .single-libtech_nas .product-details .nas-tech { float: left; display: inline-block; padding: 18px 0 20px 20px; }
+  .single-libtech_nas .product-details .nas-product-images { margin: 0 auto; padding: 60px; }
+  .single-libtech_nas .product-details .nas-details-left { width: 47.5%; float: left; }
+  .single-libtech_nas .product-details .nas-details-right { width: 47.5%; float: right; padding-top: 45px; }
+  .single-libtech_nas .product-details .nas-details-right .product-share li { width: 100px; }
   .single-libtech_outerwear .product-extras .product-desc-awards { width: 60%; float: left; }
   .single-libtech_outerwear .product-extras .product-tech-major { width: 40%; float: right; clear: none; }
   .single-libtech_outerwear .product-extras .product-tech-major h2 { padding-left: 20px; }
@@ -998,6 +1020,10 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-extras .product-tech-construction { float: left; width: 60%; clear: none; }
   .product-extras .product-tech-construction .construction-slideshow { padding-right: 40px; }
   .product-extras .product-tech-major { width: 60%; float: left; clear: none; }
+  .single-libtech_nas .product-details .section-content { max-width: 1200px; }
+  .single-libtech_nas .product-details .section-content .nas-details-left { width: 55%; float: left; }
+  .single-libtech_nas .product-details .section-content .nas-details-right { width: 40%; float: right; }
+  .single-libtech_nas .product-details .section-content .nas-details-right .product-share li { width: 100px; }
   .single-libtech_outerwear .product-extras .product-desc-awards { width: 60%; float: left; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description { width: 100%; clear: none; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description p { padding-right: 0; }

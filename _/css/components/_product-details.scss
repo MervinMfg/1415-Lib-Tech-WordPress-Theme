@@ -237,8 +237,15 @@
 .currency-eur .product-details .product-quick-specs li span.us-sizes {
 	display: none;
 }
-.currency-usd .product-details .product-quick-specs li span.eu-sizes {
-	display: none;
+.currency-usd,
+.currency-cad,
+.currency-int {
+	.product-details .product-quick-specs li {
+
+		span.eu-sizes {
+		  	display: none;
+		}
+	}
 }
 .international .product-details {
 	.product-price,
