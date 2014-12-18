@@ -198,6 +198,11 @@
 				color: $snowColor;
 				text-transform: uppercase;
 				padding-right: 10px;
+
+				&.us-sizes,
+				&.eu-sizes {
+					color: #CCC;
+				}
 			}
 		}
 	}
@@ -228,6 +233,12 @@
 			margin-bottom: 5px;
 		}
 	}
+}
+.currency-eur .product-details .product-quick-specs li span.us-sizes {
+	display: none;
+}
+.currency-usd .product-details .product-quick-specs li span.eu-sizes {
+	display: none;
 }
 .international .product-details {
 	.product-price,
@@ -275,6 +286,11 @@
 	}
 	.product-quick-specs li span {
 		color: $skiColor;
+
+		&.us-sizes,
+		&.eu-sizes {
+			color: #CCC;
+		}
 	}
 }
 .surf .product-details {
@@ -298,6 +314,11 @@
 	}
 	.product-quick-specs li span {
 		color: $surfColor;
+
+		&.us-sizes,
+		&.eu-sizes {
+			color: #CCC;
+		}
 	}
 }
 .skate .product-details {
@@ -321,6 +342,11 @@
 	}
 	.product-quick-specs li span {
 		color: $skateColor;
+
+		&.us-sizes,
+		&.eu-sizes {
+			color: #CCC;
+		}
 	}
 }
 .single-libtech_apparel .product-details .product-images ul li a,

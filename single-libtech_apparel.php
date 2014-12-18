@@ -154,11 +154,22 @@ Template Name: Apparel Detail
 							}
 						endforeach;
 						// setup sizes text display
-						$sizes = "";
-						for ($i = 0; $i < count($sizeDisplayArray); $i++) {
-							$sizes .= $sizeDisplayArray[$i];
-							if($i < count($sizeDisplayArray)-1){
-								$sizes .= ", ";
+						// check terms to see if we're a sock
+						$categories_terms = get_the_terms( $post->ID , 'libtech_apparel_categories' );
+						$categories = Array();
+						foreach ( $categories_terms as $category ) {
+							array_push($categories, $category->name);
+						}
+						// if we're socks, display fixed sizes
+						if (in_array('Socks', $categories, true)) {
+							$sizes = '<br />S – Mens <span class="us-sizes">US (7-9)</span> <span class="eu-sizes">EU (39-42)</span><br />M – Mens <span class="us-sizes">US (9–11)</span> <span class="eu-sizes">EU (42-44)</span><br />L – Mens <span class="us-sizes">US (11–13)</span> <span class="eu-sizes">EU (44-47)</span>';
+						} else {
+							$sizes = "";
+							for ($i = 0; $i < count($sizeDisplayArray); $i++) {
+								$sizes .= $sizeDisplayArray[$i];
+								if($i < count($sizeDisplayArray)-1){
+									$sizes .= ", ";
+								}
 							}
 						}
 						?>
