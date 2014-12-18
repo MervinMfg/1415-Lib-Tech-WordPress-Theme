@@ -23,7 +23,7 @@
 		$GLOBALS['pageTitle'] .=  ' - page '. $paged;
 	}
 	// SET DEFAULT PAGE IMAGE
-	$GLOBALS['pageImage'] = get_bloginfo('template_directory') . "/_/img/fb-like.png";
+	$GLOBALS['pageImage'] = get_bloginfo('template_directory') . "/_/img/social-share.jpg";
 	$pageDescriptionDefault = "We build snowboards. No really... that is what we do. We don’t order them from China or anywhere else and send someone to go check and see how they turned out. We physically hand build them right here at home in the USA. We buy the toughest, lightest, strongest, most environmental materials; many of which aren’t meant for snowboards or used by anyone else for what we use them for.";
 	// GET THE PAGE DESCRIPTION, AND IMAGE IF IT'S SINGLE
 	if (is_single()){
