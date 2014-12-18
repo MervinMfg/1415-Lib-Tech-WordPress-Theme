@@ -20,7 +20,9 @@
 				}
 				img {
 					@include vendorize(opacity, 0);
-					height: auto;
+					height: auto !important;
+					width: auto !important;
+					max-width: 100% !important;
 				}
 			}
 			// after it is rendered
