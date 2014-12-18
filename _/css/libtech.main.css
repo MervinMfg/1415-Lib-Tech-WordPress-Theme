@@ -1209,7 +1209,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post .section-content .post .entry-content p { margin-bottom: 1.25em; }
 .blog-post .section-content .post .entry-content > p:first-of-type { font-weight: bold; }
 .blog-post .section-content .post .entry-content > p:first-of-type:first-letter { text-transform: uppercase; float: left; font-size: 4.65em; color: #fff; line-height: .8em; padding-right: 8px; }
-.blog-post .section-content .post .entry-content img { max-width: 100%; height: auto; }
+.blog-post .section-content .post .entry-content img { max-width: 100% !important; width: auto !important; height: auto !important; }
 .blog-post .section-content .post .entry-content img.alignleft, .blog-post .section-content .post .entry-content img.alignright, .blog-post .section-content .post .entry-content img.aligncenter { text-align: center; }
 .blog-post .section-content .post .entry-content blockquote { text-align: center; font-size: 1.3em; font-weight: bold; font-style: italic; color: #fff; }
 .blog-post .section-content .post .entry-content .wp-caption { width: auto !important; }
@@ -1608,7 +1608,7 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
 .featured-slider .section-content { overflow: hidden; }
 .featured-slider .section-content .slider-wrapper { width: 128.875%; width: 140.597539543058%; margin-left: -20.298769771529%; }
 .featured-slider .section-content .slider-wrapper .bxslider li:nth-child(n+2) { display: none; }
-.featured-slider .section-content .slider-wrapper .bxslider li img { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; height: auto; }
+.featured-slider .section-content .slider-wrapper .bxslider li img { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; height: auto !important; width: auto !important; max-width: 100% !important; }
 .featured-slider .section-content .slider-wrapper .bx-wrapper .bxslider li:nth-child(n+2) { display: block; }
 .featured-slider .section-content .slider-wrapper .bx-wrapper .bxslider li img { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 .featured-slider .section-content .slider-wrapper .bx-wrapper .bxslider li.bx-clone { display: none; }
