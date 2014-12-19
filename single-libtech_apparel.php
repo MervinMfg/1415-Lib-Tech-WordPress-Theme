@@ -125,7 +125,7 @@ Template Name: Apparel Detail
 							?>
 						</select>
 					</div>
-					<p class="holiday-delivery">Orders must be placed by noon PST 12/18 for 12/24 <strong>Holiday Delivery</strong></p>
+					<p class="holiday-delivery">Free shipping! Orders must be placed by 10:00am PST 12/22 for 12/24 <strong>Holiday Delivery</strong></p>
 					<div class="product-buy">
 						<ul>
 							<?php if($isProductAvailable == "Yes"): ?>
