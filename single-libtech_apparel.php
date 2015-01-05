@@ -153,6 +153,24 @@ Template Name: Apparel Detail
 								array_push($sizeArray, $productSize);
 							}
 						endforeach;
+						// sort sizes
+						function apparelSizeSort ($a, $b) {
+							$sizeIndexes = array(
+								"XS" => 0,
+								"S" => 1,
+								"M" => 2,
+								"L" => 3,
+								"XL" => 4,
+								"XXL" => 5
+							);
+							$aSize = $sizeIndexes[$a];
+							$bSize = $sizeIndexes[$b];
+							if ($aSize == $bSize) {
+								return 0;
+							}
+							return ($aSize > $bSize) ? 1 : -1;
+						}
+						usort($sizeDisplayArray, "apparelSizeSort");
 						// setup sizes text display
 						// check terms to see if we're a sock
 						$categories_terms = get_the_terms( $post->ID , 'libtech_apparel_categories' );
