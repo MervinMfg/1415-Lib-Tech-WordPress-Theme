@@ -11,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Directional": "Directional",
                 "Twin": "Twin"
@@ -29,6 +34,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "All Terrain \/ Pow reCURVE": "All Terrain \/ Pow reCURVE",
                 "Jib \/ Freestyle reCURVE": "Jib \/ Freestyle reCURVE",
@@ -38,6 +48,45 @@
             "layout": "vertical",
             "other_choice": 0,
             "save_other_choice": 0
+        },
+        {
+            "key": "field_54934fe816fd4",
+            "label": "Detail Images",
+            "name": "libtech_nas_images",
+            "prefix": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "min": "",
+            "max": "",
+            "layout": "table",
+            "button_label": "Add Image",
+            "sub_fields": [
+                {
+                    "key": "field_5493500b16fd5",
+                    "label": "Image",
+                    "name": "libtech_nas_images_img",
+                    "prefix": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all"
+                }
+            ]
         }
     ],
     "location": [
@@ -54,5 +103,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1418940990
 }

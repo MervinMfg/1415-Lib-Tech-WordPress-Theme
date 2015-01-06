@@ -13,14 +13,14 @@ Template Name: NAS Detail
 				<h1><?php the_title(); ?></h1>
 				<h3 class="nas-tech">With Magne-traction</h3>
 				<h3><?php the_field('libtech_product_slogan'); ?></h3>
-				<!--<div class="product-images">
+				<div class="product-images">
 					<ul id="image-list">
 			       		<?php
 							// get product image
-							$productImageID = get_field('libtech_product_image');
+							/*$productImageID = get_field('libtech_product_image');
 							$productImageThumb = wp_get_attachment_image_src($productImageID, 'thumbnail', false);
-			       			$productImageMedium = wp_get_attachment_image_src($productImageID, 'square-xlarge', false);
-			       			$productImageFull = wp_get_attachment_image_src($productImageID, 'full', false);
+							$productImageMedium = wp_get_attachment_image_src($productImageID, 'square-xlarge', false);
+							$productImageFull = wp_get_attachment_image_src($productImageID, 'full', false);*/
 			       			// set up variations
 			       			$variations = Array();
 							$isProductAvailable = "No";
@@ -69,17 +69,21 @@ Template Name: NAS Detail
 									$sizes .= ", ";
 								}
 							}
+							// get product images
+							$productImages = Array();
+							if(get_field('libtech_nas_images')):
+								while(the_repeater_field('libtech_nas_images')):
+									$productImage = get_sub_field('libtech_nas_images_img');
+									array_push($productImages, $productImage);
 			       		?>
-			       		<li><a href="<?php echo $productImageFull[0]; ?>" title="<?php the_title(); ?>"><img src="<?php echo $productImageMedium[0]; ?>" alt="<?php the_title(); ?>" width="<?php echo $productImageMedium[1]; ?>" height="<?php echo $productImageMedium[2]; ?>" /></a></li>
+			       		<li class="nas-image"><a href="<?php echo $productImage['url']; ?>" title="<?php the_title(); ?>"><img src="<?php echo $productImage['url']; ?>" alt="<?php the_title(); ?>" width="<?php echo $productImage['width']; ?>" height="<?php echo $productImage['height']; ?>" /></a></li>
+			       		<?php
+			       				endwhile;
+			       			endif;
+			       		?>
 					</ul>
-				</div> END .product-images -->
-
-				<div class="nas-product-images">
-					<ul class="nas-image-list">
-						<li class="nas-image"><img src="<?php bloginfo('template_directory'); ?>/_/img/nas/nas-placeholder.png" alt="nas placeholder" />
-				</div><!-- .nas-product-images -->
-
-				<div class="nas-details-left">
+				</div><!-- END .product-images -->
+				<div class="details-left">
 					<div class="image-list-thumbs hidden">
 						<ul id="image-list-thumbs">
 							<li><a href="<?php echo $productImageFull[0]; ?>" title="<?php the_title(); ?>" data-sku="<?php echo $productSkus; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $productImageThumb[0]; ?>" alt="<?php the_title(); ?>" data-sub-alt="Sizes: <?php echo $sizes; ?>" width="<?php echo $productImageThumb[1]; ?>" height="<?php echo $productImageThumb[2]; ?>" /></a></li>
@@ -103,7 +107,7 @@ Template Name: NAS Detail
 							?>
 						</select>
 					</div>
-					<p class="holiday-delivery">Orders must be placed by noon PST 12/18 for 12/24 <strong>Holiday Delivery</strong></p>
+					<p class="holiday-delivery">Free shipping!</p>
 					<div class="product-buy">
 						<ul>
 							<?php if($isProductAvailable == "Yes"): ?>
@@ -117,8 +121,8 @@ Template Name: NAS Detail
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
 					</div>
-				</div><!-- .nas-details-left -->
-				<div class="nas-details-right">
+				</div><!-- .details-left -->
+				<div class="details-right">
 					<ul class="product-quick-specs">
 						<li><span>Shape</span> <?php the_field('libtech_nas_shape'); ?></li>
 						<li><span>Contour</span> <?php the_field('libtech_nas_contour'); ?></li>

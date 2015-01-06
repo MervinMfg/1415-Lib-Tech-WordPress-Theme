@@ -21,11 +21,19 @@ LIBTECH.ProductDetails.prototype = {
 		$(".product-tech-major").fitVids();
 		$(".product-video").fitVids();
 		// setup main product image slider
-		self.config.slider = $('#image-list').bxSlider({
-			controls: false,
-			mode: 'fade',
-			pagerCustom: '#image-list-thumbs'
-		});
+		if ($('body').hasClass('single-libtech_nas')) {
+			self.config.slider = $('#image-list').bxSlider({
+				controls: true,
+				pager: false,
+				mode: 'fade'
+			});
+		} else {
+			self.config.slider = $('#image-list').bxSlider({
+				controls: false,
+				mode: 'fade',
+				pagerCustom: '#image-list-thumbs'
+			});
+		}
 		// set up thumbnail slider
 		if ($('body').hasClass('single-libtech_surfboards')) { self.config.thumbSliderWidth = 45; }
 		thumbSlider = $('#image-list-thumbs').bxSlider({
@@ -88,7 +96,10 @@ LIBTECH.ProductDetails.prototype = {
 				// zoom listener
 				$('.product-images #image-list li a').on('click.productZoom', function (e) {
 					e.preventDefault();
-					self.initZoom($(this).parent().index());
+					// do not zoom nas
+					if (!$('body').hasClass('single-libtech_nas')) { 
+						self.initZoom($(this).parent().index());
+					}
 				});
 				// surf zoom listener
 				$('.product-images .surfboard-top, .product-images .surfboard-side, .product-images .surfboard-bottom').on('click.productZoom', function (e) {
