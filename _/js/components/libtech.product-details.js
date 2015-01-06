@@ -17,6 +17,7 @@ LIBTECH.ProductDetails.prototype = {
 	init: function () {
 		var self, thumbSlider, techConstructionSlider;
 		self = this;
+		self.initProductNav();
 		// BEGIN EXECUTING DETAIL CODE
 		$(".product-tech-major").fitVids();
 		$(".product-video").fitVids();
@@ -123,6 +124,24 @@ LIBTECH.ProductDetails.prototype = {
 		} else {
 			self.initBuyWithOneVariation();
 		}
+	},
+	initProductNav: function () {
+		console.log('prodnav');
+		$('.product-slider .bxslider').bxSlider({
+			slideWidth: 220,
+			minSlides: 2,
+			maxSlides: 8,
+			slideMargin: 10,
+			auto: true,
+			autoHover: true,
+			speed: 500,
+			controls: true,
+			pager: false,
+			mode: 'horizontal',
+			moveSlides: 2,
+			infiniteLoop: false,
+			hideControlOnEnd: true
+		});
 	},
 	// ADD TO CART COMPLETION METHODS
 	addToCartSuccess: function () {
