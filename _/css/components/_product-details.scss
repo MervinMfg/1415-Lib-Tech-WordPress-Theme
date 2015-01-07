@@ -300,19 +300,7 @@
 	h1 {
 		padding-bottom: 5px;
 	}
-	.nas-tech {
-		color: #CCC;
-		padding-top: 0;
-		font-style: italic;
-	}
-	.nas-product-images {
-		padding-bottom: 30px;
-	}
-	.nas-details-left {
-		.holiday-delivery {
-			padding-bottom: 10px;
-			margin-top: -10px;
-		}
+	.details-left {
 		.product-buy {
 			ul li.cart-button .add-to-cart {
 				background: $skiColor;
@@ -339,6 +327,33 @@
 		&.us-sizes,
 		&.eu-sizes {
 			color: #CCC;
+		}
+	}
+}
+.single-libtech_nas .product-details {
+	h1 {
+		padding-bottom: 5px;
+	}
+	.nas-tech {
+		color: #CCC;
+		padding-top: 0;
+		font-style: italic;
+	}
+	.product-images {
+		padding-bottom: 30px;
+
+		ul li a {
+			width: 100%;
+			margin-left: 0;
+		}
+		.bx-controls {
+			display: none;
+		}
+	}
+	.details-left {
+		.holiday-delivery {
+			padding-bottom: 10px;
+			margin-top: -10px;
 		}
 	}
 }
@@ -993,17 +1008,33 @@
 	}
 	.single-libtech_nas {
 		.product-details {
+			h3,
+			.product-price,
+			.product-stock-alert,
+			.product-variations,
+			.product-buy,
+			.product-quick-specs,
+			.product-share {
+				max-width: 100%;
+			}
+			.product-images {
+				width: 100%;
+				float: none;
+
+				.bx-wrapper {
+					max-width: 100% !important;
+				}
+			}
 			h1 {
 				text-align: center;
 				width: auto;
 				float: none;
 			}
-			h3 {
+			.nas-tech {
 				max-width: 100%;
 				text-align: center;
 			}
-			.nas-tech {
-				max-width: 100%;
+			h3 {
 				text-align: center;
 			}
 		}
@@ -1086,33 +1117,59 @@
 		.product-details {
 			h1 {
 				width: auto;
-				float: left;
 				display: inline-block;
 			}
 			h3 {
 				max-width: 540px;
 				text-align: left;
 			}
+			.product-price,
+			.product-stock-alert,
+			.product-variations,
+			.product-buy,
+			.product-quick-specs,
+			.product-share {
+				max-width: 540px;
+			}
 			.nas-tech {
-				float: left;
 				display: inline-block;
 				padding: 18px 0 20px 20px;
-
 			}
-			.nas-product-images {
+			.product-images {
 				margin: 0 auto;
-				padding: 60px;
+				padding: 0px 60px 20px;
+				width: 100%;
+				float: none;
+
+				.nas-image a {
+					cursor: default;
+				}
+				.bx-controls {
+					display: block;
+
+					.bx-prev {
+						left: -60px;
+					}
+					.bx-next {
+						right: -60px;
+					}
+				}
 			}
-			.nas-details-left {
-				width: 47.5%;
+			.details-left {
+				width: 40%;
 				float: left;
 			}
-			.nas-details-right {
-				width: 47.5%;
+			.details-right {
+				width: 60%;
 				float: right;
 				padding-top: 45px;
 
+				.product-quick-specs {
+					padding-left: 40px;
+				}
 				.product-share {
+					padding-left: 40px;
+
 					li {
 						width: 100px;
 					}
@@ -1240,16 +1297,28 @@
 		.product-details {
 			.section-content {
 				max-width: $breakpoint-xlarge;
+				margin: 0 auto;
 
-				.nas-details-left {
-					width: 55%;
-					float: left;
+				.details-left {
+					width: 60%;
+
+					.product-price,
+					.product-variations,
+					.product-buy {
+						max-width: 100%;
+						padding-right: 40px;
+					}
 				}
-				.nas-details-right {
+				.details-right {
 					width: 40%;
-					float: right;	
+					float: right;
 
+					.product-quick-specs {
+						padding-left: 0;
+					}
 					.product-share {
+						padding-left: 0;
+
 						li {
 							width: 100px;
 						}
