@@ -160,10 +160,10 @@ LIBTECH.ProductDetails.prototype = {
 		// toggle navigation
 		$navLink.click(function() {
 			if (navState == "opened") {
-				TweenMax.to($prodNav, 1, {marginTop: (prodNavHeight - 90) * -1});
+				TweenMax.to($prodNav, 0.5, {marginTop: (prodNavHeight - 90) * -1});
 				navState = "closed";
 			} else {
-				TweenMax.to($prodNav, 1, {marginTop: 0});
+				TweenMax.to($prodNav, 0.5, {marginTop: 0});
 				navState = "opened";
 			}
 			

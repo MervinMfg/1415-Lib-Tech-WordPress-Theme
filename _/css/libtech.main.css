@@ -580,8 +580,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .shptrn_ci_details h3, .shptrn_quick_cart { font-size: 12px; font-weight: 700; }
 
 /* ========================================================================== COMPONENTS/_TAKEOVER.SCSS ========================================================================== */
-.takeover { position: relative; z-index: 2; max-width: 1640px; margin: 0 auto; }
-.takeover .takeover-content { position: relative; cursor: pointer; }
+.takeover { position: relative; z-index: 2; background: #000; width: 100%; }
+.takeover .takeover-content { max-width: 1640px; margin: 0 auto; position: relative; cursor: pointer; }
 .takeover .takeover-content .expanded { text-align: center; white-space: nowrap; display: none; position: relative; overflow: hidden; }
 .takeover .takeover-content .expanded.show { display: block; }
 .takeover .takeover-content .expanded .close { display: block; float: right; width: 41px; height: 41px; background: url("../img/sprite.png") no-repeat -265px -46px; text-indent: -9999px; padding: 5px; position: absolute; top: 0; right: 0; }
