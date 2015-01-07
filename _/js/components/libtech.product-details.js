@@ -126,14 +126,17 @@ LIBTECH.ProductDetails.prototype = {
 		}
 	},
 	initProductNav: function () {
-		console.log('prodnav');
+		var navState, $navLink, $prodNav, prodNavHeight;
+		navState = "opened";
+		$navLink = $('.product-nav-btn');
+		$prodNav = $('.product-nav');
+		// init bx slider
 		$('.product-slider .bxslider').bxSlider({
 			slideWidth: 220,
 			minSlides: 2,
 			maxSlides: 8,
 			slideMargin: 10,
-			auto: true,
-			autoHover: true,
+			auto: false,
 			speed: 500,
 			controls: true,
 			pager: false,
@@ -141,6 +144,18 @@ LIBTECH.ProductDetails.prototype = {
 			moveSlides: 2,
 			infiniteLoop: false,
 			hideControlOnEnd: true
+		});
+		prodNavHeight = $prodNav.outerHeight();
+		// toggle navigation
+		$navLink.click(function() {
+			if (navState == "opened") {
+				TweenMax.to($prodNav, 1, {marginTop: (prodNavHeight - 90) * -1});
+				navState = "closed";
+			} else {
+				TweenMax.to($prodNav, 1, {marginTop: 0});
+				navState = "opened";
+			}
+			
 		});
 	},
 	// ADD TO CART COMPLETION METHODS

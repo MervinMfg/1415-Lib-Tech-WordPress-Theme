@@ -7,7 +7,45 @@ Template Name: Apparel Detail
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
 ?>
-        <div class="bg-product-details-top"></div>
+		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
+		<section class="product-slider product-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
+			<div class="section-content">
+				<ul class="product-listing bxslider">
+					<?php
+						$postType = "libtech_apparel";
+						// Get Products
+						$args = array(
+							'post_type' => $postType,
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$postType = $post->post_type;
+							$imageID = get_field('libtech_product_image');
+							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
+					?>
+
+					<li>
+						<a href="<? the_permalink(); ?>">
+							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
+							<div class="product-peek">
+								<p class="product-title"><?php the_title(); ?></p>
+								<p class="product-type"><?php echo $productType; ?></p>
+							</div>
+						</a>
+					</li>
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</ul>
+			</div>
+		<div class="product-nav-btn"></div>
+		</section><!-- END .product-slider -->
+        <div class="bg-product-details-top product-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>

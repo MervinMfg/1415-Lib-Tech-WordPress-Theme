@@ -8,10 +8,9 @@ Template Name: Snowboard Detail
 		$slug = $post->post_name;
 ?>
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider bg-product-<?php echo $GLOBALS['sport']; ?>">
+		<section class="product-slider product-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
-					<?php if($GLOBALS['sport'] == "snow") : ?>
 					<li>
 						<a href="/snowboarding/snowboard-builder/">
 							<img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" />
@@ -22,16 +21,7 @@ Template Name: Snowboard Detail
 						</a>
 					</li>
 					<?php
-						endif;
-						if ($GLOBALS['sport'] == "ski") {
-							$postType = "libtech_nas";
-						} else if ($GLOBALS['sport'] == "surf") {
-							$postType = "libtech_surfboards";
-						} else if ($GLOBALS['sport'] == "skate") {
-							$postType = "libtech_skateboards";
-						} else {
-							$postType = "libtech_snowboards";
-						}
+						$postType = "libtech_snowboards";
 						// Get Products
 						$args = array(
 							'post_type' => $postType,
@@ -45,19 +35,8 @@ Template Name: Snowboard Detail
 							$imageID = get_field('libtech_product_image');
 							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
 							// check for technology type to display
-							$productType = "";
-							if ($postType == "libtech_snowboards") {
-								$productType = get_field('libtech_snowboard_contour');
-							} else if ($postType == "libtech_nas") {
-								$productType = "Magne-Traction";
-							} else if ($postType == "libtech_skateboards") {
-								// grab first skateboard category for display
-			                    $categories = get_the_terms( $post->ID , 'libtech_skateboard_categories' );
-			                    foreach ( $categories as $category ) {
-									$productType = $category->name;
-			                        break;
-			                    }
-							}
+							$productType = get_field('libtech_snowboard_contour');
+							
 							if (get_the_title() != "superBANANA") :
 					?>
 
@@ -78,8 +57,9 @@ Template Name: Snowboard Detail
 					?>
 				</ul>
 			</div>
+			<div class="product-nav-btn"></div>
 		</section><!-- END .product-slider -->
-        <div class="bg-product-details-top"></div>
+        <div class="bg-product-details-top product-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>
