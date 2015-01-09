@@ -8,7 +8,7 @@ Template Name: Apparel Detail
 		$slug = $post->post_name;
 ?>
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider product-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
+		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
 					<?php
@@ -19,6 +19,15 @@ Template Name: Apparel Detail
 							'posts_per_page' => -1,
 							'orderby' => 'menu_order',
 							'order' => 'ASC',
+							'tax_query' => array(
+								array(
+									'taxonomy' => 'libtech_apparel_categories',
+									'field' => 'slug',
+									'terms' => array('sale'),
+									'include_children' => false,
+									'operator' => 'NOT IN'
+								)
+							)
 						);
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
@@ -29,10 +38,9 @@ Template Name: Apparel Detail
 
 					<li>
 						<a href="<? the_permalink(); ?>">
-							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
 							<div class="product-peek">
 								<p class="product-title"><?php the_title(); ?></p>
-								<p class="product-type"><?php echo $productType; ?></p>
 							</div>
 						</a>
 					</li>
@@ -43,9 +51,11 @@ Template Name: Apparel Detail
 					?>
 				</ul>
 			</div>
-		<div class="product-nav-btn"></div>
 		</section><!-- END .product-slider -->
-        <div class="bg-product-details-top product-nav-bottom"></div>
+		<div class="product-details-nav-btn">
+			<div class="toggle-btn"></div>
+		</div>
+        <div class="bg-product-details-top product-details-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>

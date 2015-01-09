@@ -2,48 +2,9 @@
    COMPONENTS/_PRODUCT-DETAILS.SCSS
    ========================================================================== */
 
-.single-libtech_snowboards,
-.single-libtech_nas,
-.single-libtech_surfboards,
-.single-libtech_skateboards,
-.single-libtech_outerwear,
-.single-libtech_accessories,
-.single-libtech_apparel,
-.single-libtech_luggage {
-	.product-slider {
-		position: relative;
-		z-index: 1;
-
-		.product-nav-btn {
-			background: url("../img/sprite.png") -176px -164px;
-			width: 23px;
-			height: 23px; 
-			margin: 8px auto -12px auto;
-			cursor: pointer;
-		}
-	}
-	.product-nav-bottom {
-		position: relative;
-		z-index: 2;
-	}
+.product-details-nav {
+	display: none;
 }
-.single-libtech_accessories,
-.single-libtech_apparel,
-.single-libtech_luggage {
-	.product-slider {
-		ul {
-			li {
-				a {
-					img {
-						width: 100%;
-						max-width: 100%;
-					}
-				}
-			}
-		}
-	}
-}
-
 .product-details {
 	padding-left: 20px;
 	padding-right: 20px;
@@ -1090,6 +1051,63 @@
 	}
 }
 @media screen and (min-width: $breakpoint-medium) {
+	.product-details-nav {
+		position: relative;
+		z-index: 1;
+
+		&.active {
+			display: block;
+			margin-top: -50px;
+
+			.section-content {
+				margin-top: -188px;
+				padding-bottom: 13px;
+			}
+		}
+		.product-peek {
+			.product-title,
+			.product-type {
+				font-size: 0.8em;
+			}
+		}
+	}
+	.product-details-nav-btn {
+		position: relative;
+		z-index: 3;
+
+		.toggle-btn {
+			background: url("../img/sprite.png") -176px -164px;
+			width: 23px;
+			height: 23px;
+			cursor: pointer;
+			position: absolute;
+			top: -60px;
+			left: 50%;
+			margin-left: -11px;
+		}
+	}
+	.product-details-nav-bottom {
+		position: relative;
+		z-index: 2;
+	}
+	.single-libtech_accessories,
+	.single-libtech_apparel,
+	.single-libtech_luggage,
+	.single-libtech_surfboards {
+		.product-details-nav {
+			ul {
+				li {
+					a {
+						img {
+							width: 100%;
+							max-width: 100%;
+							margin-left: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 	.product-details .product-share {
 		display: block;
 	}

@@ -8,12 +8,12 @@ Template Name: Snowboard Detail
 		$slug = $post->post_name;
 ?>
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider product-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
+		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
 					<li>
 						<a href="/snowboarding/snowboard-builder/">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" />
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
 							<div class="product-peek">
 								<p class="product-title">DIY Board Builder</p>
 								<p class="product-type">Build your dream snowboard!</p>
@@ -27,7 +27,7 @@ Template Name: Snowboard Detail
 							'post_type' => $postType,
 							'posts_per_page' => -1,
 							'orderby' => 'menu_order',
-							'order' => 'ASC',
+							'order' => 'ASC'
 						);
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
@@ -42,7 +42,7 @@ Template Name: Snowboard Detail
 
 					<li>
 						<a href="<? the_permalink(); ?>">
-							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
 							<div class="product-peek">
 								<p class="product-title"><?php the_title(); ?></p>
 								<p class="product-type"><?php echo $productType; ?></p>
@@ -56,10 +56,13 @@ Template Name: Snowboard Detail
 						wp_reset_query();
 					?>
 				</ul>
+
 			</div>
-			<div class="product-nav-btn"></div>
 		</section><!-- END .product-slider -->
-        <div class="bg-product-details-top product-nav-bottom"></div>
+		<div class="product-details-nav-btn">
+			<div class="toggle-btn"></div>
+		</div>
+        <div class="bg-product-details-top product-details-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>

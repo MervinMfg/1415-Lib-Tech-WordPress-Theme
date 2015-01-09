@@ -9,7 +9,8 @@ LIBTECH.ProductDetails = function () {
 	this.config = {
 		slider: null,
 		zoomThumbSlider: null,
-		thumbSliderWidth: 100
+		thumbSliderWidth: 100,
+		prodNavSlider: null
 	};
 	this.init();
 };
@@ -17,7 +18,6 @@ LIBTECH.ProductDetails.prototype = {
 	init: function () {
 		var self, thumbSlider, techConstructionSlider;
 		self = this;
-		self.initProductNav();
 		// BEGIN EXECUTING DETAIL CODE
 		$(".product-tech-major").fitVids();
 		$(".product-video").fitVids();
@@ -61,6 +61,9 @@ LIBTECH.ProductDetails.prototype = {
 			mode: 'horizontal'
 		});
 		$(window).load(function () {
+			// init product navigation at top of page
+			self.initProductNav();
+			// init image sliders
 			if (typeof self.config.slider !== 'undefined') {
 				if (self.config.slider.length > 0) self.config.slider.reloadSlider();
 			}
@@ -137,36 +140,67 @@ LIBTECH.ProductDetails.prototype = {
 		}
 	},
 	initProductNav: function () {
-		var navState, $navLink, $prodNav, prodNavHeight;
-		navState = "opened";
-		$navLink = $('.product-nav-btn');
-		$prodNav = $('.product-nav');
-		// init bx slider
-		$('.product-slider .bxslider').bxSlider({
-			slideWidth: 220,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: 10,
-			auto: false,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
-		prodNavHeight = $prodNav.outerHeight();
-		// toggle navigation
-		$navLink.click(function() {
-			if (navState == "opened") {
-				TweenMax.to($prodNav, 0.5, {marginTop: (prodNavHeight - 90) * -1});
-				navState = "closed";
-			} else {
-				TweenMax.to($prodNav, 0.5, {marginTop: 0});
-				navState = "opened";
+		var self, navState, $prodNav, $prodNavContent, $navLink, prodNavHeight, imageWidth, closedMargin, openedMargin;
+		self = this;
+		navState = "closed";
+		$prodNav = $('.product-details-nav');
+		$prodNavContent = $('.product-details-nav .section-content');
+		$navLink = $('.product-details-nav-btn');
+		// reset prod nav content position
+		$prodNavContent.removeAttr('style');
+		// remove resize listener
+		$(window).off('resize.productNav');
+		// show nav if we're tablet+
+		$prodNav.addClass('active');
+		// lazy load of images
+		$(".product-details-nav img.lazy").unveil();
+		// set image width based on product type, we want them to be the same height
+		if ($('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_surfboards')) {
+			imageWidth = 175;
+		} else {
+			imageWidth = 125;
+		}
+		if (LIBTECH.main.utilities.getMediaWidth() >= 768) {
+			// destroy slider if it exists
+			if (self.config.prodNavSlider) {
+				self.config.prodNavSlider.destroySlider();
+				self.config.prodNavSlider = null;
 			}
-			
+			// init bx slider
+			self.config.prodNavSlider = $('.product-details-nav .bxslider').bxSlider({
+				slideWidth: imageWidth,
+				minSlides: 2,
+				maxSlides: 12,
+				slideMargin: 10,
+				auto: false,
+				speed: 500,
+				controls: true,
+				pager: false,
+				mode: 'horizontal',
+				moveSlides: 2,
+				infiniteLoop: false,
+				hideControlOnEnd: true,
+				onSlideAfter: function () {$(window).scroll();} // make sure lazy load images show
+			});
+			prodNavHeight = $prodNav.outerHeight();
+			closedMargin = (prodNavHeight + 60) * -1;
+			openedMargin = (prodNavHeight - 100) * -1;
+			// show prod nav in closed state
+			TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin, delay: 1});
+			// toggle prod nav on click
+			$navLink.click(function() {
+				if (navState == "opened") {
+					TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
+					navState = "closed";
+				} else {
+					TweenMax.to($prodNavContent, 0.3, {marginTop: openedMargin});
+					navState = "opened";
+				}
+				
+			});
+		}
+		$(window).on('resize.productNav', function () {
+			self.initProductNav();
 		});
 	},
 	// ADD TO CART COMPLETION METHODS
