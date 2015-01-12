@@ -261,25 +261,23 @@
 	h1 {
 		padding-bottom: 5px;
 	}
-	.details-left {
-		.product-buy {
-			ul li.cart-button .add-to-cart {
-				background: $skiColor;
+	.product-buy {
+		ul li.cart-button .add-to-cart {
+			background: $skiColor;
 
-				&:hover,
-				&:focus {
-					background: #000;
-					color: $skiColor;
-				}
+			&:hover,
+			&:focus {
+				background: #000;
+				color: $skiColor;
+			}
 
-			}
-			.cart-success,
-			.cart-failure {
-				border-color: $skiColor;
-			}
-			.cart-success p .cart-link {
-				background-color: $skiColor;
-			}
+		}
+		.cart-success,
+		.cart-failure {
+			border-color: $skiColor;
+		}
+		.cart-success p .cart-link {
+			background-color: $skiColor;
 		}
 	}
 	.product-quick-specs li span {
