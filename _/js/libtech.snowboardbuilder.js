@@ -253,6 +253,11 @@ var boardDescriptionData = [{
 	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on… it is a Lib favorite."
 }, {
 	"Artist": "Jamie Lynn",
+	"Type": "",
+	"Color": "",
+	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
+}, {
+	"Artist": "Jamie Lynn",
 	"Type": "Blue",
 	"Color": "",
 	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
@@ -292,6 +297,11 @@ var boardBaseDescriptionData = [{
 	"Type": "Tetons",
 	"Color": "Red",
 	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on…it is a Lib favorite."
+}, {
+	"Artist": "Jamie Lynn",
+	"Type": "Sun",
+	"Color": "Wave",
+	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
 }, {
 	"Artist": "Jamie Lynn",
 	"Type": "Blue",
