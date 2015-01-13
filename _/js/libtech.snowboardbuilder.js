@@ -1027,7 +1027,7 @@ LIBTECH.snowboardbuilder = {
 			// set top
 			var top = self.getParameterByName('top');
 			var topArtist = top.split(" ")[0];
-			var topDesc = top.split(" ")[1];
+			var topDesc = top.substr(top.indexOf(' ')+1); // grab everthing after first space
 			self.setBoardArtist(topArtist);
 			self.setBoardDescription(topDesc);
 			// set sidewall
@@ -1043,7 +1043,7 @@ LIBTECH.snowboardbuilder = {
 				var base, baseArtist, baseDesc;
 				base = self.getParameterByName('base');
 				baseArtist = base.split(" ")[0];
-				baseDesc = base.split(" ")[1];
+				baseDesc = base.substr(base.indexOf(' ')+1); // grab everthing after first space
 				self.setBoardBaseArtist(baseArtist);
 				self.setBoardBaseDesc(baseDesc);
 				self.config.bBase = baseArtist;
