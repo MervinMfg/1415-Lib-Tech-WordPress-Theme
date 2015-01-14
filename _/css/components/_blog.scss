@@ -157,7 +157,10 @@
 					&.alignleft,
 					&.alignright,
 					&.aligncenter {
-						text-align: center;
+						display: block;
+						margin-right: auto;
+						margin-left: auto;
+						padding-bottom: 20px;
 					}
 				}
 				blockquote {
@@ -292,9 +295,6 @@
 						float: right;
 						padding: 0 0 20px 40px;
 						max-width: 72%;
-					}
-					&.aligncenter {
-						text-align: center;
 					}
 				}
 				.wp-caption {

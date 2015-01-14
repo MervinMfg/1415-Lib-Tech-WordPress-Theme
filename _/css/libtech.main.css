@@ -1237,7 +1237,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post .section-content .post .entry-content > p:first-of-type { font-weight: bold; }
 .blog-post .section-content .post .entry-content > p:first-of-type:first-letter { text-transform: uppercase; float: left; font-size: 4.65em; color: #fff; line-height: .8em; padding-right: 8px; }
 .blog-post .section-content .post .entry-content img { max-width: 100% !important; width: auto !important; height: auto !important; }
-.blog-post .section-content .post .entry-content img.alignleft, .blog-post .section-content .post .entry-content img.alignright, .blog-post .section-content .post .entry-content img.aligncenter { text-align: center; }
+.blog-post .section-content .post .entry-content img.alignleft, .blog-post .section-content .post .entry-content img.alignright, .blog-post .section-content .post .entry-content img.aligncenter { display: block; margin-right: auto; margin-left: auto; padding-bottom: 20px; }
 .blog-post .section-content .post .entry-content blockquote { text-align: center; font-size: 1.3em; font-weight: bold; font-style: italic; color: #fff; }
 .blog-post .section-content .post .entry-content .wp-caption { width: auto !important; }
 .blog-post .section-content .post .entry-content .wp-caption .wp-caption-text { font-weight: bold; }
@@ -1265,7 +1265,6 @@ body.international .shopping-cart-wrapper { display: none; }
   .blog-posts .blog-post { width: 49.7%; display: inline-block; vertical-align: top; padding: 0 10px; }
   .blog-post .section-content .post .entry-content img.alignleft { float: left; padding: 0 40px 20px 0; max-width: 72%; }
   .blog-post .section-content .post .entry-content img.alignright { float: right; padding: 0 0 20px 40px; max-width: 72%; }
-  .blog-post .section-content .post .entry-content img.aligncenter { text-align: center; }
   .blog-post .section-content .post .entry-content .wp-caption { width: auto !important; }
   .blog-post .section-content .post .entry-content .wp-caption.alignleft { float: left; padding-right: 40px; max-width: 70%; }
   .blog-post .section-content .post .entry-content .wp-caption.alignright { float: right; padding-left: 40px; max-width: 70%; }
