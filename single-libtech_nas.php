@@ -56,32 +56,34 @@ Template Name: NAS Detail
 				<div class="product-images">
 					<ul id="image-list">
 			       		<?php
-			       			// set up variations
-			       			$variations = Array();
-							$isProductAvailable = "No";
+			       			$productArray = Array();
+							// grab availability
+							$productAvailUS = "No";
+							$productAvailCA = "No";
+							$productAvailEU = "No";
+							// loop through variations
 							if(get_field('libtech_nas_variations')):
 								while(the_repeater_field('libtech_nas_variations')):
 									$variationLength = get_sub_field('libtech_nas_variations_length');
 									$variationSKU = get_sub_field('libtech_nas_variations_sku');
-									if ($GLOBALS['currency'] == "CAD") {
-										$variationAvailable = get_sub_field('libtech_nas_variations_availability_ca');
-									} else if ($GLOBALS['currency'] == "EUR") {
-										$variationAvailable = get_sub_field('libtech_nas_variations_availability_eur');
-									} else {
-										$variationAvailable = get_sub_field('libtech_nas_variations_availability_us');
-									}
-									// set overall availability
-									if($variationAvailable == "Yes"){
-										$isProductAvailable = "Yes";
-									}
-									array_push($variations, Array($variationLength, $variationSKU, $variationAvailable));
+									// grab availability overwrite
+									$productAvailableUS = get_sub_field('libtech_nas_variations_availability_us');
+									$productAvailableCA = get_sub_field('libtech_nas_variations_availability_ca');
+									$productAvailableEU = get_sub_field('libtech_nas_variations_availability_eur');
+									// get values for availability
+									$productAvailability = getAvailability($variationSKU, $productAvailableUS, $productAvailableCA, $productAvailableEU);
+									// eval if we should show product or not for each location
+									if($productAvailability['us']['amount'] > 0 || $productAvailability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+									if($productAvailability['ca']['amount'] > 0 || $productAvailability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
+									if($productAvailability['eu']['amount'] > 0 || $productAvailability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
+									array_push($productArray, Array('length' => $variationLength, 'sku' => $variationSKU, 'available' => $productAvailability));
 								endwhile;
 							endif;
 							// set up sku list
 							$productSkus = "";
-							for ($i = 0; $i < count($variations); $i++) {
-								$productSkus .= $variations[$i][1];
-								if($i < count($variations)-1){
+							for ($i = 0; $i < count($productArray); $i++) {
+								$productSkus .= $productArray[$i]['sku'];
+								if($i < count($productArray)-1){
 									$productSkus .= ", ";
 								}
 							}
@@ -126,32 +128,26 @@ Template Name: NAS Detail
 					</div>
 					<div class="product-price">
 						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<p class="price-alert">Free shipping!</p>
 					</div>
-					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
-						<select id="product-variation" class="select">
+					<div class="product-variations">
+						<select id="product-variation" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select a Size</option>
-							<?php
-								// sort by variation name
-								asort($variations);
-								// render out snowboards dropdown
-								foreach ($variations as $variation) {
-							?>
-							<option value="<?php echo $variation[1]; ?>" title="<?php echo $variation[0]; ?>"<?php if($variation[2] == "No") echo ' disabled="disabled"'; ?>><?php echo $variation[0]; ?></option>
-							<?php
-								}
-							?>
+							<?php asort($productArray); foreach ($productArray as $product) : // sort by variation name and render out product dropdown ?>
+							<option value="<?php echo $product['sku']; ?>" title="<?php echo $product['length']; ?>" data-avail-us="<?php echo $product['available']['us']['amount']; ?>" data-avail-ca="<?php echo $product['available']['ca']['amount']; ?>" data-avail-eur="<?php echo $product['available']['eu']['amount']; ?>" <?php if(count($productArray) == 1) echo ' selected="selected"'; ?>><?php echo $product['length']; ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
-					<p class="holiday-delivery">Free shipping!</p>
-					<div class="product-buy">
+					<div class="product-alert">
+						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+					</div><!-- .available-alert -->
+					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 						<ul>
-							<?php if($isProductAvailable == "Yes"): ?>
 							<li class="loading hidden"></li>
 							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<?php else: ?>
-							<li>Item is currently not available online.</li>
-							<?php endif; ?>
-							<li class="find-dealer h4"><a href="/store-locator/">Find a Dealer</a></li>
+							<li class="unavailable">Item is currently not available online.</li>
+							<li class="find-dealer h4"><a href="/dealer-locator/?product=skis">Find a Dealer</a></li>
 						</ul>
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>

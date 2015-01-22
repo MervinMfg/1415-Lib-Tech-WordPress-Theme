@@ -101,7 +101,9 @@ p, .p {
 }
 /* PRICE General Styles
 -------------------------------------------------------------------------------*/
-.us-price, .ca-price {
+.us-price,
+.ca-price,
+.eur-price {
 	color: #fff;
 
 	&.strike {
@@ -111,13 +113,19 @@ p, .p {
 		color: $snowColor;
 	}
 }
-.ski .us-price span, .ski .ca-price span {
+.ski .us-price span,
+.ski .ca-price span,
+.ski .eur-price span {
 	color: $skiColor;
 }
-.surf .us-price span, .surf .ca-price span {
+.surf .us-price span,
+.surf .ca-price span,
+.surf .eur-price span {
 	color: $surfColor;
 }
-.skate .us-price span, .skate .ca-price span {
+.skate .us-price span,
+.skate .ca-price span,
+.skate .eur-price span {
 	color: $skateColor;
 }
 /* Media Queries

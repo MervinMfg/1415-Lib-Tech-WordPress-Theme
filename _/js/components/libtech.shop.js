@@ -85,6 +85,7 @@ LIBTECH.Shop.prototype = {
 				});
 			}
 		});
+		self.displayPrices();
 	},
 	quickCartInit: function (visible) {
 		Shopatron.getCart({
@@ -141,5 +142,28 @@ LIBTECH.Shop.prototype = {
 				LIBTECH.main.config.regionSelector.overlayInit();
 			}
 		});
+	},
+	displayPrices: function () {
+		var currencyCookie;
+		// CHECK AND DISPLAY CORRECT CURRENCY
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			switch(currencyCookie) {
+				case 'USD':
+					$('.price .us-price').addClass('active');
+					break;
+				case 'CAD':
+					$('.price .ca-price').addClass('active');
+					break;
+				case 'EUR':
+					$('.price .eur-price').addClass('active');
+					break;
+				default:
+					// do nothing, international
+			}
+		} else {
+			// no cookie, display US
+			$('.price .us-price').addClass('active');
+		}
 	}
 };

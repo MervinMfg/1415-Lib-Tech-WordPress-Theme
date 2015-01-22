@@ -78,28 +78,32 @@ Template Name: Accessories Detail
 						<?php
 							// create new product array
 							$productArray = array();
-							$isProductAvailable = "No";
+							// grab availability
+							$productAvailUS = "No";
+							$productAvailCA = "No";
+							$productAvailEU = "No";
 							// loop through repeater
 							if(get_field('libtech_accessories_variations')):
 								while(the_repeater_field('libtech_accessories_variations')):
 									$productSize = get_sub_field('libtech_accessories_variations_size');
 									$productColor = get_sub_field('libtech_accessories_variations_color');
 									$productSKU = get_sub_field('libtech_accessories_variations_sku');
-									if ($GLOBALS['currency'] == "CAD") {
-										$productAvailable = get_sub_field('libtech_accessories_variations_availability_ca');
-									} else if ($GLOBALS['currency'] == "EUR") {
-										$productAvailable = get_sub_field('libtech_accessories_variations_availability_eur');
-									} else {
-										$productAvailable = get_sub_field('libtech_accessories_variations_availability_us');
-									}
-									$product = array("size" => $productSize, "color" => $productColor, "sku" => $productSKU, "available" => $productAvailable);
+									// grab availability overwrite
+									$productAvailableUS = get_sub_field('libtech_accessories_variations_availability_us');
+									$productAvailableCA = get_sub_field('libtech_accessories_variations_availability_ca');
+									$productAvailableEU = get_sub_field('libtech_accessories_variations_availability_eur');
+									// get values for availability
+									$productAvailability = getAvailability($productSKU, $productAvailableUS, $productAvailableCA, $productAvailableEU);
+									// eval if we should show product or not for each location
+									if($productAvailability['us']['amount'] > 0 || $productAvailability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+									if($productAvailability['ca']['amount'] > 0 || $productAvailability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
+									if($productAvailability['eu']['amount'] > 0 || $productAvailability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
+									// setup product and add to array
+									$product = array("size" => $productSize, "color" => $productColor, "sku" => $productSKU, "available" => $productAvailability);
 									array_push($productArray, $product);
-									if($productAvailable == "Yes"){
-										$isProductAvailable = "Yes";
-									}
 								endwhile;
 							endif;
-
+							// write array to dom
 							$jsArray = json_encode($productArray);
 							echo "var productArray = ". $jsArray . ";\n";
 						?>
@@ -126,58 +130,52 @@ Template Name: Accessories Detail
 					</div>
 					<div class="product-price">
 						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<p class="price-alert">Free shipping!</p>
 					</div>
-					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
-						<select id="product-variation-size" class="select">
+					<div class="product-variations">
+						<select id="product-variation-size" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select Size</option>
 							<?php
 							$sizeArray = array();
 							foreach ($productArray as $product) :
 								$productSize = $product['size'];
-								$productAvailable = $product['available'];
-								if(!in_array($productSize, $sizeArray) && $productAvailable != "No"):
+								if(!in_array($productSize, $sizeArray)):
 							?>
-							<option value="<?php echo $productSize; ?>" title="<?php echo $productSize; ?>" <?php if($productSize == "OSFA" || count($productArray) == 1){echo 'selected="selected"';} ?>><?php echo $productSize; ?></option>
+							<option value="<?php echo $productSize; ?>" title="<?php echo $productSize; ?>" <?php if(count($productArray) == 1){echo 'selected="selected"';} ?>><?php echo $productSize; ?></option>
 							<?php
 								endif;
-								// add product to size array if it's available
-								if($productAvailable != "No"){
-									array_push($sizeArray, $productSize);
-								}
+								// add product to size array
+								array_push($sizeArray, $productSize);
 							endforeach;
 							?>
 						</select>
-						<select id="product-variation-color" class="select">
+						<select id="product-variation-color" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select Color</option>
 							<?php
 							$colorArray = array();
-
 							foreach ($productArray as $product) :
 								$productColor = $product['color'];
-								$productAvailable = $product['available'];
-								if(!in_array($productColor, $colorArray) && $productAvailable != "No"):
+								if(!in_array($productColor, $colorArray)):
 							?>
 							<option value="<?php echo $productColor; ?>" title="<?php echo $productColor; ?>" <?php if(count($productArray) == 1){echo 'selected="selected"';} ?>><?php echo $productColor; ?></option>
 							<?php
 								endif;
-								// add product to color array if it's available
-								if($productAvailable != "No"){
-									array_push($colorArray, $productColor);
-								}
+								// add product to color array
+								array_push($colorArray, $productColor);
 							endforeach;
 							?>
 						</select>
 					</div>
-					<p class="holiday-delivery">Free shipping!</p>
-					<div class="product-buy">
+					<div class="product-alert">
+						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+					</div><!-- .available-alert -->
+					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 						<ul>
-							<?php if($isProductAvailable == "Yes"): ?>
 							<li class="loading hidden"></li>
 							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<?php else: ?>
-							<li>Item is currently not available online.</li>
-							<?php endif; ?>
-							<li class="find-dealer h4"><a href="/store-locator/">Find a Dealer</a></li>
+							<li class="unavailable">Item is currently not available online.</li>
+							<li class="find-dealer h4"><a href="/dealer-locator/">Find a Dealer</a></li>
 						</ul>
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
@@ -191,10 +189,8 @@ Template Name: Accessories Detail
 							if(!in_array($productSize, $sizeArray)):
 								array_push($sizeDisplayArray, $productSize);
 							endif;
-							// add product to size array if it's available
-							if($productAvailable != "No"){
-								array_push($sizeArray, $productSize);
-							}
+							// add product to size array
+							array_push($sizeArray, $productSize);
 						endforeach;
 						// setup sizes text display
 						$sizes = "";

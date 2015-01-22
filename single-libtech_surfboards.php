@@ -6,7 +6,19 @@ Template Name: Surfboard Detail
 	if (have_posts()) : while (have_posts()) : the_post();
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
-		$productAvailable = false;
+
+
+
+		// $productAvailable = false;
+		// grab availability
+		$productAvailUS = "No";
+		$productAvailCA = "No";
+		$productAvailEU = "No";
+
+
+
+
+
 		// get 5 fin bottom image
 		$defaultTopImage = "";
 		$defaultTopImageFull = "";
@@ -49,7 +61,14 @@ Template Name: Surfboard Detail
 					$length = floor($length/12) . "’" . ($length - (floor($length/12)*12)) . "”"; // convert from inches to feet + inches
 					$fins = $variationOptions[$i]['libtech_surfboard_variations_options_fins'];
 					$sku = $variationOptions[$i]['libtech_surfboard_variations_options_sku'];
-					if ($GLOBALS['currency'] == "CAD") {
+
+
+
+
+
+
+
+					/*if ($GLOBALS['currency'] == "CAD") {
 						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_ca'];
 					} else if ($GLOBALS['currency'] == "EUR") {
 						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
@@ -58,7 +77,25 @@ Template Name: Surfboard Detail
 					}
 					if ($avail == "Yes" || $avail == "Limited") {
 						$productAvailable = true;
-					}
+					}*/
+
+
+					// grab availability overwrite
+					$availableUS = $variationOptions[$i]['libtech_surfboard_variations_options_avail_us'];
+					$availableCA = $variationOptions[$i]['libtech_surfboard_variations_options_avail_ca'];
+					$availableEU = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
+					// get values for availability
+					$availability = getAvailability($sku, $availableUS, $availableCA, $availableEU);
+					// eval if we should show product or not for each location
+					// in US and CA we allow sales of boards when we don't have in stock, made to order, but not 3 fins
+					if($availability['us']['amount'] > 0 || ($availability['us']['amount'] == "" && $fins != "3 Fin Box") || ($availability['us']['amount'] == 0 && $fins != "3 Fin Box") || $availability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+					if($availability['ca']['amount'] > 0 || ($availability['ca']['amount'] == "" && $fins != "3 Fin Box") || ($availability['ca']['amount'] == 0 && $fins != "3 Fin Box") || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
+					// waterboards are treated direct in Europe
+					if($availability['eu']['amount'] > 0 || $availability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
+
+
+
+
 					if ($fins == "3 Fin Box") {
 						$bImg = $bottomImage[0];
 						$bImgFull = $bottomImageFull[0];
@@ -76,7 +113,7 @@ Template Name: Surfboard Detail
 						"length" => $length,
 						"fins" => $fins,
 						"sku" => $sku,
-						"avail" => $avail
+						"available" => $availability
 					);
 					// add to master product array
 					array_push($surfboards, $surfboard);
@@ -214,6 +251,7 @@ Template Name: Surfboard Detail
 						<div class="price-graphic-five">
 							<?php echo getPrice( get_field('libtech_product_price_us_5fin_graphic'), get_field('libtech_product_price_ca_5fin_graphic'), get_field('libtech_product_price_eur_5fin_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
 						</div>
+						<p class="price-alert">Free shipping!</p>
 						<div class="clearfix"></div>
 					</div>
 					<div class="product-stock-alert">
@@ -222,34 +260,34 @@ Template Name: Surfboard Detail
 						<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose. Each board is handmade in the USA by surfers.</p>
 						<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p> 
 					</div>
-					<div class="product-variations <?php if(!$productAvailable){echo 'hidden';} ?>">
-						<select id="product-variation-graphic" class="select">
+					<div class="product-variations">
+						<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select Graphic</option>
 							<?php foreach ($surfboardGraphics as $surfboardGraphic) : ?>
-							<option value="<?php echo $surfboardGraphic['name']; ?>" title="<?php echo $surfboardGraphic['name']; ?>" data-img="<?php echo $surfboardGraphic['topImage'][0]; ?>" data-img-full="<?php echo $surfboardGraphic['topImageFull'][0]; ?>"><?php echo $surfboardGraphic['name']; ?></option>
+							<option value="<?php echo $surfboardGraphic['name']; ?>" title="<?php echo $surfboardGraphic['name']; ?>" data-img="<?php echo $surfboardGraphic['topImage'][0]; ?>" data-img-full="<?php echo $surfboardGraphic['topImageFull'][0]; ?>" <?php if(count($surfboardGraphics) == 1){echo 'selected="selected"';} ?>><?php echo $surfboardGraphic['name']; ?></option>
 							<?php endforeach; ?>
 						</select>
-						<select id="product-variation-size" class="select">
+						<select id="product-variation-size" class="select<?php if(count($surfboardOptions) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select Size &amp; Fin Box</option>
 							<?php
 							foreach ($surfboardOptions as $surfboardOption) :
 								$title = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
 								$value = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
 							?>
-							<option value="<?php echo $value; ?>" title="<?php echo $title; ?>" data-img="<?php echo $surfboardOption['bottomImage'][0]; ?>" data-img-full="<?php echo $surfboardOption['bottomImageFull'][0]; ?>"><?php echo $title; ?></option>
+							<option value="<?php echo $value; ?>" title="<?php echo $title; ?>" data-img="<?php echo $surfboardOption['bottomImage'][0]; ?>" data-img-full="<?php echo $surfboardOption['bottomImageFull'][0]; ?>" <?php if(count($surfboardOptions) == 1){echo 'selected="selected"';} ?>><?php echo $title; ?></option>
 							<?php endforeach; ?>
 						</select>
 					</div>
-					<p class="holiday-delivery">Free shipping!</p>
-					<div class="product-buy">
+					<div class="product-alert">
+						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+					</div><!-- .available-alert -->
+					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 						<ul>
-							<?php if($productAvailable): ?>
 							<li class="loading hidden"></li>
 							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<?php else: ?>
-							<li>Item is currently not available online.</li>
-							<?php endif; ?>
-							<li class="find-dealer h4"><a href="/store-locator/">Find a Dealer</a></li>
+							<li class="unavailable">Item is currently not available online.</li>
+							<li class="find-dealer h4"><a href="/dealer-locator/?product=surfboards">Find a Dealer</a></li>
 						</ul>
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>

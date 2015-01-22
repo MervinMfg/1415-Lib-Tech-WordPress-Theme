@@ -90,10 +90,6 @@
 				}
 			}
 		}
-		.holiday-delivery {
-			padding-bottom: 10px;
-			margin-top: -10px;
-		}
 	}
 	.product-price {
 		font-size: 1.4em;
@@ -107,8 +103,14 @@
 			display: none;
 
 			&.active {
-				display: block;
+				display: inline-block;
 			}
+		}
+		.price {
+			display: inline-block;
+		}
+		.price-alert {
+			display: none;
 		}
 	}
 	.product-stock-alert p {
@@ -122,10 +124,10 @@
 	}
 	.product-variations {
 		margin-bottom: 10px;
-
-		&.hidden {
-			display: none;
-		}
+		display: none;
+	}
+	.product-alert p {
+		display: none;
 	}
 	.product-buy {
 		margin-bottom: 40px;
@@ -143,10 +145,8 @@
 			}
 			&.cart-button {
 				margin-bottom: 10px;
+				display: none;
 
-				&.hidden {
-					display: none;
-				}
 				.add-to-cart {
 					background: $snowColor;
 					padding: 5px 10px;
@@ -189,6 +189,41 @@
 		}
 		.cart-success.hidden, .cart-failure.hidden {
 			display: none;
+		}
+	}
+	&.available {
+		.product-price .price-alert {
+			display: inline-block;
+			padding-left: 20px;
+		}
+		.product-variations {
+			display: block;
+		}
+		.product-alert {
+			p {
+				padding-bottom: 10px;
+				margin-top: -10px;
+
+				span {
+					color: $snowColor;
+				}
+			}
+			&.low p.low-inventory,
+			&.no p.no-inventory {
+				display: block;
+			}
+		}
+		.product-buy ul li {
+			&.cart-button {
+				display: block;
+
+				&.hidden {
+					display: none;
+				}
+			}
+			&.unavailable {
+				display: none;
+			}
 		}
 	}
 	.product-quick-specs {
@@ -261,6 +296,9 @@
 	h1 {
 		padding-bottom: 5px;
 	}
+	.product-alert p span {
+		color: $skiColor;
+	}
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $skiColor;
@@ -309,14 +347,11 @@
 			display: none;
 		}
 	}
-	.details-left {
-		.holiday-delivery {
-			padding-bottom: 10px;
-			margin-top: -10px;
-		}
-	}
 }
 .surf .product-details {
+	.product-alert p span {
+		color: $surfColor;
+	}
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $surfColor;
@@ -345,6 +380,9 @@
 	}
 }
 .skate .product-details {
+	.product-alert p span {
+		color: $skateColor;
+	}
 	.product-buy {
 		ul li.cart-button .add-to-cart {
 			background: $skateColor;

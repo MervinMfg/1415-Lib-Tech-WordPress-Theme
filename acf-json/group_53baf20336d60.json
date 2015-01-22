@@ -121,12 +121,13 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
+                    "default_value": "Inventory",
                     "layout": "vertical"
                 },
                 {
@@ -140,12 +141,13 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
+                    "default_value": "Inventory",
                     "layout": "vertical"
                 },
                 {
@@ -159,12 +161,13 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
+                    "default_value": "Inventory",
                     "layout": "vertical"
                 }
             ]
