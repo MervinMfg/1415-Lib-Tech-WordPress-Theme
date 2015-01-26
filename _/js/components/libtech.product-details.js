@@ -749,7 +749,8 @@ LIBTECH.ProductDetails.prototype = {
 				var sizeArray = [];
 				var selectedSize = $('#product-variation-size').val();
 				$.each(productArray, function (key, value) {
-					var fullName, inArrayCheck, skuAvail, fins;
+					var seriesName, fullName, inArrayCheck, skuAvail, fins;
+					seriesName = $('.product-details h1').html();
 					fullName = value.length + ' - ' + value.fins;
 					// check if size already exists
 					inArrayCheck = $.inArray(fullName, sizeArray);
@@ -771,7 +772,13 @@ LIBTECH.ProductDetails.prototype = {
 								// international
 								skuAvail = value.available.us ? value.available.us.amount : 0;
 						}
-						if( skuAvail === "Yes" || skuAvail > 0 || (self.config.currency == "USD" && skuAvail === 0 && fins.indexOf("5 Fin")) || (self.config.currency == "CAD" && skuAvail === 0 && fins.indexOf("5 Fin")) || (self.config.currency == "EUR" && skuAvail > 0)) {
+						if( skuAvail === "Yes" ||
+							skuAvail > 0 ||
+							(self.config.currency == "USD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
+							(self.config.currency == "USD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
+							(self.config.currency == "CAD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
+							(self.config.currency == "CAD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
+							(self.config.currency == "EUR" && skuAvail > 0)) {
 							// check to see if we matched an size that was already selected
 							if (selectedSize == fullName) {
 								sizeOptions += '<option value="' + fullName + '" selected="selected" data-img="' + value.bottomImage + '" data-img-full="' + value.bottomImageFull + '">' + fullName + '</option>';
