@@ -279,17 +279,26 @@
 .currency-cad,
 .currency-int {
 	.product-details .product-quick-specs li {
-
 		span.eu-sizes {
 		  	display: none;
 		}
 	}
 }
-.international .product-details {
-	.product-price,
-	.product-variations,
-	.product-buy .cart-button {
-		display: none;
+.international {
+	.product-details.available {
+		.product-price,
+		.product-variations,
+		.product-alert {
+			display: none;
+		}
+		.product-buy {
+			.cart-button {
+				display: none;
+			}
+			.unavailable {
+				display: block;
+			}
+		}
 	}
 }
 .ski .product-details {

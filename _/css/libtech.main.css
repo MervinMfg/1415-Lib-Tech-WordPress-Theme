@@ -817,7 +817,9 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .currency-usd .product-details .product-quick-specs li span.eu-sizes, .currency-cad .product-details .product-quick-specs li span.eu-sizes, .currency-int .product-details .product-quick-specs li span.eu-sizes { display: none; }
 
-.international .product-details .product-price, .international .product-details .product-variations, .international .product-details .product-buy .cart-button { display: none; }
+.international .product-details.available .product-price, .international .product-details.available .product-variations, .international .product-details.available .product-alert { display: none; }
+.international .product-details.available .product-buy .cart-button { display: none; }
+.international .product-details.available .product-buy .unavailable { display: block; }
 
 .ski .product-details h1 { padding-bottom: 5px; }
 .ski .product-details .product-alert p span { color: #0099FF; }
