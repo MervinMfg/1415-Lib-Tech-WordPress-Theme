@@ -735,50 +735,6 @@ LIBTECH.main = {
 				if ($(this).find(".video-container").length === 0)
 					$(this).prepend(vimeoEmbed).fitVids();
 			});
-		},
-		filterList: function (productListing) {
-			var filterArray = []; // set up array for recording filter options
-			$('.product-filtering > li.filters').each(function () { // loop through each filter group
-				if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
-					$(this).find('ul > li[data-filter]').each(function () {
-						var filterItem = $(this);
-						if (filterItem.hasClass('selected')) {
-							filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
-						}
-					});
-				} else { // first list of filters have been added, now build upon them
-					var filterArrayTemp, filterSet;
-					filterArrayTemp = []; // new array to update filterArray after it's built based on filterArray and new filters to concatinate
-					$(this).find('ul > li[data-filter]').each(function () {
-						var filterItem = $(this);
-						if (filterItem.hasClass('selected')) {
-							filterSet = true; // mark that we found another filter so we need to update the filterArray
-							for (var i = 0; i < filterArray.length; i++) {
-								filterArrayTemp.push(filterArray[i] + filterItem.attr('data-filter')); // concatinate current filters with new
-							}
-						}
-					});
-					if (filterSet === true) {
-						filterArray = filterArrayTemp.slice(0); // update main array
-					}
-				}
-			});
-			// build filterList string
-			filterList = ""; // default to no filter
-			for (var i = 0; i < filterArray.length; i++) {
-				if (i === 0) { // first item has no commas
-					filterList = filterArray[i];
-				} else {
-					filterList += ", " + filterArray[i];
-				}
-			}
-			// should look something like this - { filter: ".womens.Narrow, .youth.BTX" }
-			// update hash history, this triggers the hash change event which will submit the filters
-			if (filterArray.length > 0) {
-				window.location.hash = 'filter=' + encodeURIComponent(filterList);
-			} else {
-				window.location.hash = 'all';
-			}
 		}
 	}
 };

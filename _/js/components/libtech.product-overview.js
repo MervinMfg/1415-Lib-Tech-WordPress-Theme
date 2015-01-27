@@ -41,12 +41,23 @@ LIBTECH.ProductOverview.prototype = {
 		if (currencyCookie !== 'USD') {
 			$('.product-overview .product-listing .product-item.superbanana').remove();
 		}
+		// set availability filters based on location
+		$('.product-listing .product-item').each(function () {
+			var $this = $(this);
+			if (currencyCookie == 'CAD') {
+				if ($this.hasClass('available-ca')) $this.addClass('available');
+			} else if (currencyCookie == 'EUR') {
+				if ($this.hasClass('available-eu')) $this.addClass('available');
+			} else {
+				if ($this.hasClass('available-us')) $this.addClass('available');
+			}
+		});
 		// BEGIN SETTING UP ISOTOPE
 		productListing = $('.product-overview .product-listing');
 		// adjust initial item widths
 		setWidths();
 		// on window load run layout again to fix image heights
-		$(window).load(function () {
+		$(window).on('load', function () {
 			// set up initial settings
 			productListing.isotope({
 				itemSelector: '.product-item',
@@ -57,7 +68,7 @@ LIBTECH.ProductOverview.prototype = {
 				},
 				getSortData: {
 					price: function ($elem) {
-						return parseFloat($elem.find('.price p span').text().replace("$", ""));
+						return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
 					}
 				}
 			});
@@ -97,6 +108,10 @@ LIBTECH.ProductOverview.prototype = {
 				}
 				$(this).find('ul').width(widthTotal);
 			});
+			// trigger change if there is a value
+			if (window.location.hash !== '') {
+				$(window).trigger("hashchange");
+			}
 		});
 		// update columnWidth on window resize
 		$(window).smartresize(function () {
@@ -133,12 +148,12 @@ LIBTECH.ProductOverview.prototype = {
 			});
 		}
 		// filter items when filter link is clicked
-		$('.product-filtering > li.filters > ul > li').click(function () {
+		$('.product-filtering > li.filters > ul > li').on('click', function () {
 			var target, selector, selectorASC, filterItems, filterList;
 			target = $(this);
 			target.toggleClass('selected'); // add or remove selected class
 			if (target.attr('data-filter')) { // if target clicked is a filter option vs sort
-				LIBTECH.main.utilities.filterList(productListing);
+				self.filterList(productListing);
 			} else { // we are sorting data now, not filtering
 				if (target.hasClass('selected')) {
 					// grab all sort specific items and deselect them
@@ -169,7 +184,6 @@ LIBTECH.ProductOverview.prototype = {
 					});
 				}
 			}
-			
 			return false;
 		});
 		// filter products on hashchange
@@ -226,7 +240,7 @@ LIBTECH.ProductOverview.prototype = {
 							filterGroup.find('ul > li').each(function () {
 								$(this).removeClass('selected');
 							});
-							LIBTECH.main.utilities.filterList(productListing);
+							self.filterList(productListing);
 							// check if sort needs to be reset
 							if (filterGroup.find('ul > li[data-sort]').length > 0) {
 								productListing.isotope({
@@ -244,10 +258,6 @@ LIBTECH.ProductOverview.prototype = {
 				}
 			});
 		});
-		// trigger change if there is a value
-		if (window.location.hash !== '') {
-			$(window).trigger("hashchange");
-		}
 	},
 	initColorways: function () {
 		$('.product-listing .product-item a .colorways .swatch').off('click.colorway'); // remove old listeners
@@ -258,5 +268,49 @@ LIBTECH.ProductOverview.prototype = {
 			$(this).parent().parent().find('.swatch').removeClass('active');
 			$(this).addClass('active');
 		});
+	},
+	filterList: function (productListing) {
+		var filterArray = []; // set up array for recording filter options
+		$('.product-filtering > li.filters').each(function () { // loop through each filter group
+			if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
+				$(this).find('ul > li[data-filter]').each(function () {
+					var filterItem = $(this);
+					if (filterItem.hasClass('selected')) {
+						filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
+					}
+				});
+			} else { // first list of filters have been added, now build upon them
+				var filterArrayTemp, filterSet;
+				filterArrayTemp = []; // new array to update filterArray after it's built based on filterArray and new filters to concatinate
+				$(this).find('ul > li[data-filter]').each(function () {
+					var filterItem = $(this);
+					if (filterItem.hasClass('selected')) {
+						filterSet = true; // mark that we found another filter so we need to update the filterArray
+						for (var i = 0; i < filterArray.length; i++) {
+							filterArrayTemp.push(filterArray[i] + filterItem.attr('data-filter')); // concatinate current filters with new
+						}
+					}
+				});
+				if (filterSet === true) {
+					filterArray = filterArrayTemp.slice(0); // update main array
+				}
+			}
+		});
+		// build filterList string
+		filterList = ""; // default to no filter
+		for (var i = 0; i < filterArray.length; i++) {
+			if (i === 0) { // first item has no commas
+				filterList = filterArray[i];
+			} else {
+				filterList += ", " + filterArray[i];
+			}
+		}
+		// should look something like this - { filter: ".womens.Narrow, .youth.BTX" }
+		// update hash history, this triggers the hash change event which will submit the filters
+		if (filterArray.length > 0) {
+			window.location.hash = 'filter=' + encodeURIComponent(filterList);
+		} else {
+			window.location.hash = 'all';
+		}
 	}
 };
