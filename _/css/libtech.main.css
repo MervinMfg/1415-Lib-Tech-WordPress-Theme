@@ -990,7 +990,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-details .product-images .surf-images { max-width: 700px; margin: 0 auto; }
   .product-details .product-details-right { width: 40%; float: right; clear: right; }
   .product-details h3 { text-align: left; }
-  .product-details h3, .product-details .image-list-thumbs, .product-details .product-price, .product-details .product-stock-alert, .product-details .product-variations, .product-details .product-buy, .product-details .product-quick-specs, .product-details .product-share { max-width: 540px; }
+  .product-details h3, .product-details .image-list-thumbs, .product-details .product-price, .product-details .product-stock-alert, .product-details .product-variations, .product-details .product-alert, .product-details .product-buy, .product-details .product-quick-specs, .product-details .product-share { max-width: 540px; }
   .single-libtech_snowboards .product-details h1, .single-libtech_skateboards .product-details h1 { width: 50%; }
   .single-libtech_snowboards .product-details .product-images, .single-libtech_skateboards .product-details .product-images { width: 50%; }
   .single-libtech_snowboards .product-details .product-images .bx-wrapper, .single-libtech_skateboards .product-details .product-images .bx-wrapper { max-width: 540px !important; }
