@@ -76,8 +76,8 @@
 	}
 	.product-details-right {
 		.product-note-wrapper {
-
 			padding-bottom: 10px;
+			clear: both;
 
 			.product-note {
 				text-align: center;
@@ -95,6 +95,7 @@
 		font-size: 1.4em;
 		padding-bottom: 20px;
 		font-weight: bold;
+		clear: both;
 
 		.price-logo,
 		.price-graphic,
