@@ -88,7 +88,7 @@ get_header();
                             <div class="description">
                                 <?php echo $productContent; ?>
                             </div>
-                            <div class="price"><?php echo $productPrice; ?></div>
+                            <?php echo $productPrice; ?>
                             <a href="<?php echo $productLink; ?>" class="buy h4">Buy Now!</a>
                         </div>
                     </li>
