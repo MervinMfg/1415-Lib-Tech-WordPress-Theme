@@ -11,7 +11,7 @@ Template Name: Snowboard Detail
 		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
-					<li>
+					<li class="diy">
 						<a href="/snowboarding/snowboard-builder/">
 							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
 							<div class="product-peek">
@@ -32,15 +32,14 @@ Template Name: Snowboard Detail
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$postType = $post->post_type;
+							$postSlug = $post->post_name;
 							$imageID = get_field('libtech_product_image');
 							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
 							// check for technology type to display
 							$productType = get_field('libtech_snowboard_contour');
-							
-							if (get_the_title() != "superBANANA") :
 					?>
 
-					<li>
+					<li class="<?php echo $postSlug; ?>">
 						<a href="<? the_permalink(); ?>">
 							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
 							<div class="product-peek">
@@ -51,7 +50,6 @@ Template Name: Snowboard Detail
 					</li>
 
 					<?
-							endif;
 						endwhile;
 						wp_reset_query();
 					?>

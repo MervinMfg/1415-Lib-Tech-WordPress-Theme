@@ -180,6 +180,10 @@ LIBTECH.ProductDetails.prototype = {
 		$(window).off('resize.productNav');
 		// show nav if we're tablet+
 		$prodNav.addClass('active');
+		// remove super banana if we're not in US
+		if (self.config.currency !== 'USD') {
+			$('.product-details-nav .product-listing .superbanana').remove();
+		} 
 		// lazy load of images
 		$(".product-details-nav img.lazy").unveil();
 		// set image width based on product type, we want them to be the same height
