@@ -117,7 +117,7 @@ LIBTECH.ProductOverview.prototype = {
 			});
 		});
 		// adjust initial item widths
-		setWidths();
+		$(window).resize();
 	},
 	initColorways: function () {
 		$('.product-listing .product-item a .colorways .swatch').off('click.colorway'); // remove old listeners
