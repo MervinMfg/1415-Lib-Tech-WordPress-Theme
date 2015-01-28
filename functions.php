@@ -213,7 +213,7 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
         // CA Price
         $price .= '<p class="ca-price strike">$' . $caPrice . ' <span>CAD</span></p><p class="ca-price">$' . round($caPrice * ((100 - $salePercent) / 100), 2) . ' <span>CAD (' . $salePercent . '% off)</span></p>';
         // EUR Price
-        $price .= '<p class="eur-price strike">$' . $eurPrice . ' <span>EUR incl. VAT</span></p><p class="eur-price">$' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span>EUR incl. VAT (' . $salePercent . '% off)</span></p>';
+        $price .= '<p class="eur-price strike">€' . $eurPrice . ' <span>EUR incl. VAT</span></p><p class="eur-price">€' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span>EUR incl. VAT (' . $salePercent . '% off)</span></p>';
     } else {
         // US Price
         $price .= '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
