@@ -67,7 +67,7 @@ LIBTECH.RegionSelector.prototype = {
 		var self = this;
 		$('#region-selector').toggleClass('visible');
 		// scroll to top
-		LIBTECH.main.utilities.pageScroll('#region-selector', 0.5);
+		LIBTECH.main.utilities.pageScroll('#region-selector', 0.5, false);
 		// add click events
 		$("#region-selector .location-group .location-list a").on('click.region', function (e) {
 			var selectedCurrency, selectedRegion;
