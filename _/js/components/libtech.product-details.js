@@ -397,7 +397,7 @@ LIBTECH.ProductDetails.prototype = {
 			});
 		}
 		// FUNCTIONALITY FOR PRODUCTS WITH ONLY 1 SELECTION
-		$('#product-variation').change(function () {
+		$('#product-variation').on('change', function () {
 			// display the correct image matching selected option
 			var productSKU, productSKUs, productAvail, productThumbs;
 			productSKU = $(this).val();
@@ -436,6 +436,7 @@ LIBTECH.ProductDetails.prototype = {
 				}
 			}
 		});
+		$('#product-variation').trigger('change');
 		// add to cart api btn
 		$('a.add-to-cart').click(function (e) {
 			e.preventDefault();
@@ -558,7 +559,7 @@ LIBTECH.ProductDetails.prototype = {
 			}
 		});
 		// select field for size
-		$('#product-variation-size').change(function () {
+		$('#product-variation-size').on('change', function () {
 			var sizeValue = $(this).val();
 			// loop through color optioins and see what's available
 			$('#product-variation-color option').each(function (index) {
@@ -605,7 +606,7 @@ LIBTECH.ProductDetails.prototype = {
 			checkProdAvail();
 		});
 		// select field for color
-		$('#product-variation-color').change(function () {
+		$('#product-variation-color').on('change', function () {
 			// select the correct image
 			var colorValue, colorThumbs;
 			colorValue = $(this).val();
@@ -618,6 +619,9 @@ LIBTECH.ProductDetails.prototype = {
 			// check avail messaging
 			checkProdAvail();
 		});
+		// trigger default change
+		$('#product-variation-size').trigger('change');
+		$('#product-variation-color').trigger('change');
 		function checkProdAvail() {
 			var productSize, productColor, productSKU;
 			// remove old alerts
@@ -814,6 +818,9 @@ LIBTECH.ProductDetails.prototype = {
 			// update price display
 			updatePrice();
 		});
+		// trigger default change
+		$('#product-variation-graphic').trigger('change');
+		$('#product-variation-size').trigger('change');
 		var updatePrice = function () {
 			var selectedGraphic, selectedSize, defaultFinValue;
 			selectedGraphic = $('#product-variation-graphic').val();
