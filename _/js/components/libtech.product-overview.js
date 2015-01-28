@@ -6,11 +6,14 @@
 var LIBTECH = LIBTECH || {};
 
 LIBTECH.ProductOverview = function () {
+	this.config = {
+		productListing: null
+	};
 	this.init();
 };
 LIBTECH.ProductOverview.prototype = {
 	init: function () {
-		var self, slider, currencyCookie;
+		var self, slider;
 		self = this;
 		self.initColorways();
 		slider = $('.featured-product-slider .bxslider').bxSlider({
@@ -36,8 +39,18 @@ LIBTECH.ProductOverview.prototype = {
 				}
 			}
 		});
+		self.initAvailability();
+		// set up isotope
+		self.config.productListing = $('.product-overview .product-listing');
+		// on window load run layout again to fix image heights
+		$(window).on('load', function () {
+			self.initIsotope();
+			self.initFilters();
+		});
+	},
+	initAvailability: function () {
+		var currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
 		// hide superbanana if currency other than USD
-		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
 		if (currencyCookie !== 'USD') {
 			$('.product-overview .product-listing .product-item.superbanana').remove();
 		}
@@ -52,65 +65,44 @@ LIBTECH.ProductOverview.prototype = {
 				if ($this.hasClass('available-us')) $this.addClass('available');
 			}
 		});
-		// BEGIN SETTING UP ISOTOPE
-		productListing = $('.product-overview .product-listing');
-		// adjust initial item widths
-		setWidths();
-		// on window load run layout again to fix image heights
-		$(window).on('load', function () {
-			// set up initial settings
-			productListing.isotope({
-				itemSelector: '.product-item',
-				resizable: false, // turn off because it's responsive
-				layoutMode: 'fitRows',
-				fitRows: {
-					columnWidth: getUnitWidth()
-				},
-				getSortData: {
-					price: function ($elem) {
-						return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
-					}
-				}
+	},
+	initIsotope: function () {
+		var self = this;
+		// set the widths of each item
+		function setWidths() {
+			var unitWidth = getUnitWidth();
+			self.config.productListing.children(".product-item").css({
+				width: unitWidth
 			});
-			// adjust width to be correct
-			$('.product-filtering > li.filters').each(function () {
-				var widthTotal = 0;
-				$(this).find('ul > li').each(function () {
-					widthTotal += $(this).outerWidth();
-				});
-				// max width for filter dropdowns
-				if (widthTotal > 646) {
-					widthTotal = 646;
+		}
+		// get new width of each item based on browser width
+		function getUnitWidth() {
+			var width, windowWidth;
+			windowWidth = LIBTECH.main.utilities.getMediaWidth();
+			if (windowWidth < 600) {
+				width = self.config.productListing.width() / 2;
+			} else if (windowWidth < 768) {
+				width = self.config.productListing.width() / 3;
+			} else if (windowWidth < 980) {
+				width = self.config.productListing.width() / 4;
+			} else {
+				width = self.config.productListing.width() / 5;
+			}
+			width = Math.floor(width);
+			return width;
+		}
+		// set up initial settings
+		self.config.productListing.isotope({
+			itemSelector: '.product-item',
+			resizable: false, // turn off because it's responsive
+			layoutMode: 'fitRows',
+			fitRows: {
+				columnWidth: getUnitWidth()
+			},
+			getSortData: {
+				price: function ($elem) {
+					return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
 				}
-				// max width for 4 filter sets
-				if ($('.product-filtering').hasClass('apparel') || $('.product-filtering').hasClass('clearance')) {
-					if (widthTotal > 430) {
-						widthTotal = 430;
-					}
-				}
-				// max width for 3 filter sets
-				if ($('.product-filtering').hasClass('skis') || $('.product-filtering').hasClass('skateboards') || $('.product-filtering').hasClass('outerwear')) {
-					if (widthTotal > 316) {
-						widthTotal = 316;
-					}
-				}
-				// max width for 2 filter sets
-				if ($('.product-filtering').hasClass('accessories') || $('.product-filtering').hasClass('luggage')) {
-					if (widthTotal > 206) {
-						widthTotal = 206;
-					}
-				}
-				// max width for 1 filter set
-				if ($('.product-filtering').hasClass('surfboards') || $('.product-filtering').hasClass('bindings')) {
-					if (widthTotal > 96) {
-						widthTotal = 96;
-					}
-				}
-				$(this).find('ul').width(widthTotal);
-			});
-			// trigger change if there is a value
-			if (window.location.hash !== '') {
-				$(window).trigger("hashchange");
 			}
 		});
 		// update columnWidth on window resize
@@ -118,42 +110,70 @@ LIBTECH.ProductOverview.prototype = {
 			// set the widths of items
 			setWidths();
 			// reinit isotop with new column width
-			productListing.isotope({
+			self.config.productListing.isotope({
 				fitRows: {
 					columnWidth: getUnitWidth()
 				}
 			});
 		});
-		// get new width of each item based on browser width
-		function getUnitWidth() {
-			var width, windowWidth;
-			windowWidth = LIBTECH.main.utilities.getMediaWidth();
-			if (windowWidth < 600) {
-				width = productListing.width() / 2;
-			} else if (windowWidth < 768) {
-				width = productListing.width() / 3;
-			} else if (windowWidth < 980) {
-				width = productListing.width() / 4;
-			} else {
-				width = productListing.width() / 5;
-			}
-			width = Math.floor(width);
-			return width;
-		}
-		// set the widths of each item
-		function setWidths() {
-			var unitWidth = getUnitWidth();
-			productListing.children(".product-item").css({
-				width: unitWidth
+		// adjust initial item widths
+		setWidths();
+	},
+	initColorways: function () {
+		$('.product-listing .product-item a .colorways .swatch').off('click.colorway'); // remove old listeners
+		$('.product-listing .product-item a .colorways .swatch').on('click.colorway', function (e) {
+			e.preventDefault();
+			// set image src of product image
+			$(this).parent().parent().find('.product-img').attr('src', $(this).attr('data-src'));
+			$(this).parent().parent().find('.swatch').removeClass('active');
+			$(this).addClass('active');
+		});
+	},
+	initFilters: function () {
+		var self = this;
+		// adjust width to be correct
+		$('.product-filtering > li.filters').each(function () {
+			var widthTotal = 0;
+			$(this).find('ul > li').each(function () {
+				widthTotal += $(this).outerWidth();
 			});
-		}
+			// max width for filter dropdowns
+			if (widthTotal > 646) {
+				widthTotal = 646;
+			}
+			// max width for 4 filter sets
+			if ($('.product-filtering').hasClass('apparel') || $('.product-filtering').hasClass('clearance')) {
+				if (widthTotal > 430) {
+					widthTotal = 430;
+				}
+			}
+			// max width for 3 filter sets
+			if ($('.product-filtering').hasClass('skis') || $('.product-filtering').hasClass('skateboards') || $('.product-filtering').hasClass('outerwear')) {
+				if (widthTotal > 316) {
+					widthTotal = 316;
+				}
+			}
+			// max width for 2 filter sets
+			if ($('.product-filtering').hasClass('accessories') || $('.product-filtering').hasClass('luggage')) {
+				if (widthTotal > 206) {
+					widthTotal = 206;
+				}
+			}
+			// max width for 1 filter set
+			if ($('.product-filtering').hasClass('surfboards') || $('.product-filtering').hasClass('bindings')) {
+				if (widthTotal > 96) {
+					widthTotal = 96;
+				}
+			}
+			$(this).find('ul').width(widthTotal);
+		});
 		// filter items when filter link is clicked
 		$('.product-filtering > li.filters > ul > li').on('click', function () {
 			var target, selector, selectorASC, filterItems, filterList;
 			target = $(this);
 			target.toggleClass('selected'); // add or remove selected class
 			if (target.attr('data-filter')) { // if target clicked is a filter option vs sort
-				self.filterList(productListing);
+				self.filterList(self.config.productListing);
 			} else { // we are sorting data now, not filtering
 				if (target.hasClass('selected')) {
 					// grab all sort specific items and deselect them
@@ -172,13 +192,13 @@ LIBTECH.ProductOverview.prototype = {
 						selectorASC = false;
 					}
 					// apply sorting
-					productListing.isotope({
+					self.config.productListing.isotope({
 						sortBy: selector,
 						sortAscending: selectorASC
 					});
 				} else {
 					// reset sorting if none selected
-					productListing.isotope({
+					self.config.productListing.isotope({
 						sortBy: "original-order",
 						sortAscending: true
 					});
@@ -208,7 +228,7 @@ LIBTECH.ProductOverview.prototype = {
 					}
 				});
 				// submit filter to isotope
-				productListing.isotope({
+				self.config.productListing.isotope({
 					filter: hashFilterList
 				});
 			} else {
@@ -217,7 +237,7 @@ LIBTECH.ProductOverview.prototype = {
 					target.removeClass('selected');
 				});
 				// submit filter to isotope
-				productListing.isotope({
+				self.config.productListing.isotope({
 					filter: ''
 				});
 			}
@@ -240,10 +260,10 @@ LIBTECH.ProductOverview.prototype = {
 							filterGroup.find('ul > li').each(function () {
 								$(this).removeClass('selected');
 							});
-							self.filterList(productListing);
+							self.filterList(self.config.productListing);
 							// check if sort needs to be reset
 							if (filterGroup.find('ul > li[data-sort]').length > 0) {
-								productListing.isotope({
+								self.config.productListing.isotope({
 									sortBy: "original-order",
 									sortAscending: true
 								});
@@ -258,18 +278,12 @@ LIBTECH.ProductOverview.prototype = {
 				}
 			});
 		});
+		// trigger change if there is a value
+		if (window.location.hash !== '') {
+			$(window).trigger("hashchange");
+		}
 	},
-	initColorways: function () {
-		$('.product-listing .product-item a .colorways .swatch').off('click.colorway'); // remove old listeners
-		$('.product-listing .product-item a .colorways .swatch').on('click.colorway', function (e) {
-			e.preventDefault();
-			// set image src of product image
-			$(this).parent().parent().find('.product-img').attr('src', $(this).attr('data-src'));
-			$(this).parent().parent().find('.swatch').removeClass('active');
-			$(this).addClass('active');
-		});
-	},
-	filterList: function (productListing) {
+	filterList: function () {
 		var filterArray = []; // set up array for recording filter options
 		$('.product-filtering > li.filters').each(function () { // loop through each filter group
 			if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
