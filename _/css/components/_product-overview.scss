@@ -72,6 +72,12 @@
 .international .product-overview .section-content ul.product-listing li.product-item .price {
 	display: none;
 }
+.currency-int,
+.currency-eur {
+	.product-overview .section-content ul.product-listing li.product-item.superbanana {
+		display: none;
+	}
+}
 .product-filtering {
 	display: none;
 	padding: 0 10px 20px 20px;

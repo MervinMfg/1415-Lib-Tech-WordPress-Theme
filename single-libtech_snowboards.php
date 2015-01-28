@@ -7,14 +7,67 @@ Template Name: Snowboard Detail
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
 ?>
-        <div class="bg-product-details-top"></div>
+		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
+		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
+			<div class="section-content">
+				<ul class="product-listing bxslider">
+					<li class="diy">
+						<a href="/snowboarding/snowboard-builder/">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
+							<div class="product-peek">
+								<p class="product-title">DIY Board Builder</p>
+								<p class="product-type">Build your dream snowboard!</p>
+							</div>
+						</a>
+					</li>
+					<?php
+						$postType = "libtech_snowboards";
+						// Get Products
+						$args = array(
+							'post_type' => $postType,
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC'
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$postType = $post->post_type;
+							$postSlug = $post->post_name;
+							$imageID = get_field('libtech_product_image');
+							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
+							// check for technology type to display
+							$productType = get_field('libtech_snowboard_contour');
+					?>
+
+					<li class="<?php echo $postSlug; ?>">
+						<a href="<? the_permalink(); ?>">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
+							<div class="product-peek">
+								<p class="product-title"><?php the_title(); ?></p>
+								<p class="product-type"><?php echo $productType; ?></p>
+							</div>
+						</a>
+					</li>
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</ul>
+
+			</div>
+		</section><!-- END .product-slider -->
+		<div class="product-details-nav-btn">
+			<div class="toggle-btn"></div>
+		</div>
+        <div class="bg-product-details-top product-details-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>
 				<div class="product-images">
 					<ul id="image-list">
-			       		<?php
-			       			$thumbnailImages = Array();
+						<?php
+							$thumbnailImages = Array();
 							if(get_field('libtech_snowboard_options')):
 								while(the_repeater_field('libtech_snowboard_options')):
 
@@ -91,12 +144,34 @@ Template Name: Snowboard Detail
 							?>
 						</ul>
 					</div>
+					<div class="product-note-wrapper">
+						<?php
+							if (get_field('libtech_snowboard_colorways')) {
+								// check for base / colorway disclaimer
+								if (in_array('Alternate Colorways', get_field('libtech_snowboard_colorways'))) {
+									echo '<p class="small product-note">Alternate Colorways</p>';
+								}
+								if (in_array('Random Bases', get_field('libtech_snowboard_colorways'))) {
+									echo '<p class="small product-note">Bases come in random colorways</p>';
+								}
+								if (in_array('Random Assorted Bananas', get_field('libtech_snowboard_colorways'))) {
+									echo '<p class="small product-note">You can not order a specific colorway when <span>choosing a Random Assorted Banana online</span></p>';
+								}
+							}
+						?>
+					</div>
+
 					<div class="product-price">
 						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<p class="price-alert">Free shipping!</p>
 					</div>
 					<?php
-						$snowboards = Array();
-						$isProductAvailable = "No";
+						$productArray = Array();
+						// grab availability
+						$productAvailUS = "No";
+						$productAvailCA = "No";
+						$productAvailEU = "No";
+						// loop through variations
 						if(get_field('libtech_snowboard_options')):
 							while(the_repeater_field('libtech_snowboard_options')):
 								$optionName = get_sub_field('libtech_snowboard_options_name');
@@ -107,17 +182,18 @@ Template Name: Snowboard Detail
 									$variationWidth = $optionVariations[$i]['libtech_snowboard_options_variations_width'];
 									$variationLength = $optionVariations[$i]['libtech_snowboard_options_variations_length'];
 									$variationSKU = $optionVariations[$i]['libtech_snowboard_options_variations_sku'];
-									if ($GLOBALS['currency'] == "CAD") {
-										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
-									} else if ($GLOBALS['currency'] == "EUR") {
-										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
-									} else {
-										$variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
-									}
-									// set overall availability
-									if($variationAvailable == "Yes"){
-										$isProductAvailable = "Yes";
-									}
+									// grab availability overwrite
+									$variationAvailableUS = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
+									$variationAvailableCA = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
+									$variationAvailableEU = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
+									// get values for availability
+									$variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+									// eval if we should show product or not for each location
+									// snowboards are available always, even when we have 0 in stock, unless we specifically say NO
+									if($variationAvailability['us']['amount'] != "No") $productAvailUS = "Yes";
+									if($variationAvailability['ca']['amount'] != "No") $productAvailCA = "Yes";
+									// Europe is handled like other products, direct
+									if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
 									// setup readable short form of length and width
 									if($variationWidth == "Narrow"){
 										$variationLength = $variationLength . "N";
@@ -132,35 +208,29 @@ Template Name: Snowboard Detail
 									}else{
 										$variationName = $variationLength;
 									}
-									array_push($snowboards, Array($variationName, $variationSKU, $variationAvailable));
+									array_push($productArray, Array('name' => $variationName, 'sku' => $variationSKU, 'available' => $variationAvailability));
 								}
 							endwhile;
 						endif;
 					?>
-					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
-						<select id="product-variation" class="select">
+					<div class="product-variations">
+						<select id="product-variation" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select a Size</option>
-							<?php
-								// sort by variation name
-								asort($snowboards);
-								// render out snowboards dropdown
-								foreach ($snowboards as $snowboard) {
-							?>
-							<option value="<?php echo $snowboard[1]; ?>" title="<?php echo $snowboard[0]; ?>"<?php if($snowboard[2] == "No") echo ' disabled="disabled"'; ?>><?php echo $snowboard[0]; ?></option>
-							<?php
-								}
-							?>
+							<?php asort($productArray); foreach ($productArray as $product) : // sort by variation name and render out product dropdown ?>
+							<option value="<?php echo $product['sku']; ?>" title="<?php echo $product['name']; ?>" data-avail-us="<?php echo $product['available']['us']['amount']; ?>" data-avail-ca="<?php echo $product['available']['ca']['amount']; ?>" data-avail-eur="<?php echo $product['available']['eu']['amount']; ?>" <?php if(count($productArray) == 1) echo ' selected="selected"'; ?>><?php echo $product['name']; ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
-					<div class="product-buy">
+					<div class="product-alert">
+						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+					</div><!-- .available-alert -->
+					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 						<ul>
-							<?php if($isProductAvailable == "Yes"): ?>
 							<li class="loading hidden"></li>
 							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<?php else: ?>
-							<li>Item is currently not available online.</li>
-							<?php endif; ?>
-							<li class="find-dealer h4"><a href="/store-locator/">Find a Dealer</a></li>
+							<li class="unavailable">Item is currently not available online.</li>
+							<li class="find-dealer h4"><a href="/dealer-locator/?product=snowboards">Find a Dealer</a></li>
 						</ul>
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>

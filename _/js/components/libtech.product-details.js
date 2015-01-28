@@ -9,7 +9,9 @@ LIBTECH.ProductDetails = function () {
 	this.config = {
 		slider: null,
 		zoomThumbSlider: null,
-		thumbSliderWidth: 100
+		thumbSliderWidth: 100,
+		prodNavSlider: null,
+		currency: null
 	};
 	this.init();
 };
@@ -17,15 +19,25 @@ LIBTECH.ProductDetails.prototype = {
 	init: function () {
 		var self, thumbSlider, techConstructionSlider;
 		self = this;
+		// set availability
+		self.initAvailability();
 		// BEGIN EXECUTING DETAIL CODE
 		$(".product-tech-major").fitVids();
 		$(".product-video").fitVids();
 		// setup main product image slider
-		self.config.slider = $('#image-list').bxSlider({
-			controls: false,
-			mode: 'fade',
-			pagerCustom: '#image-list-thumbs'
-		});
+		if ($('body').hasClass('single-libtech_nas')) {
+			self.config.slider = $('#image-list').bxSlider({
+				controls: true,
+				pager: false,
+				mode: 'fade'
+			});
+		} else {
+			self.config.slider = $('#image-list').bxSlider({
+				controls: false,
+				mode: 'fade',
+				pagerCustom: '#image-list-thumbs'
+			});
+		}
 		// set up thumbnail slider
 		if ($('body').hasClass('single-libtech_surfboards')) { self.config.thumbSliderWidth = 45; }
 		thumbSlider = $('#image-list-thumbs').bxSlider({
@@ -52,6 +64,9 @@ LIBTECH.ProductDetails.prototype = {
 			mode: 'horizontal'
 		});
 		$(window).load(function () {
+			// init product navigation at top of page
+			self.initProductNav();
+			// init image sliders
 			if (typeof self.config.slider !== 'undefined') {
 				if (self.config.slider.length > 0) self.config.slider.reloadSlider();
 			}
@@ -88,7 +103,10 @@ LIBTECH.ProductDetails.prototype = {
 				// zoom listener
 				$('.product-images #image-list li a').on('click.productZoom', function (e) {
 					e.preventDefault();
-					self.initZoom($(this).parent().index());
+					// do not zoom nas
+					if (!$('body').hasClass('single-libtech_nas')) { 
+						self.initZoom($(this).parent().index());
+					}
 				});
 				// surf zoom listener
 				$('.product-images .surfboard-top, .product-images .surfboard-side, .product-images .surfboard-bottom').on('click.productZoom', function (e) {
@@ -123,6 +141,99 @@ LIBTECH.ProductDetails.prototype = {
 		} else {
 			self.initBuyWithOneVariation();
 		}
+	},
+	initAvailability: function () {
+		var self, currencyCookie;
+		self = this;
+		currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
+		if (currencyCookie !== null || currencyCookie !== "") {
+			self.config.currency = currencyCookie;
+		} else {
+			self.config.currency = "USD";
+		}
+		if (self.config.currency) {
+			if (self.config.currency === 'CAD') {
+				if ($('.product-buy').data('avail-ca') == "Yes") {
+					$('.product-details').addClass('available');
+				}
+			} else if (self.config.currency === 'EUR') {
+				if ($('.product-buy').data('avail-eur') == "Yes") {
+					$(".product-details").addClass('available');
+				}
+			} else {
+				if ($('.product-buy').data('avail-us') == "Yes") {
+					$(".product-details").addClass('available');
+				}
+			}
+		}
+	},
+	initProductNav: function () {
+		var self, navState, $prodNav, $prodNavContent, $navLink, prodNavHeight, imageWidth, closedMargin, openedMargin;
+		self = this;
+		navState = "closed";
+		$prodNav = $('.product-details-nav');
+		$prodNavContent = $('.product-details-nav .section-content');
+		$navLink = $('.product-details-nav-btn');
+		// reset prod nav content position
+		$prodNavContent.removeAttr('style');
+		// remove resize listener
+		$(window).off('resize.productNav');
+		// show nav if we're tablet+
+		$prodNav.addClass('active');
+		// remove super banana if we're not in US
+		if (self.config.currency !== 'USD') {
+			$('.product-details-nav .product-listing .superbanana').remove();
+		} 
+		// lazy load of images
+		$(".product-details-nav img.lazy").unveil();
+		// set image width based on product type, we want them to be the same height
+		if ($('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_surfboards')) {
+			imageWidth = 175;
+		} else {
+			imageWidth = 125;
+		}
+		if (LIBTECH.main.utilities.getMediaWidth() >= 768) {
+			// destroy slider if it exists
+			if (self.config.prodNavSlider) {
+				self.config.prodNavSlider.destroySlider();
+				self.config.prodNavSlider = null;
+			}
+			// init bx slider
+			self.config.prodNavSlider = $('.product-details-nav .bxslider').bxSlider({
+				slideWidth: imageWidth,
+				minSlides: 2,
+				maxSlides: 12,
+				slideMargin: 10,
+				auto: false,
+				speed: 500,
+				controls: true,
+				pager: false,
+				mode: 'horizontal',
+				moveSlides: 2,
+				infiniteLoop: false,
+				hideControlOnEnd: true,
+				onSlideAfter: function () {$(window).scroll();} // make sure lazy load images show
+			});
+			prodNavHeight = $prodNav.outerHeight();
+			closedMargin = (prodNavHeight + 60) * -1;
+			openedMargin = (prodNavHeight - 100) * -1;
+			// show prod nav in closed state
+			TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin, delay: 1});
+			// toggle prod nav on click
+			$navLink.click(function() {
+				if (navState == "opened") {
+					TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
+					navState = "closed";
+				} else {
+					TweenMax.to($prodNavContent, 0.3, {marginTop: openedMargin});
+					navState = "opened";
+				}
+				
+			});
+		}
+		$(window).on('resize.productNav', function () {
+			self.initProductNav();
+		});
 	},
 	// ADD TO CART COMPLETION METHODS
 	addToCartSuccess: function () {
@@ -234,6 +345,44 @@ LIBTECH.ProductDetails.prototype = {
 	},
 	initBuyWithOneVariation: function () {
 		var self = this;
+		// check avail on each size option
+		$('#product-variation option').each(function (index) {
+			var skuAvail, $this;
+			skuAvail = "No";
+			$this = $(this);
+			// check available options
+			switch(self.config.currency) {
+				case 'USD':
+					skuAvail = $this.data('avail-us');
+					break;
+				case 'CAD':
+					skuAvail = $this.data('avail-ca');
+					break;
+				case 'EUR':
+					skuAvail = $this.data('avail-eur');
+					break;
+				default:
+					// international
+					skuAvail = $this.data('avail-us');
+			}
+			if ($this.val() != "-1") {
+				if (($('body').hasClass('single-libtech_snowboards') && self.config.currency === 'USD') || ($('body').hasClass('single-libtech_snowboards') && self.config.currency === 'CAD')) {
+					// snowboards in US and CA are not handled direct
+					if (skuAvail === "No") {
+						$this.prop('disabled', true);
+					} else {
+						$this.prop('disabled', false);
+					}
+				} else {
+					// everything else is handled direct
+					if (skuAvail == "Yes" || skuAvail > 0) {
+						$this.prop('disabled', false);
+					} else {
+						$this.prop('disabled', true);
+					}
+				}
+			}	
+		});
 		// check for luggage and do colorway click if so
 		if($('body').hasClass('single-libtech_luggage')){
 			// check thumbnails on right
@@ -252,13 +401,29 @@ LIBTECH.ProductDetails.prototype = {
 			});
 		}
 		// FUNCTIONALITY FOR PRODUCTS WITH ONLY 1 SELECTION
-		$('#product-variation').change(function () {
+		$('#product-variation').on('change', function () {
 			// display the correct image matching selected option
-			var productSKU, productSKUs, productThumbs;
+			var productSKU, productSKUs, productAvail, productThumbs;
 			productSKU = $(this).val();
 			productSKUs = [];
 			if (productSKU != "-1") {
 				$('#product-variation').removeClass('alert');
+			}
+			// check current stock based on currency
+			if (self.config.currency == "CAD") {
+				productAvail = $(this).find(':selected').data('avail-ca');
+			} else if (self.config.currency == "EUR") {
+				productAvail = $(this).find(':selected').data('avail-eur');
+			} else {
+				productAvail = $(this).find(':selected').data('avail-us');
+			}
+			// reset available alert message
+			$('.product-alert').removeClass('no low');
+			// check if we're a snowboard with none avail, or if we're a product with low avail
+			if ( ($('body').hasClass('single-libtech_snowboards') && productAvail == "0") || ($('body').hasClass('single-libtech_snowboards') && productAvail === "")) {
+				$('.product-alert').addClass('no');
+			} else if (productAvail < 10) {
+				$('.product-alert').addClass('low');
 			}
 			$(".image-list-thumbs li a").each(function () {
 				var skus = $(this).attr('data-sku');
@@ -275,6 +440,7 @@ LIBTECH.ProductDetails.prototype = {
 				}
 			}
 		});
+		$('#product-variation').trigger('change');
 		// add to cart api btn
 		$('a.add-to-cart').click(function (e) {
 			e.preventDefault();
@@ -312,19 +478,73 @@ LIBTECH.ProductDetails.prototype = {
 	},
 	initBuyWithTwoVariations: function () {
 		var self = this;
-		// FOR PRODCUTS WITH MORE THAN 1 VARTIATION SELECTION
-		// select field for color
-		$('#product-variation-color').change(function () {
-			// select the correct image
-			var colorValue, colorThumbs;
-			colorValue = $(this).val();
-			colorThumbs = $('.image-list-thumbs li a[data-color="' + colorValue + '"]');
-			if (colorThumbs.length > 0) {
-				$(colorThumbs[0]).click();
+		// check avail on each size option
+		$('#product-variation-size option').each(function (index) {
+			var size, productAvailable;
+			size = $(this).val();
+			productAvailable = "No";
+			$.each(productArray, function (key, value) {
+				if (value.size == size) {
+					var skuAvail = "No";
+					// check available options
+					switch(self.config.currency) {
+						case 'USD':
+							skuAvail = value.available.us ? value.available.us.amount : "No";
+							break;
+						case 'CAD':
+							skuAvail = value.available.ca ? value.available.ca.amount : "No";
+							break;
+						case 'EUR':
+							skuAvail = value.available.eu ? value.available.eu.amount : "No";
+							break;
+						default:
+							// international
+							skuAvail = value.available.us ? value.available.us.amount : "No";
+					}
+					if (skuAvail == "Yes" || skuAvail > 0) {
+						productAvailable = "Yes";
+					}
+				}
+			});
+			// enable or disable the option
+			if (size != "-1" && productAvailable == "No") {
+				$(this).prop('disabled', true);
 			}
-			// kill alert color, if it's added
-			$('#product-variation-color').removeClass('alert');
 		});
+		// check avail on each color option
+		$('#product-variation-color option').each(function (index) {
+			var color, productAvailable;
+			color = $(this).val();
+			productAvailable = "No";
+			$.each(productArray, function (key, value) {
+				if (value.color == color) {
+					var skuAvail = "No";
+					// check available options
+					switch(self.config.currency) {
+						case 'USD':
+							skuAvail = value.available.us ? value.available.us.amount : "No";
+							break;
+						case 'CAD':
+							skuAvail = value.available.ca ? value.available.ca.amount : "No";
+							break;
+						case 'EUR':
+							skuAvail = value.available.eu ? value.available.eu.amount : "No";
+							break;
+						default:
+							// international
+							skuAvail = value.available.us ? value.available.us.amount : "No";
+					}
+					if (skuAvail == "Yes" || skuAvail > 0) {
+						productAvailable = "Yes";
+					}
+				}
+			});
+			// enable or disable the option
+			if (color != "-1" && productAvailable == "No") {
+				$(this).prop('disabled', true);
+			}
+		});
+		// FOR PRODCUTS WITH MORE THAN 1 VARTIATION SELECTION
 		// change color selection when image is clicked
 		$('#image-list-thumbs li a').on('click', function (e) {
 			e.preventDefault();
@@ -343,31 +563,110 @@ LIBTECH.ProductDetails.prototype = {
 			}
 		});
 		// select field for size
-		$('#product-variation-size').change(function () {
-			var sizeValue, colorValue, colorOptions, colorArray;
-			sizeValue = $(this).val();
-			// build color list based on size
-			colorValue = $('#product-variation-color').val();
-			colorOptions = '<option value="-1">Select Color</option>';
-			colorArray = [];
-			$.each(productArray, function (key, value) {
-				// check if size already exists
-				var inArrayCheck = $.inArray(value.color, colorArray);
-				// add available options
-				if ((sizeValue === "-1" && value.available === "Yes" && inArrayCheck === -1) || (sizeValue === value.size && value.available === "Yes" && inArrayCheck === -1)) {
-					if (colorValue === value.color) {
-						colorOptions += '<option value="' + value.color + '" selected="selected">' + value.color + '</option>';
-					} else {
-						colorOptions += '<option value="' + value.color + '">' + value.color + '</option>';
+		$('#product-variation-size').on('change', function () {
+			var sizeValue = $(this).val();
+			// loop through color optioins and see what's available
+			$('#product-variation-color option').each(function (index) {
+				var productAvailable, colorValue;
+				productAvailable = "No";
+				colorValue = $(this).val();
+				$.each(productArray, function (key, value) {
+					if (value.size == sizeValue && value.color == colorValue) {
+						var skuAvail = "No";
+						// check available options
+						switch(self.config.currency) {
+							case 'USD':
+								skuAvail = value.available.us ? value.available.us.amount : "No";
+								break;
+							case 'CAD':
+								skuAvail = value.available.ca ? value.available.ca.amount : "No";
+								break;
+							case 'EUR':
+								skuAvail = value.available.eu ? value.available.eu.amount : "No";
+								break;
+							default:
+								// international
+								skuAvail = value.available.us ? value.available.us.amount : "No";
+						}
+						if (skuAvail == "Yes" || skuAvail > 0) {
+							productAvailable = "Yes";
+						}
 					}
-					colorArray.push(value.color);
+				});
+				// enable or disable the option
+				if (colorValue == "-1" || productAvailable == "Yes") {
+					$(this).prop('disabled', false);
+				} else {
+					$(this).prop('disabled', true);
+					// deselect if disabled and already selected
+					if ($(this).prop('selected') === true) {
+						$(this).prop('selected', false);
+					}
 				}
 			});
-			// render out html
-			$('#product-variation-color').html(colorOptions);
 			// kill alert color, if it's added
 			$('#product-variation-size').removeClass('alert');
+			// check avail messaging
+			checkProdAvail();
 		});
+		// select field for color
+		$('#product-variation-color').on('change', function () {
+			// select the correct image
+			var colorValue, colorThumbs;
+			colorValue = $(this).val();
+			colorThumbs = $('.image-list-thumbs li a[data-color="' + colorValue + '"]');
+			if (colorThumbs.length > 0) {
+				$(colorThumbs[0]).click();
+			}
+			// kill alert color, if it's added
+			$('#product-variation-color').removeClass('alert');
+			// check avail messaging
+			checkProdAvail();
+		});
+		// trigger default change
+		$('#product-variation-size').trigger('change');
+		$('#product-variation-color').trigger('change');
+		function checkProdAvail() {
+			var productSize, productColor, productSKU;
+			// remove old alerts
+			$('.product-alert').removeClass('no low');
+			// check size selection
+			productSize = $('#product-variation-size').val();
+			// check color selection
+			productColor = $('#product-variation-color').val();
+			// check if either are -1, and return if they are
+			if (productSize !== "-1" && productColor !== "-1") {
+				// find the SKU in the product array
+				productSKU = "";
+				$.each(productArray, function (key, value) {
+					if (productSize === value.size && productColor === value.color) {
+						productSKU = value.sku;
+						var skuAvail = "No";
+						// check available options
+						switch(self.config.currency) {
+							case 'USD':
+								skuAvail = value.available.us ? value.available.us.amount : "No";
+								break;
+							case 'CAD':
+								skuAvail = value.available.ca ? value.available.ca.amount : "No";
+								break;
+							case 'EUR':
+								skuAvail = value.available.eu ? value.available.eu.amount : "No";
+								break;
+							default:
+								// international
+								skuAvail = value.available.us ? value.available.us.amount : "No";
+						}
+						// check if above 0 but below 10
+						if (skuAvail !== "Yes" && skuAvail !== "No" && skuAvail > 0 && skuAvail < 10) {
+							$('.product-alert').addClass('low');
+						}
+						// exit each loop
+						return;
+					}
+				});
+			}
+		}
 		// add to cart api btn
 		$('a.add-to-cart').click(function (e) {
 			e.preventDefault();
@@ -458,11 +757,36 @@ LIBTECH.ProductDetails.prototype = {
 				var sizeArray = [];
 				var selectedSize = $('#product-variation-size').val();
 				$.each(productArray, function (key, value) {
-					var fullName = value.length + ' - ' + value.fins;
+					var seriesName, fullName, inArrayCheck, skuAvail, fins;
+					seriesName = $('.product-details h1').html();
+					fullName = value.length + ' - ' + value.fins;
 					// check if size already exists
-					var inArrayCheck = $.inArray(fullName, sizeArray);
+					inArrayCheck = $.inArray(fullName, sizeArray);
 					if (value.name == graphicName && inArrayCheck === -1 || graphicName == -1 && inArrayCheck === -1) {
-						if(value.avail === "Yes" || value.avail === "Limited") {
+						skuAvail = "No";
+						fins = value.fins;
+						// check available options
+						switch(self.config.currency) {
+							case 'USD':
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+								break;
+							case 'CAD':
+								skuAvail = value.available.ca ? value.available.ca.amount : 0;
+								break;
+							case 'EUR':
+								skuAvail = value.available.eu ? value.available.eu.amount : 0;
+								break;
+							default:
+								// international
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+						}
+						if( skuAvail === "Yes" ||
+							skuAvail > 0 ||
+							(self.config.currency == "USD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
+							(self.config.currency == "USD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
+							(self.config.currency == "CAD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
+							(self.config.currency == "CAD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
+							(self.config.currency == "EUR" && skuAvail > 0)) {
 							// check to see if we matched an size that was already selected
 							if (selectedSize == fullName) {
 								sizeOptions += '<option value="' + fullName + '" selected="selected" data-img="' + value.bottomImage + '" data-img-full="' + value.bottomImageFull + '">' + fullName + '</option>';
@@ -498,9 +822,11 @@ LIBTECH.ProductDetails.prototype = {
 			// update price display
 			updatePrice();
 		});
+		// trigger default change
+		$('#product-variation-graphic').trigger('change');
+		$('#product-variation-size').trigger('change');
 		var updatePrice = function () {
-			var self, selectedGraphic, selectedSize, defaultFinValue;
-			self = this;
+			var selectedGraphic, selectedSize, defaultFinValue;
 			selectedGraphic = $('#product-variation-graphic').val();
 			selectedSize = $('#product-variation-size').val();
 			$('.product-price div').removeClass('active');
@@ -543,15 +869,35 @@ LIBTECH.ProductDetails.prototype = {
 			// check avail if product is selected
 			if (selectedGraphic != -1 && selectedSize != -1) {
 				// with both selections set, check availablity and update messaging display
+				$('.product-alert').removeClass('no low');
 				$.each(productArray, function (key, value) {
 					if (selectedSize === (value.length + ' - ' + value.fins) && selectedGraphic === value.name) {
-						if(value.type == "Logo" && value.avail == "Limited") {
+						var skuAvail = "No";
+						// check available options
+						switch(self.config.currency) {
+							case 'USD':
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+								break;
+							case 'CAD':
+								skuAvail = value.available.ca ? value.available.ca.amount : 0;
+								break;
+							case 'EUR':
+								skuAvail = value.available.eu ? value.available.eu.amount : 0;
+								break;
+							default:
+								// international
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+						}
+						if(value.type === "Logo" && skuAvail === 0) {
 							// show limited logo option messaging
 							$('.product-stock-alert .surf-logo-limited').addClass('active');
-						} else if (value.type == "Graphic" && value.avail == "Limited") {
+						} else if (value.type === "Graphic" && skuAvail === 0) {
 							// show limited graphic option messaging
 							$('.product-stock-alert .surf-graphic-limited').addClass('active');
+						} else if (skuAvail < 10 && skuAvail > 0) {
+							$('.product-alert').addClass('low');
 						}
+						return;
 					}
 				});
 			}

@@ -67,13 +67,14 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
-                    "layout": "horizontal"
+                    "default_value": "Inventory",
+                    "layout": "vertical"
                 },
                 {
                     "key": "field_507da34a16a1e",
@@ -86,13 +87,14 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
-                    "layout": "horizontal"
+                    "default_value": "Inventory",
+                    "layout": "vertical"
                 },
                 {
                     "key": "field_53a9e8b71943d",
@@ -105,13 +107,14 @@
                     "conditional_logic": 0,
                     "column_width": "",
                     "choices": {
+                        "Inventory": "Inventory",
                         "Yes": "Yes",
                         "No": "No"
                     },
                     "other_choice": 0,
                     "save_other_choice": 0,
-                    "default_value": "Yes",
-                    "layout": "horizontal"
+                    "default_value": "Inventory",
+                    "layout": "vertical"
                 }
             ]
         }

@@ -253,6 +253,11 @@ var boardDescriptionData = [{
 	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on… it is a Lib favorite."
 }, {
 	"Artist": "Jamie Lynn",
+	"Type": "",
+	"Color": "",
+	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
+}, {
+	"Artist": "Jamie Lynn",
 	"Type": "Blue",
 	"Color": "",
 	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
@@ -292,6 +297,11 @@ var boardBaseDescriptionData = [{
 	"Type": "Tetons",
 	"Color": "Red",
 	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on…it is a Lib favorite."
+}, {
+	"Artist": "Jamie Lynn",
+	"Type": "Sun",
+	"Color": "Wave",
+	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
 }, {
 	"Artist": "Jamie Lynn",
 	"Type": "Blue",
@@ -486,18 +496,20 @@ LIBTECH.snowboardbuilder = {
 			}, 500, "mervinsbb");
 		});
 	},
-	bbSetRegion: function (sReg) {
+	bbSetRegion: function (currencyCode) {
 		var self = this;
-		self.config.bbRegionCurrency = (sReg != 'ca') ? "USD" : "CAD";
-		self.config.bbRegion = sReg;
-	},
-	bbGetRegion: function () {
-		var self = this;
-		if (self.config.bbRegion === '' || self.config.bbRegion === undefined || self.config.bbRegion === null) {
-			self.config.bbRegion = "US";
+		if (currencyCode == "INT") {
+			self.config.bbRegionCurrency = "USD";
+		} else if (currencyCode == "USD" || currencyCode == "CAD") {
+			self.config.bbRegionCurrency = currencyCode;
+		} else {
+			self.config.bbRegionCurrency = "USD";
 		}
-		self.config.bbRegion = self.config.bbRegion.toUpperCase();
-		return self.config.bbRegion;
+		if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "INT") {
+			self.config.bbRegion = currencyCode;
+		} else {
+			self.config.bbRegion = "USD";
+		}
 	},
 	setKnifeCutPrice: function (nKC) {
 		var self = this;
@@ -544,7 +556,7 @@ LIBTECH.snowboardbuilder = {
 		$('.step2-size .size-info .size-detail-table .table-data').html(self.printSizeInfo(boardData[boardNum].ContactLength, boardData[boardNum].Sidecut, boardData[boardNum].WaistWidth, boardData[boardNum].Flex) + "");
 		$('.step2-size .size-info .size-detail-table .table-data').clone().wrap('<p>').parent().html();
 		// set price
-		if (self.bbGetRegion() == "CA") {
+		if (self.config.bbRegion == "CAD") {
 			self.setBoardPrice(boardData[boardNum].BasePriceCA);
 		} else {
 			self.setBoardPrice(boardData[boardNum].BasePriceUS);
@@ -733,7 +745,7 @@ LIBTECH.snowboardbuilder = {
 				// KNIFE CUT BASE
 				self.config.isKnifecut = true;
 				self.setBoardBaseDesc($('.board-text-custom').val());
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
 					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
 				} else {
@@ -1015,7 +1027,7 @@ LIBTECH.snowboardbuilder = {
 			// set top
 			var top = self.getParameterByName('top');
 			var topArtist = top.split(" ")[0];
-			var topDesc = top.split(" ")[1];
+			var topDesc = top.substr(top.indexOf(' ')+1); // grab everthing after first space
 			self.setBoardArtist(topArtist);
 			self.setBoardDescription(topDesc);
 			// set sidewall
@@ -1031,7 +1043,7 @@ LIBTECH.snowboardbuilder = {
 				var base, baseArtist, baseDesc;
 				base = self.getParameterByName('base');
 				baseArtist = base.split(" ")[0];
-				baseDesc = base.split(" ")[1];
+				baseDesc = base.substr(base.indexOf(' ')+1); // grab everthing after first space
 				self.setBoardBaseArtist(baseArtist);
 				self.setBoardBaseDesc(baseDesc);
 				self.config.bBase = baseArtist;
@@ -1048,7 +1060,7 @@ LIBTECH.snowboardbuilder = {
 				self.setCustomTextColor(knifecutTextColor);
 				self.config.isKnifecut = true;
 				// set knifecut price
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
 					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
 				} else {
@@ -1566,7 +1578,7 @@ LIBTECH.snowboardbuilder = {
 				// set contour image
 				$('#info-box .contour img').attr('src', self.config.baseImgPath + boardData[nNum].ContourImage);
 				// get the price for the board
-				if (self.bbGetRegion() == "CA") {
+				if (self.config.bbRegion == "CAD") {
 					price = boardData[nNum].BasePriceCA;
 				} else {
 					price = boardData[nNum].BasePriceUS;
@@ -1949,7 +1961,7 @@ LIBTECH.snowboardbuilder = {
 			// show
 			$(".step7-buy .buttonholder .agree-button").css('display', 'block');
 			// determine which terms to show based on region
-			if(self.bbGetRegion() == 'US' || self.bbGetRegion() == 'CA') {
+			if(self.config.bbRegion == 'USD' || self.config.bbRegion == 'CAD') {
 				$(".step7-buy .terms").css('display', 'block');
 				$(".step7-buy .terms-international").css('display', 'none');
 			} else {

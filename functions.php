@@ -206,27 +206,74 @@ function getCurrencyCode () {
 
 // GET PRICE DISPLAY
 function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent) {
-    $price = "";
-    if($GLOBALS['currency'] == "CAD"){
-        if ($sale == "Yes") {
-            $price = '<p class="ca-price strike"><span>$' . $caPrice . '</span> CAD</p><p class="ca-price"><span>$' . round($caPrice * ((100 - $salePercent) / 100), 2) . '</span> CAD (' . $salePercent . '% off)</p>';
-        } else {
-            $price = '<p class="ca-price"><span>$' . $caPrice . '</span> CAD</p>';
-        }
-    } else if ($GLOBALS['currency'] == "EUR") {
-        if ($sale == "Yes") {
-            $price = '<p class="eur-price strike"><span>$' . $eurPrice . '</span> EUR</p><p class="eur-price"><span>$' . round($eurPrice * ((100 - $salePercent) / 100), 2) . '</span> EUR (' . $salePercent . '% off)</p>';
-        } else {
-            $price = '<p class="eur-price"><span>$' . $eurPrice . '</span> EUR</p>';
-        }
+    $price = '<div class="price">';
+    if ($sale == "Yes") {
+        // US Price
+        $price .= '<p class="us-price strike">$' . $usPrice . ' <span>USD</span></p><p class="us-price">$' . round($usPrice * ((100 - $salePercent) / 100), 2) . ' <span>USD (' . $salePercent . '% off)</span></p>';
+        // CA Price
+        $price .= '<p class="ca-price strike">$' . $caPrice . ' <span>CAD</span></p><p class="ca-price">$' . round($caPrice * ((100 - $salePercent) / 100), 2) . ' <span>CAD (' . $salePercent . '% off)</span></p>';
+        // EUR Price
+        $price .= '<p class="eur-price strike">€' . $eurPrice . ' <span>EUR incl. VAT</span></p><p class="eur-price">€' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span>EUR incl. VAT (' . $salePercent . '% off)</span></p>';
     } else {
-        if ($sale == "Yes") {
-            $price = '<p class="us-price strike"><span>$' . $usPrice . '</span> USD</p><p class="us-price"><span>$' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> USD (' . $salePercent . '% off)</p>';
-        } else {
-            $price = '<p class="us-price"><span>$' . $usPrice . '</span> USD</p>';
-        }
+        // US Price
+        $price .= '<p class="us-price">$' . $usPrice . ' <span>USD</span></p>';
+        // CA Price
+        $price .= '<p class="ca-price">$' . $caPrice . ' <span>CAD</span></p>';
+        // EUR Price
+        $price .= '<p class="eur-price">€' . $eurPrice . ' <span>EUR incl. VAT</span></p>';
     }
+    $price .= '</div><!-- .price -->';
     return $price;
+}
+
+// GET PROD AVAIL
+// check availability based on overrides in WP Admin
+function getAvailability($sku, $availUS, $availCA, $availEU) {
+    switch ($availUS) {
+        case "Inventory":
+            $availUS = getProductAvailability($sku, 'US');
+            break;
+        case "Yes":
+            $availUS = Array('amount' => "Yes");
+            break;
+        case "No":
+            $availUS = Array('amount' => "No");
+            break;
+        default:
+            $availUS = getProductAvailability($sku, 'US');
+    }
+    switch ($availCA) {
+        case "Inventory":
+            $availCA = getProductAvailability($sku, 'CA');
+            break;
+        case "Yes":
+            $availCA = Array('amount' => "Yes");
+            break;
+        case "No":
+            $availCA = Array('amount' => "No");
+            break;
+        default:
+            $availCA = getProductAvailability($sku, 'CA');
+    }
+    switch ($availEU) {
+        case "Inventory":
+            $availEU = getProductAvailability($sku, 'EU');
+            break;
+        case "Yes":
+            $availEU = Array('amount' => "Yes");
+            break;
+        case "No":
+            $availEU = Array('amount' => "No");
+            break;
+        default:
+            $availEU = getProductAvailability($sku, 'EU');
+    }
+    $availability = Array(
+        'us' => $availUS,
+        'ca' => $availCA,
+        'eu' => $availEU
+    );
+    return $availability;
 }
 
 // GET RELATED PRODUCTS

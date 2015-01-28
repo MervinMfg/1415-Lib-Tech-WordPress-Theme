@@ -22,7 +22,53 @@ Template Name: Skateboard Detail
 			endwhile;
 		endif;
 ?>
-        <div class="bg-product-details-top"></div>
+		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
+		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
+			<div class="section-content">
+				<ul class="product-listing bxslider">
+					<?php
+						$postType = "libtech_skateboards";
+						// Get Products
+						$args = array(
+							'post_type' => $postType,
+							'posts_per_page' => -1,
+							'orderby' => 'menu_order',
+							'order' => 'ASC',
+						);
+						$loop = new WP_Query( $args );
+						while ( $loop->have_posts() ) : $loop->the_post();
+							$postType = $post->post_type;
+							$imageID = get_field('libtech_product_image');
+							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
+							// check for technology type to display
+							$categories = get_the_terms( $post->ID , 'libtech_skateboard_categories' );
+								foreach ( $categories as $category ) {
+									$productType = $category->name;
+			                        break;
+			                    }
+					?>
+
+					<li>
+						<a href="<? the_permalink(); ?>">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
+							<div class="product-peek">
+								<p class="product-title"><?php the_title(); ?></p>
+								<p class="product-type"><?php echo $productType; ?></p>
+							</div>
+						</a>
+					</li>
+
+					<?
+						endwhile;
+						wp_reset_query();
+					?>
+				</ul>
+			</div>
+		</section><!-- END .product-slider -->
+		<div class="product-details-nav-btn">
+			<div class="toggle-btn"></div>
+		</div>
+        <div class="bg-product-details-top product-details-nav-bottom"></div>
         <section class="product-details bg-product-details <?php echo $slug; ?>">
         	<div class="section-content">
 				<h1><?php the_title(); ?></h1>
@@ -103,10 +149,15 @@ Template Name: Skateboard Detail
 					</div>
 					<div class="product-price">
 						<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
+						<p class="price-alert">Free shipping!</p>
 					</div>
 					<?php
-						$variations = Array();
-						$isProductAvailable = "No";
+						$productArray = Array();
+						// grab availability
+						$productAvailUS = "No";
+						$productAvailCA = "No";
+						$productAvailEU = "No";
+						// loop through variations
 						if(get_field('libtech_skateboard_options')):
 							while(the_repeater_field('libtech_skateboard_options')):
 								$optionName = get_sub_field('libtech_skateboard_options_name');
@@ -125,52 +176,45 @@ Template Name: Skateboard Detail
 										}
 									}
 									$variationSKU = $optionVariations[$i]['libtech_skateboard_options_variations_sku'];
-									if ($GLOBALS['currency'] == "CAD") {
-										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
-									} else if ($GLOBALS['currency'] == "EUR") {
-										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
-									} else {
-										$variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
-									}
-									// set overall availability
-									if($variationAvailable == "Yes"){
-										$isProductAvailable = "Yes";
-									}
+									// grab availability overwrite
+									$productAvailableUS = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
+									$productAvailableCA = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
+									$productAvailableEU = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
+									// get values for availability
+									$productAvailability = getAvailability($variationSKU, $productAvailableUS, $productAvailableCA, $productAvailableEU);
+									// eval if we should show product or not for each location
+									if($productAvailability['us']['amount'] > 0 || $productAvailability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+									if($productAvailability['ca']['amount'] > 0 || $productAvailability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
+									if($productAvailability['eu']['amount'] > 0 || $productAvailability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
 									// setup variation name
 									if($optionName != ""){
 										$variationName = $variationWidth . " - " . $optionName;
 									}else{
 										$variationName = $variationWidth;
 									}
-									array_push($variations, Array($variationName, $variationSKU, $variationAvailable));
+									array_push($productArray, Array('name' => $variationName, 'sku' => $variationSKU, 'available' => $productAvailability));
 								}
 							endwhile;
 						endif;
 					?>
-					<div class="product-variations <?php if($isProductAvailable == "No"){echo 'hidden';} ?>">
-						<select id="product-variation" class="select">
+					<div class="product-variations">
+						<select id="product-variation" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
 							<option value="-1">Select a Size</option>
-							<?php
-								// sort by variation name
-								asort($variations);
-								// render out variation dropdown
-								foreach ($variations as $variation) {
-							?>
-							<option value="<?php echo $variation[1]; ?>" title="<?php echo $variation[0]; ?>"<?php if($variation[2] == "No") echo ' disabled="disabled"'; ?>><?php echo $variation[0]; ?></option>
-							<?php
-								}
-							?>
+							<?php asort($productArray); foreach ($productArray as $product) : // sort by variation name and render out product dropdown ?>
+							<option value="<?php echo $product['sku']; ?>" title="<?php echo $product['name']; ?>" data-avail-us="<?php echo $product['available']['us']['amount']; ?>" data-avail-ca="<?php echo $product['available']['ca']['amount']; ?>" data-avail-eur="<?php echo $product['available']['eu']['amount']; ?>" <?php if(count($productArray) == 1) echo ' selected="selected"'; ?>><?php echo $product['name']; ?></option>
+							<?php endforeach; ?>
 						</select>
 					</div>
-					<div class="product-buy">
+					<div class="product-alert">
+						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+					</div><!-- .available-alert -->
+					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 						<ul>
-							<?php if($isProductAvailable == "Yes"): ?>
 							<li class="loading hidden"></li>
 							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<?php else: ?>
-							<li>Item is currently not available online.</li>
-							<?php endif; ?>
-							<li class="find-dealer h4"><a href="/store-locator/">Find a Dealer</a></li>
+							<li class="unavailable">Item is currently not available online.</li>
+							<li class="find-dealer h4"><a href="/dealer-locator/?product=skateboards">Find a Dealer</a></li>
 						</ul>
 						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>

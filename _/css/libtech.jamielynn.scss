@@ -1,0 +1,1481 @@
+	/* ==========================================================================
+   LIBTECH.JAMIELYNN.SCSS
+   ========================================================================== */
+
+/**
+ * 1415 Lib Tech WordPress Theme - http://www.lib-tech.com/jamielynn20
+ * Author: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+ *
+ * libtech.jamielynn.css & libtech.jamielynn.min.css are compiled using the imports from this file.
+ *
+ * To add new styles and components, import them in the appropriate sections below.
+ *
+ */
+
+// VARIABLES
+// Fonts
+$handWritten: "felt-tip-senior", cursive;
+$museoSlab: "museo-slab", serif;
+// Colors
+$yellow: #FFCC33;
+$black: #000;
+$white: #FFF;
+$grey: #CCC;
+// Breakpoints
+$breakpoint-small: 480px; 
+$breakpoint-medium: 768px;
+$breakpoint-large: 1056px; //  - surpass real ipad size
+$breakpoint-xlarge: 1200px;
+$breakpoint-xxlarge: 1400px;
+
+// IMPORTS
+// Helpers
+@import "helpers/mixins";
+@import "helpers/reset";
+// Base
+@import "base/utility";
+// Libraries
+@import "lib/owl-carousel";
+@import "lib/owl-theme-default";
+@import "lib/animate";
+
+// JAMIE STYLES
+html,
+body {
+	height: 100%;
+	background-color: $white;
+}
+.jamie-lynn {
+	height: 100%;
+
+	.loading {
+		position: fixed;
+		height: 100%;
+		width: 100%;
+		background: $black;
+		z-index: 100;
+		display: table;
+
+		.vertical-center {
+			display: table-cell;
+			vertical-align: middle;
+			text-align: center;
+			padding: 60px;
+		}
+	}
+	a {
+		text-decoration: none;
+	}
+	.navigation {
+		display: none;
+	}
+	.section-photo {
+		height: 100%;
+		position: relative;
+		background-color: $black;
+
+		.photo-item {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			@include vendorize(background-size, cover);
+
+			&.then-photo {
+				background-position: 0% 0%;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-vertical.jpg', sizingMethod='scale')";
+
+				h4 {
+					position: absolute;
+					width: 100%;
+					font-family: $museoSlab;
+					color: $grey;
+					font-weight: 100;
+					text-transform: uppercase;
+					text-align: center;
+					bottom: 40px;
+
+					&.scroll-message {
+						display: none;
+					}
+				}
+				.scroll {
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					margin-left: -25px;
+				}
+			}
+			.logo-wrapper {
+				height: 100%;
+				position: relative;
+				padding-top: 20%;
+
+				img {
+					display: block;
+					height: 80%;
+					margin: 0 auto;
+				}
+			}
+			&.method-photo {
+				background-position: left bottom;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			&.style-photo {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			&.passion-photo {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			&.inspiration-photo {
+				background-position: left top;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			&.music-photo {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			&.steady-photo {
+				background-position: left top;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+		}
+		.caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			min-height: 30px;
+			overflow: hidden;
+			z-index: 2;
+
+			.caption-list {
+				background: $white;
+				padding: 5px;
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 100%;
+				@include transition(top, 200ms);
+
+				.caption-item {
+					display: inline-block;
+					font-family: $museoSlab;
+					font-size: 0.6875em;
+					margin-right: 5px;
+					@include vendorize(opacity, 0);
+					@include transition(opacity, 500ms);
+					@include vendorize(transition-delay, 400ms);
+
+					span {
+						font-weight: 700;
+
+						&.web-link {
+							font-weight: 300;
+							color: $black;
+							display: none;
+						}
+						&.hide-vertical {
+							font-weight: 300;
+							display: none;
+						}
+					}
+				}
+			}
+			.caption-icon {
+				width: 25px;
+				position: absolute;
+				top: 50%;
+				right: 5px;
+				margin-top: -10px;
+				cursor: pointer;
+				overflow: hidden;
+
+				img {
+					width: 50px;
+					height: 20px;
+					max-width: 200%;
+				}
+			}
+			&.active {
+				.caption-list {
+					top: 0;
+
+					.caption-item {
+						@include vendorize(opacity, 1);
+					}
+				}
+				.caption-icon img {
+					margin-left: -25px;
+				}
+			}
+		}
+	}
+	#legacy-now,
+	#tradition-photo {
+		display: none;
+	}
+	.section-quote {
+		height: auto;
+		background: $black;
+		
+		.quote-item {
+			width: 100%;
+			height: auto;
+			padding: 30px;
+
+			.quote-wrapper {
+
+				blockquote {
+					background-image: url('../img/jamie-lynn/quote-marks.png');
+					background-repeat: no-repeat;
+					background-size: 4em;
+					padding-top: 50px;
+
+					p {
+						font-family: $museoSlab;
+						color: $grey;
+						font-size: 1.5em; /* 24/16 */
+						font-weight: 100;
+						line-height: 1.25;
+						margin-bottom: 30px;
+						padding: 0 15px;
+
+						&.hand-written {
+							display: block;
+							font-family: $handWritten;
+							color: $yellow;
+							font-size: 2.4em;
+							text-align: center;
+							line-height: 1;
+							padding-top: 20px;
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	#intro blockquote {
+		background-image: none;
+		padding-top: 0;
+	}
+	.arrow-left,
+	.arrow-right,
+	.owl-carousel .owl-nav .owl-prev,
+	.owl-carousel .owl-nav .owl-next {
+		display: inline-block;
+		width: 33px;
+		height: 28px;
+		overflow: hidden;
+		margin: 0 20px 0 0;
+		padding: 0;
+		background: none;
+
+		img {
+			width: 66px;
+			height: 28px;
+			max-width: 200%;
+		}
+		&:hover,
+		&:focus {
+			img {
+				margin-left: -33px;
+			}
+		}
+	}
+	.arrow-right,
+	.owl-carousel .owl-nav .owl-next {
+		&:hover,
+		&:focus {
+			img {
+				margin-left: -39px;
+			}
+		}
+	}
+	.section-video {
+		height: 100%;
+
+		.video-item {
+			position: relative;
+			height: 100%;
+
+			.play-image {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				z-index: 4;
+
+				a {
+					display: relative;
+					display: block;
+					width: 100%;
+					height: 100%;
+
+					img {
+						position: absolute;
+						width: 150px;
+						height: 150px;
+						top: 50%;
+						left: 50%;
+						margin: -75px 0 0 -75px;
+						height: auto;
+					}
+				}
+			}
+			.video-image {
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				//background-attachment: fixed;
+				@include vendorize(background-size, cover);
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-vertical.jpg', sizingMethod='scale')";
+			}
+			.video-wrapper {
+				display: none;
+			}
+		}
+	}
+	.film-container {
+		display: none;
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $black;
+		@include vendorize(opacity, 0);
+
+		.arrow-left {
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			z-index: 10;
+
+			img {
+				margin-left: -33px;
+			}
+			&:hover,
+			&:focus {
+				img {
+					margin-left: 0px;
+				}
+			}
+		}
+		.video-frame {
+			height: 50%;
+			width: 100%;
+			position: absolute;
+			top: 50%;
+			@include vendorize(transform, translateY(-50%));
+		}
+	}
+	.section-gallery {
+		height: 100%;
+		background: $white;
+		position: relative;
+
+		.mobile-gallery {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			//background-attachment: fixed;
+			@include vendorize(background-size, cover);
+			background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg');
+			filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg', sizingMethod='scale');
+			-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-vertical.jpg', sizingMethod='scale')";
+		}
+		.gallery-wrapper {
+			display: none;
+		}
+	}
+	.section-products {
+		.product-mobile {
+			display: block;
+		}
+		.product-desktop {
+			display: none;
+
+			nav {
+				display: none;
+			}
+		}
+		img {
+			width: 100%;
+			height: auto;
+		}
+		h4 {
+			width: 100%;
+			font-family: $museoSlab;
+			font-size: 1em;
+			text-align: center;
+			text-transform: uppercase;
+			margin: 10px 0;
+
+			.view-all {
+				margin: 0 auto;
+				padding: 10px;
+				color: $black;
+
+				&:hover,
+				&:focus {
+					color: $yellow;
+				}
+			}
+		}
+	}
+	.section-share {
+		height: 100%;
+		background: $black;
+		position: relative;
+
+		.signature-item {
+			height: 100%;
+			width: auto;
+			position: relative;
+
+			.jamie-signature {
+				display: block;
+				width: 60%;
+				height: 100%;
+				margin: 0 auto;  
+			}
+			img {
+				position: absolute;
+				top: 50%;
+				margin-top: -40.5px;
+				left: 50%;
+				margin-left: -162px;
+			}
+		}
+		.share-details {
+			position: absolute;
+			top: 65%;
+			width: 100%;
+
+			.share-links {
+				text-align: center;
+
+				.share-link {
+					display: inline-block;
+					margin: 0 10px;
+
+					&.libtech {
+						width: 44px;
+					}
+					&.facebook,
+					&.twitter {
+						width: 25px;
+					}
+				}
+			}
+			.hashtag {
+				color: $white;
+				font-family: $museoSlab;
+				text-align: center;
+				padding-top: 20px;
+			}
+		}
+	}
+}
+// IE FIXES
+.no-smil .jamie-lynn .section-share .signature-item .signature-name,
+.no-smil .jamie-lynn .section-share .signature-item .signature-dot {
+	stroke-dasharray: none;
+	stroke-dashoffset: none;
+	animation: none;
+	visibility: visible;
+}
+.ie-lt9 .jamie-lynn {
+	.section-photo {
+		height: 100%;
+		position: relative;
+	}
+	.section-quote {
+		.quote-item {
+			.quote-wrapper {
+				blockquote {
+					p {
+						padding-top: 30px;
+
+						&.hand-written {
+							padding-top: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) and (orientation: landscape) {
+	.jamie-lynn {
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-position: center;
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				.logo-wrapper {
+					padding-top: 0;
+
+					img {
+						height: 75%;
+						position: absolute;
+						right: 15%;
+						top: 12.5%;
+					}
+				}
+				&.method-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.style-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.passion-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.inspiration-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.music-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+			.caption {
+				.caption-list {
+					text-align: center;
+
+					.caption-item span.hide-vertical {
+						display: inline;
+					}
+				}
+			}
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-mobile-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.film-container {
+			.video-frame {
+				height: 100%;
+				padding: 48px 0;
+				top: 0;
+				@include vendorize(transform, none);
+			}
+		}
+		.section-gallery {
+			.mobile-gallery {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-mobile-horizontal.jpg', sizingMethod='scale')";
+			}
+		}
+		.section-share .share-details {
+			top: 70%;
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.jamie-lynn {
+		.navigation {
+			display: block;
+			position: fixed;
+			top: 50%;
+			right: 20px;
+			z-index: 20;
+			margin-top: -150px;
+
+			li {
+				padding-top: 10px;
+				text-align: right;
+
+				a {
+					.title {
+						display: inline-block;
+						color: $yellow;
+						font-family: $museoSlab;
+						text-transform: uppercase;
+						font-size: 0.78em;
+						padding-right: 10px;
+						font-weight: 700;
+
+						@include vendorize(opacity, 0);
+						@include transition(all, 200ms);
+					}
+					.circle {
+						display: inline-block;
+						width: 10px;
+						height: 10px;
+						border: 2px solid $yellow;
+						border-radius: 10px;
+					}
+
+					&:hover,
+					&:focus {
+						.title {
+							padding-right: 20px;
+							@include vendorize(opacity, 1);
+						}
+						.circle {
+							background: $yellow;
+						}
+					}
+					&.active {
+						.circle {
+							background: $yellow;
+						}
+					}
+				}
+			}
+		}
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-position: center;
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-vertical.jpg', sizingMethod='scale')";
+
+					h4 {
+						&.mobile-message {
+							display: none;
+						}
+						&.scroll-message {
+							display: block;
+						}
+					}
+				}
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.method-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.style-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.passion-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.inspiration-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.music-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+				&.tradition-photo {
+					background-position: top center;
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-vertical.jpg', sizingMethod='scale')";
+
+					.tradition-message {
+						font-family: $museoSlab;
+						color: $white;
+						text-align: center;
+						position: absolute;
+						top: 65%;
+						left: 0;
+						width: 100%;
+
+						.part-1 {
+							font-size: 1.125em;
+							margin-bottom: 0.2em;
+						}
+						.part-2 {
+							font-style: italic;
+							font-size: 1.875em;
+							margin-bottom: 1em;
+
+							span {
+								color: $yellow;
+								font-style: normal;
+								font-weight: 700;
+							}
+						}
+						.part-3 {
+							font-style: italic;
+							font-size: 1.125em;
+						}
+						.email-signup {
+							width: 100%;
+							text-align: center;
+							padding-top: 30px;
+
+							.input-text {
+								width: 220px;
+								height: 32px;
+								border: none;
+								margin: 0;
+								padding: 2px 5px;
+								text-align: right;
+								font-family: $museoSlab;
+								font-size: 1em;
+								display: inline;
+								-webkit-font-smoothing: antialiased;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								appearance: none;
+
+								&:focus {
+									outline: none;
+								}
+							}
+							.submit {
+								display: inline;
+								color: $white;
+								background: $black;
+								border: none;
+								margin: 0;
+								padding: 0;
+								font-family: $museoSlab;
+								text-transform: uppercase;
+								cursor: pointer;
+								-webkit-font-smoothing: antialiased;
+								-webkit-appearance: none;
+								-moz-appearance: none;
+								appearance: none;
+								font-size: 1em;
+								font-weight: 700;
+								padding: 2px 10px;
+								height: 32px;
+
+								&:hover,
+								&:focus {
+									background: $yellow;
+									color: $black;
+								}
+							}
+						}
+					}
+				}
+				.logo-wrapper {
+					img {
+						height: 75%;
+						position: absolute;
+						right: 20%;
+						top: 12.5%;
+						padding-top: 0;
+					}
+				}
+			}
+			.caption {
+				min-height: 40px;
+
+				.caption-list {
+					padding: 10px;
+					text-align: center;
+
+					.caption-item {
+						font-size: 1.125em;
+						margin-right: 20px;
+					}
+				}
+				.caption-icon {
+					right: auto;
+					left: 10px;
+				}
+				&.active {
+					.caption-list {
+						top: 0;
+
+						.caption-item {
+							@include vendorize(opacity, 1);
+						}
+					}
+					.caption-icon img {
+						margin-left: -25px;
+					}
+				}
+			}
+		}
+		#tradition-photo {
+			display: block;
+		}
+		.section-quote {
+			position: relative;
+			height: 100%;
+
+			.quote-item {
+				height: 100%;
+				display: table;
+
+				.quote-wrapper{
+					display: table-cell;
+					vertical-align: middle;
+					margin: 0 auto;
+
+					blockquote {
+						width: 600px;
+						background-size: 6em;
+						padding: 0 0 0 100px;
+						margin: 0 auto;
+
+						p {
+							&.hand-written {
+								font-size: 3em;
+							}
+						}
+						.hand-written {
+							font-size: 3em;
+						}
+						&.quote-small {
+							width: 460px;
+
+							p {
+								font-size: 1em;
+								line-height: 1.75;
+
+								&.hand-written {
+									font-size: 3em;
+									line-height: 1;
+									margin-bottom: 0;
+								}
+							}
+						}
+						span {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+		#intro blockquote {
+			padding-left: 0;
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-vertical.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.section-gallery {
+			height: 100%;
+			background: $white;
+			position: relative;
+
+			* {
+				-webkit-transform: translate3d(0, 0, 0);
+			}
+			.mobile-gallery {
+				display: none;
+			}
+			.gallery-wrapper {
+				display: block;
+				height: 100%;
+				position: relative;
+				background-repeat: no-repeat;
+				background-position: center;
+				//background-attachment: fixed;
+				@include vendorize(background-size, cover);
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-vertical.jpg', sizingMethod='scale')";
+
+				.owl-stage-outer,
+				.owl-stage,
+				.owl-item {
+					height: 100%;
+				}
+				.owl-nav {
+					position: absolute;
+					top: 55%;
+					left: 60%;
+					padding-left: 20px;
+					z-index: 1;
+				}
+				.gallery-item {
+					width: 100%;
+					height: 100%;
+					position: relative;
+					z-index: 10;
+
+					.gallery-image {
+						width: 60%;
+						height: 100%;
+						text-align: center;
+						padding: 20px 0 20px 20px;
+						z-index: 10;
+						position: relative;
+						float: left;
+						
+						img {
+							position: relative;
+							top: 50%;
+							@include vendorize(transform, translateY(-50%));
+							padding: 40px;
+							width: auto;
+							height: auto;
+							max-width: 100%;
+							margin: 0 auto;
+							@include vendorize(opacity, 1);
+						}
+					}
+					.gallery-text {
+						width: 40%;
+						height: 100%;
+						float: left;
+						position: relative;
+						@include vendorize(opacity, 0);
+						@include transition(opacity, 500ms);
+						@include vendorize(transition-delay, 600ms);
+
+						.text-wrapper {
+							width: 100%;
+							height: 55%;
+							position: relative;
+
+							.text-vertical {
+								width: 75%;
+								position: absolute;
+								bottom: 0;
+								left: 20px;
+								max-width: 500px;
+							}
+							.item-title {
+								font-family: $museoSlab;
+								font-size: 2em;
+								padding-bottom: 15px;
+							}
+							.item-year {
+								font-style: italic;
+								padding-bottom: 10px;
+							}
+							.item-year,
+							.item-content {
+								font-family: $museoSlab;
+								font-size: 1.125em;
+								line-height: 1.75;
+							}
+						}
+					}
+				}
+			}
+			.owl-item.active .gallery-item .gallery-text {
+				@include vendorize(opacity, 1);
+			}
+		}
+		.section-products {	
+			.product-desktop {
+				display: block;
+				padding-bottom: 50px;
+				position: relative;
+
+				nav {
+					display: block;
+					width: 90%;
+					position: absolute;
+					bottom: 10px;
+					left: 5%;
+
+					ul {
+						width: 33%;
+						float: left;
+						vertical-align: top;
+
+						li {
+							font-family: $museoSlab;
+							font-size: 1em;
+							padding: 0 0 5px 20%;
+
+							a {
+								padding: 5px;
+								color: $black;
+
+								span {
+									font-weight: 700;
+									font-style: italic;
+									padding-right: 3px;
+								}
+								&:hover,
+								&:focus {
+									color: $yellow;
+
+									span {
+										color: $black;
+									}
+								}
+							}	
+						}
+					}
+				}
+			}
+			.product-mobile {
+				display: none;
+			}
+			h4 {
+				margin-top: 0;
+			}
+		}
+		.section-share {
+			height: 100%;
+
+			.signature-item {
+				width: auto;
+				height: 100%;
+
+				.jamie-signature {
+					width: 40%;
+					height: 100%;
+					margin: 0 auto;
+				}
+			}
+			.share-details {
+				top: 65%;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) and (orientation: landscape) {
+	.jamie-lynn {
+		.section-photo {
+			.photo-item {
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.method-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.style-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.passion-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.inspiration-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-inspiration-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-inspiration-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.music-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.tradition-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.section-video {
+			.video-item {
+				.video-image {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+		}
+		.section-gallery {
+			.gallery-wrapper {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale')";
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.jamie-lynn {
+		&.scroll-animation {
+			height: 10000px;
+
+			.section-photo,
+			.section-video,
+			.section-gallery {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				display: none;
+			}
+			#legacy {
+				display: block;
+			}
+			#legacy-now {
+				@include vendorize(opacity, 0);
+			}
+			#tradition-photo {
+				display: none;
+			}
+			.section-quote,
+			.section-share {
+				position: fixed;
+				top: 100%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+			.section-products {
+				position: fixed;
+				bottom: -200%;
+				left: 0;
+				width: 100%;
+			}
+
+			#legacy { z-index: 1; }
+			#legacy-now { z-index: 2; }
+			#film { z-index: 3; }
+			#method-photo { z-index: 4; }
+			#style-photo { z-index: 5; }
+			#passion-photo { z-index: 6; }
+			#inspiration-photo { z-index: 7; }
+			#music-photo { z-index: 8; }
+			#steady-photo { z-index: 9; }
+			#gallery { z-index: 10; }
+			#products { z-index: 12; }
+			#tradition-photo { z-index: 12; }
+
+			#intro,
+			#method,
+			#style,
+			#passion,
+			#inspiration,
+			#music,
+			#steady,
+			#creativity,
+			#share { z-index: 15; }
+
+		}
+		.section-photo {
+			.photo-item {
+				&.fixed-photo {
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 2;
+				}
+				&.then-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-then-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.now-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-now-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.method-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-method-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.style-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-style-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.passion-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-passion-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.inspiration-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-inspiration-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.music-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-music-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.steady-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-steady-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+				&.tradition-photo {
+					background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg');
+					filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale');
+					-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-tradition-tablet-horizontal.jpg', sizingMethod='scale')";
+				}
+			}
+			.caption {
+				.caption-icon {
+					right: 10px;
+					left: auto;
+				}
+				.caption-list {
+					text-align: center;
+
+					.caption-item span.hide-vertical {
+						display: inline;
+					}
+				}
+			}
+		}
+		.section-photo .photo-item,
+		.section-quote,
+		.section-gallery,
+		.section-products,
+		.section-share {
+			z-index: 2;
+			position: relative;
+		}
+		.section-video {
+			.video-item {
+				&.fixed-video {
+					position: fixed;
+					top: 0;
+					left: 0;
+					z-index: 1;
+				}
+				.video-image {
+					display: none;
+				}
+				.video-wrapper {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					display: block;
+					overflow: hidden;
+
+					.effect-overlay {
+						background-image: url('../img/jamie-lynn/dots.png');
+						display: block;
+						position: absolute;
+						bottom: 0;
+						z-index: 3;
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+		}
+		.film-container {
+			.video-frame {
+				height: 100%;
+				padding: 0;
+				top: 0;
+				@include vendorize(transform, none);
+			}
+		}
+		.section-gallery {
+			.gallery-wrapper {
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-creativity-tablet-horizontal.jpg', sizingMethod='scale')";
+			}
+		}
+		.section-products {
+			.product-desktop {
+				padding-bottom: 30px;
+
+				nav {
+					width: 70%;
+					left: 15%;
+
+					ul {
+						li {
+							padding-bottom: 5px;
+						}
+					}
+				}
+			}
+		}
+		.section-share {
+			.signature-item {
+				.jamie-signature {
+					width: 400px;
+				}
+			}
+		}
+	}
+	.no-video .jamie-lynn {
+		.section-video {
+			.video-image {
+				display: block;
+				background-image: url('../img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg');
+				filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale');
+				-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/jamie-lynn/backgrounds/jamie-lynn-film-tablet-horizontal.jpg', sizingMethod='scale')";
+				background-position: 50% 50%;
+				width: 100%;
+				height: 100%;
+			}
+			.video-wrapper {
+				display: none;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.jamie-lynn {
+		.section-products {
+			.product-desktop {
+				padding-bottom: 0;
+
+				nav {
+					width: 60%;
+					bottom: 10px;
+					left: 20%;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xxlarge) {
+	.jamie-lynn {
+		.section-quote {
+			.quote-item {
+				.quote-wrapper {
+
+					blockquote {
+						width: 750px;
+
+						p {
+							font-size: 2em;
+
+							&.hand-written {
+								font-size: 4em;
+							}
+						} 
+						&.quote-small {
+							width: 565px;
+
+							p {
+								font-size: 1.3em;
+
+								&.hand-written {
+									font-size: 4em;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.section-products {
+			.product-desktop {
+
+				nav {
+					bottom: 10px;
+
+					ul {
+						li {
+							padding-bottom: 8px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* Gallery Fixes for height issues */
+.ie-lt9 .jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+	max-height: 70%;
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	position: static;
+}
+@media screen and (min-height: 400px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 360px;
+	}
+}
+@media screen and (min-height: 600px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 560px;
+	}
+}
+@media screen and (min-height: 800px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 760px;
+	}
+}
+@media screen and (min-height: 1000px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 960px;
+	}
+}
+@media screen and (min-height: 1200px) {
+	.jamie-lynn .section-gallery .gallery-wrapper .gallery-item .gallery-image img {
+		max-height: 1160px;
+	}
+}

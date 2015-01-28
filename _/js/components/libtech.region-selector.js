@@ -23,14 +23,26 @@ LIBTECH.RegionSelector.prototype = {
 			} else {
 				$body.addClass("international");
 			}
+			var currencyClass = "currency-" + currencyCookie;
+			$body.addClass(currencyClass.toLowerCase());
 			$(".region-selector a").html(regionCookie);
 			takeover = new LIBTECH.Takeover();
 		} else {
 			if (navigator.cookieEnabled === true) {
 				// if no region cookie has been set, open selector if on product page
 				if ($('body').hasClass('page-template-page-templatessnowboard-builder-php') || $('body').hasClass('page-template-page-templatessnowboard-builder-share-php') || $('body').hasClass('page-template-page-templatespage-shopping-cart-php') || $('body').hasClass('page-template-page-templatesoverview-products-php') || $('body').hasClass('single-libtech_snowboards') || $('body').hasClass('single-libtech_nas') || $('body').hasClass('single-libtech_surfboards') || $('body').hasClass('single-libtech_skateboards') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_outerwear')) {
-					self.overlayInit();
-					takeover = new LIBTECH.Takeover(false);
+					// Check to make sure IP Address is not Crazy Egg tracking
+					$.getJSON( "/feeds/ip/", function( data ) {
+						if (data.ip !== "80.74.134.135") {
+							// if not crazy egg ip, show region selector
+							self.overlayInit();
+							takeover = new LIBTECH.Takeover(false);
+						}
+					}).fail(function() {
+						// failed, so show region selector
+						self.overlayInit();
+						takeover = new LIBTECH.Takeover(false);
+					});
 				} else {
 					takeover = new LIBTECH.Takeover();
 				}
@@ -55,7 +67,7 @@ LIBTECH.RegionSelector.prototype = {
 		var self = this;
 		$('#region-selector').toggleClass('visible');
 		// scroll to top
-		LIBTECH.main.utilities.pageScroll('#region-selector', 0.5);
+		LIBTECH.main.utilities.pageScroll('#region-selector', 0.5, false);
 		// add click events
 		$("#region-selector .location-group .location-list a").on('click.region', function (e) {
 			var selectedCurrency, selectedRegion;

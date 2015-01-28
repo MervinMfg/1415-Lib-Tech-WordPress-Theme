@@ -3,10 +3,14 @@
    ========================================================================== */
 
 .takeover {
-	max-width: 1640px;
-	margin: 0 auto;
+	position: relative;
+	z-index: 4;
+	background: #000;
+	width: 100%;
 
 	.takeover-content {
+		max-width: 1640px;
+		margin: 0 auto;
 		position: relative;
 		cursor: pointer;
 

@@ -99,7 +99,6 @@
             "return_format": "object",
             "post_type": [
                 "libtech_snowboards",
-                "libtech_bindings",
                 "libtech_nas",
                 "libtech_surfboards",
                 "libtech_skateboards",
@@ -196,13 +195,6 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "libtech_luggage"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "libtech_bindings"
             }
         ],
         [

@@ -11,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Directional": "Directional",
                 "Directional Twin": "Directional Twin",
@@ -31,6 +36,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "BTX": "BTX",
                 "!BTX!": "!BTX!",
@@ -45,6 +55,28 @@
             "save_other_choice": 0,
             "default_value": "",
             "layout": "horizontal"
+        },
+        {
+            "key": "field_5474ef1b49747",
+            "label": "Board Colorways",
+            "name": "libtech_snowboard_colorways",
+            "prefix": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Random Bases": "Random Bases",
+                "Alternate Colorways": "Alternate Colorways",
+                "Random Assorted Bananas": "Random Assorted Bananas"
+            },
+            "default_value": [],
+            "layout": "vertical"
         }
     ],
     "location": [

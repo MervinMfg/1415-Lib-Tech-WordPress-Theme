@@ -70,6 +70,8 @@ LIBTECH.main = {
 			self.dttdInit();
 		} else if ($body.hasClass('page-template-page-templatesboard-finder-php')) {
 			self.boardFinderInit();
+		} else if ($body.hasClass('page-template-page-templatesjamie-lynn-collection-php')) {
+			self.jamieLynnCollectionInit();
 		}
 		/* Chrome Webfont Fix Styles
 			- https://code.google.com/p/chromium/issues/detail?id=336476
@@ -228,7 +230,7 @@ LIBTECH.main = {
 		});
 	},
 	homeSportInit: function () {
-		var self, slideWidth, slideMargin;
+		var self, slideWidth, slideMargin, currencyCookie;
 		self = this;
 		// set up large featured images/videos
 		self.utilities.featuredSliderInit();
@@ -242,6 +244,11 @@ LIBTECH.main = {
 		} else {
 			slideWidth = 220;
 			slideMargin = 10;
+		}
+		currencyCookie = self.utilities.cookie.getCookie('libtech_currency');
+		// remove super banana if we're not in US
+		if (currencyCookie !== 'USD') {
+			$('.product-slider .product-listing .superbanana').remove();
 		}
 		// set up product slider
 		var slider = $('.product-slider .bxslider').bxSlider({
@@ -294,167 +301,7 @@ LIBTECH.main = {
 		});
 	},
 	blogSingleInit: function () {
-		var self = this;
-		// BEGIN CODE FOR 2 COLUMN LAYOUT THAT FIXES POSITIONS WHEN SCROLLED PAST
-		// check browser width and perform appropriate actions on 2 column layout
-		function checkPageWidth() {
-			if (self.utilities.getMediaWidth() < 980) {
-				// if we're less than 980 turn off scroll listener and reset dom
-				$(window).off('scroll.blogScroll');
-				// reset all css
-				$('#sidebar').css({
-					position: 'static',
-				});
-				$('#sidebar .sidebar-wrapper').css({
-					position: 'static',
-					width: '100%'
-				});
-				$('article.post').css({
-					position: 'static'
-				});
-				$('article.post .post-wrapper').css({
-					position: 'static',
-					width: '100%'
-				});
-			} else {
-				// if we're bigger than 980 listen for scroll and run check
-				$(window).off('scroll.blogScroll');
-				$(window).on('scroll.blogScroll', function () {
-					checkScroll();
-				});
-				checkScroll();
-			}
-		}
-		// on page scroll check the positioning of elements
-		function checkScroll() {
-			// set up variables
-			var post, postHeight, sidebar, sidebarHeight, windowScrollTop, windowHeight;
-			post = $('article.post');
-			postHeight = post.height();
-			postWrapper = $('article.post .post-wrapper');
-			postWrapperHeight = postWrapper.height();
-			sidebar = $('#sidebar');
-			sidebarHeight = sidebar.height();
-			sidebarWrapper = $('#sidebar .sidebar-wrapper');
-			sidebarWrapperHeight = sidebarWrapper.height();
-			windowScrollTop = $(window).scrollTop();
-			windowHeight = $(window).height();
-			// check to see which column is longer
-			if (sidebarHeight < postHeight) {
-				// if sidebar is shorter, do this
-				if (windowScrollTop + windowHeight > post.offset().top + sidebarWrapperHeight) {
-					// we've reached the bottom of the sidebar, so anchor it
-					// find the appropriate position for the sidebar
-					// var bottomPosition = post.offset().top + postHeight - windowScrollTop - windowHeight;
-					// set the position
-					sidebarWrapper.css({
-						position: 'fixed',
-						bottom: '0px',
-						width: sidebar.width()
-					});
-					// if we can see the footer, fix the sidebar to bottom of section
-					if (isInView('footer')) {
-						sidebar.css({
-							position: 'absolute',
-							bottom: '-50px',
-							right: '0px'
-						});
-						sidebarWrapper.css({
-							position: 'static',
-							width: '100%'
-						});
-					}
-				} else {
-					// we're at the top
-					sidebar.css({
-						position: 'static',
-					});
-					sidebarWrapper.css({
-						position: 'static',
-						width: '100%'
-					});
-				}
-			} else {
-				// if post is shorter, do this
-				if (windowScrollTop + windowHeight > sidebar.offset().top + postWrapperHeight) {
-					// we've reached the bottom of the post, so anchor it
-					// find the appropriate position for the post
-					// var bottomPosition = sidebar.offset().top + sidebarHeight - windowScrollTop - windowHeight;
-					// set the position
-					postWrapper.css({
-						position: 'fixed',
-						bottom: '0px',
-						width: post.width()
-					});
-					// if we can see the footer, fix the post to bottom of section
-					if (isInView('footer')) {
-						post.css({
-							position: 'absolute',
-							bottom: '-50px',
-							left: '0px'
-						});
-						postWrapper.css({
-							position: 'static',
-							width: '100%'
-						});
-					}
-				} else {
-					// we're at the top
-					post.css({
-						position: 'static'
-					});
-					postWrapper.css({
-						position: 'static',
-						width: '100%'
-					});
-				}
-			}
-		}
-		// check if element is in view
-		function isInView(elem) {
-			var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
-			var docViewBottom = docViewTop + $(window).height();
-			var elemTop = $(elem).offset().top; //num of pixels above the elem
-			var elemBottom = elemTop + $(elem).height();
-			return ((elemTop >= docViewTop && elemTop <= docViewBottom));
-		}
-		// adjust strobbr height/width
-		function adjustStrobbr() {
-			$('iframe.strobbr').each(function () {
-				var
-				$this = $(this),
-					proportion = $this.data('proportion'),
-					w = $this.attr('width'),
-					actual_w = $this.width();
-				if (!proportion) {
-					proportion = $this.attr('height') / w;
-					$this.data('proportion', proportion);
-				}
-				if (actual_w != w) {
-					$this.css('height', Math.round(actual_w * proportion) + 'px');
-				}
-			});
-		}
-		$(window).on('resize load', function () {
-			adjustStrobbr();
-			checkPageWidth(); // on resize check what the width of the browser is for fixed scroll elements
-		});
-		$(".blog-post .entry-content").fitVids();
-		// init gallery
-		if ($('.gallery')) {
-			new LIBTECH.Gallery();
-			// listen for update and fix break when taller image is loaded
-			$(".gallery").on("galleryUpdate", function (e) {
-				checkPageWidth();
-			});
-		}
-		// check for facebook plugin loads, such as facebook embeds
-		$(window).on('load', function () {
-			FB.Event.subscribe('xfbml.render', function () {
-				// facebook content has been rendered
-				checkPageWidth(); // listen for update and fix break when taller content is loaded
-			});
-		});
+		new LIBTECH.BlogSingle();
 	},
 	teamOverviewInit: function () {
 		var self = this;
@@ -630,6 +477,13 @@ LIBTECH.main = {
 		var self = this;
 		new LIBTECH.BoardFinder();
 	},
+	jamieLynnCollectionInit: function () {
+		var self = this;
+		// set up large featured images/videos
+		self.utilities.featuredSliderInit(false);
+		// init product overview code
+		new LIBTECH.ProductOverview();
+	},
 	utilities: {
 		cookie: {
 			getCookie: function (name) {
@@ -732,50 +586,6 @@ LIBTECH.main = {
 				if ($(this).find(".video-container").length === 0)
 					$(this).prepend(vimeoEmbed).fitVids();
 			});
-		},
-		filterList: function (productListing) {
-			var filterArray = []; // set up array for recording filter options
-			$('.product-filtering > li.filters').each(function () { // loop through each filter group
-				if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
-					$(this).find('ul > li[data-filter]').each(function () {
-						var filterItem = $(this);
-						if (filterItem.hasClass('selected')) {
-							filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
-						}
-					});
-				} else { // first list of filters have been added, now build upon them
-					var filterArrayTemp, filterSet;
-					filterArrayTemp = []; // new array to update filterArray after it's built based on filterArray and new filters to concatinate
-					$(this).find('ul > li[data-filter]').each(function () {
-						var filterItem = $(this);
-						if (filterItem.hasClass('selected')) {
-							filterSet = true; // mark that we found another filter so we need to update the filterArray
-							for (var i = 0; i < filterArray.length; i++) {
-								filterArrayTemp.push(filterArray[i] + filterItem.attr('data-filter')); // concatinate current filters with new
-							}
-						}
-					});
-					if (filterSet === true) {
-						filterArray = filterArrayTemp.slice(0); // update main array
-					}
-				}
-			});
-			// build filterList string
-			filterList = ""; // default to no filter
-			for (var i = 0; i < filterArray.length; i++) {
-				if (i === 0) { // first item has no commas
-					filterList = filterArray[i];
-				} else {
-					filterList += ", " + filterArray[i];
-				}
-			}
-			// should look something like this - { filter: ".womens.Narrow, .youth.BTX" }
-			// update hash history, this triggers the hash change event which will submit the filters
-			if (filterArray.length > 0) {
-				window.location.hash = 'filter=' + encodeURIComponent(filterList);
-			} else {
-				window.location.hash = 'all';
-			}
 		}
 	}
 };

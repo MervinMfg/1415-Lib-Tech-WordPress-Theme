@@ -88,7 +88,7 @@ get_header();
                             <div class="description">
                                 <?php echo $productContent; ?>
                             </div>
-                            <div class="price"><?php echo $productPrice; ?></div>
+                            <?php echo $productPrice; ?>
                             <a href="<?php echo $productLink; ?>" class="buy h4">Buy Now!</a>
                         </div>
                     </li>
@@ -217,15 +217,6 @@ get_header();
                     'order' => 'ASC'
                 );
                 break;
-            case "Bindings":
-                $imageSize = "square-medium";
-                $args = array(
-                    'post_type' => "libtech_bindings",
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC'
-                );
-                break;
             default:
                 $imageSize = "square-large";
                 $args = array(
@@ -241,11 +232,12 @@ get_header();
             $productArray = Array();
             $filterList = ""; // start list of items to filter by
             $productArray['postType'] = $post->post_type;
+            $productArray['slug'] = $post->post_name;
             $productArray['title'] = get_the_title();
             $productArray['link'] = get_permalink($post->ID);
             $imageID = get_field('libtech_product_image');
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
-            $productArray['available'] = "No";
+            $productArray['available'] = Array('us' => 'No', 'ca' => 'No', 'eu' => 'No');
             $productArray['colorways'] = Array();
             // check if we're surf because of varrying fin costs
             if ($productArray['postType'] == "libtech_surfboards") {
@@ -268,17 +260,17 @@ get_header();
                             $optionVariations = get_sub_field('libtech_snowboard_options_variations');
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
-                                if ($GLOBALS['currency'] == "CAD") {
-                                    $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
-                                } else if ($GLOBALS['currency'] == "EUR") {
-                                    $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
-                                } else {
-                                    $variationAvailable = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
-                                }
-                                // set overall availability
-                                if($variationAvailable == "Yes"){
-                                    $productArray['available'] = "Yes";
-                                }
+                                $variationSKU = $optionVariations[$i]['libtech_snowboard_options_variations_sku'];
+                                $variationAvailableUS = $optionVariations[$i]['libtech_snowboard_options_variations_availability_us'];
+                                $variationAvailableCA = $optionVariations[$i]['libtech_snowboard_options_variations_availability_ca'];
+                                $variationAvailableEU = $optionVariations[$i]['libtech_snowboard_options_variations_availability_eur'];
+                                $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                                // eval if we should show product or not for each location
+                                // snowboards are available always, even when we have 0 in stock, unless we specifically say NO
+                                if($variationAvailability['us']['amount'] != "No") $productArray['available']['us'] = "Yes";
+                                if($variationAvailability['ca']['amount'] != "No") $productArray['available']['ca'] = "Yes";
+                                // Europe is handled like other products, direct
+                                if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                             }
                             // get colorways
                             $optionColor = get_the_title();
@@ -332,42 +324,19 @@ get_header();
                     $filterList .= " " . str_replace(array(' ', '!'), '_', get_field('libtech_snowboard_contour'));
                     $productArray['contour'] = get_field('libtech_snowboard_contour');
                     break;
-                case "libtech_bindings":
-                    if(get_field('libtech_binding_options')):
-                        while(the_repeater_field('libtech_binding_options')):
-                            $optionVariations = get_sub_field('libtech_binding_options_variations');
-                            // loop through variations
-                            for ($i = 0; $i < count($optionVariations); $i++) {
-                                if($GLOBALS['currency'] == "CAD"){
-                                    $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_ca'];
-                                } else if($GLOBALS['currency'] == "EUR"){
-                                    $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_eur'];
-                                } else {
-                                    $variationAvailable = $optionVariations[$i]['libtech_binding_options_variations_availability_us'];
-                                }
-                                // set overall availability
-                                if($variationAvailable == "Yes"){
-                                    $productArray['available'] = "Yes";
-                                }
-                            }
-                        endwhile;
-                    endif;
-                    break;
                 case "libtech_nas":
                     // get nas availability
                     if(get_field('libtech_nas_variations')):
                         while(the_repeater_field('libtech_nas_variations')):
-                            if ($GLOBALS['currency'] == "CAD") {
-                                $variationAvailable = get_sub_field('libtech_nas_variations_availability_ca');
-                            } else if ($GLOBALS['currency'] == "EUR") {
-                                $variationAvailable = get_sub_field('libtech_nas_variations_availability_eur');
-                            } else {
-                                $variationAvailable = get_sub_field('libtech_nas_variations_availability_us');
-                            }
-                            // set overall availability
-                            if($variationAvailable == "Yes"){
-                                $productArray['available'] = "Yes";
-                            }
+                            $variationSKU = get_sub_field('libtech_nas_variations_sku');
+                            $variationAvailableUS = get_sub_field('libtech_nas_variations_availability_us');
+                            $variationAvailableCA = get_sub_field('libtech_nas_variations_availability_ca');
+                            $variationAvailableEU = get_sub_field('libtech_nas_variations_availability_eur');
+                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                            // eval if we should show product or not for each location
+                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                         endwhile;
                     endif;
                     // build array of nas sizes & widths
@@ -426,18 +395,15 @@ get_header();
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
                                 $variationWidth = str_replace('.', '_', $optionVariations[$i]['libtech_skateboard_options_variations_width']);
-                                // get skateboard availability
-                                if ($GLOBALS['currency'] == "CAD") {
-                                    $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
-                                } else if ($GLOBALS['currency'] == "EUR") {
-                                    $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
-                                } else {
-                                    $variationAvailable = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
-                                }
-                                // set overall availability
-                                if($variationAvailable == "Yes"){
-                                    $productArray['available'] = "Yes";
-                                }
+                                $variationSKU = $optionVariations[$i]['libtech_skateboard_options_variations_sku'];
+                                $variationAvailableUS = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
+                                $variationAvailableCA = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
+                                $variationAvailableEU = $optionVariations[$i]['libtech_skateboard_options_variations_availability_eur'];
+                                $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                                // eval if we should show product or not for each location
+                                if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                                if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                                if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                                 // add wodth to array
                                 array_push($productWidth, $variationWidth);
                                 // add width to filter list
@@ -464,17 +430,15 @@ get_header();
                         while(the_repeater_field('libtech_outerwear_variations')):
                             $variationSize = get_sub_field('libtech_outerwear_variations_size');
                             // get outerwear availability
-                            if ($GLOBALS['currency'] == "CAD") {
-                                $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_ca');
-                            } else if ($GLOBALS['currency'] == "EUR") {
-                                $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_eur');
-                            } else {
-                                $variationAvailable = get_sub_field('libtech_outerwear_variations_availability_us');
-                            }
-                            // set overall availability
-                            if($variationAvailable == "Yes"){
-                                $productArray['available'] = "Yes";
-                            }
+                            $variationSKU = get_sub_field('libtech_outerwear_variations_sku');
+                            $variationAvailableUS = get_sub_field('libtech_outerwear_variations_availability_us');
+                            $variationAvailableCA = get_sub_field('libtech_outerwear_variations_availability_ca');
+                            $variationAvailableEU = get_sub_field('libtech_outerwear_variations_availability_eur');
+                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                            // eval if we should show product or not for each location
+                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                             // add size to filter list
                             $filterList .= " " . $variationSize;
                         endwhile;
@@ -511,18 +475,16 @@ get_header();
                     if(get_field('libtech_apparel_variations')):
                         while(the_repeater_field('libtech_apparel_variations')):
                             $variationSize = get_sub_field('libtech_apparel_variations_size');
-                            // get outerwear availability
-                            if ($GLOBALS['currency'] == "CAD") {
-                                $variationAvailable = get_sub_field('libtech_apparel_variations_availability_ca');
-                            } else if ($GLOBALS['currency'] == "EUR") {
-                                $variationAvailable = get_sub_field('libtech_apparel_variations_availability_eur');
-                            } else {
-                                $variationAvailable = get_sub_field('libtech_apparel_variations_availability_us');
-                            }
-                            // set overall availability
-                            if($variationAvailable == "Yes"){
-                                $productArray['available'] = "Yes";
-                            }
+                            // get apparel availability
+                            $variationSKU = get_sub_field('libtech_apparel_variations_sku');
+                            $variationAvailableUS = get_sub_field('libtech_apparel_variations_availability_us');
+                            $variationAvailableCA = get_sub_field('libtech_apparel_variations_availability_ca');
+                            $variationAvailableEU = get_sub_field('libtech_apparel_variations_availability_eur');
+                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                            // eval if we should show product or not for each location
+                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                             // add size to filter list
                             $filterList .= " " . $variationSize;
                         endwhile;
@@ -558,18 +520,16 @@ get_header();
                 case "libtech_accessories":
                     if(get_field('libtech_accessories_variations')):
                         while(the_repeater_field('libtech_accessories_variations')):
-                            // get outerwear availability
-                            if ($GLOBALS['currency'] == "CAD") {
-                                $variationAvailable = get_sub_field('libtech_accessories_variations_availability_ca');
-                            } else if ($GLOBALS['currency'] == "EUR") {
-                                $variationAvailable = get_sub_field('libtech_accessories_variations_availability_eur');
-                            } else {
-                                $variationAvailable = get_sub_field('libtech_accessories_variations_availability_us');
-                            }
-                            // set overall availability
-                            if($variationAvailable == "Yes"){
-                                $productArray['available'] = "Yes";
-                            }
+                            // get accessories availability
+                            $variationSKU = get_sub_field('libtech_accessories_variations_sku');
+                            $variationAvailableUS = get_sub_field('libtech_accessories_variations_availability_us');
+                            $variationAvailableCA = get_sub_field('libtech_accessories_variations_availability_ca');
+                            $variationAvailableEU = get_sub_field('libtech_accessories_variations_availability_eur');
+                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                            // eval if we should show product or not for each location
+                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                         endwhile;
                     endif;
                     // get categories for outerwear
@@ -583,18 +543,16 @@ get_header();
                 case "libtech_luggage":
                     if(get_field('libtech_luggage_variations')):
                         while(the_repeater_field('libtech_luggage_variations')):
-                            // get outerwear availability
-                            if ($GLOBALS['currency'] == "CAD") {
-                                $variationAvailable = get_sub_field('libtech_luggage_variations_availability_ca');
-                            } else if ($GLOBALS['currency'] == "EUR") {
-                                $variationAvailable = get_sub_field('libtech_luggage_variations_availability_eur');
-                            } else {
-                                $variationAvailable = get_sub_field('libtech_luggage_variations_availability_us');
-                            }
-                            // set overall availability
-                            if($variationAvailable == "Yes"){
-                                $productArray['available'] = "Yes";
-                            }
+                            // get luggage availability
+                            $variationSKU = get_sub_field('libtech_luggage_variations_sku');
+                            $variationAvailableUS = get_sub_field('libtech_luggage_variations_availability_us');
+                            $variationAvailableCA = get_sub_field('libtech_luggage_variations_availability_ca');
+                            $variationAvailableEU = get_sub_field('libtech_luggage_variations_availability_eur');
+                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
+                            // eval if we should show product or not for each location
+                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
+                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
+                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
                         endwhile;
                     endif;
                     // get colorways
@@ -627,8 +585,14 @@ get_header();
                     break;
             }
             // if product is available set filter list class
-            if ($productArray['available'] == "Yes") {
-                $filterList .= " available";
+            if ($productArray['available']['us'] == "Yes") {
+                $filterList .= " available-us";
+            }
+            if ($productArray['available']['ca'] == "Yes") {
+                $filterList .= " available-ca";
+            }
+            if ($productArray['available']['eu'] == "Yes") {
+                $filterList .= " available-eu";
             }
             $productArray['filterList'] = $filterList;
             // add single product to products array
@@ -975,22 +939,12 @@ get_header();
                             <li data-filter=".available">Availabile</li>
                         </ul>
                     </li>
-                    <?php elseif (get_the_title() == "Bindings"): ?>
-                    <li class="filters bindings-pricing">
-                        <p class="select-title">Pricing</p>
-                        <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
-                        </ul>
-                    </li>
                     <?php endif; ?>
                 </ul>
                 <div class="clearfix"></div>
                 <ul class="product-listing <?php echo strtolower(get_the_title()); ?>">
                     <?php foreach ($productsArray as $product): ?>
-                    <li class="product-item<?php echo $product['filterList']; ?>">
+                    <li class="product-item <?php echo $product['slug'] . $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
                             <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img" />
                             <div class="colorways">

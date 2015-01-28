@@ -1,6 +1,6 @@
 /*!
- * VERSION: beta 0.2.4
- * DATE: 2014-07-17
+ * VERSION: beta 0.3.3
+ * DATE: 2014-10-29
  * UPDATES AND DOCS AT: http://www.greensock.com
  *
  * @license Copyright (c) 2008-2014, GreenSock. All rights reserved.
@@ -104,6 +104,22 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 			this.vars = vars || {};
 			this.split(vars);
 		},
+		_swapText = function(element, oldText, newText) {
+			var type = element.nodeType;
+			if (type === 1 || type === 9 || type === 11) {
+				for ( element = element.firstChild; element; element = element.nextSibling ) {
+					_swapText(element, oldText, newText);
+				}
+			} else if (type === 3 || type === 4) {
+				element.nodeValue = element.nodeValue.split(oldText).join(newText);
+			}
+		},
+		_pushReversed = function(a, merge) {
+			var i = merge.length;
+			while (--i > -1) {
+				a.push(merge[i]);
+			}
+		},
 		_split = function(element, vars, allChars, allWords, allLines) {
 			if (_brExp.test(element.innerHTML)) {
 				element.innerHTML = element.innerHTML.replace(_brExp, _brSwap); //swap in a unique string for <br/> tags so that we can identify it when we loop through later, and replace it appropriately
@@ -125,40 +141,58 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 				textAlign = _getStyle(element, "textAlign", cs, true),
 				origHeight = element.clientHeight,
 				origWidth = element.clientWidth,
-				l = text.length,
 				wordEnd = "</div>",
 				wordStart = _cssClassFunc(vars.wordsClass),
 				charStart = _cssClassFunc(vars.charsClass),
 				iterateLine = ((vars.linesClass || "").indexOf("++") !== -1),
 				linesClass = vars.linesClass,
-				curLine, isChild, splitText, i, j, character, nodes, node, offset, lineNode, style, lineWidth, addWordSpaces;
+				hasTagStart = text.indexOf("<") !== -1,
+				wordIsOpen = true,
+				charArray = [],
+				wordArray = [],
+				lineArray = [],
+				l, curLine, isChild, splitText, i, j, character, nodes, node, offset, lineNode, style, lineWidth, addWordSpaces;
 
 			if (iterateLine) {
 				linesClass = linesClass.split("++").join("");
 			}
+			if (hasTagStart) {
+				text = text.split("<").join("{{LT}}"); //we can't leave "<" in the string, or when we set the innerHTML, it can be interpreted as
+			}
+			l = text.length;
 
 			splitText = wordStart();
-
 			for (i = 0; i < l; i++) {
 				character = text.charAt(i);
 				if (character === ")" && text.substr(i, 20) === _brSwap) {
-					splitText += wordEnd + "<BR/>";
-					if (i !== l - 1) {
+					splitText += (wordIsOpen ? wordEnd : "") + "<BR/>";
+					wordIsOpen = false;
+					if (i !== l - 20 && text.substr(i+20, 20) !== _brSwap) {
 						splitText += " " + wordStart();
+						wordIsOpen = true;
 					}
 					i += 19;
 
-				} else if (character === " " && text.charAt(i-1) !== " " && i !== l-1) {
-					splitText += wordEnd;
-					if (i !== l - 1) {
+				} else if (character === " " && text.charAt(i-1) !== " " && i !== l-1 && text.substr(i-20, 20) !== _brSwap) {
+					splitText += wordIsOpen ? wordEnd : "";
+					wordIsOpen = false;
+					while (text.charAt(i+1) === " ") { //skip over empty spaces (to avoid making them words)
+						splitText += space;
+						i++;
+					}
+					if (text.charAt(i+1) !== ")" || text.substr(i+1, 20) !== _brSwap) {
 						splitText += space + wordStart();
+						wordIsOpen = true;
 					}
 				} else {
 					splitText += (chars && character !== " ") ? charStart() + character + "</div>" : character;
 				}
 			}
-			element.innerHTML = splitText + wordEnd;
+			element.innerHTML = splitText + (wordIsOpen ? wordEnd : "");
 
+			if (hasTagStart) {
+				_swapText(element, "{{LT}}", "<");
+			}
 			//copy all the descendant nodes into an array (we can't use a regular nodeList because it's live and we may need to renest things)
 			j = element.getElementsByTagName("*");
 			l = j.length;
@@ -192,6 +226,9 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 							}
 							if (isChild && i) {
 								nodes[i-1]._wordEnd = true;
+							}
+							if (node.nodeName === "BR" && node.nextSibling && node.nextSibling.nodeName === "BR") { //two consecutive <br> tags signify a new [empty] line.
+								lines.push([]);
 							}
 						}
 					}
@@ -239,12 +276,12 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 						if (!offset) {
 							element.appendChild(_doc.createTextNode(" "));
 						}
-						allChars.push(node);
+						charArray.push(node); //TODO: push()
 					}
-				} else if (isChild) {
-					allWords.push(node);
+				} else if (isChild && node.innerHTML !== "") {
+					wordArray.push(node);  //TODO: push()
 				} else if (chars) {
-					allChars.push(node);
+					charArray.push(node);  //TODO: push()
 				}
 			}
 
@@ -271,7 +308,7 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					if (linesClass) {
 						lineNode.className = linesClass + (iterateLine ? i+1 : "");
 					}
-					allLines.push(lineNode);
+					lineArray.push(lineNode);  //TODO: push()
 					l = curLine.length;
 					for (j = 0; j < l; j++) {
 						if (curLine[j].nodeName !== "BR") {
@@ -291,6 +328,9 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 								}
 							}
 						}
+					}
+					if (l === 0) { //if there are no nodes in the line (typically meaning there were two consecutive <br> tags, just add a non-breaking space so that things display properly.
+						lineNode.innerHTML = "&nbsp;";
 					}
 					if (!words && !chars) {
 						lineNode.innerHTML = _getText(lineNode).split(String.fromCharCode(160)).join(" ");
@@ -319,6 +359,9 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 					}
 				}
 			}
+			_pushReversed(allChars, charArray);
+			_pushReversed(allWords, wordArray);
+			_pushReversed(allLines, lineArray);
 		},
 		p = SplitText.prototype;
 
@@ -328,10 +371,15 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		}
 		this.vars = vars || this.vars;
 		this._originals.length = this.chars.length = this.words.length = this.lines.length = 0;
-		for (var i = 0; i < this.elements.length; i++) {
+		var i = this.elements.length;
+		//we split in reversed order so that if/when we position:absolute elements, they don't affect the position of the ones after them in the document flow (shifting them up as they're taken out of the document flow).
+		while (--i > -1) {
 			this._originals[i] = this.elements[i].innerHTML;
 			_split(this.elements[i], this.vars, this.chars, this.words, this.lines);
 		}
+		this.chars.reverse();
+		this.words.reverse();
+		this.lines.reverse();
 		this.isSplit = true;
 		return this;
 	};
@@ -351,8 +399,15 @@ var _gsScope = (typeof(module) !== "undefined" && module.exports && typeof(globa
 		return this;
 	};
 
-	SplitText.selector = window.$ || window.jQuery || function(e) { if (window.$) { SplitText.selector = window.$; return window.$(e); } return _doc ? _doc.getElementById((e.charAt(0) === "#") ? e.substr(1) : e) : e; };
-	SplitText.version = "0.2.4";
+	SplitText.selector = window.$ || window.jQuery || function(e) {
+		var selector = window.$ || window.jQuery;
+		if (selector) {
+			SplitText.selector = selector;
+			return selector(e);
+		}
+		return (typeof(document) === "undefined") ? e : (document.querySelectorAll ? document.querySelectorAll(e) : document.getElementById((e.charAt(0) === "#") ? e.substr(1) : e));
+	};
+	SplitText.version = "0.3.3";
 	
 })(_gsScope);
 

@@ -69,14 +69,14 @@
 						float: left;
 						padding-right: 40px;
 
-						.us-price, .ca-price {
+						.us-price,
+						.ca-price,
+						.eur-price {
 							color: #000;
 							font-size: 1.4em;
 
 							span {
 								color: #000;
-								font-weight: bold;
-								font-size: 1.2em;
 							}
 						}
 					}
