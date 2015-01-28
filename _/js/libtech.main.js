@@ -228,7 +228,7 @@ LIBTECH.main = {
 		});
 	},
 	homeSportInit: function () {
-		var self, slideWidth, slideMargin;
+		var self, slideWidth, slideMargin, currencyCookie;
 		self = this;
 		// set up large featured images/videos
 		self.utilities.featuredSliderInit();
@@ -242,6 +242,11 @@ LIBTECH.main = {
 		} else {
 			slideWidth = 220;
 			slideMargin = 10;
+		}
+		currencyCookie = self.utilities.cookie.getCookie('libtech_currency');
+		// remove super banana if we're not in US
+		if (currencyCookie !== 'USD') {
+			$('.product-slider .product-listing .superbanana').remove();
 		}
 		// set up product slider
 		var slider = $('.product-slider .bxslider').bxSlider({

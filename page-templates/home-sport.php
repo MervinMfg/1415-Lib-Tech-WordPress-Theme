@@ -11,7 +11,7 @@ get_header();
 			<div class="section-content">
 				<ul class="product-listing bxslider">
 					<?php if($GLOBALS['sport'] == "snow") : ?>
-					<li>
+					<li class="diy">
 						<a href="/snowboarding/snowboard-builder/">
 							<img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" />
 							<div class="product-peek">
@@ -41,6 +41,7 @@ get_header();
 						$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$postType = $post->post_type;
+							$postSlug = $post->post_name;
 							$imageID = get_field('libtech_product_image');
 							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
 							// check for technology type to display
@@ -57,10 +58,9 @@ get_header();
 			                        break;
 			                    }
 							}
-							if (get_the_title() != "superBANANA") :
 					?>
 
-					<li>
+					<li class="<?php echo $postSlug; ?>">
 						<a href="<? the_permalink(); ?>">
 							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
 							<div class="product-peek">
@@ -71,7 +71,6 @@ get_header();
 					</li>
 
 					<?
-							endif;
 						endwhile;
 						wp_reset_query();
 					?>
