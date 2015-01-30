@@ -1645,6 +1645,14 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .error404 .section-content .img-left-container img { width: 566.4px; }
   .error404 .section-content .img-center-container img { width: 286.4px; }
   .error404 .section-content .img-right-container img { width: 1032.8px; } }
+/* ========================================================================== COMPONENTS/_SUPPORT.SCSS ========================================================================== */
+@media screen and (min-width: 768px) { .contact-content .contact-left { width: 50%; float: left; padding-right: 60px; }
+  .contact-content .contact-left .contact-form { margin-left: -1%; }
+  .contact-content .contact-details { width: 45%; float: right; }
+  .warranty-content .warranty-copy { padding-bottom: 20px; }
+  .warranty-content .warranty-left .warranty-form { margin-left: -1%; } }
+@media screen and (min-width: 1200px) { .warranty-content .warranty-copy { width: 50%; float: right; }
+  .warranty-content .warranty-left { width: 50%; float: left; } }
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { padding-top: 60px; margin-top: -40px; }
 .featured-slider .section-content { overflow: hidden; }
