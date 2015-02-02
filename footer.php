@@ -158,7 +158,7 @@
 						<p class="h2">Support</p>
 						<ul>
 							<li><a href="/contact/">Contact</a></li>
-							<li><a href="http://www.mervin.com/support/register/">Register</a></li>
+							<li><a href="/register/">Register</a></li>
 							<li><a href="/warranty/">Warranty</a></li>
 							<li><a href="http://lib-tech.shptron.com/home/privacy/4374.4.1.1" target="_blank" id="link-privacy">Privacy</a></li>
 							<li><a href="http://lib-tech.shptron.com/home/policies/4374.4.1.1" target="_blank" id="link-policies">Policies</a></li>

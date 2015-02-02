@@ -1,51 +1,69 @@
 /* ==========================================================================
    COMPONENTS/_SUPPORT.SCSS
    ========================================================================== */
-
+.contact-content {
+	.contact-copy {
+		padding-bottom: 20px;
+		max-width: $breakpoint-large;
+	}
+	.contact-left {
+		.contact-form {
+			margin-left: -5px;
+		}
+	}
+}
+.warranty-content {
+	.warranty-copy {
+		padding-bottom: 20px;
+		max-width: $breakpoint-large;
+	}
+	.warranty-left {
+		.warranty-form {
+			margin-left: -5px;
+		}
+	}
+}
+.register-content {
+	.register-copy {
+		padding-bottom: 20px;
+		max-width: $breakpoint-large;
+	}
+	.register-left {
+		.register-form {
+			margin-left: -5px;
+		}
+	}
+}
 
 @media screen and (min-width: $breakpoint-medium) {
 
-	.contact-content {
-		.contact-left {
-			width: 50%;
-			float: left;
-			padding-right: 60px;
-
-			.contact-form {
-				margin-left: -1%;
-			}
-		}
-		.contact-details {
-			width: 45%;
-			float: right;
-		}
-	}
-	.warranty-content {
-		.warranty-copy {
-			padding-bottom: 20px;
-		}
-		.warranty-left {
-			.warranty-form {
-				margin-left: -1%;
-			}
-		}
-	}
 }
 
 @media screen and (min-width: $breakpoint-large) {
 
+	.contact-content {
+		.contact-left {
+			.contact-form {
+				max-width: $breakpoint-large;
+			}
+		}
+	}
+	.warranty-content {
+		.warranty-left {
+			.warranty-form {
+				max-width: $breakpoint-large;
+			}
+		}
+	}
+	.register-content {			
+		.register-left {
+			.register-form {
+				max-width: $breakpoint-large;
+			}
+		}
+	}
 }
 
 @media screen and (min-width: $breakpoint-xlarge) {
 
-	.warranty-content {
-		.warranty-copy {
-			width: 50%;
-			float: right;
-		}
-		.warranty-left{
-			width: 50%;
-			float: left;
-		}
-	}
 }
