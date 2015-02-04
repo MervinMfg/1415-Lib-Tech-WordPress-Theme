@@ -83,12 +83,19 @@ Template Name: Snowboard Detail
 										$variationLength = $optionVariations[$i]['libtech_snowboard_options_variations_length'];
 										$variationSKU = $optionVariations[$i]['libtech_snowboard_options_variations_sku'];
 										// setup readable short form of length and width
-										if($variationWidth == "Narrow"){
-											$variationLength = $variationLength . "N";
-										}else if($variationWidth == "Wide"){
-											$variationLength = $variationLength . "W";
-										}else if($variationWidth == "Ultra Wide"){
-											$variationLength = $variationLength . "UW";
+										switch ($variationWidth) {
+											case "Narrow":
+												$variationLength = $variationLength . "N";
+												break;
+											case "Mid Wide":
+												$variationLength = $variationLength . "MW";
+												break;
+											case "Wide":
+												$variationLength = $variationLength . "W";
+												break;
+											case "Ultra Wide":
+												$variationLength = $variationLength . "UW";
+												break;
 										}
 										$optionVariationSizes .= $variationLength;
 										$optionVariationSKUs .= $variationSKU;
@@ -245,13 +252,20 @@ Template Name: Snowboard Detail
 								while(the_repeater_field('libtech_snowboard_specs')):
 									$snowboardLength = get_sub_field('libtech_snowboard_specs_length');
 									$snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
-									// add the proper width abbreviation if not standard
-									if($snowboardWidth == "Narrow"){
-										$snowboardLength = $snowboardLength . "N";
-									}else if($snowboardWidth == "Wide"){
-										$snowboardLength = $snowboardLength . "W";
-									}else if($snowboardWidth == "Ultra Wide"){
-										$snowboardLength = $snowboardLength . "UW";
+									// setup readable short form of length and width
+									switch ($snowboardWidth) {
+										case "Narrow":
+											$snowboardLength = $snowboardLength . "N";
+											break;
+										case "Mid Wide":
+											$snowboardLength = $snowboardLength . "MW";
+											break;
+										case "Wide":
+											$snowboardLength = $snowboardLength . "W";
+											break;
+										case "Ultra Wide":
+											$snowboardLength = $snowboardLength . "UW";
+											break;
 									}
 									// add size to array
 									array_push($snowboardSizes, $snowboardLength);
@@ -348,10 +362,20 @@ Template Name: Snowboard Detail
 								if(get_field('libtech_snowboard_specs')): while(the_repeater_field('libtech_snowboard_specs')):
 									$snowboardLength = get_sub_field('libtech_snowboard_specs_length');
 									$snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
-									if($snowboardWidth == "Narrow"){
-										$snowboardLength = $snowboardLength . "N";
-									}else if($snowboardWidth == "Wide"){
-										$snowboardLength = $snowboardLength . "W";
+									// setup readable short form of length and width
+									switch ($snowboardWidth) {
+										case "Narrow":
+											$snowboardLength = $snowboardLength . "N";
+											break;
+										case "Mid Wide":
+											$snowboardLength = $snowboardLength . "MW";
+											break;
+										case "Wide":
+											$snowboardLength = $snowboardLength . "W";
+											break;
+										case "Ultra Wide":
+											$snowboardLength = $snowboardLength . "UW";
+											break;
 									}
 								?>
 
