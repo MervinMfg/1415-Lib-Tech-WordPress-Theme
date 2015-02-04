@@ -473,12 +473,33 @@ Template Name: Snowboard Detail
 		</section>
 		<?php
 			endif;
+			// display gallery if we have one
+			if( get_field('libtech_snowboard_gallery') ):
+				if( $videoID ) {
+					$topClass = "bg2-top";
+					$sectionClass = "bg2";
+				} else {
+					$topClass = "bg3-top";
+					$sectionClass = "bg3";
+				}
 		?>
-
+		<div class="<?php echo $topClass; ?> product-gallery-top"></div>
+		<section class="<?php echo $sectionClass; ?> product-gallery">
+			<div class="section-content">
+				<h2>Gallery</h2>
+				<?php 
+					$image_ids = get_field('libtech_snowboard_gallery', false, false);
+					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
+					echo do_shortcode( $shortcode );
+				?>
+				<div class="clearfix"></div>
+			</div><!-- END .section-content -->
+		</section><!-- END .product-gallery -->
 		<?php
-			comments_template();
-			// display the related products
-			getRelatedProducts();
+			endif;
+		comments_template();
+		// display the related products
+		getRelatedProducts();
 		?>
 <?php
 		endwhile;
