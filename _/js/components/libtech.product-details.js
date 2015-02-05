@@ -724,6 +724,83 @@ LIBTECH.ProductDetails.prototype = {
 	},
 	initBuySurf: function () {
 		var self = this;
+		var updatePrice = function () {
+			var selectedGraphic, selectedSize, defaultFinValue;
+			selectedGraphic = $('#product-variation-graphic').val();
+			selectedSize = $('#product-variation-size').val();
+			$('.product-price div').removeClass('active');
+
+			if (selectedGraphic == "Logo" || selectedGraphic == -1) {
+				if (selectedSize.indexOf("3 Fin") !== -1) {
+					$('.product-price .price-logo').addClass('active');
+				} else if (selectedSize.indexOf("5 Fin") !== -1) {
+					$('.product-price .price-logo-five').addClass('active');
+				} else {
+					defaultFinValue = $('#product-variation-size option:eq(1)').val();
+					if (defaultFinValue.indexOf("3 Fin") !== -1) {
+						$('.product-price .price-logo').addClass('active');
+					} else {
+						$('.product-price .price-logo-five').addClass('active');
+					}
+				}
+			} else {
+				if (selectedSize.indexOf("3 Fin") !== -1) {
+					$('.product-price .price-graphic').addClass('active');
+				} else if (selectedSize.indexOf("5 Fin") !== -1) {
+					$('.product-price .price-graphic-five').addClass('active');
+				} else {
+					defaultFinValue = $('#product-variation-size option:eq(1)').val();
+					if (defaultFinValue.indexOf("3 Fin") !== -1) {
+						$('.product-price .price-graphic').addClass('active');
+					} else {
+						$('.product-price .price-graphic-five').addClass('active');
+					}
+				}
+			}
+			// remove active class from availability alerts
+			$('.product-stock-alert p').removeClass('active');
+			// update logo/graphic disclaimer
+			if (selectedGraphic == "Logo") {
+				$('.product-stock-alert .surf-logo').addClass('active');
+			} else if (selectedGraphic != -1) {
+				$('.product-stock-alert .surf-graphic').addClass('active');
+			}
+			// check avail if product is selected
+			if (selectedGraphic != -1 && selectedSize != -1) {
+				// with both selections set, check availablity and update messaging display
+				$('.product-alert').removeClass('no low');
+				$.each(productArray, function (key, value) {
+					if (selectedSize === (value.length + ' - ' + value.fins) && selectedGraphic === value.name) {
+						var skuAvail = "No";
+						// check available options
+						switch(self.config.currency) {
+							case 'USD':
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+								break;
+							case 'CAD':
+								skuAvail = value.available.ca ? value.available.ca.amount : 0;
+								break;
+							case 'EUR':
+								skuAvail = value.available.eu ? value.available.eu.amount : 0;
+								break;
+							default:
+								// international
+								skuAvail = value.available.us ? value.available.us.amount : 0;
+						}
+						if(value.type === "Logo" && skuAvail === 0) {
+							// show limited logo option messaging
+							$('.product-stock-alert .surf-logo-limited').addClass('active');
+						} else if (value.type === "Graphic" && skuAvail === 0) {
+							// show limited graphic option messaging
+							$('.product-stock-alert .surf-graphic-limited').addClass('active');
+						} else if (skuAvail < 10 && skuAvail > 0) {
+							$('.product-alert').addClass('low');
+						}
+						return;
+					}
+				});
+			}
+		};
 		// check thumbnails on right
 		$('#image-list-thumbs li a').on('click', function (e) {
 			e.preventDefault();
@@ -825,83 +902,6 @@ LIBTECH.ProductDetails.prototype = {
 		// trigger default change
 		$('#product-variation-graphic').trigger('change');
 		$('#product-variation-size').trigger('change');
-		var updatePrice = function () {
-			var selectedGraphic, selectedSize, defaultFinValue;
-			selectedGraphic = $('#product-variation-graphic').val();
-			selectedSize = $('#product-variation-size').val();
-			$('.product-price div').removeClass('active');
-
-			if (selectedGraphic == "Logo" || selectedGraphic == -1) {
-				if (selectedSize.indexOf("3 Fin") !== -1) {
-					$('.product-price .price-logo').addClass('active');
-				} else if (selectedSize.indexOf("5 Fin") !== -1) {
-					$('.product-price .price-logo-five').addClass('active');
-				} else {
-					defaultFinValue = $('#product-variation-size option:eq(1)').val();
-					if (defaultFinValue.indexOf("3 Fin") !== -1) {
-						$('.product-price .price-logo').addClass('active');
-					} else {
-						$('.product-price .price-logo-five').addClass('active');
-					}
-				}
-			} else {
-				if (selectedSize.indexOf("3 Fin") !== -1) {
-					$('.product-price .price-graphic').addClass('active');
-				} else if (selectedSize.indexOf("5 Fin") !== -1) {
-					$('.product-price .price-graphic-five').addClass('active');
-				} else {
-					defaultFinValue = $('#product-variation-size option:eq(1)').val();
-					if (defaultFinValue.indexOf("3 Fin") !== -1) {
-						$('.product-price .price-graphic').addClass('active');
-					} else {
-						$('.product-price .price-graphic-five').addClass('active');
-					}
-				}
-			}
-			// remove active class from availability alerts
-			$('.product-stock-alert p').removeClass('active');
-			// update logo/graphic disclaimer
-			if (selectedGraphic == "Logo") {
-				$('.product-stock-alert .surf-logo').addClass('active');
-			} else if (selectedGraphic != -1) {
-				$('.product-stock-alert .surf-graphic').addClass('active');
-			}
-			// check avail if product is selected
-			if (selectedGraphic != -1 && selectedSize != -1) {
-				// with both selections set, check availablity and update messaging display
-				$('.product-alert').removeClass('no low');
-				$.each(productArray, function (key, value) {
-					if (selectedSize === (value.length + ' - ' + value.fins) && selectedGraphic === value.name) {
-						var skuAvail = "No";
-						// check available options
-						switch(self.config.currency) {
-							case 'USD':
-								skuAvail = value.available.us ? value.available.us.amount : 0;
-								break;
-							case 'CAD':
-								skuAvail = value.available.ca ? value.available.ca.amount : 0;
-								break;
-							case 'EUR':
-								skuAvail = value.available.eu ? value.available.eu.amount : 0;
-								break;
-							default:
-								// international
-								skuAvail = value.available.us ? value.available.us.amount : 0;
-						}
-						if(value.type === "Logo" && skuAvail === 0) {
-							// show limited logo option messaging
-							$('.product-stock-alert .surf-logo-limited').addClass('active');
-						} else if (value.type === "Graphic" && skuAvail === 0) {
-							// show limited graphic option messaging
-							$('.product-stock-alert .surf-graphic-limited').addClass('active');
-						} else if (skuAvail < 10 && skuAvail > 0) {
-							$('.product-alert').addClass('low');
-						}
-						return;
-					}
-				});
-			}
-		};
 		// add to cart api btn
 		$('a.add-to-cart').click(function (e) {
 			e.preventDefault();

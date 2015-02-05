@@ -1782,6 +1782,19 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .board-finder .section-content .bf-step-2 { background-position: 20px bottom; }
   .board-finder .section-content .bf-step-3 { background-position: 510px bottom; }
   .board-finder .section-content .bf-step-5 .description-image-wrapper .description-image-list li.length { background-position: 20px bottom; } }
+/* ========================================================================== COMPONENTS/_SUPPORT.SCSS ========================================================================== */
+.contact-content .contact-copy { padding-bottom: 20px; max-width: 980px; }
+.contact-content .contact-left .contact-form { margin-left: -5px; }
+
+.warranty-content .warranty-copy { padding-bottom: 20px; max-width: 980px; }
+.warranty-content .warranty-left .warranty-form { margin-left: -5px; }
+
+.register-content .register-copy { padding-bottom: 20px; max-width: 980px; }
+.register-content .register-left .register-form { margin-left: -5px; }
+
+@media screen and (min-width: 980px) { .contact-content .contact-left .contact-form { max-width: 980px; }
+  .warranty-content .warranty-left .warranty-form { max-width: 980px; }
+  .register-content .register-left .register-form { max-width: 980px; } }
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
 .featured-slider { padding-top: 60px; margin-top: -40px; }
 .featured-slider .section-content { overflow: hidden; }

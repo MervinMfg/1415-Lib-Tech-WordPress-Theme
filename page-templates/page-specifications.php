@@ -70,10 +70,19 @@ $prod_specs_table = get_field('libtech_specs_table');
 							while(the_repeater_field('libtech_snowboard_specs')):
 								$snowboardLength = get_sub_field('libtech_snowboard_specs_length');
 								$snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
-								if($snowboardWidth == "Narrow"){
-									$snowboardLength = $snowboardLength . "N";
-								}else if($snowboardWidth == "Wide"){
-									$snowboardLength = $snowboardLength . "W";
+								switch ($snowboardWidth) {
+									case "Narrow":
+										$snowboardLength = $snowboardLength . "N";
+										break;
+									case "Mid Wide":
+										$snowboardLength = $snowboardLength . "MW";
+										break;
+									case "Wide":
+										$snowboardLength = $snowboardLength . "W";
+										break;
+									case "Ultra Wide":
+										$snowboardLength = $snowboardLength . "UW";
+										break;
 								}
 				?>
 

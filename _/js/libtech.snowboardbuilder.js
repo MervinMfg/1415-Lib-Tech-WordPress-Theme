@@ -505,7 +505,7 @@ LIBTECH.snowboardbuilder = {
 		} else {
 			self.config.bbRegionCurrency = "USD";
 		}
-		if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "INT") {
+		if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "EUR" || currencyCode == "INT") {
 			self.config.bbRegion = currencyCode;
 		} else {
 			self.config.bbRegion = "USD";
@@ -1960,7 +1960,6 @@ LIBTECH.snowboardbuilder = {
 			$(".step7-buy .cart-error").css('display', 'none');
 			// show
 			$(".step7-buy .buttonholder .agree-button").css('display', 'block');
-			// determine which terms to show based on region
 			if(self.config.bbRegion == 'USD' || self.config.bbRegion == 'CAD') {
 				$(".step7-buy .terms").css('display', 'block');
 				$(".step7-buy .terms-international").css('display', 'none');

@@ -19,7 +19,7 @@
 						<?php the_content(); ?>
 
 					</div>
-
+					<div class="clearfix"></div>
 					<?php comments_template(); ?>
 				</article>
 			</div><!-- END .section-content -->
