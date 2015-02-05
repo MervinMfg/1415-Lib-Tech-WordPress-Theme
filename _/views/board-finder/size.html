@@ -1,0 +1,42 @@
+<div class="finder-step step bf-step-2">
+	<div class="quote-wrapper">
+		<blockquote>"The width of your feet best determines how wide of a snowboard that you need."</blockquote>
+		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
+	</div>
+	<div class="measurements-wrapper clearfix">
+		<div class="selection-measurements-top">
+			<div class="weight-measurement">
+				<h4>Weight: {{user.weight}} lbs</h4>
+				<div class="weight-us" ng-show="config.measurement == 'imperial'">
+					<select id="select-weight-us" class="select" ng-model="inputWeight.lbs" ng-options="weight.value as weight.label for weight in weightImperial" ng-change="changeWeight()"></select>
+				</div><!-- .weight-us -->
+				<div class="weight-metric" ng-show="config.measurement == 'metric'">
+					<select id="select-weight-metric" class="select" ng-model="inputWeight.kg" ng-options="weight.value as weight.label for weight in weightMetric" ng-change="changeWeight()"></select>
+				</div><!-- .weight-metric -->
+			</div> <!-- .weight-measurement -->
+			<div class="height-measurement">
+				<h4>Height: {{user.height}} inches</h4>
+				<div class="height-us" ng-show="config.measurement == 'imperial'">
+					<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()"></select>
+					<select id="select-height-inches-us" class="select inches" ng-model="inputHeight.inches" ng-options="height.value as height.label for height in heightInches" ng-change="changeHeight()"></select>
+				</div><!-- .height-us -->
+				<div class="height-metric" ng-show="config.measurement == 'metric'">
+					<select id="select-height-metric" class="select" ng-model="inputHeight.cm" ng-options="height.value as height.label for height in heightMetric" ng-change="changeHeight()"></select>
+				</div><!-- .height-metric -->
+			</div><!-- .height-measurement -->
+		</div><!-- .selection-measurements-top -->
+		<div class="selection-measurements-bottom">
+			<div class="boot-measurement">
+				<h4>Boot: {{user.bootSize}}</h4>
+				<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes"></select>
+			</div><!-- .boot-measurement -->
+			<div class="button-next">
+				<a href="#/style/" class="bf-button">Next</a>
+			</div>
+
+			<p>Measurement</p>
+			<input type="radio" name="measurement" id="size-imperial" value="imperial" ng-model="config.measurement" /><label for="size-imperial">US</label>
+			<input type="radio" name="measurement" id="size-metric" value="metric" ng-model="config.measurement" /><label for="size-metric">Metric</label>
+		</div><!-- .selection-measurements-bottom -->
+	</div><!-- measurements-wrapper -->
+</div><!-- .bf-step-2 -->
