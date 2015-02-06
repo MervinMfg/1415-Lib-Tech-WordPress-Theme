@@ -33,10 +33,20 @@
 			p {
 				padding-bottom: 20px;
 			}
-			.bf-button {
+			a.bf-button {
 				height: 40px;
 				line-height: 40px;
 				border: 1px solid #000;
+				color: #000;
+				background-color: $snowColor;
+
+				&:hover,
+				&:focus {
+					color: $snowColor;
+					background-color: #000;
+					border: 1px solid $snowColor;
+					text-decoration: none;
+				}
 			}
 			select {
 				border: 1px solid #000;
@@ -51,7 +61,6 @@
 			padding: 40px 0;
 
 			.step-1-left {
-
 				h1 {
 					padding-bottom: 30px;
 				}
@@ -68,7 +77,7 @@
 						li {
 							display: block;
 							width: 100%;
-							height: 30px;
+							height: 40px;
 							margin-bottom: 10px;
 							font-size: 1.5em;
 							text-align: center;
@@ -79,6 +88,14 @@
 								display: block;
 								background: $snowColor;
 								color: #000;
+
+								&:hover,
+								&:focus {
+									color: $snowColor;
+									background-color: #000;
+									border: 1px solid $snowColor;
+									text-decoration: none;
+								}
 							}
 						}
 					}
@@ -95,8 +112,20 @@
 					width: 50%;
 					margin: 0 auto;
 
+					.measurement-type {
+						input {
+							margin-right: 10px;
+						}
+						label {
+							padding-right: 30px;
+							font-size: 1.4em;
+							color: $snowColor;
+							vertical-align: middle;
+							text-transform: uppercase;
+						}
+					}
 					.weight-measurement {
-						padding: 40px 0;
+						padding: 30px 0 40px 0;
 
 						.weight-metric {
 							//display: none;
@@ -127,6 +156,14 @@
 							line-height: 40px;
 							font-size: 1.5em;
 							text-align: center;
+
+							&:hover,
+							&:focus {
+								color: $snowColor;
+								background-color: #000;
+								border: 1px solid $snowColor;
+								text-decoration: none;
+							}
 						}
 					}
 				}
@@ -149,7 +186,7 @@
 						display: block;
 						width: 100%;
 						height: 30px;
-						margin-bottom: 10px;
+						margin-bottom: 20px;
 						font-size: 1.5em;
 						text-align: center;
 						line-height: 30px;
@@ -174,7 +211,7 @@
 						display: block;
 						width: 100%;
 						height: 30px;
-						margin-bottom: 10px;
+						margin-bottom: 20px;
 						font-size: 1.5em;
 						text-align: center;
 						line-height: 30px;
@@ -244,7 +281,7 @@
 			}
 		}
 		.bf-step-5 {
-			padding: 40px 0;
+			padding: 40px 20px;
 
 			h2 {
 				padding-bottom: 30px;
@@ -281,6 +318,14 @@
 								display: block;
 								background: $snowColor;
 								color: #000;
+
+								&:hover,
+								&:focus {
+									color: $snowColor;
+									background-color: #000;
+									border: 1px solid $snowColor;
+									text-decoration: none;
+								}
 							}
 						}
 					}
@@ -330,7 +375,7 @@
 						margin: 0 5% 0 20%;
 
 						.weight-measurement {
-							padding: 10px 0;
+							padding: 30px 0 10px 0;
 						}
 						.height-measurement {
 							padding: 10px 0;
@@ -440,11 +485,15 @@
 					.selection-measurements-top {
 						width: 100%;
 						margin: 0;
-						padding: 100px 20px 25px 0;
+						padding: 30px 20px 25px 0;
+
+						.measurement-type {
+							padding: 0 300px 20px 0;
+						}
 
 						.weight-measurement {
 							display: inline-block;
-							padding-right: 60px;
+							padding: 10px 60px 0 0;
 							text-align: left;
 						}
 						.height-measurement {
@@ -461,12 +510,15 @@
 									}
 								}
 							}
+							.height-metric {
+								padding-right: 150px;
+							}
 						}
 					}
 					.selection-measurements-bottom {
 						width: 100%;
 						margin: 0;
-						padding: 0 190px 40px 0;
+						padding: 0 170px 40px 0;
 
 						.boot-measurement {
 							display: inline-block;
@@ -579,11 +631,7 @@
 					float: right;
 					position: relative;
 					z-index: 2;
-					padding: 115px 20px 0 0;
-
-					span {
-						display: block;
-					}
+					padding: 115px 0 0 0;
 				}
 			}
 		}
@@ -607,7 +655,19 @@
 					width: 160px;
 				}
 				.measurements-wrapper {
+					.selection-measurements-top {
+						.measurement-type {
+							padding-right: 360px;
+						}
+						.height-measurement {
+							.height-metric {
+								padding-right: 170px;
+							}
+						}
+					}
 					.selection-measurements-bottom {
+						padding-right: 190px;
+
 						.button-next {
 							width: 160px;
 						}
@@ -644,7 +704,7 @@
 @media screen and (min-width: $breakpoint-large) {
 	.board-finder {
 		.section-content {
-			max-width: $breakpoint-large;
+			max-width: $breakpoint-xlarge;
 			margin: 0 auto;
 
 			.bf-step-1 {
@@ -662,7 +722,7 @@
 				background-position: 20px bottom;
 			}
 			.bf-step-3 {
-				background-position: 510px bottom;
+				background-position: 97% bottom;
 			}
 			.bf-step-5 {
 				.description-image-wrapper {
@@ -672,6 +732,20 @@
 								background-position: 20px bottom;
 							}
 						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.board-finder {
+		.section-content {
+			.finder-step {
+				h3 {
+					span {
+						display: inline;
+						padding-left: 8px;
 					}
 				}
 			}
