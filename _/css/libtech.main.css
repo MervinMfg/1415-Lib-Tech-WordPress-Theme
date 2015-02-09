@@ -1761,8 +1761,8 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
 .featured-product-slider .section-content .bx-wrapper .bx-loading { background: none; }
 .featured-product-slider .section-content .bx-wrapper .bx-viewport { background: none; }
 .featured-product-slider .section-content .bx-wrapper .bx-viewport * { -webkit-transform: translateZ(0); /* fix Safari flicker on css transitions */ }
-.featured-product-slider .section-content ul.product-listing > li { -webkit-opacity: 0.2; -moz-opacity: 0.2; -ms-opacity: 0.2; -o-opacity: 0.2; opacity: 0.2; -webkit-transition: opacity 1000ms ease-in-out; -moz-transition: opacity 1000ms ease-in-out; -ms-transition: opacity 1000ms ease-in-out; -o-transition: opacity 1000ms ease-in-out; transition: opacity 1000ms ease-in-out; }
-.featured-product-slider .section-content ul.product-listing > li.active { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
+.featured-product-slider .section-content .bx-wrapper .bx-viewport .bxslider li { -webkit-opacity: 0.2; -moz-opacity: 0.2; -ms-opacity: 0.2; -o-opacity: 0.2; opacity: 0.2; -webkit-transition: opacity 1000ms ease-in-out; -moz-transition: opacity 1000ms ease-in-out; -ms-transition: opacity 1000ms ease-in-out; -o-transition: opacity 1000ms ease-in-out; transition: opacity 1000ms ease-in-out; }
+.featured-product-slider .section-content .bx-wrapper .bx-viewport .bxslider li.active { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 .featured-product-slider .section-content ul.product-listing > li .product-image { width: 30%; float: left; overflow: hidden; }
 .featured-product-slider .section-content ul.product-listing > li .product-image img { width: 140%; max-width: 200%; height: auto; margin-left: -20%; }
 .featured-product-slider .section-content ul.product-listing > li .product-copy { width: 70%; float: left; color: #000; }

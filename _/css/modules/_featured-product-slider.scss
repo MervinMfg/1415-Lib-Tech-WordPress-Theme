@@ -19,17 +19,18 @@
 				* {
 					-webkit-transform: translateZ(0); /* fix Safari flicker on css transitions */
 				}
+				.bxslider li {
+					@include vendorize(opacity, 0.2);
+					@include transition(opacity, 1000ms);
+
+					&.active {
+						@include vendorize(opacity, 1);
+					}
+				}
 			}
 		}
-
 		ul.product-listing {
 			& > li {
-				@include vendorize(opacity, 0.2);
-				@include transition(opacity, 1000ms);
-
-				&.active {
-					@include vendorize(opacity, 1);
-				}
 				.product-image {
 					width: 30%;
 					float: left;
@@ -102,21 +103,18 @@
 		&:focus {
 			background: $skiColor;
 		}
-
 	}
 	&.bg-product-surf .section-content ul.product-listing li .product-copy a.buy {
 		&:hover,
 		&:focus {
 			background: $surfColor;
 		}
-
 	}
 	&.bg-product-skate .section-content ul.product-listing li .product-copy a.buy {
 		&:hover,
 		&:focus {
 			background: $skateColor;
 		}
-
 	}
 	&.surfboards .section-content ul.product-listing > li .product-image img,
 	&.accessories .section-content ul.product-listing > li .product-image img,
