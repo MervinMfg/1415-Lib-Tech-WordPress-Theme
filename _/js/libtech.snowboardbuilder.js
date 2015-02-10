@@ -189,13 +189,15 @@ LIBTECH.SnowboardBuilder.prototype = {
 	},
 	bbSetRegion: function (currencyCode) {
 		var self = this;
+		// set region currency
 		if (currencyCode == "INT") {
 			self.config.bbRegionCurrency = "USD";
-		} else if (currencyCode == "USD" || currencyCode == "CAD") {
+		} else if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "EUR") {
 			self.config.bbRegionCurrency = currencyCode;
 		} else {
 			self.config.bbRegionCurrency = "USD";
 		}
+		// set regioin
 		if (currencyCode == "USD" || currencyCode == "CAD" || currencyCode == "EUR" || currencyCode == "INT") {
 			self.config.bbRegion = currencyCode;
 		} else {
@@ -213,6 +215,16 @@ LIBTECH.SnowboardBuilder.prototype = {
 			self.config.bbKnifeCutDiff = "0.00";
 		}
 		return self.config.bbKnifeCutDiff;
+	},
+	getDisplayPrice: function(price) {
+		var self = this;
+		if (self.config.bbRegion == "EUR") {
+			price = parseFloat(price).toFixed(2).replace('.', ',');
+			return "€" + price + " " + self.config.bbRegionCurrency;
+		} else {
+			price = parseFloat(price).toFixed(2);
+			return "$" + price + " " + self.config.bbRegionCurrency;
+		}
 	},
 	setBoardShape: function (oImg) {
 		var self, spanVal, boardNum, theContour, sShape;
@@ -249,6 +261,8 @@ LIBTECH.SnowboardBuilder.prototype = {
 		// set price
 		if (self.config.bbRegion == "CAD") {
 			self.setBoardPrice(self.config.boardData[boardNum].basePriceCA);
+		} else if (self.config.bbRegion == "EUR") {
+			self.setBoardPrice(self.config.boardData[boardNum].basePriceEU);
 		} else {
 			self.setBoardPrice(self.config.boardData[boardNum].basePriceUS);
 		}
@@ -353,7 +367,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 			$('.step3-top .topInfo h2').html(imgName);
 			$('.step3-top .topInfo h3').html(imgDesc);
 			$('#left-menu .menu3').addClass('complete');
-			$('#left-menu .menu3 .menu-title').html("" + "" + imgName + " " + imgDesc + "<b><br>+ $ 0.00 " + self.config.bbRegionCurrency + "</b>");
+			$('#left-menu .menu3 .menu-title').html("" + "" + imgName + " " + imgDesc + "<b><br>+ " + self.getDisplayPrice(0) + "</b>");
 			self.boardPreviewSet(2);
 		}
 		self.updateBoardDisplay();
@@ -406,7 +420,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 		} else {
 			self.config.bSidewall = sColor;
 			self.config.bSidewallDesc = sDesc;
-			$('#left-menu .menu4 .menu-title').html("" + " " + self.getBoardSidewall() + " " + "" + "<br><b>+ $ 0.00</b>");
+			$('#left-menu .menu4 .menu-title').html("" + " " + self.getBoardSidewall() + " " + "" + "<br><b>+ " + self.getDisplayPrice(0) + "</b>");
 			$('#left-menu .menu4').addClass('complete');
 		}
 		self.updateBoardDisplay();
@@ -450,13 +464,16 @@ LIBTECH.SnowboardBuilder.prototype = {
 				if (self.config.bbRegion == "CAD") {
 					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceCA;
 					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceCA;
+				} else if (self.config.bbRegion == "EUR") {
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceEU;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceEU;
 				} else {
 					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceUS;
 					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceUS;
 				}
 				kcPriceDifference = parseFloat((kcPrice - nonKCPrice).toFixed(2));
 				self.setKnifeCutPrice(kcPriceDifference);
-				$('#left-menu .menu5 .menu-title').html("" + "  " + "CUSTOMIZED TEXT" + "<br /><b>+ $ " + kcPriceDifference + " " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu5 .menu-title').html("" + "  " + "CUSTOMIZED TEXT" + "<br /><b>+ " + self.getDisplayPrice(kcPriceDifference) + "</b>");
 				// show menu 5b
 				$('#left-menu .menu5b').addClass('show');
 				$('#header .pagination .controls .bx-pager-item:eq(5)').addClass('show');
@@ -464,7 +481,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 				// GRAPHIC BASE
 				self.setBoardBaseDesc(imgDesc);
 				self.config.isKnifecut = false;
-				$('#left-menu .menu5 .menu-title').html("" + "  " + imgName + " " + imgDesc + "<br><b>+ $ 0.00 " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu5 .menu-title').html("" + "  " + imgName + " " + imgDesc + "<br><b>+ " + self.getDisplayPrice(0) + "</b>");
 				// remove menu 5b
 				$('#left-menu .menu5b').removeClass('show');
 				$('#header .pagination .controls .bx-pager-item:eq(5)').removeClass('show');
@@ -765,6 +782,9 @@ LIBTECH.SnowboardBuilder.prototype = {
 				if (self.config.bbRegion == "CAD") {
 					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceCA;
 					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceCA;
+				} else if (self.config.bbRegion == "EUR") {
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceEU;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceEU;
 				} else {
 					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceUS;
 					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceUS;
@@ -1122,33 +1142,34 @@ LIBTECH.SnowboardBuilder.prototype = {
 		var self = this;
 		// set shape
 		$('#mobile-receipt .shape span, .step7-buy .board-reciept .shape span').html(self.getBoardShape());
-		$('#mobile-receipt .shape-cost, .step7-buy .board-reciept .shape-cost').html("+ $" + self.getBoardPrice() + " " + self.config.bbRegionCurrency);
+		$('#mobile-receipt .shape-cost, .step7-buy .board-reciept .shape-cost').html("+ " + self.getDisplayPrice(self.getBoardPrice()));
 		// set size
 		$('#mobile-receipt .size span, .step7-buy .board-reciept .size span').html(self.getBoardSize());
-		$('#mobile-receipt .size-cost, .step7-buy .board-reciept .size-cost').html("+ $0.00 " + self.config.bbRegionCurrency);
+		$('#mobile-receipt .size-cost, .step7-buy .board-reciept .size-cost').html("+ " + self.getDisplayPrice(0));
 		// set top
 		$('#mobile-receipt .top span, .step7-buy .board-reciept .top span').html(self.getBoardArtist() + " " + self.getBoardDescription());
-		$('#mobile-receipt .top-cost, .step7-buy .board-reciept .top-cost').html("+ $0.00 " + self.config.bbRegionCurrency);
+		$('#mobile-receipt .top-cost, .step7-buy .board-reciept .top-cost').html("+ " + self.getDisplayPrice(0));
 		// set sidewall
 		$('#mobile-receipt .sidewall span, .step7-buy .board-reciept .sidewall span').html(self.getBoardSidewall());
-		$('#mobile-receipt .sidewall-cost, .step7-buy .board-reciept .sidewall-cost').html("+ $0.00 " + self.config.bbRegionCurrency);
-		// set base
-		if (self.config.isKnifecut) {
-			$('#mobile-receipt .base, .step7-buy .board-reciept .base').html("CUSTOM BASE - <span>" + self.getBoardBaseDesc() + "</span><div class=\"text-color\">TEXT COLOR - <span>" + self.getCustomTextColor() + "</span></div><div class=\"base-color\">BASE COLOR - <span>" + self.getCustomBaseColor() + "</span></div>");
-			$('#mobile-receipt .base-cost, .step7-buy .board-reciept .base-cost').html("+ $" + self.getKnifeCutPrice().toFixed(2) + " " + self.config.bbRegionCurrency);
-		} else {
-			$('#mobile-receipt .base, .step7-buy .board-reciept .base').html("BASE - <span>" + self.getBoardBase() + " " + self.getBoardBaseDesc() + "</span>");
-			$('#mobile-receipt .base-cost, .step7-buy .board-reciept .base-cost').html("+ $0.00 " + self.config.bbRegionCurrency);
-		}
+		$('#mobile-receipt .sidewall-cost, .step7-buy .board-reciept .sidewall-cost').html("+ " + self.getDisplayPrice(0));
 		// set badge
 		$('#mobile-receipt .badge span, .step7-buy .board-reciept .badge span').html(self.getBoardBadge());
-		$('#mobile-receipt .badge-cost, .step7-buy .board-reciept .badge-cost').html("+ $0.00 " + self.config.bbRegionCurrency);
-		// set subtotal
+		$('#mobile-receipt .badge-cost, .step7-buy .board-reciept .badge-cost').html("+ " + self.getDisplayPrice(0));
+		// check if knifecut
 		if (self.config.isKnifecut) {
-			$('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').html("$" + parseFloat(self.getBoardPrice() + self.getKnifeCutPrice()).toFixed(2) + " " + self.config.bbRegionCurrency);
+			// set base
+			$('#mobile-receipt .base, .step7-buy .board-reciept .base').html("CUSTOM BASE - <span>" + self.getBoardBaseDesc() + "</span><div class=\"text-color\">TEXT COLOR - <span>" + self.getCustomTextColor() + "</span></div><div class=\"base-color\">BASE COLOR - <span>" + self.getCustomBaseColor() + "</span></div>");
+			$('#mobile-receipt .base-cost, .step7-buy .board-reciept .base-cost').html("+ " + self.getDisplayPrice(self.getKnifeCutPrice().toFixed(2)));
+			// set subtotal - need to add "incl. VAT" to EURO
+			$('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').html(self.getDisplayPrice(parseFloat(self.getBoardPrice() + self.getKnifeCutPrice()).toFixed(2)));
 		} else {
-			$('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').html("$" + self.getBoardPrice() + " " + self.config.bbRegionCurrency);
-		}
+			// set base
+			$('#mobile-receipt .base, .step7-buy .board-reciept .base').html("BASE - <span>" + self.getBoardBase() + " " + self.getBoardBaseDesc() + "</span>");
+			$('#mobile-receipt .base-cost, .step7-buy .board-reciept .base-cost').html("+ " + self.getDisplayPrice(0));
+			// set subtotal
+			$('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').html(self.getDisplayPrice(self.getBoardPrice()));
+		}		
+		if (self.config.bbRegion == "EUR") $('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').append(' incl. VAT');
 	},
 	createCarousel: function (container) {
 		var self, carouselWidth, containerWidth, containerCenter, dragMaxX, dragMinX, gridWidth, offset, selectedItemIndex;
@@ -1282,13 +1303,15 @@ LIBTECH.SnowboardBuilder.prototype = {
 				// get the price for the board
 				if (self.config.bbRegion == "CAD") {
 					price = self.config.boardData[nNum].basePriceCA;
+				} else if (self.config.bbRegion == "EUR") {
+					price = self.config.boardData[nNum].basePriceEU;
 				} else {
 					price = self.config.boardData[nNum].basePriceUS;
 				}
 				// Update left menu
 				// on slide 1 - board selection
 				// update the left menu
-				$('#left-menu .menu1 .menu-title').html("" + "" + self.config.boardData[nNum].model + "<br><b>+ $ " + price + " " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu1 .menu-title').html("" + "" + self.config.boardData[nNum].model + "<br><b>+ " + self.getDisplayPrice(price) + "</b>");
 				$('#left-menu .menu1').addClass('complete');
 				// show left menu if it's the first time using
 				if(self.config.showLeftMenu === true) {
@@ -1333,7 +1356,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 					$('#info-box h5').html(self.config.boardDescriptionData[imgIndex - 1].description);
 				} else {
 					$('#info-box h2').text('DIY Base!');
-					$('#info-box h3').text('Personalize your base for an additional $29.95 ' + self.config.bbRegionCurrency);
+					$('#info-box h3').text('Personalize your base for an additional ' + self.getDisplayPrice(30));
 					$('#info-box h5').text('');
 				}
 				self.setBoardBase(selectedImage);
@@ -1406,7 +1429,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 			});
 			$(this).addClass('selected');
 			self.setBoardSize($(this).text());
-			$('#left-menu .menu2 .menu-title').html("" + "Size " + self.getBoardSize() + "<b><br>+ $ 0.00 " + self.config.bbRegionCurrency + "</b>");
+			$('#left-menu .menu2 .menu-title').html("" + "Size " + self.getBoardSize() + "<b><br>+ " + self.getDisplayPrice(0) + "</b>");
 			$('#left-menu .menu2').addClass('complete');
 		});
 	},
@@ -1601,7 +1624,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 			// set menu and display arrow if user begins to enter text
 			if (inputValue.length == 1) {
 				self.advanceArrowShow();
-				$('#left-menu .menu6 .menu-title').html("Personalized Badge<br><b>+ $ 0.00 " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu6 .menu-title').html("Personalized Badge<br><b>+ " + self.getDisplayPrice(0) + "</b>");
 				$('#left-menu .menu6').addClass('complete');
 			} else if (inputValue.length === 0) {
 				self.advanceArrowHide();
@@ -1616,7 +1639,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 		}).on('blur.step6', function () {
 			if ($(this).val().length !== 0 && $(this).val() != self.defaultBadgeInput) {
 				self.advanceArrowShow();
-				$('#left-menu .menu6 .menu-title').html("Personalized Badge<br><b>+ $ 0.00 " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu6 .menu-title').html("Personalized Badge<br><b>+ " + self.getDisplayPrice(0) + "</b>");
 				$('#left-menu .menu6').addClass('complete');
 			} else {
 				self.advanceArrowHide();
