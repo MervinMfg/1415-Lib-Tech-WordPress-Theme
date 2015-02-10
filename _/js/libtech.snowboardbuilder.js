@@ -3,346 +3,13 @@
  * Author: brian.behrens@mervin.com - http://www.mervin.com
  */
 
-var boardData = [{
-	"Model": "Skate Banana",
-	"Contour": "BTX",
-	"BaseSku": "3223275",
-	"BasePriceUS": "639.95",
-	"BasePriceCA": "664.95",
-	"KnifecutSku": "3223276",
-	"KnifecutPriceUS": "669.95",
-	"KnifecutPriceCA": "694.95",
-	"HPSku": "",
-	"HPPriceUS": "",
-	"HPPriceCA": "",
-	"KifecutHpSku": "",
-	"KifecutHpPriceUS": "",
-	"KifecutHpPriceCA": "",
-	"Sizes": "145N | 148N | 154 | 156",
-	"ContactLength": "145N - 108 | 148N - 111 | 154 - 115 | 156 - 117",
-	"Sidecut": "145N - 7.9 | 148N - 8.1 | 154 - 8.2 | 156 - 8.3",
-	"WaistWidth": "145N - 23.9 | 148N - 24.2 | 154 - 25.3 | 156 - 25.5",
-	"Flex": "145N - 4.5 | 148N - 5 | 154 - 5 | 156 - 6",
-	"BoardTagline": "The Original Rocker Snowboard",
-	"BoardDescription": "Fun, easy to ride and high performance. Kills powder, rails, hardpack and ice.",
-	"ShapeDescription": "True Twin",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Attack Banana",
-	"Contour": "EC2 BTX",
-	"BaseSku": "3223277",
-	"BasePriceUS": "729.95",
-	"BasePriceCA": "759.95",
-	"KnifecutSku": "3223278",
-	"KnifecutPriceUS": "759.95",
-	"KnifecutPriceCA": "789.95",
-	"HPSku": "",
-	"HPPriceUS": "",
-	"HPPriceCA": "",
-	"KifecutHpSku": "",
-	"KifecutHpPriceUS": "",
-	"KifecutHpPriceCA": "",
-	"Sizes": "151N | 153 | 156 |159",
-	"ContactLength": "151N - 111 | 153 - 113 | 156 - 116 | 159 - 119",
-	"Sidecut": "151N - 8.1 | 153 - 8.2 | 156 - 8.3 | 159 - 8.4",
-	"WaistWidth": "151N - 24.7 | 153 - 25.1 | 156 - 25.3 | 159 - 25.5",
-	"Flex": "151N - 5 | 153 - 6 | 156 - 6.5 | 159 - 6.5",
-	"BoardTagline": "All Terrain Techno Quiver Killer",
-	"BoardDescription": "Great for playing in the park, with enough stability to feel powerful anywhere and still float effortlessly in the pow.",
-	"ShapeDescription": "True Twin",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-ec2-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Travis Rice Pro Blunt",
-	"Contour": "C2 BTX",
-	"BaseSku": "3223279",
-	"BasePriceUS": "709.95",
-	"BasePriceCA": "729.95",
-	"KnifecutSku": "3223280",
-	"KnifecutPriceUS": "739.95",
-	"KnifecutPriceCA": "759.95",
-	"HPSku": "3223281",
-	"HPPriceUS": "849.95",
-	"HPPriceCA": "$XXX.XX",
-	"KifecutHpSku": "3223282",
-	"KifecutHpPriceUS": "879.95",
-	"KifecutHpPriceCA": "$XXX.XX",
-	"Sizes": "155 | 157",
-	"ContactLength": "155 - 119 | 157 - 121",
-	"Sidecut": "155 - 8.1 | 157 - 8.2",
-	"WaistWidth": "155 - 25.5 | 157 - 25.8",
-	"Flex": "155 - 6.5 | 157 - 7",
-	"BoardTagline": "All Terrain Freestyle Geometries",
-	"BoardDescription": "Designed with plans to take over the world. A perfect board to change snowboarding with.",
-	"ShapeDescription": "Twin Blunt",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-c2-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Travis Rice Pro Pointy",
-	"Contour": "C2 BTX",
-	"BaseSku": "3223279",
-	"BasePriceUS": "709.95",
-	"BasePriceCA": "729.95",
-	"KnifecutSku": "3223280",
-	"KnifecutPriceUS": "739.95",
-	"KnifecutPriceCA": "759.95",
-	"HPSku": "3223281",
-	"HPPriceUS": "849.95",
-	"HPPriceCA": "$XXX.XX",
-	"KifecutHpSku": "3223282",
-	"KifecutHpPriceUS": "879.95",
-	"KifecutHpPriceCA": "$XXX.XX",
-	"Sizes": "161.5 | 164.5",
-	"ContactLength": "161.5 - 124.5 | 164.5 - 127",
-	"Sidecut": "161.5 - 8.4 | 164.5 - 8.5",
-	"WaistWidth": "161.5 - 26 | 164.5 - 26.2",
-	"Flex": "161.5 - 7 | 164.5 - 7",
-	"BoardTagline": "All Terrain Freestyle Geometries",
-	"BoardDescription": "Designed with plans to take over the world. A perfect board to change snowboarding with.",
-	"ShapeDescription": "Pointy Pow",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-c2-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "TRS",
-	"Contour": "XC2 BTX",
-	"BaseSku": "3223283",
-	"BasePriceUS": "709.95",
-	"BasePriceCA": "739.95",
-	"KnifecutSku": "3223284",
-	"KnifecutPriceUS": "739.95",
-	"KnifecutPriceCA": "769.95",
-	"HPSku": "3223285",
-	"HPPriceUS": "849.95",
-	"HPPriceCA": "$XXX.XX",
-	"KifecutHpSku": "3223286",
-	"KifecutHpPriceUS": "879.95",
-	"KifecutHpPriceCA": "$XXX.XX",
-	"Sizes": "148N | 151N | 154 | 157 | 159",
-	"ContactLength": "148N - 113 |151N - 114 | 154 - 115 | 157 - 117 | 159 - 119",
-	"Sidecut": "148N - 7.9 | 151N - 8.1 | 154 - 8.2 | 157 - 8.3 | 159 - 8.3",
-	"WaistWidth": "148N - 23.7 |151N - 24.7 | 154 - 25.3 | 157 - 25.3 | 159 - 25.3",
-	"Flex": "148N - 5 |151N - 5 | 154 - 5 | 157 - 6 | 159 - 6",
-	"BoardTagline": "Rider Designed True Twin Power Banana",
-	"BoardDescription": "The twin shape has lengthened camber under foot for increased end to end stability.",
-	"ShapeDescription": "True Twin",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-xc2-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Hot Knife",
-	"Contour": "C3 BTX",
-	"BaseSku": "3223287",
-	"BasePriceUS": "669.95",
-	"BasePriceCA": "689.95",
-	"KnifecutSku": "3223288",
-	"KnifecutPriceUS": "699.95",
-	"KnifecutPriceCA": "719.95",
-	"HPSku": "",
-	"HPPriceUS": "",
-	"HPPriceCA": "",
-	"KifecutHpSku": "",
-	"KifecutHpPriceUS": "",
-	"KifecutHpPriceCA": "",
-	"Sizes": "156 | 159",
-	"ContactLength": "156 - 117 | 159 - 120",
-	"Sidecut": "156 - 8.2 | 159 - 8.3",
-	"WaistWidth": "156 - 25.3 | 159 - 25.5",
-	"Flex": "156 - 5.5 | 159 - 6.5",
-	"BoardTagline": "Agressive Twin Freestyle/Freeride",
-	"BoardDescription": "A catchfree freestyle freedom, combined with the precise control, power pop, and stability of traditional camber.",
-	"ShapeDescription": "Twin Freeride",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-c3-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Skunk Ape",
-	"Contour": "C2 BTX",
-	"BaseSku": "3223289",
-	"BasePriceUS": "709.95",
-	"BasePriceCA": "739.95",
-	"KnifecutSku": "3223290",
-	"KnifecutPriceUS": "739.95",
-	"KnifecutPriceCA": "769.95",
-	"HPSku": "3223291",
-	"HPPriceUS": "849.95",
-	"HPPriceCA": "$XXX.XX",
-	"KifecutHpSku": "3223292",
-	"KifecutHpPriceUS": "879.95",
-	"KifecutHpPriceCA": "$XXX.XX",
-	"Sizes": "161 | 165 | 169",
-	"ContactLength": "161 - 121 | 165 - 124 | 169 - 127",
-	"Sidecut": "161 - 8.5 | 165 - 8.6 | 169 - 8.6",
-	"WaistWidth": "161 - 26.8 | 165 - 26.8 | 169 - 26.8",
-	"Flex": "161 - 7 | 165 - 7 | 169 - 7",
-	"BoardTagline": "Big Wide Freestyle/Freeride",
-	"BoardDescription": "Big guys need powerful setups. Perfect for todays progressive freestyle or powder ape looking for the ultimate in performance.",
-	"ShapeDescription": "Directional Twin",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-c2-btx.gif",
-	"HPDetail": ""
-}, {
-	"Model": "Banana Blaster",
-	"Contour": "BTX",
-	"BaseSku": "3223297",
-	"BasePriceUS": "469.95",
-	"BasePriceCA": "479.95",
-	"KnifecutSku": "3223298",
-	"KnifecutPriceUS": "499.95",
-	"KnifecutPriceCA": "509.95",
-	"HPSku": "",
-	"HPPriceUS": "",
-	"HPPriceCA": "",
-	"KifecutHpSku": "",
-	"KifecutHpPriceUS": "",
-	"KifecutHpPriceCA": "",
-	"Sizes": "130 | 140",
-	"ContactLength": "130 - 95 | 140 - 105",
-	"Sidecut": "130 - 6.9 | 140 - 7.1",
-	"WaistWidth": "130 - 23 | 140 - 23.5",
-	"Flex": "130 - 4 | 140 - 5",
-	"BoardTagline": "The Ultimate in Fun and Progression",
-	"BoardDescription": "Learn everything faster and reduce scorpion factor by at least 200%",
-	"ShapeDescription": "True Twin",
-	"Sidewall Options": "",
-	"Custom KnifeCut Color Options": "",
-	"ContourImage": "contour-btx.gif",
-	"HPDetail": ""
-}];
-var contourData = {
-	"BTX": {
-		"ContourTitle": "Banana Tech & Magne-Traction",
-		"ContourDescription": "Revolutionary all terrain freestyle banana blend. Rocker between your feet with flat to mild camber to contact points. Mild tip pressure for unreal float and jibbing, solid pressure between your feet for easy turning and great ice edge hold."
-	},
-	"EC2 BTX": {
-		"ContourTitle": "Eliptical Camber/Banana & Magne-Traction .5",
-		"ContourDescription": "Quiver killing freestyle blend halfway between original Banana Tech and C2. Medium tip and tail pressure for end-to end-stability and pop combined with a medium amount of pressure between your feet for unreal carving and float in pow."
-	},
-	"C2 BTX": {
-		"ContourTitle": "Power Banana/Camber Blend & Magne-Traction",
-		"ContourDescription": "Our favorite camber rocker blend for aggressive power snowboarders. Solid tip and tail pressure for power, pop, precision and end-to-end stability combined with a medium amount of pressure between your feet for float, carving and edge hold."
-	},
-	"XC2 BTX": {
-		"ContourTitle": "Power Banana/Camber Blend & Magne-Traction",
-		"ContourDescription": "A new formula of C2 with a shorter but, aggressive banana rocker combined with cambers that sit more underfoot. Extra solid tip and tail pressure for power, pop, precision and end-to-end stability combined with a medium amount of pressure between your feet for carving, edge hold on ice and float in pow."
-	},
-	"C3 BTX": {
-		"ContourTitle": "Camber Dominant Banana & Magne-Traction .5",
-		"ContourDescription": "Camber made better with the addition of mild Banana Tech rocker between your feet. Mild pressure between your feet for carving, edge grip, float in powder and our maximum tip and tail pressure for precise control, power stability and pop. The world’s best camber is a banana!"
-	},
-	"!BTX!": {
-		"ContourTitle": "Enhanced Banana Tech & Magne-Traction",
-		"ContourDescription": "A magical dynamic blend of our highest Banana Tech rocker between your feet and a secret numerical formula of camber to the contact points. Mild tip pressure for incredible float in powder, catchfree freestyle combined with solid pressure between your feet for precise carving on ice."
-	}
-};
-var boardDescriptionData = [{
-	"Artist": "Mike Parillo",
-	"Type": "Tetons",
-	"Color": "",
-	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on… it is a Lib favorite."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "",
-	"Color": "",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "Blue",
-	"Color": "",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "Moon",
-	"Color": "",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Nick Russian",
-	"Type": "Humming Bird",
-	"Color": "",
-	"Description": "Nick Russian is an original Lib Tech kraftsmen artist. The Emma Peel model was his vision or model both with shape and graphics, he did the art for every Emma for 12 years running. The Humming Bird we have selected was one of our shop favorites, the movement and color work really well with our eco-sublimation system and it looks great. Nick is still working at Mervin 20 years later and continues to paint and create graphics."
-}, {
-	"Artist": "Quincy Quigg",
-	"Type": "Guitar",
-	"Color": "",
-	"Description": "Quincy is another Kraftsmen artist…he began working with us by making artwork with sidewalls resin and other found items around the snowboard shop. He has a style that is sometimes refer to as refined junior high but, his incredible attention to detail, unique vision and ability to cut through all the bullshit and find truth and fun in his artwork is always a treat."
-}, {
-	"Artist": "Ryan Davis",
-	"Type": "Poly",
-	"Color": "",
-	"Description": "Ryan Davis is a classic Kraftsmen artist… he began working at Mervin in finishing and turned in artwork year after year. He developed a unique style of photography, surf and mountain based outdoor lifestyle imagery and painting. Ryan has done many graphics for us over the years, he is our NW rep and continues create beautiful imagery every year."
-}, {
-	"Artist": "Mark Gale",
-	"Type": "Original Skeleton",
-	"Color": "",
-	"Description": "This is the Original Mark Gale skeleton graphic that all Lib Tech's began with.  At the time skeletons were completely dead and cartoons were dominating skateboarding. Our old Gnu distributor told us the artwork would never sell and refused to let us use it. We put it on every Lib Tech we built that first year and sold every one and ended up meeting a lot of Dead Heads too!"
-}, {
-	"Artist": "In House Creative",
-	"Type": "Classic Logo",
-	"Color": "",
-	"Description": "After a good first year run of all skeleton graphics we also introduced a clean understated black option. For this project we are offering the clean in white and black."
-}];
-var boardBaseDescriptionData = [{
-	"Artist": "Mike Parillo",
-	"Type": "Tetons",
-	"Color": "Red",
-	"Description": "Mike P was originally a Lib Tech team rider along side Jamie Lynn and has built an incredible art style and career that extends way beyond snowboarding. We have had the privilege of working with him every year for decades and his stunning mind warping art is constantly improving and evolving. The Tetons painting is Mikes first oil painting and one of the first board graphics we worked with him on…it is a Lib favorite."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "Sun",
-	"Color": "Wave",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "Blue",
-	"Color": "Girl",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Jamie Lynn",
-	"Type": "Moon",
-	"Color": "Wave",
-	"Description": "Jamie's riding and artwork are part of the foundation of Lib Tech. His bold lines and colors communicate clearly who he is. The bold lines and raw committed power he snowboards with defined freestyle snowboarding in the 90's and still inspire the very best pros today. We picked a couple classics for this project."
-}, {
-	"Artist": "Nick Russian",
-	"Type": "Humming Bird",
-	"Color": "",
-	"Description": "Nick Russian is an original Lib Tech kraftsmen artist. The Emma Peel model was his vision or model both with shape and graphics, he did the art for every  Emma for 12 years running. The Humming Bird we have selected was one of our shop favorites, the movement and color work really well with our eco-sublimation system and it looks great. Nick is still working at Mervin 20 years later and continues to paint and create graphics."
-}, {
-	"Artist": "Quincy Quigg",
-	"Type": "Guitar",
-	"Color": "Skull",
-	"Description": "Quincy is another Kraftsmen artist…he began working with us by making artwork with sidewalls resin and other found items around the snowboard shop. He has a style that is sometimes refer to as refined junior high but, his incredible attention to detail, unique vision and ability to cut through all the bullshit and find truth and fun in his artwork is always a treat."
-}, {
-	"Artist": "Ryan Davis",
-	"Type": "Poly",
-	"Color": "",
-	"Description": "Ryan Davis is a classic Kraftsmen artist… he began working at Mervin in finishing and turned in artwork year after year. He developed a unique style of photography, surf and mountain based outdoor lifestyle imagery and painting. Ryan has done many graphics for us over the years, he is our NW rep and continues create beautiful imagery every year."
-}, {
-	"Artist": "Mark Gale",
-	"Type": "Original Skeleton",
-	"Color": "",
-	"Description": "This is the Original Mark Gale skeleton graphic that all Lib Tech's began with. At the time skeletons were completely dead and cartoons were dominating skateboarding. Our old Gnu distributor told us the artwork would never sell and refused to let us it. We put it on every Lib Tech we built that first year and sold every one and ended up meeting a lot of Dead Heads too!"
-}, {
-	"Artist": "In House Creative",
-	"Type": "Classic Logo",
-	"Color": "",
-	"Description": "After a good first year run of all skeleton graphics we also introduced a clean understated black option. For this project we are offering the clean in silver, white and black. "
-}];
-
 var LIBTECH = LIBTECH || {};
 
-LIBTECH.snowboardbuilder = {
-	config: {
+LIBTECH.SnowboardBuilder = function () {
+	this.config = {
+		boardData: null,
+		contourData: null,
+		boardDescriptionData: null,
 		baseImgPath: 'http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/',
 		topGraphicImg: 0, // top
 		sidewallTopImg: 0,
@@ -380,8 +47,35 @@ LIBTECH.snowboardbuilder = {
 		currentCarousel: "",
 		showLeftMenu: true,
 		carouselItemWidth: 0
-	},
+	};
+	this.init();
+};
+LIBTECH.SnowboardBuilder.prototype = {
 	init: function () {
+		var self, dataRequest;
+		self = this;
+		// Grab Board Builder Data
+		dataRequest = $.ajax({
+			url: "/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/json/snowboard-builder.json",
+			type: 'get',
+			dataType: 'json'
+		});
+		// on complete process data and assign variables
+		dataRequest.done(function( json ) {
+			self.config.boardData = json.snowboards;
+			self.config.contourData = json.contours;
+			self.config.boardDescriptionData = json.boardDescriptions;
+			self.config.boardBaseDescriptionData = json.boardBaseDescriptions;
+			// completed load, decide what to init
+			if ($('body').hasClass('page-template-page-templatessnowboard-builder-share-php')) {
+				self.initShare();
+			} else {
+				self.initBuilder();
+			}
+		});
+		self.initOrientation();
+	},
+	initBuilder: function () {
 		var self = this;
 		// set base default colors
 		self.setCustomTextColor('White');
@@ -417,9 +111,6 @@ LIBTECH.snowboardbuilder = {
 				}
 			}
 		});
-		$(window).on('load', function () {
-			delayLoad();
-		});
 		$(window).on('resize', function () {
 			waitForFinalEvent(function () {
 				self.config.aspectRatio = $(window).height() / $(window).width();
@@ -427,6 +118,55 @@ LIBTECH.snowboardbuilder = {
 			}, 500, "mervinsbb");
 		});
 		$(window).trigger('resize');
+		// listen for flag selection
+		$("#header .flag a").on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill even from firing further
+			if (navigator.cookieEnabled === false) {
+				alert('Enable cookies in your browser in order to select your region.');
+			} else {
+				LIBTECH.main.config.regionSelector.overlayInit();
+			}
+		});
+		// init the overview
+		$('#overview .overview-content .right-column a').on('click', function (e) {
+			e.preventDefault();
+			e.stopPropagation(); // kill even from firing further
+			// hide/kill overview
+			$(this).off('click');
+			TweenMax.to($('#overview'), 1, {autoAlpha:0, onComplete:function(){$('#overview').css('display', 'none');}});
+			// set the first section
+			self.setCurrentSection();
+			// set region
+			if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
+				self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
+			}
+		});
+		// make sure overview video fits
+		$('#overview .overview-content .right-column .overview-video').fitVids();
+		self.boardPreviewInit();
+		// hide the div blocker
+		TweenMax.to($('#div-blocker'), 1, {autoAlpha:0, delay:0.2});
+	},
+	initShare: function () {
+		var self = this;
+		self.config.isSharePage = true;
+		if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
+			self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
+		}
+		self.buildShare();
+		$(window).on('load', function () {
+			self.resizeLayout();
+			TweenMax.to($('#div-blocker'), 1, {autoAlpha:0, delay:0.2});
+		});
+		$(window).on('resize', function () {
+			waitForFinalEvent(function () {
+				self.config.aspectRatio = $(window).height() / $(window).width();
+				self.resizeLayout();
+			}, 500, "mervinsbb");
+		});
+	},
+	initOrientation: function () {
 		// if on iPad using Chrome check orientation change and set appropriate viewport to fix input field bugs related to viewport size
 		// viewport size changes in Chrome when inputs are selected
 		function checkOrientation() {
@@ -446,55 +186,6 @@ LIBTECH.snowboardbuilder = {
 			});
 			checkOrientation();
 		}
-		function delayLoad() {
-			// listen for flag selection
-			$("#header .flag a").on('click', function (e) {
-				e.preventDefault();
-				e.stopPropagation(); // kill even from firing further
-				if (navigator.cookieEnabled === false) {
-					alert('Enable cookies in your browser in order to select your region.');
-				} else {
-					LIBTECH.main.config.regionSelector.overlayInit();
-				}
-			});
-			// init the overview
-			$('#overview .overview-content .right-column a').on('click', function (e) {
-				e.preventDefault();
-				e.stopPropagation(); // kill even from firing further
-				// hide/kill overview
-				$(this).off('click');
-				TweenMax.to($('#overview'), 1, {autoAlpha:0, onComplete:function(){$('#overview').css('display', 'none');}});
-				// set the first section
-				self.setCurrentSection();
-				// set region
-				if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
-					self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
-				}
-			});
-			// make sure overview video fits
-			$('#overview .overview-content .right-column .overview-video').fitVids();
-			self.boardPreviewInit();
-			// hide the div blocker
-			TweenMax.to($('#div-blocker'), 1, {autoAlpha:0, delay:0.2});
-		}
-	},
-	shareInit: function () {
-		var self = this;
-		self.config.isSharePage = true;
-		if (LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== "" && LIBTECH.main.utilities.cookie.getCookie('libtech_currency') !== undefined) {
-			self.bbSetRegion(LIBTECH.main.utilities.cookie.getCookie('libtech_currency'));
-		}
-		self.buildShare();
-		$(window).on('load', function () {
-			self.resizeLayout();
-			TweenMax.to($('#div-blocker'), 1, {autoAlpha:0, delay:0.2});
-		});
-		$(window).on('resize', function () {
-			waitForFinalEvent(function () {
-				self.config.aspectRatio = $(window).height() / $(window).width();
-				self.resizeLayout();
-			}, 500, "mervinsbb");
-		});
 	},
 	bbSetRegion: function (currencyCode) {
 		var self = this;
@@ -539,30 +230,30 @@ LIBTECH.snowboardbuilder = {
 			boardNum = spanVal;
 		}
 		self.config.iJSON = spanVal;
-		sNoDash = boardData[boardNum].Model;
+		sNoDash = self.config.boardData[boardNum].model;
 		// updated board display
 		$('#board-display .board-name').text(sNoDash);
 		// Board Details
 		$('.step2-size .board-info .board').html(sNoDash);
-		$('.step2-size .board-info .shape-desc').html("<span>SHAPE</span> " + boardData[boardNum].ShapeDescription);
-		$('.step2-size .board-info .board-tagline').text(boardData[boardNum].BoardTagline);
-		$('.step2-size .board-info .board-desc').text(boardData[boardNum].BoardDescription);
+		$('.step2-size .board-info .shape-desc').html("<span>SHAPE</span> " + self.config.boardData[boardNum].shapeDescription);
+		$('.step2-size .board-info .board-tagline').text(self.config.boardData[boardNum].boardTagline);
+		$('.step2-size .board-info .board-desc').text(self.config.boardData[boardNum].boardDescription);
 		// Contour Details
-		theContour = boardData[boardNum].Contour;
-		$('.step2-size .board-info .contour-title').html(contourData[theContour].ContourTitle);
-		$('.step2-size .board-info .contour-desc').html(contourData[theContour].ContourDescription);
+		theContour = self.getBoardContour(boardNum);
+		$('.step2-size .board-info .contour-title').html(theContour.title);
+		$('.step2-size .board-info .contour-desc').html(theContour.description);
 		// Size Details
-		$('.step2-size .size-info .size-holder .sizes').html(self.calculateSizes(boardData[boardNum].Sizes));
-		$('.step2-size .size-info .size-detail-table .table-data').html(self.printSizeInfo(boardData[boardNum].ContactLength, boardData[boardNum].Sidecut, boardData[boardNum].WaistWidth, boardData[boardNum].Flex) + "");
+		$('.step2-size .size-info .size-holder .sizes').html(self.calculateSizes(self.config.boardData[boardNum].sizes));
+		$('.step2-size .size-info .size-detail-table .table-data').html(self.printSizeInfo(self.config.boardData[boardNum].contactLength, self.config.boardData[boardNum].sidecut, self.config.boardData[boardNum].waistWidth, self.config.boardData[boardNum].flex) + "");
 		$('.step2-size .size-info .size-detail-table .table-data').clone().wrap('<p>').parent().html();
 		// set price
 		if (self.config.bbRegion == "CAD") {
-			self.setBoardPrice(boardData[boardNum].BasePriceCA);
+			self.setBoardPrice(self.config.boardData[boardNum].basePriceCA);
 		} else {
-			self.setBoardPrice(boardData[boardNum].BasePriceUS);
+			self.setBoardPrice(self.config.boardData[boardNum].basePriceUS);
 		}
 		// var that is carried over
-		sShape = boardData[boardNum].Model;
+		sShape = self.config.boardData[boardNum].model;
 		// clear board size
 		self.setBoardSize('');
 		if (sShape === "" || sShape === undefined) {
@@ -628,6 +319,17 @@ LIBTECH.snowboardbuilder = {
 		} else {
 			return "";
 		}
+	},
+	getBoardContour: function (boardId) {
+		var self, contour;
+		self = this;
+		contour = null;
+		 _.find(self.config.contourData, function(item) {
+		 	if (item.name == self.config.boardData[boardId].contour) {
+		 		contour = item; 
+		 	}
+		});
+		return contour;
 	},
 	/* TOP */
 	setBoardTop: function (selectedTopImg) {
@@ -746,11 +448,11 @@ LIBTECH.snowboardbuilder = {
 				self.config.isKnifecut = true;
 				self.setBoardBaseDesc($('.board-text-custom').val());
 				if (self.config.bbRegion == "CAD") {
-					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
-					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceCA;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceCA;
 				} else {
-					kcPrice = boardData[self.config.globalNum].KnifecutPriceUS;
-					nonKCPrice = boardData[self.config.globalNum].BasePriceUS;
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceUS;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceUS;
 				}
 				kcPriceDifference = parseFloat((kcPrice - nonKCPrice).toFixed(2));
 				self.setKnifeCutPrice(kcPriceDifference);
@@ -1016,8 +718,8 @@ LIBTECH.snowboardbuilder = {
 			// set shape
 			var shape = self.getParameterByName('shape');
 			// set global number based on matching shape
-			for (var i = 0; i < boardData.length; i++) {
-				if(boardData[i].Model == shape) {
+			for (var i = 0; i < self.config.boardData.length; i++) {
+				if(self.config.boardData[i].model == shape) {
 					self.config.globalNum = i;
 				}
 			}
@@ -1061,11 +763,11 @@ LIBTECH.snowboardbuilder = {
 				self.config.isKnifecut = true;
 				// set knifecut price
 				if (self.config.bbRegion == "CAD") {
-					kcPrice = boardData[self.config.globalNum].KnifecutPriceCA;
-					nonKCPrice = boardData[self.config.globalNum].BasePriceCA;
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceCA;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceCA;
 				} else {
-					kcPrice = boardData[self.config.globalNum].KnifecutPriceUS;
-					nonKCPrice = boardData[self.config.globalNum].BasePriceUS;
+					kcPrice = self.config.boardData[self.config.globalNum].knifecutPriceUS;
+					nonKCPrice = self.config.boardData[self.config.globalNum].basePriceUS;
 				}
 				kcPriceDifference = parseFloat((kcPrice - nonKCPrice).toFixed(2));
 				self.setKnifeCutPrice(kcPriceDifference);
@@ -1564,29 +1266,29 @@ LIBTECH.snowboardbuilder = {
 				// set the correct info box display items
 				$infoBox.addClass('step1');
 				// board attributes
-				theContour = boardData[nNum].Contour;
-				splitArray = boardData[nNum].Sizes;
+				theContour = self.getBoardContour(nNum);
+				splitArray = self.config.boardData[nNum].sizes;
 				splitArray = splitArray.split('|').join(' ') + "";
 				// set the appropriate display copy
-				$('.topInfo h2').text(boardData[nNum].Model);
-				$('.topInfo h3').text(boardData[nNum].BoardTagline);
-				$('#info-box h2').text(boardData[nNum].Model + " - " + theContour);
-				$('#info-box h3').text(boardData[nNum].BoardTagline);
-				$('#info-box .sizes p span').text(boardData[nNum].Sizes);
-				$('#info-box h4').text(contourData[theContour].ContourTitle);
+				$('.topInfo h2').text(self.config.boardData[nNum].model);
+				$('.topInfo h3').text(self.config.boardData[nNum].boardTagline);
+				$('#info-box h2').text(self.config.boardData[nNum].model + " - " + theContour.name);
+				$('#info-box h3').text(self.config.boardData[nNum].boardTagline);
+				$('#info-box .sizes p span').text(self.config.boardData[nNum].sizes);
+				$('#info-box h4').text(theContour.title);
 				$('#info-box .sizes p span').text(splitArray);
 				// set contour image
-				$('#info-box .contour img').attr('src', self.config.baseImgPath + boardData[nNum].ContourImage);
+				$('#info-box .contour img').attr('src', self.config.baseImgPath + self.config.boardData[nNum].contourImage);
 				// get the price for the board
 				if (self.config.bbRegion == "CAD") {
-					price = boardData[nNum].BasePriceCA;
+					price = self.config.boardData[nNum].basePriceCA;
 				} else {
-					price = boardData[nNum].BasePriceUS;
+					price = self.config.boardData[nNum].basePriceUS;
 				}
 				// Update left menu
 				// on slide 1 - board selection
 				// update the left menu
-				$('#left-menu .menu1 .menu-title').html("" + "" + boardData[nNum].Model + "<br><b>+ $ " + price + " " + self.config.bbRegionCurrency + "</b>");
+				$('#left-menu .menu1 .menu-title').html("" + "" + self.config.boardData[nNum].model + "<br><b>+ $ " + price + " " + self.config.bbRegionCurrency + "</b>");
 				$('#left-menu .menu1').addClass('complete');
 				// show left menu if it's the first time using
 				if(self.config.showLeftMenu === true) {
@@ -1605,9 +1307,9 @@ LIBTECH.snowboardbuilder = {
 				imgDesc = selectedImage.attr("data-desc");
 				imgIndex = selectedImage.attr("data-count") - 1;
 				// set the appropriate display copy
-				$('#info-box h2').html(boardDescriptionData[imgIndex].Artist);
-				$('#info-box h3').html(boardDescriptionData[imgIndex].Type + " " + imgDesc + " " + boardDescriptionData[imgIndex].Color);
-				$('#info-box h5').html(boardDescriptionData[imgIndex].Description);
+				$('#info-box h2').html(self.config.boardDescriptionData[imgIndex].artist);
+				$('#info-box h3').html(self.config.boardDescriptionData[imgIndex].type + " " + imgDesc + " " + self.config.boardDescriptionData[imgIndex].color);
+				$('#info-box h5').html(self.config.boardDescriptionData[imgIndex].description);
 				// update board topsheet
 				self.setBoardTop(selectedImage);
 			} else if (self.config.nCurSlide === 3) {
@@ -1626,9 +1328,9 @@ LIBTECH.snowboardbuilder = {
 				imgDesc = selectedImage.attr("data-desc");
 				imgIndex = selectedImage.attr("data-count");
 				if (imgIndex >= 1) {
-					$('#info-box h2').html(boardDescriptionData[imgIndex - 1].Artist);
-					$('#info-box h3').html(boardDescriptionData[imgIndex - 1].Type + " " + imgDesc + " " + boardDescriptionData[imgIndex - 1].Color);
-					$('#info-box h5').html(boardDescriptionData[imgIndex - 1].Description);
+					$('#info-box h2').html(self.config.boardDescriptionData[imgIndex - 1].artist);
+					$('#info-box h3').html(self.config.boardDescriptionData[imgIndex - 1].type + " " + imgDesc + " " + self.config.boardDescriptionData[imgIndex - 1].color);
+					$('#info-box h5').html(self.config.boardDescriptionData[imgIndex - 1].description);
 				} else {
 					$('#info-box h2').text('DIY Base!');
 					$('#info-box h3').text('Personalize your base for an additional $29.95 ' + self.config.bbRegionCurrency);
@@ -2065,9 +1767,9 @@ LIBTECH.snowboardbuilder = {
 		// Listen for user to click agree
 		$('.step7-buy .buttonholder .agree-button').on('click.step7', function () {
 			var top = self.getBoardArtist() + ' ' + self.getBoardDescription();
-			var partNum = boardData[self.config.globalNum].BaseSku;
+			var partNum = self.config.boardData[self.config.globalNum].baseSku;
 			if (self.config.isKnifecut) {
-				partNum = boardData[self.config.globalNum].KnifecutSku;
+				partNum = self.config.boardData[self.config.globalNum].knifecutSku;
 
 				Shopatron.addToCart({
 					quantity: '1',
