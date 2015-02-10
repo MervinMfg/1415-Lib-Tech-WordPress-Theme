@@ -17,7 +17,7 @@ get_header();
                     <?php if($post_objects[0]->post_type == 'libtech_snowboards') : ?>
                     <li>
                         <div class="product-image">
-                            <a href="/snowboarding/snowboard-builder/"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" /></a>
+                            <a href="/snowboarding/snowboard-builder/"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2">DIY Board Builder</div>
@@ -35,7 +35,7 @@ get_header();
                     <?php if($post_objects[0]->post_type == 'libtech_outerwear') : ?>
                     <li class="storm-factory-slide">
                         <div class="product-image">
-                            <a href="/storm-factory/"><img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-jesse-burtner-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" /></a>
+                            <a href="/storm-factory/"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-jesse-burtner-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2">Storm Factory</div>
@@ -81,7 +81,7 @@ get_header();
                     ?>
                     <li>
                         <div class="product-image">
-                            <a href="<?php echo $productLink; ?>"><img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" /></a>
+                            <a href="<?php echo $productLink; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2"><?php echo $productTitle; ?></div>

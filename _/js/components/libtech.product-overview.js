@@ -17,7 +17,6 @@ LIBTECH.ProductOverview.prototype = {
 		self = this;
 		self.initColorways();
 		slider = $('.featured-product-slider .bxslider').bxSlider({
-			lazyLoad: true,
 			auto: true,
 			autoHover: true,
 			speed: 800,
@@ -49,7 +48,7 @@ LIBTECH.ProductOverview.prototype = {
 			self.initFilters();
 		});
 		// enable image lazy load
-		$(".product-item img.lazy").unveil(0, function() {
+		$(".product-item img.lazy, .featured-product-slider .product-image img.lazy").unveil(0, function() {
 			$(this).addClass('loaded');
 		});
 	},
