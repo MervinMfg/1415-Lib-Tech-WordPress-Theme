@@ -663,7 +663,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-overview .section-content h1 { padding: 0 0 20px 20px; }
 .product-overview .section-content ul.product-listing li.product-item { width: 18%; float: left; overflow: hidden; text-align: center; padding-bottom: 40px; }
 .product-overview .section-content ul.product-listing li.product-item a { text-decoration: none; }
-.product-overview .section-content ul.product-listing li.product-item a img.product-img { width: 140%; max-width: 200%; margin-left: -20%; height: auto; }
+.product-overview .section-content ul.product-listing li.product-item a img.product-img { width: 140%; max-width: 200%; margin-left: -20%; height: auto; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; }
+.product-overview .section-content ul.product-listing li.product-item a img.product-img.lazy { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
+.product-overview .section-content ul.product-listing li.product-item a img.product-img.loaded { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 .product-overview .section-content ul.product-listing li.product-item a .colorways { text-align: center; min-height: 32px; }
 .product-overview .section-content ul.product-listing li.product-item a .colorways .swatch { width: 22px; height: 22px; border: 1px solid #fff; display: inline-block; margin: 0 3px; }
 .product-overview .section-content ul.product-listing li.product-item a .colorways .swatch img { width: 100%; }

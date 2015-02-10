@@ -949,7 +949,7 @@ get_header();
                     <?php foreach ($productsArray as $product): ?>
                     <li class="product-item <?php echo $product['slug'] . $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
-                            <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img" />
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img lazy" />
                             <div class="colorways">
                                 <?php if (count($product['colorways']) > 0) : foreach ($product['colorways'] as $colorway) : ?>
                                 <div class="swatch" data-src="<?php echo $colorway['img'][0]; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/colorways/<?php echo $colorway['slug']; ?>.jpg" alt="<?php echo $colorway['color']; ?>" /></div>
@@ -964,7 +964,7 @@ get_header();
                     <?php if (get_the_title() == "Snowboards") : ?>
                     <li class="product-item Narrow Standard Wide mens womens youth snowboards BTX EC2_BTX C2_BTX XC2_BTX C3_BTX available 130 140 145 148 151 153 154 155 156 157 159 161 161_5 164_5 165 169">
                         <a href="/snowboarding/snowboard-builder/">
-                            <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img" />
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img lazy" />
                             <h5>DIY Board Builder</h5>
                             <div class="price"><?php echo getPrice(639.95, 664.95, 664.95, 'no', 0); ?></div>
                         </a>
