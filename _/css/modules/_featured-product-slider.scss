@@ -16,8 +16,8 @@
 			.bx-viewport {
 				background: none;
 
-				* {
-					-webkit-transform: translateZ(0); /* fix Safari flicker on css transitions */
+				ul li {
+					-webkit-transform: translateZ(0); // fix Safari flicker on css transitions
 				}
 				.bxslider li {
 					@include vendorize(opacity, 0.2);
