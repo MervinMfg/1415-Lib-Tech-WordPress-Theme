@@ -50,10 +50,8 @@ LIBTECH.main = {
 			self.blogSingleInit();
 		} else if ($body.hasClass('page-template-page-templatespage-faqs-php')) {
 			self.faqsInit();
-		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-php')) {
-			LIBTECH.snowboardbuilder.init();
-		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-share-php')) {
-			LIBTECH.snowboardbuilder.shareInit();
+		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-php') || $body.hasClass('page-template-page-templatessnowboard-builder-share-php')) {
+			new LIBTECH.SnowboardBuilder();
 		} else if ($body.hasClass('page-template-page-templatespage-partners-php')) {
 			self.partnersInit();
 		} else if ($body.hasClass('page-template-page-templatespage-surfboard-fins-php')) {
