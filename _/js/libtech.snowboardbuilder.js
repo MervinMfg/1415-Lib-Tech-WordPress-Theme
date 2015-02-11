@@ -1160,7 +1160,7 @@ LIBTECH.SnowboardBuilder.prototype = {
 			// set base
 			$('#mobile-receipt .base, .step7-buy .board-reciept .base').html("CUSTOM BASE - <span>" + self.getBoardBaseDesc() + "</span><div class=\"text-color\">TEXT COLOR - <span>" + self.getCustomTextColor() + "</span></div><div class=\"base-color\">BASE COLOR - <span>" + self.getCustomBaseColor() + "</span></div>");
 			$('#mobile-receipt .base-cost, .step7-buy .board-reciept .base-cost').html("+ " + self.getDisplayPrice(self.getKnifeCutPrice().toFixed(2)));
-			// set subtotal - need to add "incl. VAT" to EURO
+			// set subtotal
 			$('#mobile-receipt .subtotal-cost, .step7-buy .board-reciept .subtotal-cost').html(self.getDisplayPrice(parseFloat(self.getBoardPrice() + self.getKnifeCutPrice()).toFixed(2)));
 		} else {
 			// set base
@@ -1789,59 +1789,73 @@ LIBTECH.SnowboardBuilder.prototype = {
 		});
 		// Listen for user to click agree
 		$('.step7-buy .buttonholder .agree-button').on('click.step7', function () {
-			var top = self.getBoardArtist() + ' ' + self.getBoardDescription();
-			var partNum = self.config.boardData[self.config.globalNum].baseSku;
+			var top, base, partNum, orderOptions;
+			top = self.getBoardArtist() + ' ' + self.getBoardDescription();
+			base = self.getBoardBase() + ' ' + self.getBoardBaseDesc();
+			// check which set of options we need
 			if (self.config.isKnifecut) {
 				partNum = self.config.boardData[self.config.globalNum].knifecutSku;
 
-				Shopatron.addToCart({
-					quantity: '1',
-					partNumber: partNum,
-					itemOptions: {
+				if (self.config.bbRegion == "EUR") {
+					orderOptions = {
+						942985: self.getBoardSize(), // Size
+						942986: top, // Top Graphic
+						942987: self.getBoardSidewall(), // Sidewall Color
+						942993: self.getBoardBaseDesc(), // Knife Cut Text
+						942991: self.getCustomBaseColor(), // Knife Cut Base Color
+						942992: self.getCustomTextColor(), // Knife Cut Text Color
+						942989: self.getBoardBadge(), // Badge Text
+						942990: boardUrl()
+					};
+				} else {
+					orderOptions = {
 						895305: self.getBoardSize(), // Size
 						895306: top, // Top Graphic
 						895307: self.getBoardSidewall(), // Sidewall Color
-						895308: self.getBoardBase(), // Base Graphic
 						918748: self.getBoardBaseDesc(), // Knife Cut Text
 						918746: self.getCustomBaseColor(), // Knife Cut Base Color
 						918747: self.getCustomTextColor(), // Knife Cut Text Color
-						895314: self.getBoardBadge(), // Badfge Text
-						895321: boardUrl(),
-					}
-				}, {
-					// All event handlers are optional
-					success: function (data, textStatus) {
-						window.location.href = "/shopping-cart/";
-					},
-					error: function (textStatus, errorThrown) {
-						showError(textStatus.responseText);
-					},
-					complete: function (textStatus) {}
-				});
+						895314: self.getBoardBadge(), // Badge Text
+						895321: boardUrl()
+					};
+				}
 			} else {
-				var base = self.getBoardBase() + ' ' + self.getBoardBaseDesc();
-				Shopatron.addToCart({
-					quantity: '1',
-					partNumber: partNum,
-					itemOptions: {
+				partNum = self.config.boardData[self.config.globalNum].baseSku;
+				if (self.config.bbRegion == "EUR") {
+					orderOptions = {
+						942985: self.getBoardSize(), // Size
+						942986: top, // Top Graphic
+						942987: self.getBoardSidewall(), // Sidewall Color
+						942988: base, // Base Graphic
+						942989: self.getBoardBadge(), // Badge Text
+						942990: boardUrl() // URL
+					};
+				} else {
+					orderOptions = {
 						895305: self.getBoardSize(), // Size
 						895306: top, // Top Graphic
 						895307: self.getBoardSidewall(), // Sidewall Color
 						895308: base, // Base Graphic
 						895314: self.getBoardBadge(), // Badge Text
 						895321: boardUrl() // URL
-					}
-				}, {
-					// All event handlers are optional
-					success: function (data, textStatus) {
-						window.location.href = "/shopping-cart/";
-					},
-					error: function (textStatus, errorThrown) {
-						showError(textStatus.responseText);
-					},
-					complete: function (textStatus) {}
-				});
+					};
+				}
 			}
+			// add item to cart with appropriate options
+			Shopatron.addToCart({
+				quantity: '1',
+				partNumber: partNum,
+				itemOptions: orderOptions
+			}, {
+				// All event handlers are optional
+				success: function (data, textStatus) {
+					window.location.href = "/shopping-cart/";
+				},
+				error: function (textStatus, errorThrown) {
+					showError(textStatus.responseText);
+				},
+				complete: function (textStatus) {}
+			});
 		});
 		// Social Links
 		$('.step7-buy .buttonholder .social-icons .socialfb').on('click.step7', function () {
