@@ -54,7 +54,7 @@ switch ($parentSlug) {
         <div class="bg2-top"></div>
         <section class="tech-major bg2">
             <div class="section-content">
-                <ul>
+                <ul class="tech-video-list">
                     <?php
                     // get the major tech items
                     $args = array(
@@ -71,38 +71,42 @@ switch ($parentSlug) {
                         )
                     );
                     $loop = new WP_Query( $args );
+                    $i = 1;
                     while ( $loop->have_posts() ) : $loop->the_post();
                         // check if item is major
                         if(get_field("libtech_technology_type") == "Major"):
                             $videoID = get_field("libtech_technology_video");
                     ?>
-                    <li>
-                        <div class="tech-video">
-                            <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                        </div>
-                        <div class="tech-copy">
-                            <h4><?php the_title(); ?></h4>
-                            <?php the_content(); ?>
-                            <div class="tech-found-on">
-                                <h5>Found On:</h5>
-                                <ul>
-                                    <?php
-                                        $relatedItems = get_field('libtech_technology_related_products');
-                                        if( $relatedItems ):
-                                            foreach( $relatedItems as $relatedItem):
-                                    ?>
-                                    <li><a href="<? echo get_permalink( $relatedItem->ID ); ?>"><? echo $relatedItem->post_title; ?></a></li>
-                                    <?php
-                                            endforeach;
-                                        endif;
-                                    ?>
-                                </ul>
-                                <div class="clearfix"></div>
+                    <li class="<?php if ($i % 2 == 0) { echo 'even'; } else { echo 'odd'; } ?>">
+                        <div class="tech-wrapper">
+                            <div class="tech-video">
+                                <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                             </div>
+                            <div class="tech-copy">
+                                <h4><?php the_title(); ?></h4>
+                                <?php the_content(); ?>
+                                <div class="tech-found-on">
+                                    <h5>Found On:</h5>
+                                    <ul>
+                                        <?php
+                                            $relatedItems = get_field('libtech_technology_related_products');
+                                            if( $relatedItems ):
+                                                foreach( $relatedItems as $relatedItem):
+                                        ?>
+                                        <li><a href="<? echo get_permalink( $relatedItem->ID ); ?>"><? echo $relatedItem->post_title; ?></a></li>
+                                        <?php
+                                                endforeach;
+                                            endif;
+                                        ?>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
                         </div>
-                        <div class="clearfix"></div>
                     </li>
                     <?php
+                            $i++;
                         endif;
                     endwhile;
                     wp_reset_query();
@@ -114,26 +118,78 @@ switch ($parentSlug) {
         <?php endif; // end not surfing check ?>
         <?php if ($parentSlug == "surfing"): ?>
         <div class="bg1-top"></div>
-        <section class="tech-surf bg1">
+        <section class="tech-major bg1 tech-surf">
             <div class="section-content">
-                <h2>Dang Difficult to Ding</h2>
-                <div class="ddd-image">
-                    <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-dang-difficult-to-ding.gif" width="640" height="360" alt="Man on bike rides over Waterboard" />
-                </div>
-                <ul>
-                    <li>
-                        <p>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</p>
+                <ul class="tech-top">
+                    <li class="surf-technology">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-technology.jpg" alt="Radically Different Surfboard Technology" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>Radically Different</h4>
+                            <p>30 years of experience crafting and riding high performance environMENTALLY friendly composite surf, skate and snowboards went into designing our unique waterboard process, materials and shapes. Each of the 31 pieces used to construct our surfboards are new materials to the surf industry.</p>
+                        </div>
+                        <div class="clearfix"></div>
                     </li>
-                    <li>
-                        <p>Voted toughest board of the year by Outside Magazine.</p>
+                    <li class="surf-environmental">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-environmental.jpg" alt="Environmental Surfboards" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>Environmentally Nicer</h4>
+                            <p>100% closed cell foam won’t absorb water... won't rot &bullet; More durable: Lasts longer, less dings, less boards in landfills &bullet; Recycled foam core: up to 50% recycled content in blank &bullet; Blank scraps all recycled &bullet; Elimination of hazardous resin systems &bullet; Non ozone depleting blowing agent &bullet; Basalt fiber: no additives, no boron &bullet; No solvents except water &bullet; No paint brushes &bullet; No sandpaper, no tape</p>
+                        </div>
+                        <div class="clearfix"></div>
                     </li>
-                    <li>
-                        <p>Crossing the street or the globe, tougher surfboards - free your mind!</p>
+                    <li class="surf-ding">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-ding.gif" alt="Durable Lib Tech Surfboard being rode over by a man on a bike" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>Dang Difficult to Ding</h4>
+                            <ul>
+                                <li>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</li>
+                                <li>Voted toughest board of the year by Outside Magazine.</li>
+                                <li>Crossing the street or the globe, tougher surfboards - free your mind!</li>
+                                <li>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
                     </li>
-                    <li>
-                        <p>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</p>
+                </ul><!-- .tech-top -->
+                <ul class="tech-bottom">
+                    <li class="surf-fins">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-fins.jpg" alt="Freedom of Choice multi-fin system" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>FOC Adjustable Fin System</h4>
+                            <p>F.O.C. "Freedom of Choice" multi-fin system compatible with 5/8" performance tuning adjustability</p>
+                        </div>
+                        <div class="clearfix"></div>
                     </li>
-                </ul>
+                    <li class="surf-performance">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-performance.jpg" alt="Performance - Ryan Carlson" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>Performance</h4>
+                            <p>SMOOTH &bullet; FAST &bullet; POPPY</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                    <li class="surf-handcrafted">
+                        <div class="tech-image">
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-handcrafted.jpg" alt="Handcrafted in the USA" />
+                        </div>
+                        <div class="tech-copy surf">
+                            <h4>Handcrafted in the USA</h4>
+                            <p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </li>
+                </ul><!-- .tech-bottom -->
+                <div class="clearfix"></div>
             </div><!-- END .section-content -->
         </section><!-- END .surf-tech -->
         <?php endif; // end surfing check ?>
