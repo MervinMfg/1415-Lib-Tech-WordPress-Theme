@@ -17,7 +17,7 @@ get_header();
                     <?php if($post_objects[0]->post_type == 'libtech_snowboards') : ?>
                     <li>
                         <div class="product-image">
-                            <a href="/snowboarding/snowboard-builder/"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" /></a>
+                            <a href="/snowboarding/snowboard-builder/"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2">DIY Board Builder</div>
@@ -28,13 +28,14 @@ get_header();
                             <div class="price"></div>
                             <a href="/snowboarding/snowboard-builder/" class="buy build h4">Build Your Own!</a>
                         </div>
+                        <div class="clearfix"></div>
                     </li>
                     <?php endif; ?>
 
                     <?php if($post_objects[0]->post_type == 'libtech_outerwear') : ?>
                     <li class="storm-factory-slide">
                         <div class="product-image">
-                            <a href="/storm-factory/"><img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-jesse-burtner-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" /></a>
+                            <a href="/storm-factory/"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-jesse-burtner-640x640.png" width="640" height="640" alt="DIY Snowboard Builder" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2">Storm Factory</div>
@@ -45,6 +46,7 @@ get_header();
                             <div class="price"></div>
                             <a href="/storm-factory/" class="buy h4">Storm Factory</a>
                         </div>
+                        <div class="clearfix"></div>
                     </li>
                     <?php endif; ?>
 
@@ -79,7 +81,7 @@ get_header();
                     ?>
                     <li>
                         <div class="product-image">
-                            <a href="<?php echo $productLink; ?>"><img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" /></a>
+                            <a href="<?php echo $productLink; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" /></a>
                         </div>
                         <div class="product-copy">
                             <div class="title h2"><?php echo $productTitle; ?></div>
@@ -91,6 +93,7 @@ get_header();
                             <?php echo $productPrice; ?>
                             <a href="<?php echo $productLink; ?>" class="buy h4">Buy Now!</a>
                         </div>
+                        <div class="clearfix"></div>
                     </li>
                     <?php endforeach; ?>
                 </ul>
@@ -946,7 +949,7 @@ get_header();
                     <?php foreach ($productsArray as $product): ?>
                     <li class="product-item <?php echo $product['slug'] . $product['filterList']; ?>">
                         <a href="<? echo $product['link']; ?>">
-                            <img src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img" />
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img lazy" />
                             <div class="colorways">
                                 <?php if (count($product['colorways']) > 0) : foreach ($product['colorways'] as $colorway) : ?>
                                 <div class="swatch" data-src="<?php echo $colorway['img'][0]; ?>"><img src="<?php bloginfo('template_directory'); ?>/_/img/colorways/<?php echo $colorway['slug']; ?>.jpg" alt="<?php echo $colorway['color']; ?>" /></div>
@@ -961,7 +964,7 @@ get_header();
                     <?php if (get_the_title() == "Snowboards") : ?>
                     <li class="product-item Narrow Standard Wide mens womens youth snowboards BTX EC2_BTX C2_BTX XC2_BTX C3_BTX available 130 140 145 148 151 153 154 155 156 157 159 161 161_5 164_5 165 169">
                         <a href="/snowboarding/snowboard-builder/">
-                            <img src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img" />
+                            <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img lazy" />
                             <h5>DIY Board Builder</h5>
                             <div class="price"><?php echo getPrice(639.95, 664.95, 664.95, 'no', 0); ?></div>
                         </a>
@@ -969,7 +972,6 @@ get_header();
                     <?php endif; ?>
 
                 </ul>
-                <?php if (get_the_title() == "Apparel") : ?><a href="/clearance/#filter=.available" class="h4 view-clearance">Check out our clearance items</a><?php endif; ?>
             </div>
             <div class="clearfix"></div>
         </section><!-- end product overview -->

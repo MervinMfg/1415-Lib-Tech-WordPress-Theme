@@ -548,7 +548,6 @@ LIBTECH.main = {
 				video: true,
 				useCSS: false,
 				auto: autoRotate,
-				autoHover: true,
 				speed: 500,
 				randomStart: false,
 				controls: false,

@@ -47,6 +47,10 @@ LIBTECH.ProductOverview.prototype = {
 			self.initIsotope();
 			self.initFilters();
 		});
+		// enable image lazy load
+		$(".product-item img.lazy, .featured-product-slider .product-image img.lazy").unveil(0, function() {
+			$(this).addClass('loaded');
+		});
 	},
 	initAvailability: function () {
 		var currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');

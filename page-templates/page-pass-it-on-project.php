@@ -13,7 +13,7 @@ get_header();
 				<h1><?php the_title(); ?></h1>
 				<div class="video-player">
 					<div class="video-wrapper">
-						<iframe src="http://player.vimeo.com/video/88123987?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http:////player.vimeo.com/video/116304321?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
 				</div>
 				<div class="video-text">
@@ -22,48 +22,6 @@ get_header();
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .video-header -->
-		<div class="bg3-top"></div>
-		<section class="bg3 pass-it-on-contest">
-			<div class="section-content">
-				<h2>#passitonproject Sweepstakes</h2>
-				<div class="woobox-wrapper">
-					<!-- START Woobox Offer -->
-					<div class='woobox-offer' data-offer='mqorfw'></div>
-					<div id='woobox-root'></div>
-					<script>
-						(function(d, s, id) {
-							var js, fjs = d.getElementsByTagName(s)[0];
-							if (d.getElementById(id)) return;
-							js = d.createElement(s); js.id = id;
-							js.src = "//woobox.com/js/plugins/woo.js";
-							fjs.parentNode.insertBefore(js, fjs);
-						}(document, 'script', 'woobox-sdk'));
-					</script>
-					<!-- END Woobox Offer -->
-					<div class="clearfix"></div>
-				</div>
-				<div class="product-wrapper">
-					<ul>
-						<li class="product">
-							<h4>Travis Rice Speedodeeps BTX</h4>
-							<p>2013 #passitonproject<br /><a href="/snowboards/travis-rice-speedodeeps/">Available Now</a></p>
-							<div class="product-image">
-								<a href="/snowboards/travis-rice-speedodeeps/"><img src="<?php bloginfo('template_directory'); ?>/_/img/pass-it-on-project-speedodeeps.png" alt="2013/14 Speedodeeps" /></a>
-							</div>
-						</li>
-						<li class="product lightbox">
-							<h4>Travis Rice Gold Member XC2 BTX</h4>
-							<p>2014 #passitonproject<br /><a href="<?php bloginfo('template_directory'); ?>/_/img/pass-it-on-project-gold-member-info.jpg" class="lightbox">Available 9/1</a></p>
-							<div class="product-image">
-								<a href="<?php bloginfo('template_directory'); ?>/_/img/pass-it-on-project-gold-member-info.jpg"><img src="<?php bloginfo('template_directory'); ?>/_/img/pass-it-on-project-gold-member.png" alt="2014/15 Gold Member" /></a>
-							</div>
-						</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div><!-- END .section-content -->
-		</section><!-- END .pass-it-on-contest -->
 		<div class="bg2-top"></div>
 		<section class="bg2 pass-it-on-tagboard">
 			<div class="section-content">
