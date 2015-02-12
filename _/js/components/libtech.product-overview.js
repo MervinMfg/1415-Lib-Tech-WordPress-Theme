@@ -49,7 +49,10 @@ LIBTECH.ProductOverview.prototype = {
 		});
 		// enable image lazy load
 		$(".product-item img.lazy, .featured-product-slider .product-image img.lazy").unveil(0, function() {
-			$(this).addClass('loaded');
+			$(this).on('load', function () {
+				$(this).addClass('loaded');
+				$(this).off('load');
+			});
 		});
 	},
 	initAvailability: function () {
@@ -108,7 +111,7 @@ LIBTECH.ProductOverview.prototype = {
 					return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
 				}
 			},
-			onLayout: function($elems, instance) {
+			onLayout: function ($elems, instance) {
 				$(window).trigger("resize");
 			}
 		});
