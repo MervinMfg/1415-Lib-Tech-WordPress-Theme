@@ -107,6 +107,9 @@ LIBTECH.ProductOverview.prototype = {
 				price: function ($elem) {
 					return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
 				}
+			},
+			onLayout: function($elems, instance) {
+				$(window).trigger("resize");
 			}
 		});
 		// update columnWidth on window resize
