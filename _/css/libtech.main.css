@@ -1238,6 +1238,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .skate .pagination .page-numbers { background: #66CC00; }
 
 .blog-post .section-content { padding: 0 20px; }
+.blog-post .section-content h2, .blog-post .section-content h3, .blog-post .section-content h4 { margin: 40px 0 20px 0; }
 .blog-post .section-content .section-content-wrapper { position: relative; }
 .blog-post .section-content .post .entry-header .entry-title { margin-bottom: .25em; }
 .blog-post .section-content .post .entry-header .entry-meta { margin-bottom: 1em; }
@@ -1258,6 +1259,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post .section-content .post .entry-content .strobbr-list { padding: 0 0 20px 0; }
 .blog-post .section-content .post .entry-categories-tags { margin-bottom: 20px; clear: both; }
 .blog-post .section-content .post .discussion { padding-left: 0; padding-right: 0; clear: both; }
+.blog-post .section-content .post .discussion h2 { margin-bottom: 0; }
 .blog-post .section-content #sidebar .social-links { padding-top: 40px; }
 .blog-post .section-content #sidebar .social-links .h4 { margin-bottom: 5px; }
 .blog-post .section-content #sidebar .widget { padding-bottom: 40px; display: none; }

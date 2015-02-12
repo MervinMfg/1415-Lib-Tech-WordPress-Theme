@@ -116,6 +116,10 @@
 .blog-post {
 	.section-content {
 		padding: 0 20px;
+
+		h2, h3, h4 {
+			margin: 40px 0 20px 0;
+		}
 		
 		.section-content-wrapper {
 			position: relative;
@@ -214,6 +218,10 @@
 				padding-left: 0;
 				padding-right: 0;
 				clear: both;
+
+				h2 {
+					margin-bottom: 0;
+				}
 			}
 		}
 		#sidebar {
