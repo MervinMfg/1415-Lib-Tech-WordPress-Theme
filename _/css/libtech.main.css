@@ -252,7 +252,7 @@ header .ski a:hover, header .ski a:focus, header .ski.current-menu-item a, heade
 header .surf a:hover, header .surf a:focus, header .surf.current-menu-item a, header .surf .current-menu-item a { color: #FF6600; }
 header .skate a:hover, header .skate a:focus, header .skate.current-menu-item a, header .skate .current-menu-item a { color: #66CC00; }
 header .logo-wrapper { background: url("../img/bg-dark-texture.png") center top; position: relative; z-index: 3; padding-bottom: 6px; }
-header .logo-wrapper #logo { width: 191px; height: 74px; display: block; position: relative; z-index: 10; }
+header .logo-wrapper #logo { width: 191px; height: 74px; display: block; position: relative; z-index: 101; }
 header .logo-wrapper #logo img { width: 100%; height: auto; }
 header .nav-main, header .nav-product, header .nav-sub { font-family: "Duke Fill", Impact, Arial, sans-serif; text-transform: uppercase; text-align: center; }
 header .nav-main { height: 36px; font-size: 1.625em; /* 24 / 16 */ background: url("../img/bg-main-menu.png") repeat-x center top; line-height: 1.125em; position: relative; z-index: 4; }
