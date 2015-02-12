@@ -473,7 +473,6 @@ body { background: #000; }
 #region-selector .choose-region { padding: 40px; }
 #region-selector .choose-region .h1 { padding-bottom: 40px; }
 #region-selector .choose-region .location-group { padding-bottom: 30px; }
-#region-selector .choose-region .location-group.europe { display: none; }
 #region-selector .choose-region .location-group .location-title { padding-bottom: 20px; }
 #region-selector .choose-region .location-group .location-note { padding-bottom: 10px; }
 #region-selector .choose-region .location-group .location-list .location-item { padding-bottom: 10px; }
