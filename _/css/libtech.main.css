@@ -765,7 +765,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-images .surf-images .surfboard-side { width: 10%; float: left; cursor: pointer; }
 .product-details .image-list-thumbs { padding: 20px 0 40px; }
 .product-details .image-list-thumbs.hidden { display: none; }
-.product-details .image-list-thumbs .bx-wrapper { margin: 0; }
+.product-details .image-list-thumbs .bx-wrapper { margin: 0 !important; }
 .product-details .image-list-thumbs .bx-wrapper .bx-viewport { background: none; }
 .product-details .image-list-thumbs .bx-loading { background: none; }
 .product-details .image-list-thumbs li { float: left; }
