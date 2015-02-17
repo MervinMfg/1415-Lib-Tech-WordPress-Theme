@@ -1212,7 +1212,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-posts .blog-post .post-wrapper, .related-posts .blog-post .post-wrapper { padding-bottom: 20px; }
 .blog-posts .blog-post .post-wrapper a, .blog-posts .blog-post .post-wrapper a:hover, .blog-posts .blog-post .post-wrapper a:focus, .related-posts .blog-post .post-wrapper a, .related-posts .blog-post .post-wrapper a:hover, .related-posts .blog-post .post-wrapper a:focus { text-decoration: none; font-style: normal; }
 .blog-posts .blog-post .post-wrapper a img, .related-posts .blog-post .post-wrapper a img { padding-bottom: 10px; width: 100%; }
-.blog-posts .blog-post .post-wrapper a .post-title, .related-posts .blog-post .post-wrapper a .post-title { padding-bottom: 10px; word-wrap: break-word; }
+.blog-posts .blog-post .post-wrapper a .post-title, .related-posts .blog-post .post-wrapper a .post-title { margin-bottom: 10px; word-wrap: break-word; line-height: 1.05; }
 .blog-posts .blog-post .post-wrapper a .post-meta, .related-posts .blog-post .post-wrapper a .post-meta { padding-bottom: 10px; font-size: 1em; /* 16 / 16 */ }
 .blog-posts .blog-post .post-wrapper a .post-meta span, .related-posts .blog-post .post-wrapper a .post-meta span { color: #fff; }
 .blog-posts .blog-post .post-wrapper a .post-excerpt, .related-posts .blog-post .post-wrapper a .post-excerpt { color: #fff; padding-bottom: 5px; display: none; }

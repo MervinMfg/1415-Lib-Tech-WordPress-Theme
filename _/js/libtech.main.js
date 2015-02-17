@@ -295,6 +295,11 @@ LIBTECH.main = {
 			unique: false,
 			animated: "fast"
 		});
+		$('.post-title').each(function () {
+			if (!$('html').hasClass('ie-lt9')) {
+				$clamp(this, {clamp: '3', splitOnChars: ['.', ',', ' ']});
+			}
+		});
 	},
 	blogSingleInit: function () {
 		new LIBTECH.BlogSingle();
