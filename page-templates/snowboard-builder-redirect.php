@@ -2,33 +2,13 @@
 /*
 Template Name: Snowboard Builder Redirect
 */
-$page_url = get_site_url() . "/diy/";
 $redirect_url = get_site_url() ."/snowboarding/snowboard-builder/";
 $page_title = "Lib Tech's DIY Snowboard Builder - Build your own damn snowboard!";
-
 if( isset($_GET['shape']) && isset($_GET['size']) && isset($_GET['top']) && isset($_GET['sidewall']) && isset($_GET['badge']) ) {
-	if( isset($_GET['base']) ) {
+	if( isset($_GET['base']) || isset($_GET['kt']) && isset($_GET['kbc']) && isset($_GET['ktc']) ) {
 		// change to share title
 		$page_title = "I built my own Lib Tech Snowboard with the DIY Board Builder! - Build your dream snowboard!";
-		// graphic base set
-		$redirect_url .= "share/?shape=" . $_GET['shape'];
-		$redirect_url .= "&size=" . $_GET['size'];
-		$redirect_url .= "&top=" . $_GET['top'];
-		$redirect_url .= "&sidewall=" . $_GET['sidewall'];
-		$redirect_url .= "&base=" . $_GET['base'];
-		$redirect_url .= "&badge=" . urlencode($_GET['badge']);
-	} else if ( isset($_GET['kt']) && isset($_GET['kbc']) && isset($_GET['ktc']) ) {
-		// change to share title
-		$page_title = "I built my own Lib Tech Snowboard with the DIY Board Builder! - Build your dream snowboard!";
-		// knifecut base set
-		$redirect_url .= "share/?shape=" . $_GET['shape'];
-		$redirect_url .= "&size=" . $_GET['size'];
-		$redirect_url .= "&top=" . $_GET['top'];
-		$redirect_url .= "&sidewall=" . $_GET['sidewall'];
-		$redirect_url .= "&kt=" . urlencode($_GET['kt']);
-		$redirect_url .= "&kbc=" . $_GET['kbc'];
-		$redirect_url .= "&ktc=" . $_GET['ktc'];
-		$redirect_url .= "&badge=" . urlencode($_GET['badge']);
+		$redirect_url = get_site_url() . str_replace("/diy/", "/snowboarding/snowboard-builder/share/", $_SERVER['REQUEST_URI']);
 	}
 }
 ?>

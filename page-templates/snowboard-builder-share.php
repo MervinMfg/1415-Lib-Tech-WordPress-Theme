@@ -4,7 +4,7 @@ Template Name: Snowboard Builder Share
 */
 // GET THE REGION
 getCurrencyCode();
-$page_url = get_site_url() . "/snowboarding/snowboard-builder/share/";
+$page_url = get_site_url() . $_SERVER['REQUEST_URI'];
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html class="ie ie6 ie-lt10 ie-lt9 ie-lt8 ie-lt7 no-js diy-share" <?php language_attributes(); ?>> <![endif]-->

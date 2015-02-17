@@ -23,6 +23,14 @@
 						max-width: 200%;
 						margin-left: -20%;
 						height: auto;
+						@include transition(opacity, 300ms);
+
+						&.lazy {
+							@include vendorize(opacity, 0);
+						}
+						&.loaded {
+							@include vendorize(opacity, 1);
+						}
 					}
 					.colorways {
 						text-align: center;

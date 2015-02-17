@@ -52,7 +52,7 @@
 		}
 
 		.bx-wrapper {
-			margin: 0;
+			margin: 0 !important;
 			.bx-viewport {
 				background: none;
 			}
@@ -732,39 +732,6 @@
 	}
 	.product-tech-major {
 		/* check .tech-major */
-
-		.surf-technology,
-		.surf-environmental,
-		.surf-ding,
-		.surf-fins,
-		.surf-performance,
-		.surf-handcrafted {
-			h4 {
-				padding: 5px;
-				color: #000;
-			}
-			img {
-				border: solid #333333 1px;
-			}
-		}
-		.surf-technology h4 {
-			background-color: #FF0000;
-		}
-		.surf-environmental h4 {
-			background-color: $skateColor;
-		}
-		.surf-ding h4 {
-			background-color: $surfColor;
-		}
-		.surf-fins h4 {
-			background-color: $snowColor;
-		}
-		.surf-performance h4 {
-			background-color: $skiColor;
-		}
-		.surf-handcrafted h4 {
-			background-color: #fff;
-		}
 	}
 	.product-tech-construction {
 		margin-bottom: 20px;

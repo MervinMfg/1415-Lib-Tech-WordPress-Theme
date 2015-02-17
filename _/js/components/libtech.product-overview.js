@@ -47,6 +47,13 @@ LIBTECH.ProductOverview.prototype = {
 			self.initIsotope();
 			self.initFilters();
 		});
+		// enable image lazy load
+		$(".product-item img.lazy, .featured-product-slider .product-image img.lazy").unveil(0, function() {
+			$(this).on('load', function () {
+				$(this).addClass('loaded');
+				$(this).off('load');
+			});
+		});
 	},
 	initAvailability: function () {
 		var currencyCookie = LIBTECH.main.utilities.cookie.getCookie('libtech_currency');
@@ -103,6 +110,9 @@ LIBTECH.ProductOverview.prototype = {
 				price: function ($elem) {
 					return parseFloat($elem.find('.price .us-price').text().replace("$", ""));
 				}
+			},
+			onLayout: function ($elems, instance) {
+				$(window).trigger("resize");
 			}
 		});
 		// update columnWidth on window resize

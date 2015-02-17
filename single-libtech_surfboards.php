@@ -6,19 +6,11 @@ Template Name: Surfboard Detail
 	if (have_posts()) : while (have_posts()) : the_post();
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
-
-
-
 		// $productAvailable = false;
 		// grab availability
 		$productAvailUS = "No";
 		$productAvailCA = "No";
 		$productAvailEU = "No";
-
-
-
-
-
 		// get 5 fin bottom image
 		$defaultTopImage = "";
 		$defaultTopImageFull = "";
@@ -61,25 +53,6 @@ Template Name: Surfboard Detail
 					$length = floor($length/12) . "’" . ($length - (floor($length/12)*12)) . "”"; // convert from inches to feet + inches
 					$fins = $variationOptions[$i]['libtech_surfboard_variations_options_fins'];
 					$sku = $variationOptions[$i]['libtech_surfboard_variations_options_sku'];
-
-
-
-
-
-
-
-					/*if ($GLOBALS['currency'] == "CAD") {
-						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_ca'];
-					} else if ($GLOBALS['currency'] == "EUR") {
-						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
-					} else {
-						$avail = $variationOptions[$i]['libtech_surfboard_variations_options_avail_us'];
-					}
-					if ($avail == "Yes" || $avail == "Limited") {
-						$productAvailable = true;
-					}*/
-
-
 					// grab availability overwrite
 					$availableUS = $variationOptions[$i]['libtech_surfboard_variations_options_avail_us'];
 					$availableCA = $variationOptions[$i]['libtech_surfboard_variations_options_avail_ca'];
@@ -92,10 +65,7 @@ Template Name: Surfboard Detail
 					if($availability['ca']['amount'] > 0 || ($availability['ca']['amount'] == "" && $fins != "3 Fin Box") || ($availability['ca']['amount'] == 0 && $fins != "3 Fin Box") || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
 					// waterboards are treated direct in Europe
 					if($availability['eu']['amount'] > 0 || $availability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
-
-
-
-
+					//
 					if ($fins == "3 Fin Box") {
 						$bImg = $bottomImage[0];
 						$bImgFull = $bottomImageFull[0];
@@ -149,8 +119,6 @@ Template Name: Surfboard Detail
 		endif;
 ?>
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-
-
 		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
 				<ul class="product-listing bxslider">
@@ -414,7 +382,7 @@ Template Name: Surfboard Detail
 						</table>
 					</div>
 				</div><!-- END .product-desc-awards-specs -->
-				<div class="product-tech-major tech-major">
+				<div class="product-tech-major tech-major tech-surf">
 					<h2>Technology</h2>
 					<ul>
 						<li class="surf-technology">

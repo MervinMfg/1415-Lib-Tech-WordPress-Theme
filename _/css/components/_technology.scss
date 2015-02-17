@@ -52,9 +52,12 @@
 			.tech-copy {
 				margin-bottom: 20px;
 
-				h4, h5, p {
+				h4, h5 {
 					margin-bottom: 5px;
 				}
+				p {
+					margin-bottom: 15px;
+				} 
 				.tech-found-on {
 					display: none;
 					margin: 10px 0 20px;
@@ -77,8 +80,41 @@
 		}
 	}
 }
-.single-libtech_surfboards .tech-major h2 {
-	display: none;
+.tech-major.tech-surf {
+	h2 { display: none; }
+
+	.surf-technology,
+	.surf-environmental,
+	.surf-ding,
+	.surf-fins,
+	.surf-performance,
+	.surf-handcrafted {
+		h4 {
+			padding: 5px;
+			color: #000;
+		}
+		img {
+			border: solid #333333 1px;
+		}
+	}
+	.surf-technology h4 {
+		background-color: #FF0000;
+	}
+	.surf-environmental h4 {
+		background-color: $skateColor;
+	}
+	.surf-ding h4 {
+		background-color: $surfColor;
+	}
+	.surf-fins h4 {
+		background-color: $snowColor;
+	}
+	.surf-performance h4 {
+		background-color: $skiColor;
+	}
+	.surf-handcrafted h4 {
+		background-color: #fff;
+	}
 }
 .single-libtech_bindings .product-extras .product-tech-major,
 .single-libtech_bindings .product-extras.info .product-tech-major,
@@ -92,7 +128,6 @@
 	.section-content {
 		padding: 0 20px;
 	}
-
 	h2 {
 		margin-bottom: 10px;
 	}
@@ -153,31 +188,6 @@
 		}
 	}
 }
-.tech-surf {
-	.section-content {
-		padding: 0 20px;
-	}
-	h2 {
-		margin-bottom: 20px;
-	}
-	.ddd-image {
-		padding-bottom: 20px;
-
-		img {
-			height: auto;
-		}
-	}
-	ul {
-		list-style: square;
-
-		li {
-			margin: 0 0 10px 20px;
-		}
-	}
-	p {
-		margin-bottom: 10px;
-	}
-}
 @media screen and (min-width: $breakpoint-small) {
 	.tech-minor,
 	.tech-minor .section-content {
@@ -205,13 +215,14 @@
 		img {
 			width: 50%;
 			float: left;
+			padding-right: 10px;
 		}
 		.tech-copy {
 			width: 50%;
 			float: right;
 
 			h3, p {
-				padding-left: 20px;
+				padding-left: 10px;
 			}
 			h3 {
 				font-size: 1.375em;
@@ -221,7 +232,12 @@
 }
 @media screen and (min-width: $breakpoint-medium) {
 	.tech-major ul li {
-		.tech-video,
+		.tech-video {
+			width: 50%;
+			float: left;
+			margin-bottom: 0;
+			padding-right: 10px;
+		}
 		.tech-image {
 			width: 50%;
 			float: left;
@@ -231,16 +247,19 @@
 			width: 50%;
 			float: left;
 			margin-bottom: 0;
+			padding-left: 10px;
 
-			h4, h5, p, ul {
-				margin-left: 20px;
-			}
 			ul {
 				margin-bottom: 0;
 			}
 		}
+		.tech-copy.surf {
+			h4, h5, p, ul {
+				margin-left: 10px;
+			}
+		}
 	}
-	.single-libtech_surfboards .tech-major ul li {
+	.tech-major.tech-surf ul li {
 		.tech-image {
 			width: 30%;
 		}
@@ -257,7 +276,27 @@
 	.tech-major ul li {
 		padding-right: 40px;
 	}
-	.tech-major .section-content ul li {
+	.page-template-page-technology-detail.surf {
+		.tech-major {
+
+			ul {
+				&.tech-top {
+					width: 50%;
+					float: left;
+					padding-right: 20px;
+				}
+				&.tech-bottom {
+					width: 50%;
+					float: right;
+					padding-left: 20px;
+				}
+				li {
+					padding-right: 0;
+				}
+			} 
+		} 
+	}
+	.tech-major .section-content > ul.tech-video-list > li {
 		margin-bottom: 10px;
 		width: 50%;
 		padding-right: 0;
@@ -266,33 +305,33 @@
 		.tech-video {
 			width: 100%;
 			float: none;
+			padding: 0 0 10px 0;
 		}
-		&:nth-child(odd) {
+		&.odd {
 			clear: left;
 
-			.tech-video {
+			.tech-wrapper {
 				padding-right: 20px;
 			}
 		}
-		&:nth-child(even) {
+		&.even {
 			clear: right;
 
-			.tech-video {
+			.tech-wrapper {
 				padding-left: 20px;
 			}
 		}
 		.tech-copy {
 			width: 100%;
 			float: none;
+			padding-left: 0;
 
-			h4, h5, p {
-				margin-left: 20px;
-			}
 			.tech-found-on {
 				display: block;
 			}
 		}
 	}
+
 	.tech-minor,
 	.tech-minor .section-content {
 		& > ul > li {
@@ -308,25 +347,6 @@
 			width: 33.3%;
 			display: block;
 			float: left;
-		}
-	}
-	.tech-surf {
-		h2 {
-			width: 60%;
-			float: left;
-		}
-		ul {
-			width: 60%;
-			float: left;
-
-			li {
-				padding-right: 20px;
-			}
-		}
-		.ddd-image {
-			width: 40%;
-			float: right;
-			padding-bottom: 0;
 		}
 	}
 }
