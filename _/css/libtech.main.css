@@ -452,8 +452,9 @@ body { background: #000; }
 .video-header .section-content .video-player { padding-bottom: 10px; }
 .video-header .section-content .video-text h3 { color: #000; margin-bottom: 10px; }
 .video-header .section-content .video-text p { max-width: 900px; color: #000; font-size: 1em; margin-bottom: 10px; }
-.video-header .section-content .video-text ul { list-style: square; margin-left: 20px; }
+.video-header .section-content .video-text ul { list-style: square; margin: 0 0 10px 20px; }
 .video-header .section-content .video-text ul li { margin-bottom: 5px; color: #000; font-size: .875em; /* 14 / 16 */ line-height: 1.32; }
+.video-header .section-content .video-text a { color: #000; }
 .video-header .section-content .video-text .entry-share { list-style: none; margin-left: 0; }
 .video-header .section-content .video-text .entry-share li { margin-bottom: 0; }
 
