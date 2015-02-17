@@ -1,0 +1,763 @@
+ /* ==========================================================================
+   LIBTECH.SNOWBOARDFINDER.SCSS
+   ========================================================================== */
+
+/*
+ * Lib Tech DIY Snowboard Finder - http://www.lib-tech.com/snowboarding/snowboard-finder/
+ * Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+ */
+
+// Helpers
+@import "helpers/variables";
+@import "helpers/mixins";
+
+.board-finder {
+	padding-bottom: 0;
+
+	.section-content {
+		.finder-step {
+			min-height: 480px;
+			padding: 0 20px;
+			clear: both;
+
+			h1 {
+				text-align: center;
+			}
+			h2 {
+				text-align: center;
+			}
+			h3 {
+				text-align: center;
+				line-height: 1.25;
+
+				span {
+					display: block;
+				}
+			}
+			h4 {
+				color: #fff;
+				font-size: 1.25em;
+				padding-bottom: 10px;
+			}
+			p {
+				padding-bottom: 20px;
+			}
+			a.bf-button {
+				height: 40px;
+				line-height: 40px;
+				border: 1px solid #000;
+				color: #000;
+				background-color: $snowColor;
+
+				&:hover,
+				&:focus {
+					color: $snowColor;
+					background-color: #000;
+					border: 1px solid $snowColor;
+					text-decoration: none;
+				}
+			}
+			select {
+				border: 1px solid #000;
+			}
+			.quote-wrapper {
+				display: none;
+			}
+		}
+		.bf-step-1 {
+			background: url(../img/board-finder/bf-step-1-kraftsman.png) 125% bottom no-repeat;
+			background-size: 65%;
+			padding: 40px 0;
+
+			.step-1-left {
+				h1 {
+					padding-bottom: 30px;
+				}
+				h3 {
+					padding-bottom: 80px;
+				}	
+				.selection-who {
+					width: 50%;
+					margin: 0 auto;
+
+					ul {
+						width: 100%;
+
+						li {
+							display: block;
+							width: 100%;
+							height: 40px;
+							margin-bottom: 10px;
+							font-size: 1.5em;
+							text-align: center;
+							line-height: 30px;
+							text-transform: uppercase;
+							
+							a {
+								display: block;
+								background: $snowColor;
+								color: #000;
+
+								&:hover,
+								&:focus {
+									color: $snowColor;
+									background-color: #000;
+									border: 1px solid $snowColor;
+									text-decoration: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		.bf-step-2 {
+			background: url(../img/board-finder/bf-step-2-kraftsman.png) -20% bottom no-repeat;
+			background-size: 80%;
+			padding: 40px 0;
+
+			.measurements-wrapper {
+				.selection-measurements-top {
+					width: 50%;
+					margin: 0 auto;
+
+					.measurement-type {
+						input {
+							margin-right: 10px;
+						}
+						label {
+							padding-right: 30px;
+							font-size: 1.4em;
+							color: $snowColor;
+							vertical-align: middle;
+							text-transform: uppercase;
+						}
+					}
+					.weight-measurement {
+						padding: 30px 0 40px 0;
+
+						.weight-metric {
+							//display: none;
+						}
+					}
+					.height-measurement {
+						padding-bottom: 40px;
+
+						.height-metric {
+							//display: none;
+						}
+					}
+				}
+				.selection-measurements-bottom {
+					width: 50%;
+					margin: 0 auto;
+
+					.boot-measurement {
+						padding-bottom: 40px;
+					}
+					.button-next {
+						a {
+							width: 100%;
+							height: 40px;
+							display: block;
+							background: $snowColor;
+							color: #000;
+							line-height: 40px;
+							font-size: 1.5em;
+							text-align: center;
+
+							&:hover,
+							&:focus {
+								color: $snowColor;
+								background-color: #000;
+								border: 1px solid $snowColor;
+								text-decoration: none;
+							}
+						}
+					}
+				}
+			}
+		}
+		.bf-step-3 {
+			background: url(../img/board-finder/bf-step-3-kraftsman.png) 130% bottom no-repeat;
+			background-size: 50%;
+			padding: 40px 0;
+
+			.selection-ability {
+				width: 50%;
+				margin: 0 auto;
+				padding-bottom: 30px;
+
+				ul {
+					width: 100%;
+
+					li {
+						display: block;
+						width: 100%;
+						height: 30px;
+						margin-bottom: 20px;
+						font-size: 1.5em;
+						text-align: center;
+						line-height: 30px;
+						text-transform: uppercase;
+
+						a {
+							display: block;
+							background: $snowColor;
+							color: #000;
+						}
+					}
+				}
+			}
+			.selection-terrain {
+				width: 50%;
+				margin: 0 auto;
+
+				ul {
+					width: 100%;
+
+					li {
+						display: block;
+						width: 100%;
+						height: 30px;
+						margin-bottom: 20px;
+						font-size: 1.5em;
+						text-align: center;
+						line-height: 30px;
+						text-transform: uppercase;
+
+						a {
+							display: block;
+							background: $snowColor;
+							color: #000;
+						}
+					}
+				}
+			}
+		}
+		.bf-step-4 {
+			padding: 40px 0;
+
+			.product-filtering {
+				width: 100%;
+				display: table;
+				padding: 30px 20px 40px 20px;
+
+				li {
+					display: table-cell;
+					margin: 0;
+					width: 33.3333%;
+
+					&.left {
+						padding-right: 5px;
+					}
+					&.center {
+						padding: 0 5px;
+					}
+					&.right {
+						padding-left: 5px;
+					}
+				}
+			}
+			.product-listing {
+				.product-item {
+					float: left;
+					text-align: center;
+					padding-bottom: 40px;
+
+					a {
+						.product-img {
+							width: 100%;
+							max-width: 200%;
+							height: auto;
+						}
+						h5 {
+							display: inline-block;
+
+							&.board-length {
+								color: #FFF;
+							}
+						}
+					}
+				}
+			}
+			.why-link {
+				color: $snowColor;
+				display: block;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: 1.5em;
+			}
+		}
+		.bf-step-5 {
+			padding: 40px 20px;
+
+			h2 {
+				padding-bottom: 30px;
+			}
+			h3 {
+				padding-bottom: 20px;
+			}
+			.step-5-content-wrapper {
+				.selection-why {
+					ul {
+						width: 100%;
+						display: table;
+						padding-bottom: 30px;
+
+						li {
+							display: table-cell;
+							width: 33.3333%;
+							height: 30px;
+							font-size: 1.5em;
+							text-align: center;
+							line-height: 30px;
+							text-transform: uppercase;
+
+							&.left {
+								padding-right: 5px;
+							}
+							&.center {
+								padding: 0 5px;
+							}
+							&.right {
+								padding-left: 5px;
+							}
+							a {
+								display: block;
+								background: $snowColor;
+								color: #000;
+
+								&:hover,
+								&:focus {
+									color: $snowColor;
+									background-color: #000;
+									border: 1px solid $snowColor;
+									text-decoration: none;
+								}
+							}
+						}
+					}
+				}
+				.description-wrapper {
+					.description {
+						h4 {
+							color: $snowColor;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.board-finder {
+		.section-content {
+			.finder-step {
+				min-height: 380px;
+			}
+			.bf-step-1 {
+				background-size: 40%;
+				background-position: 90% bottom;
+
+				.step-1-left {
+					width: 50%;
+					margin: 0 20% 0 0;
+
+					h3 {
+						padding-bottom: 40px;
+					}
+					.selection-who {
+						width: 100%;
+						padding: 0 10%;
+					}
+				}
+			}
+			.bf-step-2 {
+				background-size: 55%;
+				background-position: 10% bottom;
+
+				.measurements-wrapper {
+					.selection-measurements-top {
+						width: 40%;
+						float: right;
+						margin: 0 5% 0 20%;
+
+						.weight-measurement {
+							padding: 30px 0 10px 0;
+						}
+						.height-measurement {
+							padding: 10px 0;
+						}
+					}
+					.selection-measurements-bottom {
+						width: 40%;
+						float: right;
+						margin: 0 5% 0 20%;
+
+						.boot-measurement {
+							padding: 10px 0;
+						}
+					}
+				}
+			}
+			.bf-step-3 {
+				background-size: 35%;
+				background-position: 90% bottom;
+
+				.selection-ability {
+					width: 40%;
+					margin-left: 20px;
+					padding-bottom: 60px;
+				}
+				.selection-terrain {
+					width: 40%;
+					margin-left: 20px;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.board-finder {
+		.section-content {
+			.finder-step {
+				min-height: 800px;
+
+				.quote-wrapper {
+					display: block;
+					width: 180px;
+
+					.quote-cite {
+						padding-left: 20px;
+					}
+				}
+			}
+			.bf-step-1 {
+				background-position: 105% bottom;
+				background-size: 575px;
+
+				.step-1-left {
+					width: 50%;
+					padding: 0 20px;
+					float: left;
+
+					h1 {
+						padding: 100px 0 60px 0;
+					}
+					h3 {
+						padding-bottom: 80px;
+					}
+					.selection-who {
+						width: 100%;
+						padding: 0;
+
+						ul {
+							display: table;
+
+							li {
+								display: table-cell;
+								width: 50%;
+
+								&.left {
+									padding-right: 5px;
+								}
+								&.right {
+								 	padding-left: 5px;
+								}
+							}
+						}	
+					}
+				}
+				.quote-wrapper {
+					padding: 60px 20px 0 0;
+					float: right;
+				}
+			}
+			.bf-step-2 {
+				background-size: 750px;
+				background-position: -70px bottom;
+
+				.quote-wrapper {
+					margin: 0 auto;
+					padding-top: 70px;
+				}
+				select {
+					width: 140px;
+				}
+				.button-next {
+					width: 140px;
+				}
+				.measurements-wrapper {
+					text-align: right;
+
+					.selection-measurements-top {
+						width: 100%;
+						margin: 0;
+						padding: 30px 20px 25px 0;
+
+						.measurement-type {
+							padding: 0 300px 20px 0;
+						}
+
+						.weight-measurement {
+							display: inline-block;
+							padding: 10px 60px 0 0;
+							text-align: left;
+						}
+						.height-measurement {
+							display: inline-block;
+							vertical-align: top;
+							text-align: left;
+
+							.height-us {
+								select {
+									float: left;
+
+									&.feet {
+										margin-right: 10px;
+									}
+								}
+							}
+							.height-metric {
+								padding-right: 150px;
+							}
+						}
+					}
+					.selection-measurements-bottom {
+						width: 100%;
+						margin: 0;
+						padding: 0 170px 40px 0;
+
+						.boot-measurement {
+							display: inline-block;
+							text-align: left;
+							padding-right: 60px;
+						}
+						.button-next {
+							padding-top: 40px;
+							display: inline-block;
+						}
+					}
+				}
+			}
+			.bf-step-3 {
+				background-size: 450px;
+				background-position: 125% bottom;
+
+				.quote-wrapper {
+					margin: 0 auto;
+					padding-top: 150px;
+				}
+				.selection-ability {
+					width: 55%;
+					margin-top: 50px;
+
+					ul {
+						display: table;
+
+						li {
+							display: table-cell;
+							width: 33.3333%;
+
+							&.left {
+								padding-right: 10px;
+							}
+							&.right {
+								padding-left: 10px;
+							}
+						}
+					}
+				}
+				.selection-terrain {
+					width: 55%;
+
+					ul {
+						display: table;
+
+						li {
+							display: table-cell;
+							width: 33.3333%;
+
+							&.left {
+								padding-right: 10px;
+							}
+							&.right {
+								padding-left: 10px;
+							}
+						}
+					}
+				}
+			}
+			.bf-step-4 {
+				h2 {
+					text-align: left;
+					float: left;
+					padding-left: 20px;
+				}
+				.product-filtering {
+					width: 50%;
+					float: right;
+					padding-top: 0;
+				}
+				.board-picks {
+					.product-listing {
+						clear: both;
+
+						.product-item {
+							width: 50%;
+						}
+					}
+				}
+				.why-link {
+					clear: both;
+				}
+			}
+			.bf-step-5 {
+				position: relative;
+
+				.description-image-wrapper {
+					position: absolute;
+					min-height: 800px;
+					width: 100%;
+					top: 0;
+					left: 0;
+
+					.description-image-list {
+						li {
+							width: 100%;
+							min-height: 800px;
+
+							&.length {
+								background: url(../img/board-finder/bf-length.png) -160px bottom no-repeat;
+								background-size: 540px;
+							}
+						}
+					}
+				}
+				.step-5-content-wrapper {
+					width: 57%;
+					float: right;
+					position: relative;
+					z-index: 2;
+					padding: 115px 0 0 0;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: 900px) {
+	.board-finder {
+		.section-content {
+			.bf-step-1 {
+				background-position: 100% bottom;
+
+				.quote-wrapper {
+					width: 200px;
+					padding: 60px 40px 0 0;
+				}
+			}
+			.bf-step-2 {
+				background-position: -15px bottom;
+
+				select {
+					width: 160px;
+				}
+				.measurements-wrapper {
+					.selection-measurements-top {
+						.measurement-type {
+							padding-right: 360px;
+						}
+						.height-measurement {
+							.height-metric {
+								padding-right: 170px;
+							}
+						}
+					}
+					.selection-measurements-bottom {
+						padding-right: 190px;
+
+						.button-next {
+							width: 160px;
+						}
+					}
+				}
+			}
+			.bf-step-3 {
+				background-position: 110% bottom;
+
+				.selection-ability {
+					width: 450px;
+				}
+				.selection-terrain {
+					width: 450px;
+				}
+			}
+			.bf-step-5 {
+				.description-image-wrapper {
+					.description-image-list {
+						li {
+							&.length {
+								background-position: -30px bottom;
+							}
+						}
+					}
+				}
+				.step-5-content-wrapper {
+					width: 50%;
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.board-finder {
+		.section-content {
+			max-width: $breakpoint-xlarge;
+			margin: 0 auto;
+
+			.bf-step-1 {
+				background-position: 80% bottom;
+
+				.step-1-left {
+					width: 400px;
+					padding: 0 0 0 20px;
+				}
+				.quote-wrapper {
+					padding: 60px 0 0 0;
+				}
+			}
+			.bf-step-2 {
+				background-position: 20px bottom;
+			}
+			.bf-step-3 {
+				background-position: 97% bottom;
+			}
+			.bf-step-5 {
+				.description-image-wrapper {
+					.description-image-list {
+						li {
+							&.length {
+								background-position: 20px bottom;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.board-finder {
+		.section-content {
+			.finder-step {
+				h3 {
+					span {
+						display: inline;
+						padding-left: 8px;
+					}
+				}
+			}
+		}
+	}
+}

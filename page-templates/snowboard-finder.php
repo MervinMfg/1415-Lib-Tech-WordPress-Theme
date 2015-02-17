@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Board Finder
+Template Name: Snowboard Finder
 */
 get_header();
 ?>

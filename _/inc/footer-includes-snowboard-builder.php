@@ -5,7 +5,7 @@
         if ($host == 'localhost' || $host == 'libtech.dev' || $host == 'libtech1415.staging.wpengine.com') {
             // we're on dev, so include the JavaScript individually for easier debugging
             include 'footer-scripts.php';
-            include 'footer-scripts-diy-builder.php';
+            include 'footer-scripts-snowboard-builder.php';
         } else {
             // include script version for file versioning on production environment
             include_once 'script-version.php';

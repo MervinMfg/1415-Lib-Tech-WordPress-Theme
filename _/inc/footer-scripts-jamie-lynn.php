@@ -5,4 +5,4 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/GSAP/plugins/ScrollToPlugin.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.scrollmagic-1.3.0.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/froogaloop.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.jamielynn.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.jamie-lynn.js"></script>
