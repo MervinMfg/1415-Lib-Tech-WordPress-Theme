@@ -28,6 +28,9 @@
 		.int-cart-details {
 			display: none;
 		}
+		.eu-cart-details {
+			display: none;
+		}
 	}
 }
 body.international .shopping-cart .section-content {
@@ -35,6 +38,20 @@ body.international .shopping-cart .section-content {
 		display: none;
 	}
 	.int-cart-details {
+		display: block;
+	}
+	.eu-cart-details {
+		display: none;
+	}
+}
+body.currency-eur .shopping-cart .section-content {
+	.us-ca-cart-details {
+		display: none;
+	}
+	.int-cart-details {
+		display: none;
+	}
+	.eu-cart-details {
 		display: block;
 	}
 }
