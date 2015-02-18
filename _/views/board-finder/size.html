@@ -5,41 +5,53 @@
 		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
 	</div>
 	<div class="measurements-wrapper clearfix">
-		<div class="selection-measurements-top">
-			<div class="measurement-type">
-				<input type="radio" name="measurement" id="size-imperial" value="imperial" ng-model="config.measurement" /><label for="size-imperial">US</label>
-				<input type="radio" name="measurement" id="size-metric" value="metric" ng-model="config.measurement" /><label for="size-metric">Metric</label>
-			</div>
-			<div class="weight-measurement">
-				<h4>Weight: {{user.weight}} lbs</h4>
-				<div class="weight-us" ng-show="config.measurement == 'imperial'">
-					<select id="select-weight-us" class="select" ng-model="inputWeight.lbs" ng-options="weight.value as weight.label for weight in weightImperial" ng-change="changeWeight()"></select>
-				</div><!-- .weight-us -->
-				<div class="weight-metric" ng-show="config.measurement == 'metric'">
-					<select id="select-weight-metric" class="select" ng-model="inputWeight.kg" ng-options="weight.value as weight.label for weight in weightMetric" ng-change="changeWeight()"></select>
-				</div><!-- .weight-metric -->
-			</div> <!-- .weight-measurement -->
-			<div class="height-measurement">
-				<h4>Height: {{user.height}} inches</h4>
-				<div class="height-us" ng-show="config.measurement == 'imperial'">
-					<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()"></select>
-					<select id="select-height-inches-us" class="select inches" ng-model="inputHeight.inches" ng-options="height.value as height.label for height in heightInches" ng-change="changeHeight()"></select>
-				</div><!-- .height-us -->
-				<div class="height-metric" ng-show="config.measurement == 'metric'">
-					<select id="select-height-metric" class="select" ng-model="inputHeight.cm" ng-options="height.value as height.label for height in heightMetric" ng-change="changeHeight()"></select>
-				</div><!-- .height-metric -->
-			</div><!-- .height-measurement -->
-		</div><!-- .selection-measurements-top -->
-		<div class="selection-measurements-bottom">
-			<div class="boot-measurement">
-				<h4>Boot: {{user.bootSize}}</h4>
-				<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes"></select>
-			</div><!-- .boot-measurement -->
-			<div class="button-next">
-				<a href="#/style/" class="bf-button">Next</a>
-			</div>
-
-			<p>Measurement</p>
-		</div><!-- .selection-measurements-bottom -->
+		<form name="measurementsForm" class="measurements-form" role="form" ng-submit="measurementsForm.$valid && setSize()" novalidate>
+			<div class="selection-measurements-top">
+				<div class="measurement-type">
+					<input type="radio" id="size-imperial" value="imperial" ng-model="config.measurement" /><label for="size-imperial">US</label>
+					<input type="radio" id="size-metric" value="metric" ng-model="config.measurement" /><label for="size-metric">Metric</label>
+				</div>
+				<div class="weight-measurement">
+					<h4>Weight: {{user.weight}} lbs</h4>
+					<div class="weight-us" ng-show="config.measurement == 'imperial'">
+						<select id="select-weight-us" class="select" ng-model="inputWeight.lbs" ng-options="weight.value as weight.label for weight in weightImperial" ng-change="changeWeight()" required-select required>
+							<option value="" label="Pounds">Pounds</option>
+						</select>
+					</div><!-- .weight-us -->
+					<div class="weight-metric" ng-show="config.measurement == 'metric'">
+						<select id="select-weight-metric" class="select" ng-model="inputWeight.kg" ng-options="weight.value as weight.label for weight in weightMetric" ng-change="changeWeight()" required-select required>
+							<option value="" label="Kilograms">Kilograms</option>
+						</select>
+					</div><!-- .weight-metric -->
+				</div> <!-- .weight-measurement -->
+				<div class="height-measurement">
+					<h4>Height: {{user.height}} inches</h4>
+					<div class="height-us" ng-show="config.measurement == 'imperial'">
+						<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()" required-select required>
+							<option value="" label="Feet">Feet</option>
+						</select>
+						<select id="select-height-inches-us" class="select inches" ng-model="inputHeight.inches" ng-options="height.value as height.label for height in heightInches" ng-change="changeHeight()" required-select required>
+							<option value="" label="Inches">Inches</option>
+						</select>
+					</div><!-- .height-us -->
+					<div class="height-metric" ng-show="config.measurement == 'metric'">
+						<select id="select-height-metric" class="select" ng-model="inputHeight.cm" ng-options="height.value as height.label for height in heightMetric" ng-change="changeHeight()" required-select required>
+							<option value="" label="Centimeters">Centimeters</option>
+						</select>
+					</div><!-- .height-metric -->
+				</div><!-- .height-measurement -->
+			</div><!-- .selection-measurements-top -->
+			<div class="selection-measurements-bottom">
+				<div class="boot-measurement">
+					<h4>Boot: {{user.bootSize}}</h4>
+					<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes" required-select required>
+						<option value="" label="Size">Size</option>
+					</select>
+				</div><!-- .boot-measurement -->
+				<div class="button-next">
+					<button type="submit" class="bf-button" ng-disabled="measurementsForm.$invalid">Next</button><!-- href="#/style/" -->
+				</div>
+			</div><!-- .selection-measurements-bottom -->
+		</form><!-- .measurements-form -->
 	</div><!-- measurements-wrapper -->
 </div><!-- .bf-step-2 -->
