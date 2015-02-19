@@ -1253,7 +1253,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post .section-content .post .entry-content p { margin-bottom: 1.25em; }
 .blog-post .section-content .post .entry-content > p:first-of-type { font-weight: bold; }
 .blog-post .section-content .post .entry-content > p:first-of-type:first-letter { text-transform: uppercase; float: left; font-size: 4.65em; color: #fff; line-height: .8em; padding-right: 8px; }
-.blog-post .section-content .post .entry-content img { max-width: 100% !important; width: auto !important; height: auto !important; }
+.blog-post .section-content .post .entry-content img { width: auto !important; height: auto !important; }
 .blog-post .section-content .post .entry-content img.alignleft, .blog-post .section-content .post .entry-content img.alignright, .blog-post .section-content .post .entry-content img.aligncenter { display: block; margin-right: auto; margin-left: auto; padding-bottom: 20px; }
 .blog-post .section-content .post .entry-content blockquote { text-align: center; font-size: 1.3em; font-weight: bold; font-style: italic; color: #fff; }
 .blog-post .section-content .post .entry-content .wp-caption { width: auto !important; }
@@ -1261,7 +1261,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .blog-post .section-content .post .entry-content .wp-caption.alignleft, .blog-post .section-content .post .entry-content .wp-caption.alignright, .blog-post .section-content .post .entry-content .wp-caption.aligncenter { text-align: center; }
 .blog-post .section-content .post .entry-content .fluid-width-video-wrapper { clear: both; }
 .blog-post .section-content .post .entry-content iframe.strobbr { width: 100%; }
-.blog-post .section-content .post .entry-content ol, .blog-post .section-content .post .entry-content ul { padding: 0 0 20px 40px; clear: both; }
+.blog-post .section-content .post .entry-content ol, .blog-post .section-content .post .entry-content ul { padding: 0 0 20px 40px; display: table; }
 .blog-post .section-content .post .entry-content ul { list-style: square; }
 .blog-post .section-content .post .entry-content .strobbr-list { padding: 0 0 20px 0; }
 .blog-post .section-content .post .entry-categories-tags { margin-bottom: 20px; clear: both; }

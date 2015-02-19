@@ -155,7 +155,6 @@
 					}
 				}
 				img {
-					max-width: 100% !important;
 					width: auto !important;
 					height: auto !important;
 
@@ -195,7 +194,7 @@
 				}
 				ol, ul {
 					padding: 0 0 20px 40px;
-					clear: both;
+					display: table;
 				}
 				ul {
 					list-style: square;
