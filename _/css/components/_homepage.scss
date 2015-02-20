@@ -65,6 +65,14 @@
 		}
 	}
 }
+.skate .homepage-posts .homepage-post .post-wrapper{
+	a:hover .post-title,
+	a:focus .post-title,
+	a:hover .post-meta time,
+	a:focus .post-meta time {
+		color: $skateColor;
+	}
+} 
 .homepage-sports-top,
 .homepage-links-top {
 	display: none;

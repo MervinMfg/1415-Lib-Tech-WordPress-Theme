@@ -21,7 +21,7 @@
 								<img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
 								<h3 class="post-title"><?php the_title(); ?></h3>
 								<p class="post-meta">
-									<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span><fb:comments-count href=<?php the_permalink() ?>></fb:comments-count> Comments</span>
+									<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span class="shares"></span>
 								</p>
 								<p class="post-excerpt"><?php echo libtech_excerpt('libtech_excerptlength_home'); ?></p>
 								<p class="post-more">READ MORE</p>

@@ -624,6 +624,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .homepage-posts .homepage-post .post-wrapper a:hover .post-meta, .homepage-posts .homepage-post .post-wrapper a:focus .post-meta { color: #FFFF00; }
 .homepage-posts .homepage-post .post-wrapper a:hover .post-more, .homepage-posts .homepage-post .post-wrapper a:focus .post-more { text-decoration: underline; }
 
+.skate .homepage-posts .homepage-post .post-wrapper a:hover .post-title, .skate .homepage-posts .homepage-post .post-wrapper a:focus .post-title, .skate .homepage-posts .homepage-post .post-wrapper a:hover .post-meta time, .skate .homepage-posts .homepage-post .post-wrapper a:focus .post-meta time { color: #66CC00; }
+
 .homepage-sports-top, .homepage-links-top { display: none; }
 
 .homepage-sports, .homepage-links { padding-left: 10px; padding-right: 10px; display: none; }
@@ -1746,6 +1748,12 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
 .content-grid .grid-item.product:nth-child(even) .grid-item-wrapper .item-link { background-image: url("../img/bg-grid-item-wood.jpg"); }
 .content-grid .grid-item.team .grid-item-wrapper .item-link img { float: left; width: 100%; }
 .content-grid .grid-item.blog.item-1, .content-grid .grid-item.blog.item-2, .content-grid .grid-item.blog.item-3, .content-grid .grid-item.blog.item-4, .content-grid .grid-item.blog.item-5, .content-grid .grid-item.facebook.item-1, .content-grid .grid-item.facebook.item-2, .content-grid .grid-item.instagram.item-1, .content-grid .grid-item.instagram.item-2, .content-grid .grid-item.product.item-1, .content-grid .grid-item.product.item-2, .content-grid .grid-item.team.item-1, .content-grid .grid-item.team.item-2, .content-grid .grid-item.faq.item-0, .content-grid .grid-item.faq.item-1 { display: none; }
+
+.ski .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 { color: #0099FF; }
+
+.skate .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 { color: #66CC00; }
+
+.surf .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 { color: #FF6600; }
 
 @media screen and (min-width: 600px) { .whats-new .section-content h2 { float: left; }
   .whats-new .section-content .social-links { float: right; clear: none; }

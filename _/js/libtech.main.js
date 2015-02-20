@@ -224,6 +224,7 @@ LIBTECH.main = {
 			infiniteLoop: false,
 			hideControlOnEnd: true
 		});
+		self.utilities.getBlogShares();
 	},
 	homeSportInit: function () {
 		var self, slideWidth, slideMargin, currencyCookie;
@@ -264,6 +265,7 @@ LIBTECH.main = {
 		});
 		// render social content grid
 		new LIBTECH.ContentGrid();
+		self.utilities.getBlogShares();
 	},
 	productOverviewInit: function () {
 		new LIBTECH.ProductOverview();
@@ -288,6 +290,8 @@ LIBTECH.main = {
 		self.faqsInit();
 	},
 	blogInit: function () {
+		var self, fblikes, postUrl;
+		self = this;
 		// CATEGORY TREE VIEW ON BLOG PAGES
 		$(".widget_mycategoryorder ul").treeview({
 			persist: "location",
@@ -300,6 +304,7 @@ LIBTECH.main = {
 				$clamp(this, {clamp: '3', splitOnChars: ['.', ',', ' ']});
 			}
 		});
+		self.utilities.getBlogShares();
 	},
 	blogSingleInit: function () {
 		new LIBTECH.BlogSingle();
@@ -445,6 +450,7 @@ LIBTECH.main = {
 			infiniteLoop: false,
 			hideControlOnEnd: true
 		});
+		self.utilities.getBlogShares();
 	},
 	stormFactoryInit: function () {
 		var self = this;
@@ -546,6 +552,26 @@ LIBTECH.main = {
 				}
 			}
 			return i;
+		},
+		getBlogShares: function () {
+			$('.post-wrapper a, .grid-item a').each(function( index ) {
+				var $this, postUrl, fbShares;
+				$this = $(this);
+				postUrl = $(this).attr('href');
+				$.getJSON('http://graph.facebook.com/?ids=' + postUrl, function(data){
+					var numberOfShares = data[postUrl].shares;
+					if(typeof numberOfShares !== 'undefined') {
+						if (numberOfShares == '1') {
+							$this.find('.post-meta .shares, .meta .shares').html(numberOfShares + " Share");
+						}
+						else {
+							$this.find('.post-meta .shares, .meta .shares').html(numberOfShares + " Shares");
+						}
+					} else {
+						$this.find('.post-meta .shares, .meta .shares').html("0 Shares");
+					}
+				});
+			});
 		},
 		featuredSliderInit: function (autoRotate) {
 			autoRotate = typeof autoRotate !== 'undefined' ? autoRotate : true;
