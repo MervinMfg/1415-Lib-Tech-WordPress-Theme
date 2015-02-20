@@ -349,6 +349,7 @@ LIBTECH.main = {
 		$('.video-thumbnails li a:first').click();
 		// make video fit within target
 		$('.video-player .frame-wrapper').fitVids();
+		self.utilities.getBlogShares();
 	},
 	partnersInit: function () {
 		$('.partners .entry-content .partner-entry .partner-images').magnificPopup({
