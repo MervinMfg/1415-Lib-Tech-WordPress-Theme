@@ -69,7 +69,7 @@
 								<a href="<?php the_permalink() ?>" class="item-link">
 									<div class="blog-copy">
 										<p class="h3"><?php the_title(); ?></p>
-										<p class="meta"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <fb:comments-count href=<?php the_permalink() ?>></fb:comments-count> Comments</p>
+										<p class="meta"><time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span class="shares"></span></p>
 										<p class="excerpt"><?php libtech_excerpt('libtech_excerptlength_home'); ?></p>
 									</div>
 									<div class="blog-image">

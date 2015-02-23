@@ -117,7 +117,7 @@ LIBTECH.BlogSingle.prototype = {
 					width: '100%'
 				});
 			}
-		} else {
+		} else if (postWrapperHeight > windowHeight) {
 			// if post is shorter, do this
 			if (windowScrollTop + windowHeight > sidebar.offset().top + postWrapperHeight) {
 				// we've reached the bottom of the post, so anchor it

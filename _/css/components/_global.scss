@@ -136,7 +136,7 @@ body {
 			}
 			ul {
 				list-style: square;
-				margin-left: 20px;
+				margin: 0 0 10px 20px;
 
 				li {
 					margin-bottom: 5px;
@@ -144,6 +144,9 @@ body {
 					font-size: .875em; /* 14 / 16 */
 				    line-height: 1.32;
 				}
+			}
+			a {
+				color: #000;
 			}
 			.entry-share {
 				list-style: none;

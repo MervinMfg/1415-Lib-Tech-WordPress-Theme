@@ -28,8 +28,9 @@
 					width: 100%;
 				}
 				.post-title {
-					padding-bottom: 10px;
+					margin-bottom: 10px;
 					word-wrap: break-word;
+					line-height: 1.05;
 				}
 				.post-meta {
 					padding-bottom: 10px;
@@ -154,7 +155,6 @@
 					}
 				}
 				img {
-					max-width: 100% !important;
 					width: auto !important;
 					height: auto !important;
 
@@ -194,7 +194,7 @@
 				}
 				ol, ul {
 					padding: 0 0 20px 40px;
-					clear: both;
+					display: table;
 				}
 				ul {
 					list-style: square;

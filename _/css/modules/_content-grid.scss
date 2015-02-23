@@ -261,6 +261,15 @@
 		}
 	}
 }
+.ski .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 {
+	color: $skiColor;
+}
+.skate .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 {
+	color: $skateColor;
+}
+.surf .content-grid .grid-item .grid-item-wrapper .item-link .item-copy .h3 {
+	color: $surfColor;
+}
 @media screen and (min-width: $breakpoint-small) {
 	.whats-new {
 		.section-content {
