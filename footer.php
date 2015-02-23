@@ -52,9 +52,9 @@
 						<li class="location-item">
 							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/slovakia.gif" alt="Slovakia Flag" />Slovakia <span>(EUR)</span></a></p>
 						</li>
-						<li class="location-item">
+						<!-- <li class="location-item">
 							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/switzerland.gif" alt="Switzerland Flag" />Switzerland <span>(EUR)</span></a></p>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 				<div class="location-group international">
