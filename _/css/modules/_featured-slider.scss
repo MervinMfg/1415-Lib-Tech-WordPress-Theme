@@ -10,7 +10,6 @@
 		overflow: hidden;
 
 		.slider-wrapper {
-			width: 128.875%;
 			width: 140.597539543058%;
 			margin-left: -20.298769771529%;
 			// before bxslider is rendered
@@ -81,6 +80,25 @@
 				.bx-controls {
 					margin-left: 0;
 				}
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.featured-slider {
+		.section-content {
+			.slider-wrapper {
+				width: 80%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+@media screen and (min-width: 1441px) {
+	.featured-slider {
+		.section-content {
+			.slider-wrapper {
+				width: 100%;
 			}
 		}
 	}
