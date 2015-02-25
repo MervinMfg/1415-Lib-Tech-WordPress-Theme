@@ -8,7 +8,7 @@ get_header();
         <section class="overview-wrapper bg2">
             <div class="section-content">
                 <div class="overview-header">
-                    <h1>Lib Tech Rippers</h1>
+                    <h1><?php the_title(); ?></h1>
                     <?php the_content(); ?>
                 </div>
                 <div class="overview-section-wrapper">
@@ -23,7 +23,7 @@ get_header();
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-snow.jpg" alt="Lib Tech Snowboard Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View Snow Rippers</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -44,7 +44,7 @@ get_header();
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-ski.jpg" alt="Lib Tech Ski Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View NAS Rippers</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -65,7 +65,7 @@ get_header();
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-surf.jpg" alt="Lib Tech Surf Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="http://www.libtechwaterboarding.com/technology/" target="_blank">View Surf Rippers</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -86,7 +86,7 @@ get_header();
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-skate.jpg" alt="Lib Tech Skateboard Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View Skate Rippers</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
