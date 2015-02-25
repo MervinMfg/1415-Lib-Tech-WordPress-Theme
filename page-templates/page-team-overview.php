@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Technology Overview
+Template Name: Team Overview
 */
 get_header();
 ?>
@@ -8,23 +8,22 @@ get_header();
         <section class="overview-wrapper bg2">
             <div class="section-content">
                 <div class="overview-header">
-                    <h1><?php the_title(); ?></h1>
+                    <h1>Lib Tech Rippers</h1>
                     <?php the_content(); ?>
                 </div>
                 <div class="overview-section-wrapper">
-                
                     <?php
-                    $techPage = new WP_Query();
-                    $techPage->query('page_id=18914'); // snowboarding
-                    while ($techPage->have_posts()) : $techPage->the_post();
+                    $teamPage = new WP_Query();
+                    $teamPage->query('page_id=17841'); // snowboarding
+                    while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
                     <div class="overview-sport">
                         <h3><?php the_title(); ?></h3>
-                        <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-snow.jpg" alt="Lib Tech Snowboard Technology" />
+                        <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-snow.jpg" alt="Lib Tech Snowboard Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View More</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View Snow Rippers</a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -35,17 +34,17 @@ get_header();
                     ?>
 
                     <?php
-                    $techPage = new WP_Query();
-                    $techPage->query('page_id=18916'); // skiing
-                    while ($techPage->have_posts()) : $techPage->the_post();
+                    $teamPage = new WP_Query();
+                    $teamPage->query('page_id=18923'); // skiing
+                    while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
                     <div class="overview-sport">
                         <h3><?php the_title(); ?></h3>
-                        <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-ski.jpg" alt="Lib Tech Ski Technology" />
+                        <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-ski.jpg" alt="Lib Tech Ski Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View More</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View NAS Rippers</a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -56,17 +55,17 @@ get_header();
                     ?>
 
                     <?php
-                    $techPage = new WP_Query();
-                    $techPage->query('page_id=18918'); // surfing
-                    while ($techPage->have_posts()) : $techPage->the_post();
+                    $teamPage = new WP_Query();
+                    $teamPage->query('page_id=18927'); // surfing
+                    while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
                     <div class="overview-sport">
                         <h3><?php the_title(); ?></h3>
-                        <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-surf.jpg" alt="Lib Tech Surf Technology" />
+                        <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-surf.jpg" alt="Lib Tech Surf Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="http://www.libtechwaterboarding.com/technology/" target="_blank">View More</a></p>
+                            <p class="overview-link"><a href="http://www.libtechwaterboarding.com/technology/" target="_blank">View Surf Rippers</a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -77,17 +76,17 @@ get_header();
                     ?>
 
                     <?php
-                    $techPage = new WP_Query();
-                    $techPage->query('page_id=18912'); // skateboarding
-                    while ($techPage->have_posts()) : $techPage->the_post();
+                    $teamPage = new WP_Query();
+                    $teamPage->query('page_id=18925'); // skateboarding
+                    while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
                     <div class="overview-sport">
                         <h3><?php the_title(); ?></h3>
-                        <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-skate.jpg" alt="Lib Tech Skateboard Technology" />
+                        <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-skate.jpg" alt="Lib Tech Skateboard Team" />
                         <div class="overview-copy">
                             <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View More</a></p>
+                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View Skate Rippers</a></p>
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -98,8 +97,7 @@ get_header();
                     ?>
                 </div><!-- .overview-section-wrapper -->
                 <div class="clearfix"></div>
-
             </div><!-- END .section-content -->
-        </section><!-- END .overview-wrapper technology -->
+        </section><!-- END .team-overview -->
 
 <?php get_footer(); ?>
