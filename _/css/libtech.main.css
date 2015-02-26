@@ -1637,18 +1637,16 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .error404 .section-content .img-center-container img { width: 286.4px; }
   .error404 .section-content .img-right-container img { width: 1032.8px; } }
 /* ========================================================================== COMPONENTS/_SUPPORT.SCSS ========================================================================== */
-.contact-content .contact-copy { padding-bottom: 20px; max-width: 980px; }
-.contact-content .contact-left .contact-form { margin-left: -5px; }
+.support .section-content { padding: 0 20px; }
+.support .section-content h1 { margin-bottom: 20px; }
+.support .section-content p { margin-bottom: 10px; }
+.support .section-content .support-content .support-copy { padding-bottom: 20px; }
+.support .section-content .support-content .support-left .support-form { margin-left: -5px; }
 
-.warranty-content .warranty-copy { padding-bottom: 20px; max-width: 980px; }
-.warranty-content .warranty-left .warranty-form { margin-left: -5px; }
-
-.register-content .register-copy { padding-bottom: 20px; max-width: 980px; }
-.register-content .register-left .register-form { margin-left: -5px; }
-
-@media screen and (min-width: 980px) { .contact-content .contact-left .contact-form { max-width: 980px; }
-  .warranty-content .warranty-left .warranty-form { max-width: 980px; }
-  .register-content .register-left .register-form { max-width: 980px; } }
+@media screen and (min-width: 768px) { .support .section-content .support-content { width: 90%; margin: 0 auto; } }
+@media screen and (min-width: 980px) { .support .section-content .support-content { width: 75%; } }
+@media screen and (min-width: 1200px) { .support .section-content .entry-header { width: 25%; float: left; }
+  .support .section-content .support-content { width: 50%; float: left; padding-top: 20px; } }
 /* ========================================================================== COMPONENTS/_OVERVIEW.SCSS ========================================================================== */
 .overview-wrapper .section-content { padding: 0 20px; }
 .overview-wrapper .section-content .overview-header { margin-bottom: 20px; }
@@ -1663,7 +1661,7 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .overview-wrapper .section-content .overview-section-wrapper .overview-sport .overview-copy { width: 100%; }
   .overview-wrapper .section-content .overview-section-wrapper .overview-sport .overview-copy h3 { font-size: 1.375em; } }
 @media screen and (min-width: 768px) { .overview-wrapper .section-content .overview-section-wrapper { width: 90%; margin: 0 auto; } }
-@media screen and (min-width: 980px) { .overview-wrapper .section-content .overview-section-wrapper { width: 75%; margin: 0 auto; } }
+@media screen and (min-width: 980px) { .overview-wrapper .section-content .overview-section-wrapper { width: 75%; } }
 @media screen and (min-width: 1200px) { .overview-wrapper .section-content .overview-header { width: 25%; float: left; }
   .overview-wrapper .section-content .overview-section-wrapper { width: 50%; float: left; padding-top: 20px; } }
 /* ========================================================================== MODULES/_FEATURED-SLIDER.SCSS ========================================================================== */
