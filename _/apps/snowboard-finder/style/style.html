@@ -1,0 +1,23 @@
+<div class="finder-step bf-step-3">
+	<a href="#/size/" class="back-button">< Back</a>
+	<div class="quote-wrapper">
+		<blockquote>"The width of your feet best determines how wide of a snowboard that you need."</blockquote>
+		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
+	</div>
+	<div class="selection-ability">
+		<h4>What's your ability</h4>
+		<ul class="button-list">
+			<li class="list-item left"><button class="bf-button" ng-click="setAbility('Starter')" ng-class="{'selected': getAbility() == 'Starter'}">Starter</button></li>
+			<li class="list-item center"><button class="bf-button" ng-click="setAbility('Middle')" ng-class="{'selected': getAbility() == 'Middle'}">Middle</button></li>
+			<li class="list-item right"><button class="bf-button" ng-click="setAbility('Top')" ng-class="{'selected': getAbility() == 'Top'}">Top</button></li>
+		</ul>
+	</div><!-- .selection-ability -->
+	<div class="selection-terrain">
+		<h4>What do you ride?</h4>
+		<ul class="button-list">
+			<li class="list-item left"><button class="bf-button" ng-click="setTerrain('Freestyle')" ng-class="{'selected': getTerrain() == 'Freestyle'}">Freestyle</button></li>
+			<li class="list-item center"><button class="bf-button" ng-click="setTerrain('Freeride')" ng-class="{'selected': getTerrain() == 'Freeride'}">Freeride</button></li>
+			<li class="list-item right"><button class="bf-button" ng-click="setTerrain('Powder')" ng-class="{'selected': getTerrain() == 'Powder'}">Powder</button></li>
+		</ul>
+	</div><!-- .selection-terrain -->
+</div><!-- .bf-step-3 -->

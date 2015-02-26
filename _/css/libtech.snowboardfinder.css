@@ -10,18 +10,16 @@
 .board-finder .section-content .finder-step h3 span { display: block; }
 .board-finder .section-content .finder-step h4 { color: #fff; font-size: 1.25em; padding-bottom: 10px; }
 .board-finder .section-content .finder-step p { padding-bottom: 20px; }
-.board-finder .section-content .finder-step a.bf-button { height: 40px; line-height: 40px; border: 1px solid #000; color: #000; background-color: #FFFF00; }
-.board-finder .section-content .finder-step a.bf-button:hover, .board-finder .section-content .finder-step a.bf-button:focus { color: #FFFF00; background-color: #000; border: 1px solid #FFFF00; text-decoration: none; }
 .board-finder .section-content .finder-step select { border: 1px solid #000; }
 .board-finder .section-content .finder-step .quote-wrapper { display: none; }
+.board-finder .section-content .finder-step .bf-button { height: 40px; width: 100%; line-height: 40px; border: 1px solid #000; color: #000; background-color: #FFFF00; font-style: italic; font-size: 1.5em; font-family: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif; display: block; text-transform: uppercase; padding: 0; margin: 0; cursor: pointer; }
+.board-finder .section-content .finder-step .bf-button:hover, .board-finder .section-content .finder-step .bf-button:focus, .board-finder .section-content .finder-step .bf-button.selected { color: #FFFF00; background-color: #000; border: 1px solid #FFFF00; text-decoration: none; }
+.board-finder .section-content .finder-step .button-list { width: 100%; }
+.board-finder .section-content .finder-step .button-list .list-item { display: block; width: 100%; height: 40px; margin-bottom: 10px; text-align: center; line-height: 30px; }
 .board-finder .section-content .bf-step-1 { background: url(../img/board-finder/bf-step-1-kraftsman.png) 125% bottom no-repeat; background-size: 65%; padding: 40px 0; }
 .board-finder .section-content .bf-step-1 .step-1-left h1 { padding-bottom: 30px; }
 .board-finder .section-content .bf-step-1 .step-1-left h3 { padding-bottom: 80px; }
 .board-finder .section-content .bf-step-1 .step-1-left .selection-who { width: 50%; margin: 0 auto; }
-.board-finder .section-content .bf-step-1 .step-1-left .selection-who ul { width: 100%; }
-.board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li { display: block; width: 100%; height: 40px; margin-bottom: 10px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
-.board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li a { display: block; background: #FFFF00; color: #000; }
-.board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li a:hover, .board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li a:focus { color: #FFFF00; background-color: #000; border: 1px solid #FFFF00; text-decoration: none; }
 .board-finder .section-content .bf-step-2 { background: url(../img/board-finder/bf-step-2-kraftsman.png) -20% bottom no-repeat; background-size: 80%; padding: 40px 0; }
 .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top { width: 50%; margin: 0 auto; }
 .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .measurement-type input { margin-right: 10px; }
@@ -30,17 +28,10 @@
 .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .height-measurement { padding-bottom: 40px; }
 .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom { width: 50%; margin: 0 auto; }
 .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .boot-measurement { padding-bottom: 40px; }
-.board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-next a { width: 100%; height: 40px; display: block; background: #FFFF00; color: #000; line-height: 40px; font-size: 1.5em; text-align: center; }
-.board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-next a:hover, .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-next a:focus { color: #FFFF00; background-color: #000; border: 1px solid #FFFF00; text-decoration: none; }
+.board-finder .section-content .bf-step-2 .ng-submitted .ng-invalid { color: red; }
 .board-finder .section-content .bf-step-3 { background: url(../img/board-finder/bf-step-3-kraftsman.png) 130% bottom no-repeat; background-size: 50%; padding: 40px 0; }
 .board-finder .section-content .bf-step-3 .selection-ability { width: 50%; margin: 0 auto; padding-bottom: 30px; }
-.board-finder .section-content .bf-step-3 .selection-ability ul { width: 100%; }
-.board-finder .section-content .bf-step-3 .selection-ability ul li { display: block; width: 100%; height: 30px; margin-bottom: 20px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
-.board-finder .section-content .bf-step-3 .selection-ability ul li a { display: block; background: #FFFF00; color: #000; }
 .board-finder .section-content .bf-step-3 .selection-terrain { width: 50%; margin: 0 auto; }
-.board-finder .section-content .bf-step-3 .selection-terrain ul { width: 100%; }
-.board-finder .section-content .bf-step-3 .selection-terrain ul li { display: block; width: 100%; height: 30px; margin-bottom: 20px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
-.board-finder .section-content .bf-step-3 .selection-terrain ul li a { display: block; background: #FFFF00; color: #000; }
 .board-finder .section-content .bf-step-4 { padding: 40px 0; }
 .board-finder .section-content .bf-step-4 .product-filtering { width: 100%; display: table; padding: 30px 20px 40px 20px; }
 .board-finder .section-content .bf-step-4 .product-filtering li { display: table-cell; margin: 0; width: 33.3333%; }
@@ -55,13 +46,11 @@
 .board-finder .section-content .bf-step-5 { padding: 40px 20px; }
 .board-finder .section-content .bf-step-5 h2 { padding-bottom: 30px; }
 .board-finder .section-content .bf-step-5 h3 { padding-bottom: 20px; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul { width: 100%; display: table; padding-bottom: 30px; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li { display: table-cell; width: 33.3333%; height: 30px; font-size: 1.5em; text-align: center; line-height: 30px; text-transform: uppercase; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li.left { padding-right: 5px; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li.center { padding: 0 5px; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li.right { padding-left: 5px; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li a { display: block; background: #FFFF00; color: #000; }
-.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li a:hover, .board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why ul li a:focus { color: #FFFF00; background-color: #000; border: 1px solid #FFFF00; text-decoration: none; }
+.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why .button-list { display: table; padding-bottom: 30px; }
+.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why .button-list .list-item { display: table-cell; width: 33.3333%; }
+.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why .button-list .list-item.left { padding-right: 5px; }
+.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why .button-list .list-item.center { padding: 0 5px; }
+.board-finder .section-content .bf-step-5 .step-5-content-wrapper .selection-why .button-list .list-item.right { padding-left: 5px; }
 .board-finder .section-content .bf-step-5 .step-5-content-wrapper .description-wrapper .description h4 { color: #FFFF00; }
 
 @media screen and (min-width: 600px) { .board-finder .section-content .finder-step { min-height: 380px; }
@@ -81,20 +70,21 @@
 @media screen and (min-width: 768px) { .board-finder .section-content .finder-step { min-height: 800px; }
   .board-finder .section-content .finder-step .quote-wrapper { display: block; width: 180px; }
   .board-finder .section-content .finder-step .quote-wrapper .quote-cite { padding-left: 20px; }
+  .board-finder .section-content .finder-step .button-list { display: table; }
+  .board-finder .section-content .finder-step .button-list .list-item { display: table-cell; }
   .board-finder .section-content .bf-step-1 { background-position: 105% bottom; background-size: 575px; }
   .board-finder .section-content .bf-step-1 .step-1-left { width: 50%; padding: 0 20px; float: left; }
   .board-finder .section-content .bf-step-1 .step-1-left h1 { padding: 100px 0 60px 0; }
   .board-finder .section-content .bf-step-1 .step-1-left h3 { padding-bottom: 80px; }
   .board-finder .section-content .bf-step-1 .step-1-left .selection-who { width: 100%; padding: 0; }
-  .board-finder .section-content .bf-step-1 .step-1-left .selection-who ul { display: table; }
-  .board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li { display: table-cell; width: 50%; }
-  .board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li.left { padding-right: 5px; }
-  .board-finder .section-content .bf-step-1 .step-1-left .selection-who ul li.right { padding-left: 5px; }
+  .board-finder .section-content .bf-step-1 .step-1-left .selection-who .button-list .list-item { width: 50%; }
+  .board-finder .section-content .bf-step-1 .step-1-left .selection-who .button-list .list-item.left { padding-right: 5px; }
+  .board-finder .section-content .bf-step-1 .step-1-left .selection-who .button-list .list-item.right { padding-left: 5px; }
   .board-finder .section-content .bf-step-1 .quote-wrapper { padding: 60px 20px 0 0; float: right; }
   .board-finder .section-content .bf-step-2 { background-size: 750px; background-position: -70px bottom; }
   .board-finder .section-content .bf-step-2 .quote-wrapper { margin: 0 auto; padding-top: 70px; }
   .board-finder .section-content .bf-step-2 select { width: 140px; }
-  .board-finder .section-content .bf-step-2 .button-next { width: 140px; }
+  .board-finder .section-content .bf-step-2 .button-container { width: 140px; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper { text-align: right; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top { width: 100%; margin: 0; padding: 30px 20px 25px 0; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .measurement-type { padding: 0 300px 20px 0; }
@@ -105,19 +95,17 @@
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .height-measurement .height-metric { padding-right: 150px; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom { width: 100%; margin: 0; padding: 0 170px 40px 0; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .boot-measurement { display: inline-block; text-align: left; padding-right: 60px; }
-  .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-next { padding-top: 40px; display: inline-block; }
+  .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-container { padding-top: 40px; display: inline-block; }
   .board-finder .section-content .bf-step-3 { background-size: 450px; background-position: 125% bottom; }
   .board-finder .section-content .bf-step-3 .quote-wrapper { margin: 0 auto; padding-top: 150px; }
   .board-finder .section-content .bf-step-3 .selection-ability { width: 55%; margin-top: 50px; }
-  .board-finder .section-content .bf-step-3 .selection-ability ul { display: table; }
-  .board-finder .section-content .bf-step-3 .selection-ability ul li { display: table-cell; width: 33.3333%; }
-  .board-finder .section-content .bf-step-3 .selection-ability ul li.left { padding-right: 10px; }
-  .board-finder .section-content .bf-step-3 .selection-ability ul li.right { padding-left: 10px; }
+  .board-finder .section-content .bf-step-3 .selection-ability .button-list .list-item { width: 33.3333%; }
+  .board-finder .section-content .bf-step-3 .selection-ability .button-list .list-item.left { padding-right: 10px; }
+  .board-finder .section-content .bf-step-3 .selection-ability .button-list .list-item.right { padding-left: 10px; }
   .board-finder .section-content .bf-step-3 .selection-terrain { width: 55%; }
-  .board-finder .section-content .bf-step-3 .selection-terrain ul { display: table; }
-  .board-finder .section-content .bf-step-3 .selection-terrain ul li { display: table-cell; width: 33.3333%; }
-  .board-finder .section-content .bf-step-3 .selection-terrain ul li.left { padding-right: 10px; }
-  .board-finder .section-content .bf-step-3 .selection-terrain ul li.right { padding-left: 10px; }
+  .board-finder .section-content .bf-step-3 .selection-terrain .button-list .list-item { width: 33.3333%; }
+  .board-finder .section-content .bf-step-3 .selection-terrain .button-list .list-item.left { padding-right: 10px; }
+  .board-finder .section-content .bf-step-3 .selection-terrain .button-list .list-item.right { padding-left: 10px; }
   .board-finder .section-content .bf-step-4 h2 { text-align: left; float: left; padding-left: 20px; }
   .board-finder .section-content .bf-step-4 .product-filtering { width: 50%; float: right; padding-top: 0; }
   .board-finder .section-content .bf-step-4 .board-picks .product-listing { clear: both; }
@@ -135,7 +123,7 @@
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .measurement-type { padding-right: 360px; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-top .height-measurement .height-metric { padding-right: 170px; }
   .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom { padding-right: 190px; }
-  .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-next { width: 160px; }
+  .board-finder .section-content .bf-step-2 .measurements-wrapper .selection-measurements-bottom .button-container { width: 160px; }
   .board-finder .section-content .bf-step-3 { background-position: 110% bottom; }
   .board-finder .section-content .bf-step-3 .selection-ability { width: 450px; }
   .board-finder .section-content .bf-step-3 .selection-terrain { width: 450px; }

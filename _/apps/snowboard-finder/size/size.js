@@ -3,107 +3,20 @@
  * Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
  */
 
-var LIBTECH = LIBTECH || {};
-
-LIBTECH.BoardFinder = function () {
-	this.init();
-};
-LIBTECH.BoardFinder.prototype = {
-	init: function () {
-		var self = this;
-	}
-};
-
-(function(angular) {
+(function() {
 	'use strict';
-	var app = angular.module('board-finder', ['ngRoute']);
-	// angular needs base element because of HTML5 Push State use
-	// angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
-	angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="/snowboarding/snowboard-finder/" />'));
-	// set main controller
-	app.controller('BoardFinderController', function BoardFinderController($scope, $route, $routeParams, $location) {
-		$scope.$route = $route;
-		$scope.$location = $location;
-		$scope.$routeParams = $routeParams;
-	});
-	// APP CONFIG
-	app.config(function($routeProvider, $locationProvider) {
-		$routeProvider.when('/', {
-			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/views/board-finder/gender.html',
-			controller: 'GenderController',
-			controllerAs: 'genderCtrl'
-		}).when('/size/', {
-			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/views/board-finder/size.html',
+
+	var app = angular.module('boardFinder.size', ['ngRoute']);
+
+	app.config(['$routeProvider', function($routeProvider) {
+		$routeProvider.when('/size/', {
+			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/size/size.html',
 			controller: 'SizeController',
 			controllerAs: 'sizeCtrl'
-		}).when('/style/', {
-			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/views/board-finder/style.html',
-			controller: 'StyleController',
-			controllerAs: 'styleCtrl'
-		}).when('/results/', {
-			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/views/board-finder/results.html',
-			controller: 'ResultsController',
-			controllerAs: 'resultsCtrl'
-		}).when('/why/', {
-			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/views/board-finder/why.html',
-			controller: 'WhyController',
-			controllerAs: 'whyCtrl'
-		}).otherwise({
-			redirectTo: '/'
 		});
-		// configure html5 to get links working in jsfiddle
-		//$locationProvider.html5Mode(true);
-	});
-	// APP SERVICE
-	app.service('config', function Config() {
-		var config = this;
-		config.measurement = "imperial"; // or metric
-	});
-	app.service('user', function User() {
-		var user = this;
-		user.gender = "Default";
-		user.weight = -1;
-		user.height = -1;
-		user.bootSize = -1;
-		user.ability = "Starter";
-		user.terrain = "Freeride";
-	});
-	// DIRECTIVE TO CHECK FOR REQUIRED SELECT FIELDS
-	app.directive('requiredSelect', function() {
-		return {
-			restrict: 'A',
-			require: 'ngModel',
-			link: function(scope, elem, attr, ctrl) {
-				if (!ctrl) return;
-				attr.requiredSelect = true; // force truthy in case we are on non input element=
-				var validator = function(value) {
-					if (attr.requiredSelect && ctrl.$isEmpty(value) || attr.requiredSelect && value == -1) {
-						ctrl.$setValidity('requiredSelect', false);
-						return;
-					} else {
-						ctrl.$setValidity('requiredSelect', true);
-						return value;
-					}
-				};
-				ctrl.$formatters.push(validator);
-				ctrl.$parsers.unshift(validator);
-				attr.$observe('requiredSelect', function() {
-					validator(ctrl.$viewValue);
-				});
-			}
-		};
-	});
-	// STEP 1
-	app.controller('GenderController', function GenderController($scope, $routeParams, user) {
-		$scope.name = "GenderController";
-		$scope.params = $routeParams;
-		$scope.user = user;
-		$scope.setGender = function(user, newGender) {
-			user.gender = newGender;
-		};
-	});
-	// STEP 2
-	app.controller('SizeController', function SizeController($scope, $location, $routeParams, $log, config, user) {
+	}]);
+
+	app.controller('SizeController', ['$scope', '$location', '$routeParams', '$log', 'config', 'user', function ($scope, $location, $routeParams, $log, config, user) {
 		$scope.name = "SizeController";
 		$scope.params = $routeParams;
 		$scope.config = config;
@@ -171,6 +84,7 @@ LIBTECH.BoardFinder.prototype = {
 			$scope.inputHeight.inches = $scope.user.height % 12;
 			$scope.inputHeight.cm = Math.round($scope.user.height * 2.54 / 5) * 5;
 		}
+
 		function changeWeight() {
 			var updatedWeight = -1;
 			if ($scope.config.measurement == "imperial") {
@@ -190,6 +104,7 @@ LIBTECH.BoardFinder.prototype = {
 			}
 			$scope.user.weight = updatedWeight;
 		}
+
 		function changeHeight() {
 			var updatedHeight = -1;
 			// check measurement
@@ -216,52 +131,14 @@ LIBTECH.BoardFinder.prototype = {
 			}
 			$scope.user.height = updatedHeight;
 		}
+
 		function setSize() {
 			$location.path( '/style/' );
 		}
-		// make methods public
+
+		// set public methods
 		$scope.changeWeight = changeWeight;
 		$scope.changeHeight = changeHeight;
 		$scope.setSize = setSize;
-	});
-	// STEP 3
-	app.controller('StyleController', function StepThreeController($scope, $routeParams) {
-		$scope.name = "StyleController";
-		$scope.params = $routeParams;
-	});
-	// RESULTS
-	app.controller('ResultsController', function ResultsController($scope, $routeParams) {
-		$scope.name = "ResultsController";
-		$scope.params = $routeParams;
-
-		// BOOT SIZES
-		// OUR MODIFIED CHART
-		// 0 to 7.5 - 23.5 to 24.5
-		// 7.5 to 10 – 24.5 to 25.5
-		// 10 to 11.5 – 25.5 to 26
-		// 11.5+ – 26+
-	});
-	// WHY
-	app.controller('WhyController', function WhyController($scope, $routeParams) {
-		$scope.name = "WhyController";
-		$scope.params = $routeParams;
-	});
-
-	/*// use service to load json $http, $log, $filter
-	app.controller('BoardFinderCtrl', ['$http', '$log', function($http, $log){
-		var finder = this;
-		finder.snowboards = [];
-		$http.get('_/json/snowboards.json').success(function(data){
-			store.products = data;
-		});
-	}]);*/
-	/*app.controller('PanelController', function() {
-		this.tab = 1;
-		this.selectTab = function(setTab) {
-			this.tab = setTab;
-		};
-		this.isSelected = function(checkTab) {
-			return this.tab === checkTab;
-		};
-	});*/
-})(window.angular);
+	}]);
+}());

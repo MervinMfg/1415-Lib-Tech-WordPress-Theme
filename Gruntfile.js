@@ -27,7 +27,12 @@ module.exports = function (grunt) {
     var snowboardFinderScripts = [
         '_/js/lib/angular.js',
         '_/js/lib/angular-route.js',
-        '_/js/libtech.snowboard-finder.js'
+        '_/apps/snowboard-finder/app.js',
+        '_/apps/snowboard-finder/gender/gender.js',
+        '_/apps/snowboard-finder/size/size.js',
+        '_/apps/snowboard-finder/style/style.js',
+        '_/apps/snowboard-finder/results/results.js',
+        '_/apps/snowboard-finder/why/why.js'
     ];
     var jamieLynnScripts = [
         '_/js/lib/jquery-1.11.1.js',
