@@ -90,10 +90,11 @@
 		}
 	}
 	// set the correct colored logo
-	if (is_front_page() || is_home() || is_page('18921') || is_page('18947') || is_page('21712') || is_page('dealer-locator') || is_page('search')) {
+	if (is_front_page() || is_home() || is_page('18921') || is_page('18947') || is_page('21712') || is_page('24546') || is_page('dealer-locator') || is_page('search')) {
 		// 18921 -> envrionmental overview id
 		// 18947 -> technology overview id
 		// 21712 -> faq general id
+		// 24546 -> team overview id
 		$logo = get_bloginfo('template_directory') . '/_/img/lib-tech-logo.png';
 	} else if ($GLOBALS['sport'] == "ski") {
 		$logo = get_bloginfo('template_directory') . '/_/img/lib-tech-logo-ski.png';
@@ -237,7 +238,8 @@
 					// 18921 -> envrionmental
 					// 18947 -> technology
 					// 21712 -> general faq
-					if ($GLOBALS['sport'] != "" && !is_front_page() && !is_home() && !is_page('18921') && !is_page('18947') && !is_page('21712') && !is_page('dealer-locator') && !is_page('search')) { // we have a sport, so use their menus
+					// 24546 -> team overview id
+					if ($GLOBALS['sport'] != "" && !is_front_page() && !is_home() && !is_page('18921') && !is_page('18947') && !is_page('21712')&& !is_page('24546') && !is_page('dealer-locator') && !is_page('search')) { // we have a sport, so use their menus
 						$productNav = $GLOBALS['sport'] . '_products';
 						$subNav = $GLOBALS['sport'] . '_sub';
 						wp_nav_menu( // sport products menu
