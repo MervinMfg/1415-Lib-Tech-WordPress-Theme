@@ -2,38 +2,6 @@
    COMPONENTS/_TECHNOLOGY.SCSS
    ========================================================================== */
 
-.tech-overview {
-	.section-content {
-		padding: 0 20px;
-
-		.tech-header {
-			margin-bottom: 20px;
-		}
-		.tech-sport {
-			clear: both;
-			padding-bottom: 20px;
-
-			h1 {
-				margin-bottom: 20px;
-			}
-			h3 {
-				margin-bottom: 10px;
-			}
-			img {
-				width: 100%;
-				margin-bottom: 10px;
-			}
-			.tech-copy {
-				h3, p {
-					margin-bottom: 10px;
-				}
-				h3 {
-					font-size: 1em;
-				}
-			}	
-		}
-	}
-}
 .tech-major {
 	.section-content {
 		padding: 0 20px;
@@ -209,24 +177,6 @@
 			display: block;
 			float: left;
 			padding-right: 20px;
-		}
-	}
-	.tech-overview .section-content .tech-sport {
-		img {
-			width: 50%;
-			float: left;
-			padding-right: 10px;
-		}
-		.tech-copy {
-			width: 50%;
-			float: right;
-
-			h3, p {
-				padding-left: 10px;
-			}
-			h3 {
-				font-size: 1.375em;
-			}
 		}
 	}
 }

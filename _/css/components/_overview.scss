@@ -1,0 +1,76 @@
+/* ==========================================================================
+   COMPONENTS/_OVERVIEW.SCSS
+   ========================================================================== */
+
+.overview-wrapper {
+	.section-content {
+		padding: 0 20px;
+
+		.overview-header {
+			margin-bottom: 20px;
+		}
+		.overview-section-wrapper {
+			.overview-sport {
+				clear: both;
+				padding-bottom: 20px;
+
+				h1 {
+					margin-bottom: 20px;
+				}
+				h3 {
+					margin-bottom: 10px;
+				}
+				img {
+					width: 100%;
+					margin-bottom: 10px;
+				}
+				.overview-copy {
+					h3, p {
+						margin-bottom: 10px;
+					}
+					h3 {
+						font-size: 1em;
+					}
+				}	
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-small) {
+	.overview-wrapper .section-content .overview-section-wrapper .overview-sport {
+		img {
+			width: 100%;
+		}
+		.overview-copy {
+			width: 100%;
+
+			h3 {
+				font-size: 1.375em;
+			}
+		}
+	}
+}
+@media screen and (min-width: $breakpoint-medium) {
+	.overview-wrapper .section-content .overview-section-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: $breakpoint-large) {
+	.overview-wrapper .section-content .overview-section-wrapper {
+		width: 75%;
+	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.overview-wrapper .section-content {
+		.overview-header {
+			width: 25%;
+			float: left;
+		}
+		.overview-section-wrapper {
+			width: 50%;
+			float: left;
+			padding-top: 20px;
+		}
+	}
+}

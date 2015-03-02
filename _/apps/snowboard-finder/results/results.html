@@ -17,26 +17,16 @@
 	<div class="board-picks">
 		<!-- board picks go here -->
 		<ul class="product-listing snowboards">
-			<li class="product-item">
+			<!-- $scope.config.snowboards -->
+			<li class="product-item" ng-repeat="snowboard in config.snowboards">
+				<!-- ng-repeat="friend in friends | filter:searchText" -->
 				<a href="#">
-					<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-fM-funDAMNmental-C3-640x640.png" width="640" height="640" alt="Jamie Lynn FunDamnMental Image" class="product-img" />
-					<h5>Jamie Lynn FunDamnMental - </h5>
-					<h5 class="board-length">157</h5>
+					<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-fM-funDAMNmental-C3-640x640.png" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
+					<h5>{{snowboard.title}} - </h5>
+					<h5 class="board-length"><span ng-repeat="spec in snowboard.meta.libtech_snowboard_specs">{{spec.libtech_snowboard_specs_length}} </span></h5>
 					<div class="price">
 						<p class="us-price">
-							<span>$559.95</span> USD
-						</p>
-					</div>
-				</a>
-			</li>
-			<li class="product-item">
-				<a href="#">
-					<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-fM-Deflower-BTX-640x640.png" width="640" height="640" alt="Jamie Lynn FunDamnMental Image" class="product-img" />
-					<h5>Jamie Lynn FunDamnMental - </h5>
-					<h5 class="board-length">160</h5>
-					<div class="price">
-						<p class="us-price">
-							<span>$696.69</span> USD
+							<span>${{snowboard.meta.libtech_product_price_us}}</span> USD
 						</p>
 					</div>
 				</a>

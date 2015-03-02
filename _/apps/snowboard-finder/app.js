@@ -26,18 +26,26 @@
 		//$locationProvider.html5Mode(true);
 	}]);
 
-	//app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', BoardFinderController]);
-
-	var BoardFinderController = function($scope, $route, $routeParams, $location) {
+	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, config) {
 		$scope.$route = $route;
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;
-	};
+		$scope.config = config;
+
+		$http.get('/wp-json/posts?type=libtech_snowboards&filter[posts_per_page]=-1').success(function(data, status) {
+			$scope.status = status;
+			$scope.config.snowboards = data;
+		}).error(function(data, status) {
+			$scope.data = data || "Request failed";
+			$scope.status = status;
+		});
+	}]);
 
 	// APP SERVICES
 	app.service('config', function Config() {
 		var config = this;
 		config.measurement = "imperial"; // or metric
+		config.snowboards = [];
 	});
 	app.service('user', function User() {
 		var user = this;

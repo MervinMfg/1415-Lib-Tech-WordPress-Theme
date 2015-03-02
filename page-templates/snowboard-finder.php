@@ -6,7 +6,7 @@ get_header();
 ?>
 			<div class="bg2-top"></div>
 			<section class="board-finder bg2" ng-app="boardFinder">
-				<div class="section-content" >
+				<div class="section-content" ng-controller="BoardFinderController">
 					<!--
 					<pre>$location.path() = {{$location.path()}}</pre>
 					<pre>$route.current.templateUrl = {{$route.current.templateUrl}}</pre>

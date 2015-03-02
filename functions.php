@@ -105,6 +105,29 @@ function is_tree($pid) {
     else
         return false; // we're elsewhere
 };
+// ADD ACF FIELDS TO JSON REST API
+// https://github.com/PanManAms/WP-JSON-API-ACF
+// http://wp-api.org
+function wp_api_encode_acf($data,$post,$context){
+    $customMeta = (array) get_fields($post['ID']);
+    $data['meta'] = array_merge($data['meta'], $customMeta );
+    return $data;
+}
+function wp_api_encode_acf_taxonomy($data,$post){
+    $customMeta = (array) get_fields($post->taxonomy."_". $post->term_id );
+    $data['meta'] = array_merge($data['meta'], $customMeta );
+    return $data;
+}
+function wp_api_encode_acf_user($data,$post){
+    $customMeta = (array) get_fields("user_". $data['ID']);
+    $data['meta'] = array_merge($data['meta'], $customMeta );
+    return $data;
+}
+add_filter('json_prepare_post', 'wp_api_encode_acf', 10, 3);
+add_filter('json_prepare_page', 'wp_api_encode_acf', 10, 3);
+add_filter('json_prepare_attachment', 'wp_api_encode_acf', 10, 3);
+add_filter('json_prepare_term', 'wp_api_encode_acf_taxonomy', 10, 2);
+add_filter('json_prepare_user', 'wp_api_encode_acf_user', 10, 2);
 /**
  * Tests if any of a post's assigned categories are descendants of target categories
  *

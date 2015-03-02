@@ -1,69 +1,52 @@
 /* ==========================================================================
    COMPONENTS/_SUPPORT.SCSS
    ========================================================================== */
-.contact-content {
-	.contact-copy {
-		padding-bottom: 20px;
-		max-width: $breakpoint-large;
-	}
-	.contact-left {
-		.contact-form {
-			margin-left: -5px;
+
+.support {
+	.section-content {
+		padding: 0 20px;
+		h1 {
+			margin-bottom: 20px;
 		}
-	}
-}
-.warranty-content {
-	.warranty-copy {
-		padding-bottom: 20px;
-		max-width: $breakpoint-large;
-	}
-	.warranty-left {
-		.warranty-form {
-			margin-left: -5px;
+		p {
+			margin-bottom: 10px;
 		}
-	}
-}
-.register-content {
-	.register-copy {
-		padding-bottom: 20px;
-		max-width: $breakpoint-large;
-	}
-	.register-left {
-		.register-form {
-			margin-left: -5px;
+		.support-content {
+			.support-copy {
+				padding-bottom: 20px;
+			}
+			.support-left {
+				.support-form {
+					margin-left: -5px;
+				}
+			}
 		}
 	}
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-
+	.support .section-content .support-content {
+		width: 90%;
+		margin: 0 auto;
+	}
 }
 
 @media screen and (min-width: $breakpoint-large) {
-
-	.contact-content {
-		.contact-left {
-			.contact-form {
-				max-width: $breakpoint-large;
-			}
-		}
-	}
-	.warranty-content {
-		.warranty-left {
-			.warranty-form {
-				max-width: $breakpoint-large;
-			}
-		}
-	}
-	.register-content {			
-		.register-left {
-			.register-form {
-				max-width: $breakpoint-large;
-			}
-		}
+	.support .section-content .support-content {
+		width: 75%;
 	}
 }
 
 @media screen and (min-width: $breakpoint-xlarge) {
-
+	.support .section-content {
+		.entry-header {
+			width: 25%;
+			float: left;
+		}
+		.support-content {
+			width: 50%;
+			float: left;
+			padding-top: 20px;
+		}
+	}
 }
