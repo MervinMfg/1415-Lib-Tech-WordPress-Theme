@@ -11,6 +11,11 @@
             "instructions": "Which specs table?",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "Snowboards": "Snowboards",
                 "NAS": "NAS",
@@ -28,7 +33,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/page-specifications.php"
+                "value": "page-templates\/specifications.php"
             }
         ]
     ],
@@ -37,5 +42,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1425337156
 }

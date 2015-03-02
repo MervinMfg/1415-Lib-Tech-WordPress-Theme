@@ -927,6 +927,14 @@
 		}
 	}
 }
+.single-libtech_snowboards,
+.single-libtech_skateboards,
+.single-libtech_nas,
+.single-libtech_apparel {
+	.mfp-iframe-scaler {
+	  padding-top: 550px;
+	}
+}
 @media screen and (min-width: $breakpoint-small) {
 	.product-details {
 		&.hide {
