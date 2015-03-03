@@ -38,6 +38,9 @@ body {
 	background: #CCCCCC;
 	font-size: 12px;
 }
+#spec_title {
+	margin-bottom: -25px;
+}
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * DataTables features
@@ -177,11 +180,11 @@ table.display td.center {
  */
 
 
-table.boards tr.odd, table.clothing tr.odd {
+.snow table tr.odd, table.clothing tr.odd {
 	background-color: #F7F4AE;
 }
 
-table.boards tr.even, table.clothing tr.even {
+.snow table tr.even, table.clothing tr.even {
 	background-color: #FFFFFF;
 }
 
@@ -190,24 +193,24 @@ table.boards tr.even, table.clothing tr.even {
  */
 
 
-table.boards tr.odd td.sorting_1, table.clothing tr.odd td.sorting_1  {
+.snow table tr.odd td.sorting_1, table.clothing tr.odd td.sorting_1  {
 	background-color: #FFF100;
 }
 
-table.boards tr.even td.sorting_1, table.clothing tr.even td.sorting_1 {
+.snow table tr.even td.sorting_1, table.clothing tr.even td.sorting_1 {
 	background-color: #F7F4AE;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * DataTables nas row classes
+ * DataTables ski row classes
  */
 
 
-table.nas tr.odd {
+.ski table tr.odd {
 	background-color: #7ED3F7;
 }
 
-table.nas tr.even {
+.ski table tr.even {
 	background-color: #FFFFFF;
 }
 
@@ -216,12 +219,39 @@ table.nas tr.even {
  */
 
 
-table.nas tr.odd td.sorting_1 {
+.ski table tr.odd td.sorting_1 {
 	background-color: #00AEEF;
 }
 
-table.nas tr.even td.sorting_1 {
+.ski table tr.even td.sorting_1 {
 	background-color: #7ED3F7;
+}
+
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * DataTables skate row classes
+ */
+
+
+.skate table tr.odd {
+	background-color: #99ff33;
+}
+
+.skate table tr.even {
+	background-color: #FFFFFF;
+}
+
+/*
+ * Sorting classes for nas columns
+ */
+
+
+.skate table tr.odd td.sorting_1 {
+	background-color: #66CC00;
+}
+
+.skate table tr.even td.sorting_1 {
+	background-color: #99ff33;
 }
 
 

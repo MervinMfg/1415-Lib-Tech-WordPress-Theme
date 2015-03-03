@@ -16,6 +16,21 @@ LIBTECH.BlogSingle.prototype = {
 		if ($('.gallery')) {
 			self.initGallery();
 		}
+		// blog image lightbox
+		$('.entry-content').magnificPopup({
+			delegate: 'a',
+			type: 'image',
+		    closeOnBgClick: true,
+		    closeOnContentClick: true,
+		    removalDelay: 500,
+		    midClick: true,
+		    callbacks: {
+		    	beforeOpen: function() {
+					this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+					this.st.mainClass = 'mfp-zoom-in';
+				}
+			}
+		});
 		$(window).on('resize load', function () {
 			self.adjustStrobbr();
 			self.checkPageWidth(); // on resize check what the width of the browser is for fixed scroll elements

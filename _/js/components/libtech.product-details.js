@@ -123,7 +123,7 @@ LIBTECH.ProductDetails.prototype = {
 		$(window).resize(); // trigger resize to init features
 		// grab view all specs link and turn into lightbox
 		$('.product-specs a.view-all-specs, .product-quick-specs a.specs-link').magnificPopup({
-			type: 'ajax',
+			type: 'iframe',
 			disableOn: '768',
 			closeOnBgClick: false
 		});

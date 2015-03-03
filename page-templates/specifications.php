@@ -4,35 +4,83 @@ Template Name: Specifications
 */
 global $post; 
 $prod_specs_table = get_field('libtech_specs_table');
+switch ($prod_specs_table) {
+    case "Snowboards":
+        $sport = "snow";
+        break;
+    case "NAS":
+        $sport = "ski";
+        break;
+    case "Skateboards":
+        $sport = "skate";
+        break;
+    default:
+         $sport = "snow";
+}
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
-<head profile="http://gmpg.org/xfn/11">
-	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<!doctype html>
+<html <?php language_attributes(); ?>>
+<!--
+                           *
+                          **
+                         ***
+                        *****
+                       *** **
+                       **  ***
+                      **    **
+                     ***    ***
+                    ***     ***
+                   ***      ****
+                   ***       ***
+                  ***         **
+                **********    ***
+               ************** ***
+             ****        *********
+           ****  ***        ******
+          ***    ****          ****
+         **      ******* ***    **
+        ***      ** *** ****    ***
+        **       **         ***  ***
+        **      ***         ***   **
+        ***     ***         **    **
+         **      **        ***   ***
+         ***     ***       **    **
+          ***     ****    ***   **
+           ****    *********  ****
+            ***       ****   ****
+              ******      *****
+                ************
+                **    *
+***            **     *
+  ***          **     *
+     **        *      *     **
+       ***    **     ***********
+        ****  **
+           ****
+            ****
+-->
+<head id="www-lib-tech-com" data-template-set="lib-tech-wordpress-theme">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
-	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
+	<?php include get_template_directory() . '/_/inc/header-includes.php'; ?>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/_/css/spec-table.css">
     
     <?php wp_head(); ?>
 
     <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_/js/lib/jquery-1.10.2.min.js"><\/script>')</script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_/js/lib/jquery-1.11.1.min.js"><\/script>')</script>
     <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/_/js/lib/jquery.dataTables.min.js"></script> 
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).on('ready', function(){
 			$('#specs').dataTable( {
-				<?php if ($prod_specs_table =="Snowboards") { ?>"sScrollY": "340px",<?php } ?>
-				<?php if ($prod_specs_table =="NAS") { ?>"sScrollY": "340px",<?php } ?>
-				<?php if ($prod_specs_table =="Skateboards") { ?>"sScrollY": "340px",<?php } ?>
-
+				"sScrollY": "340px",
 				"bPaginate": false 
 			} );
 		});
 	</script>
 </head>
-<body class="body-specifications">
+<body class="body-specifications <?php echo $sport; ?>">
 	<div id="prod_specifications">
 		<h2 id="spec_title"><?php the_title(); ?></h2>
 
@@ -117,7 +165,7 @@ $prod_specs_table = get_field('libtech_specs_table');
 					<th>Waist<br />Width</th>
 					<th>Tail<br />Width</th>
 					<th>Stance<br />Range/BOC</th>
-					<th>Flex Rating<br />1=soft 10=firm</th>
+					<th>Flex<br />10 = Firm</th>
 					<th>Board<br />Category</th>
 					<th>Board<br />Profile</th>
 					<th>Weight<br />Range (lbs)</th>
@@ -275,18 +323,13 @@ $prod_specs_table = get_field('libtech_specs_table');
 	</div>
 	<?php wp_footer(); ?>
 	<!-- Google Analytics -->
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-10240523-1']);
-        _gaq.push(['_setDomainName', '.lib-tech.com']);
-        _gaq.push(['_setAllowHash', false]);
-        _gaq.push(['_setAllowLinker', true]);
-        _gaq.push(['_trackPageview']);
-        (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-10240523-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
