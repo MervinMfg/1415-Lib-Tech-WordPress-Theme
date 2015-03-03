@@ -17,8 +17,7 @@ LIBTECH.BlogSingle.prototype = {
 			self.initGallery();
 		}
 		// blog image lightbox
-		$('.entry-content').magnificPopup({
-			delegate: 'a',
+		$('.entry-content a[href*=".jpg"], .entry-content a[href*=".jpeg"], .entry-content a[href*=".png"], .entry-content a[href*=".gif"]').magnificPopup({
 			type: 'image',
 		    closeOnBgClick: true,
 		    closeOnContentClick: true,
