@@ -41,6 +41,8 @@ LIBTECH.BlogSingle.prototype = {
 				self.checkPageWidth(); // listen for update and fix break when taller content is loaded
 			});
 		});
+		// add link to copied text
+		$('.post-wrapper .entry-content').on('copy', self.addLink);
 	},
 	initGallery: function () {
 		var self = this;
@@ -191,5 +193,24 @@ LIBTECH.BlogSingle.prototype = {
 				$this.css('height', Math.round(actual_w * proportion) + 'px');
 			}
 		});
+	},
+	addLink: function () {
+		//get selected text and append source link
+		var selection = window.getSelection();
+		if (selection.toString().length > 50) {
+			var pageLink = '<br /><br /> Read more at: ' + document.location.href;
+			var copyText = selection + pageLink;
+			var newDiv = document.createElement('div');
+			//hide new contatiner
+			newDiv.style.position = 'absolute';
+			newDiv.style.left = '-99999px';
+			//insert contatiner, fill with text and define selection
+			document.body.appendChild(newDiv);
+			newDiv.innerHTML = copyText;
+			selection.selectAllChildren(newDiv);
+			window.setTimeout(function () {
+				document.body.removeChild(newDiv);
+			}, 100);
+		}
 	}
 };
