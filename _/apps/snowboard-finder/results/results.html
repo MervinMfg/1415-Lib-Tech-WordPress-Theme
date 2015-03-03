@@ -21,12 +21,18 @@
 			<li class="product-item" ng-repeat="snowboard in config.snowboards">
 				<!-- ng-repeat="friend in friends | filter:searchText" -->
 				<a href="#">
-					<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-fM-funDAMNmental-C3-640x640.png" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
+					<img src="{{snowboard.variations[0].colorwayImg[0]}}" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
 					<h5>{{snowboard.title}} - </h5>
-					<h5 class="board-length"><span ng-repeat="spec in snowboard.meta.libtech_snowboard_specs">{{spec.libtech_snowboard_specs_length}} </span></h5>
+					<h5 class="board-length">{{snowboard.length + " " + snowboard.width}}</h5>
 					<div class="price">
 						<p class="us-price">
-							<span>${{snowboard.meta.libtech_product_price_us}}</span> USD
+							<span>${{snowboard.price.us}}</span> USD
+						</p>
+						<p class="ca-price">
+							<span>${{snowboard.price.ca}}</span> CAD
+						</p>
+						<p class="eu-price">
+							<span>${{snowboard.price.eu}}</span> EUR
 						</p>
 					</div>
 				</a>

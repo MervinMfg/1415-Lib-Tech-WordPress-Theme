@@ -32,7 +32,7 @@
 		$scope.$routeParams = $routeParams;
 		$scope.config = config;
 
-		$http.get('/wp-json/posts?type=libtech_snowboards&filter[posts_per_page]=-1').success(function(data, status) {
+		$http.get('/feeds/snowboard-finder/').success(function(data, status) {
 			$scope.status = status;
 			$scope.config.snowboards = data;
 		}).error(function(data, status) {
@@ -82,14 +82,4 @@
 			}
 		};
 	});
-
 })();
-
-	/*// use service to load json $http, $log, $filter
-	app.controller('BoardFinderCtrl', ['$http', '$log', function($http, $log){
-		var finder = this;
-		finder.snowboards = [];
-		$http.get('_/json/snowboards.json').success(function(data){
-			store.products = data;
-		});
-	}]);*/
