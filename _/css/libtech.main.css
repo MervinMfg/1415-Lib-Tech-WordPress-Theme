@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* ========================================================================== LIBTECH.MAIN.SCSS ========================================================================== */
 /** 1415 Lib Tech WordPress Theme - http://www.lib-tech.com Author: brian.behrens@mervin.com - http://www.mervin.com  libtech.main.css & libtech.main.min.css are compiled using the imports from this file.  To add new styles and components, import them in the appropriate sections below.  */
 /* ========================================================================== HELPERS/_VARIABLES.SCSS ========================================================================== */
@@ -974,13 +973,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-video.specs, .product-video.tech, .product-gallery.specs, .product-gallery.tech { display: none; }
 .product-video h2, .product-gallery h2 { margin-bottom: 10px; }
 
-.product-video .video-player { padding-bottom: 20px; }
-.product-video .video-copy { padding-bottom: 20px; }
-.product-video .video-copy .quote { line-height: 1.32em; }
-.product-video .video-copy .quote:first-line { font-size: 1.4em; }
-.product-video .video-copy .quote:before { content: '“'; }
-.product-video .video-copy .quote:after { content: '”'; }
-.product-video .video-copy .quote-attribution { text-align: right; line-height: 1.32em; }
+.product-video .video-player { width: 100%; padding: 10px 0; }
 
 .single-libtech_snowboards .mfp-iframe-scaler, .single-libtech_skateboards .mfp-iframe-scaler, .single-libtech_nas .mfp-iframe-scaler, .single-libtech_apparel .mfp-iframe-scaler { padding-top: 550px; }
 
@@ -1046,11 +1039,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .single-libtech_outerwear .product-extras .product-specs table, .page-template-page-templatesstorm-factory-php .product-extras .product-specs table { width: 60%; float: left; margin-left: 0; }
   .single-libtech_outerwear .product-extras .product-specs .outerwear-fit, .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit { width: 40%; float: left; padding-top: 0; }
   .single-libtech_outerwear .product-extras .product-specs .outerwear-fit li, .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit li { padding-left: 20px; }
-  .product-video h2 { width: 35%; float: right; }
-  .product-video h2 span { padding-left: 20px; }
-  .product-video .video-player { width: 65%; float: left; }
-  .product-video .video-copy { width: 35%; float: left; }
-  .product-video .video-copy .quote, .product-video .video-copy .quote-attribution { padding-left: 20px; } }
+  .product-video .video-player { width: 90%; margin: 0 auto; } }
 @media screen and (min-width: 980px) { .product-extras .product-desc-awards-specs { width: 100%; }
   .product-extras .product-desc-awards-specs .product-desc-awards { width: 100%; float: none; }
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description { width: 60%; float: left; }
@@ -1072,12 +1061,14 @@ body.international .shopping-cart-wrapper { display: none; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description { width: 100%; clear: none; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-description p { padding-right: 0; }
   .single-libtech_outerwear .product-extras .product-desc-awards .product-awards { width: 100%; float: none; }
-  .product-details .product-details-right .product-note-wrapper .product-note span { display: inline; } }
+  .product-details .product-details-right .product-note-wrapper .product-note span { display: inline; }
+  .product-video .video-player { width: 75%; } }
 @media screen and (min-width: 1200px) { .product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(9) { display: table-cell; }
   .product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(9) { display: table-cell; }
   .product-extras .product-specs table tfoot tr td:nth-child(5), .product-extras .product-specs table tfoot tr td:nth-child(6), .product-extras .product-specs table tfoot tr td:nth-child(8), .product-extras .product-specs table tfoot tr td:nth-child(9) { display: table-cell; }
   .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5) { display: table-cell; }
-  .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; } }
+  .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; }
+  .product-video .video-player { width: 50%; } }
 @media screen and (min-width: 1400px) { .product-extras .product-desc-awards-specs { width: 40%; float: left; }
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description { width: 100%; }
   .product-extras .product-desc-awards-specs .product-desc-awards .product-description p { padding-right: 0; }
@@ -1561,25 +1552,22 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .pass-it-on-contest .product-wrapper .product:nth-child(even) h4, .pass-it-on-contest .product-wrapper .product:nth-child(even) p, .pass-it-on-contest .product-wrapper .product:nth-child(even) .product-image { padding-left: 20px; } }
 /* ========================================================================== COMPONENTS/_STORM-FACTORY.SCSS ========================================================================== */
 .storm-factory-overview .section-content { padding: 0 20px; }
-.storm-factory-overview .section-content .storm-image img { padding-bottom: 20px; }
-.storm-factory-overview .section-content .storm-copy h3 { margin-bottom: 10px; }
+.storm-factory-overview .section-content .overview-content-wrapper { padding: 10px 0; }
+.storm-factory-overview .section-content .overview-content-wrapper .storm-image img { width: 100%; padding-bottom: 10px; }
+.storm-factory-overview .section-content .overview-content-wrapper .storm-copy h3 { margin-bottom: 10px; }
 
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 { display: none; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs .sizing-header { margin-bottom: 10px; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs table { margin-bottom: 20px; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit { padding-top: 0; }
 
-@media screen and (min-width: 768px) { .storm-factory-overview .section-content .storm-image { float: left; width: 40%; }
-  .storm-factory-overview .section-content .storm-image img { padding-bottom: 0; }
-  .storm-factory-overview .section-content .storm-copy { float: left; width: 60%; }
-  .storm-factory-overview .section-content .storm-copy h3, .storm-factory-overview .section-content .storm-copy p { padding-left: 20px; }
+@media screen and (min-width: 768px) { .storm-factory-overview .section-content .overview-content-wrapper { width: 90%; margin: 0 auto; }
   .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(5) { display: table-cell; }
   .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; }
   .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 { display: block; }
   .page-template-page-templatesstorm-factory-php .product-extras .product-specs .sizing-header, .page-template-page-templatesstorm-factory-php .product-extras .product-specs .pants-sizing { display: none; } }
-@media screen and (min-width: 1200px) { .storm-factory-overview .section-content .storm-image { float: left; width: 529px; }
-  .storm-factory-overview .section-content .storm-copy { float: left; width: 600px; }
-  .storm-factory-overview .section-content .storm-copy h3, .storm-factory-overview .section-content .storm-copy p { padding-left: 20px; } }
+@media screen and (min-width: 980px) { .storm-factory-overview .section-content .overview-content-wrapper { width: 75%; } }
+@media screen and (min-width: 1200px) { .storm-factory-overview .section-content .overview-content-wrapper { width: 50%; } }
 /* ========================================================================== COMPONENTS/_DTTD.SCSS ========================================================================== */
 .dttd-details .section-content { padding: 20px 20px 0; text-align: center; }
 .dttd-details .title { padding-bottom: 10px; }
