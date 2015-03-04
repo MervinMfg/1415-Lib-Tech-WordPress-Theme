@@ -308,7 +308,7 @@ get_header();
                             array_push($productWidth, $snowboardWidth);
                             // add length and width to filter list
                             $filterList .= " " . $snowboardLength;
-                            $filterList .= " " . $snowboardWidth;
+                            $filterList .= " " . str_replace(' ', '_', $snowboardWidth);
                         endwhile;
                     endif;
                     // sort sizes
@@ -679,7 +679,9 @@ get_header();
                         <ul>
                             <li data-filter=".Narrow">Narrow</li>
                             <li data-filter=".Standard">Standard</li>
+                            <li data-filter=".Mid_Wide">Mid Wide</li>
                             <li data-filter=".Wide">Wide</li>
+                            <li data-filter=".Ultra_Wide">Ultra Wide</li>
                         </ul>
                     </li>
                     <li class="filters pricing">
