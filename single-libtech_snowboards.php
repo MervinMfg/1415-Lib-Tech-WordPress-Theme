@@ -202,11 +202,13 @@ Template Name: Snowboard Detail
 									// Europe is handled like other products, direct
 									if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
 									// setup readable short form of length and width
-									if($variationWidth == "Narrow"){
+									if ($variationWidth == "Narrow") {
 										$variationLength = $variationLength . "N";
-									}else if($variationWidth == "Wide"){
+									} else if($variationWidth == "Mid Wide") {
+										$variationLength = $variationLength . "MW";
+									} else if($variationWidth == "Wide") {
 										$variationLength = $variationLength . "W";
-									}else if($variationWidth == "Ultra Wide"){
+									} else if($variationWidth == "Ultra Wide") {
 										$variationLength = $variationLength . "UW";
 									}
 									// setup variation name
