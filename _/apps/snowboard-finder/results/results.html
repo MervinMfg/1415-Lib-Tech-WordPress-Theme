@@ -21,19 +21,17 @@
 			<li class="product-item" ng-repeat="snowboard in config.snowboards">
 				<!-- ng-repeat="friend in friends | filter:searchText" -->
 				<a href="#">
-					<img src="{{snowboard.variations[0].colorwayImg[0]}}" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
-					<h5>{{snowboard.title}} - </h5>
-					<h5 class="board-length">{{snowboard.length + " " + snowboard.width}}</h5>
+					<img ng-src="{{snowboard.variations[0].colorwayImg[0]}}" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
+					<div class="colorways">
+						<div class="swatch" ng-repeat="variation in snowboard.variations" data-src="{{variation.colorwayImg[0]}}">
+							<img ng-src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/colorways/{{variation.colorwaySlug}}.jpg" alt="{{variation.colorway}}" />
+						</div>
+					</div>
+					<h5>{{snowboard.title}} - <span class="board-length">{{snowboard.length + " " + snowboard.width}}</span></h5>
 					<div class="price">
-						<p class="us-price">
-							<span>${{snowboard.price.us}}</span> USD
-						</p>
-						<p class="ca-price">
-							<span>${{snowboard.price.ca}}</span> CAD
-						</p>
-						<p class="eu-price">
-							<span>${{snowboard.price.eu}}</span> EUR
-						</p>
+						<p class="us-price">${{snowboard.price.us}} <span>USD</span></p>
+						<p class="ca-price">${{snowboard.price.ca}} <span>CAD</span></p>
+						<p class="eur-price">€{{snowboard.price.eu}} <span>EUR incl. VAT</span></p>
 					</div>
 				</a>
 			</li>
