@@ -60,6 +60,9 @@
 						}
 					}
 				}
+				.price p {
+					font-size: .75em;
+				}
 			}
 			&.bindings li.product-item img.product-img,
 			&.surfboards li.product-item img.product-img,
@@ -347,6 +350,9 @@
 @media screen and (min-width: $breakpoint-medium) {
 	.product-filtering {
 		display: block;
+	}
+	.product-overview .section-content ul.product-listing li.product-item .price p {
+		font-size: .875em;
 	}
 }
 @media screen and (min-width: $breakpoint-large) {
