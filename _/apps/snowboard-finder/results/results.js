@@ -21,13 +21,11 @@
 		$scope.params = $routeParams;
 		$scope.config = config;
 
-		angular.forEach($scope.config.snowboards, function(item, i) {
-			/*$log.info(i + " - " + item.title);
-			$log.log(item.link, item.slug);
-			$log.log(item.meta.libtech_product_price_us, item.meta.libtech_product_price_ca, item.meta.libtech_product_price_eur);
-			$log.log("prod image id: " + item.meta.libtech_product_image);
-			$log.log("--------------------------------");*/
-		});
+		function init() {
+			// init
+		}
+		init();
+		
 		// BOOT SIZES
 		// OUR MODIFIED CHART
 		// 0 to 7.5 - 23.5 to 24.5

@@ -11,6 +11,7 @@
 
 	var app = angular.module('boardFinder', [
 		'ngRoute',
+		'ngCookies',
 		'boardFinder.gender',
 		'boardFinder.size',
 		'boardFinder.style',
@@ -26,24 +27,32 @@
 		//$locationProvider.html5Mode(true);
 	}]);
 
-	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, config) {
+	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, config) {
 		$scope.$route = $route;
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;
 		$scope.config = config;
 
-		$http.get('/feeds/snowboard-finder/').success(function(data, status) {
-			$scope.status = status;
-			$scope.config.snowboards = data;
-		}).error(function(data, status) {
-			$scope.data = data || "Request failed";
-			$scope.status = status;
-		});
+		function init() {
+			$http.get('/feeds/snowboard-finder/').success(function(data, status) {
+				$scope.status = status;
+				$scope.config.snowboards = data;
+			}).error(function(data, status) {
+				$scope.data = data || "Request failed";
+				$scope.status = status;
+			});
+			// look up currency, if none, keep default USD
+			if(typeof $cookies.libtech_currency !== 'undefined') {
+				$scope.config.currency = $cookies.libtech_currency;
+			}
+		}
+		init();
 	}]);
 
 	// APP SERVICES
 	app.service('config', function Config() {
 		var config = this;
+		config.currency = "USD";
 		config.measurement = "imperial"; // or metric
 		config.snowboards = [];
 	});
