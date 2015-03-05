@@ -7,74 +7,74 @@
 		h1 {
 			padding: 0 0 20px 20px;
 		}
-		ul.product-listing {
-			li.product-item {
-				width: 18%;
-				float: left;
-				overflow: hidden;
-				text-align: center;
-				padding-bottom: 40px;
-
-				a {
-					text-decoration: none;
-
-					img.product-img {
-						width: 140%;
-						max-width: 200%;
-						margin-left: -20%;
-						height: auto;
-						@include transition(opacity, 300ms);
-
-						&.lazy {
-							@include vendorize(opacity, 0);
-						}
-						&.loaded {
-							@include vendorize(opacity, 1);
-						}
-					}
-					.colorways {
-						text-align: center;
-						min-height: 32px;
-
-						.swatch {
-							width: 22px;
-							height: 22px;
-							border: 1px solid #fff;
-							display: inline-block;
-							margin: 0 3px;
-
-							img {
-								width: 100%;
-							}
-							&:hover,
-							&:focus,
-							&.active {
-								border-color: #666;
-							}
-						}
-					}
-					&:hover,
-					&:focus {
-						h5 {
-							color: #fff;
-						}
-					}
-				}
-			}
-			&.bindings li.product-item img.product-img,
-			&.surfboards li.product-item img.product-img,
-			&.apparel li.product-item img.product-img,
-			&.clearance li.product-item img.product-img,
-			&.accessories li.product-item img.product-img,
-			&.luggage li.product-item img.product-img {
-				width: 90%;
-				margin-left: 0;
-			}
-		}
 		.view-clearance {
 			display: block;
 			text-align: center;
 		}
+	}
+}
+.product-listing {
+	.product-item {
+		width: 18%;
+		float: left;
+		overflow: hidden;
+		text-align: center;
+		padding-bottom: 40px;
+
+		a {
+			text-decoration: none;
+
+			img.product-img {
+				width: 140%;
+				max-width: 200%;
+				margin-left: -20%;
+				height: auto;
+				@include transition(opacity, 300ms);
+
+				&.lazy {
+					@include vendorize(opacity, 0);
+				}
+				&.loaded {
+					@include vendorize(opacity, 1);
+				}
+			}
+			.colorways {
+				text-align: center;
+				min-height: 32px;
+
+				.swatch {
+					width: 22px;
+					height: 22px;
+					border: 1px solid #fff;
+					display: inline-block;
+					margin: 0 3px;
+
+					img {
+						width: 100%;
+					}
+					&:hover,
+					&:focus,
+					&.active {
+						border-color: #666;
+					}
+				}
+			}
+			&:hover,
+			&:focus {
+				h5 {
+					color: #fff;
+				}
+			}
+		}
+	}
+	&.bindings li.product-item img.product-img,
+	&.surfboards li.product-item img.product-img,
+	&.apparel li.product-item img.product-img,
+	&.clearance li.product-item img.product-img,
+	&.accessories li.product-item img.product-img,
+	&.luggage li.product-item img.product-img {
+		width: 90%;
+		margin-left: 0;
 	}
 }
 .international .product-overview .section-content ul.product-listing li.product-item .price {
