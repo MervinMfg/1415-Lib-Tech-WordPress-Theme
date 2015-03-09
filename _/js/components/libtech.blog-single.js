@@ -17,17 +17,22 @@ LIBTECH.BlogSingle.prototype = {
 			self.initGallery();
 		}
 		// blog image lightbox
-		$('.entry-content a[href*=".jpg"], .entry-content a[href*=".jpeg"], .entry-content a[href*=".png"], .entry-content a[href*=".gif"]').magnificPopup({
-			type: 'image',
-		    closeOnBgClick: true,
-		    closeOnContentClick: true,
-		    removalDelay: 500,
-		    midClick: true,
-		    callbacks: {
-		    	beforeOpen: function() {
-					this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
-					this.st.mainClass = 'mfp-zoom-in';
-				}
+		$('.entry-content a[href*=".jpg"], .entry-content a[href*=".jpeg"], .entry-content a[href*=".png"], .entry-content a[href*=".gif"]').each(function() {
+			var $link = $(this);
+			if($link.parents('.gallery').length < 1) {
+				$link.magnificPopup({
+					type: 'image',
+					closeOnBgClick: true,
+					closeOnContentClick: true,
+					removalDelay: 500,
+					midClick: true,
+					callbacks: {
+						beforeOpen: function() {
+							this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+							this.st.mainClass = 'mfp-zoom-in';
+						}
+					}
+				});
 			}
 		});
 		$(window).on('resize load', function () {
