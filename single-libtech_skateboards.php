@@ -78,6 +78,7 @@ Template Name: Skateboard Detail
 				       		<?php
 				       			$thumbnailImages = Array();
 								if(get_field('libtech_skateboard_options')):
+									$imageNum = 0;
 									while(the_repeater_field('libtech_skateboard_options')):
 										$optionName = get_sub_field('libtech_skateboard_options_name');
 										// get variations
@@ -113,8 +114,9 @@ Template Name: Skateboard Detail
 					       						$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
 					       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionName, $optionVariationSizes, $optionVariationSKUs));
 							?>
-							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" itemprop="image" /></a></li>
+							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>"<?php if($imageNum == 0) echo "itemprop='image'"; ?> /></a></li>
 							<?php
+							$imageNum++;
 											endwhile;
 					       				endif;
 									endwhile;

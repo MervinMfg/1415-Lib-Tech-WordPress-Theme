@@ -211,7 +211,7 @@ function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent, $showSche
         // US Price
         $price .= '<p class="us-price strike">$' . $usPrice . ' <span class="currency-note">USD</span></p>';
         // Reduced US Price
-        $price .= '<p class="us-price">$' . round($usPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
+        $price .= '<p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" >' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
         // CA Price
         $price .= '<p class="ca-price strike">$' . $caPrice . ' <span class="currency-note">CAD</span></p>';
         // Reduced CA Price
