@@ -74,15 +74,18 @@
 			{label: 12, value: 12}, {label: 12.5, value: 12.5}, {label: 13, value: 13}, {label: 13.5, value: 13.5},
 			{label: 14, value: 14}, {label: 14.5, value: 14.5}, {label: 15, value: 15}
 		];
-		// check values on init of controller
-		if($scope.user.weight != -1) {
-			$scope.inputWeight.lbs = $scope.user.weight;
-			$scope.inputWeight.kg = Math.round($scope.user.weight * 0.453592 / 5) * 5;
-		}
-		if($scope.user.height != -1) {
-			$scope.inputHeight.feet = Math.floor($scope.user.height/12);
-			$scope.inputHeight.inches = $scope.user.height % 12;
-			$scope.inputHeight.cm = Math.round($scope.user.height * 2.54 / 5) * 5;
+
+		function init() {
+			// check values on init of controller
+			if($scope.user.weight != -1) {
+				$scope.inputWeight.lbs = $scope.user.weight;
+				$scope.inputWeight.kg = Math.round($scope.user.weight * 0.453592 / 5) * 5;
+			}
+			if($scope.user.height != -1) {
+				$scope.inputHeight.feet = Math.floor($scope.user.height/30.48);
+				$scope.inputHeight.inches = Math.floor(($scope.user.height/2.54) % 12);
+				$scope.inputHeight.cm = Math.round($scope.user.height / 5) * 5;
+			}
 		}
 
 		function changeWeight() {
@@ -111,22 +114,22 @@
 			if ($scope.config.measurement == "imperial") {
 				// update height in inches based on fields that are complete
 				if($scope.inputHeight.feet != -1 && $scope.inputHeight.inches != -1) {
-					updatedHeight = ($scope.inputHeight.feet * 12) + $scope.inputHeight.inches;
+					updatedHeight = Math.round(($scope.inputHeight.feet * 30.48) + ($scope.inputHeight.inches + 2.54));
 				} else if ($scope.inputHeight.feet != -1) {
-					updatedHeight = $scope.inputHeight.feet * 12;
+					updatedHeight = Math.round($scope.inputHeight.feet * 30.48);
 				} // do nothing if only inches are set
 				if(updatedHeight != -1) {
-					$scope.inputHeight.cm = Math.round(updatedHeight * 2.54 / 5) * 5; // convert inches to cm and round to nearest multiple of 5
+					$scope.inputHeight.cm = Math.round(updatedHeight / 5) * 5; // round cm to nearest multiple of 5
 				} else {
 					$scope.inputHeight.cm = -1;
 				}
 			} else {
 				// update height in cm
 				if($scope.inputHeight.cm != -1) {
-					updatedHeight = Math.round($scope.inputHeight.cm * 0.393701); // convert cm to inches
+					updatedHeight = $scope.inputHeight.cm;
 					// convert inches into values for form fields
-					$scope.inputHeight.feet = Math.floor(updatedHeight/12);
-					$scope.inputHeight.inches = updatedHeight % 12;
+					$scope.inputHeight.feet = Math.floor(updatedHeight/30.48);
+					$scope.inputHeight.inches = Math.floor((updatedHeight/2.54) % 12);
 				}
 			}
 			$scope.user.height = updatedHeight;
@@ -140,5 +143,7 @@
 		$scope.changeWeight = changeWeight;
 		$scope.changeHeight = changeHeight;
 		$scope.setSize = setSize;
+
+		init();
 	}]);
 }());

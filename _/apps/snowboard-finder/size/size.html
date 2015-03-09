@@ -25,7 +25,7 @@
 					</div><!-- .weight-metric -->
 				</div> <!-- .weight-measurement -->
 				<div class="height-measurement">
-					<h4>Height: {{user.height}} inches</h4>
+					<h4>Height: {{user.height}} cm</h4>
 					<div class="height-us" ng-show="config.measurement == 'imperial'">
 						<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()" required-select required>
 							<option value="" label="Feet">Feet</option>
