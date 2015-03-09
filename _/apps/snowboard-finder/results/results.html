@@ -18,23 +18,7 @@
 		<!-- board picks go here -->
 		<ul class="product-listing snowboards">
 			<!-- $scope.config.snowboards -->
-			<li class="product-item" ng-repeat="snowboard in config.snowboards">
-				<!-- ng-repeat="friend in friends | filter:searchText" -->
-				<a href="{{snowboard.link}}">
-					<img ng-src="{{snowboard.variations[0].colorwayImg[0]}}" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
-					<div class="colorways">
-						<div class="swatch" ng-repeat="variation in snowboard.variations" data-src="{{variation.colorwayImg[0]}}">
-							<img ng-src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/colorways/{{variation.colorwaySlug}}.jpg" alt="{{variation.colorway}}" />
-						</div>
-					</div>
-					<h5>{{snowboard.title}} - <span class="board-length">{{snowboard.length + " " + snowboard.width}}</span></h5>
-					<div class="price">
-						<p class="us-price" ng-class="{active: config.currency=='USD'}">${{snowboard.price.us}} <span>USD</span></p>
-						<p class="ca-price" ng-class="{active: config.currency=='CAD'}">${{snowboard.price.ca}} <span>CAD</span></p>
-						<p class="eur-price" ng-class="{active: config.currency=='EUR'}">€{{snowboard.price.eu}} <span>EUR incl. VAT</span></p>
-					</div>
-				</a>
-			</li>
+			<snowboard ng-repeat="snowboard in config.snowboards"></snowboard>
 		</ul>
 		<a href="#" class="why-link">Why these boards?</a>
 	</div>

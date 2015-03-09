@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.results', ['ngRoute']);
+	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.snowboard']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/results/', {
@@ -21,16 +21,17 @@
 		$scope.params = $routeParams;
 		$scope.config = config;
 
-		function init() {
-			// init
-		}
-		init();
-		
 		// BOOT SIZES
 		// OUR MODIFIED CHART
 		// 0 to 7.5 - 23.5 to 24.5
 		// 7.5 to 10 – 24.5 to 25.5
 		// 10 to 11.5 – 25.5 to 26
 		// 11.5+ – 26+
+
+		function init() {
+			// init
+		}
+		
+		init();
 	}]);
 }());
