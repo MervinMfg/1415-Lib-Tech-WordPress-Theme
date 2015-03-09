@@ -158,349 +158,388 @@ Template Name: Surfboard Detail
 			<div class="toggle-btn"></div>
 		</div>
         <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <section class="product-details bg-product-details <?php echo $slug; ?>">
-        	<div class="section-content">
-				<h1><?php the_title(); ?></h1>
-				<div class="product-images">
-					<div class="surf-images">
-						<div class="surfboard-top">
-							<img src="<?php echo $defaultTopImage; ?>" alt="Surfboard Top" data-img="<?php echo $defaultTopImage; ?>" data-img-full="<?php echo $defaultTopImageFull; ?>" />
+        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product"> 
+	        <section class="product-details bg-product-details <?php echo $slug; ?>">
+	        	<div class="section-content">
+					<h1 itemprop="name"><?php the_title(); ?></h1>
+					<div class="product-images">
+						<div class="surf-images">
+							<div class="surfboard-top">
+								<img src="<?php echo $defaultTopImage; ?>" alt="Surfboard Top" data-img="<?php echo $defaultTopImage; ?>" data-img-full="<?php echo $defaultTopImageFull; ?>" itemprop="image" />
+							</div>
+							<div class="surfboard-side">
+								<img src="<?php echo $sideImage[0]; ?>" alt="Surfboard Side Profile" data-img="<?php echo $sideImage[0]; ?>" data-img-full="<?php echo $sideImageFull[0]; ?>" />
+							</div>
+							<div class="surfboard-bottom">
+								<?php if ($bottomImage5Fin == null) : // show 3 fin image if 5 does not exist ?>
+								<img src="<?php echo $bottomImage[0]; ?>" alt="Surfboard Bottom" data-img="<?php echo $bottomImage[0]; ?>" data-img-full="<?php echo $bottomImageFull[0]; ?>" />
+								<?php else: ?>
+								<img src="<?php echo $bottomImage5Fin[0]; ?>" alt="Surfboard Bottom" data-img="<?php echo $bottomImage5Fin[0]; ?>" data-img-full="<?php echo $bottomImage5FinFull[0]; ?>" />
+								<?php endif; ?>
+							</div>
+							<div class="clearfix"></div>
 						</div>
-						<div class="surfboard-side">
-							<img src="<?php echo $sideImage[0]; ?>" alt="Surfboard Side Profile" data-img="<?php echo $sideImage[0]; ?>" data-img-full="<?php echo $sideImageFull[0]; ?>" />
-						</div>
-						<div class="surfboard-bottom">
-							<?php if ($bottomImage5Fin == null) : // show 3 fin image if 5 does not exist ?>
-							<img src="<?php echo $bottomImage[0]; ?>" alt="Surfboard Bottom" data-img="<?php echo $bottomImage[0]; ?>" data-img-full="<?php echo $bottomImageFull[0]; ?>" />
-							<?php else: ?>
-							<img src="<?php echo $bottomImage5Fin[0]; ?>" alt="Surfboard Bottom" data-img="<?php echo $bottomImage5Fin[0]; ?>" data-img-full="<?php echo $bottomImage5FinFull[0]; ?>" />
-							<?php endif; ?>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div><!-- END .product-images -->
-				<div class="product-details-right">
-					<script type='text/javascript'>
-						<?php
-							$jsArray = json_encode($surfboards);
-							echo "var productArray = ". $jsArray . ";\n";
-						?>
-					</script>
-					<h3><?php the_field('libtech_product_slogan'); ?></h3>
-					<div class="image-list-thumbs">
-						<ul id="image-list-thumbs">
-							<?php foreach ($surfboardGraphics as $surfboardGraphic) : ?>
-							<li><a href="<?php echo $surfboardGraphic['topImageFull'][0]; ?>"<?php if($surfboardGraphic['name'] == "Logo"){ echo ' class="active"'; } ?>><img src="<?php echo $surfboardGraphic['topImageThumb'][0]; ?>" alt="<?php the_title(); ?>" data-sub-alt="<?php echo $surfboardGraphic['name']; ?>" /></a></li>
-							<?php endforeach; ?>
-						</ul>
-					</div>
-
-					<?php
-						// check fin pricing and what to display by default
-						if (get_field('libtech_product_price_us_5fin') == "") {
-							$threeFinClass = " active";
-							$fiveFinClass = "";
-						} else {
-							$threeFinClass = "";
-							$fiveFinClass = " active";
-						}
-					?>
-
-					<div class="product-price">
-						<div class="price-logo<?php echo $threeFinClass; ?>">
-							<?php echo getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
-						</div>
-						<div class="price-graphic">
-							<?php echo getPrice( get_field('libtech_product_price_us_graphic'), get_field('libtech_product_price_ca_graphic'), get_field('libtech_product_price_eur_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
-						</div>
-						<div class="price-logo-five<?php echo $fiveFinClass; ?>">
-							<?php echo getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_price_eur_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
-						</div>
-						<div class="price-graphic-five">
-							<?php echo getPrice( get_field('libtech_product_price_us_5fin_graphic'), get_field('libtech_product_price_ca_5fin_graphic'), get_field('libtech_product_price_eur_5fin_graphic'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') ); ?>
-						</div>
-						<p class="price-alert">Free shipping!</p>
-						<div class="clearfix"></div>
-					</div>
-					<div class="product-stock-alert">
-						<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website. Each board is handmade in the USA by surfers.</p>
-						<p class="surf-logo-limited">We are currently out of stock on this Waterboard, but we can build one for you! It can take up to 4-6 weeks to build and ship.</p>
-						<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose. Each board is handmade in the USA by surfers.</p>
-						<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p> 
-					</div>
-					<div class="product-variations">
-						<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">
-							<option value="-1">Select Graphic</option>
-							<?php foreach ($surfboardGraphics as $surfboardGraphic) : ?>
-							<option value="<?php echo $surfboardGraphic['name']; ?>" title="<?php echo $surfboardGraphic['name']; ?>" data-img="<?php echo $surfboardGraphic['topImage'][0]; ?>" data-img-full="<?php echo $surfboardGraphic['topImageFull'][0]; ?>" <?php if(count($surfboardGraphics) == 1){echo 'selected="selected"';} ?>><?php echo $surfboardGraphic['name']; ?></option>
-							<?php endforeach; ?>
-						</select>
-						<select id="product-variation-size" class="select<?php if(count($surfboardOptions) == 1){echo ' hidden';} ?>">
-							<option value="-1">Select Size &amp; Fin Box</option>
+					</div><!-- END .product-images -->
+					<div class="product-details-right">
+						<script type='text/javascript'>
 							<?php
-							foreach ($surfboardOptions as $surfboardOption) :
-								$title = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
-								$value = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
+								$jsArray = json_encode($surfboards);
+								echo "var productArray = ". $jsArray . ";\n";
 							?>
-							<option value="<?php echo $value; ?>" title="<?php echo $title; ?>" data-img="<?php echo $surfboardOption['bottomImage'][0]; ?>" data-img-full="<?php echo $surfboardOption['bottomImageFull'][0]; ?>" <?php if(count($surfboardOptions) == 1){echo 'selected="selected"';} ?>><?php echo $title; ?></option>
-							<?php endforeach; ?>
-						</select>
-					</div>
-					<div class="product-alert">
-						<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
-						<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
-					</div><!-- .available-alert -->
-					<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
-						<ul>
-							<li class="loading hidden"></li>
-							<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
-							<li class="unavailable">Item is currently not available online.</li>
-							<li class="find-dealer h4"><a href="/dealer-locator/?product=surfboards">Find a Dealer</a></li>
-						</ul>
-						<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
-						<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
-					</div>
-					<ul class="product-quick-specs">
+						</script>
+						<h3><?php the_field('libtech_product_slogan'); ?></h3>
+						<div class="image-list-thumbs">
+							<ul id="image-list-thumbs">
+								<?php foreach ($surfboardGraphics as $surfboardGraphic) : ?>
+								<li><a href="<?php echo $surfboardGraphic['topImageFull'][0]; ?>"<?php if($surfboardGraphic['name'] == "Logo"){ echo ' class="active"'; } ?>><img src="<?php echo $surfboardGraphic['topImageThumb'][0]; ?>" alt="<?php the_title(); ?>" data-sub-alt="<?php echo $surfboardGraphic['name']; ?>" /></a></li>
+								<?php endforeach; ?>
+							</ul>
+						</div>
+
 						<?php
-							// build array of sizes
-							$surfboardSizes = Array();
-							if(get_field('libtech_surfboard_specs')):
-								while(the_repeater_field('libtech_surfboard_specs')):
-									$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
-									$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
-									// add size to array
-									array_push($surfboardSizes, $surfboardLength);
-								endwhile;
-							endif;
-							// sort sizes
-							// array_multisort($surfboardSizes, SORT_ASC);
-							// setup sizes text display
-							$sizes = "";
-							for ($i = 0; $i < count($surfboardSizes); $i++) {
-								$sizes .= $surfboardSizes[$i];
-								if($i < count($surfboardSizes)-1){
-									$sizes .= ", ";
-								}
+							// check fin pricing and what to display by default
+							if (get_field('libtech_product_price_us_5fin') == "") {
+								$threeFinClass = " active";
+								$fiveFinClass = "";
+							} else {
+								$threeFinClass = "";
+								$fiveFinClass = " active";
 							}
 						?>
-						<li><span>Sizes</span> <?php echo $sizes; ?></li>
-					</ul>
-					<ul class="product-share">
-						<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-						<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
-						<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-						<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
-					</ul>
-				</div><!-- END .product-details-right -->
-				<div class="clearfix"></div>
-			</div><!-- END .section-content -->
-		</section><!-- END .product-details -->
-		<section class="product-zoom bg-product-details">
-			<div class="section-content">
-				<div class="zoom-title"></div>
-				<div class="zoom-controls">
-					<a href="#close-zoom" class="zoom-close h3">Close</a>
-					<ul id="zoom-thumbnails"></ul>
-				</div>
-				<div class="zoom-image">
-					<img src="" class="surfboard-top" />
-					<img src="" class="surfboard-side" />
-					<img src="" class="surfboard-bottom" />
-					<div class="clearfix"></div>
-				</div>
-			</div><!-- END .section-content -->
-		</section><!-- END .product-zoom -->
-		<div class="bg2-top"></div>
-		<section class="product-extras bg2 info">
-			<div class="section-content clearfix">
-				<div class="product-mobile-nav clearfix">
-					<ul>
-						<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-						<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-						<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-					</ul>
-				</div>
-				<div class="product-desc-awards-specs">
-					<div class="product-desc-awards">
-						<div class="product-description">
-							<?php the_content(); ?>
-						</div>
-						<?php // display awards if there are any
-						$awards = get_field('libtech_product_awards');
-						if( $awards ):
-						?>
-						<div class="product-awards">
-							<h2>Awards</h2>
-							<ul>
-							<?php
-								foreach( $awards as $award):
-									$imageID = get_field('libtech_award_image', $award->ID);
-									$imageFile = wp_get_attachment_image_src($imageID, 'full');
-									echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
-								endforeach;
-							?>
 
-							</ul>
+						<div class="product-price" itemprop="offers" itemscope itemtype="http://schema.org/Offer" >
+							<div class="price-logo<?php echo $threeFinClass; ?>">
+								<?php
+									$showSchema = (get_the_title() == "Vert Series");
+									echo getPrice(
+										get_field('libtech_product_price_us'),
+										get_field('libtech_product_price_ca'),
+										get_field('libtech_product_price_eur'),
+										get_field('libtech_product_on_sale'),
+										get_field('libtech_product_sale_percentage'),
+										$showSchema
+									);
+								?>
+							</div>
+							<div class="price-graphic">
+								<?php
+									echo getPrice(
+										get_field('libtech_product_price_us_graphic'),
+										get_field('libtech_product_price_ca_graphic'),
+										get_field('libtech_product_price_eur_graphic'),
+										get_field('libtech_product_on_sale'),
+										get_field('libtech_product_sale_percentage')
+									);
+								?>
+							</div>
+							<div class="price-logo-five<?php echo $fiveFinClass; ?>">
+								<?php
+									$showSchema = (get_the_title() != "Vert Series");
+									echo getPrice(
+										get_field('libtech_product_price_us_5fin'),
+										get_field('libtech_product_price_ca_5fin'),
+										get_field('libtech_product_price_eur_5fin'),
+										get_field('libtech_product_on_sale'),
+										get_field('libtech_product_sale_percentage'),
+										$showSchema
+									);
+								?>
+							</div>
+							<div class="price-graphic-five">
+								<?php
+									echo getPrice(
+										get_field('libtech_product_price_us_5fin_graphic'),
+										get_field('libtech_product_price_ca_5fin_graphic'),
+										get_field('libtech_product_price_eur_5fin_graphic'),
+										get_field('libtech_product_on_sale'),
+										get_field('libtech_product_sale_percentage')
+									);
+								?>
+							</div>
+							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
+							<p class="price-alert">Free shipping!</p>
 							<div class="clearfix"></div>
 						</div>
-						<? endif; // end awards ?>
-					</div><!-- END .product-desc-awards -->
-					<div class="product-specs">
-						<h2>Specifications</h2>
-						<table>
-							<thead>
-								<tr>
-									<th>Length</th>
-									<th>Nose</th>
-									<th>Width</th>
-									<th>Tail</th>
-									<th>Volume</th>
-								</tr>
-							</thead>
-							<tbody>
+						<div class="product-stock-alert">
+							<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website. Each board is handmade in the USA by surfers.</p>
+							<p class="surf-logo-limited">We are currently out of stock on this Waterboard, but we can build one for you! It can take up to 4-6 weeks to build and ship.</p>
+							<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose. Each board is handmade in the USA by surfers.</p>
+							<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p> 
+						</div>
+						<div class="product-variations">
+							<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">
+								<option value="-1">Select Graphic</option>
+								<?php foreach ($surfboardGraphics as $surfboardGraphic) : ?>
+								<option value="<?php echo $surfboardGraphic['name']; ?>" title="<?php echo $surfboardGraphic['name']; ?>" data-img="<?php echo $surfboardGraphic['topImage'][0]; ?>" data-img-full="<?php echo $surfboardGraphic['topImageFull'][0]; ?>" <?php if(count($surfboardGraphics) == 1){echo 'selected="selected"';} ?>><?php echo $surfboardGraphic['name']; ?></option>
+								<?php endforeach; ?>
+							</select>
+							<select id="product-variation-size" class="select<?php if(count($surfboardOptions) == 1){echo ' hidden';} ?>">
+								<option value="-1">Select Size &amp; Fin Box</option>
 								<?php
-								if(get_field('libtech_surfboard_specs')): while(the_repeater_field('libtech_surfboard_specs')):
-									$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
-									$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
+								foreach ($surfboardOptions as $surfboardOption) :
+									$title = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
+									$value = $surfboardOption['length'] . ' - ' . $surfboardOption['fins'];
+								?>
+								<option value="<?php echo $value; ?>" title="<?php echo $title; ?>" data-img="<?php echo $surfboardOption['bottomImage'][0]; ?>" data-img-full="<?php echo $surfboardOption['bottomImageFull'][0]; ?>" <?php if(count($surfboardOptions) == 1){echo 'selected="selected"';} ?>><?php echo $title; ?></option>
+								<?php endforeach; ?>
+							</select>
+						</div>
+						<div class="product-alert">
+							<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
+							<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
+						</div><!-- .available-alert -->
+						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
+							<ul>
+								<li class="loading hidden"></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="unavailable">Item is currently not available online.</li>
+								<li class="find-dealer h4"><a href="/dealer-locator/?product=surfboards">Find a Dealer</a></li>
+							</ul>
+							<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
+							<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
+						</div>
+						<ul class="product-quick-specs">
+							<?php
+								// build array of sizes
+								$surfboardSizes = Array();
+								if(get_field('libtech_surfboard_specs')):
+									while(the_repeater_field('libtech_surfboard_specs')):
+										$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
+										$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
+										// add size to array
+										array_push($surfboardSizes, $surfboardLength);
+									endwhile;
+								endif;
+								// sort sizes
+								// array_multisort($surfboardSizes, SORT_ASC);
+								// setup sizes text display
+								$sizes = "";
+								for ($i = 0; $i < count($surfboardSizes); $i++) {
+									$sizes .= $surfboardSizes[$i];
+									if($i < count($surfboardSizes)-1){
+										$sizes .= ", ";
+									}
+								}
+							?>
+							<li><span>Sizes</span> <?php echo $sizes; ?></li>
+						</ul>
+						<ul class="product-share">
+							<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
+							<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
+							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
+							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+						</ul>
+					</div><!-- END .product-details-right -->
+					<div class="clearfix"></div>
+				</div><!-- END .section-content -->
+			</section><!-- END .product-details -->
+			<section class="product-zoom bg-product-details">
+				<div class="section-content">
+					<div class="zoom-title"></div>
+					<div class="zoom-controls">
+						<a href="#close-zoom" class="zoom-close h3">Close</a>
+						<ul id="zoom-thumbnails"></ul>
+					</div>
+					<div class="zoom-image">
+						<img src="" class="surfboard-top" />
+						<img src="" class="surfboard-side" />
+						<img src="" class="surfboard-bottom" />
+						<div class="clearfix"></div>
+					</div>
+				</div><!-- END .section-content -->
+			</section><!-- END .product-zoom -->
+			<div class="bg2-top"></div>
+			<section class="product-extras bg2 info">
+				<div class="section-content clearfix">
+					<div class="product-mobile-nav clearfix">
+						<ul>
+							<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
+							<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
+							<li><a href="#tech" class="h3" id="tech">Tech</a></li>
+						</ul>
+					</div>
+					<div class="product-desc-awards-specs">
+						<div class="product-desc-awards">
+							<div class="product-description" itemprop="description" >
+								<?php the_content(); ?>
+							</div>
+							<?php // display awards if there are any
+							$awards = get_field('libtech_product_awards');
+							if( $awards ):
+							?>
+							<div class="product-awards">
+								<h2>Awards</h2>
+								<ul>
+								<?php
+									foreach( $awards as $award):
+										$imageID = get_field('libtech_award_image', $award->ID);
+										$imageFile = wp_get_attachment_image_src($imageID, 'full');
+										echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
+									endforeach;
 								?>
 
-								<tr>
-									<td><?php echo $surfboardLength; ?></td>
-									<td><?php the_sub_field('libtech_surfboard_specs_nose'); ?>"</td>
-									<td><?php the_sub_field('libtech_surfboard_specs_width'); ?>"</td>
-									<td><?php the_sub_field('libtech_surfboard_specs_tail'); ?>"</td>
-									<td><?php the_sub_field('libtech_surfboard_specs_volume'); ?> cl</td>
-								</tr>
-
-								<?php endwhile; endif; ?>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="5"><!-- <a href="/surfing/specifications/" class="view-all-specs">View all specs</a> --></td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
-				</div><!-- END .product-desc-awards-specs -->
-				<div class="product-tech-major tech-major tech-surf">
-					<h2>Technology</h2>
-					<ul>
-						<li class="surf-technology">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-technology.jpg" alt="Radically Different Surfboard Technology" />
-							</div>
-							<div class="tech-copy">
-								<h4>Radically Different</h4>
-								<p>30 years of experience crafting and riding high performance environMENTALLY friendly composite surf, skate and snowboards went into designing our unique waterboard process, materials and shapes. Each of the 31 pieces used to construct our surfboards are new materials to the surf industry.</p>
-							</div>
-							<div class="clearfix"></div>
-						</li>
-						<li class="surf-environmental">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-environmental.jpg" alt="Environmental Surfboards" />
-							</div>
-							<div class="tech-copy">
-								<h4>Environmentally Nicer</h4>
-								<p>100% closed cell foam won’t absorb water... won't rot &bullet; More durable: Lasts longer, less dings, less boards in landfills &bullet; Recycled foam core: up to 50% recycled content in blank &bullet; Blank scraps all recycled &bullet; Elimination of hazardous resin systems &bullet; Non ozone depleting blowing agent &bullet; Basalt fiber: no additives, no boron &bullet; No solvents except water &bullet; No paint brushes &bullet; No sandpaper, no tape</p>
-							</div>
-							<div class="clearfix"></div>
-						</li>
-						<li class="surf-ding">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-ding.gif" alt="Durable Lib Tech Surfboard being rode over by a man on a bike" />
-							</div>
-							<div class="tech-copy">
-								<h4>Dang Difficult to Ding</h4>
-								<ul>
-									<li>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</li>
-									<li>Voted toughest board of the year by Outside Magazine.</li>
-									<li>Crossing the street or the globe, tougher surfboards - free your mind!</li>
-									<li>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</li>
 								</ul>
+								<div class="clearfix"></div>
 							</div>
-							<div class="clearfix"></div>
-						</li>
-						<li class="surf-fins">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-fins.jpg" alt="Freedom of Choice multi-fin system" />
-							</div>
-							<div class="tech-copy">
-								<h4>FOC Adjustable Fin System</h4>
-								<p>F.O.C. "Freedom of Choice" multi-fin system compatible with 5/8" performance tuning adjustability</p>
-							</div>
-							<div class="clearfix"></div>
-						</li>
-						<li class="surf-performance">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-performance.jpg" alt="Performance - Ryan Carlson" />
-							</div>
-							<div class="tech-copy">
-								<h4>Performance</h4>
-								<p>SMOOTH &bullet; FAST &bullet; POPPY</p>
-							</div>
-							<div class="clearfix"></div>
-						</li>
-						<li class="surf-handcrafted">
-							<div class="tech-image">
-								<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-handcrafted.jpg" alt="Handcrafted in the USA" />
-							</div>
-							<div class="tech-copy">
-								<h4>Handcrafted in the USA</h4>
-								<p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
-							</div>
-							<div class="clearfix"></div>
-						</li>
-					</ul>
-					<div class="clearfix"></div>
-				</div><!-- END .product-tech-major -->
+							<? endif; // end awards ?>
+						</div><!-- END .product-desc-awards -->
+						<div class="product-specs">
+							<h2>Specifications</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>Length</th>
+										<th>Nose</th>
+										<th>Width</th>
+										<th>Tail</th>
+										<th>Volume</th>
+									</tr>
+								</thead>
+								<tbody>
+									<?php
+									if(get_field('libtech_surfboard_specs')): while(the_repeater_field('libtech_surfboard_specs')):
+										$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
+										$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
+									?>
 
-				<?php // display minor technology if there is any
-				$technology = get_field('libtech_product_technology');
-				if( $technology ):
-					$technologyMajor = Array();
-					$technologyMinor = Array();
-					foreach( $technology as $techItem):
-						$title = get_the_title($techItem->ID);
-						$content = apply_filters('the_content', $techItem->post_content);
-						$techType = get_field("libtech_technology_type", $techItem->ID);
-						$videoID = get_field("libtech_technology_video", $techItem->ID);
-						$imageID = get_field("libtech_technology_icon", $techItem->ID);
-						$imageFile = wp_get_attachment_image_src($imageID, 'full');
-						if ($techType == "Major") {
-							array_push($technologyMajor, Array($title, $content, $videoID));
-						} else {
-							array_push($technologyMinor, Array($title, $content, $imageFile));
-						}
-					endforeach;
-					// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
-					if (count($technologyMinor) > 0) :
-				?>
-	        	<div class="product-tech-minor tech-minor">
-					<h2>Ingredients</h2>
-					<ul>
-						<?php foreach( $technologyMinor as $techItem): ?>
+									<tr>
+										<td><?php echo $surfboardLength; ?></td>
+										<td><?php the_sub_field('libtech_surfboard_specs_nose'); ?>"</td>
+										<td><?php the_sub_field('libtech_surfboard_specs_width'); ?>"</td>
+										<td><?php the_sub_field('libtech_surfboard_specs_tail'); ?>"</td>
+										<td><?php the_sub_field('libtech_surfboard_specs_volume'); ?> cl</td>
+									</tr>
 
-						<li>
-							<div class="tech-pad">
-								<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
-								<div class="tech-copy">
-									<?php echo $techItem[1]; ?>
+									<?php endwhile; endif; ?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="5"><!-- <a href="/surfing/specifications/" class="view-all-specs">View all specs</a> --></td>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div><!-- END .product-desc-awards-specs -->
+					<div class="product-tech-major tech-major tech-surf">
+						<h2>Technology</h2>
+						<ul>
+							<li class="surf-technology">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-technology.jpg" alt="Radically Different Surfboard Technology" />
 								</div>
-							</div>
-						</li>
+								<div class="tech-copy">
+									<h4>Radically Different</h4>
+									<p>30 years of experience crafting and riding high performance environMENTALLY friendly composite surf, skate and snowboards went into designing our unique waterboard process, materials and shapes. Each of the 31 pieces used to construct our surfboards are new materials to the surf industry.</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="surf-environmental">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-environmental.jpg" alt="Environmental Surfboards" />
+								</div>
+								<div class="tech-copy">
+									<h4>Environmentally Nicer</h4>
+									<p>100% closed cell foam won’t absorb water... won't rot &bullet; More durable: Lasts longer, less dings, less boards in landfills &bullet; Recycled foam core: up to 50% recycled content in blank &bullet; Blank scraps all recycled &bullet; Elimination of hazardous resin systems &bullet; Non ozone depleting blowing agent &bullet; Basalt fiber: no additives, no boron &bullet; No solvents except water &bullet; No paint brushes &bullet; No sandpaper, no tape</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="surf-ding">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-ding.gif" alt="Durable Lib Tech Surfboard being rode over by a man on a bike" />
+								</div>
+								<div class="tech-copy">
+									<h4>Dang Difficult to Ding</h4>
+									<ul>
+										<li>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</li>
+										<li>Voted toughest board of the year by Outside Magazine.</li>
+										<li>Crossing the street or the globe, tougher surfboards - free your mind!</li>
+										<li>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</li>
+									</ul>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="surf-fins">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-fins.jpg" alt="Freedom of Choice multi-fin system" />
+								</div>
+								<div class="tech-copy">
+									<h4>FOC Adjustable Fin System</h4>
+									<p>F.O.C. "Freedom of Choice" multi-fin system compatible with 5/8" performance tuning adjustability</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="surf-performance">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-performance.jpg" alt="Performance - Ryan Carlson" />
+								</div>
+								<div class="tech-copy">
+									<h4>Performance</h4>
+									<p>SMOOTH &bullet; FAST &bullet; POPPY</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+							<li class="surf-handcrafted">
+								<div class="tech-image">
+									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-handcrafted.jpg" alt="Handcrafted in the USA" />
+								</div>
+								<div class="tech-copy">
+									<h4>Handcrafted in the USA</h4>
+									<p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
+								</div>
+								<div class="clearfix"></div>
+							</li>
+						</ul>
+						<div class="clearfix"></div>
+					</div><!-- END .product-tech-major -->
 
-						<?php endforeach; ?>
-					</ul>
-					<div class="clearfix"></div>
-				</div><!-- END .product-tech-minor -->
-				
-				<?
-					endif; // end tech minor check
-				endif;// end technology check
-				?>
+					<?php // display minor technology if there is any
+					$technology = get_field('libtech_product_technology');
+					if( $technology ):
+						$technologyMajor = Array();
+						$technologyMinor = Array();
+						foreach( $technology as $techItem):
+							$title = get_the_title($techItem->ID);
+							$content = apply_filters('the_content', $techItem->post_content);
+							$techType = get_field("libtech_technology_type", $techItem->ID);
+							$videoID = get_field("libtech_technology_video", $techItem->ID);
+							$imageID = get_field("libtech_technology_icon", $techItem->ID);
+							$imageFile = wp_get_attachment_image_src($imageID, 'full');
+							if ($techType == "Major") {
+								array_push($technologyMajor, Array($title, $content, $videoID));
+							} else {
+								array_push($technologyMinor, Array($title, $content, $imageFile));
+							}
+						endforeach;
+						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
+						if (count($technologyMinor) > 0) :
+					?>
+		        	<div class="product-tech-minor tech-minor">
+						<h2>Ingredients</h2>
+						<ul>
+							<?php foreach( $technologyMinor as $techItem): ?>
 
-			</div><!-- END .section-content -->
-		</section><!-- END .product-extras -->
+							<li>
+								<div class="tech-pad">
+									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
+									<div class="tech-copy">
+										<?php echo $techItem[1]; ?>
+									</div>
+								</div>
+							</li>
+
+							<?php endforeach; ?>
+						</ul>
+						<div class="clearfix"></div>
+					</div><!-- END .product-tech-minor -->
+					
+					<?
+						endif; // end tech minor check
+					endif;// end technology check
+					?>
+
+				</div><!-- END .section-content -->
+			</section><!-- END .product-extras -->
+		</div><!-- .schema-wrapper -->
 
 		<?php
 			// display video if we have an id

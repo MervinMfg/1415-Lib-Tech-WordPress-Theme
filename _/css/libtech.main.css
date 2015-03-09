@@ -206,18 +206,6 @@ p, .p { font-size: .875em; /* 14 / 16 */ line-height: 1.32; }
 
 .skate ::selection { background: #66CC00; color: #000; text-shadow: none; }
 
-/* PRICE General Styles
--------------------------------------------------------------------------------*/
-.us-price, .ca-price, .eur-price { color: #fff; }
-.us-price.strike, .ca-price.strike, .eur-price.strike { text-decoration: line-through; }
-.us-price span, .ca-price span, .eur-price span { color: #FFFF00; }
-
-.ski .us-price span, .ski .ca-price span, .ski .eur-price span { color: #0099FF; }
-
-.surf .us-price span, .surf .ca-price span, .surf .eur-price span { color: #FF6600; }
-
-.skate .us-price span, .skate .ca-price span, .skate .eur-price span { color: #66CC00; }
-
 /* Media Queries
 -------------------------------------------------------------------------------*/
 @media screen and (min-width: 768px) { h1, h2, .h1, .h2 { font-size: 3.125em; /* 50 / 16 */ }
@@ -439,9 +427,18 @@ body { background: #000; }
 .page-template-default .default-page .section-content p { margin-bottom: 10px; }
 .page-template-default .default-page .section-content ul { list-style: square; margin: 0 0 20px 25px; }
 
-.price p { display: none; }
-.price p.active { display: block; margin: 0; }
-.price p span { font-size: 0.8em; }
+/* PRICE General Styles
+-------------------------------------------------------------------------------*/
+.price .us-price, .price .ca-price, .price .eur-price { color: #fff; display: none; }
+.price .us-price.active, .price .ca-price.active, .price .eur-price.active { display: block; margin: 0; }
+.price .us-price.strike, .price .ca-price.strike, .price .eur-price.strike { text-decoration: line-through; }
+.price .us-price .currency-note, .price .ca-price .currency-note, .price .eur-price .currency-note { color: #FFFF00; font-size: 0.8em; }
+
+.ski .price .us-price .currency-note, .ski .price .ca-price .eur-price .currency-note { color: #0099FF; }
+
+.surf .price .us-price .currency-note, .surf .price .ca-price .eur-price .currency-note { color: #FF6600; }
+
+.skate .price .us-price .currency-note, .skate .price .ca-price .eur-price .currency-note { color: #66CC00; }
 
 .video-header .section-content { padding-left: 20px; padding-right: 20px; }
 .video-header .section-content h1 { margin-bottom: 20px; color: #000; }
