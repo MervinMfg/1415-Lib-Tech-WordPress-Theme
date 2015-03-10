@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Team Overview
+Template Name: Team Sport Overview
 */
 get_header();
 
@@ -59,7 +59,7 @@ if (have_posts()) :
                     ?>
 
                     <li>
-                        <a href="<?php the_permalink(); ?>">                            
+                        <a href="<?php the_permalink(); ?>">
                             <div class="team-member-image">
                                 <img src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Profile" />
                             </div>
@@ -253,7 +253,7 @@ if (have_posts()) :
                     ?>
 
                     <li>
-                        <a href="<?php the_permalink(); ?>">                            
+                        <a href="<?php the_permalink(); ?>">
                             <div class="team-member-image">
                                 <img src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Profile" />
                             </div>
