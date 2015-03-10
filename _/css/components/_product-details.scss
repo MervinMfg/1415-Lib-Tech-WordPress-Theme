@@ -50,9 +50,9 @@
 		&.hidden {
 			display: none;
 		}
-
 		.bx-wrapper {
 			margin: 0 !important;
+
 			.bx-viewport {
 				background: none;
 			}
@@ -160,7 +160,6 @@
 						background: #000;
 						color: $snowColor;
 					}
-				
 				}
 				img {
 					float: right;
@@ -318,7 +317,6 @@
 				background: #000;
 				color: $skiColor;
 			}
-
 		}
 		.cart-success,
 		.cart-failure {
@@ -561,7 +559,6 @@
 					text-decoration: none;
 					cursor: default;
 				}
-				
 			}
 		}
 	}
@@ -591,7 +588,6 @@
 			margin-bottom: 20px;
 			font-size: 1.1em;
 		}
-
 		ul {
 			list-style: square;
 			margin: 0 0 20px 25px;
@@ -903,28 +899,8 @@
 }
 .product-video {
 	.video-player {
-		padding-bottom: 20px;
-	}
-	.video-copy {
-		padding-bottom: 20px;
-
-		.quote {
-			line-height: 1.32em;
-
-			&:first-line {
-				font-size: 1.4em;
-			}
-			&:before {
-	    		content: '“';
-			}
-			&:after {
-				content: '”';
-			}
-		}
-		.quote-attribution {
-			text-align: right;
-			line-height: 1.32em;
-		}
+		width: 100%;
+		padding: 10px 0;
 	}
 }
 .single-libtech_snowboards,
@@ -1020,7 +996,6 @@
 				text-align: center;
 			}
 		}
-
 	}
 	.single-libtech_surfboards .product-details .product-images {
 		padding-top: 10px;
@@ -1262,26 +1237,9 @@
 		}
 	}
 	.product-video {
-		h2 {
-			width: 35%;
-			float: right;
-
-			span {
-				padding-left: 20px;
-			}
-		}
 		.video-player {
-			width: 65%;
-			float: left;
-		}
-		.video-copy {
-			width: 35%;
-			float: left;
-
-			.quote,
-			.quote-attribution {
-				padding-left: 20px;
-			}
+			width: 90%;
+			margin: 0 auto;
 		}
 	}
 }
@@ -1397,6 +1355,9 @@
 			}
 		}
 	}
+	.product-video .video-player {
+		width: 75%;
+	}
 }
 @media screen and (min-width: $breakpoint-xlarge) {
 	.product-extras .product-specs {
@@ -1445,6 +1406,9 @@
 				}
 			}
 		}
+	}
+	.product-video .video-player {
+		width: 50%;
 	}
 }
 @media screen and (min-width: $breakpoint-xxlarge) {
@@ -1499,7 +1463,6 @@
 			h2 {
 				padding-left: 40px;
 			}
-
 			ul {
 				padding-left: 40px;
 				

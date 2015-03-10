@@ -58,6 +58,9 @@
 						border-color: #666;
 					}
 				}
+				.price p {
+					font-size: .75em;
+				}
 			}
 			&:hover,
 			&:focus {
@@ -347,6 +350,9 @@
 @media screen and (min-width: $breakpoint-medium) {
 	.product-filtering {
 		display: block;
+	}
+	.product-overview .section-content ul.product-listing li.product-item .price p {
+		font-size: .875em;
 	}
 }
 @media screen and (min-width: $breakpoint-large) {

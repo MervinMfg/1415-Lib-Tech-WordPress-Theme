@@ -224,8 +224,8 @@
 			</div>
 		</div><!-- END .takeover -->
 		<header>
-			<div class="logo-wrapper">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo"><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?> – <?php bloginfo( 'description' ); ?>" /></a>
+			<div class="logo-wrapper" itemscope itemtype="http://schema.org/Organization" >
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="logo" itemprop="url" ><img src="<?php echo $logo; ?>" alt="<?php bloginfo( 'name' ); ?> – <?php bloginfo( 'description' ); ?>" itemprop="logo" /></a>
 			</div>
 			<?php
 				wp_nav_menu(

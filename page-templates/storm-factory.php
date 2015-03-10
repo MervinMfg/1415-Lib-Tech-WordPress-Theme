@@ -49,12 +49,14 @@ get_header();
 		<div class="bg3-top"></div>
 		<section class="storm-factory-overview bg3">
 			<div class="section-content">
-				<div class="storm-image">
-					<img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-blizzard.jpg" alt="Storm Factory Blizzard" />
-				</div>
-				<div class="storm-copy">
-					<?php the_content(); ?>
-				</div>
+				<div class="overview-content-wrapper">
+					<div class="storm-image">
+						<img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-blizzard.jpg" alt="Storm Factory Blizzard" />
+					</div>
+					<div class="storm-copy">
+						<?php the_content(); ?>
+					</div>
+				</div><!-- .overview-content-wrapper -->
 			</div><!-- END .section-content -->
 			<div class="clearfix"></div>
 		</section><!-- END .storm-factory-overview -->

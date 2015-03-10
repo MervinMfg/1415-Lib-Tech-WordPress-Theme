@@ -6,11 +6,16 @@
 	.section-content {
 		padding: 0 20px;
 
-		.storm-image img {
-			padding-bottom: 20px;
-		}
-		.storm-copy h3 {
-			margin-bottom: 10px;
+		.overview-content-wrapper {
+			padding: 10px 0;
+			
+			.storm-image img {
+				width: 100%;
+				padding-bottom: 10px;
+			}
+			.storm-copy h3 {
+				margin-bottom: 10px;
+			}
 		}
 	}
 }
@@ -35,22 +40,9 @@
 @media screen and (min-width: $breakpoint-medium) {
 	.storm-factory-overview {
 		.section-content {
-			.storm-image {
-				float: left;
-				width: 40%;
-
-				img {
-					padding-bottom: 0;
-				}
-			}
-			.storm-copy {
-				float: left;
-				width: 60%;
-
-				h3,
-				p {
-					padding-left: 20px;
-				}
+			.overview-content-wrapper {
+				width: 90%;
+				margin: 0 auto;
 			}
 		}
 	}
@@ -92,22 +84,22 @@
 		}
 	}
 }
-@media screen and (min-width: $breakpoint-xlarge) {
+@media screen and (min-width: $breakpoint-large) {
 	.storm-factory-overview {
 		.section-content {
-			.storm-image {
-				float: left;
-				width: 529px;
-			}
-			.storm-copy {
-				float: left;
-				width: 600px;
-
-				h3,
-				p {
-					padding-left: 20px;
-				}
+			.overview-content-wrapper {
+				width: 75%;
 			}
 		}
 	}
+}
+@media screen and (min-width: $breakpoint-xlarge) {
+	.storm-factory-overview {
+		.section-content {
+			.overview-content-wrapper {
+				width: 50%;
+			}
+		}
+	}
+	
 }

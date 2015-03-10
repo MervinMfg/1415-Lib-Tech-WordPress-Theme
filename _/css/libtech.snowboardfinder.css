@@ -41,7 +41,7 @@
 .board-finder .section-content .bf-step-4 .product-listing .product-item { float: left; text-align: center; padding-bottom: 40px; }
 .board-finder .section-content .bf-step-4 .product-listing .product-item a .product-img { width: 100%; max-width: 200%; height: auto; }
 .board-finder .section-content .bf-step-4 .product-listing .product-item a h5 { display: inline-block; }
-.board-finder .section-content .bf-step-4 .product-listing .product-item a h5.board-length { color: #FFF; }
+.board-finder .section-content .bf-step-4 .product-listing .product-item a h5 .board-length { color: #FFF; }
 .board-finder .section-content .bf-step-4 .why-link { color: #FFFF00; display: block; text-align: center; text-transform: uppercase; font-size: 1.5em; }
 .board-finder .section-content .bf-step-5 { padding: 40px 20px; }
 .board-finder .section-content .bf-step-5 h2 { padding-bottom: 30px; }

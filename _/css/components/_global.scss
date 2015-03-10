@@ -100,17 +100,56 @@ body {
 		}
 	}
 }
-.price p {
-	display: none;
+/* PRICE General Styles
+-------------------------------------------------------------------------------*/
+.price {
+	.us-price,
+	.ca-price,
+	.eur-price {
+		color: #fff;
+		display: none;
 
-	&.active {
-		display: block;
-		margin: 0;
-	}
-	span {
-		font-size: 0.8em;
+		&.active {
+			display: block;
+			margin: 0;
+		}
+		&.strike {
+			text-decoration: line-through;
+		}
+		.currency-note {
+			color: $snowColor;
+			font-size: 0.8em;
+		}
 	}
 }
+.ski .price {
+	.us-price,
+	.ca-price
+	.eur-price {
+		.currency-note {
+			color: $skiColor;
+		}
+	}
+}
+.surf .price {
+	.us-price,
+	.ca-price
+	.eur-price {
+		.currency-note {
+			color: $surfColor;
+		}
+	}
+}
+.skate .price {
+	.us-price,
+	.ca-price
+	.eur-price {
+		.currency-note {
+			color: $skateColor;
+		}
+	}
+}
+
 .video-header {
 	.section-content {
 		padding-left: 20px;

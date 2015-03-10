@@ -34,7 +34,7 @@ h4, .h4 {
 }
 h5, .h5 {
 	text-transform: uppercase;
-    font-size: .875em; /* 14 / 16 */
+    font-size: .75em; /* 12 / 16 */
     line-height: 1;
     font-weight: 700;
     color: #999;
@@ -99,35 +99,6 @@ p, .p {
 	color: #000;
 	text-shadow: none;
 }
-/* PRICE General Styles
--------------------------------------------------------------------------------*/
-.us-price,
-.ca-price,
-.eur-price {
-	color: #fff;
-
-	&.strike {
-		text-decoration: line-through;
-	}
-	span {
-		color: $snowColor;
-	}
-}
-.ski .us-price span,
-.ski .ca-price span,
-.ski .eur-price span {
-	color: $skiColor;
-}
-.surf .us-price span,
-.surf .ca-price span,
-.surf .eur-price span {
-	color: $surfColor;
-}
-.skate .us-price span,
-.skate .ca-price span,
-.skate .eur-price span {
-	color: $skateColor;
-}
 /* Media Queries
 -------------------------------------------------------------------------------*/
 @media screen and (min-width: $breakpoint-medium) {
@@ -141,7 +112,7 @@ p, .p {
 	    font-size: 1.5em; /* 24 / 16 */
 	}
 	h5, .h5 {
-	    font-size: 1em; /* 16 / 16 */
+	    font-size: .875em; /* 14 / 16 */
 	}
 	p, .p {
 	    font-size: 1em; /* 16 / 16 */
