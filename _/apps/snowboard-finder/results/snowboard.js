@@ -23,7 +23,6 @@
     $scope.currentImg = "";
     $scope.currentSku = "";
 
-
     function init() {
       $scope.currentImg = $scope.snowboard.variations[0].colorwayImg[0];
       $scope.currentSku = $scope.snowboard.variations[0].sku;

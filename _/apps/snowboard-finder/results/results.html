@@ -18,7 +18,7 @@
 		<!-- board picks go here -->
 		<ul class="product-listing snowboards">
 			<!-- $scope.config.snowboards -->
-			<snowboard ng-repeat="snowboard in config.snowboards"></snowboard>
+			<snowboard ng-repeat="snowboard in config.snowboards | snowboardFilter:user | limitTo:6"></snowboard>
 		</ul>
 		<a href="#" class="why-link">Why these boards?</a>
 	</div>

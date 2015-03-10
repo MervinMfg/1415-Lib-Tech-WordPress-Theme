@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.snowboard']);
+	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.snowboard', 'boardFinder.snowboardFilters']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/results/', {
@@ -16,22 +16,17 @@
 		});
 	}]);
 
-	app.controller('ResultsController', ['$scope', '$routeParams', '$log', 'config', function ResultsController($scope, $routeParams, $log, config) {
+	app.controller('ResultsController', ['$scope', '$routeParams', '$log', 'config', 'user', function ResultsController($scope, $routeParams, $log, config, user) {
 		$scope.name = "ResultsController";
 		$scope.params = $routeParams;
 		$scope.config = config;
-
-		// BOOT SIZES
-		// OUR MODIFIED CHART
-		// 0 to 7.5 - 23.5 to 24.5
-		// 7.5 to 10 – 24.5 to 25.5
-		// 10 to 11.5 – 25.5 to 26
-		// 11.5+ – 26+
+		$scope.user = user;
 
 		function init() {
 			// init
 		}
-		
+
 		init();
 	}]);
+
 }());
