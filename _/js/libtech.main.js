@@ -39,7 +39,7 @@ LIBTECH.main = {
 			self.environmentalInit();
 		} else if ($body.hasClass('page-template-page-templatespage-environmental-detail-php')) {
 			self.environmentalDetailInit();
-		} else if ($body.hasClass('page-template-page-templatespage-overview-team-php')) {
+		} else if ($body.hasClass('page-template-team-sport-overview')) {
 			self.teamOverviewInit();
 		} else if ($body.hasClass('single-libtech_team_snow') || $body.hasClass('single-libtech_team_nas') || $body.hasClass('single-libtech_team_surf') || $body.hasClass('single-libtech_team_skate')) {
 			self.teamDetailsInit();
