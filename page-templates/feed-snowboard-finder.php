@@ -68,6 +68,7 @@ if (have_posts()) :
 				$productArray['title'] = get_the_title();
 				$productArray['length'] = get_sub_field('libtech_snowboard_specs_length');
 				$productArray['width'] = get_sub_field('libtech_snowboard_specs_width');
+				$productArray['waistWidth'] = get_sub_field('libtech_snowboard_specs_waist_width');
 				$productArray['slug'] = $post->post_name;
 				$productArray['link'] = get_permalink($post->ID);
 				$productArray['slogan'] = get_field('libtech_product_slogan');

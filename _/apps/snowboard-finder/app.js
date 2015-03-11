@@ -56,6 +56,7 @@
 		config.measurement = "imperial"; // or metric
 		config.snowboards = [];
 	});
+	
 	app.service('user', function User() {
 		var user = this;
 		user.gender = "Default";
