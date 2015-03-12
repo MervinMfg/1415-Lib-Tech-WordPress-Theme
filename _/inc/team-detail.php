@@ -7,18 +7,19 @@
 		$profilePhoto = get_field('libtech_team_profile_photo'); // libtech_team_related_products
 		$profilePhoto = wp_get_attachment_image_src($profilePhoto, 'full', false);
 ?>
-        <section class="ripper-details bg2 <?php echo $slug; ?>">
+        <section class="ripper-details bg2 <?php echo $slug; ?>" itemscope itemtype="http://schema.org/Person">
         	<div class="section-content">
         		<!--<div class="breadcrumb"><a href="/snowboarding/team/">&lt; Rippers Overview</a></div>-->
-        		<h1><?php the_title(); ?></h1>
+        		<h1 itemprop="name"><?php the_title(); ?></h1>
         		<div class="ripper-gallery">
         			<?php
 	        			// Photo Gallery
 	        			if(get_field('libtech_team_gallery')) :
 	        				the_field('libtech_team_gallery');
+									echo "<meta itemprop=\"image\" content=\"$profilePhoto[0]\" />";
 	        			else:
 	        		?>
-	        		<img src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Team Photo" width="<?php echo $profilePhoto[1]; ?>" height="<?php echo $profilePhoto[1]; ?>" class="profile-photo" />
+	        		<img src="<?php echo $profilePhoto[0]; ?>" itemprop="image" alt="<?php the_title(); ?> Team Photo" width="<?php echo $profilePhoto[1]; ?>" height="<?php echo $profilePhoto[1]; ?>" class="profile-photo" />
 	        		<?php
 	        			endif;
 	        		?>
@@ -29,7 +30,7 @@
 						<?php if(get_field('libtech_team_sponsors')) : ?><p class="ripper-sponsors"><span>Sponsors: </span><?php the_field('libtech_team_sponsors'); ?></p><?php endif; ?>
 					</div>
 					<h4><?php the_field('libtech_team_profile_tagline'); ?></h4>
-					<div class="ripper-bio">
+					<div class="ripper-bio" itemprop="description">
 						<?php the_content(); ?>
 					</div>
 					<ul class="social-links">
@@ -191,7 +192,7 @@
 								<p><?php echo $videoTitle; ?></p>
 							</a>
 						</li>
-						<?php	
+						<?php
 							} // end for loop
 						?>
 
