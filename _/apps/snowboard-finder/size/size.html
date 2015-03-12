@@ -1,8 +1,8 @@
 <div class="finder-step step bf-step-2">
 	<a href="#/" class="back-button">< Back</a>
 	<div class="quote-wrapper">
-		<blockquote>"Different board widths, waists and constructions exist to accommodate the endless combinations of physical proportions. Which Banana are you?"</blockquote>
-		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
+		<blockquote class="quote animated" ng-class="showQuote">"{{quote}}"</blockquote>
+		<p class="quote-cite animated" ng-class="showQuote">-POS (Lib Tech Kraftsman)</p>
 	</div>
 	<div class="measurements-wrapper clearfix">
 		<form name="measurementsForm" class="measurements-form" role="form" ng-submit="measurementsForm.$valid && setSize()" novalidate>
@@ -12,41 +12,47 @@
 					<input type="radio" id="size-metric" value="metric" ng-model="config.measurement" /><label for="size-metric">Metric</label>
 				</div>
 				<div class="weight-measurement">
-					<h4>Weight</h4>
-					<div class="weight-us" ng-show="config.measurement == 'imperial'">
-						<select id="select-weight-us" class="select" ng-model="inputWeight.lbs" ng-options="weight.value as weight.label for weight in weightImperial" ng-change="changeWeight()" required-select required>
-							<option value="" label="Pounds">Pounds</option>
-						</select>
-					</div><!-- .weight-us -->
-					<div class="weight-metric" ng-show="config.measurement == 'metric'">
-						<select id="select-weight-metric" class="select" ng-model="inputWeight.kg" ng-options="weight.value as weight.label for weight in weightMetric" ng-change="changeWeight()" required-select required>
-							<option value="" label="Kilograms">Kilograms</option>
-						</select>
-					</div><!-- .weight-metric -->
+					<div ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('weight');" ng-mouseleave="showQuote = 'fadeOut';">
+						<h4>Weight</h4>
+						<div class="weight-us" ng-show="config.measurement == 'imperial'">
+							<select id="select-weight-us" class="select" ng-model="inputWeight.lbs" ng-options="weight.value as weight.label for weight in weightImperial" ng-change="changeWeight()" required-select required>
+								<option value="" label="Pounds">Pounds</option>
+							</select>
+						</div><!-- .weight-us -->
+						<div class="weight-metric" ng-show="config.measurement == 'metric'">
+							<select id="select-weight-metric" class="select" ng-model="inputWeight.kg" ng-options="weight.value as weight.label for weight in weightMetric" ng-change="changeWeight()" required-select required>
+								<option value="" label="Kilograms">Kilograms</option>
+							</select>
+						</div><!-- .weight-metric -->
+					</div>
 				</div> <!-- .weight-measurement -->
 				<div class="height-measurement">
-					<h4>Height</h4>
-					<div class="height-us" ng-show="config.measurement == 'imperial'">
-						<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()" required-select required>
-							<option value="" label="Feet">Feet</option>
-						</select>
-						<select id="select-height-inches-us" class="select inches" ng-model="inputHeight.inches" ng-options="height.value as height.label for height in heightInches" ng-change="changeHeight()" required-select required>
-							<option value="" label="Inches">Inches</option>
-						</select>
-					</div><!-- .height-us -->
-					<div class="height-metric" ng-show="config.measurement == 'metric'">
-						<select id="select-height-metric" class="select" ng-model="inputHeight.cm" ng-options="height.value as height.label for height in heightMetric" ng-change="changeHeight()" required-select required>
-							<option value="" label="Centimeters">Centimeters</option>
-						</select>
-					</div><!-- .height-metric -->
+					<div ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('height');" ng-mouseleave="showQuote = 'fadeOut';">
+						<h4>Height</h4>
+						<div class="height-us" ng-show="config.measurement == 'imperial'">
+							<select id="select-height-feet-us" class="select feet" ng-model="inputHeight.feet" ng-options="height.value as height.label for height in heightFeet" ng-change="changeHeight()" required-select required>
+								<option value="" label="Feet">Feet</option>
+							</select>
+							<select id="select-height-inches-us" class="select inches" ng-model="inputHeight.inches" ng-options="height.value as height.label for height in heightInches" ng-change="changeHeight()" required-select required>
+								<option value="" label="Inches">Inches</option>
+							</select>
+						</div><!-- .height-us -->
+						<div class="height-metric" ng-show="config.measurement == 'metric'">
+							<select id="select-height-metric" class="select" ng-model="inputHeight.cm" ng-options="height.value as height.label for height in heightMetric" ng-change="changeHeight()" required-select required>
+								<option value="" label="Centimeters">Centimeters</option>
+							</select>
+						</div><!-- .height-metric -->
+					</div>
 				</div><!-- .height-measurement -->
 			</div><!-- .selection-measurements-top -->
 			<div class="selection-measurements-bottom">
 				<div class="boot-measurement">
-					<h4>Boot</h4>
-					<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes" required-select required>
-						<option value="" label="Size">Size</option>
-					</select>
+					<div ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('boot');" ng-mouseleave="showQuote = 'fadeOut';">
+						<h4>Boot</h4>
+						<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes" required-select required>
+							<option value="" label="Size">Size</option>
+						</select>
+					</div>
 				</div><!-- .boot-measurement -->
 				<div class="button-container">
 					<button type="submit" class="bf-button">Next</button><!-- href="#/style/" -->

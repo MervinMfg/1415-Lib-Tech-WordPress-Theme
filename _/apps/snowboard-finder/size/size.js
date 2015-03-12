@@ -74,6 +74,7 @@
 			{label: 12, value: 12}, {label: 12.5, value: 12.5}, {label: 13, value: 13}, {label: 13.5, value: 13.5},
 			{label: 14, value: 14}, {label: 14.5, value: 14.5}, {label: 15, value: 15}
 		];
+		$scope.quote = "";
 
 		function init() {
 			// check values on init of controller
@@ -141,10 +142,25 @@
 			$location.path( '/style/' );
 		}
 
+		function updateQuote(section) {
+			switch(section) {
+				case 'height':
+					$scope.quote = "Taking into account Variable Mass Systems and Newton’s second law… Ohh Uhh, just give us your info. It's science.";
+					break;
+				case 'boot':
+					$scope.quote = "Different board widths exist to accommodate the endless combinations of physical proportions.";
+					break;
+				default:
+					// weight
+					$scope.quote = "Don’t worry… we will not relay this info to your online dating profile.";
+			}
+		}
+
 		// set public methods
 		$scope.changeWeight = changeWeight;
 		$scope.changeHeight = changeHeight;
 		$scope.setSize = setSize;
+		$scope.updateQuote = updateQuote;
 
 		init();
 	}]);
