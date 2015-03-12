@@ -352,40 +352,41 @@
   }
 }
 
-@-webkit-keyframes fadeInBf {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-10%, 0, 0);
-    transform: translate3d(-10%, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInBf {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(-10%, 0, 0);
-    transform: translate3d(-10%, 0, 0);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-.fadeInBf {
-  -webkit-animation-name: fadeInBf;
-  animation-name: fadeInBf;
-}
-
 @media screen and (min-width: $breakpoint-medium) {
+
+  @-webkit-keyframes bf-quote-fade-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  @keyframes bf-quote-fade-in {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(-10%, 0, 0);
+      transform: translate3d(-10%, 0, 0);
+    }
+
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+
+  .bf-quote-fade-in {
+    -webkit-animation-name: bf-quote-fade-in;
+    animation-name: bf-quote-fade-in;
+  }
+
   .finder-step {
     min-height: 800px;
 
