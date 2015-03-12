@@ -20,13 +20,24 @@
 		$scope.name = "GenderController";
 		$scope.params = $routeParams;
 		$scope.user = user;
+		$scope.showQuote = false;
 
-		$scope.getGender = function() {
+		function init() {
+			//
+		}
+
+		function getGender() {
 			return $scope.user.gender;
-		};
+		}
 
-		$scope.setGender = function(newGender) {
+		function setGender(newGender) {
 			$scope.user.gender = newGender;
-		};
+		}
+
+		// set public methods
+		$scope.getGender = getGender;
+		$scope.setGender = setGender;
+
+		init();
 	}]);
 })();

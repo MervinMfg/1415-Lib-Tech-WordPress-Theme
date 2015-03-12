@@ -6,13 +6,13 @@
 		<div class="selection-who">
 			<h4>What are you?</h4>
 			<ul class="button-list">
-				<li class="list-item left"><a href="#/size/" class="bf-button" ng-click="setGender('Male')" ng-class="{'selected': getGender() == 'Male'}">Guy</a></li>
-				<li class="list-item right"><a href="#/size/" class="bf-button" ng-click="setGender('Female')" ng-class="{'selected': getGender() == 'Female'}">Girl</a></li>
+				<li class="list-item left"><a href="#/size/" class="bf-button" ng-click="setGender('Male')" ng-mouseover="showQuote = 'fadeInBf'" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': getGender() == 'Male'}">Guy</a></li>
+				<li class="list-item right"><a href="#/size/" class="bf-button" ng-click="setGender('Female')" ng-mouseover="showQuote = 'fadeIn';" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': getGender() == 'Female'}">Girl</a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="quote-wrapper">
-		<blockquote>"The geometries of the men and women are different. Your gender helps to determine the perfect construction for your dream board…"</blockquote>
-		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
+<div class="quote-wrapper">
+		<blockquote class="quote animated" ng-class="showQuote">"The geometries of the men and women are different. Your gender helps to determine the perfect construction for your dream board…"</blockquote>
+		<p class="quote-cite animated" ng-class="showQuote">-POS (Lib Tech Kraftsman)</p>
 	</div>
 </div>
