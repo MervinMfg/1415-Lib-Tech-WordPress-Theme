@@ -83,7 +83,7 @@
 			}
 			if($scope.user.height != -1) {
 				$scope.inputHeight.feet = Math.floor($scope.user.height/30.48);
-				$scope.inputHeight.inches = Math.floor(($scope.user.height/2.54) % 12);
+				$scope.inputHeight.inches = Math.round(($scope.user.height/2.54) % 12);
 				$scope.inputHeight.cm = Math.round($scope.user.height / 5) * 5;
 			}
 		}
@@ -114,7 +114,7 @@
 			if ($scope.config.measurement == "imperial") {
 				// update height in inches based on fields that are complete
 				if($scope.inputHeight.feet != -1 && $scope.inputHeight.inches != -1) {
-					updatedHeight = Math.round(($scope.inputHeight.feet * 30.48) + ($scope.inputHeight.inches + 2.54));
+					updatedHeight = Math.round(($scope.inputHeight.feet * 30.48) + ($scope.inputHeight.inches * 2.54));
 				} else if ($scope.inputHeight.feet != -1) {
 					updatedHeight = Math.round($scope.inputHeight.feet * 30.48);
 				} // do nothing if only inches are set
@@ -133,6 +133,8 @@
 				}
 			}
 			$scope.user.height = updatedHeight;
+
+			$log.log($scope.user.height);
 		}
 
 		function setSize() {

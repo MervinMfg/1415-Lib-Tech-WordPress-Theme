@@ -26,6 +26,18 @@
 			// init
 		}
 
+		function resetUser() {
+			$scope.user.gender = "Default";
+			$scope.user.weight = -1;
+			$scope.user.height = -1;
+			$scope.user.bootSize = -1;
+			$scope.user.ability = "Default";
+			$scope.user.terrain = "Default";
+		}
+
+		// set public methods
+		$scope.resetUser = resetUser;
+
 		init();
 	}]);
 

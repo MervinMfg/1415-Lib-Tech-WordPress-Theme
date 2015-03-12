@@ -1,15 +1,13 @@
- /* ==========================================================================
-   LIBTECH.SNOWBOARDFINDER.SCSS
-   ========================================================================== */
-
-/*
- * Lib Tech DIY Snowboard Finder - http://www.lib-tech.com/snowboarding/snowboard-finder/
- * Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
- */
-
+// ==========================================================================
+// LIBTECH.SNOWBOARDFINDER.SCSS
+// ==========================================================================
+//
+// Lib Tech DIY Snowboard Finder - http://www.lib-tech.com/snowboarding/snowboard-finder/
+// Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+//
 // Helpers
-@import "helpers/variables";
-@import "helpers/mixins";
+@import 'helpers/variables';
+@import 'helpers/mixins';
 
 .board-finder {
 	padding-bottom: 0;
@@ -29,10 +27,6 @@
 			h3 {
 				text-align: center;
 				line-height: 1.25;
-
-				span {
-					display: block;
-				}
 			}
 			h4 {
 				color: #fff;
@@ -97,7 +91,7 @@
 				}
 				h3 {
 					padding-bottom: 80px;
-				}	
+				}
 				.selection-who {
 					width: 50%;
 					margin: 0 auto;
@@ -377,7 +371,7 @@
 								 	padding-left: 5px;
 								}
 							}
-						}	
+						}
 					}
 				}
 				.quote-wrapper {

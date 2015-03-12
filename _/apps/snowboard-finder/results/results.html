@@ -20,6 +20,7 @@
 			<!-- $scope.config.snowboards -->
 			<snowboard ng-repeat="snowboard in config.snowboards | snowboardFilter:user | limitTo:6"></snowboard>
 		</ul>
-		<a href="#" class="why-link">Why these boards?</a>
+		<a href="#/why/" class="why-link">Why these boards?</a>
+		<a href="#/" class="reset-link" ng-click="resetUser()">Start Over</a>
 	</div>
 </div><!-- .bf-step-4 -->
