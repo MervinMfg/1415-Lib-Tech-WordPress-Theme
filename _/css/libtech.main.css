@@ -582,25 +582,14 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .shptrn_ci_details h3, .shptrn_quick_cart { font-size: 12px; font-weight: 700; }
 
-/* ========================================================================== COMPONENTS/_TAKEOVER.SCSS ========================================================================== */
-.takeover { position: relative; z-index: 4; background: #000; width: 100%; }
-.takeover .takeover-content { max-width: 1640px; margin: 0 auto; position: relative; cursor: pointer; }
-.takeover .takeover-content .expanded { text-align: center; white-space: nowrap; display: none; position: relative; overflow: hidden; }
-.takeover .takeover-content .expanded.show { display: block; }
-.takeover .takeover-content .expanded .close { display: block; float: right; width: 41px; height: 41px; background: url("../img/sprite.png") no-repeat -265px -46px; text-indent: -9999px; padding: 5px; position: absolute; top: 0; right: 0; }
-.takeover .takeover-content .expanded .message img { height: auto; display: block; width: 140.597539543058%; margin-left: -20.298769771529%; max-width: none; }
-.takeover .takeover-content .contracted { text-align: center; width: 100%; background: #000; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; filter: alpha(opacity=100); -webkit-transition: opacity 800ms ease-in-out; -moz-transition: opacity 800ms ease-in-out; -ms-transition: opacity 800ms ease-in-out; -o-transition: opacity 800ms ease-in-out; transition: opacity 800ms ease-in-out; }
-.takeover .takeover-content .contracted.hide { position: absolute; top: 0; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; filter: alpha(opacity=0); }
-.takeover .takeover-content .contracted a { font-style: normal; color: #fff; }
-.takeover .takeover-content .contracted a .message { font-weight: bold; padding: 10px 0; }
-.takeover .takeover-content .contracted a .message span.red { color: #CC0000; }
-.takeover .takeover-content .contracted a .message span.green { color: #009900; }
-.takeover .takeover-content .contracted a .view-more { display: block; float: right; width: 41px; height: 41px; background: url("../img/sprite.png") no-repeat -214px -46px; text-indent: -9999px; padding: 5px; }
+.takeover { background: #000; position: relative; width: 100%; z-index: 4; }
+.takeover .takeover-content { cursor: pointer; margin: 0 auto; max-width: 1640px; position: relative; text-align: center; }
+.takeover .message { color: #fff; font-style: normal; font-weight: bold; padding: 5px 0; }
+.takeover .message .red { color: #CC0000; }
+.takeover .message .green { color: #009900; }
 
-/*.international .takeover {
-	display: none;
-}*/
-@media screen and (min-width: 600px) { .takeover .takeover-content .expanded .message img { width: 100%; margin-left: 0; max-width: 100%; } }
+.international .takeover { display: none; }
+
 /* ========================================================================== COMPONENTS/_HOMEPAGE.SCSS ========================================================================== */
 .homepage-posts { padding-left: 20px; padding-right: 20px; }
 .homepage-posts h2 { padding-bottom: 20px; }

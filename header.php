@@ -210,17 +210,7 @@
 	<div class="wrapper">
 		<div class="takeover">
 			<div class="takeover-content">
-				<div class="expanded">
-					<a href="#close-takeover" class="close">Close</a>
-					<a href="/storm-factory/" class="message" target="_blank"><img src="<?php bloginfo('template_directory'); ?>/_/img/takeovers/lib-tech-snowboards-reis.jpg" alt="Lib Tech Storm Factory welcomes Brandon Reis" /></a>
-				</div>
-				<div class="contracted">
-					<a href="#open-takeover">
-						<p class="view-more">View More</p>
-						<p class="message">Lib Tech Storm Factory Welcomes Brandon Reis</p>
-						<div class="clearfix"></div>
-					</a>
-				</div>
+				<p class="message">All 14/15 Snowboards, Skis and Outerwear are now 20% OFF!</p>
 			</div>
 		</div><!-- END .takeover -->
 		<header>
