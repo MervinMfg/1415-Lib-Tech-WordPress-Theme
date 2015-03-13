@@ -583,7 +583,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .shptrn_ci_details h3, .shptrn_quick_cart { font-size: 12px; font-weight: 700; }
 
 .takeover { background: #000; position: relative; width: 100%; z-index: 4; }
-.takeover .takeover-content { cursor: pointer; margin: 0 auto; max-width: 1640px; position: relative; text-align: center; }
+.takeover .takeover-content { margin: 0 auto; max-width: 1640px; position: relative; text-align: center; }
 .takeover .message { color: #fff; font-style: normal; font-weight: bold; padding: 5px 0; }
 .takeover .message .red { color: #CC0000; }
 .takeover .message .green { color: #009900; }
