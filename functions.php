@@ -1,5 +1,5 @@
 <?php
-if ( function_exists( 'add_theme_support' ) ) { 
+if ( function_exists( 'add_theme_support' ) ) {
     // Add RSS links to <head> section
     add_theme_support( 'automatic-feed-links' );
     // add featured image/thumbnail support
@@ -303,10 +303,8 @@ function getRelatedProducts () {
             $relatedImage = wp_get_attachment_image_src($imageID, 'square-medium');
             $relatedLink = get_permalink($post_object->ID);
             $relatedTitle = get_the_title($post_object->ID);
-            // get price
-            $relatedPrice = getPrice(get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID));
             // add to related product array
-            array_push($relatedProducts, Array($relatedTitle, $relatedLink, $relatedImage, $relatedPrice));
+            array_push($relatedProducts, Array($relatedTitle, $relatedLink, $relatedImage));
         endforeach;
         // randomly sort related products array
         shuffle($relatedProducts);
@@ -468,16 +466,16 @@ add_shortcode('gallery', 'lib_gallery_shortcode');
 CODE FOR CUSTOM POST TYPES
 ******************************/
 // order menus for custom post types
-function set_custom_post_types_admin_order($wp_query) {  
-  if (is_admin()) {  
+function set_custom_post_types_admin_order($wp_query) {
+  if (is_admin()) {
     $post_type = $wp_query->query['post_type'];
-    if ( $post_type == 'libtech_snowboards' || $post_type == 'libtech_nas' || $post_type == 'libtech_skateboards' || $post_type == 'libtech_awards' || $post_type == 'libtech_technology' || $post_type == 'libtech_outerwear' || $post_type == 'libtech_apparel' || $post_type == 'libtech_accessories' || $post_type == 'libtech_luggage' || $post_type == 'libtech_team_snow' || $post_type == 'libtech_team_nas' || $post_type == 'libtech_team_skate' || $post_type == 'libtech_dealers' || $post_type == 'libtech_partners') { 
-      $wp_query->set('orderby', 'menu_order');  
-      $wp_query->set('order', 'ASC');  
-    }  
-  }  
-}  
-add_filter('pre_get_posts', 'set_custom_post_types_admin_order');  
+    if ( $post_type == 'libtech_snowboards' || $post_type == 'libtech_nas' || $post_type == 'libtech_skateboards' || $post_type == 'libtech_awards' || $post_type == 'libtech_technology' || $post_type == 'libtech_outerwear' || $post_type == 'libtech_apparel' || $post_type == 'libtech_accessories' || $post_type == 'libtech_luggage' || $post_type == 'libtech_team_snow' || $post_type == 'libtech_team_nas' || $post_type == 'libtech_team_skate' || $post_type == 'libtech_dealers' || $post_type == 'libtech_partners') {
+      $wp_query->set('orderby', 'menu_order');
+      $wp_query->set('order', 'ASC');
+    }
+  }
+}
+add_filter('pre_get_posts', 'set_custom_post_types_admin_order');
 
 // SET UP CUSTOM POST TYPES
 function register_custom_post_types() {
@@ -493,7 +491,7 @@ function register_custom_post_types() {
         'view_item' => __('View Snowboard'),
         'search_items' => __('Search Snowboards'),
         'not_found' =>  __('No Snowboard Found'),
-        'not_found_in_trash' => __('No Snowbaords Found In Trash'), 
+        'not_found_in_trash' => __('No Snowbaords Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Snowboards'
     );
@@ -501,16 +499,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "snowboards"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_snowboards',$args);
     // start taxonamy for Snowboards
     $labels = array(
@@ -553,7 +551,7 @@ function register_custom_post_types() {
         'view_item' => __('View Skis'),
         'search_items' => __('Search Skis'),
         'not_found' =>  __('No Skis Found'),
-        'not_found_in_trash' => __('No Skis Found In Trash'), 
+        'not_found_in_trash' => __('No Skis Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Skis'
     );
@@ -561,16 +559,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "skis"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_nas',$args);
     // END SKIS
 
@@ -586,7 +584,7 @@ function register_custom_post_types() {
         'view_item' => __('View Surfboard'),
         'search_items' => __('Search Surfboards'),
         'not_found' =>  __('No surfboard found'),
-        'not_found_in_trash' => __('No surfboards found in Trash'), 
+        'not_found_in_trash' => __('No surfboards found in Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Surfboards'
     );
@@ -594,16 +592,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "surfboards"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_surfboards',$args);
     // END SURFBOARDS
 
@@ -619,7 +617,7 @@ function register_custom_post_types() {
         'view_item' => __('View Skateboard'),
         'search_items' => __('Search Skateboards'),
         'not_found' =>  __('No Skateboard Found'),
-        'not_found_in_trash' => __('No Skateboards Found In Trash'), 
+        'not_found_in_trash' => __('No Skateboards Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Skateboards'
     );
@@ -627,16 +625,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'skateboards'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_skateboards',$args);
     // start taxonamy for Skateboards
     $labels = array(
@@ -680,7 +678,7 @@ function register_custom_post_types() {
         'view_item' => __('View Outerwear'),
         'search_items' => __('Search Outerwear'),
         'not_found' =>  __('No Outerwear Found'),
-        'not_found_in_trash' => __('No Outerwear Found In Trash'), 
+        'not_found_in_trash' => __('No Outerwear Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Outerwear'
     );
@@ -688,16 +686,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'outerwear'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_outerwear',$args);
     // start taxonamy for Outerwear
     $labels = array(
@@ -741,7 +739,7 @@ function register_custom_post_types() {
         'view_item' => __('View Apparel'),
         'search_items' => __('Search Apparel'),
         'not_found' =>  __('No Apparel Found'),
-        'not_found_in_trash' => __('No Apparel Found In Trash'), 
+        'not_found_in_trash' => __('No Apparel Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Apparel'
     );
@@ -749,16 +747,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'apparel'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_apparel',$args);
     // start taxonamy for Apparel
     $labels = array(
@@ -802,7 +800,7 @@ function register_custom_post_types() {
         'view_item' => __('View Accessory'),
         'search_items' => __('Search Accessories'),
         'not_found' =>  __('No Accessories Found'),
-        'not_found_in_trash' => __('No Accessories Found In Trash'), 
+        'not_found_in_trash' => __('No Accessories Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Accessories'
     );
@@ -810,16 +808,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'accessories'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_accessories',$args);
     // start taxonamy for accessories
     $labels = array(
@@ -863,7 +861,7 @@ function register_custom_post_types() {
         'view_item' => __('View Luggage'),
         'search_items' => __('Search Luggage'),
         'not_found' =>  __('No Luggage Found'),
-        'not_found_in_trash' => __('No Luggage Found In Trash'), 
+        'not_found_in_trash' => __('No Luggage Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Luggage'
     );
@@ -871,16 +869,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => 'luggage'),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    ); 
+    );
     register_post_type('libtech_luggage',$args);
     // start taxonamy for luggage
     $labels = array(
@@ -924,7 +922,7 @@ function register_custom_post_types() {
         'view_item' => __('View Award'),
         'search_items' => __('Search Awards'),
         'not_found' =>  __('No Award Found'),
-        'not_found_in_trash' => __('No Awards Found In Trash'), 
+        'not_found_in_trash' => __('No Awards Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Awards'
     );
@@ -932,16 +930,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "awards"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_awards',$args);
     // END AWARDS
 
@@ -957,7 +955,7 @@ function register_custom_post_types() {
         'view_item' => __('View Tech Item'),
         'search_items' => __('Search Technology'),
         'not_found' =>  __('No Tech Item Found'),
-        'not_found_in_trash' => __('No Technology Found In Trash'), 
+        'not_found_in_trash' => __('No Technology Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Technology'
     );
@@ -965,16 +963,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "technology"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_technology',$args);
     // start taxonamy for Technology
     $labels = array(
@@ -1017,7 +1015,7 @@ function register_custom_post_types() {
         'view_item' => __('View FAQs'),
         'search_items' => __('Search FAQs'),
         'not_found' =>  __('No FAQ found'),
-        'not_found_in_trash' => __('No FAQs found in Trash'), 
+        'not_found_in_trash' => __('No FAQs found in Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'FAQs'
     );
@@ -1025,16 +1023,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         //'rewrite' => array("slug" => "artists"),
         'capability_type' => 'post',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_faqs',$args);
     // start taxonamy for FAQs
     $labels = array(
@@ -1079,7 +1077,7 @@ function register_custom_post_types() {
         'view_item' => __('View Team Member'),
         'search_items' => __('Search Team'),
         'not_found' =>  __('No Team Member Found'),
-        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'not_found_in_trash' => __('No Team Member Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Snow Team'
     );
@@ -1087,16 +1085,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "snowboarding/team"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_team_snow',$args);
 
     // TEAM NAS
@@ -1111,7 +1109,7 @@ function register_custom_post_types() {
         'view_item' => __('View Team Member'),
         'search_items' => __('Search Team'),
         'not_found' =>  __('No Team Member Found'),
-        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'not_found_in_trash' => __('No Team Member Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'NAS Team'
     );
@@ -1119,16 +1117,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "skiing/team"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_team_nas',$args);
 
     // TEAM SURF
@@ -1143,7 +1141,7 @@ function register_custom_post_types() {
         'view_item' => __('View Team Member'),
         'search_items' => __('Search Team'),
         'not_found' =>  __('No Team Member Found'),
-        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'not_found_in_trash' => __('No Team Member Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Surf Team'
     );
@@ -1151,16 +1149,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "surfing/team"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_team_surf',$args);
 
     // TEAM SKATE
@@ -1175,7 +1173,7 @@ function register_custom_post_types() {
         'view_item' => __('View Team Member'),
         'search_items' => __('Search Team'),
         'not_found' =>  __('No Team Member Found'),
-        'not_found_in_trash' => __('No Team Member Found In Trash'), 
+        'not_found_in_trash' => __('No Team Member Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Skate Team'
     );
@@ -1183,16 +1181,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         'rewrite' => array("slug" => "skateboarding/team"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_team_skate',$args);
 
     // start taxonamy for Team
@@ -1226,7 +1224,7 @@ function register_custom_post_types() {
     register_taxonomy( 'libtech_team_surf_cat', 'libtech_team_surf', $args );
     register_taxonomy( 'libtech_team_skate_cat', 'libtech_team_skate', $args );
     // END TEAM
-    
+
     // START PARTNERS
     $labels = array(
         'name' => _x('Partners', 'post type general name'),
@@ -1239,7 +1237,7 @@ function register_custom_post_types() {
         'view_item' => __('View Partner'),
         'search_items' => __('Search Partners'),
         'not_found' =>  __('No Partner Found'),
-        'not_found_in_trash' => __('No Partner Found In Trash'), 
+        'not_found_in_trash' => __('No Partner Found In Trash'),
         'parent_item_colon' => '',
         'menu_name' => 'Partners'
     );
@@ -1247,16 +1245,16 @@ function register_custom_post_types() {
         'labels' => $labels,
         'public' => true,
         'publicly_queryable' => true,
-        'show_ui' => true, 
-        'show_in_menu' => true, 
+        'show_ui' => true,
+        'show_in_menu' => true,
         'query_var' => true,
         //'rewrite' => array("slug" => "dealers"),
         'capability_type' => 'page',
-        'has_archive' => false, 
+        'has_archive' => false,
         'hierarchical' => false,
         'menu_position' => null,
         'supports' => array( 'title', 'editor', 'page-attributes' )
-    ); 
+    );
     register_post_type('libtech_partners',$args);
     // start taxonamy for Partners
     $labels = array(
