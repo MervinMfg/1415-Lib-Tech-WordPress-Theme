@@ -1,23 +1,23 @@
 <div class="finder-step bf-step-3">
 	<a href="#/size/" class="back-button">< Back</a>
 	<div class="quote-wrapper">
-		<blockquote>"The width of your feet best determines how wide of a snowboard that you need."</blockquote>
-		<p class="quote-cite">-POS (Lib Tech Kraftsman)</p>
+		<blockquote class="quote animated" ng-class="showQuote">"{{quote}}"</blockquote>
+		<p class="quote-cite animated" ng-class="showQuote">-POS (Lib Tech Kraftsman)</p>
 	</div>
 	<div class="selection-ability">
 		<h4>What is your ability?</h4>
 		<ul class="button-list">
-			<li class="list-item left"><button class="bf-button" ng-click="setAbility('Beginner')" ng-class="{'selected': getAbility() == 'Beginner'}">Easy/Jibby</button></li>
-			<li class="list-item center"><button class="bf-button" ng-click="setAbility('Intermediate')" ng-class="{'selected': getAbility() == 'Intermediate'}">All Around</button></li>
-			<li class="list-item right"><button class="bf-button" ng-click="setAbility('Advanced')" ng-class="{'selected': getAbility() == 'Advanced'}">Aggressive</button></li>
+			<li class="list-item left"><button class="bf-button" ng-click="setAbility('Beginner')" ng-class="{'selected': getAbility() == 'Beginner'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Beginner');" ng-mouseleave="showQuote = 'fadeOut';">Easy</button></li>
+			<li class="list-item center"><button class="bf-button" ng-click="setAbility('Intermediate')" ng-class="{'selected': getAbility() == 'Intermediate'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Intermediate');" ng-mouseleave="showQuote = 'fadeOut';">All Around</button></li>
+			<li class="list-item right"><button class="bf-button" ng-click="setAbility('Advanced')" ng-class="{'selected': getAbility() == 'Advanced'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Advanced');" ng-mouseleave="showQuote = 'fadeOut';">Aggressive</button></li>
 		</ul>
 	</div><!-- .selection-ability -->
 	<div class="selection-terrain">
 		<h4>What do you ride?</h4>
 		<ul class="button-list">
-			<li class="list-item left"><button class="bf-button" ng-click="setTerrain('Freestyle')" ng-class="{'selected': getTerrain() == 'Freestyle'}">Park</button></li>
-			<li class="list-item center"><button class="bf-button" ng-click="setTerrain('Freeride')" ng-class="{'selected': getTerrain() == 'Freeride'}">All Mountain</button></li>
-			<li class="list-item right"><button class="bf-button" ng-click="setTerrain('Powder')" ng-class="{'selected': getTerrain() == 'Powder'}">Powder</button></li>
+			<li class="list-item left"><button class="bf-button" ng-click="setTerrain('Freestyle')" ng-class="{'selected': getTerrain() == 'Freestyle'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Freestyle');" ng-mouseleave="showQuote = 'fadeOut';">Park</button></li>
+			<li class="list-item center"><button class="bf-button" ng-click="setTerrain('Freeride')" ng-class="{'selected': getTerrain() == 'Freeride'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Freeride');" ng-mouseleave="showQuote = 'fadeOut';">All Mountain</button></li>
+			<li class="list-item right"><button class="bf-button" ng-click="setTerrain('Powder')" ng-class="{'selected': getTerrain() == 'Powder'}" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Powder');" ng-mouseleave="showQuote = 'fadeOut';">Powder</button></li>
 		</ul>
 	</div><!-- .selection-terrain -->
 </div><!-- .bf-step-3 -->

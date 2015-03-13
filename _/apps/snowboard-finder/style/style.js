@@ -19,6 +19,7 @@
 	app.controller('StyleController', ['$scope', '$location', '$routeParams', '$log', 'user', function StyleController($scope, $location, $routeParams, $log, user) {
 		$scope.name = "StyleController";
 		$scope.params = $routeParams;
+		$scope.quote = "";
 
 		function getAbility() {
 			return user.ability;
@@ -44,10 +45,34 @@
 			}
 		}
 
+		function updateQuote(section) {
+			switch(section) {
+				case 'Beginner':
+					$scope.quote = "Never Been? Been some but still trying to get the hang of it?";
+					break;
+				case 'Intermediate':
+					$scope.quote = "You love turning your board, now you are looking to specialize your ripping?";
+					break;
+				case 'Advanced':
+						$scope.quote = "So you know what you are doing? Looking for the World’s Best Board for an all-time adventure?";
+						break;
+				case 'Freestyle':
+						$scope.quote = "Good for parks, rails, butters, side hits, jamming, bonking, slashing and sliding.";
+						break;
+				case 'Freeride':
+						$scope.quote = "Good for resort ripping, groomers, steeps and trees.";
+						break;
+				case 'Powder':
+						$scope.quote = "Good for pillows and deep days.";
+						break;
+			}
+		}
+
 		// set public methods
 		$scope.getAbility = getAbility;
 		$scope.setAbility = setAbility;
 		$scope.getTerrain = getTerrain;
 		$scope.setTerrain = setTerrain;
+		$scope.updateQuote = updateQuote;
 	}]);
 }());
