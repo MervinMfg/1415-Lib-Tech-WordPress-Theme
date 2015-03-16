@@ -26,7 +26,6 @@ LIBTECH.RegionSelector.prototype = {
 			var currencyClass = "currency-" + currencyCookie;
 			$body.addClass(currencyClass.toLowerCase());
 			$(".region-selector a").html(regionCookie);
-			takeover = new LIBTECH.Takeover();
 		} else {
 			if (navigator.cookieEnabled === true) {
 				// if no region cookie has been set, open selector if on product page
@@ -50,20 +49,13 @@ LIBTECH.RegionSelector.prototype = {
 						if (data.ip !== "80.74.134.135") {
 							// if not crazy egg ip, show region selector
 							self.overlayInit();
-							takeover = new LIBTECH.Takeover(false);
 						}
 					}).fail(function() {
 						// failed, so show region selector
 						self.overlayInit();
-						takeover = new LIBTECH.Takeover(false);
 					});
-				} else {
-					takeover = new LIBTECH.Takeover();
 				}
 				// US picked by default, but don't set cookie
-			} else {
-				// cookies are disabled, US picked by default
-				takeover = new LIBTECH.Takeover();
 			}
 		}
 		// add click events
@@ -95,7 +87,7 @@ LIBTECH.RegionSelector.prototype = {
 		// listen for escape key
 		$(document).on('keyup.region', function (e) {
 			if (e.keyCode == 27) {
-				self.overlayUninit();				
+				self.overlayUninit();
 			}
 		});
 		// don't hide if clicked within region selector

@@ -19,5 +19,6 @@
 	app.controller('WhyController', ['$scope', '$routeParams', function WhyController($scope, $routeParams) {
 		$scope.name = "WhyController";
 		$scope.params = $routeParams;
+		$scope.currentSection = "Length";
 	}]);
 }());

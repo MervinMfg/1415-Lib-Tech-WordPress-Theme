@@ -1,9 +1,10 @@
 <div class="finder-step bf-step-5">
+	<a href="#/results/" class="back-button">< Back</a>
 	<div class="description-image-wrapper">
 		<ul class="description-image-list">
-			<li class="description-image-item length"></li>
-			<!-- <li class="description-image-item width"></li>
-			<li class="description-image-item contour"></li> -->
+			<li class="description-image-item length animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'"></li>
+			<li class="description-image-item width animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'"></li>
+			<li class="description-image-item contour animated" ng-class="{'fadeIn': currentSection == 'Contour'}" ng-show="currentSection == 'Contour'"></li>
 		</ul>
 	</div>
 	<div class="step-5-content-wrapper">
@@ -11,16 +12,51 @@
 		<h3>It is important to get<span>the right snowboard.</span></h3>
 		<div class="selection-why">
 			<ul class="button-list">
-				<li class="list-item left"><a href="" class="bf-button">Length</a></li>
-				<li class="list-item center"><a href="" class="bf-button">Width</a></li>
-				<li class="list-item right"><a href="" class="bf-button">Contour</a></li>
+				<li class="list-item left"><button class="bf-button" ng-click="currentSection = 'Length'" ng-class="{'selected': currentSection == 'Length'}">Length</button></li>
+				<li class="list-item center"><button class="bf-button" ng-click="currentSection = 'Width'" ng-class="{'selected': currentSection == 'Width'}">Width</button></li>
+				<li class="list-item right"><button class="bf-button" ng-click="currentSection = 'Contour'" ng-class="{'selected': currentSection == 'Contour'}">Contour</button></li>
 			</ul>
 		</div>
 		<div class="description-wrapper">
-			<div class="description">
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'">
 				<h4>Length</h4>
 				<p>A longer board is more stable while a shorter board is more manuverable. The trick is finding the right balance in the middle and then tweaking it to your riding style.</p>
-				<p>More info about the length here</p>
+				<p>At _______ feet and _______ inches a board length of _______ cm will give you a nice ride on the hill</p>
+			</div>
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'">
+				<h4>Width</h4>
+				<p>A bigger foot needs a bigger board. If your board is to narrow you will get toe or heel drag. A wider board will float in the deep snow better but if it is too wide it will be hard to go edge to edge.</p>
+				<table>
+					<tr>
+						<td>
+							<h5>Narrow</h5>
+							<p>Size 4-7</p>
+						</td>
+						<td>
+							<h5>Regular</h5>
+							<p>Size 7-10</p>
+						</td>
+						<td>
+							<h5>Mid-Wide</h5>
+							<p>Size 10-12</p>
+						</td>
+						<td>
+							<h5>Wide</h5>
+							<p>Size 12-14</p>
+						</td>
+						<td>
+							<h5>Ultra Wide</h5>
+							<p>Size 14-18</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Contour'}" ng-show="currentSection == 'Contour'">
+				<h4>Contour</h4>
+				<p>Board contours are a big deal for us at Lib Tech. They essetially determine how the board will feel when you ride it. It gives the board its personality.</p>
+
+				BTX - Banana Tech
+				C2-BTX - Power Banana Camber/Banana Blend
 			</div>
 		</div>
 	</div><!-- .step-5-content-wrapper -->
