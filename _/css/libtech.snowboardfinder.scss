@@ -625,6 +625,14 @@
             background: url('../img/board-finder/bf-length.png') -160px bottom no-repeat;
             background-size: 540px;
           }
+          &.width {
+            background: url('../img/board-finder/bf-width.png') -160px bottom no-repeat;
+            background-size: 540px;
+          }
+          &.contour {
+            background: url('../img/board-finder/bf-contour.png') -160px bottom no-repeat;
+            background-size: 540px;
+          }
         }
       }
     }
