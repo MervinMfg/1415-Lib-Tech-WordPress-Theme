@@ -2,6 +2,6 @@
   <p class="select-title">{{prodFilter.title}}</p>
   <p class="selected-items">select</p>
   <ul>
-      <li ng-repeat="filter in prodFilter.filters" data-filter="{{filter.value}}">{{filter.title}}</li>
+      <li ng-repeat="filter in prodFilter.filters" ng-click="selectFilter(filter.value);">{{filter.title}}</li>
   </ul>
 </li>

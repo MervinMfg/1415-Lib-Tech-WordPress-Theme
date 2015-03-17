@@ -52,7 +52,10 @@
 		];
 
 		function init() {
-			// init
+			// listen for filters to update
+			$scope.$on('filterSelected', function (event, arg) {
+				updateFilters(arg.filter, arg.value);
+			});
 		}
 
 		function resetUser() {
@@ -62,6 +65,21 @@
 			$scope.user.bootSize = -1;
 			$scope.user.ability = "Default";
 			$scope.user.terrain = "Default";
+			$scope.user.flex = "Default";
+		}
+
+		function updateFilters(filter, value) {
+			switch(filter) {
+				case 'Ability':
+					$scope.user.ability = value;
+					break;
+				case 'Terrain':
+					$scope.user.terrain = value;
+					break;
+				case 'Flex':
+					$scope.user.flex = value;
+					break;
+			}
 		}
 
 		// set public methods

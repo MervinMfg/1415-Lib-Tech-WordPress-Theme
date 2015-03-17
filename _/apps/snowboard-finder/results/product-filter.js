@@ -17,17 +17,19 @@
     };
   });
 
-  app.controller('ProductFilterController', ['$scope', '$log', function ProductFilterController($scope, $log) {
+  app.controller('ProductFilterController', ['$rootScope', '$scope', '$log', function ProductFilterController($rootScope, $scope, $log) {
     $scope.name = "ProductFilterController";
-    $scope.currentImg = "";
-    $scope.currentSku = "";
 
     function init() {
-      $log.log('product filter');
+      //
+    }
+
+    function selectFilter(value) {
+      $rootScope.$broadcast('filterSelected', {'filter': $scope.prodFilter.title, 'value': value});
     }
 
     // set public methods
-    // $scope.getLink = getLink;
+    $scope.selectFilter = selectFilter;
 
     // call init
     init();
