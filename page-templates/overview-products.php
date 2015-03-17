@@ -70,13 +70,34 @@ get_header();
                         if ($postType == "libtech_surfboards") {
                             // check fin pricing and what to display by default
                             if (get_field('libtech_product_price_us_5fin', $post_object->ID) == "") {
-                                $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                                $productPrice = getPrice(
+                                  get_field('libtech_product_price_us', $post_object->ID),
+                                  get_field('libtech_product_price_ca', $post_object->ID),
+                                  get_field('libtech_product_price_eur', $post_object->ID),
+                                  get_field('libtech_product_on_sale', $post_object->ID),
+                                  get_field('libtech_product_sale_percentage', $post_object->ID),
+                                  false
+                                );
                             } else {
-                                $productPrice = getPrice( get_field('libtech_product_price_us_5fin', $post_object->ID), get_field('libtech_product_price_ca_5fin', $post_object->ID), get_field('libtech_product_price_eur_5fin', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                                $productPrice = getPrice(
+                                  get_field('libtech_product_price_us_5fin', $post_object->ID),
+                                  get_field('libtech_product_price_ca_5fin', $post_object->ID),
+                                  get_field('libtech_product_price_eur_5fin', $post_object->ID),
+                                  get_field('libtech_product_on_sale', $post_object->ID),
+                                  get_field('libtech_product_sale_percentage', $post_object->ID),
+                                  false
+                                );
                             }
                         } else {
                             // grab default price of all other products
-                            $productPrice = getPrice( get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID) );
+                            $productPrice = getPrice(
+                              get_field('libtech_product_price_us', $post_object->ID),
+                              get_field('libtech_product_price_ca', $post_object->ID),
+                              get_field('libtech_product_price_eur', $post_object->ID),
+                              get_field('libtech_product_on_sale', $post_object->ID),
+                              get_field('libtech_product_sale_percentage', $post_object->ID),
+                              false
+                            );
                         }
                     ?>
                     <li>
@@ -101,7 +122,7 @@ get_header();
             <div class="clearfix"></div>
         </section><!-- END .product-slider -->
         <?php endif; ?>
-        
+
         <?php
         $productsArray = Array();
         // find product post type to query
@@ -246,13 +267,34 @@ get_header();
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
                 if (get_field('libtech_product_price_us_5fin') == "") {
-                    $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                    $productArray['price'] = getPrice(
+                      get_field('libtech_product_price_us'),
+                      get_field('libtech_product_price_ca'),
+                      get_field('libtech_product_price_eur'),
+                      get_field('libtech_product_on_sale'),
+                      get_field('libtech_product_sale_percentage'),
+                      false
+                    );
                 } else {
-                    $productArray['price'] = getPrice( get_field('libtech_product_price_us_5fin'), get_field('libtech_product_price_ca_5fin'), get_field('libtech_product_price_eur_5fin'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                    $productArray['price'] = getPrice(
+                      get_field('libtech_product_price_us_5fin'),
+                      get_field('libtech_product_price_ca_5fin'),
+                      get_field('libtech_product_price_eur_5fin'),
+                      get_field('libtech_product_on_sale'),
+                      get_field('libtech_product_sale_percentage'),
+                      false
+                    );
                 }
             } else {
                 // grab default price of all other products
-                $productArray['price'] = getPrice( get_field('libtech_product_price_us'), get_field('libtech_product_price_ca'), get_field('libtech_product_price_eur'), get_field('libtech_product_on_sale'), get_field('libtech_product_sale_percentage') );
+                $productArray['price'] = getPrice(
+                  get_field('libtech_product_price_us'),
+                  get_field('libtech_product_price_ca'),
+                  get_field('libtech_product_price_eur'),
+                  get_field('libtech_product_on_sale'),
+                  get_field('libtech_product_sale_percentage'),
+                  false
+                );
             }
             switch ($productArray['postType']) {
                 case "libtech_snowboards":
@@ -377,7 +419,7 @@ get_header();
                     if(get_field('libtech_surfboard_specs')):
                         while(the_repeater_field('libtech_surfboard_specs')):
                             $surfboardLength = get_sub_field('libtech_surfboard_specs_length');
-                            //$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";                        
+                            //$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
                             // add wodth to array
                             array_push($productSize, $surfboardLength);
                             // add width to filter list
@@ -750,7 +792,7 @@ get_header();
                             endforeach;
                             array_multisort($sizeArray, SORT_ASC);
                             foreach ($sizeArray as $size):
-                                $length = floor($size/12) . "’" . ($size - (floor($size/12)*12)) . "”"; 
+                                $length = floor($size/12) . "’" . ($size - (floor($size/12)*12)) . "”";
                             ?>
                             <li data-filter=".<?php echo $size; ?>"><?php echo $length; ?></li>
                             <?php
@@ -968,7 +1010,7 @@ get_header();
                         <a href="/snowboarding/snowboard-builder/">
                             <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-640x640.png" width="300" height="300" alt="DIY Snowboard Builder" class="product-img lazy" />
                             <h5>DIY Board Builder</h5>
-                            <div class="price"><?php echo getPrice(639.95, 664.95, 664.95, 'no', 0); ?></div>
+                            <div class="price"><?php echo getPrice(639.95, 664.95, 664.95, 'no', 0, false); ?></div>
                         </a>
                     </li>
                     <?php endif; ?>

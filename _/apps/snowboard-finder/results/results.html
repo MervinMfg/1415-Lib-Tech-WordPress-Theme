@@ -1,18 +1,7 @@
 <div class="finder-step bf-step-4">
 	<h2>Our board picks for you</h2>
 	<ul class="product-filtering snowboards">
-		<li class="filters ability left">
-			<p class="select-title">ability</p>
-			<p class="selected-items">select</p>
-		</li>
-		<li class="filters aggression center">
-			<p class="select-title">agression</p>
-			<p class="selected-items">select</p>
-		</li>
-		<li class="filters flex right">
-			<p class="select-title">flex</p>
-			<p class="selected-items">select</p>
-		</li>
+		<product-filter ng-repeat="prodFilter in productFilters" filters="prodFilter.filters"></product-filter>
 	</ul>
 	<div class="board-picks">
 		<!-- board picks go here -->

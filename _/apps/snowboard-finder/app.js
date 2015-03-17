@@ -65,6 +65,7 @@
 		user.bootSize = -1;
 		user.ability = "Default";
 		user.terrain = "Default";
+		user.flex = "Default";
 	});
 
 	// DIRECTIVE TO CHECK FOR REQUIRED SELECT FIELDS
