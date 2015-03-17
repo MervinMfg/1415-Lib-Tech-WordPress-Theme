@@ -33,6 +33,7 @@ module.exports = function(grunt) {
     '_/apps/snowboard-finder/size/size.js',
     '_/apps/snowboard-finder/style/style.js',
     '_/apps/snowboard-finder/results/results.js',
+    '_/apps/snowboard-finder/results/product-filter.js',
     '_/apps/snowboard-finder/results/snowboard.js',
     '_/apps/snowboard-finder/results/snowboard-filters.js',
     '_/apps/snowboard-finder/why/why.js'

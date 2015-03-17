@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.snowboard', 'boardFinder.snowboardFilters']);
+	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.productFilter', 'boardFinder.snowboard', 'boardFinder.snowboardFilters']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/results/', {
@@ -21,6 +21,35 @@
 		$scope.params = $routeParams;
 		$scope.config = config;
 		$scope.user = user;
+		$scope.productFilters = [
+			{
+				title: "Ability",
+				classes: "ability left",
+				filters: [
+					{ title: "Easy", value: "Beginner" },
+					{ title: "All Around", value: "Intermediate" },
+					{ title: "Agressive", value: "Advanced" }
+				]
+			},
+			{
+				title: "Terrain",
+				classes: "terrain center",
+				filters: [
+					{ title: "Park", value: "Freestyle" },
+					{ title: "All Mountain", value: "Freeride" },
+					{ title: "Powder", value: "Powder" }
+				]
+			},
+			{
+				title: "Flex",
+				classes: "flex right",
+				filters: [
+					{ title: "Soft", value: "Soft" },
+					{ title: "Medium", value: "Medium" },
+					{ title: "Stiff", value: "Stiff" }
+				]
+			}
+		];
 
 		function init() {
 			// init
