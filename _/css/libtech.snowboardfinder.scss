@@ -244,11 +244,15 @@
   }
 
   .why-link {
-    color: $snowColor;
-    display: block;
-    font-size: 1.5em;
+    display: inline-block;
+    padding: 0 20px;
     text-align: center;
-    text-transform: uppercase;
+    width: auto;
+  }
+
+  .reset-link {
+    float: right;
+    padding: 10px 20px 0 0;
   }
 }
 
@@ -265,6 +269,13 @@
 
   .step-5-content-wrapper {
     .selection-why {
+      table {
+        width: 100%;
+
+        td {
+          text-align: center;
+        }
+      }
       .button-list {
         display: table;
         padding-bottom: 30px;
@@ -303,12 +314,12 @@
   }
 
   .bf-step-1 {
-    background-size: 40%;
     background-position: 90% bottom;
+    background-size: 40%;
 
     .step-1-left {
-      width: 50%;
       margin: 0 20% 0 0;
+      width: 50%;
 
       h3 {
         padding-bottom: 40px;
@@ -330,6 +341,10 @@
         float: right;
         margin: 0 5% 0 20%;
         width: 40%;
+
+        .measurement-type {
+          text-align: left;
+        }
 
         .weight-measurement {
           padding: 30px 0 10px;
@@ -362,11 +377,19 @@
       margin-left: 20px;
       padding-bottom: 60px;
       width: 40%;
+
+      .button-list {
+        width: 100%;
+      }
     }
 
     .selection-terrain {
       margin-left: 20px;
       width: 40%;
+
+      .button-list {
+        width: 100%;
+      }
     }
   }
 }
@@ -412,6 +435,7 @@
     .quote-wrapper {
       display: block;
       width: 180px;
+      height: 220px;
 
       .quote,
       .quote-cite {
@@ -441,9 +465,9 @@
     background-size: 575px;
 
     .step-1-left {
-      width: 50%;
-      padding: 0 20px;
       float: left;
+      padding: 0 20px;
+      width: 50%;
 
       h1 {
         padding: 100px 0 60px;
@@ -474,18 +498,19 @@
     }
 
     .quote-wrapper {
-      padding: 60px 20px 0 0;
       float: right;
+      padding: 60px 20px 0 0;
     }
   }
 
   .bf-step-2 {
-    background-size: 750px;
     background-position: -70px bottom;
+    background-size: 750px;
 
     .quote-wrapper {
+      height: 200px;
       margin: 0 auto;
-      padding-top: 70px;
+      padding-top: 50px;
     }
 
     select {
@@ -500,28 +525,31 @@
       text-align: right;
 
       .selection-measurements-top {
-        width: 100%;
         margin: 0;
-        padding: 30px 20px 25px 0;
+        padding: 0 20px 25px 0;
+        width: 100%;
 
         .measurement-type {
+          float: right;
           padding: 0 300px 20px 0;
+          width: 498px;
         }
 
         .weight-measurement {
           display: inline-block;
           padding: 10px 60px 0 0;
           text-align: left;
+          width: 200px;
         }
 
         .height-measurement {
           display: inline-block;
-          vertical-align: top;
           text-align: left;
+          vertical-align: top;
+          width: 294px;
 
           .height-us {
             select {
-              float: left;
 
               &.feet {
                 margin-right: 10px;
@@ -535,35 +563,35 @@
         }
       }
       .selection-measurements-bottom {
-        width: 100%;
         margin: 0;
-        padding: 0 170px 40px 0;
+        padding: 0 174px 40px 0;
+        width: 100%;
 
         .boot-measurement {
           display: inline-block;
-          text-align: left;
           padding-right: 60px;
+          text-align: left;
         }
 
         .button-container {
-          padding-top: 40px;
           display: inline-block;
+          padding-top: 40px;
         }
       }
     }
   }
   .bf-step-3 {
-    background-size: 450px;
     background-position: 125% bottom;
+    background-size: 450px;
 
     .quote-wrapper {
       margin: 0 auto;
-      padding-top: 150px;
+      padding-top: 100px;
     }
 
     .selection-ability {
-      width: 55%;
       margin-top: 50px;
+      width: 60%;
 
       .button-list {
         .list-item {
@@ -580,7 +608,7 @@
       }
     }
     .selection-terrain {
-      width: 55%;
+      width: 60%;
 
       .button-list {
         .list-item {
@@ -645,12 +673,12 @@
             background-size: 540px;
           }
           &.width {
-            background: url('../img/board-finder/bf-width.png') -160px bottom no-repeat;
-            background-size: 540px;
+            background: url('../img/board-finder/bf-width.png') -100px bottom no-repeat;
+            background-size: 450px;
           }
           &.contour {
-            background: url('../img/board-finder/bf-contour.png') -160px bottom no-repeat;
-            background-size: 540px;
+            background: url('../img/board-finder/bf-contour.png') -130px bottom no-repeat;
+            background-size: 500px;
           }
         }
       }
@@ -660,7 +688,7 @@
       float: right;
       padding: 115px 0 0;
       position: relative;
-      width: 57%;
+      width: 50%;
       z-index: 2;
     }
   }
@@ -685,10 +713,16 @@
     .measurements-wrapper {
       .selection-measurements-top {
         .measurement-type {
-          padding-right: 360px;
+          width: 536px;
+        }
+
+        .weight-measurement {
+          padding-right: 40px;
         }
 
         .height-measurement {
+          width: 334px;
+
           .height-metric {
             padding-right: 170px;
           }
@@ -696,8 +730,11 @@
       }
 
       .selection-measurements-bottom {
-        padding-right: 190px;
+        padding-right: 194px;
 
+        .boot-measurement {
+          padding-right: 40px;
+        }
         .button-container {
           width: 160px;
         }
@@ -709,11 +746,11 @@
     background-position: 110% bottom;
 
     .selection-ability {
-      width: 450px;
+      width: 500px;
     }
 
     .selection-terrain {
-      width: 450px;
+      width: 500px;
     }
   }
 
@@ -722,7 +759,13 @@
       .description-image-list {
         li {
           &.length {
-            background-position: -30px bottom;
+            background-position: -80px bottom;
+          }
+          &.width {
+            background-position: 0 bottom;
+          }
+          &.contour {
+            background-position: -60px bottom;
           }
         }
       }
@@ -742,11 +785,11 @@
   }
 
   .bf-step-1 {
-    background-position: 80% bottom;
+    background-position: 95% bottom;
 
     .step-1-left {
       padding: 0 0 0 20px;
-      width: 400px;
+      width: 500px;
     }
 
     .quote-wrapper {
@@ -763,10 +806,21 @@
   }
 
   .bf-step-5 {
+    .step-5-content-wrapper {
+      width: 45%;
+    }
     .description-image-wrapper {
       .description-image-list {
-        li.length {
-          background-position: 20px bottom;
+        li {
+          &.length {
+            background-position: 0 bottom;
+          }
+          &.width {
+            background-position: 5% bottom;
+          }
+          &.contour {
+            background-position: 5% bottom;
+          }
         }
       }
     }
