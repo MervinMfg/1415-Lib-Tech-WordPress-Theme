@@ -377,7 +377,6 @@ footer .footer-copy { font-size: .75em; /* 12 / 16 */ color: #333; font-weight: 
   footer .logo { position: absolute; top: 0px; right: 20px; width: 25%; }
   footer .subscribe { position: absolute; top: 170px; right: 20px; width: 25%; }
   footer .footer-copy { padding: 0; width: 100%; } }
-/* ========================================================================== COMPONENTS/_GLOBAL.SCSS ========================================================================== */
 ins { background-color: #fcd700; color: #000; text-decoration: none; }
 
 mark { background-color: #fcd700; color: #000; font-style: italic; font-weight: bold; }
@@ -386,7 +385,7 @@ body { background: #000; }
 
 .bg1, .bg2, .bg3, .bg-product-snow, .bg-product-ski, .bg-product-surf, .bg-product-skate, .bg-product-details, .bg-product-outerwear { background-color: #000; background-position: center top; padding-bottom: 50px; }
 
-.bg1-top, .bg2-top, .bg3-top, .bg-product-snow-top, .bg-product-ski-top, .bg-product-surf-top, .bg-product-skate-top, .bg-product-details-top, .bg-product-outerwear-top { clear: both; width: 100%; height: 50px; background-repeat: repeat-x; background-position: center top; margin-top: -50px; }
+.bg1-top, .bg2-top, .bg3-top, .bg-product-snow-top, .bg-product-ski-top, .bg-product-surf-top, .bg-product-skate-top, .bg-product-details-top, .bg-product-outerwear-top { background-position: center top; background-repeat: repeat-x; clear: both; height: 50px; margin-top: -50px; width: 100%; }
 
 .bg1-top { background-image: url("../img/bg1-top.png"); }
 
@@ -427,36 +426,36 @@ body { background: #000; }
 .page-template-default .default-page .section-content p { margin-bottom: 10px; }
 .page-template-default .default-page .section-content ul { list-style: square; margin: 0 0 20px 25px; }
 
-/* PRICE General Styles
--------------------------------------------------------------------------------*/
 .price .us-price, .price .ca-price, .price .eur-price { color: #fff; display: none; }
 .price .us-price.active, .price .ca-price.active, .price .eur-price.active { display: block; margin: 0; }
 .price .us-price.strike, .price .ca-price.strike, .price .eur-price.strike { text-decoration: line-through; }
-.price .us-price .currency-note, .price .ca-price .currency-note, .price .eur-price .currency-note { color: #FFFF00; font-size: 0.8em; }
+.price .us-price .currency-note, .price .ca-price .currency-note, .price .eur-price .currency-note { font-size: .8em; }
 
-.ski .price .us-price .currency-note, .ski .price .ca-price .eur-price .currency-note { color: #0099FF; }
+.snow .price .active .currency-note { color: #FFFF00; }
 
-.surf .price .us-price .currency-note, .surf .price .ca-price .eur-price .currency-note { color: #FF6600; }
+.ski .price .active .currency-note { color: #0099FF; }
 
-.skate .price .us-price .currency-note, .skate .price .ca-price .eur-price .currency-note { color: #66CC00; }
+.surf .price .active .currency-note { color: #FF6600; }
+
+.skate .price .active .currency-note { color: #66CC00; }
 
 .video-header .section-content { padding-left: 20px; padding-right: 20px; }
-.video-header .section-content h1 { margin-bottom: 20px; color: #000; }
+.video-header .section-content h1 { color: #000; margin-bottom: 20px; }
 .video-header .section-content .video-player { padding-bottom: 10px; }
 .video-header .section-content .video-text h3 { color: #000; margin-bottom: 10px; }
-.video-header .section-content .video-text p { max-width: 900px; color: #000; font-size: 1em; margin-bottom: 10px; }
+.video-header .section-content .video-text p { color: #000; font-size: 1em; margin-bottom: 10px; max-width: 900px; }
 .video-header .section-content .video-text ul { list-style: square; margin: 0 0 10px 20px; }
-.video-header .section-content .video-text ul li { margin-bottom: 5px; color: #000; font-size: .875em; /* 14 / 16 */ line-height: 1.32; }
+.video-header .section-content .video-text ul li { color: #000; font-size: .875em; line-height: 1.32; margin-bottom: 5px; }
 .video-header .section-content .video-text a { color: #000; }
 .video-header .section-content .video-text .entry-share { list-style: none; margin-left: 0; }
 .video-header .section-content .video-text .entry-share li { margin-bottom: 0; }
 
 @media screen and (min-width: 768px) { .video-header .section-content .video-text p { font-size: 1.125em; }
-  .video-header .section-content .video-text ul li { font-size: 1em; /* 16 / 16 */ } }
-@media screen and (min-width: 980px) { .video-header.video .section-content h1, .video-header.video .section-content .video-text { width: 40%; float: right; }
-  .video-header.video .section-content .video-player { width: 60%; float: left; padding-top: 5px; padding-bottom: 0; }
+  .video-header .section-content .video-text ul li { font-size: 1em; } }
+@media screen and (min-width: 980px) { .video-header.video .section-content h1, .video-header.video .section-content .video-text { float: right; width: 40%; }
+  .video-header.video .section-content .video-player { float: left; padding-bottom: 0; padding-top: 5px; width: 60%; }
   .video-header.video .section-content .video-player .video-wrapper { padding-right: 20px; } }
-@media screen and (min-width: 1400px) { .section-content { max-width: 1640px; margin: 0 auto; } }
+@media screen and (min-width: 1400px) { .section-content { margin: 0 auto; max-width: 1640px; } }
 /* ========================================================================== COMPONENTS/_REGION-SELECTOR.SCSS ========================================================================== */
 /* Region Selector Styles
 -------------------------------------------------------------------------------*/

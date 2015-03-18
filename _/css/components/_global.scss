@@ -1,234 +1,295 @@
-/* ==========================================================================
-   COMPONENTS/_GLOBAL.SCSS
-   ========================================================================== */
+// ==========================================================================
+// COMPONENTS/_GLOBAL.SCSS
+// ==========================================================================
 
 ins {
-	background-color: #fcd700;
-	color: #000;
-	text-decoration: none;
+  background-color: #fcd700;
+  color: #000;
+  text-decoration: none;
 }
+
 mark {
-	background-color: #fcd700;
-	color: #000;
-	font-style: italic;
-	font-weight: bold;
+  background-color: #fcd700;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
 }
+
 body {
-	background: #000;
+  background: #000;
 }
-.bg1, .bg2, .bg3, .bg-product-snow, .bg-product-ski, .bg-product-surf, .bg-product-skate, .bg-product-details, .bg-product-outerwear {
-	background-color: #000;
-	background-position: center top;
-	padding-bottom: 50px;
-}
-.bg1-top, .bg2-top, .bg3-top, .bg-product-snow-top, .bg-product-ski-top, .bg-product-surf-top, .bg-product-skate-top, .bg-product-details-top, .bg-product-outerwear-top {
-	clear: both;
-	width: 100%;
-	height: 50px;
-	background-repeat: repeat-x;
-	background-position: center top;
-	margin-top: -50px;
-}
-.bg1 {}
-.bg1-top {
-	background-image: url('../img/bg1-top.png');
-}
-.bg2 {
-	background-image: url('../img/bg2.png');
-}
-.bg2-top {
-	background-image: url('../img/bg2-top.png');
-}
-.bg3 {
-	background-image: url('../img/bg3.jpg');
-}
-.bg3-top {
-	background-image: url('../img/bg3-top.png');
-}
-.bg-product-snow {
-	background-image: url('../img/bg-product-snow.png');
-}
-.bg-product-snow-top {
-	background-image: url('../img/bg-product-snow-top.png');
-}
-.bg-product-ski {
-	background-image: url('../img/bg-product-ski.png');
-}
-.bg-product-ski-top {
-	background-image: url('../img/bg-product-ski-top.png');
-}
-.bg-product-surf {
-	background-image: url('../img/bg-product-surf.png');
-}
-.bg-product-surf-top {
-	background-image: url('../img/bg-product-surf-top.png');
-}
-.bg-product-skate {
-	background-image: url('../img/bg-product-skate.png');
-}
-.bg-product-skate-top {
-	background-image: url('../img/bg-product-skate-top.png');
-}
-.bg-product-details {
-	background-image: url('../img/bg-product-details.jpg');
-}
-.bg-product-details-top {
-	background-image: url('../img/bg-product-details-top.png');
-}
+
+.bg1,
+.bg2,
+.bg3,
+.bg-product-snow,
+.bg-product-ski,
+.bg-product-surf,
+.bg-product-skate,
+.bg-product-details,
 .bg-product-outerwear {
-	background-image: url('../img/bg-product-outerwear.jpg');
+  background-color: #000;
+  background-position: center top;
+  padding-bottom: 50px;
 }
+
+.bg1-top,
+.bg2-top,
+.bg3-top,
+.bg-product-snow-top,
+.bg-product-ski-top,
+.bg-product-surf-top,
+.bg-product-skate-top,
+.bg-product-details-top,
 .bg-product-outerwear-top {
-	background-image: url('../img/bg-product-outerwear-top.png');
+  background-position: center top;
+  background-repeat: repeat-x;
+  clear: both;
+  height: 50px;
+  margin-top: -50px;
+  width: 100%;
 }
+
+.bg1-top {
+  background-image: url('../img/bg1-top.png');
+}
+
+.bg2 {
+  background-image: url('../img/bg2.png');
+}
+
+.bg2-top {
+  background-image: url('../img/bg2-top.png');
+}
+
+.bg3 {
+  background-image: url('../img/bg3.jpg');
+}
+
+.bg3-top {
+  background-image: url('../img/bg3-top.png');
+}
+
+.bg-product-snow {
+  background-image: url('../img/bg-product-snow.png');
+}
+
+.bg-product-snow-top {
+  background-image: url('../img/bg-product-snow-top.png');
+}
+
+.bg-product-ski {
+  background-image: url('../img/bg-product-ski.png');
+}
+
+.bg-product-ski-top {
+  background-image: url('../img/bg-product-ski-top.png');
+}
+
+.bg-product-surf {
+  background-image: url('../img/bg-product-surf.png');
+}
+
+.bg-product-surf-top {
+  background-image: url('../img/bg-product-surf-top.png');
+}
+
+.bg-product-skate {
+  background-image: url('../img/bg-product-skate.png');
+}
+
+.bg-product-skate-top {
+  background-image: url('../img/bg-product-skate-top.png');
+}
+
+.bg-product-details {
+  background-image: url('../img/bg-product-details.jpg');
+}
+
+.bg-product-details-top {
+  background-image: url('../img/bg-product-details-top.png');
+}
+
+.bg-product-outerwear {
+  background-image: url('../img/bg-product-outerwear.jpg');
+}
+
+.bg-product-outerwear-top {
+  background-image: url('../img/bg-product-outerwear-top.png');
+}
+
 .page-template-default {
-	.default-page {
-		.section-content {
-			padding-left: 20px;
-			padding-right: 20px;
+  .default-page {
+    .section-content {
+      padding-left: 20px;
+      padding-right: 20px;
 
-			h1 {
-				margin-bottom: 20px;
-			}
-			p {
-				margin-bottom: 10px;
-			}
-			ul {
-				list-style: square;
-				margin: 0 0 20px 25px;
-			}
-		}
-	}
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      ul {
+        list-style: square;
+        margin: 0 0 20px 25px;
+      }
+    }
+  }
 }
-/* PRICE General Styles
--------------------------------------------------------------------------------*/
+
+// PRICE General Styles
+//-------------------------------------------------------------------------------
+
 .price {
-	.us-price,
-	.ca-price,
-	.eur-price {
-		color: #fff;
-		display: none;
+  .us-price,
+  .ca-price,
+  .eur-price {
+    color: #fff;
+    display: none;
 
-		&.active {
-			display: block;
-			margin: 0;
-		}
-		&.strike {
-			text-decoration: line-through;
-		}
-		.currency-note {
-			color: $snowColor;
-			font-size: 0.8em;
-		}
-	}
+    &.active {
+      display: block;
+      margin: 0;
+    }
+
+    &.strike {
+      text-decoration: line-through;
+    }
+
+    .currency-note {
+      font-size: .8em;
+    }
+  }
 }
+
+.snow .price {
+  .active {
+    .currency-note {
+      color: $snowColor;
+    }
+  }
+}
+
 .ski .price {
-	.us-price,
-	.ca-price
-	.eur-price {
-		.currency-note {
-			color: $skiColor;
-		}
-	}
+  .active {
+    .currency-note {
+      color: $skiColor;
+    }
+  }
 }
+
 .surf .price {
-	.us-price,
-	.ca-price
-	.eur-price {
-		.currency-note {
-			color: $surfColor;
-		}
-	}
+  .active {
+    .currency-note {
+      color: $surfColor;
+    }
+  }
 }
+
 .skate .price {
-	.us-price,
-	.ca-price
-	.eur-price {
-		.currency-note {
-			color: $skateColor;
-		}
-	}
+  .active {
+    .currency-note {
+      color: $skateColor;
+    }
+  }
 }
 
 .video-header {
-	.section-content {
-		padding-left: 20px;
-		padding-right: 20px;
+  .section-content {
+    padding-left: 20px;
+    padding-right: 20px;
 
-		h1 {
-			margin-bottom: 20px;
-			color: #000;
-		}
-		.video-player {
-			padding-bottom: 10px;
-		}
-		.video-text {
-			h3 {
-				color: #000;
-				margin-bottom: 10px;
-			}
-			p {
-				max-width: 900px;
-				color: #000;
-				font-size: 1em;
-				margin-bottom: 10px;
-			}
-			ul {
-				list-style: square;
-				margin: 0 0 10px 20px;
+    h1 {
+      color: #000;
+      margin-bottom: 20px;
+    }
 
-				li {
-					margin-bottom: 5px;
-					color: #000;
-					font-size: .875em; /* 14 / 16 */
-				    line-height: 1.32;
-				}
-			}
-			a {
-				color: #000;
-			}
-			.entry-share {
-				list-style: none;
-				margin-left: 0;
+    .video-player {
+      padding-bottom: 10px;
+    }
 
-				li {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
+    .video-text {
+      h3 {
+        color: #000;
+        margin-bottom: 10px;
+      }
+
+      p {
+        color: #000;
+        font-size: 1em;
+        margin-bottom: 10px;
+        max-width: 900px;
+      }
+
+      ul {
+        list-style: square;
+        margin: 0 0 10px 20px;
+
+        li {
+          color: #000;
+          font-size: .875em;
+          // 14 / 16
+          line-height: 1.32;
+          margin-bottom: 5px;
+        }
+      }
+
+      a {
+        color: #000;
+      }
+
+      .entry-share {
+        list-style: none;
+        margin-left: 0;
+
+        li {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-medium) {
-	.video-header .section-content .video-text {
-		p {
-			font-size: 1.125em;
-		}
-		ul li {
-			font-size: 1em; /* 16 / 16 */
-		}
-	}
-}
-@media screen and (min-width: $breakpoint-large) {
-	.video-header.video .section-content {
-		h1, .video-text {
-			width: 40%;
-			float: right;
-		}
-		.video-player {
-			width: 60%;
-			float: left;
-			padding-top: 5px;
-			padding-bottom: 0;
+  .video-header .section-content .video-text {
+    p {
+      font-size: 1.125em;
+    }
 
-			.video-wrapper {
-				padding-right: 20px;
-			}
-		}
-	}
+    ul li {
+      font-size: 1em;
+      // 16 / 16
+    }
+  }
 }
+
+@media screen and (min-width: $breakpoint-large) {
+  .video-header.video .section-content {
+    h1,
+    .video-text {
+      float: right;
+      width: 40%;
+    }
+
+    .video-player {
+      float: left;
+      padding-bottom: 0;
+      padding-top: 5px;
+      width: 60%;
+
+      .video-wrapper {
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
 @media screen and (min-width: $breakpoint-xxlarge) {
-	.section-content {
-		max-width: 1640px;
-		margin: 0 auto;
-	}
+  .section-content {
+    margin: 0 auto;
+    max-width: 1640px;
+  }
 }
