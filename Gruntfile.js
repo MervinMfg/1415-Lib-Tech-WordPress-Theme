@@ -28,6 +28,7 @@ module.exports = function(grunt) {
     '_/js/lib/angular/angular.js',
     '_/js/lib/angular/angular-route.js',
     '_/js/lib/angular/angular-cookies.js',
+    '_/js/lib/owl.carousel.js',
     '_/apps/snowboard-finder/app.js',
     '_/apps/snowboard-finder/gender/gender.js',
     '_/apps/snowboard-finder/size/size.js',
@@ -40,7 +41,7 @@ module.exports = function(grunt) {
   ];
   var jamieLynnScripts = [
     '_/js/lib/jquery-1.11.1.js',
-    '_/js/lib/owl.carousel-2.0.0.js',
+    '_/js/lib/owl.carousel.js',
     '_/js/lib/GSAP/TweenMax.js',
     '_/js/lib/GSAP/plugins/ScrollToPlugin.js',
     '_/js/lib/jquery.scrollmagic-1.3.0.js',

@@ -1,13 +1,16 @@
 // ==========================================================================
 // LIBTECH.SNOWBOARDFINDER.SCSS
 // ==========================================================================
-//
+
 // Lib Tech DIY Snowboard Finder - http://www.lib-tech.com/snowboarding/snowboard-finder/
 // Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
-//
+
 // Helpers
 @import 'helpers/variables';
 @import 'helpers/mixins';
+
+@import 'lib/owl-carousel';
+@import 'lib/owl-theme-default';
 
 .board-finder {
   padding-bottom: 0;
