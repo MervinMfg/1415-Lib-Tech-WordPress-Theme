@@ -1,0 +1,345 @@
+// ==========================================================================
+// COMPONENTS/_PRODUCT-FILTERING.SCSS
+// ==========================================================================
+
+.product-filtering {
+  display: none;
+  height: 100px;
+  padding: 0 10px 20px 20px;
+
+  .filters {
+    cursor: pointer;
+    float: left;
+    width: 100px;
+  }
+
+  .details,
+  .filters {
+    margin-right: 10px;
+    position: relative;
+  }
+
+  .details {
+    text-align: left;
+
+    p {
+      background: none;
+      display: inline-block;
+      text-align: left;
+
+      &:first-child {
+        color: $snowColor;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .filters {
+    .select-title,
+    .selected-items {
+      background: #000;
+      color: #fff;
+      font-size: .875em; // 14 / 16
+      padding: 2px 5px;
+      text-transform: uppercase;
+    }
+
+    .select-title {
+      cursor: default;
+    }
+
+    .selected-items {
+      background: $snowColor;
+      color: #000;
+      font-weight: 900;
+    }
+
+    .filter-list {
+      background: $snowColor;
+      display: none;
+      padding: 2px;
+      position: absolute;
+      top: 55px;
+      z-index: 999;
+
+      .filter-item {
+        color: #000;
+        float: left;
+        font-size: .875em; // 14 / 16
+        padding: .1em .25em;
+        text-align: center;
+        text-transform: uppercase;
+        width: 80px;
+
+        &:hover,
+        &:focus {
+          background: #333;
+          color: $snowColor;
+        }
+
+        &.selected {
+          background: #000;
+          color: $snowColor;
+        }
+      }
+    }
+
+    &.ripper .filter-list .filter-item {
+      width: 5em;
+    }
+
+    &.categories .filter-list {
+      left: -110px;
+
+      .filter-item {
+        width: 9.22em;
+      }
+    }
+
+    &.skate-categories .filter-list {
+      right: -110px;
+
+      .filter-item {
+        width: 11.27em;
+      }
+    }
+
+    &.outerwear-categories .filter-list {
+      right: -78px;
+
+      .filter-item {
+        width: 6em;
+      }
+    }
+
+    &.apparel-categories .filter-list {
+      right: -110px;
+
+      .filter-item {
+        width: 6.08em;
+      }
+    }
+
+    &.accessory-categories .filter-list {
+      right: -110px;
+
+      .filter-item {
+        width: 14.7em;
+      }
+    }
+
+    &.luggage-categories .filter-list {
+      right: -110px;
+
+      .filter-item {
+        width: 7.35em;
+      }
+    }
+
+    &.contours .filter-list .filter-item {
+      width: 4em;
+    }
+
+    &.size .filter-list {
+      left: -330px;
+
+      .filter-item {
+        width: 2.4em;
+      }
+    }
+
+    &.nas-size .filter-list {
+      left: 0;
+
+      .filter-item {
+        width: 3.76em;
+      }
+    }
+
+    &.surf-size .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 6.82em;
+      }
+    }
+
+    &.outerwear-size .filter-list {
+      left: 0;
+
+      .filter-item {
+        width: 4.5em;
+      }
+    }
+
+    &.apparel-sports .filter-list {
+      left: 0;
+
+      .filter-item {
+        width: 79px;
+      }
+    }
+
+    &.width .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 6em;
+      }
+    }
+
+    &.skate-width .filter-list {
+      left: 0;
+
+      .filter-item {
+        width: 3.22em;
+      }
+    }
+
+    &.nas-width .filter-list {
+      right: -46px;
+
+      .filter-item {
+        width: 6em;
+      }
+    }
+
+    &.pricing .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 6em;
+      }
+    }
+
+    &.accessories-pricing .filter-list,
+    &.luggage-pricing .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 7.35em;
+      }
+    }
+
+    &.outerwear-waterproof .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 4.5em;
+      }
+    }
+
+    &.outerwear-fit .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 6em;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      .selected-items {
+        margin-bottom: 0;
+        padding-bottom: 14px;
+      }
+
+      .filter-list {
+        display: block;
+      }
+    }
+  }
+}
+
+.ski .product-filtering {
+  .filters .selected-items {
+    background: $skiColor;
+  }
+
+  .filter-list {
+    background: $skiColor;
+
+    .filter-item {
+      &:hover,
+      &:focus,
+      &.selected {
+        color: $skiColor;
+      }
+    }
+  }
+
+  .details p:first-child {
+    color: $skiColor;
+  }
+}
+
+.surf .product-filtering {
+  .filters .selected-items {
+    background: $surfColor;
+  }
+
+  .filter-list {
+    background: $surfColor;
+
+    .filter-item {
+      &:hover,
+      &:focus,
+      &.selected {
+        color: $surfColor;
+      }
+    }
+  }
+
+  .details p:first-child {
+    color: $surfColor;
+  }
+}
+
+.skate .product-filtering {
+  .filters .selected-items {
+    background: $skateColor;
+  }
+
+  .filter-list {
+    background: $skateColor;
+
+    .filter-item {
+      &:hover,
+      &:focus,
+      &.selected {
+        color: $skateColor;
+      }
+    }
+  }
+
+  .details p:first-child {
+    color: $skateColor;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .product-filtering {
+    display: block;
+  }
+}
+@media screen and (min-width: $breakpoint-large) {
+  .product-filtering {
+    float: right;
+    height: 75px;
+
+    .details {
+      float: left;
+
+      p {
+        background: none;
+        display: block;
+        text-align: right;
+
+        &:first-child {
+          color: $snowColor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

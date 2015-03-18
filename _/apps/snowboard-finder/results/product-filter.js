@@ -17,8 +17,9 @@
     };
   });
 
-  app.controller('ProductFilterController', ['$rootScope', '$scope', '$log', function ProductFilterController($rootScope, $scope, $log) {
+  app.controller('ProductFilterController', ['$rootScope', '$scope', '$log', 'user', function ProductFilterController($rootScope, $scope, $log, user) {
     $scope.name = "ProductFilterController";
+    $scope.user = user;
 
     function init() {
       //
@@ -28,8 +29,49 @@
       $rootScope.$broadcast('filterSelected', {'filter': $scope.prodFilter.title, 'value': value});
     }
 
+    function getUserValue() {
+      var returnValue = "";
+      switch($scope.prodFilter.title) {
+        case 'Ability':
+          returnValue = $scope.user.ability;
+          break;
+        case 'Terrain':
+          returnValue = $scope.user.terrain;
+          break;
+        case 'Flex':
+          returnValue = $scope.user.flex;
+          break;
+      }
+      return returnValue;
+    }
+
+    function getSelectTitle() {
+      var returnValue = "select";
+      if(getUserValue() != "Default") {
+        returnValue = "remove";
+      }
+      return returnValue;
+    }
+
+    function resetUserValue() {
+      switch($scope.prodFilter.title) {
+        case 'Ability':
+          $scope.user.ability = "Default";
+          break;
+        case 'Terrain':
+          $scope.user.terrain = "Default";
+          break;
+        case 'Flex':
+          $scope.user.flex = "Default";
+          break;
+      }
+    }
+
     // set public methods
     $scope.selectFilter = selectFilter;
+    $scope.getUserValue = getUserValue;
+    $scope.getSelectTitle = getSelectTitle;
+    $scope.resetUserValue = resetUserValue;
 
     // call init
     init();
