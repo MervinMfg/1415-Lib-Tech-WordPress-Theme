@@ -210,7 +210,7 @@
 	<div class="wrapper">
 		<div class="takeover">
 			<div class="takeover-content">
-				<p class="message">All 14/15 Snowboards, Skis and Outerwear are now 20% OFF!</p>
+				<p class="message">SNOW SALE! Up to 20% OFF most 14/15 products. Free Standard Shipping on all orders until 3/31</p>
 			</div>
 		</div><!-- END .takeover -->
 		<header>
