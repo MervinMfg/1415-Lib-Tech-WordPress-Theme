@@ -17,6 +17,7 @@ module.exports = function (grunt) {
         '_/js/lib/clamp-0.5.1.js',
         '_/js/lib/underscore.js',
         '_/js/libtech.main.js',
+        '_/js/modules/*.js',
         '_/js/components/*.js'
     ];
     var diyBuilderScripts = [
