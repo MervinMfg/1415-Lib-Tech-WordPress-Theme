@@ -204,7 +204,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/sidewall/SKATE-BANANA-YELLOW.png" class="responsive-image sidewall-top" alt="Snowboard Sidewall" />
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/default/SKATE-BANANA.png" class="responsive-image sidewall-bottom" alt="Snowboard Sidewall Bottom" />
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/default/SKATE-BANANA.png" class="responsive-image sidewall-hidden" alt="Snowboard Sidewall Hidden" />
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div class="preview-base">
@@ -275,6 +275,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-RED.png" alt="Tetons Red Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Red" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-BLUE.png" alt="Tetons Blue Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Blue" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-PINK.png" alt="Tetons Pink Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Pink" /></li>
+								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-OCTOPUS.png" alt="Jamie Lynn Octopus Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Octopus" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-WHALE.png" alt="Jamie Lynn Whale Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Whale" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-SUN.png" alt="Jamie Lynn Sun Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Sun Wave" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-GIRL.png" alt="Jamie Lynn Girl Top" class="responsive-image board-top-image" data-count="3" data-artist="Jamie" data-desc="Girl" /></li>
@@ -321,6 +322,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-RED.png" alt="Tetons Red Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Red" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-BLUE.png" alt="Tetons Blue Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Blue" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-PINK.png" alt="Tetons Pink Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Pink" /></li>
+								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-OCTOPUS.png" alt="Jamie Lynn Octopus Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Octopus" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-WHALE.png" alt="Jamie Lynn Whale Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Whale" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-SUN.png" alt="Jamie Lynn Sun Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Sun Wave" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-GIRL.png" alt="Jamie Lynn Girl Base" class="responsive-image board-base-image" data-count="3" data-artist="Jamie" data-desc="Girl" /></li>
@@ -530,4 +532,4 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 		ga('send', 'pageview');
 	</script>
 </body>
-</html>	
+</html>
