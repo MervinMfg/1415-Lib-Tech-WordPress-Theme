@@ -1,4 +1,4 @@
-<li class="product-item" >
+<div class="product-item">
   <!-- ng-repeat="friend in friends | filter:searchText" -->
   <a href="{{getLink()}}">
     <img ng-src="{{currentImg}}" width="640" height="640" alt="{{snowboard.title}} Image" class="product-img" />
@@ -14,4 +14,4 @@
       <p class="eur-price" ng-class="{active: config.currency=='EUR'}">€{{snowboard.price.eu}} <span>EUR incl. VAT</span></p>
     </div>
   </a>
-</li>
+</div>

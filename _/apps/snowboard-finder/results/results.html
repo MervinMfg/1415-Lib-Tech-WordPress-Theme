@@ -5,10 +5,10 @@
 	</div>
 	<div class="board-picks">
 		<!-- board picks go here -->
-		<ul class="product-listing snowboards">
+		<div class="product-listing snowboards" id="snowboards">
 			<!-- $scope.config.snowboards -->
 			<snowboard ng-repeat="snowboard in config.snowboards | snowboardFilter:user | limitTo:6"></snowboard>
-		</ul>
+		</div>
 		<a href="#/why/" class="why-link bf-button">Why these boards?</a>
 		<a href="#/" class="reset-link" ng-click="resetUser()">Start Over</a>
 	</div>

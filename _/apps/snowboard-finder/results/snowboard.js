@@ -11,6 +11,7 @@
   app.directive("snowboard", function snowboard() {
     return {
       restrict: 'E',
+      replace: true,
       bindToController: true,
       controller: "SnowboardController as snowboardCtrl",
       templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/results/snowboard.html'

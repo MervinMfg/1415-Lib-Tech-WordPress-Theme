@@ -56,6 +56,12 @@
 			$scope.$on('filterSelected', function (event, arg) {
 				updateFilters(arg.filter, arg.value);
 			});
+			// listen for snowboards to update
+			$scope.$watch(function() {
+				return document.getElementById('snowboards').innerHTML;
+			}, function(){
+				buildCarousel();
+			}, true);
 		}
 
 		function resetUser() {
@@ -80,6 +86,30 @@
 					$scope.user.flex = value;
 					break;
 			}
+		}
+
+		function buildCarousel() {
+			var owl = $('.snowboards');
+			// destroy old if it exists
+			owl.trigger('destroy.owl.carousel');
+			// build new
+			owl.owlCarousel({
+				loop: true,
+				margin: 10,
+				nav: true,
+				responsive: {
+					0: {
+						items:2
+					},
+					600: {
+						items:3
+					},
+					1000: {
+						items:5
+					}
+				}
+			});
+			$log.log('update snowboard carousel', Math.random());
 		}
 
 		// set public methods
