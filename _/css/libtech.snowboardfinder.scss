@@ -244,26 +244,11 @@
   }
 
   .product-listing {
+    position: relative;
+
     .product-item {
-      float: left;
-      padding-bottom: 40px;
-      text-align: center;
-
-      a {
-        .product-img {
-          width: 100%;
-          max-width: 200%;
-          height: auto;
-        }
-
-        h5 {
-          display: inline-block;
-
-          .board-length {
-            color: #fff;
-          }
-        }
-      }
+      width: 100%;
+      float: none;
     }
   }
 
@@ -682,10 +667,6 @@
     .board-picks {
       .product-listing {
         clear: both;
-
-        .product-item {
-          width: 50%;
-        }
       }
     }
 

@@ -58,7 +58,7 @@
 			});
 			// listen for snowboards to update
 			$scope.$watch(function() {
-				return document.getElementById('snowboards').innerHTML;
+				return $scope.config.snowboards;
 			}, function(){
 				buildCarousel();
 			}, true);
@@ -89,27 +89,34 @@
 		}
 
 		function buildCarousel() {
-			var owl = $('.snowboards');
+			var owl = $('#snowboards');
 			// destroy old if it exists
-			owl.trigger('destroy.owl.carousel');
-			// build new
-			owl.owlCarousel({
-				loop: true,
-				margin: 10,
-				nav: true,
-				responsive: {
-					0: {
-						items:2
-					},
-					600: {
-						items:3
-					},
-					1000: {
-						items:5
+			if(owl.find('.owl-stage').length) {
+				owl.trigger('destroy.owl.carousel');
+				$log.log('destory!');
+			}
+
+			if(owl.find('.product-item').length) {
+				$log.log(owl.find('div').length);
+				// build new
+				owl.owlCarousel({
+					loop: true,
+					margin: 10,
+					nav: true,
+					responsive: {
+						0: {
+							items:2
+						},
+						600: {
+							items:3
+						},
+						1000: {
+							items:5
+						}
 					}
-				}
-			});
-			$log.log('update snowboard carousel', Math.random());
+				});
+				$log.log('build new carousel', Math.random());
+			}
 		}
 
 		// set public methods
@@ -117,5 +124,4 @@
 
 		init();
 	}]);
-
 }());

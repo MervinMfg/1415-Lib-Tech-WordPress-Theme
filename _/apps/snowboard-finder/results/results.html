@@ -6,7 +6,7 @@
 	</div>
 	<div class="board-picks">
 		<!-- board picks go here -->
-		<div class="product-listing snowboards" id="snowboards">
+		<div class="product-listing snowboards owl-carousel" id="snowboards">
 			<!-- $scope.config.snowboards -->
 			<snowboard ng-repeat="snowboard in config.snowboards | snowboardFilter:user | limitTo:6"></snowboard>
 		</div>
