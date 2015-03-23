@@ -204,7 +204,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/sidewall/SKATE-BANANA-YELLOW.png" class="responsive-image sidewall-top" alt="Snowboard Sidewall" />
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/default/SKATE-BANANA.png" class="responsive-image sidewall-bottom" alt="Snowboard Sidewall Bottom" />
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-sidewall/default/SKATE-BANANA.png" class="responsive-image sidewall-hidden" alt="Snowboard Sidewall Hidden" />
-							</div>	
+							</div>
 						</div>
 					</div>
 					<div class="preview-base">
@@ -275,6 +275,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-RED.png" alt="Tetons Red Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Red" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-BLUE.png" alt="Tetons Blue Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Blue" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/TETONS-PINK.png" alt="Tetons Pink Top" class="responsive-image board-top-image" data-count="1" data-artist="Tetons" data-desc="Pink" /></li>
+								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-OCTOPUS.png" alt="Jamie Lynn Octopus Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Octopus" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-WHALE.png" alt="Jamie Lynn Whale Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Whale" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-SUN.png" alt="Jamie Lynn Sun Top" class="responsive-image board-top-image" data-count="2" data-artist="Jamie" data-desc="Sun Wave" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-top/art/JAMIE-GIRL.png" alt="Jamie Lynn Girl Top" class="responsive-image board-top-image" data-count="3" data-artist="Jamie" data-desc="Girl" /></li>
@@ -321,6 +322,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-RED.png" alt="Tetons Red Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Red" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-BLUE.png" alt="Tetons Blue Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Blue" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/TETONS-PINK.png" alt="Tetons Pink Base" class="responsive-image board-base-image" data-count="1" data-artist="Tetons" data-desc="Pink" /></li>
+								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-OCTOPUS.png" alt="Jamie Lynn Octopus Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Octopus" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-WHALE.png" alt="Jamie Lynn Whale Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Whale" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-SUN.png" alt="Jamie Lynn Sun Base" class="responsive-image board-base-image" data-count="2" data-artist="Jamie" data-desc="Sun Wave" /></li>
 								<li class="item"><img src="<?php bloginfo('template_directory'); ?>/_/img/diy/snowboard-base/art/JAMIE-GIRL.png" alt="Jamie Lynn Girl Base" class="responsive-image board-base-image" data-count="3" data-artist="Jamie" data-desc="Girl" /></li>
@@ -438,67 +440,9 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 				</div>
 			</li>
 		</ul>
-		<div id="region-selector">
-			<div class="choose-region">
-				<h5 class="h1">Choose your region</h5>
-				<div class="location-group north-america">
-					<h6 class="location-title h4">North America</h6>
-					<ul class="location-list">
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="USD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/usa.gif" alt="USA Flag" />United States <span>(USD)</span></a> Shop in US currency</p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="CAD"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/canada.gif" alt="Canada Flag" />Canada <span>(CAD)</span></a> Shop in CANADA currency</p>
-						</li>
-					</ul>
-				</div>
-				<div class="location-group europe">
-					<h6 class="location-title h4">Europe</h6>
-					<p class="location-note">Shop in EURO currency</p>
-					<ul class="location-list">
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/austria.gif" alt="Austria Flag" />Austria <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/belgium.gif" alt="Belgium Flag" />Belgium <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/czech.gif" alt="Czech Republic Flag" />Czech Republic <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/france.gif" alt="France Flag" />France <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/germany.gif" alt="Germany Flag" />Germany <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/luxembourg.gif" alt="Luxembourg Flag" />Luxembourg <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/netherlands.gif" alt="Netherlands Flag" />Netherlands <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/poland.gif" alt="Poland Flag" />Poland <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/portugal.gif" alt="Portugal Flag" />Portugal <span>(EUR)</span></a></p>
-						</li>
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="EUR"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/slovakia.gif" alt="Slovakia Flag" />Slovakia <span>(EUR)</span></a></p>
-						</li>
-					</ul>
-				</div>
-				<div class="location-group international">
-					<h6 class="location-title h4">World</h6>
-					<p class="location-note">View site in English</p>
-					<ul class="location-list">
-						<li class="location-item">
-							<p><a href="#region-selector" data-currency="INT"><img src="<?php echo get_template_directory_uri(); ?>/_/img/flags/international.gif" alt="International Flag" />International</a></p>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div><!-- END #region-selector -->
+
+<?php include get_template_directory() . '/_/inc/modules/region-selector.php'; ?>
+
 		<div id="div-blocker"></div>
 	</div><!-- END .wrapper -->
 
@@ -530,4 +474,4 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 		ga('send', 'pageview');
 	</script>
 </body>
-</html>	
+</html>

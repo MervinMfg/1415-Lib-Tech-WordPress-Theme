@@ -12,10 +12,10 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/clamp-0.5.1.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/underscore.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/libtech.main.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/modules/libtech.region-selector.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.blog-single.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.content-grid.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.gallery.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-details.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-overview.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.region-selector.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.shop.js"></script>
