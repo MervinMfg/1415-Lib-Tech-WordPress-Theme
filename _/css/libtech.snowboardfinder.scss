@@ -123,7 +123,7 @@
 
 .bf-step-2 {
   background: url("../img/board-finder/bf-step-2-kraftsman.png") -20% bottom no-repeat;
-  background-size: 80%;
+  background-size: 85%;
   padding: 40px 0;
 
   .measurements-wrapper {
@@ -317,6 +317,10 @@
           display: table-cell;
           width: 33.3333%;
 
+          button {
+            font-size: 1.2em;
+          }
+
           &.left {
             padding-right: 5px;
           }
@@ -424,6 +428,20 @@
 
       .button-list {
         width: 100%;
+      }
+    }
+  }
+
+  .bf-step-5 {
+    .step-5-content-wrapper {
+      .selection-why {
+        .button-list {
+          .list-item {
+            button {
+              font-size: 1.5em;
+            }
+          }
+        }
       }
     }
   }
@@ -715,16 +733,16 @@
           width: 100%;
 
           &.length {
-            background: url('../img/board-finder/bf-length.png') -160px bottom no-repeat;
-            background-size: 540px;
+            background: url('../img/board-finder/bf-length.png') -75px bottom no-repeat;
+            background-size: 450px;
           }
           &.width {
-            background: url('../img/board-finder/bf-width.png') -100px bottom no-repeat;
+            background: url('../img/board-finder/bf-width.png') -32px bottom no-repeat;
             background-size: 450px;
           }
           &.contour {
-            background: url('../img/board-finder/bf-contour.png') -130px bottom no-repeat;
-            background-size: 500px;
+            background: url('../img/board-finder/bf-contour.png') -65px bottom no-repeat;
+            background-size: 450px;
           }
         }
       }
@@ -742,6 +760,10 @@
       }
       h3 {
         text-align: left;
+
+        span {
+          margin-left: 6px;
+        }
       }
     }
   }
@@ -812,13 +834,13 @@
       .description-image-list {
         li {
           &.length {
-            background-position: -80px bottom;
-          }
-          &.width {
             background-position: 0 bottom;
           }
+          &.width {
+            background-position: 25px bottom;
+          }
           &.contour {
-            background-position: -60px bottom;
+            background-position: 25px bottom;
           }
         }
       }
@@ -860,7 +882,7 @@
 
   .bf-step-5 {
     .step-5-content-wrapper {
-      width: 40%;
+      width: 50%;
     }
     .description-image-wrapper {
       .description-image-list {
@@ -880,14 +902,7 @@
   }
 }
 @media screen and (min-width: $breakpoint-xlarge) {
-  .finder-step {
-    h3 {
-      span {
-        display: inline;
-        padding-left: 8px;
-      }
-    }
-  }
+
   .bf-step-5 {
     .step-5-content-wrapper {
       width: 50%;
