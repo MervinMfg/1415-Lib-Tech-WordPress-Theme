@@ -827,9 +827,10 @@ get_header();
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
                         <ul>
+                            <li data-filter=".exo-skeletech">Exo Skeletech</li>
                             <li data-filter=".hesho-disposable-standards">Hesho</li>
-                            <li data-filter=".maple-bottoms">Maple Bottoms</li>
-                            <li data-filter=".semi-slicks">Semi Slicks</li>
+                            <li data-filter=".bowls">Bowls</li>
+                            <li data-filter=".leg-tour">Leg Tour</li>
                             <li data-filter=".completes">Completes</li>
                         </ul>
                     </li>
