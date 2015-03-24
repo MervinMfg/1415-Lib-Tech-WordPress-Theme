@@ -89,15 +89,23 @@
 		}
 
 		function buildCarousel() {
-			var owl = $('#snowboards');
-			// destroy old if it exists
-			if(owl.find('.owl-stage').length) {
+			var owl, owlStage;
+			owl = $('#snowboards');
+			owlStage = owl.find('.owl-stage');
+			// destroy old carousel if it exists
+			if(owlStage.length) {
+				owlStage.html('');
 				owl.trigger('destroy.owl.carousel');
-				$log.log('destory!');
+				owlStage.remove();
+				// remove comments so they don't keep duplicating
+				owl.contents().each(function(index, node) {
+					if(node.nodeType == 8 && node.nodeValue.indexOf("end ngRepeat") > -1) {
+						$(node).remove();
+					}
+				});
 			}
-
+			// if we have .product-item's init new carousel
 			if(owl.find('.product-item').length) {
-				$log.log(owl.find('div').length);
 				// build new
 				owl.owlCarousel({
 					loop: true,
@@ -110,12 +118,12 @@
 						600: {
 							items:3
 						},
-						1000: {
-							items:5
+						980: {
+							items:4
 						}
 					}
 				});
-				$log.log('build new carousel', Math.random());
+				$log.log('build new carousel');
 			}
 		}
 
