@@ -158,7 +158,7 @@ Template Name: Surfboard Detail
 			<div class="toggle-btn"></div>
 		</div>
         <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product"> 
+        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
 	        <section class="product-details bg-product-details <?php echo $slug; ?>">
 	        	<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
@@ -264,7 +264,7 @@ Template Name: Surfboard Detail
 							<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website. Each board is handmade in the USA by surfers.</p>
 							<p class="surf-logo-limited">We are currently out of stock on this Waterboard, but we can build one for you! It can take up to 4-6 weeks to build and ship.</p>
 							<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose. Each board is handmade in the USA by surfers.</p>
-							<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p> 
+							<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p>
 						</div>
 						<div class="product-variations">
 							<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">
@@ -531,7 +531,7 @@ Template Name: Surfboard Detail
 						</ul>
 						<div class="clearfix"></div>
 					</div><!-- END .product-tech-minor -->
-					
+
 					<?
 						endif; // end tech minor check
 					endif;// end technology check
@@ -570,7 +570,7 @@ Template Name: Surfboard Detail
 		<section class="<?php echo $sectionClass; ?> product-gallery">
 			<div class="section-content">
 				<h2>Gallery</h2>
-				<?php 
+				<?php
 					$image_ids = get_field('libtech_surfboard_gallery', false, false);
 					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
 					echo do_shortcode( $shortcode );
@@ -580,7 +580,18 @@ Template Name: Surfboard Detail
 		</section><!-- END .product-gallery -->
 		<?php
 			endif;
-			comments_template();
+		?>
+
+		<div class="discussion-top bg1-top"></div>
+		<section class="discussion bg1">
+			<div class="section-content">
+				<div class="discussion-thread">
+					<?php comments_template(); ?>
+				</div>
+			</div>
+		</section>
+
+		<?php
 			// display the related products
 			getRelatedProducts();
 		?>

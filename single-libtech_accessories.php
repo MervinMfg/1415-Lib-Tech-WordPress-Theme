@@ -65,7 +65,7 @@ Template Name: Accessories Detail
 		       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionImageColor));
 							?>
 							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionImageColor; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionImageColor; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" itemprop="image" /></a></li>
-							
+
 							<?php
 								endwhile;
 							endif;
@@ -125,7 +125,7 @@ Template Name: Accessories Detail
 								?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-color="<?php echo $thumbnail[2]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php echo $imageAlt; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php $i ++; }; endif; ?>
 							</ul>
 						</div>
@@ -133,7 +133,7 @@ Template Name: Accessories Detail
 							<?php
 								echo getPrice(
 									get_field('libtech_product_price_us'),
-									get_field('libtech_product_price_ca'), 
+									get_field('libtech_product_price_ca'),
 									get_field('libtech_product_price_eur'),
 									get_field('libtech_product_on_sale'),
 									get_field('libtech_product_sale_percentage'),
@@ -258,8 +258,16 @@ Template Name: Accessories Detail
 			endif;
 		?>
 
+		<div class="discussion-top bg1-top"></div>
+		<section class="discussion bg1">
+			<div class="section-content">
+				<div class="discussion-thread">
+					<?php comments_template(); ?>
+				</div>
+			</div>
+		</section>
+
 		<?php
-			comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>

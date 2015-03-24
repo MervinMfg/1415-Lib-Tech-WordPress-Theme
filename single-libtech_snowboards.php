@@ -121,7 +121,7 @@ Template Name: Snowboard Detail
 									endwhile;
 								endif;
 							?>
-							
+
 						</ul>
 					</div><!-- END .product-images -->
 
@@ -142,7 +142,7 @@ Template Name: Snowboard Detail
 								?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php echo $thumbnail[2]; ?> - <?php echo $thumbnail[3]; ?>" data-sku="<?php echo $thumbnail[4]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php echo $imageAlt; ?>" data-sub-alt="Sizes: <?php echo $thumbnail[3]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php
 										$i ++;
 									};
@@ -516,7 +516,7 @@ Template Name: Snowboard Detail
 		<section class="<?php echo $sectionClass; ?> product-gallery">
 			<div class="section-content">
 				<h2>Gallery</h2>
-				<?php 
+				<?php
 					$image_ids = get_field('libtech_snowboard_gallery', false, false);
 					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
 					echo do_shortcode( $shortcode );
@@ -524,9 +524,18 @@ Template Name: Snowboard Detail
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-gallery -->
-		<?php
-			endif;
-		comments_template();
+	<?php endif; ?>
+
+	<div class="discussion-top bg1-top"></div>
+	<section class="discussion bg1">
+		<div class="section-content">
+			<div class="discussion-thread">
+				<?php comments_template(); ?>
+			</div>
+		</div>
+	</section>
+
+	<?php
 		// display the related products
 		getRelatedProducts();
 		?>

@@ -76,7 +76,7 @@ Template Name: Luggage Detail
 		       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionImageColor, $optionSKU));
 							?>
 							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionImageColor; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionImageColor; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>"<?php if($imageNum == 0) echo "itemprop='image'"; ?> /></a></li>
-							
+
 							<?php
 							$imageNum++;
 								endwhile;
@@ -92,7 +92,7 @@ Template Name: Luggage Detail
 								<?php if($thumbnailImages): $i = 0; foreach ($thumbnailImages as $thumbnail) { ?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-sku="<?php echo $thumbnail[3]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php $i ++; }; endif; ?>
 							</ul>
 						</div>
@@ -207,8 +207,16 @@ Template Name: Luggage Detail
 			endif;
 		?>
 
+		<div class="discussion-top bg1-top"></div>
+		<section class="discussion bg1">
+			<div class="section-content">
+				<div class="discussion-thread">
+					<?php comments_template(); ?>
+				</div>
+			</div>
+		</section>
+
 		<?php
-			comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>

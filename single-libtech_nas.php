@@ -48,7 +48,7 @@ Template Name: NAS Detail
 			<div class="toggle-btn"></div>
 		</div>
         <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product"> 
+        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
 	        <section class="product-details bg-product-details <?php echo $slug; ?>">
 	        	<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
@@ -135,7 +135,7 @@ Template Name: NAS Detail
 									get_field('libtech_product_price_us'),
 									get_field('libtech_product_price_ca'),
 									get_field('libtech_product_price_eur'),
-									get_field('libtech_product_on_sale'), 
+									get_field('libtech_product_on_sale'),
 									get_field('libtech_product_sale_percentage'),
 									true
 								);
@@ -372,8 +372,16 @@ Template Name: NAS Detail
 			endif;
 		?>
 
+		<div class="discussion-top bg1-top"></div>
+		<section class="discussion bg1">
+			<div class="section-content">
+				<div class="discussion-thread">
+					<?php comments_template(); ?>
+				</div>
+			</div>
+		</section>
+
 		<?php
-			comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>

@@ -142,7 +142,7 @@ Template Name: Skateboard Detail
 								?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php echo $thumbnail[2]; ?> - <?php echo $thumbnail[3]; ?>" data-sku="<?php echo $thumbnail[4]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php echo $imageAlt; ?>" data-sub-alt="Sizes: <?php echo $thumbnail[3]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php
 										$i ++;
 									};
@@ -501,7 +501,7 @@ Template Name: Skateboard Detail
 							<?php endforeach; ?>
 						</ul>
 					</div><!-- END .product-tech-minor -->
-					
+
 					<?
 						endif; // end tech minor check
 					endif;// end technology check
@@ -527,8 +527,16 @@ Template Name: Skateboard Detail
 			endif;
 		?>
 
+		<div class="discussion-top bg1-top"></div>
+		<section class="discussion bg1">
+			<div class="section-content">
+				<div class="discussion-thread">
+					<?php comments_template(); ?>
+				</div>
+			</div>
+		</section>
+
 		<?php
-			comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>
