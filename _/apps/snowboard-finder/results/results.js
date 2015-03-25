@@ -26,9 +26,9 @@
 				title: "Ability",
 				classes: "ability left",
 				filters: [
-					{ title: "Easy", value: "Beginner" },
-					{ title: "All Around", value: "Intermediate" },
-					{ title: "Agressive", value: "Advanced" }
+					{ title: "Beginner", value: "Beginner" },
+					{ title: "Intermediate", value: "Intermediate" },
+					{ title: "Advanced", value: "Advanced" }
 				]
 			},
 			{
