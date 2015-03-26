@@ -7,19 +7,26 @@ get_header();
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div class="bg-product-snow-top"></div>
-		<section class="video-header video bg-product-snow">
+		<div class="bg3-top"></div>
+		<section class="bg3 pass-it-on-contest">
 			<div class="section-content">
 				<h1><?php the_title(); ?></h1>
+				<div class="contest-wrapper">
+					<iframe src="//offerpop.com/Contest.psp?c=731677&u=1311501&a=150794994973742&p=107464664918&rest=1" width="760" height="1500" frameborder="0" onLoad="scroll(0,0);"></iframe>
+				</div>
+			</div><!-- END .section-content -->
+		</section><!-- END .pass-it-on-contest -->
+		<div class="bg-product-snow-top"></div>
+		<section class="product-video video bg-product-snow">
+			<div class="section-content">
 				<div class="video-player">
 					<div class="video-wrapper">
 						<iframe src="http:////player.vimeo.com/video/116304321?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
+					<div class="overview-copy">
+						<?php the_content(); ?>
+					</div>
 				</div>
-				<div class="video-text">
-					<?php the_content(); ?>
-				</div>
-				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .video-header -->
 		<div class="bg2-top"></div>

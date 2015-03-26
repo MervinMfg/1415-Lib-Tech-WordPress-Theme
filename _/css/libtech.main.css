@@ -1517,15 +1517,15 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
   .fins-adjusting .section-content .fins-positioning li .fin-image img { margin-bottom: 0; }
   .fins-adjusting .section-content .fins-positioning li .fin-description { width: 40%; float: left; }
   .fins-includes .section-content .fins-breakdown li { width: 25%; float: left; } }
-/* ========================================================================== COMPONENTS/_PASS-IT-ON-PROJECT.SCSS ========================================================================== */
-.pass-it-on-contest { padding: 0 20px; }
-.pass-it-on-contest h2 { margin-bottom: 20px; }
-.pass-it-on-contest .woobox-wrapper { padding-bottom: 20px; text-align: center; }
-.pass-it-on-contest .product-wrapper { padding-bottom: 40px; }
-.pass-it-on-contest .product-wrapper .product { width: 50%; float: left; }
-.pass-it-on-contest .product-wrapper .product:nth-child(odd) h4, .pass-it-on-contest .product-wrapper .product:nth-child(odd) p, .pass-it-on-contest .product-wrapper .product:nth-child(odd) .product-image { padding-right: 10px; }
-.pass-it-on-contest .product-wrapper .product:nth-child(even) h4, .pass-it-on-contest .product-wrapper .product:nth-child(even) p, .pass-it-on-contest .product-wrapper .product:nth-child(even) .product-image { padding-left: 10px; }
-.pass-it-on-contest .product-wrapper .product .product-image { padding-top: 10px; }
+.pass-it-on-contest h1 { padding: 20px; }
+.pass-it-on-contest .contest-wrapper { text-align: center; }
+.pass-it-on-contest .contest-wrapper iframe { background: #fff; padding: 20px; width: 100%; }
+
+.page-template-page-pass-it-on-project .product-video .video-wrapper { padding-bottom: 10px; }
+.page-template-page-pass-it-on-project .product-video p { color: #000; font-size: 1.125em; }
+.page-template-page-pass-it-on-project .product-video a { color: #000; }
+.page-template-page-pass-it-on-project .product-video ul { list-style: square; margin: 0 0 10px 20px; }
+.page-template-page-pass-it-on-project .product-video ul li { color: #000; }
 
 .pass-it-on-tagboard { padding: 0 10px; }
 .pass-it-on-tagboard h2 { padding: 0 10px; }
@@ -1533,10 +1533,7 @@ body.skate .ripper-videos .section-content .featured-videos .video-thumbnails li
 
 @media screen and (min-width: 600px) { .pass-it-on-tagboard .section-content h2 { float: left; }
   .pass-it-on-tagboard .section-content .social-links { float: right; padding: 0 0 0 10px; } }
-@media screen and (min-width: 980px) { .pass-it-on-contest .woobox-wrapper { padding-bottom: 40px; text-align: left; width: 50%; float: left; }
-  .pass-it-on-contest .product-wrapper { padding-bottom: 40px; width: 50%; float: left; }
-  .pass-it-on-contest .product-wrapper .product:nth-child(odd) h4, .pass-it-on-contest .product-wrapper .product:nth-child(odd) p, .pass-it-on-contest .product-wrapper .product:nth-child(odd) .product-image { padding-left: 15px; padding-right: 0; }
-  .pass-it-on-contest .product-wrapper .product:nth-child(even) h4, .pass-it-on-contest .product-wrapper .product:nth-child(even) p, .pass-it-on-contest .product-wrapper .product:nth-child(even) .product-image { padding-left: 20px; } }
+@media screen and (min-width: 980px) { .pass-it-on-contest .contest-wrapper iframe { width: 850px; } }
 /* ========================================================================== COMPONENTS/_STORM-FACTORY.SCSS ========================================================================== */
 .storm-factory-overview .section-content { padding: 0 20px; }
 .storm-factory-overview .section-content .overview-content-wrapper { padding: 10px 0; }
