@@ -171,7 +171,7 @@ get_header();
 				<div class="tagboard-embed" tgb-slug="liblegs/173006" tgb-dark-mode="true"></div>
 				<script src="https://static.tagboard.com/public/js/embed.js"></script>
 				<!-- END TagBoard -->
-				<?php comments_template(); ?>
+				<?php libtech_comments_template(); ?>
 			</div><!-- END .section-content -->
 		</section><!-- END .tagboard -->
 

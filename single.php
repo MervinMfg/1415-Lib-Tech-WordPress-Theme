@@ -16,7 +16,7 @@
             	<div class="entry-header">
             		<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
             		<p class="entry-meta">
-            			<time itemprop="datePublished" datetime="<?php echo date(DATE_W3C); ?>" pubdate class="updated"><?php the_time('F jS, Y') ?></time> – <?php libtech_comments($post->ID); ?>
+            			<time itemprop="datePublished" datetime="<?php echo date(DATE_W3C); ?>" pubdate class="updated"><?php the_time('F jS, Y') ?></time> – <?php libtech_comments_count($post->ID); ?>
             		</p>
             		<ul class="entry-share">
             			<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
@@ -41,7 +41,7 @@
             		</p>
             	</div>
 
-            	<?php comments_template(); ?>
+            	<?php libtech_comments_template(); ?>
             </div><!-- END .post-wrapper -->
           </article>
 

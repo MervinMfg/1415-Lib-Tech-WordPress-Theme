@@ -80,8 +80,24 @@ if (function_exists('register_sidebar')) {
         'after_title'   => '</h2>'
     ));
 }
-// Lib Tech Comment Display - Based on using Disqus
-function libtech_comments($postId) {
+// Lib Tech Comment Template Display - Based on using Disqus
+function libtech_comments_template() {
+  if ( comments_open() ) :
+    if( is_singular('post') || is_singular('page') ) :
+      // render blog post comment block
+      echo '<div class="discussion"><h2>Discussion</h2><div class="discussion-thread">';
+      comments_template();
+      echo '</div><div class="clearfix"></div></div>';
+    else :
+      // render product post comment block
+      echo '<div class="discussion-top bg1-top"></div><section class="discussion bg1"><div class="section-content"><h2>Discussion</h2><div class="discussion-thread">';
+      comments_template();
+      echo '</div><div class="clearfix"></div></div></section>';
+    endif;
+  endif;
+}
+// Lib Tech Comment Count Display - Based on using Disqus
+function libtech_comments_count($postId) {
   $totalComments = get_comments_number($postId) . " Comment";
   if($totalComments != "1 Comment") {
     $totalComments = $totalComments . "s";

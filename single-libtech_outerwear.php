@@ -437,21 +437,12 @@ Template Name: Outerwear Detail
 		</section><!-- .product-video -->
 		<?php
 			endif;
-		?>
-
-		<div class="discussion-top bg1-top"></div>
-		<section class="discussion bg1">
-			<div class="section-content">
-				<div class="discussion-thread">
-					<?php comments_template(); ?>
-				</div>
-			</div>
-		</section>
-
-		<?php
+			// display disqus comments
+			libtech_comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>
+
 <?php
 		endwhile;
 	endif;

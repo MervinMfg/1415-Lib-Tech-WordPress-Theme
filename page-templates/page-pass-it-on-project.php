@@ -50,7 +50,7 @@ get_header();
 				</script>
 				<script src="https://tagboard.com/public/js/embed.js"></script>
 				<!-- END TagBoard -->
-				<?php comments_template(); ?>
+				<?php libtech_comments_template(); ?>
 			</div><!-- END .section-content -->
 		</section><!-- END .tagboard -->
 
