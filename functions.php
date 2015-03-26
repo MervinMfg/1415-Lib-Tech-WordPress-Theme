@@ -85,12 +85,12 @@ function libtech_comments_template() {
   if ( comments_open() ) :
     if( is_singular('post') || is_singular('page') ) :
       // render blog post comment block
-      echo '<div class="discussion"><h2>Discussion</h2><div class="discussion-thread">';
+      echo '<div class="discussion"><div class="discussion-thread">';
       comments_template();
       echo '</div><div class="clearfix"></div></div>';
     else :
       // render product post comment block
-      echo '<div class="discussion-top bg1-top"></div><section class="discussion bg1"><div class="section-content"><h2>Discussion</h2><div class="discussion-thread">';
+      echo '<div class="discussion-top bg1-top"></div><section class="discussion bg1"><div class="section-content"><div class="discussion-thread">';
       comments_template();
       echo '</div><div class="clearfix"></div></div></section>';
     endif;
