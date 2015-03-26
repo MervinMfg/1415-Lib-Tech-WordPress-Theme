@@ -213,7 +213,7 @@ function getCurrencyCode () {
 }
 
 // GET PRICE DISPLAY
-function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent, $showSchema) {
+function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent, $showSchema = false) {
     $price = '<div class="price">';
     if ($sale == "Yes") {
         // US Price
