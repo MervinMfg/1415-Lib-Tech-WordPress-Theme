@@ -60,7 +60,7 @@ LIBTECH.main = {
 			self.lbsInit();
 		} else if ($body.hasClass('page-template-page-templatespage-pass-it-on-project-php')) {
 			self.passItOnInit();
-		} else if ($body.hasClass('page-template-page-templatespage-lib-legs-php')) {
+		} else if ($body.hasClass('page-template-lib-legs')) {
 			self.libLegsInit();
 		} else if ($body.hasClass('page-template-page-templatesstorm-factory-php')) {
 			self.stormFactoryInit();
