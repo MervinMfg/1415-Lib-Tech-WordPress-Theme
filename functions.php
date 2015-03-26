@@ -80,6 +80,14 @@ if (function_exists('register_sidebar')) {
         'after_title'   => '</h2>'
     ));
 }
+// Lib Tech Comment Display - Based on using Disqus
+function libtech_comments($postId) {
+  $totalComments = get_comments_number($postId) . " Comment";
+  if($totalComments != "1 Comment") {
+    $totalComments = $totalComments . "s";
+  }
+  echo $totalComments;
+}
 // customize what is searchable
 function filter_search($query) {
     if ($query->is_search) {
