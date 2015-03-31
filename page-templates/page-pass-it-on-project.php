@@ -21,7 +21,7 @@ get_header();
 			<div class="section-content">
 				<div class="video-player">
 					<div class="video-wrapper">
-						<iframe src="http:////player.vimeo.com/video/116304321?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/116304321?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
 					<div class="overview-copy">
 						<?php the_content(); ?>
