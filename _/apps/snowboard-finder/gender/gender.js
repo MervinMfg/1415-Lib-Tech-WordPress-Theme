@@ -21,6 +21,7 @@
 		$scope.params = $routeParams;
 		$scope.user = user;
 		$scope.showQuote = false;
+		$scope.quote = "";
 
 		function init() {
 			//
@@ -34,9 +35,21 @@
 			$scope.user.gender = newGender;
 		}
 
+		function updateQuote(section) {
+			switch(section) {
+				case 'Male':
+					$scope.quote = "The geometries of the men and women are different. Your gender helps to determine the perfect construction for your dream board.";
+					break;
+				case 'Female':
+					$scope.quote = "No need to settle, we make women's specific boards.";
+					break;
+			}
+		}
+
 		// set public methods
 		$scope.getGender = getGender;
 		$scope.setGender = setGender;
+		$scope.updateQuote = updateQuote;
 
 		init();
 	}]);
