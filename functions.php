@@ -80,6 +80,30 @@ if (function_exists('register_sidebar')) {
         'after_title'   => '</h2>'
     ));
 }
+// Lib Tech Comment Template Display - Based on using Disqus
+function libtech_comments_template() {
+  if ( comments_open() ) :
+    if( is_singular('post') || is_singular('page') ) :
+      // render blog post comment block
+      echo '<div class="discussion"><div class="discussion-thread">';
+      comments_template();
+      echo '</div><div class="clearfix"></div></div>';
+    else :
+      // render product post comment block
+      echo '<div class="discussion-top bg1-top"></div><section class="discussion bg1"><div class="section-content"><div class="discussion-thread">';
+      comments_template();
+      echo '</div><div class="clearfix"></div></div></section>';
+    endif;
+  endif;
+}
+// Lib Tech Comment Count Display - Based on using Disqus
+function libtech_comments_count($postId) {
+  $totalComments = get_comments_number($postId) . " Comment";
+  if($totalComments != "1 Comment") {
+    $totalComments = $totalComments . "s";
+  }
+  echo $totalComments;
+}
 // customize what is searchable
 function filter_search($query) {
     if ($query->is_search) {
@@ -228,21 +252,21 @@ function getCurrencyCode () {
 }
 
 // GET PRICE DISPLAY
-function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent, $showSchema) {
+function getPrice ($usPrice, $caPrice, $eurPrice, $sale, $salePercent, $showSchema = false) {
     $price = '<div class="price">';
     if ($sale == "Yes") {
         // US Price
         $price .= '<p class="us-price strike">$' . $usPrice . ' <span class="currency-note">USD</span></p>';
         // Reduced US Price
-        $price .= '<p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" >' . round($usPrice * ((100 - $salePercent) / 100), 2) . '</span> <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
+        $price .= '<p class="us-price"><span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" >' . number_format(round($usPrice * ((100 - $salePercent) / 100), 2), 2) . '</span> <span class="currency-note">USD (' . $salePercent . '% off)</span></p>';
         // CA Price
         $price .= '<p class="ca-price strike">$' . $caPrice . ' <span class="currency-note">CAD</span></p>';
         // Reduced CA Price
-        $price .= '<p class="ca-price">$' . round($caPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">CAD (' . $salePercent . '% off)</span></p>';
+        $price .= '<p class="ca-price">$' . number_format(round($caPrice * ((100 - $salePercent) / 100), 2), 2) . ' <span class="currency-note">CAD (' . $salePercent . '% off)</span></p>';
         // EUR Price
         $price .= '<p class="eur-price strike">€' . $eurPrice . ' <span class="currency-note">EUR incl. VAT</span></p>';
         // Reduced EUR Price
-        $price .= '<p class="eur-price">€' . round($eurPrice * ((100 - $salePercent) / 100), 2) . ' <span class="currency-note">EUR incl. VAT (' . $salePercent . '% off)</span></p>';
+        $price .= '<p class="eur-price">€' . number_format(round($eurPrice * ((100 - $salePercent) / 100), 2), 2) . ' <span class="currency-note">EUR incl. VAT (' . $salePercent . '% off)</span></p>';
     } else {
         if($showSchema) {
             // US Price

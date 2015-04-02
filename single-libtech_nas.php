@@ -48,7 +48,7 @@ Template Name: NAS Detail
 			<div class="toggle-btn"></div>
 		</div>
         <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product"> 
+        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
 	        <section class="product-details bg-product-details <?php echo $slug; ?>">
 	        	<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
@@ -135,13 +135,14 @@ Template Name: NAS Detail
 									get_field('libtech_product_price_us'),
 									get_field('libtech_product_price_ca'),
 									get_field('libtech_product_price_eur'),
-									get_field('libtech_product_on_sale'), 
+									get_field('libtech_product_on_sale'),
 									get_field('libtech_product_sale_percentage'),
 									true
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<div class="product-variations">
 							<select id="product-variation" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
@@ -370,13 +371,12 @@ Template Name: NAS Detail
 		</section>
 		<?php
 			endif;
-		?>
-
-		<?php
-			comments_template();
+			// display disqus comments
+			libtech_comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>
+
 <?php
 		endwhile;
 	endif;

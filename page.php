@@ -6,7 +6,7 @@
  get_header(); ?>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
+
 		<div class="bg2-top"></div>
 		<section class="bg2 default-page">
         	<div class="section-content">
@@ -15,12 +15,12 @@
 						<h1 class="entry-title"><?php the_title(); ?></h1>
 					</div><!-- END .entry-header -->
 					<div class="entry-content">
-						
+
 						<?php the_content(); ?>
 
 					</div>
 					<div class="clearfix"></div>
-					<?php comments_template(); ?>
+					<?php libtech_comments_template(); ?>
 				</article>
 			</div><!-- END .section-content -->
         </section><!-- END .product-zoom -->

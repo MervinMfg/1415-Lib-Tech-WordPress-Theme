@@ -1,105 +1,116 @@
-/* ==========================================================================
-   MODULES/_FEATURED-SLIDER.SCSS
-   ========================================================================== */
-
+// ==========================================================================
+// MODULES/_FEATURED-SLIDER.SCSS
+// ==========================================================================
 .featured-slider {
-	padding-top: 60px;
-	margin-top: -40px;
+  margin-top: -40px;
+  padding-top: 60px;
 
-	.section-content {
-		overflow: hidden;
+  .section-content {
+    overflow: hidden;
 
-		.slider-wrapper {
-			width: 140.597539543058%;
-			margin-left: -20.298769771529%;
-			// before bxslider is rendered
-			.bxslider li {
-				&:nth-child(n+2) {
-					display: none;
-				}
-				img {
-					@include vendorize(opacity, 0);
-					height: auto !important;
-					width: auto !important;
-					max-width: 100% !important;
-				}
-			}
-			// after it is rendered
-			.bx-wrapper .bxslider li {
-				&:nth-child(n+2) {
-					display: block;
-				}
-				img {
-					@include vendorize(opacity, 1);
-				}
-				&.bx-clone {
-					display: none;
-				}
-			}
-			.bx-controls {
-				margin-left: 20.298769771529%;
-			}
-			.active .video-image {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 1;
-				max-width: 100%;
-			}
-			.video-container {
-				padding: 0 14.4375%;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 100;
-				width: 100%;
+    .slider-wrapper {
+      margin-left: -20.298769771529%;
+      width: 140.597539543058%;
 
-				.fluid-width-video-wrapper {
-					background: #000 url('../img/loader.gif') no-repeat center center;
-				}
-			}
-		}
-	}
+      // before bxslider is rendered
+      .bxslider li {
+        &:nth-child(n+2) {
+          display: none;
+        }
+
+        img {
+          @include vendorize(opacity, 0);
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important;
+        }
+      }
+
+      // after it is rendered
+      .bx-wrapper .bxslider li {
+        &:nth-child(n+2) {
+          display: block;
+        }
+
+        img {
+          @include vendorize(opacity, 1);
+        }
+
+        &.bx-clone {
+          display: none;
+        }
+      }
+
+      .bx-controls {
+        margin-left: 20.298769771529%;
+      }
+
+      .active .video-image {
+        left: 0;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+      }
+
+      .video-container {
+        left: 0;
+        padding: 0 14.4375%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+
+        .fluid-width-video-wrapper {
+          background: #000 url("../img/loader.gif") no-repeat center center;
+        }
+      }
+    }
+  }
 }
-/* Lib Legs Styles
--------------------------------------------------------------------------------*/
-.page-template-page-templatespage-lib-legs-php .featured-slider {
-	padding-top: 10px;
-	margin-top: 0;
+
+// Lib Legs Styles
+// -------------------------------------------------------------------------------
+.page-template-lib-legs .featured-slider {
+  margin-top: 0;
+  padding-top: 10px;
 }
+
 @media screen and (min-width: $breakpoint-small) {
-	.featured-slider {
-		.section-content {
-			padding-left: 20px;
-			padding-right: 20px;
+  .featured-slider {
+    .section-content {
+      padding-left: 20px;
+      padding-right: 20px;
 
-			.slider-wrapper {
-				width: 100%;
-				margin-left: 0;
+      .slider-wrapper {
+        width: 100%;
+        margin-left: 0;
 
-				.bx-controls {
-					margin-left: 0;
-				}
-			}
-		}
-	}
+        .bx-controls {
+          margin-left: 0;
+        }
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-xlarge) {
-	.featured-slider {
-		.section-content {
-			.slider-wrapper {
-				width: 80%;
-				margin: 0 auto;
-			}
-		}
-	}
+  .featured-slider {
+    .section-content {
+      .slider-wrapper {
+        margin: 0 auto;
+        width: 80%;
+      }
+    }
+  }
 }
+
 @media screen and (min-width: 1441px) {
-	.featured-slider {
-		.section-content {
-			.slider-wrapper {
-				width: 100%;
-			}
-		}
-	}
+  .featured-slider {
+    .section-content {
+      .slider-wrapper {
+        width: 100%;
+      }
+    }
+  }
 }

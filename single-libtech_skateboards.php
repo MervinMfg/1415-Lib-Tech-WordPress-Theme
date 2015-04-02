@@ -142,7 +142,7 @@ Template Name: Skateboard Detail
 								?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php echo $thumbnail[2]; ?> - <?php echo $thumbnail[3]; ?>" data-sku="<?php echo $thumbnail[4]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php echo $imageAlt; ?>" data-sub-alt="Sizes: <?php echo $thumbnail[3]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php
 										$i ++;
 									};
@@ -162,7 +162,8 @@ Template Name: Skateboard Detail
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<?php
 							$productArray = Array();
@@ -501,7 +502,7 @@ Template Name: Skateboard Detail
 							<?php endforeach; ?>
 						</ul>
 					</div><!-- END .product-tech-minor -->
-					
+
 					<?
 						endif; // end tech minor check
 					endif;// end technology check
@@ -525,10 +526,8 @@ Template Name: Skateboard Detail
 		</section>
 		<?php
 			endif;
-		?>
-
-		<?php
-			comments_template();
+			// display disqus comments
+			libtech_comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>

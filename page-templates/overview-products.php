@@ -827,10 +827,11 @@ get_header();
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">
-                            <li class="filter-item" data-filter=".hesho-disposable-standards">Hesho</li>
-                            <li class="filter-item" data-filter=".maple-bottoms">Maple Bottoms</li>
-                            <li class="filter-item" data-filter=".semi-slicks">Semi Slicks</li>
-                            <li class="filter-item" data-filter=".completes">Completes</li>
+                            <li data-filter=".exo-skeletech">Exo-Skeletech</li>
+                            <li data-filter=".hesho-disposable-standards">Hesho</li>
+                            <li data-filter=".bowls">Bowls</li>
+                            <li data-filter=".leg-tour">Leg Tour</li>
+                            <li data-filter=".completes">Completes</li>
                         </ul>
                     </div>
                     <div class="filters pricing">

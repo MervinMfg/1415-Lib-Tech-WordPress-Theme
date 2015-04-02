@@ -65,7 +65,7 @@ Template Name: Accessories Detail
 		       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionImageColor));
 							?>
 							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionImageColor; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionImageColor; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>" itemprop="image" /></a></li>
-							
+
 							<?php
 								endwhile;
 							endif;
@@ -125,7 +125,7 @@ Template Name: Accessories Detail
 								?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-color="<?php echo $thumbnail[2]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php echo $imageAlt; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php $i ++; }; endif; ?>
 							</ul>
 						</div>
@@ -133,7 +133,7 @@ Template Name: Accessories Detail
 							<?php
 								echo getPrice(
 									get_field('libtech_product_price_us'),
-									get_field('libtech_product_price_ca'), 
+									get_field('libtech_product_price_ca'),
 									get_field('libtech_product_price_eur'),
 									get_field('libtech_product_on_sale'),
 									get_field('libtech_product_sale_percentage'),
@@ -141,7 +141,8 @@ Template Name: Accessories Detail
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<div class="product-variations">
 							<select id="product-variation-size" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">
@@ -256,13 +257,12 @@ Template Name: Accessories Detail
 		</section>
 		<?php
 			endif;
-		?>
-
-		<?php
-			comments_template();
+			// display disqus comments
+			libtech_comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>
+
 <?php
 		endwhile;
 	endif;

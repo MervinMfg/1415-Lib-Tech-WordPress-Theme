@@ -60,7 +60,7 @@ LIBTECH.main = {
 			self.lbsInit();
 		} else if ($body.hasClass('page-template-page-templatespage-pass-it-on-project-php')) {
 			self.passItOnInit();
-		} else if ($body.hasClass('page-template-page-templatespage-lib-legs-php')) {
+		} else if ($body.hasClass('page-template-lib-legs')) {
 			self.libLegsInit();
 		} else if ($body.hasClass('page-template-page-templatesstorm-factory-php')) {
 			self.stormFactoryInit();
@@ -78,33 +78,6 @@ LIBTECH.main = {
 		var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
 		if(is_chrome === true) {
 			$('body').hide().show();
-		}
-		// FACEBOOK COMMENT FIX
-		if($('.discussion-thread')) {
-			// cache some selectors so we're not looking up divs over and
-			// over and over on resize
-			var facebook_comment_resize,
-			comment_resize_timeout,
-			$window = $(window),
-			$comments_container = $('.discussion-thread'),
-			$comments = $('.fb-comments');
-			facebook_comment_resize = function() {
-				// define a function to get the width of the comment container
-				// then set the data-width attribute on the facebook comment div
-				$comments.attr("data-width", $comments_container.width());
-				// Reinitialize the comments so it can grab the new width from
-				// the data element on the comment div
-				if (typeof FB === 'undefined') return;
-				FB.XFBML.parse($comments_container.get(0));
-			};
-			// Set a timeout that can clear itself, keeps the comments
-			// from refreshing themselves dozens of times during resize
-			$window.on('resize', function() {
-				clearTimeout( comment_resize_timeout );
-				comment_resize_timeout = setTimeout(facebook_comment_resize, 200);
-			});
-			// Set the initial width on load
-			facebook_comment_resize();
 		}
 	},
 	menuInit: function () {
@@ -423,7 +396,7 @@ LIBTECH.main = {
 		$('.lbs-updates .featured-video .video-player').fitVids();
 	},
 	passItOnInit: function () {
-		$('.video-header .video-player').fitVids();
+		$('.product-video .video-player').fitVids();
 		// lightbox for gold member
 		$('.pass-it-on-contest .product-wrapper .product.lightbox').magnificPopup({
 			delegate: 'a',

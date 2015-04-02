@@ -6,7 +6,7 @@ get_header();
 ?>
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
+
 		<div class="bg2-top"></div>
 		<section class="bg2 partners">
 			<div class="section-content">
@@ -107,7 +107,7 @@ get_header();
 						?>
 						<div class="clearfix"></div>
 					</div>
-					<?php comments_template(); ?>
+					<?php libtech_comments_template(); ?>
 				</article>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-zoom -->

@@ -56,7 +56,7 @@ Template Name: Apparel Detail
 			<div class="toggle-btn"></div>
 		</div>
         <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product"> 
+        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
 	        <section class="product-details bg-product-details <?php echo $slug; ?>">
 	        	<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
@@ -75,7 +75,7 @@ Template Name: Apparel Detail
 		       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionImageColor));
 							?>
 							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionImageColor; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionImageColor; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>"<?php if($imageNum == 0) echo "itemprop='image'"; ?> /></a></li>
-							
+
 							<?php
 							$imageNum++;
 								endwhile;
@@ -126,7 +126,7 @@ Template Name: Apparel Detail
 								<?php if($thumbnailImages): $i = 0; foreach ($thumbnailImages as $thumbnail) { ?>
 
 								<li><a href="<?php echo $thumbnail[1][0]; ?>" title="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" data-color="<?php echo $thumbnail[2]; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $thumbnail[0][0]; ?>" alt="<?php the_title(); ?> - <?php echo $thumbnail[2]; ?>" width="<?php echo $thumbnail[0][1]; ?>" height="<?php echo $thumbnail[0][2]; ?>" /></a></li>
-								
+
 								<?php $i ++; }; endif; ?>
 							</ul>
 						</div>
@@ -142,7 +142,8 @@ Template Name: Apparel Detail
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<div class="product-variations">
 							<?php
@@ -256,7 +257,7 @@ Template Name: Apparel Detail
 							?>
 
 							<li><a href="/t-shirt-specifications/" class="specs-link">View t-shirt specs</a></li>
-							
+
 							<?php endif; ?>
 
 						</ul>
@@ -302,13 +303,12 @@ Template Name: Apparel Detail
 		</section>
 		<?php
 			endif;
-		?>
-
-		<?php
-			comments_template();
+			// display disqus comments
+			libtech_comments_template();
 			// display the related products
 			getRelatedProducts();
 		?>
+
 <?php
 		endwhile;
 	endif;

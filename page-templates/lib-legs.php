@@ -89,8 +89,6 @@ get_header();
 					            $imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
 					            $productLink = get_permalink($post_object->ID);
 					            $productTitle = get_the_title($post_object->ID);
-					            // get price
-					            $relatedPrice = getPrice(get_field('libtech_product_price_us', $post_object->ID), get_field('libtech_product_price_ca', $post_object->ID), get_field('libtech_product_price_eur', $post_object->ID), get_field('libtech_product_on_sale', $post_object->ID), get_field('libtech_product_sale_percentage', $post_object->ID));
 					?>
 
 					<li>
@@ -170,13 +168,10 @@ get_header();
 					<div class="clearfix"></div>
 				</div>
 				<!-- START TagBoard -->
-				<div id="tagboard-embed"></div>
-				<script>
-					var tagboardOptions = {tagboard:"liblegs/173006", darkMode: true};
-				</script>
-				<script src="https://tagboard.com/public/js/embed.js"></script>
+				<div class="tagboard-embed" tgb-slug="liblegs/173006" tgb-dark-mode="true"></div>
+				<script src="https://static.tagboard.com/public/js/embed.js"></script>
 				<!-- END TagBoard -->
-				<?php comments_template(); ?>
+				<?php libtech_comments_template(); ?>
 			</div><!-- END .section-content -->
 		</section><!-- END .tagboard -->
 
