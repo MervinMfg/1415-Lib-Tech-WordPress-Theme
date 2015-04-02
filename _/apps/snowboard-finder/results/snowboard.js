@@ -11,18 +11,19 @@
   app.directive("snowboard", function snowboard() {
     return {
       restrict: 'E',
+      scope: { snowboard: '=' },
       replace: true,
-      bindToController: true,
       controller: "SnowboardController as snowboardCtrl",
       templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/results/snowboard.html'
     };
   });
 
-  app.controller('SnowboardController', ['$scope', '$log', function SnowboardController($scope, $log) {
+  app.controller('SnowboardController', ['$scope', '$log', 'config', function SnowboardController($scope, $log, config) {
     $scope.name = "SnowboardController";
-    // $scope.snowboard ... assigned via ngRepeat ... best way to do this? likely not.
+    $scope.config = config;
     $scope.currentImg = "";
     $scope.currentSku = "";
+    // $scope.snowboard ... assigned via directive scope and attribute on directive
 
     function init() {
       $scope.currentImg = $scope.snowboard.variations[0].colorwayImg[0];
@@ -34,7 +35,6 @@
     }
 
     function updateColorway(url, sku, e) {
-      //e.stopPropagation();
       e.preventDefault();
       $scope.currentImg = url;
       $scope.currentSku = sku;

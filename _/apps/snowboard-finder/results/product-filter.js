@@ -11,6 +11,7 @@
   app.directive("productFilter", function productFilter() {
     return {
       restrict: 'E',
+      replace: true,
       bindToController: true,
       controller: "ProductFilterController as productFilterCtrl",
       templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/results/product-filter.html'

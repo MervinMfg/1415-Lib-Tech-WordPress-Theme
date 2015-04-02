@@ -16,7 +16,7 @@
 		});
 	}]);
 
-	app.controller('ResultsController', ['$scope', '$routeParams', '$log', 'config', 'user', function ResultsController($scope, $routeParams, $log, config, user) {
+	app.controller('ResultsController', ['$scope', '$routeParams', '$log', '$filter', '$compile', 'config', 'user', function ResultsController($scope, $routeParams, $log, $filter, $compile, config, user) {
 		$scope.name = "ResultsController";
 		$scope.params = $routeParams;
 		$scope.config = config;
@@ -56,12 +56,18 @@
 			$scope.$on('filterSelected', function (event, arg) {
 				updateFilters(arg.filter, arg.value);
 			});
-			// listen for snowboards to update
-			$scope.$watch(function() {
-				return $scope.config.snowboards;
-			}, function(){
-				buildCarousel();
-			}, true);
+			// do initial build
+			var snowboardWatch = $scope.$watch(
+				function() { return $scope.config.snowboards; },
+				function() {
+					if ($scope.config.snowboards.length > 0) {
+						buildCarousel();
+						snowboardWatch(); // kill this watch, only fire once
+						watchUserChange();
+					}
+				},
+				true
+			);
 		}
 
 		function resetUser() {
@@ -88,43 +94,52 @@
 			}
 		}
 
+		function watchUserChange() {
+			$scope.$watch(
+				function() { return $scope.user; },
+				function() {
+					buildCarousel();
+				},
+				true
+			);
+		}
+
 		function buildCarousel() {
-			var owl, owlStage;
+			var owl, owlStage, filteredSnowboards;
+			// start setting up carousel
 			owl = $('#snowboards');
 			owlStage = owl.find('.owl-stage');
 			// destroy old carousel if it exists
 			if(owlStage.length) {
-				owlStage.html('');
 				owl.trigger('destroy.owl.carousel');
-				owlStage.remove();
-				// remove comments so they don't keep duplicating
-				owl.contents().each(function(index, node) {
-					if(node.nodeType == 8 && node.nodeValue.indexOf("end ngRepeat") > -1) {
-						$(node).remove();
-					}
-				});
+				owl.html('');
 			}
-			// if we have .product-item's init new carousel
-			if(owl.find('.product-item').length) {
-				// build new
-				owl.owlCarousel({
-					loop: true,
-					margin: 10,
-					nav: true,
-					responsive: {
-						0: {
-							items:2
-						},
-						600: {
-							items:3
-						},
-						980: {
-							items:4
-						}
+			// filter boards based on custom snowboardFilter
+			filteredSnowboards = $filter('snowboardFilter')($scope.config.snowboards, $scope.user);
+			// limit to top 6 restuls
+			filteredSnowboards = $filter('limitTo')(filteredSnowboards, 6);
+			// loop through and render snowboard directive
+			angular.forEach(filteredSnowboards, function(value, key) {
+				// Insert directive programatically angular
+				angular.element('#snowboards').append( $compile("<snowboard data-snowboard='" + angular.toJson(value) + "'></snowboard>")($scope) );
+			});
+			// build new
+			owl.owlCarousel({
+				loop: false,
+				margin: 10,
+				nav: true,
+				responsive: {
+					0: {
+						items:2
+					},
+					600: {
+						items:3
+					},
+					980: {
+						items:4
 					}
-				});
-				$log.log('build new carousel');
-			}
+				}
+			});
 		}
 
 		// set public methods

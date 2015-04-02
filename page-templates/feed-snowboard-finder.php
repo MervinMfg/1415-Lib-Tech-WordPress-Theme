@@ -71,7 +71,7 @@ if (have_posts()) :
 				$productArray['waistWidth'] = get_sub_field('libtech_snowboard_specs_waist_width');
 				$productArray['slug'] = $post->post_name;
 				$productArray['link'] = get_permalink($post->ID);
-				$productArray['slogan'] = get_field('libtech_product_slogan');
+				// $productArray['slogan'] = htmlspecialchars(get_field('libtech_product_slogan'), ENT_QUOTES); // issues with quotes
 				$productArray['price'] = Array('us' => get_field('libtech_product_price_us'), 'ca' => get_field('libtech_product_price_ca'), 'eu' => get_field('libtech_product_price_eur'));
 				$productArray['flex'] = get_sub_field('libtech_snowboard_specs_flex_rating');
 				$productArray['minWeight'] = get_sub_field('libtech_snowboard_specs_weight_range');

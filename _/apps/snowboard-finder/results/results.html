@@ -5,10 +5,8 @@
 		<product-filter ng-repeat="prodFilter in productFilters" filters="prodFilter.filters"></product-filter>
 	</div>
 	<div class="board-picks">
-		<!-- board picks go here -->
 		<div class="product-listing snowboards owl-carousel" id="snowboards">
-			<!-- $scope.config.snowboards -->
-			<snowboard ng-repeat="snowboard in config.snowboards | snowboardFilter:user | limitTo:6"></snowboard>
+			<!-- snowbaords are rendered dynamically -->
 		</div>
 		<div class="clearfix"></div>
 		<div class="why-link-wrapper">
