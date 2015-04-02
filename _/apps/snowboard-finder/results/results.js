@@ -112,7 +112,10 @@
 			// destroy old carousel if it exists
 			if(owlStage.length) {
 				owl.trigger('destroy.owl.carousel');
-				owl.html('');
+				// remove previous items from DOM
+				angular.forEach(angular.element('.product-item'), function(element, key) {
+					angular.element(element).remove();
+				});
 			}
 			// filter boards based on custom snowboardFilter
 			filteredSnowboards = $filter('snowboardFilter')($scope.config.snowboards, $scope.user);
