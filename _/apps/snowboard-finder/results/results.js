@@ -50,24 +50,28 @@
 				]
 			}
 		];
+		// clean up listeners
+		var listenerCleanup = {};
 
 		function init() {
 			// listen for filters to update
-			$scope.$on('filterSelected', function (event, arg) {
+			listenerCleanup.filterSelected = $scope.$on('filterSelected', function (event, arg) {
 				updateFilters(arg.filter, arg.value);
 			});
 			// do initial build
-			var snowboardWatch = $scope.$watch(
+			listenerCleanup.snowboardWatch = $scope.$watch(
 				function() { return $scope.config.snowboards; },
 				function() {
 					if ($scope.config.snowboards.length > 0) {
 						buildCarousel();
-						snowboardWatch(); // kill this watch, only fire once
+						listenerCleanup.snowboardWatch(); // kill this watch, only fire once
 						watchUserChange();
 					}
 				},
 				true
 			);
+			// listen for destroy event
+			listenerCleanup.destroy = $scope.$on('$destroy', function() { uninit(); });
 		}
 
 		function resetUser() {
@@ -95,7 +99,7 @@
 		}
 
 		function watchUserChange() {
-			$scope.$watch(
+			listenerCleanup.userChange = $scope.$watch(
 				function() { return $scope.user; },
 				function() {
 					buildCarousel();
@@ -116,6 +120,7 @@
 				angular.forEach(angular.element('.product-item'), function(element, key) {
 					angular.element(element).remove();
 				});
+				owl.html(''); // make sure content is cleared
 			}
 			// filter boards based on custom snowboardFilter
 			filteredSnowboards = $filter('snowboardFilter')($scope.config.snowboards, $scope.user);
@@ -131,6 +136,7 @@
 				loop: false,
 				margin: 10,
 				nav: true,
+				dots: true,
 				responsive: {
 					0: {
 						items:2
@@ -143,6 +149,13 @@
 					}
 				}
 			});
+		}
+
+		function uninit() {
+			if(typeof listenerCleanup.filterSelected == 'function') listenerCleanup.filterSelected();
+			if(typeof listenerCleanup.snowboardWatch == 'function') listenerCleanup.snowboardWatch();
+			if(typeof listenerCleanup.destroy == 'function') listenerCleanup.destroy();
+			if(typeof listenerCleanup.userChange == 'function') listenerCleanup.userChange();
 		}
 
 		// set public methods
