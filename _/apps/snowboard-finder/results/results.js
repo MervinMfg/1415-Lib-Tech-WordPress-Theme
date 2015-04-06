@@ -137,6 +137,7 @@
 				margin: 10,
 				nav: true,
 				dots: true,
+				navText: ['<span class="offscreen">prev</span>','<span class="offscreen">next</span>'],
 				responsive: {
 					0: {
 						items:2
