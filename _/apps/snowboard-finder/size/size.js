@@ -56,14 +56,22 @@
 			{label: '8"', value: 8}, {label: '9"', value: 9}, {label: '10"', value: 10}, {label: '11"', value: 11}
 		];
 		$scope.heightMetric = [
-			{label: "60 cm", value: 60}, {label: "65 cm", value: 65}, {label: "70 cm", value: 70}, {label: "75 cm", value: 75},
-			{label: "80 cm", value: 80}, {label: "85 cm", value: 85}, {label: "90 cm", value: 90}, {label: "95 cm", value: 95},
-			{label: "100 cm", value: 100}, {label: "105 cm", value: 105}, {label: "110 cm", value: 110}, {label: "115 cm", value: 115},
-			{label: "120 cm", value: 120}, {label: "125 cm", value: 125}, {label: "130 cm", value: 130}, {label: "135 cm", value: 135},
-			{label: "140 cm", value: 140}, {label: "145 cm", value: 145}, {label: "150 cm", value: 150}, {label: "155 cm", value: 155},
-			{label: "160 cm", value: 160}, {label: "165 cm", value: 165}, {label: "170 cm", value: 170}, {label: "175 cm", value: 175},
-			{label: "180 cm", value: 180}, {label: "185 cm", value: 185}, {label: "190 cm", value: 190}, {label: "195 cm", value: 195},
-			{label: "200 cm", value: 200}, {label: "205 cm", value: 205}, {label: "210 cm", value: 210}, {label: "215 cm", value: 215},
+			{label: "60 cm", value: 60}, {label: "62 cm", value: 62}, {label: "65 cm", value: 65}, {label: "67 cm", value: 67},
+			{label: "70 cm", value: 70}, {label: "72 cm", value: 72}, {label: "75 cm", value: 75}, {label: "77 cm", value: 77},
+			{label: "80 cm", value: 80}, {label: "82 cm", value: 82}, {label: "85 cm", value: 85}, {label: "87 cm", value: 87},
+			{label: "90 cm", value: 90}, {label: "92 cm", value: 92}, {label: "95 cm", value: 95}, {label: "97 cm", value: 97},
+			{label: "100 cm", value: 100}, {label: "102 cm", value: 102}, {label: "105 cm", value: 105}, {label: "107 cm", value: 107},
+			{label: "110 cm", value: 110}, {label: "112 cm", value: 112}, {label: "115 cm", value: 115}, {label: "117 cm", value: 117},
+			{label: "120 cm", value: 120}, {label: "122 cm", value: 122}, {label: "125 cm", value: 125}, {label: "127 cm", value: 127},
+			{label: "130 cm", value: 130}, {label: "132 cm", value: 132}, {label: "135 cm", value: 135}, {label: "137 cm", value: 137},
+			{label: "140 cm", value: 140}, {label: "142 cm", value: 142}, {label: "145 cm", value: 145}, {label: "147 cm", value: 147},
+			{label: "150 cm", value: 150}, {label: "152 cm", value: 152}, {label: "155 cm", value: 155}, {label: "157 cm", value: 157},
+			{label: "160 cm", value: 160}, {label: "162 cm", value: 162}, {label: "165 cm", value: 165}, {label: "167 cm", value: 167},
+			{label: "170 cm", value: 170}, {label: "172 cm", value: 172}, {label: "175 cm", value: 175}, {label: "177 cm", value: 177},
+			{label: "180 cm", value: 180}, {label: "182 cm", value: 182}, {label: "185 cm", value: 185}, {label: "187 cm", value: 187},
+			{label: "190 cm", value: 190}, {label: "192 cm", value: 192}, {label: "195 cm", value: 195}, {label: "197 cm", value: 197},
+			{label: "200 cm", value: 200}, {label: "202 cm", value: 202}, {label: "205 cm", value: 205}, {label: "207 cm", value: 207},
+			{label: "210 cm", value: 210}, {label: "212 cm", value: 212}, {label: "215 cm", value: 215}, {label: "217 cm", value: 217},
 			{label: "220 cm", value: 220}
 		];
 		$scope.bootSizes = [
@@ -134,8 +142,6 @@
 				}
 			}
 			$scope.user.height = updatedHeight;
-
-			$log.log($scope.user.height);
 		}
 
 		function setSize() {
