@@ -21,32 +21,58 @@
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'">
 				<h4>Length</h4>
 				<p>A longer board will ride more stable, while a shorter board will be more maneuverable. With your specs, we can help you find the right balance, and tweak it to your riding style.</p>
-				<p>At _______ feet and _______ inches a board length of _______ cm will give you a nice ride on the hill</p>
+				<p ng-show="config.measurement == 'imperial'">At {{ feet }} feet and {{ inches }} inches a board length around {{ boardLength }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'metric'">At {{ user.height }} cm a board length around {{ boardLength }} cm will give you a nice ride.</p>
 			</div>
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'">
 				<h4>Width</h4>
 				<p>A bigger foot requires a bigger board width underfoot. If your board is too narrow your toes and heels will drag, likely throwing off your balance. While a wide board will float in deep snow, a board too wide will hinder your ability to make ripping fast, precise, toe and heel edge turns.</p>
-				<table>
+				<table ng-show="user.gender == 'Male'">
 					<tr>
 						<td>
-							<h5>Narrow</h5>
-							<p>Size 4-7</p>
+							<h5 ng-class="{'current': user.bootSize <= 7.5 }">Narrow</h5>
+							<p>Size 4 - 7.5</p>
 						</td>
 						<td>
-							<h5>Regular</h5>
-							<p>Size 7-10</p>
+							<h5 ng-class="{'current': user.bootSize >= 7.5 && user.bootSize <= 10 }">Regular</h5>
+							<p>Size 7.5 - 10</p>
 						</td>
 						<td>
-							<h5>Mid-Wide</h5>
-							<p>Size 10-12</p>
+							<h5 ng-class="{'current': user.bootSize >= 10 && user.bootSize <= 11.5 }">Mid-Wide</h5>
+							<p>Size 10 - 11.5</p>
 						</td>
 						<td>
-							<h5>Wide</h5>
-							<p>Size 12-14</p>
+							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 14 }">Wide</h5>
+							<p>Size 11.5 - 14</p>
 						</td>
 						<td>
-							<h5>Ultra Wide</h5>
-							<p>Size 14-18</p>
+							<h5 ng-class="{'current': user.bootSize >= 14 }">Ultra Wide</h5>
+							<p>Size 14+</p>
+						</td>
+					</tr>
+				</table>
+				<!-- women's shoes are 1.5 sizes smaller than men -->
+				<table ng-show="user.gender == 'Female'">
+					<tr>
+						<td>
+							<h5 ng-class="{'current': user.bootSize <= 9 }">Narrow</h5>
+							<p>Size 5.5 - 9</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 9 && user.bootSize <= 11.5 }">Regular</h5>
+							<p>Size 9 - 11.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 13 }">Mid-Wide</h5>
+							<p>Size 11.5 - 13</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 13 && user.bootSize <= 15.5 }">Wide</h5>
+							<p>Size 13 - 15.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 15.5 }">Ultra Wide</h5>
+							<p>Size 15.5+</p>
 						</td>
 					</tr>
 				</table>
@@ -54,9 +80,56 @@
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Contour'}" ng-show="currentSection == 'Contour'">
 				<h4>Contour</h4>
 				<p>Contours are crucial for enjoying quality days boarding. By coupling your ability and the terrain you like to rip, we can determine which banana you are.</p>
-
-				BTX - Banana Tech
-				C2-BTX - Power Banana Camber/Banana Blend
+				<table>
+					<tr>
+						<td>
+							<h5 class="contour-title">BTX - Banana Tech</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Least camber effect&hellip; Easiest to ride</p>
+						</td>
+						<td>
+							<h5 class="contour-title">EC2 - Elliptical Camber/Banana Blend</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-ec2-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Mild camber effect&hellip; Easy to ride</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5 class="contour-title">C2 - Power Banana/Camber Blend</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-c2-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Significant Camber Effect&hellip; Agressive ride</p>
+						</td>
+						<td>
+							<h5 class="contour-title">XC2 - Power Banana/Camber Blend</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-xc2-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Significant Camber Effect&hellip; Extremly agressive ride</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5 class="contour-title">C3 - Camber Dominant/Banana Blend</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-c3-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Max camber effect&hellip; Most aggressive ride</p>
+						</td>
+						<td>
+							<h5 class="contour-title">TT - Camber Dominant Tomahawk Technology</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-tt.gif" alt="BTX" /></div>
+							<p class="contour-desc">Max camber effect&hellip; Most aggressive ride</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<h5 class="contour-title">!BTX! - Enhanced Banana Tech</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-enchanced-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Dynamic camber effect&hellip; Easiest to ride</p>
+						</td>
+						<td>
+							<h5 class="contour-title">C1 - Banana/Camber Combo</h5>
+							<div class="contour-image"><img src="/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/diy/contour-c1-btx.gif" alt="BTX" /></div>
+							<p class="contour-desc">Significant camber effect&hellip; Aggressive ride, floaty nose</p>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 	</div><!-- .step-5-content-wrapper -->

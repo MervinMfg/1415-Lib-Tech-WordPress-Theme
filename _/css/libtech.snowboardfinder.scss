@@ -26,8 +26,8 @@
   }
 
   h2 {
-    text-align: center;
     clear: both;
+    text-align: center;
   }
 
   h3 {
@@ -82,9 +82,7 @@
   .back-button {
     display: block;
     padding: 0 0 20px 20px;
-
   }
-
 
   .button-list {
     width: 100%;
@@ -122,7 +120,7 @@
 }
 
 .bf-step-2 {
-  background: url("../img/board-finder/bf-step-2-kraftsman.png") -20% bottom no-repeat;
+  background: url('../img/board-finder/bf-step-2-kraftsman.png') -20% bottom no-repeat;
   background-size: 85%;
   padding: 40px 0;
 
@@ -164,8 +162,8 @@
     }
 
     .selection-measurements-bottom {
-      width: 50%;
       margin: 0 auto;
+      width: 50%;
 
       .boot-measurement {
         padding-bottom: 40px;
@@ -209,7 +207,7 @@
   .product-filtering {
     display: table;
     height: 100px;
-    padding: 30px 20px 0px;
+    padding: 30px 20px 0;
     width: 100%;
 
     .filters {
@@ -237,8 +235,8 @@
         width: 100%;
 
         .filter-item {
-          width: 100%;
           text-align: left;
+          width: 100%;
         }
       }
     }
@@ -248,9 +246,9 @@
     position: relative;
 
     .product-item {
-      width: 100%;
       float: none;
       padding-bottom: 0;
+      width: 100%;
     }
   }
 
@@ -267,7 +265,7 @@
 
   .reset-link {
     float: left;
-    padding: 0 20px 20px 20px;
+    padding: 0 20px 20px;
   }
 }
 
@@ -287,51 +285,47 @@
   }
 
   .step-5-content-wrapper {
-    .selection-why {
-      table {
-        width: 100%;
+    .button-list {
+      display: table;
+      padding-bottom: 30px;
 
-        td {
-          text-align: center;
+      .list-item {
+        display: table-cell;
+        width: 33.3333%;
+
+        button {
+          font-size: 1.2em;
         }
-      }
 
-      .button-list {
-        display: table;
-        padding-bottom: 30px;
+        &.left {
+          padding-right: 5px;
+        }
 
-        .list-item {
-          display: table-cell;
-          width: 33.3333%;
+        &.center {
+          padding: 0 5px;
+        }
 
-          button {
-            font-size: 1.2em;
-          }
-
-          &.left {
-            padding-right: 5px;
-          }
-
-          &.center {
-            padding: 0 5px;
-          }
-
-          &.right {
-            padding-left: 5px;
-          }
+        &.right {
+          padding-left: 5px;
         }
       }
     }
 
     .description-wrapper {
       .description {
-        h4 {
+        h4,
+        .current {
           color: $snowColor;
+        }
+
+        table {
+          width: 100%;
         }
       }
     }
   }
 }
+
 @media screen and (min-width: $breakpoint-small) {
   .finder-step {
     min-height: 380px;
@@ -421,12 +415,10 @@
 
   .bf-step-5 {
     .step-5-content-wrapper {
-      .selection-why {
-        .button-list {
-          .list-item {
-            button {
-              font-size: 1.5em;
-            }
+      .button-list {
+        .list-item {
+          button {
+            font-size: 1.5em;
           }
         }
       }
@@ -435,7 +427,6 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-
   @-webkit-keyframes bf-quote-fade-in {
     0% {
       opacity: 0;
@@ -596,7 +587,6 @@
 
           .height-us {
             select {
-
               &.feet {
                 margin-right: 10px;
               }
@@ -626,6 +616,7 @@
       }
     }
   }
+
   .bf-step-3 {
     background-position: 125% bottom;
     background-size: 465px;
@@ -653,6 +644,7 @@
         }
       }
     }
+
     .selection-terrain {
       width: 60%;
 
@@ -671,6 +663,7 @@
       }
     }
   }
+
   .bf-step-4 {
     h2 {
       float: left;
@@ -691,8 +684,8 @@
     }
 
     .why-link-wrapper {
-      text-align: left;
       padding-left: 20px;
+      text-align: left;
 
       .why-link {
         clear: both;
@@ -719,10 +712,12 @@
             background: url('../img/board-finder/bf-length.png') -75px bottom no-repeat;
             background-size: 450px;
           }
+
           &.width {
             background: url('../img/board-finder/bf-width.png') -32px bottom no-repeat;
             background-size: 450px;
           }
+
           &.contour {
             background: url('../img/board-finder/bf-contour.png') -65px bottom no-repeat;
             background-size: 450px;
@@ -741,6 +736,7 @@
       h2 {
         text-align: left;
       }
+
       h3 {
         text-align: left;
 
@@ -751,6 +747,7 @@
     }
   }
 }
+
 @media screen and (min-width: 900px) {
   .bf-step-1 {
     background-position: 100% bottom;
@@ -793,6 +790,7 @@
         .boot-measurement {
           padding-right: 40px;
         }
+
         .button-container {
           width: 160px;
         }
@@ -819,9 +817,11 @@
           &.length {
             background-position: 0 bottom;
           }
+
           &.width {
             background-position: 25px bottom;
           }
+
           &.contour {
             background-position: 25px bottom;
           }
@@ -834,6 +834,7 @@
     }
   }
 }
+
 @media screen and (min-width: $breakpoint-large) {
   .board-finder {
     .section-content {
@@ -867,15 +868,18 @@
     .step-5-content-wrapper {
       width: 50%;
     }
+
     .description-image-wrapper {
       .description-image-list {
         li {
           &.length {
             background-position: 0 bottom;
           }
+
           &.width {
             background-position: 5% bottom;
           }
+
           &.contour {
             background-position: 5% bottom;
           }
@@ -884,8 +888,8 @@
     }
   }
 }
-@media screen and (min-width: $breakpoint-xlarge) {
 
+@media screen and (min-width: $breakpoint-xlarge) {
   .bf-step-5 {
     .step-5-content-wrapper {
       width: 50%;

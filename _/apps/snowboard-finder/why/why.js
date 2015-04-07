@@ -16,9 +16,26 @@
 		});
 	}]);
 
-	app.controller('WhyController', ['$scope', '$routeParams', function WhyController($scope, $routeParams) {
+	app.controller('WhyController', ['$scope', '$routeParams', 'config', 'user', function WhyController($scope, $routeParams, config, user) {
 		$scope.name = "WhyController";
 		$scope.params = $routeParams;
 		$scope.currentSection = "Length";
+		$scope.config = config;
+		$scope.user = user;
+		$scope.feet = 0;
+		$scope.inches = 0;
+		$scope.boardLength = 0;
+
+		function init() {
+			// set imperial measurements
+			if($scope.user.height != -1) {
+				$scope.feet = Math.floor($scope.user.height/30.48);
+				$scope.inches = Math.round(($scope.user.height/2.54) % 12);
+			}
+			// TODO: set boardLength
+			$scope.boardLength = 157;
+		}
+
+		init();
 	}]);
 }());
