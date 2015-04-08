@@ -280,48 +280,63 @@
     padding-bottom: 20px;
   }
 
+  h4 {
+    color: $snowColor;
+  }
+
   .back-button {
     padding-left: 0;
   }
 
-  .step-5-content-wrapper {
-    .button-list {
-      display: table;
-      padding-bottom: 30px;
+  .button-list {
+    display: table;
+    padding-bottom: 30px;
 
-      .list-item {
-        display: table-cell;
-        width: 33.3333%;
+    .list-item {
+      display: table-cell;
+      width: 33.3333%;
 
-        button {
-          font-size: 1.2em;
-        }
+      button {
+        font-size: 1.2em;
+      }
 
-        &.left {
-          padding-right: 5px;
-        }
+      &.left {
+        padding-right: 5px;
+      }
 
-        &.center {
-          padding: 0 5px;
-        }
+      &.center {
+        padding: 0 5px;
+      }
 
-        &.right {
-          padding-left: 5px;
-        }
+      &.right {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .boot-sizes {
+    width: 100%;
+
+    .current {
+      color: $snowColor;
+    }
+  }
+
+  .contour {
+    width: 270px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+
+    .contour-image {
+      padding: 5px 0;
+
+      img {
+        cursor: pointer;
       }
     }
 
-    .description-wrapper {
-      .description {
-        h4,
-        .current {
-          color: $snowColor;
-        }
-
-        table {
-          width: 100%;
-        }
-      }
+    .contour-desc {
+      padding: 0;
     }
   }
 }
@@ -414,13 +429,9 @@
   }
 
   .bf-step-5 {
-    .step-5-content-wrapper {
-      .button-list {
-        .list-item {
-          button {
-            font-size: 1.5em;
-          }
-        }
+    .button-list {
+      button {
+        font-size: 1.5em;
       }
     }
   }
@@ -728,7 +739,7 @@
 
     .step-5-content-wrapper {
       float: right;
-      padding: 115px 0 0;
+      padding: 75px 0 0;
       position: relative;
       width: 50%;
       z-index: 2;
@@ -743,6 +754,22 @@
         span {
           margin-left: 6px;
         }
+      }
+    }
+
+    .contours {
+      margin-left: -10px;
+    }
+
+    .contour {
+      width: 49.5%;
+      margin: 0;
+      display: inline-block;
+      vertical-align: center;
+      padding-left: 10px;
+
+      img {
+        width: 100%;
       }
     }
   }
@@ -885,14 +912,6 @@
           }
         }
       }
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-xlarge) {
-  .bf-step-5 {
-    .step-5-content-wrapper {
-      width: 50%;
     }
   }
 }

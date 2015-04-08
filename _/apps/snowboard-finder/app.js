@@ -66,6 +66,7 @@
 		user.ability = "Default";
 		user.terrain = "Default";
 		user.flex = "Default";
+		user.contours = [];
 	});
 
 	// DIRECTIVE TO CHECK FOR REQUIRED SELECT FIELDS

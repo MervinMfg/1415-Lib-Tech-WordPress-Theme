@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.why', ['ngRoute']);
+	var app = angular.module('boardFinder.why', ['ngRoute', 'boardFinder.contour']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/why/', {
@@ -35,6 +35,18 @@
 			// TODO: set boardLength
 			$scope.boardLength = 157;
 		}
+
+		function checkContour($contour) {
+			for(var i=0; i < $scope.user.contours.length; i++){
+				if($scope.user.contours[i] === $contour){
+					return true;
+				}
+			}
+			return false;
+		}
+
+		// set public methods
+		$scope.checkContour = checkContour;
 
 		init();
 	}]);

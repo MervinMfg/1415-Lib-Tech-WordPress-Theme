@@ -126,10 +126,12 @@
 			filteredSnowboards = $filter('snowboardFilter')($scope.config.snowboards, $scope.user);
 			// limit to top 6 restuls
 			filteredSnowboards = $filter('limitTo')(filteredSnowboards, 6);
+			$scope.user.contours = [];
 			// loop through and render snowboard directive
 			angular.forEach(filteredSnowboards, function(value, key) {
 				// Insert directive programatically angular
 				angular.element('#snowboards').append( $compile("<snowboard data-snowboard='" + angular.toJson(value) + "'></snowboard>")($scope) );
+				$scope.user.contours.push(value.contour);
 			});
 			// build new
 			owl.owlCarousel({

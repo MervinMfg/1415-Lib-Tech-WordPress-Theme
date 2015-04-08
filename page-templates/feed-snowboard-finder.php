@@ -75,6 +75,7 @@ if (have_posts()) :
 				$productArray['price'] = Array('us' => get_field('libtech_product_price_us'), 'ca' => get_field('libtech_product_price_ca'), 'eu' => get_field('libtech_product_price_eur'));
 				$productArray['flex'] = get_sub_field('libtech_snowboard_specs_flex_rating');
 				$productArray['minWeight'] = get_sub_field('libtech_snowboard_specs_weight_range');
+				$productArray['contour'] = get_field('libtech_snowboard_contour');
 				$productArray['terrain'] = Array(
 					'freestyle' => get_field('libtech_terrain_snow_freestyle'),
 					'freeride' => get_field('libtech_terrain_snow_freeride'),

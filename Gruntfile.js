@@ -38,7 +38,8 @@ module.exports = function(grunt) {
     '_/apps/snowboard-finder/results/product-filter.js',
     '_/apps/snowboard-finder/results/snowboard.js',
     '_/apps/snowboard-finder/results/snowboard-filters.js',
-    '_/apps/snowboard-finder/why/why.js'
+    '_/apps/snowboard-finder/why/why.js',
+    '_/apps/snowboard-finder/why/contour.js'
   ];
   var jamieLynnScripts = [
     '_/js/lib/jquery-1.11.1.js',
