@@ -99,12 +99,12 @@ LIBTECH.ProductDetails.prototype = {
 		}
 		// check for browser resize and see if desktop zoom should occur
 		$(window).on('resize.productZoom', function () {
-			if (LIBTECH.main.utilities.getMediaWidth() >= 600) { // if not mobile, trigger zoom on click
+			if (LIBTECH.main.utilities.getMediaWidth() >= 480) { // if not mobile, trigger zoom on click
 				// zoom listener
 				$('.product-images #image-list li a').on('click.productZoom', function (e) {
 					e.preventDefault();
 					// do not zoom nas
-					if (!$('body').hasClass('single-libtech_nas')) { 
+					if (!$('body').hasClass('single-libtech_nas')) {
 						self.initZoom($(this).parent().index());
 					}
 				});
@@ -183,7 +183,7 @@ LIBTECH.ProductDetails.prototype = {
 		// remove super banana if we're not in US
 		if (self.config.currency !== 'USD') {
 			$('.product-details-nav .product-listing .superbanana').remove();
-		} 
+		}
 		// lazy load of images
 		$(".product-details-nav img.lazy").unveil();
 		// set image width based on product type, we want them to be the same height
@@ -228,7 +228,7 @@ LIBTECH.ProductDetails.prototype = {
 					TweenMax.to($prodNavContent, 0.3, {marginTop: openedMargin});
 					navState = "opened";
 				}
-				
+
 			});
 		}
 		$(window).on('resize.productNav', function () {
@@ -381,7 +381,7 @@ LIBTECH.ProductDetails.prototype = {
 						$this.prop('disabled', true);
 					}
 				}
-			}	
+			}
 		});
 		// check for luggage and do colorway click if so
 		if($('body').hasClass('single-libtech_luggage')){

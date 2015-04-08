@@ -86,11 +86,11 @@ LIBTECH.ProductOverview.prototype = {
 		function getUnitWidth() {
 			var width, windowWidth;
 			windowWidth = LIBTECH.main.utilities.getMediaWidth();
-			if (windowWidth < 600) {
+			if (windowWidth < 480) {
 				width = self.config.productListing.width() / 2;
 			} else if (windowWidth < 768) {
 				width = self.config.productListing.width() / 3;
-			} else if (windowWidth < 980) {
+			} else if (windowWidth < 992) {
 				width = self.config.productListing.width() / 4;
 			} else {
 				width = self.config.productListing.width() / 5;

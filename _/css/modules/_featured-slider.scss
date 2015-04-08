@@ -2,15 +2,13 @@
 // MODULES/_FEATURED-SLIDER.SCSS
 // ==========================================================================
 .featured-slider {
-  margin-top: -40px;
-  padding-top: 60px;
 
   .section-content {
+    max-width: 100%;
     overflow: hidden;
 
     .slider-wrapper {
-      margin-left: -20.298769771529%;
-      width: 140.597539543058%;
+      width: 100%;
 
       // before bxslider is rendered
       .bxslider li {
@@ -21,8 +19,7 @@
         img {
           @include vendorize(opacity, 0);
           height: auto !important;
-          max-width: 100% !important;
-          width: auto !important;
+          width: 100% !important;
         }
       }
 
@@ -42,7 +39,20 @@
       }
 
       .bx-controls {
-        margin-left: 20.298769771529%;
+        .bx-pager {
+          padding-top: 10px;
+          text-align: center;
+
+          .bx-pager-item {
+            a {
+              -moz-border-radius: 10px;
+            	-webkit-border-radius: 10px;
+              border-radius: 10px;
+              height: 10px;
+              width: 10px;
+            }
+          }
+        }
       }
 
       .active .video-image {
@@ -79,12 +89,10 @@
 @media screen and (min-width: $breakpoint-small) {
   .featured-slider {
     .section-content {
-      padding-left: 20px;
-      padding-right: 20px;
 
       .slider-wrapper {
-        width: 100%;
         margin-left: 0;
+        width: 100%;
 
         .bx-controls {
           margin-left: 0;
@@ -95,22 +103,5 @@
 }
 
 @media screen and (min-width: $breakpoint-xlarge) {
-  .featured-slider {
-    .section-content {
-      .slider-wrapper {
-        margin: 0 auto;
-        width: 80%;
-      }
-    }
-  }
-}
 
-@media screen and (min-width: 1441px) {
-  .featured-slider {
-    .section-content {
-      .slider-wrapper {
-        width: 100%;
-      }
-    }
-  }
 }

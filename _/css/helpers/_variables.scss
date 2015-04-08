@@ -1,19 +1,20 @@
-/* ==========================================================================
-   HELPERS/_VARIABLES.SCSS
-   ========================================================================== */
+// ==========================================================================
+// HELPERS/_VARIABLES.SCSS
+// ==========================================================================
 
 // Colors
 $snowColor: #FFFF00;
 $skiColor: #0099FF;
 $surfColor: #FF6600;
 $skateColor: #66CC00;
+
 // Typography
 $bodyFont: "PT Sans Narrow", "Myriad Pro", Helvetica, Arial, sans-serif;
 $kraftsmenFont: "Duke Fill", Impact, Arial, sans-serif;
+
 // Breakpoints
-$breakpoint-xsmall: 321px; 
-$breakpoint-small: 600px; 
+$breakpoint-small: 480px;
 $breakpoint-medium: 768px;
-$breakpoint-large: 980px;
+$breakpoint-large: 992px;
 $breakpoint-xlarge: 1200px;
 $breakpoint-xxlarge: 1400px;

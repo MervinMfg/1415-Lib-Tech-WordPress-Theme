@@ -61,7 +61,7 @@ LIBTECH.BlogSingle.prototype = {
 		// BEGIN CODE FOR 2 COLUMN LAYOUT THAT FIXES POSITIONS WHEN SCROLLED PAST
 		// check browser width and perform appropriate actions on 2 column layout
 		var self = this;
-		if (LIBTECH.main.utilities.getMediaWidth() < 980) {
+		if (LIBTECH.main.utilities.getMediaWidth() < 992) {
 			// if we're less than 980 turn off scroll listener and reset dom
 			$(window).off('scroll.blogScroll');
 			// reset all css

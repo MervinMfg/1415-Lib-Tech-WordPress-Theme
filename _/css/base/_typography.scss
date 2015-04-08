@@ -1,120 +1,175 @@
-/* ==========================================================================
-   BASE/_TYPOGRAPHY.SCSS
-   ========================================================================== */
+// ==========================================================================
+// BASE/_TYPOGRAPHY.SCSS
+// ==========================================================================
 
 body {
-	color: #CCC;
-	font-family: $bodyFont;
+  color: #ccc;
+  font-family: $bodyFont;
 }
-select, input, textarea {
-	color: #333;
+
+select,
+input,
+textarea {
+  color: #333;
 }
+
 // Headings
-h1, h2, .h1, .h2 {
-	font-family: $kraftsmenFont;
-	text-transform: uppercase;
-	font-weight: 400;
-	font-size: 2.375em; /* 38 / 16 */
-	line-height: 1;
-	color: $snowColor;
+h1,
+h2,
+.h1,
+.h2 {
+  color: $snowColor;
+  font-family: $kraftsmenFont;
+  font-size: 2.375em; // 38 / 16
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
 }
-h3, .h3 {
-	text-transform: uppercase;
-	font-size: 1.375em; /* 22 / 16 */
-	line-height: 1;
-	font-weight: 700;
-	color: #fff;
+
+h3,
+.h3 {
+  color: #fff;
+  font-size: 1.375em; // 22 / 16
+  font-weight: 700;
+  line-height: 1.25;
 }
-h4, .h4 {
-	text-transform: uppercase;
-    font-size: 1em; /* 16 / 16 */
-    font-weight: 700;
-    line-height: 1;
-    color: $snowColor;
+
+h4,
+.h4 {
+  color: $snowColor;
+  font-size: 1.125em; // 16 / 16
+  font-weight: 700;
+  line-height: 1;
 }
-h5, .h5 {
-	text-transform: uppercase;
-    font-size: .75em; /* 12 / 16 */
-    line-height: 1;
-    font-weight: 700;
-    color: #999;
+
+h5,
+.h5 {
+  color: #999;
+  font-size: .75em; // 12 / 16
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
 }
-p, .p {
-    font-size: .875em; /* 14 / 16 */
-    line-height: 1.32;
+
+p,
+.p {
+  font-size: .875em; // 14 / 16
+  line-height: 1.32;
+  padding-bottom: 20px;
 }
+
 // Selections
-::-moz-selection{
-	background: $snowColor;
-	color: #000;
-	text-shadow: none;
+::-moz-selection {
+  background: $snowColor;
+  color: #000;
+  text-shadow: none;
 }
+
 ::selection {
-	background: $snowColor;
-	color: #000;
-	text-shadow: none;
+  background: $snowColor;
+  color: #000;
+  text-shadow: none;
 }
-/* SKI General Styles
--------------------------------------------------------------------------------*/
-.ski h1, .ski .h1, .ski h2, .ski .h2, .ski h4, .ski .h4, .ski a {
-	color: $skiColor;
+
+// SKI General Styles
+// -------------------------------------------------------------------------------
+.ski h1,
+.ski .h1,
+.ski h2,
+.ski .h2,
+.ski h4,
+.ski .h4,
+.ski a {
+  color: $skiColor;
 }
-.ski ::-moz-selection{
-	background: $skiColor;
-	color: #000;
-	text-shadow: none;
+
+.ski::-moz-selection {
+  background: $skiColor;
+  color: #000;
+  text-shadow: none;
 }
-.ski ::selection {
-	background: $skiColor;
-	color: #000;
-	text-shadow: none;
+
+.ski::selection {
+  background: $skiColor;
+  color: #000;
+  text-shadow: none;
 }
-/* SURF General Styles
--------------------------------------------------------------------------------*/
-.surf h1, .surf .h1, .surf h2, .surf .h2, .surf h4, .surf .h4, .surf a {
-	color: $surfColor;
+
+// SURF General Styles
+// -------------------------------------------------------------------------------
+.surf h1,
+.surf .h1,
+.surf h2,
+.surf .h2,
+.surf h4,
+.surf .h4,
+.surf a {
+  color: $surfColor;
 }
-.surf ::-moz-selection{
-	background: $surfColor;
-	color: #000;
-	text-shadow: none;
+
+.surf::-moz-selection {
+  background: $surfColor;
+  color: #000;
+  text-shadow: none;
 }
-.surf ::selection {
-	background: $surfColor;
-	color: #000;
-	text-shadow: none;
+
+.surf::selection {
+  background: $surfColor;
+  color: #000;
+  text-shadow: none;
 }
-/* SKATE General Styles
--------------------------------------------------------------------------------*/
-.skate h1, .skate .h1, .skate h2, .skate .h2, .skate h4, .skate .h4, .skate a {
-	color: $skateColor;
+
+// SKATE General Styles
+// -------------------------------------------------------------------------------
+.skate h1,
+.skate .h1,
+.skate h2,
+.skate .h2,
+.skate h4,
+.skate .h4,
+.skate a {
+  color: $skateColor;
 }
-.skate ::-moz-selection{
-	background: $skateColor;
-	color: #000;
-	text-shadow: none;
+
+.skate::-moz-selection {
+  background: $skateColor;
+  color: #000;
+  text-shadow: none;
 }
-.skate ::selection {
-	background: $skateColor;
-	color: #000;
-	text-shadow: none;
+
+.skate::selection {
+  background: $skateColor;
+  color: #000;
+  text-shadow: none;
 }
-/* Media Queries
--------------------------------------------------------------------------------*/
+
+// Media Queries
+// -------------------------------------------------------------------------------
 @media screen and (min-width: $breakpoint-medium) {
-	h1, h2, .h1, .h2 {
-		font-size: 3.125em; /* 50 / 16 */
-	}
-	h3, .h3 {
-		font-size: 1.875em; /* 30 / 16 */
-	}
-	h4, .h4 {
-	    font-size: 1.5em; /* 24 / 16 */
-	}
-	h5, .h5 {
-	    font-size: .875em; /* 14 / 16 */
-	}
-	p, .p {
-	    font-size: 1em; /* 16 / 16 */
-	}
+  h1,
+  h2,
+  .h1,
+  .h2 {
+    font-size: 3.125em; // 50 / 16
+  }
+
+  h3,
+  .h3 {
+    font-size: 1.625em; // 26 / 16
+  }
+
+  h4,
+  .h4 {
+    font-size: 1.125em; // 18 / 16
+  }
+
+  h5,
+  .h5 {
+    font-size: .875em; // 14 / 16
+  }
+
+  p,
+  .p {
+    font-size: 1em; // 16 / 16
+  }
 }

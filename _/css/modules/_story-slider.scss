@@ -1,0 +1,33 @@
+// ==========================================================================
+// MODULES/_STORY-SLIDER.SCSS
+// ==========================================================================
+
+.story-slider {
+  padding-bottom: 60px;
+
+  .section-content {
+    max-width: 100%;
+    padding: 0;
+
+    .slider-wrapper a img { // TEMP visual fix
+      width: 100%;
+    }
+  }
+
+  .button {
+    clear: both;
+    margin: 0 auto;
+  }
+
+  .story-slider-copy {
+    padding-top: 20px;
+
+    h3 {
+      padding-bottom: 5px;
+    }
+
+    p {
+      line-height: 1.75;
+    }
+  }
+}

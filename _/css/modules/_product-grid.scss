@@ -1,0 +1,136 @@
+// ==========================================================================
+// MODULES/_PRODUCT-GRID.SCSS
+// ==========================================================================
+
+.product-grid {
+  padding: 50px 0 20px;
+
+  .grid-wrapper {
+    padding-bottom: 40px;
+  }
+}
+
+.grid-item {
+  position: relative;
+
+  .grid-item-wrapper {
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+
+    img {
+      height: auto;
+    }
+
+    &.snow {
+      width: 45%;
+
+      img {
+        margin-left: -129%;
+        max-width: 450%;
+      }
+    }
+
+    &.ski {
+      width: 45%;
+
+      img {
+        margin-left: -152%;
+        max-width: 450%;
+      }
+    }
+
+    &.skate {
+      width: 100%;
+
+      img {
+        margin-left: -50%;
+        max-width: 200%;
+      }
+    }
+
+    &.surf {
+      width: 80%;
+
+      img {
+        margin-left: -1%;
+        max-width: 240%;
+        padding-top: 10px;
+      }
+    }
+
+    .grid-item-info {
+      display: none;
+    }
+
+    .mobile-grid-link {
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .grid-item {
+    .grid-item-wrapper {
+      .grid-item-info {
+        display: block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+
+        .product-title {
+          font-size: 1.125em;
+          font-style: italic;
+          padding-bottom: 0;
+          text-transform: uppercase;
+        }
+
+        .button {
+          font-size: 1.125em;
+          margin: 0 auto 10px;
+          width: 100%;
+        }
+
+        .product-price {
+          padding-bottom: 10px;
+
+          .currency-note {
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+
+  .touch .grid-item .grid-item-wrapper {
+    .mobile-grid-link {
+      display: block;
+    }
+
+    .grid-item-info {
+      display: none;
+    }
+  }
+
+  .no-touch .grid-item .grid-item-wrapper {
+    .mobile-grid-link {
+      display: none;
+    }
+
+    .grid-item-info {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+
+}

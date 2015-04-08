@@ -1,0 +1,11 @@
+// Core variables and mixins
+@import "bootstrap/mixins";
+@import "bootstrap/variables";
+
+// Reset and dependencies
+
+// Core CSS
+@import "bootstrap/grid";
+
+// New breakpoint added 480px - 767px
+@import "bootstrap/col-ms";

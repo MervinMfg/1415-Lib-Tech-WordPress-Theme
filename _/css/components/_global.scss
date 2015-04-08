@@ -19,6 +19,29 @@ body {
   background: #000;
 }
 
+button,
+.button {
+  background: #000;
+  border: 2px solid #FFF;
+  color: #FFF;
+  display: table;
+  font-size: 1.125em; // 18 / 16
+  padding: 5px 20px;
+  font-style: normal;
+
+  &:hover,
+  &:focus {
+    background: #FFF;
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.post-meta {
+  color: #666;
+  font-size: 1.125em; // 18 / 16
+}
+
 .bg1,
 .bg2,
 .bg3,
@@ -285,10 +308,16 @@ body {
       }
     }
   }
+
+  button,
+  .button {
+    font-size: 1.5em; // 24 / 16
+  }
 }
 
 @media screen and (min-width: $breakpoint-xxlarge) {
-  .section-content {
+  .section-content,
+  .container-fluid {
     margin: 0 auto;
     max-width: 1640px;
   }

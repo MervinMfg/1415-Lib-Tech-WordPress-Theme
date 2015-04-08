@@ -1,260 +1,307 @@
-/* ==========================================================================
-   COMPONENTS/_HOMEPAGE.SCSS
-   ========================================================================== */
+// ==========================================================================
+// COMPONENTS/_HOMEPAGE.SCSS
+// ==========================================================================
+
+.home-sport-links {
+  padding-bottom: 40px;
+
+  .sport-link-item {
+    padding-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
 
 .homepage-posts {
-	padding-left: 20px;
-	padding-right: 20px;
+  padding-bottom: 60px;
 
-	h2 {
-		padding-bottom: 20px;
-	}
-	.homepage-post {
-		&:nth-child(5),
-		&:nth-child(6) {
-			display: none;
-		}
-		.post-wrapper {
-			padding-bottom: 20px;
+  .post-wrapper {
+    padding-bottom: 20px;
 
-			a,
-			a:hover,
-			a:focus {
-				text-decoration: none;
-				font-style: normal;
-			}
-			a {
-				img {
-					padding-bottom: 10px;
-					width: 100%;
-				}
-				.post-title {
-					padding-bottom: 10px;
-					word-wrap: break-word;
-				}
-				.post-meta {
-					padding-bottom: 10px;
-					font-size: 1em; /* 16 / 16 */
+    a,
+    a:hover,
+    a:focus {
+      font-style: normal;
+      text-decoration: none;
+    }
 
-					span {
-						color: #fff;
-					}
-				}
-				.post-excerpt {
-					color: #fff;
-					padding-bottom: 5px;
-					display: none;
-				}
-				.post-more {
-					font-style: italic;
-					font-size: 1em; /* 16 / 16 */
-				}
-			}
-			a:hover .post-title,
-			a:focus .post-title {
-				color: $snowColor;
-			}
-			a:hover .post-meta,
-			a:focus .post-meta {
-				color: $snowColor;
-			}
-			a:hover .post-more,
-			a:focus .post-more {
-				text-decoration: underline;
-			}
-		}
-	}
+    a {
+      .post-category {
+        padding-bottom: 10px;
+      }
+
+      img {
+        display: none;
+      }
+
+      .post-title {
+        padding-bottom: 10px;
+        word-wrap: break-word;
+      }
+
+      .post-meta {
+        padding-bottom: 10px;
+
+        span {
+          color: #fff;
+        }
+      }
+    }
+
+    a:hover .post-title,
+    a:focus .post-title {
+      color: #666;
+    }
+
+    a:hover .post-meta,
+    a:focus .post-meta {
+      color: #666;
+    }
+  }
+
+  .button {
+    margin: 0 auto;
+  }
 }
-.skate .homepage-posts .homepage-post .post-wrapper{
-	a:hover .post-title,
-	a:focus .post-title,
-	a:hover .post-meta time,
-	a:focus .post-meta time {
-		color: $skateColor;
-	}
-} 
-.homepage-sports-top,
-.homepage-links-top {
-	display: none;
+
+.instagram-feed {
+  padding-bottom: 40px;
+
+  .instagram-wrapper {
+    padding-bottom: 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .gram-image-5,
+  .gram-image-6 {
+    display: none;
+  }
 }
-.homepage-sports,
-.homepage-links {
-	padding-left: 10px;
-	padding-right: 10px;
-	display: none;
 
-	h2 {
-		padding: 0 10px;
-	}
+.featured-products {
+  padding-bottom: 60px;
+
+  .featured-product-item {
+    a {
+      display: block;
+      margin: 0 auto;
+      overflow: hidden;
+
+      img {
+        height: auto;
+      }
+
+      &.snow {
+        width: 78%;
+
+        img {
+          margin-left: -113%;
+          max-width: 415%;
+        }
+      }
+
+      &.ski {
+        width: 70%;
+
+        img {
+          margin-left: -157%;
+          max-width: 460%;
+        }
+      }
+
+      &.skate {
+        width: 95%;
+
+        img {
+          margin-left: -122%;
+          max-width: 345%;
+        }
+      }
+
+      &.surf {
+        width: 100%;
+
+        img {
+          margin-left: -20%;
+          max-width: 316%;
+        }
+      }
+    }
+  }
 }
-.homepage-sports {
-	.section-content {
-		ul {
-			li.homepage-sport {
-				width: 25%;
-				float: left;
 
-				.sport-wrapper {
-					padding: 10px;
-
-					a {
-						h4 {
-							font-style: normal;
-						}
-						&:hover h4,
-						&:focus h4 {
-							color: #fff;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-.homepage-links {
-	.section-content {
-		ul {
-			li.homepage-link {
-				width: 20%;
-				float: left;
-
-				.link-wrapper {
-					padding: 10px;
-
-					a {
-						h4 {
-							font-style: normal;
-
-							span {
-								text-transform: lowercase;
-							}
-						}
-						&:hover h4,
-						&:focus h4 {
-							color: #fff;
-						}
-					}
-				}
-			}
-		}
-	}
-}
 @media screen and (min-width: $breakpoint-small) {
-	.homepage-posts {
-		padding-left: 10px;
-		padding-right: 10px;
+  .featured-products {
+    .featured-product-item {
+      a {
+        &.snow {
+          width: 65%;
+        }
 
-		h2 {
-			padding: 0 10px;
-		}
-		.homepage-post {
-			float: left;
-			width: 50%;
+        &.ski {
+          width: 59%;
+        }
 
-			&:nth-child(odd) {
-				clear: left;
-			}
-			.post-wrapper {
-				padding: 10px;
-			}
-		}
-	}
-	.homepage-sports-top,
-	.homepage-links-top,
-	.homepage-sports,
-	.homepage-links {
-		display: block;
-	}
+        &.skate {
+          img {
+            margin-left: -98%;
+            max-width: 295%;
+          }
+        }
+
+        &.surf {
+          width: 95%;
+
+          img {
+            margin-left: -13%;
+            max-width: 285%;
+          }
+        }
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-medium) {
-	.homepage-posts {
-		.homepage-post {
-			float: left;
-			width: 33.3333%;
+  .homepage-posts {
+    .post-wrapper {
+      padding-bottom: 10px;
 
-			&:nth-child(odd) {
-				clear: none;
-			}
-			&:nth-child(4) {
-				clear: left;
-			}
-			&:nth-child(5),
-			&:nth-child(6) {
-				display: block;
-			}
-			a {
-				.post-meta,
-				.post-more {
-					font-size: 1.125em; /* 18 / 16 */
-				}
-				.post-excerpt {
-					display: block;
-				}
-			}
-		}
-	}
+      a {
+        img {
+          display: block;
+          padding-bottom: 20px;
+          width: 100%;
+        }
+
+        .post-meta {
+          font-size: 1.125em; // 18 / 16
+        }
+      }
+    }
+  }
+
+  .featured-products {
+    .featured-product-item {
+      a {
+        &.snow {
+          width: 55%;
+        }
+
+        &.ski {
+          width: 50%;
+        }
+
+        &.skate {
+          width: 80%;
+        }
+
+        &.surf {
+          width: 80%;
+        }
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-large) {
-	.homepage-posts {
-		h2 {
-			padding: 0 10px;
-		}
-		.homepage-post {
-			float: left;
-			width: 25%;
+  .homepage-posts {
+    a {
+      .post-meta {
+        font-size: 1.125em; // 18 / 16
+      }
+    }
+  }
 
-			&:nth-child(5),
-			&:nth-child(6) {
-				display: none;
-			}
-			&:nth-child(4) {
-				clear: none;
-			}
-			.post-wrapper {
-				padding: 10px;
+  .instagram-feed {
+    .gram-image-5,
+    .gram-image-6 {
+      display: block;
+    }
+  }
 
-				a {
-					.post-meta,
-					.post-more {
-						font-size: 1.125em; /* 18 / 16 */
-					}
-				}
-			}
+  .featured-products {
+    .featured-product-item {
+      a {
+        &.snow {
+          width: 65%;
 
-		}
-	}
+          img {
+            margin-left: -115%;
+            max-width: 420%;
+          }
+        }
+
+        &.ski {
+          width: 60%;
+
+          img {
+            margin-left: -154%;
+            max-width: 455%;
+          }
+        }
+
+        &.skate {
+          width: 95%;
+
+          img {
+            margin-left: -97%;
+            max-width: 295%;
+          }
+        }
+
+        &.surf {
+          width: 100%;
+
+          img {
+            margin-left: -10%;
+            max-width: 270%;
+          }
+        }
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-xlarge) {
-	.homepage-posts {
-		.homepage-post {
-			float: left;
-			width: 20%;
+  .featured-products {
+    .featured-product-item {
+      a {
+        &.snow {
+          width: 50%;
 
-			&:nth-child(5) {
-				display: block;
-			}
-			&:nth-child(6) {
-				display: none;
-			}
-		}
-	}
+          img {
+            margin-left: -115%;
+            max-width: 420%;
+          }
+        }
+
+        &.ski {
+          width: 45%;
+
+          img {
+            margin-left: -159%;
+            max-width: 465%;
+          }
+        }
+
+        &.skate {
+          width: 73%;
+        }
+
+        &.surf {
+          width: 78%;
+        }
+      }
+    }
+  }
 }
-@media screen and (min-width: $breakpoint-xxlarge) {
-	.homepage-posts {
-		.section-content {
-			max-width: 1620px;
-		}
-		.homepage-post {
-			float: left;
-			width: 16.6666%;
 
-			&:nth-child(6) {
-				display: block;
-			}
-		}
-	}
-	.homepage-sports .section-content,
-	.homepage-links .section-content {
-		max-width: 1604px;
-	}
+@media screen and (min-width: $breakpoint-xxlarge) {
+
 }

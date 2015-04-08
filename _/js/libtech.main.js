@@ -87,7 +87,7 @@ LIBTECH.main = {
 		$(".nav-sub-wrapper .mobile-btn").unbind('click');
 		$(window).off('resize.mainMenu');
 		// close menu by default
-		if (self.utilities.getMediaWidth() < 600) {
+		if (self.utilities.getMediaWidth() < 480) {
 			$('.nav-sub-wrapper').stop().animate({
 				marginTop: marginClosed
 			}, {
@@ -119,7 +119,7 @@ LIBTECH.main = {
 		});
 		// reinit menu on resize
 		$(window).on('resize.mainMenu', function () {
-			if (self.utilities.getMediaWidth() < 600) {
+			if (self.utilities.getMediaWidth() < 480) {
 				self.menuInit();
 			} else {
 				$('.nav-sub-wrapper').stop();
@@ -182,21 +182,21 @@ LIBTECH.main = {
 		var self = this;
 		self.utilities.featuredSliderInit();
 		// set up product slider
-		var slider = $('.product-slider .bxslider').bxSlider({
-			slideWidth: 220,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: 10,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
+		// var slider = $('.product-slider .bxslider').bxSlider({
+		// 	slideWidth: 220,
+		// 	minSlides: 2,
+		// 	maxSlides: 8,
+		// 	slideMargin: 10,
+		// 	auto: true,
+		// 	autoHover: true,
+		// 	speed: 500,
+		// 	controls: true,
+		// 	pager: false,
+		// 	mode: 'horizontal',
+		// 	moveSlides: 2,
+		// 	infiniteLoop: false,
+		// 	hideControlOnEnd: true
+		// });
 		self.utilities.getBlogShares();
 	},
 	homeSportInit: function () {
