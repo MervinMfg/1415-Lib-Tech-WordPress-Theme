@@ -3,9 +3,35 @@
     "title": "Snow Terrain",
     "fields": [
         {
+            "key": "field_55255f49ae014",
+            "label": "Jib",
+            "name": "libtech_terrain_snow_jib",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "1": 1,
+                "2": 2,
+                "3": 3,
+                "4": 4,
+                "5": 5
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
             "key": "field_54ef67fb8485f",
-            "label": "Freestyle",
-            "name": "libtech_terrain_snow_freestyle",
+            "label": "Park",
+            "name": "libtech_terrain_snow_park",
             "prefix": "",
             "type": "radio",
             "instructions": "",
@@ -30,8 +56,8 @@
         },
         {
             "key": "field_54ef684184860",
-            "label": "Freeride",
-            "name": "libtech_terrain_snow_freeride",
+            "label": "All Mountain",
+            "name": "libtech_terrain_snow_all_mountain",
             "prefix": "",
             "type": "radio",
             "instructions": "",
@@ -96,5 +122,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1424975981
+    "modified": 1428512803
 }

@@ -77,14 +77,16 @@ if (have_posts()) :
 				$productArray['minWeight'] = get_sub_field('libtech_snowboard_specs_weight_range');
 				$productArray['contour'] = get_field('libtech_snowboard_contour');
 				$productArray['terrain'] = Array(
-					'freestyle' => get_field('libtech_terrain_snow_freestyle'),
-					'freeride' => get_field('libtech_terrain_snow_freeride'),
+					'jib' => get_field('libtech_terrain_snow_jib'),
+					'park' => get_field('libtech_terrain_snow_park'),
+					'allMountain' => get_field('libtech_terrain_snow_all_mountain'),
 					'powder' => get_field('libtech_terrain_snow_powder')
 				);
 				$productArray['ability'] = Array(
 					'beginner' => get_field('libtech_ability_beginner'),
 					'intermediate' => get_field('libtech_ability_intermediate'),
-					'advanced' => get_field('libtech_ability_advanced')
+					'advanced' => get_field('libtech_ability_advanced'),
+					'expert' => get_field('libtech_ability_expert')
 				);
 				$imageID = get_field('libtech_product_image');
 				//$productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);

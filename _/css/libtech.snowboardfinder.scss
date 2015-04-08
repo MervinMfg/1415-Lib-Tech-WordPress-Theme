@@ -47,6 +47,7 @@
 
   select {
     border: 1px solid #000;
+    height: 40px;
   }
 
   .quote-wrapper {
@@ -60,7 +61,7 @@
     cursor: pointer;
     display: block;
     font-family: $bodyFont;
-    font-size: 1.5em;
+    font-size: 1.1em;
     font-style: italic;
     height: 40px;
     line-height: 40px;
@@ -618,11 +619,12 @@
           display: inline-block;
           padding-right: 60px;
           text-align: left;
+          vertical-align: top;
         }
 
         .button-container {
           display: inline-block;
-          padding-top: 40px;
+          padding-top: 42px;
         }
       }
     }
@@ -637,40 +639,19 @@
       padding-top: 100px;
     }
 
+    .selection-terrain,
     .selection-ability {
-      margin-top: 50px;
       width: 60%;
-
-      .button-list {
-        .list-item {
-          width: 33.3333%;
-
-          &.left {
-            padding-right: 10px;
-          }
-
-          &.right {
-            padding-left: 10px;
-          }
-        }
-      }
     }
 
-    .selection-terrain {
-      width: 60%;
+    .selection-ability {
+      margin-top: 50px;
+    }
 
-      .button-list {
-        .list-item {
-          width: 33.3333%;
-
-          &.left {
-            padding-right: 10px;
-          }
-
-          &.right {
-            padding-left: 10px;
-          }
-        }
+    .button-list {
+      .list-item {
+        width: 25%;
+        padding-right: 10px;
       }
     }
   }
@@ -828,12 +809,9 @@
   .bf-step-3 {
     background-position: 110% bottom;
 
-    .selection-ability {
-      width: 500px;
-    }
-
+    .selection-ability,
     .selection-terrain {
-      width: 500px;
+      width: 520px;
     }
   }
 

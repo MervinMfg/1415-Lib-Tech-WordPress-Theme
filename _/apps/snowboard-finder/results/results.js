@@ -28,15 +28,17 @@
 				filters: [
 					{ title: "Beginner", value: "Beginner" },
 					{ title: "Intermediate", value: "Intermediate" },
-					{ title: "Advanced", value: "Advanced" }
+					{ title: "Advanced", value: "Advanced" },
+					{ title: "Expert", value: "Expert" }
 				]
 			},
 			{
 				title: "Terrain",
 				classes: "terrain center",
 				filters: [
-					{ title: "Park", value: "Freestyle" },
-					{ title: "All Mountain", value: "Freeride" },
+					{ title: "Jib", value: "Jib" },
+					{ title: "Park", value: "Park" },
+					{ title: "All Mountain", value: "All Mountain" },
 					{ title: "Powder", value: "Powder" }
 				]
 			},

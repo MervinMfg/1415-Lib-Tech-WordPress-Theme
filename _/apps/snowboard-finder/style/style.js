@@ -56,10 +56,16 @@
 				case 'Advanced':
 						$scope.quote = "So you know what you are doing? Looking for the World’s Best Board for an all-time adventure?";
 						break;
-				case 'Freestyle':
+				case 'Expert':
+						$scope.quote = "We need an expert quote!!!";
+						break;
+				case 'Jib':
+						$scope.quote = "We need a jib quote!!!";
+						break;
+				case 'Park':
 						$scope.quote = "Good for parks, rails, butters, side hits, jamming, bonking, slashing and sliding.";
 						break;
-				case 'Freeride':
+				case 'All Mountain':
 						$scope.quote = "Good for resort ripping, groomers, steeps and trees.";
 						break;
 				case 'Powder':

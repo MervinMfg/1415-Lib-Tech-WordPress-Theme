@@ -71,25 +71,33 @@
         // // STYLE FILTERS
         // // Ability Filter
         switch(user.ability) {
-          case 'Advanced':
-            snowboard.match = updateMatch(snowboard.match, snowboard.ability.advanced);
+          case 'Beginner':
+            snowboard.match = updateMatch(snowboard.match, snowboard.ability.beginner);
             break;
           case 'Intermediate':
             snowboard.match = updateMatch(snowboard.match, snowboard.ability.intermediate);
             break;
-          default:
-            snowboard.match = updateMatch(snowboard.match, snowboard.ability.beginner);
+          case 'Advanced':
+            snowboard.match = updateMatch(snowboard.match, snowboard.ability.advanced);
+            break;
+          case 'Expert':
+            snowboard.match = updateMatch(snowboard.match, snowboard.ability.expert);
+            break;
         }
         // // Terrain Filter
         switch(user.terrain) {
-          case 'Freestyle':
-            snowboard.match = updateMatch(snowboard.match, snowboard.terrain.freestyle);
+          case 'Jib':
+            snowboard.match = updateMatch(snowboard.match, snowboard.terrain.jib);
+            break;
+          case 'Park':
+            snowboard.match = updateMatch(snowboard.match, snowboard.terrain.park);
+            break;
+          case 'All Mountain':
+            snowboard.match = updateMatch(snowboard.match, snowboard.terrain.allMountain);
             break;
           case 'Powder':
             snowboard.match = updateMatch(snowboard.match, snowboard.terrain.powder);
             break;
-          default:
-            snowboard.match = updateMatch(snowboard.match, snowboard.terrain.freeride);
         }
         // push snowboard if it scored more than 2
         // ability and terrain give 1 point each by default
