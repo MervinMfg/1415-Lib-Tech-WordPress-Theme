@@ -54,6 +54,12 @@
 }
 
 @media screen and (min-width: $breakpoint-small) {
+  .pass-it-on-contest {
+    .contest-wrapper iframe {
+      height: 1965px;
+    }
+  }
+
   .pass-it-on-tagboard {
     .section-content {
       h2 {
@@ -68,10 +74,15 @@
   }
 }
 
+@media screen and (min-width: $breakpoint-medium) {
+  
+}
+
 @media screen and (min-width: $breakpoint-large) {
   .pass-it-on-contest {
     .contest-wrapper iframe {
       width: 850px;
+      height: 1920px;
     }
   }
 }
