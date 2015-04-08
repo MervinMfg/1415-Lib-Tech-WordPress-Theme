@@ -82,6 +82,7 @@
 			$scope.user.ability = "Default";
 			$scope.user.terrain = "Default";
 			$scope.user.flex = "Default";
+			$scope.user.contours = [];
 		}
 
 		function updateFilters(filter, value) {
