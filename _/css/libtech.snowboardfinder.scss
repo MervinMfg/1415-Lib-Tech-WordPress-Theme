@@ -47,7 +47,10 @@
 
   select {
     border: 1px solid #000;
+    font-size: 1.1em;
     height: 40px;
+    outline: none;
+    padding: 1px 10px 0 10px;
   }
 
   .quote-wrapper {
@@ -66,6 +69,7 @@
     height: 40px;
     line-height: 40px;
     margin: 0;
+    outline: none;
     padding: 0;
     text-transform: uppercase;
     width: 100%;
@@ -297,10 +301,6 @@
       display: table-cell;
       width: 33.3333%;
 
-      button {
-        font-size: 1.2em;
-      }
-
       &.left {
         padding-right: 5px;
       }
@@ -323,7 +323,7 @@
     }
   }
 
-  .contour {
+  .contour-item {
     width: 270px;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -425,14 +425,6 @@
 
       .button-list {
         width: 100%;
-      }
-    }
-  }
-
-  .bf-step-5 {
-    .button-list {
-      button {
-        font-size: 1.5em;
       }
     }
   }
@@ -742,7 +734,7 @@
       margin-left: -10px;
     }
 
-    .contour {
+    .contour-item {
       width: 49.5%;
       margin: 0;
       display: inline-block;
