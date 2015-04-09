@@ -178,7 +178,8 @@ Template Name: Snowboard Detail
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<?php
 							$productArray = Array();

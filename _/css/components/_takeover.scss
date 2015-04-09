@@ -17,20 +17,37 @@
 
   .message {
     color: #fff;
+    display: none;
     font-style: normal;
     font-weight: bold;
     padding: 5px;
 
-    .red {
-      color: #CC0000;
-    }
-
-    .green {
-      color: #009900;
+    &.usd {
+      display: block;
     }
   }
 }
 
 .international .takeover {
   display: none;
+}
+
+.currency-cad .takeover {
+  .usd {
+    display: none;
+  }
+
+  .cad {
+    display: block;
+  }
+}
+
+.currency-eur .takeover {
+  .usd {
+    display: none;
+  }
+
+  .eur {
+    display: block;
+  }
 }

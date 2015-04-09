@@ -133,7 +133,8 @@ Template Name: Outerwear Detail
 								);
 							?>
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
-							<p class="price-alert">Free shipping!</p>
+							<p class="price-alert usd cad">Free shipping over $75</p>
+							<p class="price-alert eur">Free shipping over €75</p>
 						</div>
 						<div class="product-variations">
 							<select id="product-variation-size" class="select<?php if(count($productArray) == 1){echo ' hidden';} ?>">

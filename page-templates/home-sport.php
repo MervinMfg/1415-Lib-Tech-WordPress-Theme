@@ -2,10 +2,10 @@
 /*
 Template Name: Homepage Sport
 */
-get_header(); 
+get_header();
 ?>
 		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
-		
+
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
 		<section class="product-slider bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">
@@ -85,7 +85,7 @@ get_header();
 								echo '<a href="/surfboards/" class="h4 view-all-link">View all boards</a>';
 								break;
 							case 'skate':
-							    echo '<a href="/skateboards/" class="h4 view-all-link">View all boards</a>';
+							    echo '<a href="/skateboards/#filter=.available" class="h4 view-all-link">View all boards</a>';
 								break;
 							case 'ski':
 							    echo '<a href="/skis/" class="h4 view-all-link">View all skis</a>';
