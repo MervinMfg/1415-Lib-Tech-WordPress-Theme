@@ -28,11 +28,25 @@ get_header();
 						<div class="grid-item">
 							<div class="grid-item-wrapper apparel">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/DanvilleSnapback_CHR_ANGLE-800x800.png" />
+								<div class="grid-item-info">
+									<p class="product-title">Danville Snapback</p>
+									<p class="product-price">$26.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Apparel</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
 							</div>
 						</div>
 						<div class="grid-item">
 							<div class="grid-item-wrapper apparel">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/RedGirlTee_BLK.png" />
+								<div class="grid-item-info">
+									<p class="product-title">Red Girl Tee</p>
+									<p class="product-price">$24.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Apparel</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
 							</div>
 						</div>
 					</div>
@@ -42,6 +56,13 @@ get_header();
 						<div class="grid-item">
 							<div class="grid-item-wrapper surf">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/04/Lib-Tech-Waterboards-Overviews-Ramp-800x800.png" />
+								<div class="grid-item-info">
+									<p class="product-title">Extension Ramp</p>
+									<p class="product-price">$725.96 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Surfboards</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
 							</div>
 						</div>
 					</div>
@@ -61,6 +82,13 @@ get_header();
 						<div class="grid-item">
 							<div class="grid-item-wrapper apparel">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/ShreducatorPack_CAM_ANGLE-800x800.png" />
+								<div class="grid-item-info">
+									<p class="product-title">Shreducator Pack</p>
+									<p class="product-price">$49.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Luggage</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
 							</div>
 						</div>
 					</div>
@@ -71,48 +99,48 @@ get_header();
 				<!-- <div class="grid-wrapper col-xs-12 col-sm-6 col-md-5 col-md-offset-1 col-lg-4 col-lg-offset-2">
 					<div class="grid-left col-xs-6 col-ms-5 col-ms-offset-1 col-sm-6 col-md-6">
 						<div class="grid-item">
-							<a href="#" class="snow">
+							<div class="grid-item-wrapper snow">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Travis-Rice-Speedodeeps-Black-XC2-800x800.png" />
-							</a>
+							</div>
 						</div>
 					</div>
 					<div class="grid-right col-xs-6 col-ms-5 col-sm-6 col-md-6">
 						<div class="grid-item">
-							<a href="#" class="outerwear">
+							<div class="grid-item-wrapper outerwear">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/1415_LIB_Totally-Down_Jacket_green_FRONT-800x800.png" />
-							</a>
+							</div>
 						</div>
 						<div class="grid-item">
-							<a href="#" class="outerwear">
+							<div class="grid-item-wrapper outerwear">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/1415_LIB_Kraftsmen_Pant_desert-brown_FRONT-800x800.png" />
-							</a>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="grid-wrapper col-xs-12 col-sm-6 col-md-5 col-lg-4">
 					<div class="grid-left col-xs-6 col-ms-5 col-ms-offset-1 col-sm-6 col-md-6">
 						<div class="grid-item">
-							<a href="#" class="ski">
+							<div class="grid-item-wrapper ski">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2012/07/1314-Lib-Tech-Skis-Wreckcreate-NAS-640x640.png" />
-							</a>
+							</div>
 						</div>
 					</div>
 					<div class="grid-right col-xs-6 col-ms-5 col-sm-6 col-md-6">
 						<div class="grid-item">
-							<a href="#" class="apparel">
+							<div class="grid-item-wrapper apparel">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/DanvilleSnapback_CHR_ANGLE-800x800.png" />
-							</a>
+							</div>
 						</div>
 						<div class="grid-item">
-							<a href="#" class="apparel">
+							<div class="grid-item-wrapper apparel">
 								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/RedGirlTee_BLK.png" />
-							</a>
+							</div>
 						</div>
 					</div>
 				</div> -->
 
 			</div><!-- .section-content -->
-		</section><!-- END .product-slider -->
+		</section><!-- END .product-grid -->
 
 		<section class="home-sport-links container-fluid">
 			<div class="section-content row">
@@ -246,28 +274,65 @@ get_header();
 				</div>
 			</div>
 		</section>
-		<section class="featured-products container-fluid">
+
+		<section class="featured-product-grid container-fluid">
 			<div class="section-content row">
-				<ul>
-					<li class="featured-product-item col-xs-3 col-md-2 col-md-offset-2 col-">
-						<a href="#" class="snow">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-Phoenix-Wave-C3-800x800.png" alt="" />
-						</a>
+				<ul class="col-xs-12 col-ms-12 col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+					<li class="col-xs-3 col-ms-3 col-sm-3 col-md-3">
+						<div class="grid-item">
+							<div class="grid-item-wrapper snow">
+								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/07/2014-2015-Lib-Tech-Jamie-Lynn-Phoenix-Wave-C3-800x800.png" alt="" />
+								<div class="grid-item-info">
+									<p class="product-title">Jamie Lynn Phoenix 20yr</p>
+									<p class="product-price">$79.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Snowboards</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
+							</div>
+						</div>
 					</li>
-					<li class="featured-product-item col-xs-3 col-md-2">
-						<a href="#" class="ski">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2012/07/1314-Lib-Tech-Skis-Fully-Functional-Five-NAS-640x640.png" alt="" />
-						</a>
+					<li class="col-xs-3 col-ms-3 col-sm-3 col-md-3">
+						<div class="grid-item">
+							<div class="grid-item-wrapper ski">
+								<img src="http://cdn.lib-tech.com/wp-content/uploads/2012/07/1314-Lib-Tech-Skis-Fully-Functional-Five-NAS-640x640.png" alt="" />
+								<div class="grid-item-info">
+									<p class="product-title">Fully Functional Five</p>
+									<p class="product-price">$749.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Skis</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
+							</div>
+						</div>
 					</li>
-					<li class="featured-product-item col-xs-3 col-md-2">
-						<a href="#" class="surf">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/04/Lib-Tech-Waterboards-Overviews-Ramp-800x800.png" alt="" />
-						</a>
+					<li class="col-xs-3 col-ms-3 col-sm-3 col-md-3">
+						<div class="grid-item">
+							<div class="grid-item-wrapper surf">
+								<img src="http://cdn.lib-tech.com/wp-content/uploads/2014/04/Lib-Tech-Waterboards-Overviews-Ramp-800x800.png" alt="" />
+								<div class="grid-item-info">
+									<p class="product-title">Extension Ramp</p>
+									<p class="product-price">$725.96 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Surfboards</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
+							</div>
+						</div>
 					</li>
-					<li class="featured-product-item col-xs-3 col-md-2">
-						<a href="#" class="skate">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2015/04/Lib-Tech-Exo-Bowl-Troll-800x800.png" alt="" />
-						</a>
+					<li class="col-xs-3 col-ms-3 col-sm-3 col-md-3">
+						<div class="grid-item">
+							<div class="grid-item-wrapper skate">
+								<img src="http://cdn.lib-tech.com/wp-content/uploads/2015/04/Lib-Tech-Exo-Bowl-Troll-800x800.png" alt="" />
+								<div class="grid-item-info">
+									<p class="product-title">Bowl Troll</p>
+									<p class="product-price">$79.95 <span class="currency-note">usd</span></p>
+									<a href="#" class="button">Buy Now</a>
+									<a href="#" class="button">Shop Skateboards</a>
+								</div>
+								<a href="#" class="mobile-grid-link"></a>
+							</div>
+						</div>
 					</li>
 				</ul>
 			</div><!-- .section-content -->

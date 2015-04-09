@@ -21,13 +21,12 @@ body {
 
 button,
 .button {
-  background: #000;
   border: 2px solid #FFF;
   color: #FFF;
   display: table;
   font-size: 1.125em; // 18 / 16
-  padding: 5px 20px;
   font-style: normal;
+  padding: 5px 20px;
 
   &:hover,
   &:focus {
@@ -253,8 +252,7 @@ button,
 
         li {
           color: #000;
-          font-size: .875em;
-          // 14 / 16
+          font-size: .875em; // 14 / 16
           line-height: 1.32;
           margin-bottom: 5px;
         }
@@ -279,12 +277,11 @@ button,
 @media screen and (min-width: $breakpoint-medium) {
   .video-header .section-content .video-text {
     p {
-      font-size: 1.125em;
+      font-size: 1.125em; // 18 / 16
     }
 
     ul li {
-      font-size: 1em;
-      // 16 / 16
+      font-size: 1em; // 16 / 16
     }
   }
 }

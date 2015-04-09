@@ -10,66 +10,183 @@
   }
 }
 
-.grid-item {
-  position: relative;
+.product-grid,
+.featured-product-grid {
+  .grid-item {
+    position: relative;
 
-  .grid-item-wrapper {
-    display: block;
-    margin: 0 auto;
-    overflow: hidden;
-
-    img {
-      height: auto;
-    }
-
-    &.snow {
-      width: 45%;
-
-      img {
-        margin-left: -129%;
-        max-width: 450%;
-      }
-    }
-
-    &.ski {
-      width: 45%;
-
-      img {
-        margin-left: -152%;
-        max-width: 450%;
-      }
-    }
-
-    &.skate {
-      width: 100%;
-
-      img {
-        margin-left: -50%;
-        max-width: 200%;
-      }
-    }
-
-    &.surf {
-      width: 80%;
-
-      img {
-        margin-left: -1%;
-        max-width: 240%;
-        padding-top: 10px;
-      }
-    }
-
-    .grid-item-info {
-      display: none;
-    }
-
-    .mobile-grid-link {
+    .grid-item-wrapper {
       display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+
+      img {
+        height: auto;
+      }
+
+      &.snow {
+        width: 45%;
+
+        img {
+          margin-left: -129%;
+          max-width: 450%;
+        }
+      }
+
+      &.ski {
+        width: 45%;
+
+        img {
+          margin-left: -152%;
+          max-width: 450%;
+        }
+      }
+
+      &.skate {
+        width: 100%;
+
+        img {
+          margin-left: -50%;
+          max-width: 200%;
+        }
+      }
+
+      &.surf {
+        width: 80%;
+
+        img {
+          margin-left: -1%;
+          max-width: 240%;
+          padding-top: 10px;
+        }
+      }
+
+      .grid-item-info {
+        display: none;
+      }
+
+      .mobile-grid-link {
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// different styles for smaller screen sizes
+.featured-product-grid {
+  padding-bottom: 60px;
+
+  .grid-item {
+    .grid-item-wrapper {
+
+      &.snow {
+        width: 78%;
+
+        img {
+          margin-left: -113%;
+          max-width: 415%;
+        }
+      }
+
+      &.ski {
+        width: 70%;
+
+        img {
+          margin-left: -157%;
+          max-width: 460%;
+        }
+      }
+
+      &.skate {
+        width: 95%;
+
+        img {
+          margin-left: -122%;
+          max-width: 345%;
+        }
+      }
+
+      &.surf {
+        width: 100%;
+
+        img {
+          margin-left: -20%;
+          max-width: 316%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-small) {
+  .product-grid {
+    .grid-item {
+      .grid-item-wrapper {
+        &.snow,
+        &.ski {
+          width: 40%;
+        }
+
+        &.skate {
+          img {
+            margin-left: -40%;
+            max-width: 180%;
+          }
+        }
+
+        &.surf {
+          width: 75%;
+
+          img {
+            margin-left: -2%;
+            max-width: 235%;
+          }
+        }
+
+        &.apparel,
+        &.outerwear {
+          img {
+            margin-left: 5%;
+            max-width: 90%;
+          }
+
+        }
+      }
+    }
+  }
+
+  .featured-product-grid {
+    .grid-item {
+      .grid-item-wrapper {
+        &.snow {
+          width: 65%;
+        }
+
+        &.ski {
+          width: 59%;
+        }
+
+        &.skate {
+          img {
+            margin-left: -98%;
+            max-width: 295%;
+          }
+        }
+
+        &.surf {
+          width: 95%;
+
+          img {
+            margin-left: -13%;
+            max-width: 285%;
+          }
+        }
+      }
     }
   }
 }
@@ -78,7 +195,7 @@
   .grid-item {
     .grid-item-wrapper {
       .grid-item-info {
-        display: block;
+        display: none;
         left: 0;
         position: absolute;
         text-align: center;
@@ -114,19 +231,101 @@
     .mobile-grid-link {
       display: block;
     }
+  }
 
-    .grid-item-info {
-      display: none;
+  .no-touch .grid-item {
+    .grid-item-wrapper {
+      .mobile-grid-link {
+        display: none;
+      }
+
+      img {
+        @include transition(opacity);
+      }
+
+      .grid-item-info {
+        display: block;
+        @include transition(opacity);
+        @include vendorize(opacity, 0);
+
+        .product-title {
+          @include transition(transform);
+          @include vendorize(transform, translate(0, -15px));
+        }
+
+        .product-price {
+          @include transition(transform);
+          @include vendorize(transform, translate(0, -5px));
+        }
+      }
+
+      &:hover,
+      &:focus {
+        img {
+          @include vendorize(opacity, .2);
+        }
+
+        .grid-item-info {
+          @include vendorize(opacity, 1);
+
+          .product-title,
+          .product-price {
+            @include vendorize(transform, translate(0, 0));
+          }
+        }
+      }
     }
   }
 
-  .no-touch .grid-item .grid-item-wrapper {
-    .mobile-grid-link {
-      display: none;
-    }
+  .featured-product-grid,
+  .product-grid {
+    .grid-item {
+      .grid-item-wrapper {
+        &.snow {
+          width: 45%;
 
-    .grid-item-info {
-      display: block;
+          img {
+            margin-left: -129%;
+            max-width: 450%;
+          }
+        }
+
+        &.ski {
+          width: 45%;
+
+          img {
+            margin-left: -152%;
+            max-width: 450%;
+          }
+        }
+
+        &.skate {
+          width: 100%;
+
+          img {
+            margin-left: -50%;
+            max-width: 200%;
+          }
+        }
+
+        &.surf {
+          width: 80%;
+
+          img {
+            margin-left: -1%;
+            max-width: 240%;
+            padding-top: 10px;
+          }
+        }
+
+        &.apparel,
+        &.outerwear {
+          img {
+            margin-left: 0;
+            max-width: 100%;
+          }
+        }
+      }
     }
   }
 }

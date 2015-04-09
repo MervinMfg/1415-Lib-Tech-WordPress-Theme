@@ -28,6 +28,11 @@
     }
 
     a {
+      &:hover .post-title,
+      &:focus .post-title {
+        color: #666;
+      }
+
       .post-category {
         padding-bottom: 10px;
       }
@@ -48,16 +53,6 @@
           color: #fff;
         }
       }
-    }
-
-    a:hover .post-title,
-    a:focus .post-title {
-      color: #666;
-    }
-
-    a:hover .post-meta,
-    a:focus .post-meta {
-      color: #666;
     }
   }
 
@@ -83,90 +78,6 @@
   }
 }
 
-.featured-products {
-  padding-bottom: 60px;
-
-  .featured-product-item {
-    a {
-      display: block;
-      margin: 0 auto;
-      overflow: hidden;
-
-      img {
-        height: auto;
-      }
-
-      &.snow {
-        width: 78%;
-
-        img {
-          margin-left: -113%;
-          max-width: 415%;
-        }
-      }
-
-      &.ski {
-        width: 70%;
-
-        img {
-          margin-left: -157%;
-          max-width: 460%;
-        }
-      }
-
-      &.skate {
-        width: 95%;
-
-        img {
-          margin-left: -122%;
-          max-width: 345%;
-        }
-      }
-
-      &.surf {
-        width: 100%;
-
-        img {
-          margin-left: -20%;
-          max-width: 316%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-small) {
-  .featured-products {
-    .featured-product-item {
-      a {
-        &.snow {
-          width: 65%;
-        }
-
-        &.ski {
-          width: 59%;
-        }
-
-        &.skate {
-          img {
-            margin-left: -98%;
-            max-width: 295%;
-          }
-        }
-
-        &.surf {
-          width: 95%;
-
-          img {
-            margin-left: -13%;
-            max-width: 285%;
-          }
-        }
-      }
-    }
-  }
-}
-
 @media screen and (min-width: $breakpoint-medium) {
   .homepage-posts {
     .post-wrapper {
@@ -185,123 +96,13 @@
       }
     }
   }
-
-  .featured-products {
-    .featured-product-item {
-      a {
-        &.snow {
-          width: 55%;
-        }
-
-        &.ski {
-          width: 50%;
-        }
-
-        &.skate {
-          width: 80%;
-        }
-
-        &.surf {
-          width: 80%;
-        }
-      }
-    }
-  }
 }
 
 @media screen and (min-width: $breakpoint-large) {
-  .homepage-posts {
-    a {
-      .post-meta {
-        font-size: 1.125em; // 18 / 16
-      }
-    }
-  }
-
   .instagram-feed {
     .gram-image-5,
     .gram-image-6 {
       display: block;
     }
   }
-
-  .featured-products {
-    .featured-product-item {
-      a {
-        &.snow {
-          width: 65%;
-
-          img {
-            margin-left: -115%;
-            max-width: 420%;
-          }
-        }
-
-        &.ski {
-          width: 60%;
-
-          img {
-            margin-left: -154%;
-            max-width: 455%;
-          }
-        }
-
-        &.skate {
-          width: 95%;
-
-          img {
-            margin-left: -97%;
-            max-width: 295%;
-          }
-        }
-
-        &.surf {
-          width: 100%;
-
-          img {
-            margin-left: -10%;
-            max-width: 270%;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-xlarge) {
-  .featured-products {
-    .featured-product-item {
-      a {
-        &.snow {
-          width: 50%;
-
-          img {
-            margin-left: -115%;
-            max-width: 420%;
-          }
-        }
-
-        &.ski {
-          width: 45%;
-
-          img {
-            margin-left: -159%;
-            max-width: 465%;
-          }
-        }
-
-        &.skate {
-          width: 73%;
-        }
-
-        &.surf {
-          width: 78%;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-xxlarge) {
-
 }
