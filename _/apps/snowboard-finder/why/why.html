@@ -20,8 +20,8 @@
 		<div class="description-wrapper">
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'">
 				<h4>Length</h4>
-				<p ng-show="config.measurement == 'imperial'">At a height of {{ feet }}'{{ inches }}" a board length around {{ boardLength }} cm will give you a nice ride.</p>
-				<p ng-show="config.measurement == 'metric'">At {{ user.height }} cm a board length around {{ boardLength }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'imperial'">At a height of {{ feet }}'{{ inches }}" and a weight of {{ lbs }} lbs, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'metric'">At a height of {{ user.height }} cm and a weight of {{ user.weight }} kg, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
 				<p>A longer board will ride more stable, while a shorter board will be more maneuverable. With your specs, we can help you find the right balance, and tweak it to your riding style.</p>
 			</div>
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'">

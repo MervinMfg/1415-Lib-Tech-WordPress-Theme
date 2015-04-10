@@ -59,14 +59,16 @@
 
 	app.service('user', function User() {
 		var user = this;
-		user.gender = "Default";
-		user.weight = -1;
-		user.height = -1;
-		user.bootSize = -1;
-		user.ability = "Default";
-		user.terrain = "Default";
-		user.flex = "Default";
-		user.contours = [];
+		user.gender = "Default"; // updated in gender step
+		user.weight = -1; // updated in size step
+		user.height = -1; // updated in size step
+		user.bootSize = -1; // updated in size step
+		user.ability = "Default"; // updated in style step
+		user.terrain = "Default"; // updated in style step
+		user.flex = 5; // updated in results step
+		user.contours = []; // updated in results section
+		user.bmi = 22; // average bmi, updated in results section
+		user.lengthRange = ""; // updated in results
 	});
 
 	// DIRECTIVE TO CHECK FOR REQUIRED SELECT FIELDS

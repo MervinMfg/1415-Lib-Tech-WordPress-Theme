@@ -47,8 +47,7 @@
 			{label: '120 kg', value: 120}, {label: '120+ kg', value: 125}
 		];
 		$scope.heightFeet = [
-			{label: "2'", value: 2}, {label: "3'", value: 3}, {label: "4'", value: 4}, {label: "5'", value: 5},
-			{label: "6'", value: 6}, {label: "7'", value: 7}
+			{label: "2'", value: 2}, {label: "3'", value: 3}, {label: "4'", value: 4}, {label: "5'", value: 5}, {label: "6'", value: 6}
 		];
 		$scope.heightInches = [
 			{label: '0"', value: 0}, {label: '1"', value: 1}, {label: '2"', value: 2}, {label: '3"', value: 3},
@@ -71,8 +70,7 @@
 			{label: "180 cm", value: 180}, {label: "182 cm", value: 182}, {label: "185 cm", value: 185}, {label: "187 cm", value: 187},
 			{label: "190 cm", value: 190}, {label: "192 cm", value: 192}, {label: "195 cm", value: 195}, {label: "197 cm", value: 197},
 			{label: "200 cm", value: 200}, {label: "202 cm", value: 202}, {label: "205 cm", value: 205}, {label: "207 cm", value: 207},
-			{label: "210 cm", value: 210}, {label: "212 cm", value: 212}, {label: "215 cm", value: 215}, {label: "217 cm", value: 217},
-			{label: "220 cm", value: 220}
+			{label: "210 cm", value: 210}
 		];
 		$scope.bootSizes = [
 			{label: 4, value: 4}, {label: 4.5, value: 4.5}, {label: 5, value: 5}, {label: 5.5, value: 5.5},
@@ -87,13 +85,14 @@
 		function init() {
 			// check values on init of controller
 			if($scope.user.weight != -1) {
-				$scope.inputWeight.lbs = $scope.user.weight;
-				$scope.inputWeight.kg = Math.round($scope.user.weight * 0.453592 / 5) * 5;
+				$scope.inputWeight.kg = $scope.user.weight;
+				$scope.inputWeight.lbs = Math.round($scope.user.weight * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
 			}
 			if($scope.user.height != -1) {
+				$scope.inputHeight.cm = Math.round($scope.user.height);
+				// convert inches into values for form fields
 				$scope.inputHeight.feet = Math.floor($scope.user.height/30.48);
-				$scope.inputHeight.inches = Math.round(($scope.user.height/2.54) % 12);
-				$scope.inputHeight.cm = Math.round($scope.user.height / 5) * 5;
+				$scope.inputHeight.inches = Math.floor(($scope.user.height/2.54) % 12);
 			}
 		}
 
@@ -101,15 +100,15 @@
 			var updatedWeight = -1;
 			if ($scope.config.measurement == "imperial") {
 				if($scope.inputWeight.lbs != -1) {
-					updatedWeight = $scope.inputWeight.lbs; // store in lbs, as is
-					$scope.inputWeight.kg = Math.round(updatedWeight * 0.453592 / 5) * 5;
+					updatedWeight = Math.round($scope.inputWeight.lbs * 0.453592 / 5) * 5; // store in kg
+					$scope.inputWeight.kg = updatedWeight;
 				} else {
 					$scope.inputWeight.kg = -1;
 				}
 			} else {
 				if($scope.inputWeight.kg != -1) {
-					updatedWeight = Math.round($scope.inputWeight.kg * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
-					$scope.inputWeight.lbs = updatedWeight;
+					updatedWeight = $scope.inputWeight.kg;
+					$scope.inputWeight.lbs = Math.round($scope.inputWeight.kg * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
 				} else {
 					$scope.inputWeight.lbs = -1;
 				}

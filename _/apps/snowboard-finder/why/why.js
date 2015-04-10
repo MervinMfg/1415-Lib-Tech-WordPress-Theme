@@ -24,16 +24,17 @@
 		$scope.user = user;
 		$scope.feet = 0;
 		$scope.inches = 0;
-		$scope.boardLength = 0;
 
 		function init() {
+			// set
+			if($scope.user.weight != -1) {
+				$scope.lbs = Math.round($scope.user.weight * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
+			}
 			// set imperial measurements
 			if($scope.user.height != -1) {
 				$scope.feet = Math.floor($scope.user.height/30.48);
 				$scope.inches = Math.round(($scope.user.height/2.54) % 12);
 			}
-			// TODO: set boardLength
-			$scope.boardLength = 157;
 		}
 
 		function checkContour($contour) {
