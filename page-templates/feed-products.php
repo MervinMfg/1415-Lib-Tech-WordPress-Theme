@@ -63,7 +63,7 @@ header('Content-Type: application/xml');
 			<product_type><?php echo $type; ?></product_type>
 			<description><![CDATA[<?php the_excerpt(); ?>]]></description>
 			<link><?php echo $link; ?></link>
-			<id></id>
+			<id><?php the_ID(); ?></id>
 			<image_link><?php echo $imageFile[0]; ?></image_link>
 			<price>
 				<us><?php echo $usPrice; ?></us>
