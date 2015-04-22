@@ -181,23 +181,6 @@ LIBTECH.main = {
 	homeInit: function () {
 		var self = this;
 		self.utilities.featuredSliderInit();
-		// set up product slider
-		// var slider = $('.product-slider .bxslider').bxSlider({
-		// 	slideWidth: 220,
-		// 	minSlides: 2,
-		// 	maxSlides: 8,
-		// 	slideMargin: 10,
-		// 	auto: true,
-		// 	autoHover: true,
-		// 	speed: 500,
-		// 	controls: true,
-		// 	pager: false,
-		// 	mode: 'horizontal',
-		// 	moveSlides: 2,
-		// 	infiniteLoop: false,
-		// 	hideControlOnEnd: true
-		// });
-		self.utilities.getBlogShares();
 	},
 	homeSportInit: function () {
 		var self, slideWidth, slideMargin, currencyCookie;
@@ -238,7 +221,6 @@ LIBTECH.main = {
 		});
 		// render social content grid
 		new LIBTECH.ContentGrid();
-		self.utilities.getBlogShares();
 	},
 	productOverviewInit: function () {
 		new LIBTECH.ProductOverview();

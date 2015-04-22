@@ -1,33 +1,78 @@
-/* ==========================================================================
-   MODULES/_PRODUCT-SLIDER.SCSS
-   ========================================================================== */
+// ==========================================================================
+// MODULES/_PRODUCT-SLIDER.SCSS
+// ==========================================================================
 
 .product-slider {
-	overflow: hidden;
+  overflow: hidden;
+	padding-bottom: 60px;
 
-	.bx-wrapper {
-		.bx-viewport {
-			background: none;
-			overflow: visible !important;
-		}
-		.bx-loading {
-			background: none;
-		}
-	}
+  .bx-wrapper {
+    .bx-viewport {
+      background: none;
+      overflow: visible !important;
+    }
+
+    .bx-loading {
+      background: none;
+    }
+  }
+
+  ul {
+		padding-bottom: 20px;
+
+    li {
+			width: 220px;
+      display: inline-block;
+
+      img {
+				width: 140%;
+				max-width: 140%;
+        height: auto;
+				margin-left: -20%;
+      }
+
+      .mobile-grid-link {
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  a.view-all-link {
+		margin: 20px auto 0 auto;
+  }
+
+  &.bg-product-skate .product-peek .product-title {
+    color: $skateColor;
+  }
+
+  &.bg-product-ski .product-peek .product-title {
+    color: $skiColor;
+  }
+
+  &.bg-product-surf .product-peek .product-title {
+    color: $surfColor;
+  }
+}
+
+.home,
+.surf {
+  .product-slider ul li img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}
+
+.product-details-nav {
 	ul {
 		li {
-			width: 220px;
-			display: inline-block;
-			position: relative;
-			
-			a {
-				img {
-					width: 140%;
-					max-width: 140%;
-					height: auto;
-					margin-left: -20%;
-				}
-				.product-peek {
+			.product-peek {
 					background: #000;
 					padding: 5px;
 					width: 90%;
@@ -49,38 +94,18 @@
 				&:hover .product-peek {
 					@include vendorize(opacity, 1);
 				}
-			}
 		}
-	}
-	a.view-all-link  {
-		display: block;
-		text-align: center;
-		padding-top: 10px;
-		margin-bottom: -10px;
-		color: #000;
-		text-decoration: none;
-
-		&:hover,
-		&:focus {
-			color: #999;
-		}
-	}
-	&.bg-product-skate .product-peek .product-title {
-		color: $skateColor;
-	}
-	&.bg-product-ski .product-peek .product-title {
-		color: $skiColor;
-	}
-	&.bg-product-surf .product-peek .product-title {
-		color: $surfColor;
 	}
 }
-.home,
-.surf {
-	.product-slider ul li a img {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		margin-left: 0;
+
+@media screen and (min-width: $breakpoint-medium) {
+	.product-slider {
+		ul {
+			li {
+				.price {
+					padding-bottom: 0;
+				}
+			}
+		}
 	}
 }

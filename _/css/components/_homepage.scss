@@ -14,53 +14,6 @@
   }
 }
 
-.homepage-posts {
-  padding-bottom: 60px;
-
-  .post-wrapper {
-    padding-bottom: 20px;
-
-    a,
-    a:hover,
-    a:focus {
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    a {
-      &:hover .post-title,
-      &:focus .post-title {
-        color: #666;
-      }
-
-      .post-category {
-        padding-bottom: 10px;
-      }
-
-      img {
-        display: none;
-      }
-
-      .post-title {
-        padding-bottom: 10px;
-        word-wrap: break-word;
-      }
-
-      .post-meta {
-        padding-bottom: 10px;
-
-        span {
-          color: #fff;
-        }
-      }
-    }
-  }
-
-  .button {
-    margin: 0 auto;
-  }
-}
-
 .instagram-feed {
   padding-bottom: 40px;
 
@@ -75,26 +28,6 @@
   .gram-image-5,
   .gram-image-6 {
     display: none;
-  }
-}
-
-@media screen and (min-width: $breakpoint-medium) {
-  .homepage-posts {
-    .post-wrapper {
-      padding-bottom: 10px;
-
-      a {
-        img {
-          display: block;
-          padding-bottom: 20px;
-          width: 100%;
-        }
-
-        .post-meta {
-          font-size: 1.125em; // 18 / 16
-        }
-      }
-    }
   }
 }
 

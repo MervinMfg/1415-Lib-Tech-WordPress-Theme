@@ -116,7 +116,10 @@
 								<h3>Lib Tech Kraftsmen</h3>
 								<p>The best hands in the business. Our kraftsmen love their jobs and are constantly at work developing and riding boards. This year we worked on projects that took us forward, and back into the depths of creativity and snowboard design.</p>
 							</div>
-							<a href="#" class="button">Learn More</a>
+							<div class="clearfix"></div>
+							<div class="call-to-action">
+								<a href="#" class="button">Learn More</a>
+							</div>
 						</li>
 
 						<?php
@@ -125,5 +128,4 @@
 					</ul>
 				</div>
 			</div><!-- END .full-width -->
-			<div class="clearfix"></div>
 		</section><!-- END .featured-slider -->

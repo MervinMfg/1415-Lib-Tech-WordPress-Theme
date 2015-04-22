@@ -1,0 +1,88 @@
+// ==========================================================================
+// MODULES/_LATEST-POSTS.SCSS
+// ==========================================================================
+
+.latest-posts {
+  padding-bottom: 60px;
+
+  .post-wrapper {
+    padding-bottom: 20px;
+  }
+
+  .snow .post-category {
+    color: $snowColor;
+  }
+
+  .ski .post-category {
+    color: $skiColor;
+  }
+
+  .surf .post-category {
+    color: $surfColor;
+  }
+
+  .skate .post-category {
+    color: $skateColor;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    font-style: normal;
+    text-decoration: none;
+  }
+
+  a {
+    &:hover .post-title,
+    &:focus .post-title {
+      color: #666;
+    }
+
+    .post-category {
+      padding-bottom: 10px;
+      text-transform: capitalize;
+    }
+
+    img {
+      display: none;
+    }
+
+    .post-title {
+      padding-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    .post-meta {
+      padding-bottom: 10px;
+
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  .call-to-action {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .latest-posts {
+    .post-wrapper {
+      padding-bottom: 10px;
+    }
+
+    a {
+      img {
+        display: block;
+        padding-bottom: 20px;
+        width: 100%;
+      }
+
+      .post-meta {
+        font-size: 1.125em; // 18 / 16
+      }
+    }
+  }
+}

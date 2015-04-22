@@ -1,0 +1,33 @@
+// ==========================================================================
+// COMPONENTS/_HOME-SPORT.SCSS
+// ==========================================================================
+
+.instagram-feed {
+  .social-links {
+    .social-link-sport {
+      text-align: right;
+      text-transform: uppercase;
+      font-size: 1.125em; //18 / 16
+
+      &.skate {
+        color: $skateColor;
+      }
+
+      &.surf {
+        color: $surfColor;
+      }
+
+      &.snow {
+        color: $snowColor;
+      }
+
+      &.ski {
+        color: $skiColor;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+
+}

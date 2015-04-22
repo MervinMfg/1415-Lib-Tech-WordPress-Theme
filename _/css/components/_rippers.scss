@@ -1,6 +1,6 @@
-/* ==========================================================================
-   COMPONENTS/_RIPPERS.SCSS
-   ========================================================================== */
+// ==========================================================================
+// COMPONENTS/_RIPPERS.SCSS
+// ==========================================================================
 
 .team-members {
 	.section-content {
@@ -10,6 +10,7 @@
 		h2 {
 			margin: 10px 0 20px 10px;
 		}
+
 		ul {
 			li {
 				margin-bottom: 20px;
@@ -29,6 +30,7 @@
 		}
 	}
 }
+
 .ripper-details {
 	padding-top: 60px;
 	margin-top: -40px;
@@ -39,9 +41,11 @@
 		h1, .ripper-gallery {
 			margin-bottom: 10px;
 		}
+
 		.ripper-gallery .profile-photo {
 			height: auto;
 		}
+
 		.ripper-right {
 			.ripper-meta {
 				margin-bottom: 20px;
@@ -55,9 +59,11 @@
 					}
 				}
 			}
+
 			h4 {
 				margin-bottom: 20px;
 			}
+
 			.ripper-bio {
 				display: none;
 				margin-bottom: 20px;
@@ -66,6 +72,7 @@
 					margin-bottom: 10px;
 				}
 			}
+
 			.social-links {
 
 			}
@@ -76,6 +83,7 @@
 		}
 	}
 }
+
 .ripper-videos {
 	.section-content {
 		padding: 0 10px;
@@ -84,6 +92,7 @@
 			h2 {
 				padding: 0 10px;
 			}
+
 			.video-player {
 				padding: 10px 10px 0;
 
@@ -92,12 +101,14 @@
 					width: 100%;
 					background: #000 url('../img/loader.gif') no-repeat center center;
 				}
+
 				.video-info {
 					display: none;
 
 					&.selected {
 						display: block;
 					}
+
 					h3 {
 						color: #000;
 						background: #fff100;
@@ -105,11 +116,13 @@
 						display: inline-block;
 						margin-bottom: 10px;
 					}
+
 					p {
 						padding-bottom: 10px;
 					}
 				}
 			}
+
 			.video-thumbnails {
 				li {
 					display: block;
@@ -130,6 +143,7 @@
 							width: 100%;
 							height: auto;
 						}
+
 						p {
 							width: 100%;
 							position: absolute;
@@ -148,6 +162,7 @@
 							-moz-transition: background 100ms ease-in-out, color 200ms ease-in-out;
 							-o-transition: background 100ms ease-in-out, color 200ms ease-in-out;
 						}
+
 						&:hover p,
 						&:focus p,
 						&.selected p {
@@ -161,14 +176,17 @@
 		}
 	}
 }
+
 body.ski .ripper-videos .section-content .featured-videos {
 	.video-player .video-info h3 {
 		background: $skiColor;
 	}
+
 	.video-thumbnails li a {
 		p {
 			color: $skiColor;
 		}
+
 		&:hover p,
 		&:focus p,
 		&.selected p {
@@ -178,14 +196,17 @@ body.ski .ripper-videos .section-content .featured-videos {
 		}
 	}
 }
+
 body.surf .ripper-videos .section-content .featured-videos {
 	.video-player .video-info h3 {
 		background: $surfColor;
 	}
+
 	.video-thumbnails li a {
 		p {
 			color: $surfColor;
 		}
+
 		&:hover p,
 		&:focus p,
 		&.selected p {
@@ -195,14 +216,17 @@ body.surf .ripper-videos .section-content .featured-videos {
 		}
 	}
 }
+
 body.skate .ripper-videos .section-content .featured-videos {
 	.video-player .video-info h3 {
 		background: $skateColor;
 	}
+
 	.video-thumbnails li a {
 		p {
 			color: $skateColor;
 		}
+
 		&:hover p,
 		&:focus p,
 		&.selected p {
@@ -212,17 +236,37 @@ body.skate .ripper-videos .section-content .featured-videos {
 		}
 	}
 }
+
+.home-sport-team {
+	padding-bottom: 40px;
+
+	h2 {
+		display: none;
+	}
+
+	.home-sport-team-list {
+		padding-left: 0;
+		padding-right: 0;
+
+		.home-sport-team-item {
+			padding-bottom: 20px;
+		}
+	}
+}
+
 @media screen and (min-width: $breakpoint-small) {
 	.team-members .section-content ul li {
 		width: 49.7%;
 		display: inline-block;
 		vertical-align: top;
 	}
+
 	.ripper-details .section-content {
 		h1 {
 			width: 40%;
 			float: right;
 		}
+
 		.ripper-gallery {
 			width: 60%;
 			float: left;
@@ -232,27 +276,32 @@ body.skate .ripper-videos .section-content .featured-videos {
 				padding-right: 20px;
 			}
 		}
+
 		.ripper-right {
 			width: 40%;
 			float: right;
 		}
 	}
+
 	.whats-new.ripper .content-grid .grid-item {
 		&.product.item-1 {
 			display: inline-block;
 		}
 	}
 }
+
 @media screen and (min-width: $breakpoint-medium) {
 	.team-members .section-content ul li {
 		width: 33%;
 	}
+
 	.ripper-details .section-content .ripper-right {
 		.ripper-meta, h4, .ripper-bio {
 			display: block;
 			max-width: 600px;
 		}
 	}
+
 	.ripper-videos .section-content .featured-videos .video-thumbnails li {
 		width: 33.3333%;
 	}
@@ -261,21 +310,36 @@ body.skate .ripper-videos .section-content .featured-videos {
 			display: inline-block;
 		}
 	}
+
+	.home-sport-team {
+		h2 {
+			display: block;
+			padding-bottom: 30px;
+
+			&.skate {
+				color: $skateColor;
+			}
+		}
+	}
 }
+
 @media screen and (min-width: $breakpoint-large) {
 	.team-members .section-content ul li {
 		width: 24.7%;
 	}
+
 	.ripper-videos .section-content .featured-videos {
 		.video-player {
 			width: 50%;
 			float: left;
 		}
+
 		.video-thumbnails {
 			width: 50%;
 			float: left;
 		}
 	}
+
 	.whats-new.ripper .content-grid .grid-item {
 		&.instagram.item-2,
 		&.product.item-2 {
@@ -283,10 +347,12 @@ body.skate .ripper-videos .section-content .featured-videos {
 		}
 	}
 }
+
 @media screen and (min-width: $breakpoint-xlarge) {
 	.team-members .section-content ul li {
 		width: 19.7%;
 	}
+
 	.whats-new.ripper .content-grid .grid-item {
 		&.blog.item-3,
 		&.blog.item-4,

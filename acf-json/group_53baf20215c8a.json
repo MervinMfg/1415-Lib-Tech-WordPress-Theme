@@ -8,30 +8,29 @@
             "name": "libtech_homepage_featured_products",
             "prefix": "",
             "type": "relationship",
-            "instructions": "",
+            "instructions": "Choose 4 vertical products to appear at the bottom of the homepage. Click and drag to reorder.",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "object",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "libtech_snowboards",
-                "libtech_bindings",
                 "libtech_nas",
                 "libtech_surfboards",
-                "libtech_skateboards",
-                "libtech_outerwear",
-                "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_skateboards"
             ],
-            "taxonomy": [],
+            "taxonomy": "",
             "filters": [
                 "search",
                 "post_type"
             ],
-            "max": 12,
-            "elements": [
-                "post_type"
-            ]
+            "elements": "",
+            "min": "",
+            "max": 4,
+            "return_format": "object"
         }
     ],
     "location": [
@@ -48,5 +47,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1429653259
 }
