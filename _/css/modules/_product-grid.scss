@@ -3,13 +3,28 @@
 // ==========================================================================
 
 .product-grid {
-  padding: 0 0 60px 0;
+  &.container-fluid {
+    padding: 30px 0;
+    max-width: 100%;
+  }
 
   .grid-wrapper {
-    padding-bottom: 20px;
     padding-left: 0;
     padding-right: 0;
   }
+}
+
+.featured-product-grid {
+  &.container-fluid {
+    padding: 25px 0 60px;
+    max-width: 100%;
+  }
+}
+
+.product-grid,
+.featured-product-grid {
+  background: url("../img/bg-product-new.png") repeat-x center center;
+  background-size: cover;
 }
 
 .product-grid,
@@ -27,7 +42,7 @@
       }
 
       &.snowboards {
-        width: 45%;
+        width: 43%;
 
         img {
           margin-left: -129%;
@@ -37,7 +52,7 @@
       }
 
       &.skis {
-        width: 45%;
+        width: 43%;
 
         img {
           margin-left: -152%;
@@ -72,7 +87,7 @@
       &.luggage,
       &.accessories {
         width: 97%;
-        padding: 3%;
+        padding: 1%;
       }
     }
   }
@@ -151,7 +166,7 @@
         }
 
         &.skateboards {
-          width: 83%;
+          width: 100%;
 
           img {
             margin-left: -40%;
@@ -161,7 +176,7 @@
         }
 
         &.surfboards {
-          width: 60%;
+          width: 74%;
 
           img {
             margin-left: -2%;
@@ -174,7 +189,7 @@
         &.outerwear,
         &.luggage,
         &.accessories {
-          width: 73%;
+          width: 90%;
 
           img {
             margin-left: 0;
@@ -219,43 +234,48 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .grid-item-wrapper {
-    .grid-item-info {
-      display: none;
-      left: 0;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
+  .product-grid,
+  .featured-product-grid {
+    &.container-fluid {
+      padding: 30px 10px;
+    }
+  }
 
-      .product-title {
+  .grid-item-info {
+    @include vendorize(transform, translateY(-50%));
+    display: none;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+
+    .product-title {
+      font-size: 1.125em;
+      font-style: italic;
+      padding-bottom: 0;
+      text-transform: uppercase;
+    }
+
+    .call-to-action {
+      max-width: 165px;
+      width: 165px;
+      margin: 20px auto 0 auto;
+
+      .button {
         font-size: 1.125em;
-        font-style: italic;
-        padding-bottom: 0;
+        margin: 0 auto 10px;
+        width: 100%;
+      }
+    }
+
+    .price {
+      .currency-note {
         text-transform: uppercase;
       }
 
-      .call-to-action {
-        max-width: 165px;
-        width: 165px;
-        margin: 20px auto 0 auto;
-
-        .button {
-          font-size: 1.125em;
-          margin: 0 auto 10px;
-          width: 100%;
-        }
-      }
-
-      .price {
-        .currency-note {
-          text-transform: uppercase;
-        }
-
-        .strike {
-          display: none;
-        }
+      .strike {
+        display: none;
       }
     }
   }
@@ -295,7 +315,7 @@
       &:hover,
       &:focus {
         img {
-          @include vendorize(opacity, .2);
+          @include vendorize(opacity, .3);
         }
 
         .grid-item-info {
@@ -312,6 +332,11 @@
 
   .product-grid {
     padding-bottom: 80px;
+  }
+
+  .product-grid,
+  .featured-product-grid {
+    background-size: auto 100%;
   }
 
   .featured-product-grid,

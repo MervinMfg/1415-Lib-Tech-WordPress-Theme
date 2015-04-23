@@ -86,7 +86,7 @@ get_header();
 						wp_reset_query();
 					?>
 				</ul>
-				<div class="button-wrapper">
+				<div class="call-to-action">
 					<?php
 						switch ($GLOBALS['sport']) {
 							case 'snow':
@@ -141,29 +141,63 @@ get_header();
 
 		<section class="home-sport-team container-fluid">
 			<div class="section-content row">
-				<h2 class="skate col-xs-12">Skate Rippers</h2>
+				<?php
+					$pageSlug = $post->post_name;
+					// select correct post type based on slug
+					switch ($pageSlug) {
+						case 'snowboarding':
+							$postType = "libtech_team_snow";
+							$postCat = "snow";
+							$teamUrl = "/snowboarding/team/";
+							break;
+						case 'skateboarding':
+							$postType = "libtech_team_skate";
+							$postCat = "skate";
+							$teamUrl = "/skateboarding/team/";
+							break;
+						case 'surfing':
+							$postType = "libtech_team_surf";
+							$postCat = "surf";
+							$teamUrl = "/surfing/team/";
+							break;
+						case 'skiing':
+							$postType = "libtech_team_nas";
+							$postCat = "ski";
+							$teamUrl = "/skiing/team/";
+							break;
+					}
+				?>
+
+				<h2 class="<?php echo $postCat; ?> col-xs-12"><?php echo $postCat; ?> Rippers</h2>
 				<ul>
+					<?php
+						$args = array(
+	            'post_type' => $postType,
+	            'posts_per_page' => 4,
+	            'orderby' => 'menu_order',
+	            'order' => 'ASC'
+	          );
+            $loop = new WP_Query( $args );
+            while ( $loop->have_posts() ) : $loop->the_post();
+              $profilePhoto = get_field('libtech_team_profile_photo');
+              $profilePhoto = wp_get_attachment_image_src($profilePhoto, 'square-medium', false);
+          ?>
+
 					<li class="home-sport-team-item col-xs-6 col-ms-3 col-sm-3 col-md-3">
-						<a href="#">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2013/07/Sky-Siljeg-Team-Page-1-300x300.jpg" alt="" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Profile" />
 						</a>
 					</li>
-					<li class="home-sport-team-item col-xs-6 col-ms-3 col-sm-3 col-md-3">
-						<a href="#">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2013/07/Mike-Swearingen-Team-Page-12-300x300.jpg" alt="" />
-						</a>
-					</li>
-					<li class="home-sport-team-item col-xs-6 col-ms-3 col-sm-3 col-md-3">
-						<a href="#">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2013/07/Chad-Fenlon-Profile-300x300.jpg" alt="" />
-						</a>
-					</li>
-					<li class="home-sport-team-item col-xs-6 col-ms-3 col-sm-3 col-md-3">
-						<a href="#">
-							<img src="http://cdn.lib-tech.com/wp-content/uploads/2013/07/Kyle-Ward-Team-Page-1-300x300.jpg" alt="" />
-						</a>
-					</li>
+
+					<?php
+						endwhile;
+						wp_reset_query();
+					?>
+
 				</ul>
+			</div>
+			<div class="call-to-action">
+				<a href="<?php echo $teamUrl; ?>" class="button">View Team</a>
 			</div>
 		</section><!-- .home-sport-team -->
 

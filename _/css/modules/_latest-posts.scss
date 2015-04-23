@@ -3,7 +3,9 @@
 // ==========================================================================
 
 .latest-posts {
-  padding-bottom: 60px;
+  &.container-fluid {
+    padding: 30px 0;
+  }
 
   .post-wrapper {
     padding-bottom: 20px;
@@ -39,7 +41,7 @@
     }
 
     .post-category {
-      padding-bottom: 10px;
+      padding-bottom: 5px;
       text-transform: capitalize;
     }
 
@@ -69,6 +71,10 @@
 
 @media screen and (min-width: $breakpoint-medium) {
   .latest-posts {
+    &.container-fluid {
+      padding: 30px 10px;
+    }
+
     .post-wrapper {
       padding-bottom: 10px;
     }
@@ -85,4 +91,8 @@
       }
     }
   }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+
 }

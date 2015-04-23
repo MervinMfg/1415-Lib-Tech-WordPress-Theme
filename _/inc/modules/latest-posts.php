@@ -40,7 +40,7 @@
 				?>
 
 				<li class="latest-post <?php echo $postSport; ?>">
-					<div class="post-wrapper col-xs-12 col-sm-4">
+					<div class="post-wrapper col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0">
 						<a href="<?php the_permalink() ?>">
 							<?php if(!$latestPostsCategory) : ?><h4 class="post-category">Lib Tech <?php echo $postSport; ?></h4><?php endif; ?>
 							<img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
