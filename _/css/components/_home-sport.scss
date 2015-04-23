@@ -28,6 +28,24 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-large) {
+.home-sport-team {
+  &.container-fluid {
+    padding: 30px 0 60px;
+  }
 
+  .home-sport-team-item {
+    padding-bottom: 20px;
+  }
+
+  .call-to-action {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .home-sport-team {
+    &.container-fluid {
+      padding: 30px 10px 60px;
+    }
+  }
 }

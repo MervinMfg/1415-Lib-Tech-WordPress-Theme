@@ -4,7 +4,7 @@
 
 .product-slider {
   overflow: hidden;
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 
   .bx-wrapper {
     .bx-viewport {
@@ -18,17 +18,17 @@
   }
 
   ul {
-		padding-bottom: 20px;
+    padding-bottom: 20px;
 
     li {
-			width: 220px;
       display: inline-block;
+      width: 220px;
 
       img {
-				width: 140%;
-				max-width: 140%;
         height: auto;
-				margin-left: -20%;
+        margin-left: -20%;
+        max-width: 140%;
+        width: 140%;
       }
 
       .mobile-grid-link {
@@ -42,8 +42,12 @@
     }
   }
 
-  a.view-all-link {
-		margin: 20px auto 0 auto;
+  .call-to-action {
+    text-align: center;
+
+    .view-all-link {
+      margin: 20px auto 0;
+    }
   }
 
   &.bg-product-skate .product-peek .product-title {
@@ -62,50 +66,40 @@
 .home,
 .surf {
   .product-slider ul li img {
-    width: 100%;
-    max-width: 100%;
     height: auto;
     margin-left: 0;
+    max-width: 100%;
+    width: 100%;
   }
 }
 
 .product-details-nav {
-	ul {
-		li {
-			.product-peek {
-					background: #000;
-					padding: 5px;
-					width: 90%;
-					position: absolute;
-					top: 40%;
-					left: 5%;
-					@include vendorize(opacity, 0);
+  ul {
+    li {
+      .product-peek {
+        @include vendorize(opacity, 0);
+        background: #000;
+        left: 5%;
+        padding: 5px;
+        position: absolute;
+        top: 40%;
+        width: 90%;
 
-					.product-title {
-						font-weight: bold;
-						text-transform: uppercase;
-						font-style: normal;
-						color: $snowColor;
-					}
-					.product-type {
-						color: #fff;
-					}
-				}
-				&:hover .product-peek {
-					@include vendorize(opacity, 1);
-				}
-		}
-	}
-}
+        .product-title {
+          color: $snowColor;
+          font-style: normal;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+        
+        .product-type {
+          color: #fff;
+        }
+      }
 
-@media screen and (min-width: $breakpoint-medium) {
-	.product-slider {
-		ul {
-			li {
-				.price {
-					padding-bottom: 0;
-				}
-			}
-		}
-	}
+      &:hover .product-peek {
+        @include vendorize(opacity, 1);
+      }
+    }
+  }
 }

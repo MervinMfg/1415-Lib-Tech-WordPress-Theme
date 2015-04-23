@@ -9,7 +9,7 @@
 					$gridTall = 'libtech_grid_tall_' . $name;
 					$gridShort = 'libtech_grid_short_' . $name;
 					// output start of grid
-					echo '<div class="grid-wrapper col-xs-12 col-sm-6">';
+					echo '<div class="grid-wrapper col-xs-12 col-ms-10 col-ms-offset-1 col-sm-6 col-sm-offset-0">';
 					// get tall grid item (product)
 					$post_objects = get_field($gridTall);
 					if( $post_objects ):
@@ -32,7 +32,7 @@
 										$postCat = "surfboards";
 										$postCatLink = "/surfboards/";
 										break;
-									case "libtech_skis":
+									case "libtech_nas":
 										$postCat = "skis";
 										$postCatLink = "/skis/";
 										break;
