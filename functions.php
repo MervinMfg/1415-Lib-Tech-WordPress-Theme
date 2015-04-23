@@ -975,12 +975,9 @@ function register_custom_post_types() {
     );
     $args = array(
         'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
+        'public' => false,
         'show_ui' => true,
         'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array("slug" => "awards"),
         'capability_type' => 'page',
         'has_archive' => false,
         'hierarchical' => false,
@@ -1008,12 +1005,9 @@ function register_custom_post_types() {
     );
     $args = array(
         'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
+        'public' => false,
         'show_ui' => true,
         'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array("slug" => "technology"),
         'capability_type' => 'page',
         'has_archive' => false,
         'hierarchical' => false,
@@ -1068,12 +1062,9 @@ function register_custom_post_types() {
     );
     $args = array(
         'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
+        'public' => false,
         'show_ui' => true,
         'show_in_menu' => true,
-        'query_var' => true,
-        //'rewrite' => array("slug" => "artists"),
         'capability_type' => 'post',
         'has_archive' => false,
         'hierarchical' => false,
@@ -1110,6 +1101,63 @@ function register_custom_post_types() {
     );
     register_taxonomy( 'libtech_faqs_categories', 'libtech_faqs', $args );
     // END FAQs
+
+    // START PARTNERS
+    $labels = array(
+        'name' => _x('Partners', 'post type general name'),
+        'singular_name' => _x('Partner', 'post type singular name'),
+        'add_new' => _x('Add New', 'libtech_partners'),
+        'add_new_item' => __('Add New Partner'),
+        'edit_item' => __('Edit Partner'),
+        'new_item' => __('New Partner'),
+        'all_items' => __('All Partners'),
+        'view_item' => __('View Partner'),
+        'search_items' => __('Search Partners'),
+        'not_found' =>  __('No Partner Found'),
+        'not_found_in_trash' => __('No Partner Found In Trash'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Partners'
+    );
+    $args = array(
+        'labels' => $labels,
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'page',
+        'has_archive' => false,
+        'hierarchical' => false,
+        'menu_position' => null,
+        'supports' => array( 'title', 'editor', 'page-attributes' )
+    );
+    register_post_type('libtech_partners',$args);
+    // start taxonamy for Partners
+    $labels = array(
+        'name'                          => 'Categories',
+        'singular_name'                 => 'Category',
+        'search_items'                  => 'Search Category',
+        'popular_items'                 => 'Popular Categories',
+        'all_items'                     => 'All Categories',
+        'parent_item'                   => 'Parent Category',
+        'edit_item'                     => 'Edit Category',
+        'update_item'                   => 'Update Category',
+        'add_new_item'                  => 'Add New Category',
+        'new_item_name'                 => 'New Category',
+        'separate_items_with_commas'    => 'Separate Categories with commas',
+        'add_or_remove_items'           => 'Add or remove Categories',
+        'choose_from_most_used'         => 'Choose from most used Categories'
+    );
+    $args = array(
+        'label'                         => 'Categories',
+        'labels'                        => $labels,
+        'public'                        => true,
+        'hierarchical'                  => true,
+        'show_ui'                       => true,
+        'show_in_nav_menus'             => true,
+        'args'                          => array( 'orderby' => 'term_order' ),
+        'query_var'                     => true
+    );
+    register_taxonomy( 'libtech_partner_categories', 'libtech_partners', $args );
+    // END PARTNERS
 
     // START TEAM
     // TEAM SNOW
@@ -1271,66 +1319,6 @@ function register_custom_post_types() {
     register_taxonomy( 'libtech_team_surf_cat', 'libtech_team_surf', $args );
     register_taxonomy( 'libtech_team_skate_cat', 'libtech_team_skate', $args );
     // END TEAM
-
-    // START PARTNERS
-    $labels = array(
-        'name' => _x('Partners', 'post type general name'),
-        'singular_name' => _x('Partner', 'post type singular name'),
-        'add_new' => _x('Add New', 'libtech_partners'),
-        'add_new_item' => __('Add New Partner'),
-        'edit_item' => __('Edit Partner'),
-        'new_item' => __('New Partner'),
-        'all_items' => __('All Partners'),
-        'view_item' => __('View Partner'),
-        'search_items' => __('Search Partners'),
-        'not_found' =>  __('No Partner Found'),
-        'not_found_in_trash' => __('No Partner Found In Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Partners'
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        //'rewrite' => array("slug" => "dealers"),
-        'capability_type' => 'page',
-        'has_archive' => false,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'page-attributes' )
-    );
-    register_post_type('libtech_partners',$args);
-    // start taxonamy for Partners
-    $labels = array(
-        'name'                          => 'Categories',
-        'singular_name'                 => 'Category',
-        'search_items'                  => 'Search Category',
-        'popular_items'                 => 'Popular Categories',
-        'all_items'                     => 'All Categories',
-        'parent_item'                   => 'Parent Category',
-        'edit_item'                     => 'Edit Category',
-        'update_item'                   => 'Update Category',
-        'add_new_item'                  => 'Add New Category',
-        'new_item_name'                 => 'New Category',
-        'separate_items_with_commas'    => 'Separate Categories with commas',
-        'add_or_remove_items'           => 'Add or remove Categories',
-        'choose_from_most_used'         => 'Choose from most used Categories'
-    );
-    $args = array(
-        'label'                         => 'Categories',
-        'labels'                        => $labels,
-        'public'                        => true,
-        'hierarchical'                  => true,
-        'show_ui'                       => true,
-        'show_in_nav_menus'             => true,
-        'args'                          => array( 'orderby' => 'term_order' ),
-        'query_var'                     => true
-    );
-    register_taxonomy( 'libtech_partner_categories', 'libtech_partners', $args );
-    // END PARTNERS
 }
 // run the registration
 add_action( 'init', 'register_custom_post_types' );
