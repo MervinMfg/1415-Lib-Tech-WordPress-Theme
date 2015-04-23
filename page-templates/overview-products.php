@@ -650,53 +650,53 @@ get_header();
         <section class="product-overview bg3">
             <div class="section-content">
                 <h1><?php the_title(); ?></h1>
-                <ul class="product-filtering <?php echo strtolower(get_the_title()); ?>">
-                    <li class="details">
+                <div class="product-filtering <?php echo strtolower(get_the_title()); ?>">
+                    <div class="details">
                         <p>Product Filter</p>
                         <p>Show Products By</p>
-                    </li>
+                    </div>
                     <?php if (get_the_title() == "Snowboards"): ?>
-                    <li class="filters ripper">
+                    <div class="filters ripper">
                         <p class="select-title">Ripper</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".mens">Mens</li>
-                            <li data-filter=".womens">Womens</li>
-                            <li data-filter=".youth">Youth</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".mens">Mens</li>
+                            <li class="filter-item" data-filter=".womens">Womens</li>
+                            <li class="filter-item" data-filter=".youth">Youth</li>
                         </ul>
-                    </li>
-                    <li class="filters categories">
+                    </div>
+                    <div class="filters categories">
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".snowboards">Snowboards</li>
-                            <li data-filter=".splitboards">Splitboards</li>
-                            <li data-filter=".snowskates">Snowskates</li>
-                            <li data-filter=".fundamentals">fundaMENTALS</li>
-                            <li data-filter=".libited">Libited</li>
-                            <li data-filter=".experimental-division">experiMENTAL</li>
-                            <li data-filter=".early-release">Early Release</li>
-                            <li data-filter=".travis-rice-collection">T. Rice Collection</li>
-                            <li data-filter=".jamie-lynn-collection">Jamie's Collection</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".snowboards">Snowboards</li>
+                            <li class="filter-item" data-filter=".splitboards">Splitboards</li>
+                            <li class="filter-item" data-filter=".snowskates">Snowskates</li>
+                            <li class="filter-item" data-filter=".fundamentals">fundaMENTALS</li>
+                            <li class="filter-item" data-filter=".libited">Libited</li>
+                            <li class="filter-item" data-filter=".experimental-division">experiMENTAL</li>
+                            <li class="filter-item" data-filter=".early-release">Early Release</li>
+                            <li class="filter-item" data-filter=".travis-rice-collection">T. Rice Collection</li>
+                            <li class="filter-item" data-filter=".jamie-lynn-collection">Jamie's Collection</li>
                         </ul>
-                    </li>
-                    <li class="filters contours">
+                    </div>
+                    <div class="filters contours">
                         <p class="select-title">Contours</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".BTX">BTX</li>
-                            <li data-filter=".EC2_BTX">EC2 BTX</li>
-                            <li data-filter=".C2_BTX">C2 BTX</li>
-                            <li data-filter=".XC2_BTX">XC2 BTX</li>
-                            <li data-filter=".C3_BTX">C3 BTX</li>
-                            <li data-filter=".C1_BTX">C1 BTX</li>
-                            <li data-filter="._BTX_">!BTX!</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".BTX">BTX</li>
+                            <li class="filter-item" data-filter=".EC2_BTX">EC2 BTX</li>
+                            <li class="filter-item" data-filter=".C2_BTX">C2 BTX</li>
+                            <li class="filter-item" data-filter=".XC2_BTX">XC2 BTX</li>
+                            <li class="filter-item" data-filter=".C3_BTX">C3 BTX</li>
+                            <li class="filter-item" data-filter=".C1_BTX">C1 BTX</li>
+                            <li class="filter-item" data-filter="._BTX_">!BTX!</li>
                         </ul>
-                    </li>
-                    <li class="filters size">
+                    </div>
+                    <div class="filters size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <?php
                             $sizeArray = Array();
                             foreach ($productsArray as $product):
@@ -709,37 +709,37 @@ get_header();
                             array_multisort($sizeArray, SORT_ASC);
                             foreach ($sizeArray as $size):
                             ?>
-                            <li data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
                             <?php
                             endforeach;
                             ?>
                         </ul>
-                    </li>
-                    <li class="filters width">
+                    </div>
+                    <div class="filters width">
                         <p class="select-title">Width</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".Narrow">Narrow</li>
-                            <li data-filter=".Standard">Standard</li>
-                            <li data-filter=".Mid_Wide">Mid Wide</li>
-                            <li data-filter=".Wide">Wide</li>
-                            <li data-filter=".Ultra_Wide">Ultra Wide</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".Narrow">Narrow</li>
+                            <li class="filter-item" data-filter=".Standard">Standard</li>
+                            <li class="filter-item" data-filter=".Mid_Wide">Mid Wide</li>
+                            <li class="filter-item" data-filter=".Wide">Wide</li>
+                            <li class="filter-item" data-filter=".Ultra_Wide">Ultra Wide</li>
                         </ul>
-                    </li>
-                    <li class="filters pricing">
+                    </div>
+                    <div class="filters pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Skis"): ?>
-                    <li class="filters nas-size">
+                    <div class="filters nas-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <?php
                             $sizeArray = Array();
                             foreach ($productsArray as $product):
@@ -752,35 +752,35 @@ get_header();
                             array_multisort($sizeArray, SORT_ASC);
                             foreach ($sizeArray as $size):
                             ?>
-                            <li data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
                             <?php
                             endforeach;
                             ?>
                         </ul>
-                    </li>
-                    <li class="filters nas-width">
+                    </div>
+                    <div class="filters nas-width">
                         <p class="select-title">Waist Width</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".Narrow">Narrow</li>
-                            <li data-filter=".Standard">Standard</li>
-                            <li data-filter=".Wide">Wide</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".Narrow">Narrow</li>
+                            <li class="filter-item" data-filter=".Standard">Standard</li>
+                            <li class="filter-item" data-filter=".Wide">Wide</li>
                         </ul>
-                    </li>
-                    <li class="filters pricing">
+                    </div>
+                    <div class="filters pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Surfboards"): ?>
-                    <li class="filters surf-size">
+                    <div class="filters surf-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <?php
                             $sizeArray = Array();
                             foreach ($productsArray as $product):
@@ -794,17 +794,17 @@ get_header();
                             foreach ($sizeArray as $size):
                                 $length = floor($size/12) . "’" . ($size - (floor($size/12)*12)) . "”";
                             ?>
-                            <li data-filter=".<?php echo $size; ?>"><?php echo $length; ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $size; ?>"><?php echo $length; ?></li>
                             <?php
                             endforeach;
                             ?>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Skateboards"): ?>
-                    <li class="filters skate-width">
+                    <div class="filters skate-width">
                         <p class="select-title">Width</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <?php
                             $widthArray = Array();
                             foreach ($productsArray as $product):
@@ -817,57 +817,57 @@ get_header();
                             array_multisort($widthArray, SORT_ASC);
                             foreach ($widthArray as $width):
                             ?>
-                            <li data-filter=".<?php echo $width; ?>"><?php echo str_replace('_', '.', $width); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $width; ?>"><?php echo str_replace('_', '.', $width); ?></li>
                             <?php
                             endforeach;
                             ?>
                         </ul>
-                    </li>
-                    <li class="filters skate-categories">
+                    </div>
+                    <div class="filters skate-categories">
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <li data-filter=".exo-skeletech">Exo-Skeletech</li>
                             <li data-filter=".hesho-disposable-standards">Hesho</li>
                             <li data-filter=".bowls">Bowls</li>
                             <li data-filter=".leg-tour">Leg Tour</li>
                             <li data-filter=".completes">Completes</li>
                         </ul>
-                    </li>
-                    <li class="filters pricing">
+                    </div>
+                    <div class="filters pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Outerwear"): ?>
-                    <li class="filters outerwear-size">
+                    <div class="filters outerwear-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".S">Small</li>
-                            <li data-filter=".M">Medium</li>
-                            <li data-filter=".L">Large</li>
-                            <li data-filter=".XL">X Large</li>
-                            <li data-filter=".XXL">XX Large</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".S">Small</li>
+                            <li class="filter-item" data-filter=".M">Medium</li>
+                            <li class="filter-item" data-filter=".L">Large</li>
+                            <li class="filter-item" data-filter=".XL">X Large</li>
+                            <li class="filter-item" data-filter=".XXL">XX Large</li>
                         </ul>
-                    </li>
-                    <li class="filters outerwear-categories">
+                    </div>
+                    <div class="filters outerwear-categories">
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".jackets">Jackets</li>
-                            <li data-filter=".pants">Pants</li>
-                            <li data-filter=".layers">Layers</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".jackets">Jackets</li>
+                            <li class="filter-item" data-filter=".pants">Pants</li>
+                            <li class="filter-item" data-filter=".layers">Layers</li>
                         </ul>
-                    </li>
-                    <li class="filters outerwear-waterproof">
+                    </div>
+                    <div class="filters outerwear-waterproof">
                         <p class="select-title">Waterproof</p>
                         <p class="selected-items">Select</p>
-                        <ul>
+                        <ul class="filter-list">
                             <?php
                             $waterproofArray = Array();
                             foreach ($productsArray as $product):
@@ -881,114 +881,114 @@ get_header();
                             array_multisort($waterproofArray, SORT_ASC);
                             foreach ($waterproofArray as $waterproof):
                             ?>
-                            <li data-filter=".<?php echo $waterproof; ?>"><?php echo str_replace('_', '/', $waterproof); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $waterproof; ?>"><?php echo str_replace('_', '/', $waterproof); ?></li>
                             <?php
                             endforeach;
                             ?>
                         </ul>
-                    </li>
-                    <li class="filters outerwear-fit">
+                    </div>
+                    <div class="filters outerwear-fit">
                         <p class="select-title">Fit</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".ripper-fit">Ripper</li>
-                            <li data-filter=".true-action-fit">True Action</li>
-                            <li data-filter=".street-fit">Street</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".ripper-fit">Ripper</li>
+                            <li class="filter-item" data-filter=".true-action-fit">True Action</li>
+                            <li class="filter-item" data-filter=".street-fit">Street</li>
                         </ul>
-                    </li>
-                    <li class="filters pricing">
+                    </div>
+                    <div class="filters pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Apparel" || get_the_title() == "Clearance"): ?>
-                    <li class="filters apparel-size">
+                    <div class="filters apparel-size">
                         <p class="select-title">Size</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".S">Small</li>
-                            <li data-filter=".M">Medium</li>
-                            <li data-filter=".L">Large</li>
-                            <li data-filter=".XL">X Large</li>
-                            <li data-filter=".XXL">XX Large</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".S">Small</li>
+                            <li class="filter-item" data-filter=".M">Medium</li>
+                            <li class="filter-item" data-filter=".L">Large</li>
+                            <li class="filter-item" data-filter=".XL">X Large</li>
+                            <li class="filter-item" data-filter=".XXL">XX Large</li>
                         </ul>
-                    </li>
-                    <li class="filters apparel-sports">
+                    </div>
+                    <div class="filters apparel-sports">
                         <p class="select-title">Board Sports</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".apparel-snow">Snow</li>
-                            <li data-filter=".apparel-ski">Ski</li>
-                            <li data-filter=".apparel-surf">Surf</li>
-                            <li data-filter=".apparel-skate">Skate</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".apparel-snow">Snow</li>
+                            <li class="filter-item" data-filter=".apparel-ski">Ski</li>
+                            <li class="filter-item" data-filter=".apparel-surf">Surf</li>
+                            <li class="filter-item" data-filter=".apparel-skate">Skate</li>
                         </ul>
-                    </li>
-                    <li class="filters apparel-categories">
+                    </div>
+                    <div class="filters apparel-categories">
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".sweatshirts">Sweatshirts</li>
-                            <li data-filter=".t-shirts">T-Shirts</li>
-                            <li data-filter=".hats">Hats</li>
-                            <li data-filter=".beanies">Beanies</li>
-                            <li data-filter=".socks">Socks</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".sweatshirts">Sweatshirts</li>
+                            <li class="filter-item" data-filter=".t-shirts">T-Shirts</li>
+                            <li class="filter-item" data-filter=".hats">Hats</li>
+                            <li class="filter-item" data-filter=".beanies">Beanies</li>
+                            <li class="filter-item" data-filter=".socks">Socks</li>
                         </ul>
-                    </li>
-                    <li class="filters pricing">
+                    </div>
+                    <div class="filters pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Accessories"): ?>
-                    <li class="filters accessory-categories">
+                    <div class="filters accessory-categories">
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".goggles">Goggles</li>
-                            <li data-filter=".helmets">Helmets</li>
-                            <li data-filter=".wax-tuning-tools">Wax, Tuning and Tools</li>
-                            <li data-filter=".stickers">Stickers</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".goggles">Goggles</li>
+                            <li class="filter-item" data-filter=".helmets">Helmets</li>
+                            <li class="filter-item" data-filter=".wax-tuning-tools">Wax, Tuning and Tools</li>
+                            <li class="filter-item" data-filter=".stickers">Stickers</li>
                         </ul>
-                    </li>
-                    <li class="filters accessories-pricing">
+                    </div>
+                    <div class="filters accessories-pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php elseif (get_the_title() == "Luggage"): ?>
-                    <li class="filters luggage-categories">
+                    <div class="filters luggage-categories">
                         <p class="select-title">Board Sports</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-filter=".luggage-snow">Snow</li>
-                            <li data-filter=".luggage-ski">Ski</li>
-                            <li data-filter=".luggage-surf">Surf</li>
-                            <li data-filter=".luggage-skate">Skate</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-filter=".luggage-snow">Snow</li>
+                            <li class="filter-item" data-filter=".luggage-ski">Ski</li>
+                            <li class="filter-item" data-filter=".luggage-surf">Surf</li>
+                            <li class="filter-item" data-filter=".luggage-skate">Skate</li>
                         </ul>
-                    </li>
-                    <li class="filters luggage-pricing">
+                    </div>
+                    <div class="filters luggage-pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
-                        <ul>
-                            <li data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li data-filter=".available">Availabile</li>
+                        <ul class="filter-list">
+                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
+                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
+                            <li class="filter-item" data-filter=".available">Availabile</li>
                         </ul>
-                    </li>
+                    </div>
                     <?php endif; ?>
-                </ul>
+                </div>
                 <div class="clearfix"></div>
                 <ul class="product-listing <?php echo strtolower(get_the_title()); ?>">
                     <?php foreach ($productsArray as $product): ?>

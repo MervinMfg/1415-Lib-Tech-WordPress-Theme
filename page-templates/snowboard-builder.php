@@ -49,7 +49,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 	<link rel="apple-touch-icon" href="<?php bloginfo('template_directory'); ?>/_/img/diy/apple-touch-icon-precomposed.png">
 	<!-- Misc. -->
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<?php include get_template_directory() . '/_/inc/header-includes-diy-builder.php'; ?>
+	<?php include get_template_directory() . '/_/inc/header-includes-snowboard-builder.php'; ?>
 	<!--[if lt IE 9]>
 		<script src="<?php bloginfo('template_directory'); ?>/_/js/lib/respond.min.js"></script>
 	<![endif]-->
@@ -456,7 +456,7 @@ $page_url = get_site_url() . "/snowboarding/snowboard-builder/";
 	<![endif]-->
 
 	<!-- JavaScript includes -->
-<?php include get_template_directory() . '/_/inc/footer-includes-diy-builder.php'; ?>
+<?php include get_template_directory() . '/_/inc/footer-includes-snowboard-builder.php'; ?>
 
 	<!-- Init the main JS -->
 	<script type="text/javascript">

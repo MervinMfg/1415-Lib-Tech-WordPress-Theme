@@ -1,0 +1,16 @@
+<div class="finder-step bf-step-4">
+	<a href="#/" class="reset-link" ng-click="resetUser()">&lt; Reset Boards</a>
+	<h2>Dream boards for you</h2>
+	<div class="product-filtering snowboards">
+		<product-filter ng-repeat="prodFilter in productFilters" filters="prodFilter.filters"></product-filter>
+	</div>
+	<div class="board-picks">
+		<div class="product-listing snowboards owl-carousel owl-theme-libtech" id="snowboards">
+			<!-- snowbaords are rendered dynamically -->
+		</div>
+		<div class="clearfix"></div>
+		<div class="why-link-wrapper">
+			<a href="#/why/" class="why-link bf-button">Why these boards?</a>
+		</div>
+	</div>
+</div><!-- .bf-step-4 -->

@@ -66,6 +66,8 @@ LIBTECH.main = {
 			self.stormFactoryInit();
 		} else if ($body.hasClass('page-template-page-templatesdttd-php')) {
 			self.dttdInit();
+		} else if ($body.hasClass('page-template-page-templatesboard-finder-php')) {
+			self.boardFinderInit();
 		} else if ($body.hasClass('page-template-page-templatesjamie-lynn-collection-php')) {
 			self.jamieLynnCollectionInit();
 		}
@@ -438,6 +440,10 @@ LIBTECH.main = {
 		$('.dttd-video .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider(false);
+	},
+	boardFinderInit: function () {
+		var self = this;
+		new LIBTECH.BoardFinder();
 	},
 	jamieLynnCollectionInit: function () {
 		var self = this;

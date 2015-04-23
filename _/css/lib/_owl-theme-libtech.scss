@@ -1,0 +1,112 @@
+// ==========================================================================
+// LIB/_OWL-THEME-LIBTECH.SCSS
+// ==========================================================================
+
+// Lib Tech Theme - Owl Carousel CSS File
+// Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
+
+.owl-theme-libtech {
+  overflow: hidden;
+
+  .owl-nav {
+    -webkit-tap-highlight-color: transparent;
+
+    [class*='owl-'] {
+      background-color: #333;
+      background-image: url('../img/sprite.png');
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 14px;
+      height: 50px;
+      margin-top: -75px;
+      position: absolute;
+      top: 50%;
+      width: 25px;
+
+      &:hover,
+      &:focus {
+        background-color: #666;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    .owl-prev {
+      background-position: 6px 12px;
+      left: -25px;
+      @include transition(left, 100ms);
+
+      &:hover,
+      &:focus {
+        background-position: 6px -35px;
+      }
+
+      &.disabled {
+        background-position: 6px 12px;
+      }
+    }
+
+    .owl-next {
+      background-position: -17px 12px;
+      right: -25px;
+      @include transition(right, 100ms);
+
+      &:hover,
+      &:focus {
+        background-position: -17px -35px;
+      }
+
+      &.disabled {
+        background-position: -17px 12px;
+      }
+    }
+
+    .disabled,
+    .disabled:hover,
+    .disabled:focus {
+      background-color: #000;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .owl-nav {
+      .owl-prev {
+        left: 0;
+      }
+
+      .owl-next {
+        right: 0;
+      }
+    }
+  }
+
+  .owl-dots {
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+
+    .owl-dot {
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+
+      span {
+        background: #000;
+        border: 2px solid #fff;
+        -moz-border-radius: 30px;
+        -webkit-border-radius: 30px;
+        border-radius: 30px;
+        display: block;
+        height: 12px;
+        margin: 5px 7px;
+        width: 12px;
+      }
+
+      &.active span,
+      &:hover span {
+        background: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+<div class="filters {{prodFilter.classes}}">
+  <div class="filters-wrapper">
+    <p class="select-title">{{prodFilter.title}}</p>
+    <p class="selected-items" ng-click="resetUserValue();">{{getSelectTitle();}}</p>
+    <ul class="filter-list">
+        <li class="filter-item" ng-repeat="filter in prodFilter.filters" ng-click="selectFilter(filter.value);" ng-class="{selected: getUserValue() == filter.value}">{{filter.title}}</li>
+    </ul>
+  </div>
+</div>

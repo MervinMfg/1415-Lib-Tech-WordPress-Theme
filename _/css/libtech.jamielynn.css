@@ -1,6 +1,5 @@
 	/* ========================================================================== LIBTECH.JAMIELYNN.SCSS ========================================================================== */
 /** 1415 Lib Tech WordPress Theme - http://www.lib-tech.com/jamielynn20 Author: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com  libtech.jamielynn.css & libtech.jamielynn.min.css are compiled using the imports from this file.  To add new styles and components, import them in the appropriate sections below.  */
-/* ========================================================================== HELPERS/_MIXINS.SCSS ========================================================================== */
 /* ========================================================================== HELPERS/_RESET.SCSS ========================================================================== */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary { margin: 0; padding: 0; border: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
 
@@ -153,7 +152,7 @@ ol.commentlist li.parent { border-left: 5px solid #111; }
   .responsive-check .breakpoint-medium { display: block; } }
 @media screen and (min-width: 1056px) { .responsive-check .breakpoint-small, .responsive-check .breakpoint-medium { display: none; }
   .responsive-check .breakpoint-large { display: block; } }
-/*  Owl Carousel - Animate Plugin */
+/* Owl Carousel - Animate Plugin */
 .owl-carousel .animated { -webkit-animation-duration: 1000ms; animation-duration: 1000ms; -webkit-animation-fill-mode: both; animation-fill-mode: both; }
 
 .owl-carousel .owl-animated-in { z-index: 0; }
@@ -167,11 +166,11 @@ ol.commentlist li.parent { border-left: 5px solid #111; }
 @keyframes fadeOut { 0% { opacity: 1; }
   100% { opacity: 0; } }
 /*# sourceMappingURL=owl.animate.css.map */
-/*  Owl Carousel - Auto Height Plugin */
+/* 	Owl Carousel - Auto Height Plugin */
 .owl-height { -webkit-transition: height 500ms ease-in-out; -moz-transition: height 500ms ease-in-out; -ms-transition: height 500ms ease-in-out; -o-transition: height 500ms ease-in-out; transition: height 500ms ease-in-out; }
 
 /*# sourceMappingURL=owl.autoheight.css.map */
-/*  Core Owl Carousel CSS File */
+/* Core Owl Carousel CSS File */
 .owl-carousel { display: none; width: 100%; -webkit-tap-highlight-color: transparent; /* position relative and z-index fix webkit rendering fonts issue */ position: relative; z-index: 1; }
 
 .owl-carousel .owl-stage { position: relative; -ms-touch-action: pan-Y; }
@@ -208,13 +207,13 @@ ol.commentlist li.parent { border-left: 5px solid #111; }
 .no-js .owl-carousel { display: block; }
 
 /*# sourceMappingURL=owl.carousel.css.map */
-/*  Owl Carousel - Lazy Load Plugin */
+/* 	Owl Carousel - Lazy Load Plugin */
 .owl-carousel .owl-item .owl-lazy { opacity: 0; -webkit-transition: opacity 400ms ease; -moz-transition: opacity 400ms ease; -ms-transition: opacity 400ms ease; -o-transition: opacity 400ms ease; transition: opacity 400ms ease; }
 
 .owl-carousel .owl-item img { transform-style: preserve-3d; }
 
 /*# sourceMappingURL=owl.lazyload.css.map */
-/*  Owl Carousel - Video Plugin */
+/* 	Owl Carousel - Video Plugin */
 .owl-carousel .owl-video-wrapper { position: relative; height: 100%; background: #000; }
 
 .owl-carousel .owl-video-play-icon { position: absolute; height: 80px; width: 80px; left: 50%; top: 50%; margin-left: -40px; margin-top: -40px; background: url("owl.video.play.png") no-repeat; cursor: pointer; z-index: 1; -webkit-backface-visibility: hidden; -webkit-transition: scale 100ms ease; -moz-transition: scale 100ms ease; -ms-transition: scale 100ms ease; -o-transition: scale 100ms ease; transition: scale 100ms ease; }
@@ -228,7 +227,7 @@ ol.commentlist li.parent { border-left: 5px solid #111; }
 .owl-carousel .owl-video-frame { position: relative; z-index: 1; height: 100%; width: 100%; }
 
 /*# sourceMappingURL=owl.video.css.map */
-/*  Default theme - Owl Carousel CSS File */
+/* 	Default theme - Owl Carousel CSS File */
 .owl-theme .owl-nav { margin-top: 10px; text-align: center; -webkit-tap-highlight-color: transparent; }
 
 .owl-theme .owl-nav [class*='owl-'] { color: #FFF; font-size: 14px; margin: 5px; padding: 4px 7px; background: #D6D6D6; display: inline-block; cursor: pointer; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }

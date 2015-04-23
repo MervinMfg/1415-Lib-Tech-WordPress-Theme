@@ -158,7 +158,7 @@
 		}, this));
 
 		$.each(Owl.Plugins, $.proxy(function(key, plugin) {
-			this._plugins[key[0].toLowerCase() + key.slice(1)]
+			this._plugins[key.charAt(0).toLowerCase() + key.slice(1)]
 				= new plugin(this);
 		}, this));
 
@@ -1964,8 +1964,20 @@
 	 * Updates the view.
 	 */
 	AutoHeight.prototype.update = function() {
+		var start = this._core._current,
+			end = start + this._core.settings.items,
+			visible = this._core.$stage.children().toArray().slice(start, end);
+			heights = [],
+			maxheight = 0;
+
+		$.each(visible, function(index, item) {
+			heights.push($(item).height());
+		});
+
+		maxheight = Math.max.apply(null, heights);
+
 		this._core.$stage.parent()
-			.height(this._core.$stage.children().eq(this._core.current()).height())
+			.height(maxheight)
 			.addClass(this._core.settings.autoHeightClass);
 	};
 

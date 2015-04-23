@@ -142,9 +142,9 @@ LIBTECH.ProductOverview.prototype = {
 	initFilters: function () {
 		var self = this;
 		// adjust width to be correct
-		$('.product-filtering > li.filters').each(function () {
+		$('.product-filtering > .filters').each(function () {
 			var widthTotal = 0;
-			$(this).find('ul > li').each(function () {
+			$(this).find('.filter-list .filter-item').each(function () {
 				widthTotal += $(this).outerWidth();
 			});
 			// max width for filter dropdowns
@@ -178,7 +178,7 @@ LIBTECH.ProductOverview.prototype = {
 			$(this).find('ul').width(widthTotal);
 		});
 		// filter items when filter link is clicked
-		$('.product-filtering > li.filters > ul > li').on('click', function () {
+		$('.product-filtering .filters .filter-list .filter-item').on('click', function () {
 			var target, selector, selectorASC, filterItems, filterList;
 			target = $(this);
 			target.toggleClass('selected'); // add or remove selected class
@@ -187,7 +187,7 @@ LIBTECH.ProductOverview.prototype = {
 			} else { // we are sorting data now, not filtering
 				if (target.hasClass('selected')) {
 					// grab all sort specific items and deselect them
-					$('.product-filtering > li.filters > ul > li[data-sort]').each(function () {
+					$('.product-filtering .filters .filter-list .filter-item[data-sort]').each(function () {
 						var sortItem = $(this);
 						sortItem.removeClass('selected');
 					});
@@ -231,7 +231,7 @@ LIBTECH.ProductOverview.prototype = {
 					hashFilterList = hashFilterList.substr(0, hashFilterList.indexOf('&'));
 				}
 				// set selected filter on front-end dropdowns
-				$('.product-filtering > li.filters > ul > li[data-filter]').each(function () {
+				$('.product-filtering .filters .filter-list .filter-item[data-filter]').each(function () {
 					var target = $(this);
 					if(hashFilterList.indexOf(target.attr('data-filter')) != -1) {
 						target.addClass('selected');
@@ -242,7 +242,7 @@ LIBTECH.ProductOverview.prototype = {
 					filter: hashFilterList
 				});
 			} else {
-				$('.product-filtering > li.filters > ul > li[data-filter]').each(function () {
+				$('.product-filtering .filters .filter-list .filter-item[data-filter]').each(function () {
 					var target = $(this);
 					target.removeClass('selected');
 				});
@@ -252,12 +252,12 @@ LIBTECH.ProductOverview.prototype = {
 				});
 			}
 			// UPDATE FILTERS REMOVE FEATURES
-			$('.product-filtering > li.filters').each(function () {
+			$('.product-filtering .filters').each(function () {
 				// Check to see which filter groups have filters set
 				var filterGroup, isFilterSet;
 				filterGroup = $(this);
 				isFilterSet = false;
-				filterGroup.find('ul > li').each(function () {
+				filterGroup.find('.filter-list .filter-item').each(function () {
 					if ($(this).hasClass('selected')) {
 						isFilterSet = true;
 					}
@@ -267,12 +267,12 @@ LIBTECH.ProductOverview.prototype = {
 						$(this).html('Remove');
 						$(this).click(function () {
 							$(this).html('Select');
-							filterGroup.find('ul > li').each(function () {
+							filterGroup.find('.filter-list .filter-item').each(function () {
 								$(this).removeClass('selected');
 							});
 							self.filterList(self.config.productListing);
 							// check if sort needs to be reset
-							if (filterGroup.find('ul > li[data-sort]').length > 0) {
+							if (filterGroup.find('.filter-list .filter-item[data-sort]').length > 0) {
 								self.config.productListing.isotope({
 									sortBy: "original-order",
 									sortAscending: true
@@ -295,9 +295,9 @@ LIBTECH.ProductOverview.prototype = {
 	},
 	filterList: function () {
 		var filterArray = []; // set up array for recording filter options
-		$('.product-filtering > li.filters').each(function () { // loop through each filter group
+		$('.product-filtering .filters').each(function () { // loop through each filter group
 			if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
-				$(this).find('ul > li[data-filter]').each(function () {
+				$(this).find('.filter-list .filter-item[data-filter]').each(function () {
 					var filterItem = $(this);
 					if (filterItem.hasClass('selected')) {
 						filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
@@ -306,7 +306,7 @@ LIBTECH.ProductOverview.prototype = {
 			} else { // first list of filters have been added, now build upon them
 				var filterArrayTemp, filterSet;
 				filterArrayTemp = []; // new array to update filterArray after it's built based on filterArray and new filters to concatinate
-				$(this).find('ul > li[data-filter]').each(function () {
+				$(this).find('.filter-list .filter-item[data-filter]').each(function () {
 					var filterItem = $(this);
 					if (filterItem.hasClass('selected')) {
 						filterSet = true; // mark that we found another filter so we need to update the filterArray

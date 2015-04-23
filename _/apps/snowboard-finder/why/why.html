@@ -1,0 +1,96 @@
+<div class="finder-step bf-step-5">
+	<a href="#/results/" class="back-button">< Back</a>
+	<div class="description-image-wrapper">
+		<ul class="description-image-list">
+			<li class="description-image-item length animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'"></li>
+			<li class="description-image-item width animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'"></li>
+			<li class="description-image-item contour animated" ng-class="{'fadeIn': currentSection == 'Contour'}" ng-show="currentSection == 'Contour'"></li>
+		</ul>
+	</div>
+	<div class="step-5-content-wrapper">
+		<h2>Your dream board</h2>
+		<h3>What makes the world's best board for you?</h3>
+		<div class="selection-why">
+			<ul class="button-list">
+				<li class="list-item left"><button class="bf-button" ng-click="currentSection = 'Length'" ng-class="{'selected': currentSection == 'Length'}">Length</button></li>
+				<li class="list-item center"><button class="bf-button" ng-click="currentSection = 'Width'" ng-class="{'selected': currentSection == 'Width'}">Width</button></li>
+				<li class="list-item right"><button class="bf-button" ng-click="currentSection = 'Contour'" ng-class="{'selected': currentSection == 'Contour'}">Contour</button></li>
+			</ul>
+		</div>
+		<div class="description-wrapper">
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'">
+				<h4>Length</h4>
+				<p ng-show="config.measurement == 'imperial'">At a height of {{ feet }}'{{ inches }}" and a weight of {{ lbs }} lbs, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'metric'">At a height of {{ user.height }} cm and a weight of {{ user.weight }} kg, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
+				<p>A longer board will ride more stable, while a shorter board will be more maneuverable. With your specs, we can help you find the right balance, and tweak it to your riding style.</p>
+			</div>
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'">
+				<h4>Width</h4>
+				<p>A bigger foot requires a bigger board width underfoot. If your board is too narrow your toes and heels will drag, likely throwing off your balance. While a wide board will float in deep snow, a board too wide will hinder your ability to make ripping fast, precise, toe and heel edge turns.</p>
+				<table class="boot-sizes" ng-show="user.gender == 'Male'">
+					<tr>
+						<td>
+							<h5 ng-class="{'current': user.bootSize <= 7.5 }">Narrow</h5>
+							<p>Size 4 - 7.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 7.5 && user.bootSize <= 10 }">Regular</h5>
+							<p>Size 7.5 - 10</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 10 && user.bootSize <= 11.5 }">Mid-Wide</h5>
+							<p>Size 10 - 11.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 14 }">Wide</h5>
+							<p>Size 11.5 - 14</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 14 }">Ultra Wide</h5>
+							<p>Size 14+</p>
+						</td>
+					</tr>
+				</table>
+				<!-- women's shoes are 1.5 sizes smaller than men -->
+				<table class="boot-sizes" ng-show="user.gender == 'Female'">
+					<tr>
+						<td>
+							<h5 ng-class="{'current': user.bootSize <= 9 }">Narrow</h5>
+							<p>Size 5.5 - 9</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 9 && user.bootSize <= 11.5 }">Regular</h5>
+							<p>Size 9 - 11.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 13 }">Mid-Wide</h5>
+							<p>Size 11.5 - 13</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 13 && user.bootSize <= 15.5 }">Wide</h5>
+							<p>Size 13 - 15.5</p>
+						</td>
+						<td>
+							<h5 ng-class="{'current': user.bootSize >= 15.5 }">Ultra Wide</h5>
+							<p>Size 15.5+</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Contour'}" ng-show="currentSection == 'Contour'">
+				<h4>Contour</h4>
+				<p>Contours are crucial for enjoying quality days boarding. By coupling your ability and the terrain you like to rip, we can determine which banana you are.</p>
+				<div class="contours">
+					<contour title="BTX" subtitle="Banana Tech" image="contour-btx" description="Least camber effect&hellip; Easiest to ride" ng-show="checkContour('BTX')"></contour>
+					<contour title="EC2" subtitle="Elliptical Camber/Banana Blend" image="contour-ec2-btx" description="Mild camber effect&hellip; Easy to ride" ng-show="checkContour('EC2 BTX')"></contour>
+					<contour title="C2" subtitle="Power Banana/Camber Blend" image="contour-c2-btx" description="Significant Camber Effect&hellip; Agressive ride" ng-show="checkContour('C2 BTX')"></contour>
+					<contour title="XC2" subtitle="Power Banana/Camber Blend" image="contour-xc2-btx" description="Significant Camber Effect&hellip; Extremly agressive ride" ng-show="checkContour('XC2 BTX')"></contour>
+					<contour title="C3" subtitle="Camber Dominant/Banana Blend" image="contour-c3-btx" description="Max camber effect&hellip; Most aggressive ride" ng-show="checkContour('C3 BTX')"></contour>
+					<contour title="TT" subtitle="Camber Dominant Tomahawk Technology" image="contour-tt" description="Max camber effect&hellip; Most aggressive ride" ng-show="checkContour('TT')"></contour>
+					<contour title="!BTX!" subtitle="Enhanced Banana Tech" image="contour-enhanced-btx" description="Dynamic camber effect&hellip; Easiest to ride" ng-show="checkContour('!BTX!')"></contour>
+					<contour title="C1" subtitle="Banana/Camber Combo" image="contour-c1-btx" description="Significant camber effect&hellip; Aggressive ride, floaty nose" ng-show="checkContour('C1 BTX')"></contour>
+				</div>
+			</div>
+		</div>
+	</div><!-- .step-5-content-wrapper -->
+</div><!-- .bf-step-5 -->
