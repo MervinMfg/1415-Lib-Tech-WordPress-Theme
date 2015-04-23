@@ -181,6 +181,7 @@ LIBTECH.main = {
 	homeInit: function () {
 		var self = this;
 		self.utilities.featuredSliderInit();
+		new LIBTECH.Instagram();
 	},
 	homeSportInit: function () {
 		var self, slideWidth, slideMargin, currencyCookie;
@@ -220,7 +221,9 @@ LIBTECH.main = {
 			hideControlOnEnd: true
 		});
 		// render social content grid
-		new LIBTECH.ContentGrid();
+		//new LIBTECH.ContentGrid();
+		// render instagram
+		new LIBTECH.Instagram();
 	},
 	productOverviewInit: function () {
 		new LIBTECH.ProductOverview();

@@ -1,0 +1,136 @@
+{
+    "key": "group_5537f04b65187",
+    "title": "Instagram",
+    "fields": [
+        {
+            "key": "field_5537f104907e2",
+            "label": "Type",
+            "name": "libtech_instagram_type",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Select wether you want to pull in a user's photos or a hashtag.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "username": "Username",
+                "tag": "Tag"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_5537f051907e0",
+            "label": "Username",
+            "name": "libtech_instagram_username",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Instagram username you want to view photos from",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5537f104907e2",
+                        "operator": "==",
+                        "value": "username"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5537f181907e3",
+            "label": "Tag",
+            "name": "libtech_instagram_tag",
+            "prefix": "",
+            "type": "text",
+            "instructions": "Instagram tag you want to view photos from",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5537f104907e2",
+                        "operator": "==",
+                        "value": "tag"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_5537f063907e1",
+            "label": "Limit",
+            "name": "libtech_instagram_limit",
+            "prefix": "",
+            "type": "number",
+            "instructions": "Number of Instagram photos to appear on page.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": 50,
+                "class": "",
+                "id": ""
+            },
+            "default_value": 6,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 24,
+            "step": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/home-sport.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "modified": 1429730895
+}

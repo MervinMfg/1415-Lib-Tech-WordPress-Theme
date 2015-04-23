@@ -13,30 +13,3 @@
     }
   }
 }
-
-.instagram-feed.container-fluid {
-  padding: 30px 0 10px;
-
-
-  .instagram-wrapper {
-    padding-bottom: 20px;
-
-    img {
-      width: 100%;
-    }
-  }
-
-  .gram-image-5,
-  .gram-image-6 {
-    display: none;
-  }
-}
-
-@media screen and (min-width: $breakpoint-large) {
-  .instagram-feed {
-    .gram-image-5,
-    .gram-image-6 {
-      display: block;
-    }
-  }
-}

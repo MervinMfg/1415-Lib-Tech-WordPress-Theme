@@ -40,42 +40,7 @@ get_header();
 
 		<?php include get_template_directory() . '/_/inc/modules/latest-posts.php'; ?>
 
-		<section class="instagram-feed container-fluid">
-			<div class="section-content row">
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-
-					<!-- TEMPORARY INSTAGRAM PHOTOS -->
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-1.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-2.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-3.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-4.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper gram-image-5 col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-2.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper gram-image-6 col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-3.png" alt="" />
-					</a>
-				</div>
-			</div>
-		</section>
+		<?php include get_template_directory() . '/_/inc/modules/instagram.php'; ?>
 
 		<?php
 			$post_objects = get_field('libtech_homepage_featured_products');

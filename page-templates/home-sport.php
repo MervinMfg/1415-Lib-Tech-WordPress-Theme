@@ -108,6 +108,10 @@ get_header();
 			</div>
 		</section><!-- END .product-slider -->
 
+		<?php include get_template_directory() . '/_/inc/modules/latest-posts.php'; ?>
+
+		<?php include get_template_directory() . '/_/inc/modules/instagram.php'; ?>
+
 		<?php
 			$facebookUsername = get_field('libtech_homepage_fb_username');
 			if ($facebookUsername == "") { $facebookUsername = "libtech"; }
@@ -119,44 +123,8 @@ get_header();
 			if ($twitterUsername == "") { $twitterUsername = "libtechnologies"; }
 		?>
 
-		<?php include get_template_directory() . '/_/inc/modules/latest-posts.php'; ?>
-
-		<section class="instagram-feed container-fluid">
+		<section class="social-links container-fluid">
 			<div class="section-content row">
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-
-					<!-- TEMPORARY INSTAGRAM PHOTOS -->
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-1.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-2.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-3.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-4.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper gram-image-5 col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-2.png" alt="" />
-					</a>
-				</div>
-				<div class="instagram-wrapper gram-image-6 col-xs-6 col-ms-3 col-sm-3 col-md-2">
-					<a href="#">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/instagram-3.png" alt="" />
-					</a>
-				</div>
-
-				<div class="social-links row">
 					<p class="social-link-sport skate h4 col-xs-6 col-xs-offset">Follow Lib Skate</p>
 					<ul class="col-xs-6">
 						<li><a href="http://www.facebook.com/<?php echo $facebookUsername; ?>" class="facebook" target="_blank">Facebook</a></li>
@@ -170,7 +138,7 @@ get_header();
 		</section>
 
 		<?php include get_template_directory() . '/_/inc/modules/product-grid.php'; ?>
-		
+
 		<section class="home-sport-team container-fluid">
 			<div class="section-content row">
 				<h2 class="skate col-xs-12">Skate Rippers</h2>

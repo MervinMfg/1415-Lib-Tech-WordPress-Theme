@@ -29,7 +29,8 @@
             ],
             "elements": "",
             "max": 1,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_553696bfe1263",
@@ -58,7 +59,8 @@
             ],
             "elements": "",
             "max": 2,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_553698c5eeb0c",
@@ -87,7 +89,8 @@
             ],
             "elements": "",
             "max": 1,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         },
         {
             "key": "field_553698c8eeb0d",
@@ -116,7 +119,8 @@
             ],
             "elements": "",
             "max": 2,
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         }
     ],
     "location": [
@@ -141,5 +145,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1429641650
+    "modified": 1429671840,
+    "local": "json"
 }
