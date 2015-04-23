@@ -180,14 +180,14 @@ LIBTECH.main = {
 	},
 	homeInit: function () {
 		var self = this;
-		self.utilities.featuredSliderInit();
+		new LIBTECH.FeaturedSlider();
 		new LIBTECH.Instagram();
 	},
 	homeSportInit: function () {
 		var self, slideWidth, slideMargin, currencyCookie;
 		self = this;
 		// set up large featured images/videos
-		self.utilities.featuredSliderInit();
+		new LIBTECH.FeaturedSlider();
 		// change slide size for surfboards
 		// check for surf specific content
 		if ($('body').hasClass('surf')) {
@@ -392,7 +392,7 @@ LIBTECH.main = {
 		var self = this;
 		$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
-		self.utilities.featuredSliderInit(false);
+		new LIBTECH.FeaturedSlider(false);
 		// set up product slider
 		var slider = $('.product-slider .bxslider').bxSlider({
 			slideWidth: 220,
@@ -415,7 +415,7 @@ LIBTECH.main = {
 		var self = this;
 		//$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
-		self.utilities.featuredSliderInit();
+		new LIBTECH.FeaturedSlider();
 		// set up product slider
 		var slider = $('.product-slider .bxslider').bxSlider({
 			slideWidth: 220,
@@ -437,12 +437,12 @@ LIBTECH.main = {
 		var self = this;
 		$('.dttd-video .video-player').fitVids();
 		// set up large featured images/videos
-		self.utilities.featuredSliderInit(false);
+		new LIBTECH.FeaturedSlider(false);
 	},
 	jamieLynnCollectionInit: function () {
 		var self = this;
 		// set up large featured images/videos
-		self.utilities.featuredSliderInit(false);
+		new LIBTECH.FeaturedSlider(false);
 		// init product overview code
 		new LIBTECH.ProductOverview();
 	},
@@ -530,42 +530,6 @@ LIBTECH.main = {
 						$this.find('.post-meta .shares, .meta .shares').html("0 Shares");
 					}
 				});
-			});
-		},
-		featuredSliderInit: function (autoRotate) {
-			autoRotate = typeof autoRotate !== 'undefined' ? autoRotate : true;
-			var slider = $('.featured-slider .bxslider').bxSlider({
-				video: true,
-				useCSS: false,
-				auto: autoRotate,
-				speed: 500,
-				randomStart: false,
-				controls: false,
-				mode: 'horizontal',
-				onSlideBefore: function (slideElement, oldIndex, newIndex) {
-					var prevSlide, videoPlayer;
-					prevSlide = $('.featured-slider .bxslider li').eq(oldIndex + 1);
-					prevSlide.removeClass('active');
-					videoPlayer = prevSlide.find(".video-container");
-					if (videoPlayer.length > 0) {
-						videoPlayer.remove();
-						slider.startAuto();
-					}
-				},
-				onSlideAfter: function (slideElement, oldIndex, newIndex) {
-					slideElement.addClass('active');
-				}
-			});
-			$('.featured-slider .bxslider li a.video-link').click(function (e) {
-				e.preventDefault();
-				slider.stopAuto();
-				var link, vimeoID, vimeoEmbed;
-				link = $(this).attr("href");
-				vimeoID = link.substr(link.lastIndexOf("/") + 1);
-				vimeoEmbed = '<div class="video-container"><iframe src="http://player.vimeo.com/video/' + vimeoID + '?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;autoplay=1" width="940" height="529" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>';
-				// make sure video is not already embedded
-				if ($(this).find(".video-container").length === 0)
-					$(this).prepend(vimeoEmbed).fitVids();
 			});
 		}
 	}
