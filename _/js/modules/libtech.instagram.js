@@ -8,6 +8,7 @@ var LIBTECH = LIBTECH || {};
 LIBTECH.Instagram = function() {
   this.init();
 };
+
 LIBTECH.Instagram.prototype = {
   init: function() {
     var self, value, limit, apiUrl;
@@ -29,7 +30,6 @@ LIBTECH.Instagram.prototype = {
       url: apiUrl,
       success: function(photosJSON) {
         var photosData = photosJSON.data;
-				console.log(photosData);
         for (var i = 0; i < photosData.length; i++) {
           var photoData, listItem;
           photoData = photosData[i];
@@ -38,8 +38,6 @@ LIBTECH.Instagram.prototype = {
           // add list item to content grid
           $('.instagram-feed .section-content').append(listItem);
         }
-        // // randomize content grid
-        // $('.content-grid ul').randomize('li');
       }
     });
   }
