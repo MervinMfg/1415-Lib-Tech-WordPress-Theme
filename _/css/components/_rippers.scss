@@ -237,23 +237,6 @@ body.skate .ripper-videos .section-content .featured-videos {
 	}
 }
 
-.home-sport-team {
-	padding-bottom: 40px;
-
-	h2 {
-		display: none;
-	}
-
-	.home-sport-team-list {
-		padding-left: 0;
-		padding-right: 0;
-
-		.home-sport-team-item {
-			padding-bottom: 20px;
-		}
-	}
-}
-
 @media screen and (min-width: $breakpoint-small) {
 	.team-members .section-content ul li {
 		width: 49.7%;
@@ -308,17 +291,6 @@ body.skate .ripper-videos .section-content .featured-videos {
 	.whats-new.ripper .content-grid .grid-item {
 		&.blog.item-2 {
 			display: inline-block;
-		}
-	}
-
-	.home-sport-team {
-		h2 {
-			display: block;
-			padding-bottom: 30px;
-
-			&.skate {
-				color: $skateColor;
-			}
 		}
 	}
 }

@@ -104,7 +104,6 @@ get_header();
 						}
 					?>
 				</div><!-- .button-wrapper -->
-
 			</div>
 		</section><!-- END .product-slider -->
 
@@ -123,9 +122,37 @@ get_header();
 			if ($twitterUsername == "") { $twitterUsername = "libtechnologies"; }
 		?>
 
-		<section class="social-links container-fluid">
+		<section class="social-links-page container-fluid">
+
+			<?php
+				$pageSlug = $post->post_name;
+				// select correct post type based on slug
+				switch ($pageSlug) {
+					case 'snowboarding':
+						$postType = "libtech_team_snow";
+						$postCat = "snow";
+						$teamUrl = "/snowboarding/team/";
+						break;
+					case 'skateboarding':
+						$postType = "libtech_team_skate";
+						$postCat = "skate";
+						$teamUrl = "/skateboarding/team/";
+						break;
+					case 'surfing':
+						$postType = "libtech_team_surf";
+						$postCat = "surf";
+						$teamUrl = "/surfing/team/";
+						break;
+					case 'skiing':
+						$postType = "libtech_team_nas";
+						$postCat = "ski";
+						$teamUrl = "/skiing/team/";
+						break;
+				}
+			?>
+
 			<div class="section-content row">
-					<p class="social-link-sport skate h4 col-xs-6 col-xs-offset">Follow Lib Skate</p>
+					<p class="social-link-sport h4 col-xs-6 col-xs-offset">Follow Lib <?php echo $postCat; ?></p>
 					<ul class="col-xs-6">
 						<li><a href="http://www.facebook.com/<?php echo $facebookUsername; ?>" class="facebook" target="_blank">Facebook</a></li>
 						<li><a href="http://www.instagram.com/<?php echo $instagramUsername; ?>" class="instagram" target="_blank">Instagram</a></li>
@@ -139,66 +166,60 @@ get_header();
 
 		<?php include get_template_directory() . '/_/inc/modules/product-grid.php'; ?>
 
+		<?php
+			$args = array(
+				'post_type' => $postType,
+				'posts_per_page' => -1,
+				'orderby' => 'menu_order',
+				'order' => 'ASC'
+			);
+			$loop = new WP_Query( $args );
+			if($loop->post_count >= 2) :
+		?>
+
 		<section class="home-sport-team container-fluid">
 			<div class="section-content row">
-				<?php
-					$pageSlug = $post->post_name;
-					// select correct post type based on slug
-					switch ($pageSlug) {
-						case 'snowboarding':
-							$postType = "libtech_team_snow";
-							$postCat = "snow";
-							$teamUrl = "/snowboarding/team/";
-							break;
-						case 'skateboarding':
-							$postType = "libtech_team_skate";
-							$postCat = "skate";
-							$teamUrl = "/skateboarding/team/";
-							break;
-						case 'surfing':
-							$postType = "libtech_team_surf";
-							$postCat = "surf";
-							$teamUrl = "/surfing/team/";
-							break;
-						case 'skiing':
-							$postType = "libtech_team_nas";
-							$postCat = "ski";
-							$teamUrl = "/skiing/team/";
-							break;
-					}
-				?>
-
 				<h2 class="<?php echo $postCat; ?> col-xs-12"><?php echo $postCat; ?> Rippers</h2>
 				<ul>
+
 					<?php
-						$args = array(
-	            'post_type' => $postType,
-	            'posts_per_page' => 4,
-	            'orderby' => 'menu_order',
-	            'order' => 'ASC'
-	          );
-            $loop = new WP_Query( $args );
+						$i = 1;
             while ( $loop->have_posts() ) : $loop->the_post();
               $profilePhoto = get_field('libtech_team_profile_photo');
               $profilePhoto = wp_get_attachment_image_src($profilePhoto, 'square-medium', false);
           ?>
 
-					<li class="home-sport-team-item col-xs-6 col-ms-3 col-sm-3 col-md-3">
-						<a href="<?php the_permalink(); ?>">
-							<img src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Profile" />
+					<li class="home-sport-team-item item-<?php echo $i; ?> col-xs-6 col-ms-3 col-sm-3 col-md-3">
+						<a href="<?php the_permalink(); ?>" class="team-item-link">
+							<div class="team-item-info">
+								<div class="vertical-center">
+									<h4 class="team-item-name"><?php the_title(); ?></h4>
+									<p class="team-item-category">Lib <?php echo $postCat; ?></p>
+								</div>
+							</div>
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $profilePhoto[0]; ?>" alt="<?php the_title(); ?> Profile" class="lazy" />							
 						</a>
 					</li>
 
 					<?php
+							$i++;
 						endwhile;
-						wp_reset_query();
 					?>
 
 				</ul>
 			</div>
+
+			<?php if($loop->post_count > 4) : ?>
 			<div class="call-to-action">
-				<a href="<?php echo $teamUrl; ?>" class="button">View Team</a>
+				<a href="/snowboarding/team/" class="button">View More</a>
 			</div>
+			<?php endif; ?>
+
 		</section><!-- .home-sport-team -->
+
+		<?php
+			endif;
+			wp_reset_query();
+		?>
 
 <?php get_footer(); ?>

@@ -224,6 +224,23 @@ LIBTECH.main = {
 		});
 		// render social content grid
 		//new LIBTECH.ContentGrid();
+		// home sport team photos
+		var $teamCta = $('.home-sport-team .call-to-action .button');
+		if($teamCta.length !== 0) {
+			$teamCta.on('click.team', function (e) {
+				e.preventDefault();
+				$('.home-sport-team').toggleClass('expand');
+				$(this).off('click.team');
+				$(window).trigger('scroll');
+			});
+		}
+		// lazy load sport team photos
+		$(".home-sport-team .home-sport-team-item img.lazy").unveil(0, function() {
+			$(this).on('load', function () {
+				$(this).addClass('loaded');
+				$(this).off('load');
+			});
+		});
 		// render instagram
 		new LIBTECH.Instagram();
 	},
