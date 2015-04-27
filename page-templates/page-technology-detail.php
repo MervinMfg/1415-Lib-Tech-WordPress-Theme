@@ -9,7 +9,7 @@ $parentSlug = $parent->post_name;
 
 switch ($parentSlug) {
     case "skiing":
-        $categorySlug = "nas";
+        $categorySlug = "ski";
         $faqSlug = "ski-technology";
         break;
     case "skateboarding":
@@ -35,7 +35,7 @@ switch ($parentSlug) {
                         <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                         <?php elseif ($categorySlug == "snowboards"): ?>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-snow.jpg" alt="Lib Tech Snowboard Technology" />
-                        <?php elseif ($categorySlug == "nas"): ?>
+                      <?php elseif ($categorySlug == "ski"): ?>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-ski.jpg" alt="Lib Tech NAS Technology" />
                         <?php elseif ($categorySlug == "surfboards"): ?>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-surf.jpg" alt="Lib Tech Surf Technology" />
