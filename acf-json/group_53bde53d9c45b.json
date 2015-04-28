@@ -18,38 +18,70 @@
             },
             "min": "",
             "max": "",
-            "layout": "table",
+            "layout": "block",
             "button_label": "Add Slide",
             "sub_fields": [
                 {
-                    "key": "field_53bde55a58d69",
-                    "label": "Image",
-                    "name": "libtech_featured_silder_image",
+                    "key": "field_553e743c2ebd7",
+                    "label": "Small Image",
+                    "name": "libtech_featured_slider_image_small",
                     "prefix": "",
                     "type": "image",
-                    "instructions": "(1600px x 640px)",
+                    "instructions": "980px by 600px",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
                     "return_format": "array",
                     "preview_size": "thumbnail",
-                    "library": "all"
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
                 },
                 {
-                    "key": "field_53bde59f58d6a",
-                    "label": "Link URL",
-                    "name": "libtech_featured_silder_link_url",
+                    "key": "field_53bde55a58d69",
+                    "label": "Large Image",
+                    "name": "libtech_featured_silder_image",
                     "prefix": "",
-                    "type": "text",
-                    "instructions": "",
+                    "type": "image",
+                    "instructions": "1400px by 560px",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_53bde59f58d6a",
+                    "label": "Image Link URL",
+                    "name": "libtech_featured_silder_link_url",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "Specify the link used when a user selects an image",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -67,11 +99,11 @@
                     "name": "libtech_featured_silder_alt_text",
                     "prefix": "",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Specify alt text for the images",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -93,7 +125,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": 50,
                         "class": "",
                         "id": ""
                     },
@@ -105,7 +137,9 @@
                         "surf": "Surf",
                         "skate": "Skate"
                     },
-                    "default_value": [],
+                    "default_value": {
+                        "": ""
+                    },
                     "allow_null": 0,
                     "multiple": 0,
                     "ui": 0,
@@ -113,6 +147,94 @@
                     "placeholder": "",
                     "disabled": 0,
                     "readonly": 0
+                },
+                {
+                    "key": "field_553ea4ad0e721",
+                    "label": "Call to Action Theme",
+                    "name": "libtech_featured_slider_cta_theme",
+                    "prefix": "",
+                    "type": "radio",
+                    "instructions": "Select the color style of the Call to Actions",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": 50,
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "dark": "Dark",
+                        "light": "Light"
+                    },
+                    "other_choice": 0,
+                    "save_other_choice": 0,
+                    "default_value": "dark",
+                    "layout": "vertical"
+                },
+                {
+                    "key": "field_553e791dd85e4",
+                    "label": "Call to Actions",
+                    "name": "libtech_featured_slider_cta",
+                    "prefix": "",
+                    "type": "repeater",
+                    "instructions": "Add CTAs if you want buttons to appear over the images. You can add up to 2 links with their own URLs. These are separate from the image link.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "min": "",
+                    "max": 2,
+                    "layout": "row",
+                    "button_label": "Add CTA",
+                    "sub_fields": [
+                        {
+                            "key": "field_553e794dd85e5",
+                            "label": "Text",
+                            "name": "libtech_featured_slider_cta_text",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        },
+                        {
+                            "key": "field_553e7968d85e6",
+                            "label": "URL",
+                            "name": "libtech_featured_slider_cta_url",
+                            "prefix": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": "",
+                            "readonly": 0,
+                            "disabled": 0
+                        }
+                    ]
                 }
             ]
         }
@@ -152,6 +274,13 @@
                 "operator": "==",
                 "value": "page-templates\/jamie-lynn-collection.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/lib-legs.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -159,5 +288,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1430181590
 }

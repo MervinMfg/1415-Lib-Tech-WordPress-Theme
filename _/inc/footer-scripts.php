@@ -6,6 +6,7 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.treeview.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.isotope.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/jquery.unveil.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/owl.carousel.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/GSAP/TweenMax.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/GSAP/plugins/ScrollToPlugin.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/froogaloop.js"></script>

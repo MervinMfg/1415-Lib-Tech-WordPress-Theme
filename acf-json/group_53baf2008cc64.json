@@ -26,100 +26,6 @@
             "disabled": 0
         },
         {
-            "key": "field_5384c4b818961",
-            "label": "Banners",
-            "name": "libtech_liblegs_banners",
-            "prefix": "",
-            "type": "repeater",
-            "instructions": "(940px x 530px)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "row_min": "",
-            "row_limit": "",
-            "layout": "table",
-            "button_label": "Add Banner",
-            "min": 0,
-            "max": 0,
-            "sub_fields": [
-                {
-                    "key": "field_5384c4e018962",
-                    "label": "Image",
-                    "name": "libtech_liblegs_banners_image",
-                    "prefix": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "return_format": "id",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0,
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_5384c4f718963",
-                    "label": "Link URL",
-                    "name": "libtech_liblegs_banners_link_url",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5384c50918964",
-                    "label": "Alt Text",
-                    "name": "libtech_liblegs_banners_alt_text",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                }
-            ]
-        },
-        {
             "key": "field_5384c52318965",
             "label": "Featured Product",
             "name": "libtech_liblegs_featured_product",
@@ -186,6 +92,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1429754615,
-    "local": "json"
+    "modified": 1430181769
 }

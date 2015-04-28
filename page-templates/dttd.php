@@ -2,7 +2,7 @@
 /*
 Template Name: Downtown Throwdown
 */
-get_header(); 
+get_header();
 ?>
 
 		<div class="bg3-top"></div>
@@ -28,11 +28,11 @@ get_header();
 			<div class="clearfix"></div>
 		</section><!-- END .dttd-details -->
 
-		<div class="bg2-top"></div>
+		<div class="bg1-top"></div>
 
 		<?php if (date("m.d.y") > "10.17.14") : ?>
-		
-		<section class="dttd-video bg2">
+
+		<section class="dttd-video bg1">
 			<div class="section-content">
 				<div class="video-player">
 					<iframe width="640" height="360" src="//www.youtube.com/embed/QZhciwhiqgE?autoplay=1&start=3363" frameborder="0" allowfullscreen></iframe>

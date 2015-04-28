@@ -9,81 +9,107 @@
 
     .slider-wrapper {
       width: 100%;
+    }
+  }
 
-      // before bxslider is rendered
-      .bxslider li {
-        &:nth-child(n+2) {
-          display: none;
-        }
+  .slide {
+    &:nth-child(n+2) { // before slide is rendered
+      display: none;
+    }
 
-        img {
-          @include vendorize(opacity, 0);
-          height: auto !important;
-          width: 100% !important;
-        }
-      }
+    img {
+      height: auto;
+      width: 100%;
+    }
+  }
 
-      // after it is rendered
-      .bx-wrapper .bxslider li {
-        &:nth-child(n+2) {
-          display: block;
-        }
+  .content-large {
+    display: none;
+  }
 
-        img {
-          @include vendorize(opacity, 1);
-        }
+  .content-ctas {
+    bottom: 15%;
+    position: absolute;
+    text-align: center;
+    width: 100%;
 
-        &.bx-clone {
-          display: none;
-        }
-      }
+    .cta {
+      display: inline-block;
+      margin: 0 10px;
+    }
+  }
 
-      .bx-controls {
-        .bx-pager {
-          padding-top: 10px;
-          text-align: center;
+  .icon-play {
+    background-position-x: 100%;
+    height: 16px;
+    margin: 0 0 -2px 5px;
+    width: 16px;
+  }
 
-          .bx-pager-item {
-            a {
-              -moz-border-radius: 10px;
-              -webkit-border-radius: 10px;
-              border-radius: 10px;
-              height: 10px;
-              width: 10px;
-            }
-          }
-        }
-      }
-
-      .active .video-image {
-        left: 0;
-        max-width: 100%;
-        position: absolute;
-        top: 0;
-        z-index: 1;
-      }
-
-      .video-container {
-        left: 0;
-        padding: 0 14.4375%;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 100;
-
-        .fluid-width-video-wrapper {
-          background: #000 url("../img/loader.gif") no-repeat center center;
-        }
+  .button {
+    &:hover,
+    &:focus {
+      .icon-play {
+        background-position-x: 0;
       }
     }
   }
-}
 
-// Lib Legs Styles
-// -------------------------------------------------------------------------------
-.page-template-lib-legs .featured-slider {
-  margin-top: 0;
-  padding-top: 10px;
+  .cta-theme-dark .button {
+    border-color: #000;
+    color: #000;
+
+    .icon-play {
+      background-position-x: 0;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: #000;
+      color: #fff;
+
+      .icon-play {
+        background-position-x: 100%;
+      }
+    }
+  }
+
+  .owl-carousel {
+    display: block;
+  }
+
+  .owl-loaded .slide {
+    &:nth-child(n+2) { // after it is rendered
+      display: block;
+    }
+  }
+
+  .owl-dots {
+    padding-top: 5px;
+  }
+
+  .video-container {
+    background-color: #000;
+    height: 100%;
+    left: 0;
+    padding: 5% 0 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+
+    .close-btn {
+      height: 10px;
+      position: absolute;
+      right: 10px;
+      top: 0;
+      width: 10px;
+    }
+
+    .fluid-width-video-wrapper {
+      background: #000 url('../img/loader.gif') no-repeat center center;
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-small) {
@@ -92,11 +118,48 @@
       .slider-wrapper {
         margin-left: 0;
         width: 100%;
-
-        .bx-controls {
-          margin-left: 0;
-        }
       }
     }
+
+    .video-container .close-btn {
+      height: 20px;
+      width: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .featured-slider {
+    .content-small {
+      display: none;
+    }
+
+    .content-large {
+      display: block;
+    }
+
+    .icon-play {
+      height: 20px;
+      width: 20px;
+    }
+
+    .video-container {
+      padding: 0 14.5%;
+
+      .close-btn {
+        right: 11%;
+        top: 10px;
+      }
+    }
+  }
+}
+
+// custom fix for old pages with slider
+.page-template-lib-legs,
+.page-template-storm-factory,
+.page-template-dttd,
+.page-template-jamie-lynn-collection {
+  .featured-slider {
+    padding-bottom: 40px;
   }
 }

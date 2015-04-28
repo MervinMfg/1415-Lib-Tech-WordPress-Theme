@@ -31,48 +31,10 @@ get_header();
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .video-header -->
-		<div class="bg2-top"></div>
-		<section class="featured-slider bg2">
-			<div class="section-content">
-				<div class="slider-wrapper">
-					<ul class="bxslider">
+		<div class="bg1-top"></div>
 
-						<?php
-							if(get_field('libtech_liblegs_banners')):
-								function renderBanner($banner) {
-									if (strpos($banner['link'],'vimeo.com') !== false) : // display vimeo image/video
-										echo '<li><a href="' . $banner['link'] . '" class="video-link"><div class="video-image"><img src="' . $banner['image'][0] . '" alt="' . $banner['altText'] . '" width="' . $banner['image'][1] . '" height="' . $banner['image'][2] . '" /></div></a></li>';
-									else: // display standard image
-										echo '<li><a href="' . $banner['link'] . '"><img src="' . $banner['image'][0] . '" alt="' . $banner['altText'] . '" width="' . $banner['image'][1] . '" height="' . $banner['image'][2] . '" /></a></li>';
-									endif;
-								}
-								while(the_repeater_field('libtech_liblegs_banners')):
-									$bannerImage = get_sub_field('libtech_liblegs_banners_image');
-									$bannerImage = wp_get_attachment_image_src($bannerImage, 'full', false);
-									$bannerlink = get_sub_field('libtech_liblegs_banners_link_url');
-									$bannerAltText = get_sub_field('libtech_liblegs_banners_alt_text');
+		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
-									$banner = array(
-										"image" => $bannerImage,
-										"link" => $bannerlink,
-										"altText" => $bannerAltText
-									);
-									renderBanner($banner);
-								endwhile;
-							else:
-						?>
-
-						<li><a href="#"><img src="<?php bloginfo('template_directory'); ?>/_/img/placeholder-slider.jpg" alt="Have Kiker make a banner!" /></a></li>
-
-						<?php
-							endif;
-						?>
-
-					</ul>
-				</div>
-			</div><!-- END .section-content -->
-			<div class="clearfix"></div>
-		</section><!-- END .featured-sliders -->
 		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
 		<section class="product-slider bg-product-<?php echo $GLOBALS['sport']; ?>">
 			<div class="section-content">

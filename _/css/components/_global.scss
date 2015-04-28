@@ -28,6 +28,7 @@ body {
 
 button,
 .button {
+  @include transition(background);
   border: 2px solid #FFF;
   color: #FFF;
   font-size: 1.125em; // 18 / 16
@@ -42,6 +43,23 @@ button,
     color: #000;
     text-decoration: none;
   }
+}
+
+.close-btn {
+  background: #000 url('../img/icon-close.png') no-repeat;
+  background-size: 100%;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  width: 20px;
+}
+
+.icon-play {
+  background: url('../img/icon-play.png') no-repeat;
+  background-size: 200% 100%;
+  display: inline-block;
+  height: 20px;
+  width: 20px;
 }
 
 .post-meta {
@@ -292,6 +310,11 @@ button,
       font-size: 1em; // 16 / 16
     }
   }
+
+  button,
+  .button {
+    font-size: 1.5em; // 24 / 16
+  }
 }
 
 @media screen and (min-width: $breakpoint-large) {
@@ -312,11 +335,6 @@ button,
         padding-right: 20px;
       }
     }
-  }
-
-  button,
-  .button {
-    font-size: 1.5em; // 24 / 16
   }
 }
 
