@@ -47,7 +47,7 @@ get_header();
 			if( $post_objects ):
 		?>
 
-		<section class="featured-product-grid container-fluid">
+		<section class="featured-product-grid container-fluid bg-texture-gradient">
 			<div class="section-content row">
 				<ul>
 

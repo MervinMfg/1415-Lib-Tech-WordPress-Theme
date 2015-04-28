@@ -166,6 +166,12 @@ button,
   background-image: url('../img/bg-product-outerwear-top.png');
 }
 
+.bg-texture-gradient {
+  background-image: url('../img/bg-texture-gradient.png');
+  background-repeat: repeat-x;
+  background-size: cover;
+}
+
 .page-template-default {
   .default-page {
     .section-content {
@@ -246,13 +252,30 @@ button,
 }
 
 .video-header {
+  padding-bottom: 20px;
+
+  &.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .section-content {
-    padding-left: 20px;
-    padding-right: 20px;
 
     h1 {
-      color: #000;
+      color: $snowColor;
       margin-bottom: 20px;
+
+      &.ski {
+        color: $skiColor;
+      }
+
+      &.surf {
+        color: $surfColor;
+      }
+
+      &.skate {
+        color: $skateColor;
+      }
     }
 
     .video-player {
@@ -266,10 +289,9 @@ button,
       }
 
       p {
-        color: #000;
+        color: #FFF;
         font-size: 1em;
         margin-bottom: 10px;
-        max-width: 900px;
       }
 
       ul {
@@ -301,13 +323,20 @@ button,
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .video-header .section-content .video-text {
-    p {
-      font-size: 1.125em; // 18 / 16
+  .video-header {
+    &.container-fluid {
+      padding-left: 10px;
+      padding-right: 10px;
     }
 
-    ul li {
-      font-size: 1em; // 16 / 16
+    .section-content .video-text {
+      p {
+        font-size: 1.125em; // 18 / 16
+      }
+
+      ul li {
+        font-size: 1em; // 16 / 16
+      }
     }
   }
 
@@ -315,33 +344,23 @@ button,
   .button {
     font-size: 1.5em; // 24 / 16
   }
-}
 
-@media screen and (min-width: $breakpoint-large) {
-  .video-header.video .section-content {
-    h1,
-    .video-text {
-      float: right;
-      width: 40%;
-    }
-
-    .video-player {
-      float: left;
-      padding-bottom: 0;
-      padding-top: 5px;
-      width: 60%;
-
-      .video-wrapper {
-        padding-right: 20px;
-      }
-    }
+  .bg-texture-gradient {
+    background-size: auto 100%;
   }
 }
 
+@media screen and (min-width: $breakpoint-large) {
+
+}
+
 @media screen and (min-width: $breakpoint-xxlarge) {
-  .section-content,
-  .container-fluid {
+  .section-content {
     margin: 0 auto;
     max-width: 1640px;
+  }
+
+  .container-fluid {
+    max-width: 100%;
   }
 }

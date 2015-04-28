@@ -69,10 +69,6 @@
 		display: none;
 	}
 
-  .team-item-info {
-    display: none;
-  }
-
   .home-sport-team-item {
     padding-bottom: 20px;
     display: none;
@@ -119,74 +115,9 @@
 			display: block;
 			padding-bottom: 30px;
     }
-
-    a.team-item-link {
-      display: block;
-      position: relative;
-    }
-
-    .team-item-info {
-      @include transition(opacity);
-      @include vendorize(opacity, 0);
-      background: rgba(0, 0, 0, .75);
-      display: block;
-      font-style: normal;
-      height: 101%;
-      position: absolute;
-      text-align: center;
-      width: 101%;
-      overflow: hidden;
-
-      .team-item-name {
-        @include transition(transform);
-        @include vendorize(transform, translate(0, -15px));
-        margin-bottom: .2em;
-        font-size: 1.5em;
-        text-transform: uppercase;
-        color: #FFF;
-      }
-
-      .team-item-category {
-        @include transition(transform);
-        @include vendorize(transform, translate(0, -5px));
-        color: #fff;
-        font-size: 1em;
-        text-transform: capitalize;
-      }
-    }
-
-    a.team-item-link:hover,
-    a.team-item-link:focus {
-      .team-item-info {
-        @include vendorize(opacity, 1);
-        overflow: hidden;
-
-        .team-item-name,
-        .team-item-category {
-          @include vendorize(transform, translate(0, 0));
-        }
-      }
-    }
-
-    .vertical-center {
-      @include vendorize(transform, translateY(-50%));
-      position: relative;
-      top: 50%;
-      width: 100%;
-    }
   }
 }
 
 @media screen and (min-width: $breakpoint-large) {
-  .home-sport-team {
-    .team-item-info {
-      .team-item-name {
-        font-size: 2em;
-      }
-
-      .team-item-category {
-        font-size: 1.25em;
-      }
-    }
-  }
+  
 }

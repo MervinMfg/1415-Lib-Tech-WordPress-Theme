@@ -16,15 +16,10 @@
 
 .featured-product-grid {
   &.container-fluid {
-    padding: 25px 0 60px;
+    padding: 25px 0 30px;
+    margin-bottom: 30px;
     max-width: 100%;
   }
-}
-
-.product-grid,
-.featured-product-grid {
-  background: url("../img/bg-product-new.png") repeat-x center center;
-  background-size: cover;
 }
 
 .product-grid,
@@ -332,11 +327,6 @@
 
   .product-grid {
     padding-bottom: 80px;
-  }
-
-  .product-grid,
-  .featured-product-grid {
-    background-size: auto 100%;
   }
 
   .featured-product-grid,

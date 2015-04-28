@@ -1,6 +1,6 @@
 <?php if ( basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"]) ) header('Location: /'); // do not allow stanalone viewing ?>
 
-	<section class="product-grid container-fluid">
+	<section class="product-grid container-fluid  bg-texture-gradient">
 		<div class="section-content row">
 
 			<?php
