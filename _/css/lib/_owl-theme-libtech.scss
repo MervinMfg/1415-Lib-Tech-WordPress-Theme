@@ -69,19 +69,6 @@
     }
   }
 
-  &:hover,
-  &:focus {
-    .owl-nav {
-      .owl-prev {
-        left: 0;
-      }
-
-      .owl-next {
-        right: 0;
-      }
-    }
-  }
-
   .owl-dots {
     -webkit-tap-highlight-color: transparent;
     text-align: center;
@@ -106,6 +93,21 @@
       &.active span,
       &:hover span {
         background: #fff;
+      }
+    }
+  }
+}
+
+.no-touch .owl-theme-libtech {
+  &:hover,
+  &:focus {
+    .owl-nav {
+      .owl-prev {
+        left: 0;
+      }
+
+      .owl-next {
+        right: 0;
       }
     }
   }

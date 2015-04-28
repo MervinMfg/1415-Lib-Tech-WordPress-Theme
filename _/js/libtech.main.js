@@ -183,6 +183,7 @@ LIBTECH.main = {
 	homeInit: function () {
 		var self = this;
 		new LIBTECH.FeaturedSlider();
+		new LIBTECH.StorySlider();
 		new LIBTECH.Instagram();
 	},
 	homeSportInit: function () {

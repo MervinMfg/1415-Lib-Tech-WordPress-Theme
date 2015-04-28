@@ -14,13 +14,19 @@
     }
   }
 
-  .call-to-action {
+  .owl-carousel {
     display: block;
-    margin-top: 20px;
-    text-align: center;
+
+    .story-img-large {
+      display: none;
+    }
+
+    .owl-nav [class*='owl-'] {
+      top: 40%;
+    }
   }
 
-  .story-slider-copy {
+  .story-copy {
     padding-top: 20px;
 
     h3 {
@@ -29,6 +35,27 @@
 
     p {
       line-height: 1.75;
+    }
+  }
+
+  .call-to-action {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .story-slider {
+
+    .owl-carousel {
+      .story-img-small {
+        display: none;
+      }
+
+      .story-img-large {
+        display: block;
+      }
     }
   }
 }
