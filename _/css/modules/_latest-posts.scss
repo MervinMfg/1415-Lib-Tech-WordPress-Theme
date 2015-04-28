@@ -96,3 +96,10 @@
 @media screen and (min-width: $breakpoint-large) {
 
 }
+
+// custom fix for old pages with latest-posts module
+.page-template-lib-legs {
+  .latest-posts {
+    padding-bottom: 60px;
+  }
+}

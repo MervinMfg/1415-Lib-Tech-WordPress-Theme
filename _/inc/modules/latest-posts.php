@@ -28,7 +28,7 @@
 					$postsQuery = new WP_Query($args);
 					// loop through posts
 					$i=1;
-					if (have_posts()) :
+					if ($postsQuery->have_posts()) :
 						while ($postsQuery->have_posts()) :
 							$postsQuery->the_post();
 							$postImage = get_post_image('square-medium');

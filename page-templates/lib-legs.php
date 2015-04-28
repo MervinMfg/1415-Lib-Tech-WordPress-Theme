@@ -7,18 +7,17 @@ get_header();
 
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div class="bg-product-skate-top"></div>
-		<section class="video-header video bg-product-skate">
-			<div class="section-content">
-				<h1><?php the_title(); ?></h1>
-				<div class="video-player">
+		<section class="video-header video container-fluid bg-texture-gradient">
+			<div class="section-content row">
+				<h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12"><?php the_title(); ?></h1>
+				<div class="video-player col-xs-12">
 					<div class="video-wrapper">
 						<?php if (get_field('libtech_liblegs_video_id')) : $videoID = get_field('libtech_liblegs_video_id'); ?>
-						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00&amp;autoplay=1" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00&amp;autoplay=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="video-text">
+				<div class="video-text col-xs-12 col-md-8 col-md-offset-2">
 					<ul class="entry-share">
 						<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
 						<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
@@ -31,7 +30,6 @@ get_header();
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .video-header -->
-		<div class="bg1-top"></div>
 
 		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
@@ -70,51 +68,10 @@ get_header();
 				</ul>
 			</div>
 		</section><!-- END .product-slider -->
-		<div class="bg3-top"></div>
-		<section class="homepage-posts bg3">
-			<div class="section-content">
-				<h2>Lib Leg Stories</h2>
-				<ul>
+		<div class="bg1-top"></div>
 
-					<?php
-						$post_cat_id = get_category_by_slug(get_field('libtech_liblegs_category_slug'));
-						$post_cat_id = $post_cat_id->term_id;
-						$args = array(
-							'category' => $post_cat_id,
-							'posts_per_page' => 6
-						);
-						$posts_query = get_posts($args);
-						$i = 0;
+		<?php include get_template_directory() . '/_/inc/modules/latest-posts.php'; ?>
 
-						foreach($posts_query as $post) :
-							setup_postdata($post);
-							$postImage = get_post_image('square-medium');
-					?>
-
-					<li class="homepage-post">
-						<div class="post-wrapper">
-							<a href="<?php the_permalink() ?>">
-								<img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
-								<h3 class="post-title"><?php the_title(); ?></h3>
-								<p class="post-meta">
-									<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span class="shares"></span>
-								</p>
-								<p class="post-excerpt"><?php echo libtech_excerpt('libtech_excerptlength_home'); ?></p>
-								<p class="post-more">READ MORE</p>
-							</a>
-						</div>
-					</li>
-
-					<?php
-							$i++;
-						endforeach;
-						wp_reset_postdata(); // Reset Post Data
-					?>
-
-				</ul>
-			</div><!-- END .section-content -->
-			<div class="clearfix"></div>
-		</section><!-- END .homepage-posts -->
 		<div class="bg2-top"></div>
 		<section class="bg2 pass-it-on-tagboard">
 			<div class="section-content">

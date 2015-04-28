@@ -39,6 +39,13 @@
                 "operator": "==",
                 "value": "page-templates\/home-sport.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/lib-legs.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -47,6 +54,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430238412,
-    "local": "json"
+    "modified": 1430250674
 }

@@ -364,3 +364,10 @@ button,
     max-width: 100%;
   }
 }
+
+// custom fix for old pages with new video header bg
+.page-template-lib-legs {
+  .video-header {
+    padding-bottom: 40px;
+  }
+}
