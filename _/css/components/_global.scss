@@ -21,27 +21,32 @@ body {
 
 .container-fluid {
   .section-content {
-    max-width: 1100px;
     margin: 0 auto;
+    max-width: 1100px;
   }
 }
 
-button,
-.button {
-  @include transition(background);
-  border: 2px solid #FFF;
-  color: #FFF;
-  font-size: 1.125em; // 18 / 16
-  font-style: normal;
-  padding: 2px 20px;
-  display: inline-block;
-  text-transform: capitalize;
+.snow,
+.skate,
+.ski,
+.surf {
+  button,
+  .button {
+    @include transition(background);
+    border: 2px solid #FFF;
+    color: #FFF;
+    font-size: 1.125em; // 18 / 16
+    font-style: normal;
+    padding: 2px 20px;
+    display: inline-block;
+    text-transform: capitalize;
 
-  &:hover,
-  &:focus {
-    background: #FFF;
-    color: #000;
-    text-decoration: none;
+    &:hover,
+    &:focus {
+      background: #FFF;
+      color: #000;
+      text-decoration: none;
+    }
   }
 }
 
@@ -78,7 +83,7 @@ button,
 .bg-product-outerwear {
   background-color: #000;
   background-position: center top;
-  padding-bottom: 50px;
+  padding-bottom: 40px;
 }
 
 .bg1-top,
@@ -280,11 +285,17 @@ button,
 
     .video-player {
       padding-bottom: 10px;
+
+      .video-wrapper {
+        img {
+          width: 100%;
+        }
+      }
     }
 
     .video-text {
       h3 {
-        color: #000;
+        color: #FFF;
         margin-bottom: 10px;
       }
 
@@ -299,7 +310,6 @@ button,
         margin: 0 0 10px 20px;
 
         li {
-          color: #000;
           font-size: .875em; // 14 / 16
           line-height: 1.32;
           margin-bottom: 5px;
@@ -307,7 +317,7 @@ button,
       }
 
       a {
-        color: #000;
+        color: #FFF;
       }
 
       .entry-share {
@@ -340,9 +350,14 @@ button,
     }
   }
 
-  button,
-  .button {
-    font-size: 1.5em; // 24 / 16
+  .snow,
+  .skate,
+  .ski,
+  .surf {
+    button,
+    .button {
+      font-size: 1.5em; // 24 / 16
+    }
   }
 
   .bg-texture-gradient {
@@ -368,6 +383,12 @@ button,
 // custom fix for old pages with new video header bg
 .page-template-lib-legs {
   .video-header {
-    padding-bottom: 40px;
+    padding-bottom: 50px;
+  }
+}
+
+.page-template-page-technology-detail {
+  .video-header {
+    padding-bottom: 60px;
   }
 }

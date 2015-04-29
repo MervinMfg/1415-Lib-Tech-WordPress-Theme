@@ -9,8 +9,8 @@ get_header();
 
 		<section class="video-header video container-fluid bg-texture-gradient">
 			<div class="section-content row">
-				<h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12"><?php the_title(); ?></h1>
-				<div class="video-player col-xs-12">
+				<h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
+				<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 					<div class="video-wrapper">
 						<?php if (get_field('libtech_liblegs_video_id')) : $videoID = get_field('libtech_liblegs_video_id'); ?>
 						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00&amp;autoplay=0" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

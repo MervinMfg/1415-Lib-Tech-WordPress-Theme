@@ -1,321 +1,368 @@
-/* ==========================================================================
-   COMPONENTS/_TECHNOLOGY.SCSS
-   ========================================================================== */
-
+// ==========================================================================
+// COMPONENTS/_TECHNOLOGY.SCSS
+// ==========================================================================
 .tech-major {
-	.section-content {
-		padding: 0 20px;
-	}
-	h2 {
-		margin-bottom: 10px;
-	}
-	ul {
-		li {
-			margin-bottom: 20px;
+  .section-content {
+    padding: 0 20px;
+  }
 
-			.tech-video,
-			.tech-image {
-				margin-bottom: 10px;
-			}
-			.tech-copy {
-				margin-bottom: 20px;
+  h2 {
+    margin-bottom: 10px;
+  }
 
-				h4, h5 {
-					margin-bottom: 5px;
-				}
-				p {
-					margin-bottom: 15px;
-				} 
-				.tech-found-on {
-					display: none;
-					margin: 10px 0 20px;
+  ul {
+    li {
+      margin-bottom: 20px;
 
-					ul li {
-						width: 50%;
-						float: left;
-					}
-				}
-				ul {
-					list-style: square;
-					padding-left: 25px;
+      .tech-video,
+      .tech-image {
+        margin-bottom: 10px;
+      }
 
-					li {
-						margin-bottom: 3px;
-						
-					}
-				}
-			}
-		}
-	}
+      .tech-copy {
+        margin-bottom: 20px;
+
+        h4,
+        h5 {
+          margin-bottom: 5px;
+        }
+
+        p {
+          margin-bottom: 15px;
+        }
+
+        .tech-found-on {
+          display: none;
+          margin: 10px 0 20px;
+
+          ul li {
+            float: left;
+            width: 50%;
+          }
+        }
+
+        ul {
+          list-style: square;
+          padding-left: 25px;
+
+          li {
+            margin-bottom: 3px;
+          }
+        }
+      }
+    }
+  }
 }
+
 .tech-major.tech-surf {
-	h2 { display: none; }
+  h2 {
+    display: none;
+  }
 
-	.surf-technology,
-	.surf-environmental,
-	.surf-ding,
-	.surf-fins,
-	.surf-performance,
-	.surf-handcrafted {
-		h4 {
-			padding: 5px;
-			color: #000;
-		}
-		img {
-			border: solid #333333 1px;
-		}
-	}
-	.surf-technology h4 {
-		background-color: #FF0000;
-	}
-	.surf-environmental h4 {
-		background-color: $skateColor;
-	}
-	.surf-ding h4 {
-		background-color: $surfColor;
-	}
-	.surf-fins h4 {
-		background-color: $snowColor;
-	}
-	.surf-performance h4 {
-		background-color: $skiColor;
-	}
-	.surf-handcrafted h4 {
-		background-color: #fff;
-	}
+  .surf-technology,
+  .surf-environmental,
+  .surf-ding,
+  .surf-fins,
+  .surf-performance,
+  .surf-handcrafted {
+    h4 {
+      color: #000;
+      padding: 5px;
+    }
+
+    img {
+      border: solid #333 1px;
+    }
+  }
+
+  .surf-technology h4 {
+    background-color: #f00;
+  }
+
+  .surf-environmental h4 {
+    background-color: $skateColor;
+  }
+
+  .surf-ding h4 {
+    background-color: $surfColor;
+  }
+
+  .surf-fins h4 {
+    background-color: $snowColor;
+  }
+
+  .surf-performance h4 {
+    background-color: $skiColor;
+  }
+
+  .surf-handcrafted h4 {
+    background-color: #fff;
+  }
 }
+
 .single-libtech_bindings .product-extras .product-tech-major,
 .single-libtech_bindings .product-extras.info .product-tech-major,
 .single-libtech_bindings .product-extras.tech .product-tech-major,
 .single-libtech_bindings .product-extras.specs .product-tech-major {
-	display: none;
+  display: none;
 }
-.tech-minor {
-	clear: both;
 
-	.section-content {
-		padding: 0 20px;
-	}
-	h2 {
-		margin-bottom: 10px;
-	}
+.tech-minor {
+  clear: both;
+
+  .section-content {
+    padding: 0 20px;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
 }
+
 .tech-minor,
 .tech-minor .section-content {
-	& > ul > li {
-		padding-bottom: 20px;
+  & > ul > li {
+    padding-bottom: 20px;
 
-		h4 {
-			img {
-				width: 25%;
-				height: auto;
-				vertical-align: middle;
-				display: inline-block;
-				padding-bottom: 10px;
-			}
-			& > span {
-				width: 75%;
-				padding-left: 20px;
-				display: inline-block;
-			}
-		}
-		.tech-copy {
-			clear: both;
+    h4 {
+      img {
+        display: inline-block;
+        height: auto;
+        padding-bottom: 10px;
+        vertical-align: middle;
+        width: 25%;
+      }
 
-			ul {
-				margin-left: 25px;
-				list-style: square;
-			}
-		}
-	}
+      & > span {
+        display: inline-block;
+        padding-left: 20px;
+        width: 75%;
+      }
+    }
+
+    .tech-copy {
+      clear: both;
+
+      ul {
+        list-style: square;
+        margin-left: 25px;
+      }
+    }
+  }
 }
+
 .single-libtech_outerwear,
 .page-template-page-templatesstorm-factory-php {
-	.tech-minor > ul > li > img {
-		width: 100%;
-	}
+  .tech-minor > ul > li > img {
+    width: 100%;
+  }
 }
+
 .tech-faq {
-	.section-content {
-		padding: 0 10px;
-	}
-	h2 {
-		padding: 0 10px;
-		margin-bottom: 20px;
-	}
-	.faq-list {
-		width: 100%;
+  .section-content {
+    padding: 0 10px;
+  }
 
-		ul {
-			li {
-				max-width: 100%;
-				width: 100%;
-				padding-right: 10px;
-				padding-left: 10px;
-			}
-		}
-	}
+  h2 {
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .faq-list {
+    width: 100%;
+
+    ul {
+      li {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        width: 100%;
+      }
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-small) {
-	.tech-minor,
-	.tech-minor .section-content {
-		& > ul > li {
-			width: 48%;
-			display: inline-block;
-			vertical-align: top;
-			text-align: left;
+  .tech-minor,
+  .tech-minor .section-content {
+    & > ul > li {
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+      width: 48%;
 
-			.tech-pad {
-				padding: 10px;
-			}
-		}
-	}
-	.single-libtech_outerwear,
-	.page-template-page-templatesstorm-factory-php {
-		.tech-minor > ul > li {
-			width: 50%;
-			display: block;
-			float: left;
-			padding-right: 20px;
-		}
-	}
+      .tech-pad {
+        padding: 10px;
+      }
+    }
+  }
+
+  .single-libtech_outerwear,
+  .page-template-page-templatesstorm-factory-php {
+    .tech-minor > ul > li {
+      display: block;
+      float: left;
+      padding-right: 20px;
+      width: 50%;
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-medium) {
-	.tech-major ul li {
-		.tech-video {
-			width: 50%;
-			float: left;
-			margin-bottom: 0;
-			padding-right: 10px;
-		}
-		.tech-image {
-			width: 50%;
-			float: left;
-			margin-bottom: 0;
-		}
-		.tech-copy {
-			width: 50%;
-			float: left;
-			margin-bottom: 0;
-			padding-left: 10px;
+  .tech-major ul li {
+    .tech-video {
+      float: left;
+      margin-bottom: 0;
+      padding-right: 10px;
+      width: 50%;
+    }
 
-			ul {
-				margin-bottom: 0;
-			}
-		}
-		.tech-copy.surf {
-			h4, h5, p, ul {
-				margin-left: 10px;
-			}
-		}
-	}
-	.tech-major.tech-surf ul li {
-		.tech-image {
-			width: 30%;
-		}
-		.tech-copy {
-			width: 70%;
-		}
-	}
-	.tech-faq .faq-list ul {
-		width: 50%;
-		float: left;
-	}
+    .tech-image {
+      float: left;
+      margin-bottom: 0;
+      width: 50%;
+    }
+
+    .tech-copy {
+      float: left;
+      margin-bottom: 0;
+      padding-left: 10px;
+      width: 50%;
+
+      ul {
+        margin-bottom: 0;
+      }
+    }
+
+    .tech-copy.surf {
+      h4,
+      h5,
+      p,
+      ul {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .tech-major.tech-surf ul li {
+    .tech-image {
+      width: 30%;
+    }
+
+    .tech-copy {
+      width: 70%;
+    }
+  }
+
+  .tech-faq .faq-list ul {
+    float: left;
+    width: 50%;
+  }
 }
+
 @media screen and (min-width: $breakpoint-large) {
-	.tech-major ul li {
-		padding-right: 40px;
-	}
-	.page-template-page-technology-detail.surf {
-		.tech-major {
+  .tech-major ul li {
+    padding-right: 40px;
+  }
 
-			ul {
-				&.tech-top {
-					width: 50%;
-					float: left;
-					padding-right: 20px;
-				}
-				&.tech-bottom {
-					width: 50%;
-					float: right;
-					padding-left: 20px;
-				}
-				li {
-					padding-right: 0;
-				}
-			} 
-		} 
-	}
-	.tech-major .section-content > ul.tech-video-list > li {
-		margin-bottom: 10px;
-		width: 50%;
-		padding-right: 0;
-		float: left;
+  .page-template-page-technology-detail.surf {
+    .tech-major {
+      ul {
+        &.tech-top {
+          float: left;
+          padding-right: 20px;
+          width: 50%;
+        }
 
-		.tech-video {
-			width: 100%;
-			float: none;
-			padding: 0 0 10px 0;
-		}
-		&.odd {
-			clear: left;
+        &.tech-bottom {
+          float: right;
+          padding-left: 20px;
+          width: 50%;
+        }
 
-			.tech-wrapper {
-				padding-right: 20px;
-			}
-		}
-		&.even {
-			clear: right;
+        li {
+          padding-right: 0;
+        }
+      }
+    }
+  }
 
-			.tech-wrapper {
-				padding-left: 20px;
-			}
-		}
-		.tech-copy {
-			width: 100%;
-			float: none;
-			padding-left: 0;
+  .tech-major .section-content > ul.tech-video-list > li {
+    float: left;
+    margin-bottom: 10px;
+    padding-right: 0;
+    width: 50%;
 
-			.tech-found-on {
-				display: block;
-			}
-		}
-	}
+    .tech-video {
+      float: none;
+      padding: 0 0 10px;
+      width: 100%;
+    }
 
-	.tech-minor,
-	.tech-minor .section-content {
-		& > ul > li {
-			width: 33%;
-			display: inline-block;
-			vertical-align: top;
-			text-align: left;
-		}
-	}
-	.single-libtech_outerwear,
-	.page-template-page-templatesstorm-factory-php {
-		.tech-minor > ul > li {
-			width: 33.3%;
-			display: block;
-			float: left;
-		}
-	}
+    &.odd {
+      clear: left;
+
+      .tech-wrapper {
+        padding-right: 20px;
+      }
+    }
+
+    &.even {
+      clear: right;
+
+      .tech-wrapper {
+        padding-left: 20px;
+      }
+    }
+
+    .tech-copy {
+      float: none;
+      padding-left: 0;
+      width: 100%;
+
+      .tech-found-on {
+        display: block;
+      }
+    }
+  }
+
+  .tech-minor,
+  .tech-minor .section-content {
+    & > ul > li {
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+      width: 33%;
+    }
+  }
+
+  .single-libtech_outerwear,
+  .page-template-page-templatesstorm-factory-php {
+    .tech-minor > ul > li {
+      display: block;
+      float: left;
+      width: 33.3%;
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-xxlarge) {
-	.tech-minor,
-	.tech-minor .section-content {
-		& > ul > li {
-			width: 24%;
-			display: inline-block;
-			vertical-align: top;
-			text-align: left;
-		}
-	}
-	.single-libtech_outerwear,
-	.page-template-page-templatesstorm-factory-php {
-		.tech-minor > ul > li {
-			width: 25%;
-			display: block;
-			float: left;
-		}
-	}
+  .tech-minor,
+  .tech-minor .section-content {
+    & > ul > li {
+      display: inline-block;
+      text-align: left;
+      vertical-align: top;
+      width: 24%;
+    }
+  }
+
+  .single-libtech_outerwear,
+  .page-template-page-templatesstorm-factory-php {
+    .tech-minor > ul > li {
+      display: block;
+      float: left;
+      width: 25%;
+    }
+  }
 }

@@ -11,13 +11,13 @@ if (have_posts()) :
 ?>
         <section class="video-header <?php if ($videoID) { echo " video"; }; ?> container-fluid bg-texture-gradient">
             <div class="section-content row">
-                <h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12"><?php the_title(); ?></h1>
+                <h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
 
                 <?php
                     // display video if we have an id
                     if( $videoID ):
                 ?>
-                <div class="video-player col-xs-12">
+                <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
                     <div class="video-wrapper">
                         <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
