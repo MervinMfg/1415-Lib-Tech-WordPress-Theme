@@ -5,31 +5,66 @@
  */
  get_header(); ?>
 
- 		<div class="bg3-top"></div>
-		<section class="blog-posts bg3">
-			<div class="section-content">
-				<?php if (have_posts()) : ?>
-				<ul>
+		<section class="blog-posts container-fluid">
+			<div class="section-content row">
+				<?php
+          $latestPostsCategory = get_field('libtech_latest_posts_category');
+          if($latestPostsCategory) {
+            // get 3 most recent posts within defined category
+            $args = array(
+              'cat' => $latestPostsCategory,
+              'post__in'  => get_option( 'sticky_posts' ),
+              'ignore_sticky_posts' => 1
+            );
+            $moreUrl = get_category_link($latestPostsCategory);
+          } else {
+            // get 3 most recent posts within all categories
+            $args = array(
+              'post__in'  => get_option( 'sticky_posts' ),
+              'ignore_sticky_posts' => 1
+            );
+          }
+          // do post query
+          $postsQuery = new WP_Query($args);
+          if ($postsQuery->have_posts()) : ?>
+				<div>
+
 					<?php
-						while (have_posts()) :
-							the_post();
+            $i = 1;
+            while ($postsQuery->have_posts()) :
+							$postsQuery->the_post();
 							$postImage = get_post_image('square-medium');
+              // get post category and find top parent category (sport)
+							$postCategory = get_the_category();
+							$catTree = get_category_parents($postCategory[0]->term_id, FALSE, ':', TRUE);
+							$topCat = explode(':', $catTree);
+							$postSport = $topCat[0];
 					?>
-					<li <?php post_class('blog-post'); ?> id="post-<?php the_ID(); ?>">
-						<div class="post-wrapper">
+
+          <div <?php post_class([$postSport,  'blog-post col-xs-12 col-ms-12 col-sm-4']); ?> id="post-<?php the_ID(); ?>">
+						<div class="post-wrapper clearfix">
 							<a href="<?php the_permalink() ?>">
-								<img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
-								<h3 class="post-title"><?php the_title(); ?></h3>
-								<p class="post-meta">
-									<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time> | <span class="shares"></span>
-								</p>
-								<p class="post-excerpt"><?php echo libtech_excerpt('libtech_excerptlength_home'); ?></p>
-								<p class="post-more">READ MORE</p>
+                <?php if(!$latestPostsCategory) : ?><h4 class="post-category col-xs-12">Lib Tech <?php echo $postSport; ?></h4><?php endif; ?>
+								<div class="post-image-wrapper col-ms-4 col-sm-12">
+									<img src="<?php echo $postImage[0]; ?>" alt="Image From <?php echo get_the_title(); ?>" />
+								</div>
+								<div class="post-text-wrapper col-ms-8 col-sm-12">
+									<p class="post-meta">
+										<time datetime="<?php the_time('c') ?>"><?php the_time('F jS, Y') ?></time>
+									</p>
+									<h3 class="post-title"><?php the_title(); ?></h3>
+								</div>
 							</a>
 						</div>
-					</li>
-					<?php endwhile; ?>
-				</ul>
+					</div>
+
+          <?php
+              if($i %3 == 0) echo '<div class="clearfix visible-sm visible-md visible-lg"></div>';
+              $i++;
+            endwhile;
+          ?>
+
+				</div>
 				<?php
 					post_navigation();
 					else :
