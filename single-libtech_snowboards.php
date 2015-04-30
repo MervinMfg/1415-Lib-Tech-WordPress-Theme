@@ -7,63 +7,16 @@ Template Name: Snowboard Detail
 		$thePostID = $post->ID;
 		$slug = $post->post_name;
 ?>
-		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
-			<div class="section-content">
-				<ul class="product-listing bxslider">
-					<li class="diy">
-						<a href="/snowboarding/snowboard-builder/">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
-							<div class="product-peek">
-								<p class="product-title">DIY Board Builder</p>
-								<p class="product-type">Build your dream snowboard!</p>
-							</div>
-						</a>
-					</li>
-					<?php
-						$postType = "libtech_snowboards";
-						// Get Products
-						$args = array(
-							'post_type' => $postType,
-							'posts_per_page' => -1,
-							'orderby' => 'menu_order',
-							'order' => 'ASC'
-						);
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							$postType = $post->post_type;
-							$postSlug = $post->post_name;
-							$imageID = get_field('libtech_product_image');
-							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
-							// check for technology type to display
-							$productType = get_field('libtech_snowboard_contour');
-					?>
 
-					<li class="<?php echo $postSlug; ?>">
-						<a href="<? the_permalink(); ?>">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
-							<div class="product-peek">
-								<p class="product-title"><?php the_title(); ?></p>
-								<p class="product-type"><?php echo $productType; ?></p>
-							</div>
-						</a>
-					</li>
+		<?php include get_template_directory() . '/_/inc/modules/product-slider.php'; ?>
 
-					<?
-						endwhile;
-						wp_reset_query();
-					?>
-				</ul>
-
-			</div>
-		</section><!-- END .product-slider -->
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-        <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-	        <section class="product-details bg-product-details <?php echo $slug; ?>">
-	        	<div class="section-content">
+    <div class="bg-product-details-top product-details-nav-bottom"></div>
+    <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
+      <section class="product-details bg-product-details <?php echo $slug; ?>">
+				<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
 					<div class="product-images">
 						<ul id="image-list">
@@ -306,233 +259,234 @@ Template Name: Snowboard Detail
 				</div><!-- END .section-content -->
 			</section><!-- END .product-details -->
 			<section class="product-zoom bg-product-details">
-	        	<div class="section-content">
-	        		<div class="zoom-title"></div>
-	        		<div class="zoom-image">
-	        			<img src="" />
-	        		</div>
-	        		<div class="zoom-controls">
-	        			<a href="#close-zoom" class="zoom-close h3">Close</a>
-	        			<ul id="zoom-thumbnails"></ul>
-	        		</div>
-	        	</div><!-- END .section-content -->
-	        </section><!-- END .product-zoom -->
+      	<div class="section-content">
+      		<div class="zoom-title"></div>
+      		<div class="zoom-image">
+      			<img src="" />
+      		</div>
+      		<div class="zoom-controls">
+      			<a href="#close-zoom" class="zoom-close h3">Close</a>
+      			<ul id="zoom-thumbnails"></ul>
+      		</div>
+      	</div><!-- END .section-content -->
+      </section><!-- END .product-zoom -->
 			<div class="bg2-top"></div>
-	        <section class="product-extras bg2 info">
-	        	<div class="section-content clearfix">
-	        		<div class="product-mobile-nav clearfix">
-	        			<ul>
-	        				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-	        				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-	        				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-	        			</ul>
-	        		</div>
-	        		<div class="product-desc-awards-specs">
-	        			<div class="product-desc-awards">
-			        		<div class="product-description" itemprop="description">
-			        			<?php the_content(); ?>
-			        		</div>
-			        		<?php // display awards if there are any
-							$awards = get_field('libtech_product_awards');
-							if( $awards ):
-							?>
-				        	<div class="product-awards">
-								<h2>Awards</h2>
-								<ul>
-								<?php
-									foreach( $awards as $award):
-										$imageID = get_field('libtech_award_image', $award->ID);
-										$imageFile = wp_get_attachment_image_src($imageID, 'full');
-										echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
-									endforeach;
+        <section class="product-extras bg2 info">
+        	<div class="section-content clearfix">
+        		<div class="product-mobile-nav clearfix">
+        			<ul>
+        				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
+        				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
+        				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
+        			</ul>
+        		</div>
+        		<div class="product-desc-awards-specs">
+        			<div class="product-desc-awards">
+		        		<div class="product-description" itemprop="description">
+		        			<?php the_content(); ?>
+		        		</div>
+		        		<?php // display awards if there are any
+									$awards = get_field('libtech_product_awards');
+									if( $awards ):
 								?>
+			        	<div class="product-awards">
+									<h2>Awards</h2>
+									<ul>
+										<?php
+											foreach( $awards as $award):
+												$imageID = get_field('libtech_award_image', $award->ID);
+												$imageFile = wp_get_attachment_image_src($imageID, 'full');
+												echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
+											endforeach;
+										?>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+								<? endif; // end awards ?>
+							</div><!-- END .product-desc-awards -->
+							<div class="product-specs">
+								<h2>Specifications</h2>
+								<table>
+									<thead>
+										<tr>
+											<th>Size</th>
+											<th>Contact<br />Length</th>
+											<th>Side<br />Cut</th>
+											<th>Nose<br />Width</th>
+											<th>Waist<br />Width</th>
+											<th>Tail<br />Width</th>
+											<th>Stance*<br /><span>Min-Max / Set Back</span></th>
+											<th>Flex<br /><span>10 = Firm</span></th>
+											<th>Weight<br />Range <span>(lbs)</span></th>
+										</tr>
+									</thead>
+									<tbody>
+										<?php
+										if(get_field('libtech_snowboard_specs')): while(the_repeater_field('libtech_snowboard_specs')):
+											$snowboardLength = get_sub_field('libtech_snowboard_specs_length');
+											$snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
+											// setup readable short form of length and width
+											switch ($snowboardWidth) {
+												case "Narrow":
+													$snowboardLength = $snowboardLength . "N";
+													break;
+												case "Mid Wide":
+													$snowboardLength = $snowboardLength . "MW";
+													break;
+												case "Wide":
+													$snowboardLength = $snowboardLength . "W";
+													break;
+												case "Ultra Wide":
+													$snowboardLength = $snowboardLength . "UW";
+													break;
+											}
+										?>
 
-								</ul>
-								<div class="clearfix"></div>
+										<tr>
+											<td><?php echo $snowboardLength; ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_contact_length'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_sidecut'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_nose_width'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_waist_width'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_tail_width'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_stance_range'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_flex_rating'); ?></td>
+											<td><?php the_sub_field('libtech_snowboard_specs_weight_range'); ?> +</td>
+										</tr>
+
+										<?php endwhile; endif; ?>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="9"><a href="/snowboarding/specifications/" class="view-all-specs">View all specs</a></td>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
-							<? endif; // end awards ?>
-						</div><!-- END .product-desc-awards -->
-						<div class="product-specs">
-							<h2>Specifications</h2>
-							<table>
-								<thead>
-									<tr>
-										<th>Size</th>
-										<th>Contact<br />Length</th>
-										<th>Side<br />Cut</th>
-										<th>Nose<br />Width</th>
-										<th>Waist<br />Width</th>
-										<th>Tail<br />Width</th>
-										<th>Stance*<br /><span>Min-Max / Set Back</span></th>
-										<th>Flex<br /><span>10 = Firm</span></th>
-										<th>Weight<br />Range <span>(lbs)</span></th>
-									</tr>
-								</thead>
-								<tbody>
-									<?php
-									if(get_field('libtech_snowboard_specs')): while(the_repeater_field('libtech_snowboard_specs')):
-										$snowboardLength = get_sub_field('libtech_snowboard_specs_length');
-										$snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
-										// setup readable short form of length and width
-										switch ($snowboardWidth) {
-											case "Narrow":
-												$snowboardLength = $snowboardLength . "N";
-												break;
-											case "Mid Wide":
-												$snowboardLength = $snowboardLength . "MW";
-												break;
-											case "Wide":
-												$snowboardLength = $snowboardLength . "W";
-												break;
-											case "Ultra Wide":
-												$snowboardLength = $snowboardLength . "UW";
-												break;
-										}
-									?>
+						</div><!-- END .product-desc-awards-specs -->
 
-									<tr>
-										<td><?php echo $snowboardLength; ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_contact_length'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_sidecut'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_nose_width'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_waist_width'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_tail_width'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_stance_range'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_flex_rating'); ?></td>
-										<td><?php the_sub_field('libtech_snowboard_specs_weight_range'); ?> +</td>
-									</tr>
+						<?php // grab technology if there is any
+						$technology = get_field('libtech_product_technology');
+						if( $technology ):
+							$technologyMajor = Array();
+							$technologyMinor = Array();
+							foreach( $technology as $techItem):
+								$title = get_the_title($techItem->ID);
+								$content = apply_filters('the_content', $techItem->post_content);
+								$techType = get_field("libtech_technology_type", $techItem->ID);
+								$videoID = get_field("libtech_technology_video", $techItem->ID);
+								$imageID = get_field("libtech_technology_icon", $techItem->ID);
+								$imageFile = wp_get_attachment_image_src($imageID, 'full');
+								if ($techType == "Major") {
+									array_push($technologyMajor, Array($title, $content, $videoID));
+								} else {
+									array_push($technologyMinor, Array($title, $content, $imageFile));
+								}
+							endforeach;
+							// CHECK IF WE SHOULD DISPLAY MAJOR TECHNOLOGY
+							if (count($technologyMajor) > 0) :
+						?>
 
-									<?php endwhile; endif; ?>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="9"><a href="/snowboarding/specifications/" class="view-all-specs">View all specs</a></td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</div><!-- END .product-desc-awards-specs -->
+	        	<div class="product-tech-major tech-major">
+							<h2>Technology</h2>
+							<ul>
 
-					<?php // grab technology if there is any
-					$technology = get_field('libtech_product_technology');
-					if( $technology ):
-						$technologyMajor = Array();
-						$technologyMinor = Array();
-						foreach( $technology as $techItem):
-							$title = get_the_title($techItem->ID);
-							$content = apply_filters('the_content', $techItem->post_content);
-							$techType = get_field("libtech_technology_type", $techItem->ID);
-							$videoID = get_field("libtech_technology_video", $techItem->ID);
-							$imageID = get_field("libtech_technology_icon", $techItem->ID);
-							$imageFile = wp_get_attachment_image_src($imageID, 'full');
-							if ($techType == "Major") {
-								array_push($technologyMajor, Array($title, $content, $videoID));
-							} else {
-								array_push($technologyMinor, Array($title, $content, $imageFile));
-							}
-						endforeach;
-						// CHECK IF WE SHOULD DISPLAY MAJOR TECHNOLOGY
-						if (count($technologyMajor) > 0) :
-					?>
+								<?php foreach( $technologyMajor as $techItem): ?>
 
-		        	<div class="product-tech-major tech-major">
-						<h2>Technology</h2>
-						<ul>
-							<?php foreach( $technologyMajor as $techItem): ?>
-
-							<li>
-								<div class="tech-video">
-									<iframe src="http://player.vimeo.com/video/<?php echo $techItem[2]; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-								</div>
-								<div class="tech-copy">
-									<h4><?php echo $techItem[0]; ?></h4>
-									<?php echo $techItem[1]; ?>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-
-							<?php endforeach; ?>
-						</ul>
-					</div><!-- END .product-tech-major -->
-
-					<?
-						endif; // end tech major check
-						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
-						if (count($technologyMinor) > 0) :
-					?>
-
-					<div class="product-tech-minor tech-minor">
-						<h2>Ingredients</h2>
-						<ul>
-							<?php foreach( $technologyMinor as $techItem): ?>
-
-							<li>
-								<div class="tech-pad">
-									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
+								<li>
+									<div class="tech-video">
+										<iframe src="http://player.vimeo.com/video/<?php echo $techItem[2]; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
 									<div class="tech-copy">
+										<h4><?php echo $techItem[0]; ?></h4>
 										<?php echo $techItem[1]; ?>
 									</div>
-								</div>
-							</li>
+									<div class="clearfix"></div>
+								</li>
 
-							<?php endforeach; ?>
-						</ul>
-					</div><!-- END .product-tech-minor -->
+								<?php endforeach; ?>
 
-					<?
-						endif; // end tech minor check
-					endif;// end technology check
+							</ul>
+						</div><!-- END .product-tech-major -->
+
+						<?
+							endif; // end tech major check
+							// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
+							if (count($technologyMinor) > 0) :
+						?>
+
+						<div class="product-tech-minor tech-minor">
+							<h2>Ingredients</h2>
+							<ul>
+								<?php foreach( $technologyMinor as $techItem): ?>
+
+								<li>
+									<div class="tech-pad">
+										<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
+										<div class="tech-copy">
+											<?php echo $techItem[1]; ?>
+										</div>
+									</div>
+								</li>
+
+								<?php endforeach; ?>
+							</ul>
+						</div><!-- END .product-tech-minor -->
+
+						<?
+							endif; // end tech minor check
+						endif;// end technology check
+						?>
+
+					</div>
+				</section><!-- END .product-extras -->
+			</div><!-- END .schema-wrapper -->
+
+			<?php
+				// display video if we have an id
+				$videoID = get_field('libtech_product_video');
+				if( $videoID ):
+			?>
+			<div class="bg3-top product-video-top"></div>
+      <section class="bg3 product-video">
+      	<div class="section-content">
+					<div class="video-player">
+						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+					</div>
+				</div>
+			</section>
+			<?php
+				endif;
+				// display gallery if we have one
+				if( get_field('libtech_snowboard_gallery') ):
+					if( $videoID ) {
+						$topClass = "bg2-top";
+						$sectionClass = "bg2";
+					} else {
+						$topClass = "bg3-top";
+						$sectionClass = "bg3";
+					}
+			?>
+			<div class="<?php echo $topClass; ?> product-gallery-top"></div>
+			<section class="<?php echo $sectionClass; ?> product-gallery">
+				<div class="section-content">
+					<h2>Gallery</h2>
+					<?php
+						$image_ids = get_field('libtech_snowboard_gallery', false, false);
+						$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
+						echo do_shortcode( $shortcode );
 					?>
-
-				</div>
-			</section><!-- END .product-extras -->
-		</div><!-- END .schema-wrapper -->
+					<div class="clearfix"></div>
+				</div><!-- END .section-content -->
+			</section><!-- END .product-gallery -->
+			<?php endif; ?>
 
 		<?php
-			// display video if we have an id
-			$videoID = get_field('libtech_product_video');
-			if( $videoID ):
+			// display disqus comments
+			libtech_comments_template();
+			// display the related products
+			getRelatedProducts();
 		?>
-		<div class="bg3-top product-video-top"></div>
-        <section class="bg3 product-video">
-        	<div class="section-content">
-				<div class="video-player">
-					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-				</div>
-			</div>
-		</section>
-		<?php
-			endif;
-			// display gallery if we have one
-			if( get_field('libtech_snowboard_gallery') ):
-				if( $videoID ) {
-					$topClass = "bg2-top";
-					$sectionClass = "bg2";
-				} else {
-					$topClass = "bg3-top";
-					$sectionClass = "bg3";
-				}
-		?>
-		<div class="<?php echo $topClass; ?> product-gallery-top"></div>
-		<section class="<?php echo $sectionClass; ?> product-gallery">
-			<div class="section-content">
-				<h2>Gallery</h2>
-				<?php
-					$image_ids = get_field('libtech_snowboard_gallery', false, false);
-					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
-					echo do_shortcode( $shortcode );
-				?>
-				<div class="clearfix"></div>
-			</div><!-- END .section-content -->
-		</section><!-- END .product-gallery -->
-	<?php endif; ?>
-
-	<?php
-		// display disqus comments
-		libtech_comments_template();
-		// display the related products
-		getRelatedProducts();
-	?>
 
 <?php
 		endwhile;

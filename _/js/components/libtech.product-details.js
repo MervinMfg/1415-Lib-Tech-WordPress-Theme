@@ -99,7 +99,7 @@ LIBTECH.ProductDetails.prototype = {
 		}
 		// check for browser resize and see if desktop zoom should occur
 		$(window).on('resize.productZoom', function () {
-			if (LIBTECH.main.utilities.getMediaWidth() >= 480) { // if not mobile, trigger zoom on click
+			if (LIBTECH.main.utilities.responsiveCheck() != 'base') { // if not mobile, trigger zoom on click
 				// zoom listener
 				$('.product-images #image-list li a').on('click.productZoom', function (e) {
 					e.preventDefault();
@@ -184,43 +184,30 @@ LIBTECH.ProductDetails.prototype = {
 		if (self.config.currency !== 'USD') {
 			$('.product-details-nav .product-listing .superbanana').remove();
 		}
-		// lazy load of images
-		$(".product-details-nav img.lazy").unveil();
-		// set image width based on product type, we want them to be the same height
-		if ($('body').hasClass('single-libtech_accessories') || $('body').hasClass('single-libtech_apparel') || $('body').hasClass('single-libtech_luggage') || $('body').hasClass('single-libtech_surfboards')) {
-			imageWidth = 175;
-		} else {
-			imageWidth = 125;
-		}
-		if (LIBTECH.main.utilities.getMediaWidth() >= 768) {
+		if(LIBTECH.main.utilities.responsiveCheck() == 'base' || LIBTECH.main.utilities.responsiveCheck() == 'small') {
 			// destroy slider if it exists
 			if (self.config.prodNavSlider) {
-				self.config.prodNavSlider.destroySlider();
+				self.config.prodNavSlider.uninit();
 				self.config.prodNavSlider = null;
 			}
-			// init bx slider
-			self.config.prodNavSlider = $('.product-details-nav .bxslider').bxSlider({
-				slideWidth: imageWidth,
-				minSlides: 2,
-				maxSlides: 12,
-				slideMargin: 10,
-				auto: false,
-				speed: 500,
-				controls: true,
-				pager: false,
-				mode: 'horizontal',
-				moveSlides: 2,
-				infiniteLoop: false,
-				hideControlOnEnd: true,
-				onSlideAfter: function () {$(window).scroll();} // make sure lazy load images show
-			});
-			prodNavHeight = $prodNav.outerHeight();
-			closedMargin = (prodNavHeight + 60) * -1;
-			openedMargin = (prodNavHeight - 100) * -1;
+		} else if(!self.config.prodNavSlider) {
+			// setup product slider
+			self.config.prodNavSlider = new LIBTECH.ProductSlider(false, false);
+			updateSlider();
+		} else {
+			updateSlider();
+		}
+
+		function updateSlider() {
+			prodNavHeight = $prodNavContent.outerHeight();
+			closedMargin = (prodNavHeight - 80) * -1;
+			openedMargin = 60;
+			console.log('closedMargin', closedMargin);
 			// show prod nav in closed state
-			TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin, delay: 1});
+			TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
 			// toggle prod nav on click
-			$navLink.click(function() {
+			$navLink.off('click.productNav');
+			$navLink.on('click.productNav', function() {
 				if (navState == "opened") {
 					TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
 					navState = "closed";
@@ -228,7 +215,6 @@ LIBTECH.ProductDetails.prototype = {
 					TweenMax.to($prodNavContent, 0.3, {marginTop: openedMargin});
 					navState = "opened";
 				}
-
 			});
 		}
 		$(window).on('resize.productNav', function () {

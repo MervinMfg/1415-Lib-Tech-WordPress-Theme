@@ -9,45 +9,10 @@ get_header();
 
 		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
-		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider bg-product-<?php echo $GLOBALS['sport']; ?>">
-			<div class="section-content">
-				<ul class="product-listing bxslider">
-					<?php
-						// Get Outerwear
-						$args = array(
-							'post_type' => "libtech_outerwear",
-							'posts_per_page' => -1,
-							'orderby' => 'menu_order',
-							'order' => 'ASC',
-						);
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							$postType = $post->post_type;
-							$imageID = get_field('libtech_product_image');
-							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
-					?>
+		<?php include get_template_directory() . '/_/inc/modules/product-slider.php'; ?>
 
-					<li>
-						<a href="<? the_permalink(); ?>">
-							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" />
-							<div class="product-peek">
-								<p class="product-title"><?php the_title(); ?></p>
-								<p class="product-type"><?php the_field('libtech_snowboard_contour'); ?></p>
-							</div>
-						</a>
-					</li>
-
-					<?
-						endwhile;
-						wp_reset_query();
-					?>
-				</ul>
-				<a href="/outerwear/" class="h4 view-all-link">View all outerwear</a>
-			</div>
-		</section><!-- END .product-slider -->
-		<div class="bg3-top"></div>
-		<section class="storm-factory-overview bg3">
+		<div class="bg2-top"></div>
+		<section class="storm-factory-overview bg2">
 			<div class="section-content">
 				<div class="overview-content-wrapper">
 					<div class="storm-image">

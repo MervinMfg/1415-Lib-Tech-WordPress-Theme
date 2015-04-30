@@ -6,29 +6,42 @@
   overflow: hidden;
   padding-bottom: 60px;
 
-  .bx-wrapper {
-    .bx-viewport {
-      background: none;
-      overflow: visible !important;
-    }
+  .section-content {
+    max-width: none;
+  }
 
-    .bx-loading {
-      background: none;
+  .owl-carousel {
+    display: block;
+
+    .owl-stage {
+      display: inline-block;
     }
   }
 
-  ul {
+  .product-list {
     padding-bottom: 20px;
+    text-align: center;
 
-    li {
+    .product-item {
       display: inline-block;
+      overflow: hidden;
+      position: relative;
       width: 220px;
 
       img {
+        @include transition(opacity, 300ms);
         height: auto;
         margin-left: -20%;
         max-width: 140%;
         width: 140%;
+
+        &.lazy {
+          @include vendorize(opacity, 0);
+        }
+
+        &.loaded {
+          @include vendorize(opacity, 1);
+        }
       }
 
       .mobile-grid-link {
@@ -40,6 +53,10 @@
         width: 100%;
       }
     }
+  }
+
+  .owl-loaded .product-item {
+    width: 100%;
   }
 
   .call-to-action {
@@ -63,9 +80,12 @@
   }
 }
 
-.home,
-.surf {
-  .product-slider ul li img {
+.single-libtech_accessories,
+.single-libtech_apparel,
+.single-libtech_luggage,
+.single-libtech_surfboards,
+.page-template-home-sport.surf {
+  .product-slider .product-list .product-item img {
     height: auto;
     margin-left: 0;
     max-width: 100%;
@@ -74,8 +94,10 @@
 }
 
 .product-details-nav {
-  ul {
-    li {
+  .product-list {
+    padding-bottom: 0;
+
+    .product-item {
       .product-peek {
         @include vendorize(opacity, 0);
         background: #000;
@@ -91,7 +113,7 @@
           font-weight: bold;
           text-transform: uppercase;
         }
-        
+
         .product-type {
           color: #fff;
         }

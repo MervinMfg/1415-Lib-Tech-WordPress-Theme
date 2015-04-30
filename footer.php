@@ -134,6 +134,11 @@
 			</div><!-- END .footer-wrapper -->
 		</footer>
 	</div><!-- END .wrapper -->
+	<div class="responsive-check">
+		<div class="breakpoint-small"></div>
+		<div class="breakpoint-medium"></div>
+		<div class="breakpoint-large"></div>
+	</div><!-- .responsive-check -->
 
 	<?php wp_footer(); ?>
 

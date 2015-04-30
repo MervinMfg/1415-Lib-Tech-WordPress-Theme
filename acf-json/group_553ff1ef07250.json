@@ -1,14 +1,14 @@
 {
-    "key": "group_53baf20215c8a",
-    "title": "Homepage Details",
+    "key": "group_553ff1ef07250",
+    "title": "Product Slider",
     "fields": [
         {
-            "key": "field_536c3471c30db",
+            "key": "field_553ff1f58d237",
             "label": "Featured Products",
-            "name": "libtech_homepage_featured_products",
+            "name": "libtech_product_slider_featured_products",
             "prefix": "",
             "type": "relationship",
-            "instructions": "Choose 4 vertical products to appear at the bottom of the homepage. Click and drag to reorder.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -20,7 +20,11 @@
                 "libtech_snowboards",
                 "libtech_nas",
                 "libtech_surfboards",
-                "libtech_skateboards"
+                "libtech_skateboards",
+                "libtech_outerwear",
+                "libtech_apparel",
+                "libtech_accessories",
+                "libtech_luggage"
             ],
             "taxonomy": "",
             "filters": [
@@ -29,7 +33,7 @@
             ],
             "elements": "",
             "min": "",
-            "max": 4,
+            "max": "",
             "return_format": "object"
         }
     ],
@@ -38,7 +42,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/home.php"
+                "value": "page-templates\/lib-legs.php"
             }
         ]
     ],
@@ -48,6 +52,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
-    "local": "json"
+    "modified": 1430254156
 }

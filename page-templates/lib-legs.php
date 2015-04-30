@@ -33,42 +33,7 @@ get_header();
 
 		<?php include get_template_directory() . '/_/inc/modules/featured-slider.php'; ?>
 
-		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider bg-product-<?php echo $GLOBALS['sport']; ?>">
-			<div class="section-content">
-				<ul class="product-listing bxslider">
-					<?php
-						$post_objects = get_field('libtech_liblegs_featured_product');
-					    if( $post_objects ):
-					        // get each related product
-					        foreach( $post_objects as $post_object):
-					            $postType = $post_object->post_type;
-					            // get variable values
-					            $imageID = get_field('libtech_product_image', $post_object->ID);
-					            // check which image size to use based on post type
-					            $imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
-					            $productLink = get_permalink($post_object->ID);
-					            $productTitle = get_the_title($post_object->ID);
-					?>
-
-					<li>
-						<a href="<? echo $productLink; ?>">
-							<img src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php echo $productTitle; ?> Image" />
-							<div class="product-peek">
-								<p class="product-title"><?php echo $productTitle; ?></p>
-								<!-- <p class="product-type"></p> -->
-							</div>
-						</a>
-					</li>
-
-					<?
-							endforeach;
-						endif;
-					?>
-				</ul>
-			</div>
-		</section><!-- END .product-slider -->
-		<div class="bg1-top"></div>
+		<?php include get_template_directory() . '/_/inc/modules/product-slider.php'; ?>
 
 		<?php include get_template_directory() . '/_/inc/modules/latest-posts.php'; ?>
 

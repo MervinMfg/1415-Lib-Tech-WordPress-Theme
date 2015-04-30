@@ -85,12 +85,12 @@ LIBTECH.ProductOverview.prototype = {
 		// get new width of each item based on browser width
 		function getUnitWidth() {
 			var width, windowWidth;
-			windowWidth = LIBTECH.main.utilities.getMediaWidth();
-			if (windowWidth < 480) {
+			windowWidth = LIBTECH.main.utilities.responsiveCheck();
+			if (windowWidth == 'base') {
 				width = self.config.productListing.width() / 2;
-			} else if (windowWidth < 768) {
+			} else if (windowWidth == 'small') {
 				width = self.config.productListing.width() / 3;
-			} else if (windowWidth < 992) {
+			} else if (windowWidth == 'medium') {
 				width = self.config.productListing.width() / 4;
 			} else {
 				width = self.config.productListing.width() / 5;

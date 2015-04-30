@@ -1,99 +1,111 @@
-/* ==========================================================================
-   BASE/_UTILITY.SCSS
-   ========================================================================== */
+// ==========================================================================
+// BASE/_UTILITY.SCSS
+// ==========================================================================
 
 // DISPLAY
 .block {
-	display: block;
+  display: block;
 }
+
 .hide {
-	display: none;
+  display: none;
 }
+
 .offscreen {
-	display: block;
-	left: -999999px;
-	position: absolute;
-	top: -999999px;
+  display: block;
+  left: -999999px;
+  position: absolute;
+  top: -999999px;
 }
+
 .screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
 }
+
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-weight: bold;
-	height: auto;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	position: absolute;
-	left: 5px;
-	top: 5px;
-	text-decoration: none;
-	text-transform: none;
-	width: auto;
-	z-index: 100000; // Above WP toolbar
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  position: absolute;
+  text-decoration: none;
+  text-transform: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; // Above WP toolbar
 }
+
 // CLEARFIX
 .clearfix {
-	*zoom: 1;
+  *zoom: 1;
 }
+
 .clearfix:before,
 .clearfix:after {
-	content: " "; // 1
-	display: table; // 2
+  content: ' '; // 1
+  display: table; // 2
 }
+
 .clearfix:after {
-	clear: both;
+  clear: both;
 }
+
 // LINES, HRS, BORDERS
 .hr {
-	border-top: 1px solid #666;
-	display: block;
-	
-	// just a test
-	border-radius: 2px;
-	
-	hr {
-		display: none;
+  border-radius: 2px;
+  border-top: 1px solid #666;
+  display: block;
+
+  hr {
+    display: none;
 	}
 }
+
 // RESPONSIVE CHECK
 .responsive-check {
-	.breakpoint-small,
-	.breakpoint-medium,
-	.breakpoint-large {
-		display: none;
-	}
+  .breakpoint-small,
+  .breakpoint-medium,
+  .breakpoint-large {
+    display: none;
+  }
 }
+
 @media screen and (min-width: $breakpoint-small) {
-	.responsive-check .breakpoint-small {
-		display: block;
-	}
+  .responsive-check .breakpoint-small {
+    display: block;
+  }
 }
+
 @media screen and (min-width: $breakpoint-medium) {
-	.responsive-check {
-		.breakpoint-small {
-			display: none;
-		}
-		.breakpoint-medium {
-			display: block;
-		}
-	}
+  .responsive-check {
+    .breakpoint-small {
+      display: none;
+    }
+
+    .breakpoint-medium {
+      display: block;
+    }
+  }
 }
+
 @media screen and (min-width: $breakpoint-large) {
-	.responsive-check {
-		.breakpoint-small,
-		.breakpoint-medium {
-			display: none;
-		}
-		.breakpoint-large {
-			display: block;
-		}
-	}
+  .responsive-check {
+    .breakpoint-small,
+    .breakpoint-medium {
+      display: none;
+    }
+
+    .breakpoint-large {
+      display: block;
+    }
+  }
 }

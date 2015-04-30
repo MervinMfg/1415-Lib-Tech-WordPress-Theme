@@ -22,61 +22,21 @@ Template Name: Skateboard Detail
 			endwhile;
 		endif;
 ?>
-		<div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-		<section class="product-slider product-details-nav bg-product-<?php echo $GLOBALS['sport']; ?>">
-			<div class="section-content">
-				<ul class="product-listing bxslider">
-					<?php
-						$postType = "libtech_skateboards";
-						// Get Products
-						$args = array(
-							'post_type' => $postType,
-							'posts_per_page' => -1,
-							'orderby' => 'menu_order',
-							'order' => 'ASC',
-						);
-						$loop = new WP_Query( $args );
-						while ( $loop->have_posts() ) : $loop->the_post();
-							$postType = $post->post_type;
-							$imageID = get_field('libtech_product_image');
-							$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
-							// check for technology type to display
-							$categories = get_the_terms( $post->ID , 'libtech_skateboard_categories' );
-								foreach ( $categories as $category ) {
-									$productType = $category->name;
-			                        break;
-			                    }
-					?>
 
-					<li>
-						<a href="<? the_permalink(); ?>">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
-							<div class="product-peek">
-								<p class="product-title"><?php the_title(); ?></p>
-								<p class="product-type"><?php echo $productType; ?></p>
-							</div>
-						</a>
-					</li>
+		<?php include get_template_directory() . '/_/inc/modules/product-slider.php'; ?>
 
-					<?
-						endwhile;
-						wp_reset_query();
-					?>
-				</ul>
-			</div>
-		</section><!-- END .product-slider -->
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-        <div class="bg-product-details-top product-details-nav-bottom"></div>
-        <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-	        <section class="product-details bg-product-details <?php echo $slug; ?>">
-	        	<div class="section-content">
+    <div class="bg-product-details-top product-details-nav-bottom"></div>
+    <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
+			<section class="product-details bg-product-details <?php echo $slug; ?>">
+      	<div class="section-content">
 					<h1 itemprop="name"><?php the_title(); ?></h1>
 					<div class="product-images">
 						<ul id="image-list">
-				       		<?php
-				       			$thumbnailImages = Array();
+							<?php
+								$thumbnailImages = Array();
 								if(get_field('libtech_skateboard_options')):
 									$imageNum = 0;
 									while(the_repeater_field('libtech_skateboard_options')):
@@ -110,23 +70,24 @@ Template Name: Skateboard Detail
 											while(the_repeater_field('libtech_skateboard_options_images')):
 												$optionImage = get_sub_field('libtech_skateboard_options_images_img');
 												$optionImageThumb = wp_get_attachment_image_src($optionImage, 'thumbnail', false);
-					       						$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
-					       						$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
-					       						array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionName, $optionVariationSizes, $optionVariationSKUs));
+												$optionImageMedium = wp_get_attachment_image_src($optionImage, 'square-xlarge', false);
+												$optionImageFull = wp_get_attachment_image_src($optionImage, 'full', false);
+												array_push($thumbnailImages, Array($optionImageThumb, $optionImageFull, $optionName, $optionVariationSizes, $optionVariationSKUs));
 							?>
+
 							<li><a href="<?php echo $optionImageFull[0]; ?>" title="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>"><img src="<?php echo $optionImageMedium[0]; ?>" alt="<?php the_title(); ?> - <?php echo $optionVariationSizes; ?>" width="<?php echo $optionImageMedium[1]; ?>" height="<?php echo $optionImageMedium[2]; ?>"<?php if($imageNum == 0) echo "itemprop='image'"; ?> /></a></li>
+
 							<?php
-							$imageNum++;
+												$imageNum++;
 											endwhile;
-					       				endif;
+										endif;
 									endwhile;
 								endif;
 							?>
 						</ul>
-					</div><!-- END .product-images -->
+					</div><!-- .product-images -->
 					<div class="product-details-right">
 						<h3><?php the_field('libtech_product_slogan'); ?></h3>
-
 						<div class="image-list-thumbs <?php if(count($thumbnailImages) < 2){ echo 'hidden'; }?>">
 							<ul id="image-list-thumbs">
 								<?php
@@ -164,7 +125,7 @@ Template Name: Skateboard Detail
 							<link itemprop="itemCondition" href="http://schema.org/NewCondition" />
 							<p class="price-alert usd cad">Free shipping over $75</p>
 							<p class="price-alert eur">Free shipping over €75</p>
-						</div>
+						</div><!-- .product-price -->
 						<?php
 							$productArray = Array();
 							// grab availability
@@ -218,11 +179,11 @@ Template Name: Skateboard Detail
 								<option value="<?php echo $product['sku']; ?>" title="<?php echo $product['name']; ?>" data-avail-us="<?php echo $product['available']['us']['amount']; ?>" data-avail-ca="<?php echo $product['available']['ca']['amount']; ?>" data-avail-eur="<?php echo $product['available']['eu']['amount']; ?>" <?php if(count($productArray) == 1) echo ' selected="selected"'; ?>><?php echo $product['name']; ?></option>
 								<?php endforeach; ?>
 							</select>
-						</div>
+						</div><!-- .product-variations -->
 						<div class="product-alert">
 							<p class="low-inventory"><span>Product Alert:</span> Currently less than 10 available.</p>
 							<p class="no-inventory"><span>Product Alert:</span> We are currently out of stock on this item. Our dealer network may be able to fulfill this order.</p>
-						</div><!-- .available-alert -->
+						</div><!-- .product-alert -->
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
@@ -232,7 +193,7 @@ Template Name: Skateboard Detail
 							</ul>
 							<div class="cart-success hidden"><p>The item has been added to your cart.</p><p><a href="/shopping-cart/" class="cart-link">View your shopping cart</a></p></div>
 							<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
-						</div>
+						</div><!-- .product-buy -->
 						<ul class="product-quick-specs">
 							<?php
 								// build array of sizes
@@ -262,56 +223,56 @@ Template Name: Skateboard Detail
 							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
 							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
 						</ul>
-					</div><!-- END .product-details-right -->
+					</div><!-- .product-details-right -->
 					<div class="clearfix"></div>
-				</div><!-- END .section-content -->
+				</div><!-- .section-content -->
 			</section>
 			<section class="product-zoom bg-product-details">
-	        	<div class="section-content">
-	        		<div class="zoom-title"></div>
-	        		<div class="zoom-image">
-	        			<img src="" />
-	        		</div>
-	        		<div class="zoom-controls">
-	        			<a href="#close-zoom" class="zoom-close h3">Close</a>
-	        			<ul id="zoom-thumbnails"></ul>
-	        		</div>
-	        	</div><!-- END .section-content -->
-	        </section><!-- END .product-zoom -->
+	    	<div class="section-content">
+	    		<div class="zoom-title"></div>
+      		<div class="zoom-image">
+      			<img src="" />
+      		</div>
+      		<div class="zoom-controls">
+      			<a href="#close-zoom" class="zoom-close h3">Close</a>
+      			<ul id="zoom-thumbnails"></ul>
+      		</div>
+				</div><!-- .section-content -->
+			</section><!-- .product-zoom -->
 			<div class="bg2-top"></div>
-	        <section class="product-extras bg2 info">
-	        	<div class="section-content clearfix">
-	        		<div class="product-mobile-nav clearfix">
-	        			<ul>
-	        				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-	        				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-	        				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-	        			</ul>
+      <section class="product-extras bg2 info">
+      	<div class="section-content clearfix">
+	    		<div class="product-mobile-nav clearfix">
+	    			<ul>
+	    				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
+	    				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
+	    				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
+	    			</ul>
+	    		</div>
+      		<div class="product-desc-awards-specs">
+	    			<div class="product-desc-awards">
+	        		<div class="product-description" itemprop="description">
+	        			<?php the_content(); ?>
 	        		</div>
-	        		<div class="product-desc-awards-specs">
-	        			<div class="product-desc-awards">
-			        		<div class="product-description" itemprop="description">
-			        			<?php the_content(); ?>
-			        		</div>
-			        		<?php // display awards if there are any
-							$awards = get_field('libtech_product_awards');
-							if( $awards ):
+
+	        		<?php // display awards if there are any
+								$awards = get_field('libtech_product_awards');
+								if( $awards ):
 							?>
-				        	<div class="product-awards">
+		        	<div class="product-awards">
 								<h2>Awards</h2>
 								<ul>
-								<?php
-									foreach( $awards as $award):
-										$imageID = get_field('libtech_award_image', $award->ID);
-										$imageFile = wp_get_attachment_image_src($imageID, 'full');
-										echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
-									endforeach;
-								?>
-
+									<?php
+										foreach( $awards as $award):
+											$imageID = get_field('libtech_award_image', $award->ID);
+											$imageFile = wp_get_attachment_image_src($imageID, 'full');
+											echo '<li><img src="'.$imageFile[0].'" width="'.$imageFile[1].'" height="'.$imageFile[2].'" alt="' . get_the_title($award->ID) . '" /><div class="tool-tip">' . get_the_title($award->ID) . '</div></li>';
+										endforeach;
+									?>
 								</ul>
 							</div>
 							<? endif; // end awards ?>
-						</div><!-- END .product-desc-awards -->
+						</div><!-- .product-desc-awards -->
 						<div class="product-specs">
 							<h2>Specifications</h2>
 							<table>
@@ -485,7 +446,7 @@ Template Name: Skateboard Detail
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>
-		        	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?>">
+        	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?>">
 						<h2>Ingredients</h2>
 						<ul>
 							<?php foreach( $technologyMinor as $techItem): ?>
@@ -501,7 +462,7 @@ Template Name: Skateboard Detail
 
 							<?php endforeach; ?>
 						</ul>
-					</div><!-- END .product-tech-minor -->
+					</div><!-- .product-tech-minor -->
 
 					<?
 						endif; // end tech minor check
@@ -516,14 +477,16 @@ Template Name: Skateboard Detail
 			$videoID = get_field('libtech_product_video');
 			if( $videoID ):
 		?>
+
 		<div class="bg3-top product-video-top"></div>
-        <section class="bg3 product-video">
-        	<div class="section-content">
+    <section class="bg3 product-video">
+    	<div class="section-content">
 				<div class="video-player">
 					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				</div>
 			</div>
 		</section>
+
 		<?php
 			endif;
 			// display disqus comments
@@ -531,6 +494,7 @@ Template Name: Skateboard Detail
 			// display the related products
 			getRelatedProducts();
 		?>
+		
 <?php
 		endwhile;
 	endif;

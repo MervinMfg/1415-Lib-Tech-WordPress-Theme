@@ -89,7 +89,7 @@ LIBTECH.main = {
 		$(".nav-sub-wrapper .mobile-btn").unbind('click');
 		$(window).off('resize.mainMenu');
 		// close menu by default
-		if (self.utilities.getMediaWidth() < 480) {
+		if (self.utilities.responsiveCheck() == 'base') {
 			$('.nav-sub-wrapper').stop().animate({
 				marginTop: marginClosed
 			}, {
@@ -121,7 +121,7 @@ LIBTECH.main = {
 		});
 		// reinit menu on resize
 		$(window).on('resize.mainMenu', function () {
-			if (self.utilities.getMediaWidth() < 480) {
+			if (self.utilities.responsiveCheck() == 'base') {
 				self.menuInit();
 			} else {
 				$('.nav-sub-wrapper').stop();
@@ -187,46 +187,16 @@ LIBTECH.main = {
 		new LIBTECH.Instagram();
 	},
 	homeSportInit: function () {
-		var self, slideWidth, slideMargin, currencyCookie;
+		var self, $teamCta;
 		self = this;
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider();
-		// change slide size for surfboards
-		// check for surf specific content
-		if ($('body').hasClass('surf')) {
-			slideWidth = 260;
-			slideMargin = 40;
-			// responsive video
-			$(".faq").fitVids();
-		} else {
-			slideWidth = 220;
-			slideMargin = 10;
-		}
-		currencyCookie = self.utilities.cookie.getCookie('libtech_currency');
-		// remove super banana if we're not in US
-		if (currencyCookie !== 'USD') {
-			$('.product-slider .product-listing .superbanana').remove();
-		}
-		// set up product slider
-		var slider = $('.product-slider .bxslider').bxSlider({
-			slideWidth: slideWidth,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: slideMargin,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
-		// render social content grid
-		//new LIBTECH.ContentGrid();
+		// setup product slider
+		new LIBTECH.ProductSlider();
+		// render instagram
+		new LIBTECH.Instagram();
 		// home sport team photos
-		var $teamCta = $('.home-sport-team .call-to-action .button');
+		$teamCta = $('.home-sport-team .call-to-action .button');
 		if($teamCta.length !== 0) {
 			$teamCta.on('click.team', function (e) {
 				e.preventDefault();
@@ -242,8 +212,6 @@ LIBTECH.main = {
 				$(this).off('load');
 			});
 		});
-		// render instagram
-		new LIBTECH.Instagram();
 	},
 	productOverviewInit: function () {
 		new LIBTECH.ProductOverview();
@@ -413,45 +381,16 @@ LIBTECH.main = {
 		$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider(false);
-		// set up product slider
-		var slider = $('.product-slider .bxslider').bxSlider({
-			slideWidth: 220,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: 10,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
-		self.utilities.getBlogShares();
+		// setup product slider
+		new LIBTECH.ProductSlider();
 	},
 	stormFactoryInit: function () {
 		var self = this;
 		//$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider();
-		// set up product slider
-		var slider = $('.product-slider .bxslider').bxSlider({
-			slideWidth: 220,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: 10,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
+		// setup product slider
+		new LIBTECH.ProductSlider();
 	},
 	dttdInit: function () {
 		var self = this;
@@ -507,34 +446,18 @@ LIBTECH.main = {
 			yPosition = $(hash).offset().top;
 			TweenMax.to(window, duration, {scrollTo:{y: yPosition, x: 0}, onComplete: function () { if (updateLocation) window.location = hash; }});
 		},
-		getMediaWidth: function () {
-			var self = this,
-				width;
-			// Check on this with gavin
-			/*
-            if (typeof matchMedia !== 'undefined') {
-                width = self.bruteForceMediaWidth();
-            } else {
-            */
-			width = window.innerWidth || document.documentElement.clientWidth;
-			//}
-			return width;
-		},
-		bruteForceMediaWidth: function () {
-			var i = 0,
-				found = false;
-			while (!found) {
-				if (matchMedia('(width: ' + i + 'px)').matches) {
-					found = true;
-				} else {
-					i++;
-				}
-				// Prevent infinite loop if something goes horribly wrong
-				if (i === 9999) {
-					break;
-				}
+		responsiveCheck: function() {
+			var size;
+			if ( $('.responsive-check .breakpoint-small').css('display') == 'block' ) {
+				size = 'small';
+			} else if ( $('.responsive-check .breakpoint-medium').css('display') == 'block' ) {
+				size = 'medium';
+			} else if ( $('.responsive-check .breakpoint-large').css('display') == 'block' ) {
+				size = 'large';
+			} else {
+				size = 'base';
 			}
-			return i;
+			return size;
 		},
 		getBlogShares: function () {
 			$('.post-wrapper a, .grid-item a').each(function( index ) {
