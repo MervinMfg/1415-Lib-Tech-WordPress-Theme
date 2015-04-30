@@ -250,7 +250,6 @@ LIBTECH.main = {
 				$clamp(this, {clamp: '3', splitOnChars: ['.', ',', ' ']});
 			}
 		});
-		self.utilities.getBlogShares();
 	},
 	blogSingleInit: function () {
 		new LIBTECH.BlogSingle();
@@ -295,7 +294,6 @@ LIBTECH.main = {
 		$('.video-thumbnails li a:first').click();
 		// make video fit within target
 		$('.video-player .frame-wrapper').fitVids();
-		self.utilities.getBlogShares();
 	},
 	partnersInit: function () {
 		$('.partners .entry-content .partner-entry .partner-images').magnificPopup({
@@ -458,26 +456,6 @@ LIBTECH.main = {
 				size = 'base';
 			}
 			return size;
-		},
-		getBlogShares: function () {
-			$('.post-wrapper a, .grid-item a').each(function( index ) {
-				var $this, postUrl, fbShares;
-				$this = $(this);
-				postUrl = $(this).attr('href');
-				$.getJSON('http://graph.facebook.com/?ids=' + postUrl, function(data){
-					var numberOfShares = data[postUrl].shares;
-					if(typeof numberOfShares !== 'undefined') {
-						if (numberOfShares == '1') {
-							$this.find('.post-meta .shares, .meta .shares').html(numberOfShares + " Share");
-						}
-						else {
-							$this.find('.post-meta .shares, .meta .shares').html(numberOfShares + " Shares");
-						}
-					} else {
-						$this.find('.post-meta .shares, .meta .shares').html("0 Shares");
-					}
-				});
-			});
 		}
 	}
 };
