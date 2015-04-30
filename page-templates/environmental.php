@@ -4,14 +4,13 @@ Template Name: Environmental
 */
 get_header();
 ?>
-        <div class="bg2-top"></div>
-        <section class="enviro-video bg2">
-            <div class="section-content">
-                <h1><?php the_title(); ?></h1>
-                <div class="video-player">
+        <section class="enviro-video container-fluid">
+            <div class="section-content row">
+                <h1 class="col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
+                <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
                     <iframe src="http://player.vimeo.com/video/81824622?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                 </div>
-                <div class="video-copy">
+                <div class="video-copy col-xs-12 col-md-8 col-md-offset-2">
                     <?php the_content(); ?>
                 </div>
                 <div class="clearfix"></div>

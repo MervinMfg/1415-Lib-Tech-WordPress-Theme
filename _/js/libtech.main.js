@@ -367,7 +367,7 @@ LIBTECH.main = {
 		$('.lbs-updates .featured-video .video-player').fitVids();
 	},
 	passItOnInit: function () {
-		$('.product-video .video-player').fitVids();
+		$('.video-header .video-player').fitVids();
 		// lightbox for gold member
 		$('.pass-it-on-contest .product-wrapper .product.lightbox').magnificPopup({
 			delegate: 'a',

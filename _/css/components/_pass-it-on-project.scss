@@ -1,9 +1,17 @@
 // ==========================================================================
 // COMPONENTS/_PASS-IT-ON-PROJECT.SCSS
 // ==========================================================================
+
 .pass-it-on-contest {
+  padding-bottom: 30px;
+
+  &.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   h1 {
-    padding: 20px;
+    padding: 20px 10px 30px;
   }
 
   .contest-wrapper {
@@ -17,26 +25,16 @@
   }
 }
 
-.page-template-page-pass-it-on-project .product-video {
-  .video-wrapper {
-    padding-bottom: 10px;
-  }
+.page-template-page-pass-it-on-project .video-header {
 
-  p {
-    color: #000;
-    font-size: 1.125em;
-  }
+  .video-text {
+    ul {
+      list-style: square;
+      margin: 0 0 10px 20px;
+    }
 
-  a {
-    color: #000;
-  }
-
-  ul {
-    list-style: square;
-    margin: 0 0 10px 20px;
-
-    li {
-      color: #000;
+    a {
+      color: $snowColor;
     }
   }
 }
@@ -75,14 +73,26 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  
+  .pass-it-on-contest {
+    &.container-fluid {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-large) {
   .pass-it-on-contest {
     .contest-wrapper iframe {
-      width: 850px;
       height: 1920px;
     }
+  }
+}
+
+// custom fix for old pages with video-header
+.page-template-page-pass-it-on-project {
+  .video-header {
+    padding-bottom: 40px;
+    padding-top: 30px;
   }
 }

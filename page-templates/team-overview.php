@@ -5,10 +5,10 @@ Template Name: Team Overview
 get_header();
 ?>
         <div class="bg2-top"></div>
-        <section class="overview-wrapper bg2">
-            <div class="section-content">
-                <div class="overview-header">
-                    <h1><?php the_title(); ?></h1>
+        <section class="overview-wrapper bg2 container-fluid">
+            <div class="section-content row">
+                <div class="overview-header clearfix">
+                    <h1 class="col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
                     <?php the_content(); ?>
                 </div>
                 <div class="overview-section-wrapper">
@@ -18,14 +18,17 @@ get_header();
                     while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
-                    <div class="overview-sport">
+                    <div class="overview-item clearfix">
+                      <div class="overview-sport col-xs-12 col-md-10 col-md-offset-1">
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-snow.jpg" alt="Lib Tech Snowboard Team" />
-                        <div class="overview-copy">
-                            <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
+                      </div>
+                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                        <?php the_content(); ?>
+                        <div class="call-to-action">
+                          <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View <?php the_title(); ?></a></p>
                         </div>
-                        <div class="clearfix"></div>
+                      </div>
                     </div>
 
                     <?php
@@ -39,14 +42,17 @@ get_header();
                     while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
-                    <div class="overview-sport">
+                    <div class="overview-item clearfix">
+                      <div class="overview-sport col-xs-12 col-md-10 col-md-offset-1">
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-skate.jpg" alt="Lib Tech Skateboard Team" />
-                        <div class="overview-copy">
-                            <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
+                      </div>
+                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                        <?php the_content(); ?>
+                        <div class="call-to-action">
+                          <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View <?php the_title(); ?></a></p>
                         </div>
-                        <div class="clearfix"></div>
+                      </div>
                     </div>
 
                     <?php
@@ -60,14 +66,17 @@ get_header();
                     while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
-                    <div class="overview-sport">
+                    <div class="overview-item clearfix">
+                      <div class="overview-sport col-xs-12 col-md-10 col-md-offset-1">
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-surf.jpg" alt="Lib Tech Surf Team" />
-                        <div class="overview-copy">
-                            <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
+                      </div>
+                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                        <?php the_content(); ?>
+                        <div class="call-to-action">
+                          <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View <?php the_title(); ?></a></p>
                         </div>
-                        <div class="clearfix"></div>
+                      </div>
                     </div>
 
                     <?php
@@ -81,14 +90,17 @@ get_header();
                     while ($teamPage->have_posts()) : $teamPage->the_post();
                     ?>
 
-                    <div class="overview-sport">
+                    <div class="overview-item clearfix">
+                      <div class="overview-sport col-xs-12 col-md-10 col-md-offset-1">
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/team-overview-ski.jpg" alt="Lib Tech Ski Team" />
-                        <div class="overview-copy">
-                            <?php the_content(); ?>
-                            <p class="overview-link"><a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a></p>
+                      </div>
+                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                        <?php the_content(); ?>
+                        <div class="call-to-action">
+                          <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View <?php the_title(); ?></a></p>
                         </div>
-                        <div class="clearfix"></div>
+                      </div>
                     </div>
 
                     <?php

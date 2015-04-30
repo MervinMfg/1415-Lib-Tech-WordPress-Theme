@@ -25,11 +25,10 @@ switch ($parentSlug) {
         $faqSlug = "snow-technology";
 }
 ?>
-        <div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-        <section class="video-header video bg-product-<?php echo $GLOBALS['sport']; ?>">
-            <div class="section-content">
-                <h1><?php the_title(); ?></h1>
-                <div class="video-player">
+        <section class="video-header video container-fluid bg-texture-gradient">
+            <div class="section-content row">
+                <h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
+                <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
                     <div class="video-wrapper">
                         <?php if (get_field('libtech_tech_video_id')) : $videoID = get_field('libtech_tech_video_id'); ?>
                         <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
@@ -44,7 +43,7 @@ switch ($parentSlug) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="video-text">
+                <div class="video-text col-xs-12 col-md-8 col-md-offset-2">
                     <?php the_content(); ?>
                 </div>
                 <div class="clearfix"></div>
