@@ -12,24 +12,52 @@ get_header();
 		<section class="home-sport-links container-fluid">
 			<div class="section-content row">
 				<ul>
-					<li class="sport-link-item col-xs-6 col-sm-3">
-						<a href="#">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/skate-link.png" alt="" />
+					<li class="sport-link-item col-xs-6 col-sm-3 skate">
+						<a href="/skateboards/">
+							<div class="sli-text">
+								<h3 class="sli-title">Lib Tech Skate</h3>
+								<p class="sli-subtitle">Shop Skateboards</p>
+							</div>
+							<div class="sli-image">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/home-sport-link-skate.jpg" alt="" />
+							</div>
+							<div class="sli-image-hover"></div>
 						</a>
 					</li>
-					<li class="sport-link-item col-xs-6 col-sm-3">
-						<a href="#">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/surf-link.png" alt="" />
+					<li class="sport-link-item col-xs-6 col-sm-3 surf">
+						<a href="/surfboards/">
+							<div class="sli-text">
+								<h3 class="sli-title">Lib Tech Surf</h3>
+								<p class="sli-subtitle">Shop Surfboards</p>
+							</div>
+							<div class="sli-image">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/home-sport-link-surf.jpg" alt="" />
+							</div>
+							<div class="sli-image-hover"></div>
 						</a>
 					</li>
-					<li class="sport-link-item col-xs-6 col-sm-3">
-						<a href="#">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/nas-link.png" alt="" />
+					<li class="sport-link-item col-xs-6 col-sm-3 snow">
+						<a href="/snowboards/">
+							<div class="sli-text">
+								<h3 class="sli-title">Lib Tech Snow</h3>
+								<p class="sli-subtitle">Shop Snowboards</p>
+							</div>
+							<div class="sli-image">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/home-sport-link-snow.jpg" alt="" />
+							</div>
+							<div class="sli-image-hover"></div>
 						</a>
 					</li>
-					<li class="sport-link-item col-xs-6 col-sm-3">
-						<a href="#">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/temp-imgs/snow-link.png" alt="" />
+					<li class="sport-link-item col-xs-6 col-sm-3 ski">
+						<a href="/skis/">
+							<div class="sli-text">
+								<h3 class="sli-title">Lib Tech NAS</h3>
+								<p class="sli-subtitle">Shop Skis</p>
+							</div>
+							<div class="sli-image">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/home-sport-link-ski.jpg" alt="" />
+							</div>
+							<div class="sli-image-hover"></div>
 						</a>
 					</li>
 				</ul>

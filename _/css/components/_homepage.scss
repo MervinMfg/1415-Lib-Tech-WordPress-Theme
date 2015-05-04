@@ -2,14 +2,121 @@
 // COMPONENTS/_HOMEPAGE.SCSS
 // ==========================================================================
 
-.home-sport-links.container-fluid {
-  padding: 30px 0 10px;
+.home-sport-links {
+  &.container-fluid {
+    padding: 30px auto 10px;
+  }
 
   .sport-link-item {
     padding-bottom: 20px;
+  }
 
+  .sli-text {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+    z-index: 2;
+
+    .sli-title {
+      font-style: normal;
+    }
+
+    .sli-subtitle {
+      color: #fff;
+      font-style: normal;
+    }
+  }
+
+  .sli-image {
     img {
+      display: block;
       width: 100%;
     }
+  }
+}
+
+.no-touch .home-sport-links {
+  .sli-text {
+    @include vendorize(transform, translateY(-50%));
+
+    .sli-title {
+      @include transition(all);
+      @include vendorize(opacity, 1);
+      @include vendorize(transform, translate(0, 0));
+    }
+
+    .sli-subtitle {
+      @include transition(all);
+      @include vendorize(opacity, 1);
+      @include vendorize(transform, translate(0, 0));
+    }
+  }
+
+  .sli-image-hover {
+    @include transition(opacity);
+    @include vendorize(opacity, 0);
+    background: url('../img/home-sport-link-snow-sprite.jpg'); //17
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: 1500% 100%; // 15 frames
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  // 15 frame sprite
+  @include keyframes(animate-sprite) {
+    @for $i from 0 through 14 {
+      $s: ($i * 100) / 14 + '%';
+      #{$s} { background-position: ($i * 7.1428571429%) 0; } // 100/14
+    }
+  }
+
+  a {
+    display: block;
+    position: relative;
+
+    &:hover,
+    &:focus {
+      .sli-title {
+        @include vendorize(opacity, 0);
+        @include vendorize(transform, translate(0, -15px));
+      }
+
+      .sli-subtitle {
+        @include vendorize(opacity, 0);
+        @include vendorize(transform, translate(0, 5px));
+      }
+
+      .sli-image-hover {
+        @include vendorize(opacity, 1);
+        @include vendorize(animation-duration, 2250ms);
+        @include vendorize(animation-iteration-count, infinite);
+        @include vendorize(animation-name, animate-sprite);
+        @include vendorize(animation-timing-function, step-start);
+      }
+    }
+  }
+
+  .snow .sli-image-hover {
+    background-image: url('../img/home-sport-link-snow-sprite.jpg');
+  }
+
+  .surf .sli-image-hover {
+    background-image: url('../img/home-sport-link-surf-sprite.jpg');
+  }
+
+  .skate .sli-image-hover {
+    background-image: url('../img/home-sport-link-skate-sprite.jpg');
+  }
+
+  .ski .sli-image-hover {
+    background-image: url('../img/home-sport-link-ski-sprite.jpg');
   }
 }
