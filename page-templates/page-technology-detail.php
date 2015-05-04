@@ -43,7 +43,7 @@ switch ($parentSlug) {
                         <?php endif; ?>
                     </div>
                 </div>
-                <div class="video-text col-xs-12 col-md-8 col-md-offset-2">
+                <div class="video-text col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                     <?php the_content(); ?>
                 </div>
                 <div class="clearfix"></div>

@@ -3,22 +3,11 @@
 // ==========================================================================
 
 .product-grid {
-  &.container-fluid {
-    padding: 30px 0;
-    max-width: 100%;
-  }
+  padding: 30px 0;
 
   .grid-wrapper {
     padding-left: 0;
     padding-right: 0;
-  }
-}
-
-.featured-product-grid {
-  &.container-fluid {
-    padding: 25px 0 30px;
-    margin-bottom: 30px;
-    max-width: 100%;
   }
 }
 
@@ -103,7 +92,7 @@
 
 // different styles for smaller screen sizes
 .featured-product-grid {
-  padding-bottom: 60px;
+  padding: 25px 0 60px;
 
   .grid-item {
     .grid-item-wrapper {
@@ -229,60 +218,60 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .product-grid,
-  .featured-product-grid {
-    &.container-fluid {
-      padding: 30px 10px;
-    }
-  }
+  .grid-item-wrapper,
+  .product-item.grid-item-wrapper {
+    .grid-item-info {
+      @include vendorize(transform, translateY(-50%));
+      display: none;
+      left: 0;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      width: 100%;
 
-  .grid-item-info {
-    @include vendorize(transform, translateY(-50%));
-    display: none;
-    left: 0;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: 100%;
-
-    .product-title {
-      font-size: 1.125em;
-      font-style: italic;
-      padding-bottom: 0;
-      text-transform: uppercase;
-    }
-
-    .call-to-action {
-      max-width: 165px;
-      width: 165px;
-      margin: 20px auto 0 auto;
-
-      .button {
+      .product-title {
         font-size: 1.125em;
-        margin: 0 auto 10px;
-        width: 100%;
-      }
-    }
-
-    .price {
-      .currency-note {
+        font-style: italic;
+        padding-bottom: 0;
         text-transform: uppercase;
       }
 
-      .strike {
-        display: none;
+      .call-to-action {
+        max-width: 100%;
+        width: 165px;
+        margin: 20px auto 0 auto;
+
+        .button {
+          font-size: 1.125em;
+          margin: 0 auto 10px;
+          width: 100%;
+        }
+      }
+
+      .price {
+        .currency-note {
+          text-transform: uppercase;
+        }
+
+        .strike {
+          display: none;
+        }
       }
     }
   }
 
-  .touch .grid-item-wrapper {
-    .mobile-grid-link {
-      display: block;
+  .touch {
+    .grid-item-wrapper,
+    .product-item.grid-item-wrapper {
+      .mobile-grid-link {
+        display: block;
+      }
     }
   }
 
   .no-touch {
-    .grid-item-wrapper {
+    .grid-item-wrapper,
+    .product-item.grid-item-wrapper  {
       .mobile-grid-link {
         display: none;
       }
@@ -389,8 +378,4 @@
       }
     }
   }
-}
-
-@media screen and (min-width: $breakpoint-large) {
-
 }

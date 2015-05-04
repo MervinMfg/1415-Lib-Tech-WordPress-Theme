@@ -16,15 +16,15 @@
 			return false;
 		}
 	}
+	$featuredProducts = get_field('libtech_product_slider_featured_products');
 ?>
 
-		<section class="product-slider <?php if(getProductPostType()) echo ' product-details-nav'; ?>">
+		<section class="product-slider<?php if(getProductPostType()) echo ' product-details-nav'; if($featuredProducts) echo ' product-slider-featured'; ?>">
 			<div class="section-content">
 				<div class="product-list owl-carousel owl-theme-libtech bg-texture-gradient">
 
 					<?php
-						$featuredProducts = get_field('libtech_product_slider_featured_products');
-				    if( $featuredProducts ):
+				    if($featuredProducts) :
 				        // get each related product
 				        foreach( $featuredProducts as $featuredProduct):
 			            $postType = $featuredProduct->post_type;
@@ -53,9 +53,11 @@
 								);
 							?>
 
-							<a href="<? echo $productLink; ?>" class="button">Buy Now</a>
+							<div class="call-to-action">
+								<a href="<? echo $productLink; ?>" class="button">Buy Now</a>
+								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
+							</div>
 						</div>
-						<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 					</div>
 
 					<?
@@ -84,9 +86,11 @@
 						<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
 						<div class="grid-item-info">
 							<p class="product-title">Lib Tech DIY</p>
-							<a href="/snowboarding/snowboard-builder/" class="button">DIY Now</a>
+							<div class="call-to-action">
+								<a href="/snowboarding/snowboard-builder/" class="button">Build Now</a>
+								<a href="/snowboarding/snowboard-builder/" class="mobile-grid-link"></a>
+							</div>
 						</div>
-						<a href="/snowboarding/snowboard-builder/" class="mobile-grid-link"></a>
 					</div>
 
 					<?php
@@ -104,6 +108,7 @@
 								$postSlug = $post->post_name;
 								$imageID = get_field('libtech_product_image');
 								$imageFile = wp_get_attachment_image_src($imageID, 'square-medium');
+								$productLink = get_permalink();
 								// check for technology type to display
 								$productType = "";
 								if ($postType == "libtech_snowboards") {
@@ -136,9 +141,12 @@
 									true
 								);
 							?>
-							<a href="<?php the_permalink(); ?>" class="button">Buy Now</a>
+
+							<div class="call-to-action">
+								<a href="<? echo $productLink; ?>" class="button">Buy Now</a>
+								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
+							</div>
 						</div>
-						<a href="<?php the_permalink(); ?>" class="mobile-grid-link"></a>
 					</div>
 
 					<?

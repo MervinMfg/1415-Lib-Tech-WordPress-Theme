@@ -23,7 +23,7 @@ get_header();
 						<iframe src="http://player.vimeo.com/video/116304321?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 					</div>
 				</div>
-				<div class="video-text col-xs-12 col-md-8 col-md-offset-2">
+				<div class="video-text col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 					<?php the_content(); ?>
 				</div>
 				</div>

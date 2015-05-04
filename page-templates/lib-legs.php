@@ -17,7 +17,7 @@ get_header();
 						<?php endif; ?>
 					</div>
 				</div>
-				<div class="video-text col-xs-12 col-md-8 col-md-offset-2">
+				<div class="video-text col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 					<ul class="entry-share">
 						<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-send="true" data-layout="button_count" data-width="150" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
 						<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>

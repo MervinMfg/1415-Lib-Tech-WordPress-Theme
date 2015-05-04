@@ -260,13 +260,7 @@ body {
 .video-header {
   padding-bottom: 20px;
 
-  &.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .section-content {
-
     h1 {
       color: $snowColor;
       margin-bottom: 20px;
@@ -335,11 +329,6 @@ body {
 
 @media screen and (min-width: $breakpoint-medium) {
   .video-header {
-    &.container-fluid {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
     .section-content .video-text {
       p {
         font-size: 1.125em; // 18 / 16
@@ -364,10 +353,6 @@ body {
   .bg-texture-gradient {
     background-size: auto 100%;
   }
-}
-
-@media screen and (min-width: $breakpoint-large) {
-
 }
 
 @media screen and (min-width: $breakpoint-xxlarge) {

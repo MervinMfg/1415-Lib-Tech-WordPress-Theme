@@ -4,7 +4,7 @@
 
 .product-slider {
   overflow: hidden;
-  padding-bottom: 60px;
+  padding: 30px 0;
 
   .section-content {
     max-width: none;
@@ -19,7 +19,7 @@
   }
 
   .product-list {
-    padding-bottom: 20px;
+    padding-bottom: 15px;
     text-align: center;
 
     .product-item {
@@ -63,7 +63,7 @@
     text-align: center;
 
     .view-all-link {
-      margin: 20px auto 0;
+      margin: 0 auto;
     }
   }
 
@@ -84,8 +84,9 @@
 .single-libtech_apparel,
 .single-libtech_luggage,
 .single-libtech_surfboards,
-.page-template-home-sport.surf {
-  .product-slider .product-list .product-item img {
+.page-template-home-sport.surf,
+.product-slider-featured {
+  .product-list .product-item img {
     height: auto;
     margin-left: 0;
     max-width: 100%;

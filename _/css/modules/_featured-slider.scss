@@ -3,6 +3,8 @@
 // ==========================================================================
 
 .featured-slider {
+  padding: 30px 0 25px;
+
   .section-content {
     max-width: 100%;
     overflow: hidden;
@@ -155,8 +157,6 @@
 }
 
 // custom fix for old pages with slider
-.page-template-lib-legs,
-.page-template-storm-factory,
 .page-template-dttd,
 .page-template-jamie-lynn-collection {
   .featured-slider {

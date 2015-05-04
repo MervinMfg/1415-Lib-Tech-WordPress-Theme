@@ -5,11 +5,6 @@
 .pass-it-on-contest {
   padding-bottom: 30px;
 
-  &.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   h1 {
     padding: 20px 10px 30px;
   }
@@ -68,15 +63,6 @@
         float: right;
         padding: 0 0 0 10px;
       }
-    }
-  }
-}
-
-@media screen and (min-width: $breakpoint-medium) {
-  .pass-it-on-contest {
-    &.container-fluid {
-      padding-left: 10px;
-      padding-right: 10px;
     }
   }
 }

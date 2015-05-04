@@ -23,7 +23,7 @@ get_header();
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-snow.jpg" alt="Lib Tech Snowboard Technology" />
                       </div>
-                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                      <div class="overview-copy col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                         <?php the_content(); ?>
                         <div class="call-to-action">
                           <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View More</a></p>
@@ -47,7 +47,7 @@ get_header();
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-ski.jpg" alt="Lib Tech Ski Technology" />
                       </div>
-                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                      <div class="overview-copy col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                         <?php the_content(); ?>
                         <div class="call-to-action">
                           <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View More</a></p>
@@ -71,7 +71,7 @@ get_header();
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-surf.jpg" alt="Lib Tech Surf Technology" />
                       </div>
-                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                      <div class="overview-copy col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                         <?php the_content(); ?>
                         <div class="call-to-action">
                           <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View More</a></p>
@@ -95,7 +95,7 @@ get_header();
                         <h3><?php the_title(); ?></h3>
                         <img src="<?php bloginfo('template_directory'); ?>/_/img/tech-skate.jpg" alt="Lib Tech Skateboard Technology" />
                       </div>
-                      <div class="overview-copy col-xs-12 col-md-8 col-md-offset-2">
+                      <div class="overview-copy col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
                         <?php the_content(); ?>
                         <div class="call-to-action">
                           <p class="overview-link"><a href="<?php the_permalink(); ?>" class="button">View More</a></p>

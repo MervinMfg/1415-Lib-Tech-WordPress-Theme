@@ -11,14 +11,13 @@ get_header();
 
 		<?php include get_template_directory() . '/_/inc/modules/product-slider.php'; ?>
 
-		<div class="bg2-top"></div>
-		<section class="storm-factory-overview bg2">
-			<div class="section-content">
+		<section class="storm-factory-overview container-fluid">
+			<div class="section-content row">
 				<div class="overview-content-wrapper">
-					<div class="storm-image">
+					<div class="storm-image col-xs-12 col-md-10 col-md-offset-1">
 						<img src="<?php bloginfo('template_directory'); ?>/_/img/storm-factory-blizzard.jpg" alt="Storm Factory Blizzard" />
 					</div>
-					<div class="storm-copy">
+					<div class="storm-copy col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 						<?php the_content(); ?>
 					</div>
 				</div><!-- .overview-content-wrapper -->

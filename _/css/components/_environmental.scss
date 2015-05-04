@@ -3,11 +3,6 @@
 // ==========================================================================
 
 .enviro-video {
-  &.container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   .section-content {
     h1 {
       margin-bottom: 20px;
@@ -65,13 +60,6 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .enviro-video {
-    &.container-fluid {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  }
-
   .enviro-content .section-content {
     .enviro-bullets {
       float: left;
