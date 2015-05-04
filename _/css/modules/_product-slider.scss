@@ -23,6 +23,7 @@
     text-align: center;
 
     .product-item {
+
       display: inline-block;
       overflow: hidden;
       position: relative;
@@ -30,9 +31,11 @@
 
       img {
         @include transition(opacity, 300ms);
+        -webkit-backface-visibility: hidden;
         height: auto;
         margin-left: -20%;
         max-width: 140%;
+        -webkit-transform: scale(1);
         width: 140%;
 
         &.lazy {

@@ -52,6 +52,8 @@ LIBTECH.ProductSlider.prototype = {
         1800: { items: 8 }
       };
     }
+    // build slider
+    self.buildCarousel();
     // lazy load of images
 		$(".product-slider img.lazy").unveil(0, function() {
 			$(this).on('load', function () {
@@ -59,8 +61,6 @@ LIBTECH.ProductSlider.prototype = {
 				$(this).off('load');
 			});
 		});
-    // build slider
-    self.buildCarousel();
   },
   buildCarousel: function() {
     var self = this;

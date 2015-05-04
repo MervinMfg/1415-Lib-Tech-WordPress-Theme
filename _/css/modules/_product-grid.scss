@@ -23,6 +23,8 @@
 
       img {
         height: auto;
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: scale(1);
       }
 
       &.snowboards {
