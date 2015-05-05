@@ -33,7 +33,7 @@
             $i = 1;
             while ($postsQuery->have_posts()) :
 							$postsQuery->the_post();
-							$postImage = get_post_image('square-medium');
+							$postImage = get_post_image('rect-medium');
               // get post category and find top parent category (sport)
 							$postCategory = get_the_category();
 							$catTree = get_category_parents($postCategory[0]->term_id, FALSE, ':', TRUE);

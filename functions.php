@@ -12,7 +12,7 @@ if ( function_exists( 'add_image_size' ) ) {
     add_image_size('square-medium', 300, 300, true);
     add_image_size('square-large', 640, 640, true);
     add_image_size('square-xlarge', 800, 800, true);
-    add_image_size('media-email', 560, 300, true);
+    add_image_size('rect-medium', 600, 400, true);
     add_image_size('soft-thumbnail', 100, 100, false);
     add_image_size('soft-xlarge', 800, 800, false);
 }
