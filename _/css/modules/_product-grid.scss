@@ -22,8 +22,8 @@
       overflow: hidden;
 
       img {
-        height: auto;
         -webkit-backface-visibility: hidden;
+        height: auto;
         -webkit-transform: scale(1);
       }
 
@@ -314,10 +314,6 @@
         }
       }
     }
-  }
-
-  .product-grid {
-    padding-bottom: 80px;
   }
 
   .featured-product-grid,
