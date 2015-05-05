@@ -18,12 +18,16 @@ LIBTECH.StorySlider.prototype = {
     var self = this;
     self.carousel = $('.story-slider .owl-carousel');
     self.buildCarousel();
+    self.carousel.on('resized.owl.carousel', function(event) {
+      self.positionDots();
+    });
+    self.positionDots();
   },
   buildCarousel: function() {
     var self = this;
     // build new
     self.carousel.owlCarousel({
-      autoplay: true,
+      autoplay: self.config.autoRotate,
       autoplayTimeout: 8000,
       dots: true,
       items: 1,
@@ -31,5 +35,11 @@ LIBTECH.StorySlider.prototype = {
       nav: true,
       navText: ['<span class="offscreen">prev</span>', '<span class="offscreen">next</span>']
     });
+  },
+  positionDots: function() {
+    var self, dotsTop;
+    self = this;
+    dotsTop = self.carousel.find('.story-link').outerHeight() + 10;
+    self.carousel.find('.owl-dots').css('top', dotsTop);
   }
 };

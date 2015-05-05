@@ -17,7 +17,7 @@
 						?>
 
 						<div class="story">
-							<a href="<?php echo $storyUrl; ?>">
+							<a href="<?php echo $storyUrl; ?>" class="story-link">
 								<img src="<?php echo $storyImageSmall['url']; ?>" alt="<?php echo $storyAltText; ?>" class="story-img-small lazy" />
 								<img src="<?php echo $storyImageLarge['url']; ?>" alt="<?php echo $storyAltText; ?>" class="story-img-large lazy" />
 							</a>
