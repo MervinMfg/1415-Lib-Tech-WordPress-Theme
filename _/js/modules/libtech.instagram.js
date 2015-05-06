@@ -34,7 +34,7 @@ LIBTECH.Instagram.prototype = {
           var photoData, listItem;
           photoData = photosData[i];
           // set up instagram list item
-					listItem = '<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2 item-' + (i + 1) + '"><a href="' + photoData.link + '" target="_blank"><div class="instagram-info"><div class="vertical-center"><h4 class="username">@' + photoData.user.username + '</h4><h6 class="instagram-logo"><span class="icon"></span>Instagram</h6></div></div><img src="' + photoData.images.low_resolution.url + '" alt="' + photoData.caption.text + '" /></a></div>';
+					listItem = '<div class="instagram-wrapper col-xs-6 col-ms-3 col-sm-3 col-md-2 item-' + (i + 1) + '"><a href="' + photoData.link + '" target="_blank"><div class="instagram-info"><div class="vertical-center"><h4 class="username">@' + photoData.user.username + '</h4><h6 class="instagram-logo"><span class="icon"></span>Instagram</h6></div></div><div class="instagram-img"><img src="' + photoData.images.low_resolution.url + '" alt="' + photoData.caption.text + '" /></div></a></div>';
           // add list item to content grid
           $('.instagram-feed .section-content').append(listItem);
         }
