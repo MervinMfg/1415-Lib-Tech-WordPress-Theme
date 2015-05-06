@@ -1264,11 +1264,11 @@
 
     &.active {
       display: block;
-      margin-top: -70px;
+      margin-top: -50px;
 
       .section-content {
         margin-top: -265px;
-        padding-bottom: 13px;
+        padding-bottom: 35px;
       }
     }
 
@@ -1285,14 +1285,30 @@
     z-index: 3;
 
     .toggle-btn {
-      background: url('../img/sprite.png') -176px -164px;
+      background: url('../img/sprite.png') -79px -39px;
+      bottom: 40px;
       cursor: pointer;
-      height: 23px;
+      display: block;
+      height: 25px;
       left: 50%;
-      margin-left: -11px;
+      margin-left: -25px;
       position: absolute;
-      top: -60px;
-      width: 23px;
+      width: 50px;
+
+      &:hover,
+      &:focus {
+        background-color: #666;
+        background-position: -37px -39px;
+      }
+
+      &.expanded {
+        background-position: -79px -61px;
+
+        &:hover,
+        &:focus {
+          background-position: -37px -61px;
+        }
+      }
     }
   }
 

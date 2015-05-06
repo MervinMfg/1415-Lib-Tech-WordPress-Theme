@@ -202,18 +202,19 @@ LIBTECH.ProductDetails.prototype = {
 			prodNavHeight = $prodNavContent.outerHeight();
 			closedMargin = (prodNavHeight - 80) * -1;
 			openedMargin = 60;
-			console.log('closedMargin', closedMargin);
 			// show prod nav in closed state
 			TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
 			// toggle prod nav on click
-			$navLink.off('click.productNav');
-			$navLink.on('click.productNav', function() {
+			$navLink.off('mousedown.productNav');
+			$navLink.on('mousedown.productNav', function() {
 				if (navState == "opened") {
 					TweenMax.to($prodNavContent, 0.3, {marginTop: closedMargin});
 					navState = "closed";
+					$(this).find('.toggle-btn').removeClass('expanded');
 				} else {
 					TweenMax.to($prodNavContent, 0.3, {marginTop: openedMargin});
 					navState = "opened";
+					$(this).find('.toggle-btn').addClass('expanded');
 				}
 			});
 		}
