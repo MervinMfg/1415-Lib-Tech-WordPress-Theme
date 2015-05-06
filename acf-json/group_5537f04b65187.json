@@ -32,7 +32,7 @@
             "prefix": "",
             "type": "text",
             "instructions": "Instagram username you want to view photos from",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -62,7 +62,7 @@
             "prefix": "",
             "type": "text",
             "instructions": "Instagram tag you want to view photos from",
-            "required": 1,
+            "required": 0,
             "conditional_logic": [
                 [
                     {
@@ -160,5 +160,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430869452
+    "modified": 1430956350
 }
