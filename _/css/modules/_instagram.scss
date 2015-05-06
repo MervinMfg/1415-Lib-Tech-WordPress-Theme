@@ -3,12 +3,14 @@
 // ==========================================================================
 
 .instagram-feed {
-  padding: 30px 0 0;
+  padding-bottom: 10px;
+  padding-top: 30px;
 
   .instagram-wrapper {
     padding-bottom: 20px;
 
     img {
+      display: block;
       width: 100%;
     }
   }

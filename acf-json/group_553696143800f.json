@@ -137,6 +137,34 @@
                 "operator": "==",
                 "value": "page-templates\/home-sport.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_team_snow"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_team_nas"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_team_surf"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_team_skate"
+            }
         ]
     ],
     "menu_order": 0,
@@ -145,6 +173,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
-    "local": "json"
+    "modified": 1430869487
 }

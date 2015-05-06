@@ -261,39 +261,14 @@ LIBTECH.main = {
 	},
 	teamDetailsInit: function () {
 		var self = this;
-		// render social content grid
-		new LIBTECH.ContentGrid();
+		// init instagram
+		new LIBTECH.Instagram();
 		// init gallery
 		if ($('.gallery')) {
 			new LIBTECH.Gallery();
 		}
-		// assign a click event to the video thumbnails
-		$('.video-thumbnails li a').click(function () {
-			var videoID, videoType, videoPlayerHTML;
-			videoID = $(this).attr('data-video-id');
-			videoType = $(this).attr('data-video-type');
-			// select the right thumbnail
-			$('.video-thumbnails li a').removeClass('selected');
-			$(this).addClass('selected');
-			// display the video info
-			$('.video-info').removeClass('selected');
-			$('.video-player #' + videoID).addClass('selected');
-			// add the video content
-			if (videoType === "YouTube") {
-				videoPlayerHTML = '<iframe width="620" height="348" src="http://www.youtube.com/embed/' + videoID + '" frameborder="0" allowfullscreen></iframe>';
-			} else if (videoType === "Vimeo") {
-				videoPlayerHTML = '<iframe src="http://player.vimeo.com/video/' + videoID + '" width="620" height="348" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
-			}
-			$('.video-player .frame-wrapper').html(videoPlayerHTML);
-			// make video fit within target
-			$('.video-player .frame-wrapper').fitVids();
-			// kill the links default behavior
-			return false;
-		});
-		// select the first video
-		$('.video-thumbnails li a:first').click();
-		// make video fit within target
-		$('.video-player .frame-wrapper').fitVids();
+		// init featured videos
+		new LIBTECH.FeaturedVideos();
 	},
 	partnersInit: function () {
 		$('.partners .entry-content .partner-entry .partner-images').magnificPopup({

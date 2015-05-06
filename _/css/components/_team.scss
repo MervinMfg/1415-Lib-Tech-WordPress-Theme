@@ -1,0 +1,155 @@
+// ==========================================================================
+// COMPONENTS/_TEAM.SCSS
+// ==========================================================================
+
+.team-members {
+  padding: 30px 0 40px;
+
+  .section-content {
+    h2 {
+      margin: 10px 10px 20px;
+    }
+
+    ul {
+      li {
+        margin-bottom: 20px;
+
+        a {
+          display: block;
+
+          img {
+            width: 100%;
+          }
+
+          h3 {
+            font-style: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+.team-members,
+.home-sport-team {
+  .team-item-info {
+    display: none;
+  }
+}
+
+.team-details {
+  h1,
+  .team-gallery {
+    margin-bottom: 10px;
+  }
+
+  .team-gallery .profile-photo {
+    height: auto;
+  }
+
+  .team-meta {
+    margin-bottom: 20px;
+
+    .ripper-home,
+    .ripper-sponsors {
+      margin-bottom: 5px;
+
+      span {
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  h4 {
+    margin-bottom: 20px;
+  }
+
+  .team-bio {
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  .personal-site {
+    clear: both;
+    padding-top: 10px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .team-members,
+  .home-sport-team {
+    a.team-item-link {
+      display: block;
+      position: relative;
+    }
+
+    .team-item-info {
+      @include transition(opacity);
+      @include vendorize(opacity, 0);
+      background: rgba(0, 0, 0, .75);
+      display: block;
+      font-style: normal;
+      height: 99%;
+      position: absolute;
+      text-align: center;
+      width: 100.25%;
+      overflow: hidden;
+
+      .team-item-name {
+        @include transition(transform);
+        @include vendorize(transform, translate(0, -15px));
+        margin-bottom: .2em;
+        font-size: 1.5em;
+        text-transform: uppercase;
+        color: #FFF;
+      }
+
+      .team-item-category {
+        @include transition(transform);
+        @include vendorize(transform, translate(0, -5px));
+        color: #fff;
+        font-size: 1em;
+        text-transform: capitalize;
+      }
+    }
+
+    a.team-item-link:hover,
+    a.team-item-link:focus {
+      .team-item-info {
+        @include vendorize(opacity, 1);
+        overflow: hidden;
+
+        .team-item-name,
+        .team-item-category {
+          @include vendorize(transform, translate(0, 0));
+        }
+      }
+    }
+
+    .vertical-center {
+      @include vendorize(transform, translateY(-50%));
+      position: relative;
+      top: 50%;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-large) {
+  .team-members,
+  .home-sport-team {
+    .team-item-info {
+      .team-item-name {
+        font-size: 2em;
+      }
+
+      .team-item-category {
+        font-size: 1.25em;
+      }
+    }
+  }
+}
