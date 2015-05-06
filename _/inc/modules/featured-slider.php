@@ -54,7 +54,7 @@
        						$bannerAltText = get_sub_field('libtech_featured_silder_alt_text');
        						$bannerCategory = get_sub_field('libtech_featured_silder_cat');
 									$bannerCtaTheme = get_sub_field('libtech_featured_slider_cta_theme');
-									$bannerCtas = [];
+									$bannerCtas = Array();
 									if(get_sub_field('libtech_featured_slider_cta')) {
 										while(the_repeater_field('libtech_featured_slider_cta')):
 											$ctaText = get_sub_field('libtech_featured_slider_cta_text');
