@@ -3,24 +3,6 @@
     "title": "Homepage Sport Details",
     "fields": [
         {
-            "key": "field_501b04da25440",
-            "label": "Blog Category ID",
-            "name": "libtech_homepage_blog_cat_id",
-            "prefix": "",
-            "type": "text",
-            "instructions": "Show Posts from what Category ID?",
-            "required": 0,
-            "conditional_logic": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "formatting": "none",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_501b04da27b51",
             "label": "Facebook Username",
             "name": "libtech_homepage_fb_username",
@@ -29,6 +11,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -47,6 +34,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -65,6 +57,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -83,6 +80,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -91,33 +93,6 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
-        },
-        {
-            "key": "field_51a7db54e3e74",
-            "label": "Featured Products",
-            "name": "libtech_homepage_products",
-            "prefix": "",
-            "type": "relationship",
-            "instructions": "Select featured products to display.",
-            "required": 1,
-            "conditional_logic": 0,
-            "return_format": "object",
-            "post_type": [
-                "libtech_bindings",
-                "libtech_outerwear",
-                "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search",
-                "post_type"
-            ],
-            "max": "",
-            "elements": [
-                "post_type"
-            ]
         }
     ],
     "location": [
@@ -134,5 +109,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1430956246
 }
