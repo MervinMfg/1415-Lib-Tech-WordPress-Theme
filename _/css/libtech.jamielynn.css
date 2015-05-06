@@ -125,7 +125,6 @@ ol.commentlist li.odd { background: #f6f6f6; }
 
 ol.commentlist li.parent { border-left: 5px solid #111; }
 
-/* ========================================================================== BASE/_UTILITY.SCSS ========================================================================== */
 .block { display: block; }
 
 .hide { display: none; }
@@ -134,15 +133,15 @@ ol.commentlist li.parent { border-left: 5px solid #111; }
 
 .screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute; }
 
-.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto; color: #21759b; display: block; font-size: 14px; font-weight: bold; height: auto; line-height: normal; padding: 15px 23px 14px; position: absolute; left: 5px; top: 5px; text-decoration: none; text-transform: none; width: auto; z-index: 100000; }
+.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto; color: #21759b; display: block; font-size: 14px; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; position: absolute; text-decoration: none; text-transform: none; top: 5px; width: auto; z-index: 100000; }
 
 .clearfix { *zoom: 1; }
 
-.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:before, .clearfix:after { content: ' '; display: table; }
 
 .clearfix:after { clear: both; }
 
-.hr { border-top: 1px solid #666; display: block; border-radius: 2px; }
+.hr { border-radius: 2px; border-top: 1px solid #666; display: block; }
 .hr hr { display: none; }
 
 .responsive-check .breakpoint-small, .responsive-check .breakpoint-medium, .responsive-check .breakpoint-large { display: none; }

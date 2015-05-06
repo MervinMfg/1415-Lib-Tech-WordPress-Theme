@@ -75,7 +75,7 @@
 /*# sourceMappingURL=owl.video.css.map */
 .owl-theme-libtech { overflow: hidden; }
 .owl-theme-libtech .owl-nav { -webkit-tap-highlight-color: transparent; }
-.owl-theme-libtech .owl-nav [class*='owl-'] { background-color: #333; background-image: url("../img/sprite.png"); color: #fff; cursor: pointer; display: inline-block; font-size: 14px; height: 50px; margin-top: -75px; position: absolute; top: 50%; width: 25px; }
+.owl-theme-libtech .owl-nav [class*='owl-'] { background-color: #333; background-image: url("../img/sprite.png"); color: #fff; cursor: pointer; display: inline-block; font-size: 14px; height: 50px; margin-top: -50px; position: absolute; top: 50%; width: 25px; }
 .owl-theme-libtech .owl-nav [class*='owl-']:hover, .owl-theme-libtech .owl-nav [class*='owl-']:focus { background-color: #666; color: #fff; text-decoration: none; }
 .owl-theme-libtech .owl-nav .owl-prev { background-position: 6px 12px; left: -25px; -webkit-transition: left 100ms ease-in-out; -moz-transition: left 100ms ease-in-out; -ms-transition: left 100ms ease-in-out; -o-transition: left 100ms ease-in-out; transition: left 100ms ease-in-out; }
 .owl-theme-libtech .owl-nav .owl-prev:hover, .owl-theme-libtech .owl-nav .owl-prev:focus { background-position: 6px -35px; }
@@ -84,12 +84,13 @@
 .owl-theme-libtech .owl-nav .owl-next:hover, .owl-theme-libtech .owl-nav .owl-next:focus { background-position: -17px -35px; }
 .owl-theme-libtech .owl-nav .owl-next.disabled { background-position: -17px 12px; }
 .owl-theme-libtech .owl-nav .disabled, .owl-theme-libtech .owl-nav .disabled:hover, .owl-theme-libtech .owl-nav .disabled:focus { background-color: #000; }
-.owl-theme-libtech:hover .owl-nav .owl-prev, .owl-theme-libtech:focus .owl-nav .owl-prev { left: 0; }
-.owl-theme-libtech:hover .owl-nav .owl-next, .owl-theme-libtech:focus .owl-nav .owl-next { right: 0; }
 .owl-theme-libtech .owl-dots { -webkit-tap-highlight-color: transparent; text-align: center; }
 .owl-theme-libtech .owl-dots .owl-dot { display: inline-block; *display: inline; zoom: 1; }
 .owl-theme-libtech .owl-dots .owl-dot span { background: #000; border: 2px solid #fff; -moz-border-radius: 30px; -webkit-border-radius: 30px; border-radius: 30px; display: block; height: 12px; margin: 5px 7px; width: 12px; }
 .owl-theme-libtech .owl-dots .owl-dot.active span, .owl-theme-libtech .owl-dots .owl-dot:hover span { background: #fff; }
+
+.no-touch .owl-theme-libtech:hover .owl-nav .owl-prev, .no-touch .owl-theme-libtech:focus .owl-nav .owl-prev { left: 0; }
+.no-touch .owl-theme-libtech:hover .owl-nav .owl-next, .no-touch .owl-theme-libtech:focus .owl-nav .owl-next { right: 0; }
 
 .board-finder { padding-bottom: 0; }
 

@@ -219,8 +219,8 @@
 	<div class="wrapper">
 		<div class="takeover">
 			<div class="takeover-content">
-				<p class="message usd cad">SNOW SALE! Up to 20% OFF most 14/15 products. Free Standard Shipping on all orders over $75</p>
-				<p class="message eur">SNOW SALE! Up to 20% OFF most 14/15 products. Free Standard Shipping on all orders over €75</p>
+				<p class="message usd cad">Up to <strong>30% OFF</strong> most 14/15 snow products! <strong>FREE</strong> standard shipping on all orders over $75</p>
+				<p class="message eur">Up to <strong>30% OFF</strong> most 14/15 snow products! <strong>FREE</strong> standard shipping on all orders over €75</p>
 			</div>
 		</div><!-- END .takeover -->
 		<header>
