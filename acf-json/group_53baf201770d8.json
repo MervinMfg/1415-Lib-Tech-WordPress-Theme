@@ -34,7 +34,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/page-faqs.php"
+                "value": "page-templates\/faqs.php"
             }
         ]
     ],
@@ -44,6 +44,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
-    "local": "json"
+    "modified": 1430959005
 }

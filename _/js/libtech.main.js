@@ -48,7 +48,7 @@ LIBTECH.main = {
 		} else if ($body.hasClass('single-post')) {
 			self.blogInit();
 			self.blogSingleInit();
-		} else if ($body.hasClass('page-template-page-templatespage-faqs-php')) {
+		} else if ($body.hasClass('page-template-faqs')) {
 			self.faqsInit();
 		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-php') || $body.hasClass('page-template-page-templatessnowboard-builder-share-php')) {
 			new LIBTECH.SnowboardBuilder();
