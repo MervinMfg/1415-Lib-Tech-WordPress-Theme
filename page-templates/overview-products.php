@@ -828,11 +828,10 @@ get_header();
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">
                             <li class="filter-item" data-filter=".exo-skeletech">Exo-Skeletech</li>
-                            <li class="filter-item" data-filter=".hesho-series">Hesho Series</li>
-                            <li class="filter-item" data-filter=".bowls">Bowls</li>
-                            <li class="filter-item" data-filter=".leg-series">Leg Series</li>
-                            <li class="filter-item" data-filter=".cruisers">Cruisers</li>
-                            <li class="filter-item" data-filter=".completes">Completes</li>
+                            <li class="filter-item" data-filter=".hesho">Hesho</li>
+                            <li class="filter-item" data-filter=".bowl">Bowl</li>
+                            <li class="filter-item" data-filter=".leg-tour">Leg Tour</li>
+                            <li class="filter-item" data-filter=".cruiser">Cruiser</li>
                         </ul>
                     </div>
                     <div class="filters pricing">
