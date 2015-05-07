@@ -97,29 +97,6 @@
             "disabled": 0
         },
         {
-            "key": "field_5092f917902aa",
-            "label": "Blog Category Slug",
-            "name": "libtech_team_blog_category_slug",
-            "prefix": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "formatting": "none",
-            "maxlength": "",
-            "readonly": 0,
-            "disabled": 0
-        },
-        {
             "key": "field_5092f91793fc1",
             "label": "Personal Website",
             "name": "libtech_team_personal_website",
@@ -254,156 +231,6 @@
             "tabs": "all"
         },
         {
-            "key": "field_5092f9178ca90",
-            "label": "Related Products",
-            "name": "libtech_team_related_products",
-            "prefix": "",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "object",
-            "post_type": [
-                "libtech_snowboards",
-                "libtech_bindings",
-                "libtech_nas",
-                "libtech_surfboards",
-                "libtech_skateboards",
-                "libtech_outerwear",
-                "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage",
-                "libtech_awards",
-                "libtech_technology"
-            ],
-            "taxonomy": [],
-            "filters": [
-                "search",
-                "post_type"
-            ],
-            "max": "",
-            "elements": [
-                "post_type"
-            ],
-            "min": 0
-        },
-        {
-            "key": "field_5092f9179e0b6",
-            "label": "Featured Videos",
-            "name": "libtech_team_featured_videos",
-            "prefix": "",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "row_min": "",
-            "row_limit": "",
-            "layout": "row",
-            "button_label": "Add Video",
-            "min": 0,
-            "max": 0,
-            "sub_fields": [
-                {
-                    "key": "field_5092f9179f639",
-                    "label": "Type",
-                    "name": "libtech_team_featured_videos_type",
-                    "prefix": "",
-                    "type": "radio",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "Vimeo": "Vimeo",
-                        "YouTube": "YouTube"
-                    },
-                    "other_choice": 0,
-                    "save_other_choice": 0,
-                    "default_value": "Vimeo",
-                    "layout": "vertical"
-                },
-                {
-                    "key": "field_5092f917a0310",
-                    "label": "ID",
-                    "name": "libtech_team_featured_videos_id",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5092f917a20bf",
-                    "label": "Name",
-                    "name": "libtech_team_featured_videos_name",
-                    "prefix": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "formatting": "none",
-                    "maxlength": "",
-                    "readonly": 0,
-                    "disabled": 0
-                },
-                {
-                    "key": "field_5092f917a2bb8",
-                    "label": "Details",
-                    "name": "libtech_team_featured_videos_details",
-                    "prefix": "",
-                    "type": "wysiwyg",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "toolbar": "basic",
-                    "media_upload": 0,
-                    "tabs": "all"
-                }
-            ]
-        },
-        {
             "key": "field_5092f917a4cc4",
             "label": "Questions and Answers",
             "name": "libtech_team_q_and_a",
@@ -459,6 +286,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430940451,
-    "local": "json"
+    "modified": 1431036417
 }
