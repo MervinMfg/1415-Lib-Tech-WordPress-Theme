@@ -59,6 +59,12 @@
   }
 }
 
+.page-template-page-environmental-detail {
+  .section-content {
+    padding-bottom: 30px;
+  }
+}
+
 @media screen and (min-width: $breakpoint-medium) {
   .enviro-content .section-content {
     .enviro-bullets {

@@ -25,15 +25,14 @@ if (have_posts()) :
                 $faqSlug = "snow-environmental";
         }
 ?>
-        <div class="bg-product-<?php echo $GLOBALS['sport']; ?>-top"></div>
-        <section class="video-header bg-product-<?php echo $GLOBALS['sport']; if ($videoID) { echo " video"; }; ?>">
-            <div class="section-content">
-                <h1><?php the_title(); ?></h1>
+        <section class="video-header <?php if ($videoID) { echo " video"; }; ?> container-fluid">
+            <div class="section-content row">
+                <h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
                 <?php
                     // display video if we have an id
                     if( $videoID ):
                 ?>
-                <div class="video-player">
+                <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
                     <div class="video-wrapper">
                         <iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="640" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
@@ -41,7 +40,7 @@ if (have_posts()) :
                 <?php
                     endif;
                 ?>
-                <div class="video-text">
+                <div class="video-text col-xs-12 col-md-8 col-md-offset-2">
                     <?php the_content(); ?>
                 </div>
                 <div class="clearfix"></div>
@@ -110,7 +109,7 @@ if (have_posts()) :
             endif;
             wp_reset_query();
         ?>
-<?php 
+<?php
     endwhile;
 endif;
 get_footer();
