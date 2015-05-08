@@ -3,10 +3,14 @@
 	getCurrencyCode();
 	// GET THE PAGE TITLE
 	$GLOBALS['pageTitle'] = "";
+	$archiveCatSlug = "";
 	if (function_exists('is_tag') && is_tag()) {
 		$GLOBALS['pageTitle'] .= single_tag_title("Tag Archive for &quot;", false) . '&quot; - ';
 	} elseif (is_archive()) {
 		$GLOBALS['pageTitle'] .= wp_title('', false) . ' Archive - ';
+		// get cat slug on archive pages
+		$cat = get_category( get_query_var( 'cat' ) );
+		$archiveCatSlug = $cat->slug;
 	} elseif (is_search()) {
 		$GLOBALS['pageTitle'] .= 'Search for &quot;'.wp_specialchars($s).'&quot; - ';
 	} elseif (!(is_404()) && (is_single()) || (is_page()) && !(is_front_page())) {
@@ -63,13 +67,13 @@
 	// get post type for checking sport
 	$postType = get_post_type($post->ID);
 	// check for the appropriate sport
-	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || in_category( '220' ) || post_is_in_descendant_category( '220' )) {
+	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || $archiveCatSlug == 'snow' || !is_archive() && post_is_in_descendant_category( '220' )) {
 		$GLOBALS['sport'] = "snow";
-	} else if (is_tree('6884') || is_tree('18938') || $postType == "libtech_nas" || $postType == "libtech_team_nas" || in_category( '828' ) || post_is_in_descendant_category( '828' )) {
+	} else if (is_tree('6884') || is_tree('18938') || $postType == "libtech_nas" || $postType == "libtech_team_nas" || $archiveCatSlug == 'ski' ||  !is_archive() && post_is_in_descendant_category( '828' )) {
 		$GLOBALS['sport'] = "ski";
-	} else if (is_tree('11418') || is_tree('18952') || $postType == "libtech_surfboards" || $postType == "libtech_team_surf" || in_category( '5540' ) || post_is_in_descendant_category( '5540' )) {
+	} else if (is_tree('11418') || is_tree('18952') || $postType == "libtech_surfboards" || $postType == "libtech_team_surf" || $archiveCatSlug == 'surf' ||  !is_archive() && post_is_in_descendant_category( '5540' )) {
 		$GLOBALS['sport'] = "surf";
-	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || in_category( '190' ) || post_is_in_descendant_category( '190' ) || is_page('environmental')) {
+	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || $archiveCatSlug == 'skate' ||  !is_archive() && post_is_in_descendant_category( 'skate' ) || is_page('environmental')) {
 		$GLOBALS['sport'] = "skate";
 	} else if (is_page('storm-factory')) {
 		// storm factory needs to be ski or snow, default to snow
