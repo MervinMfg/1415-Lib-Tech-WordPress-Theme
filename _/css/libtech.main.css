@@ -211,48 +211,47 @@ input:-moz-placeholder { color: #a9a9a9; }
 
 textarea:-moz-placeholder { color: #a9a9a9; }
 
-/* ========================================================================== COMPONENTS/_HEADER.SCSS ========================================================================== */
-header { position: relative; z-index: 4; border-top: solid 1px #999; overflow: hidden; }
+header { border-top: solid 1px #999; overflow: hidden; position: relative; z-index: 4; }
 header a, header .snow a, header .ski a, header .surf a, header .skate a { color: #fff; }
 header a:hover, header a:focus, header .current-menu-item a { color: #FFFF00; text-decoration: none; }
 header .snow a:hover, header .snow a:focus, header .snow.current-menu-item a, header .snow .current-menu-item a { color: #FFFF00; }
 header .ski a:hover, header .ski a:focus, header .ski.current-menu-item a, header .ski .current-menu-item a { color: #0099FF; }
 header .surf a:hover, header .surf a:focus, header .surf.current-menu-item a, header .surf .current-menu-item a { color: #FF6600; }
 header .skate a:hover, header .skate a:focus, header .skate.current-menu-item a, header .skate .current-menu-item a { color: #66CC00; }
-header .logo-wrapper { background: url("../img/bg-dark-texture.png") center top; position: relative; z-index: 3; padding-bottom: 6px; }
-header .logo-wrapper #logo { width: 191px; height: 74px; display: block; position: relative; z-index: 101; }
-header .logo-wrapper #logo img { width: 100%; height: auto; }
-header .nav-main, header .nav-product, header .nav-sub { font-family: "Duke Fill", Impact, Arial, sans-serif; text-transform: uppercase; text-align: center; }
-header .nav-main { height: 36px; font-size: 1.625em; /* 24 / 16 */ background: url("../img/bg-main-menu.png") repeat-x center top; line-height: 1.125em; position: relative; z-index: 4; }
+header .logo-wrapper { background: url("../img/bg-dark-texture.png") center top; padding-bottom: 6px; position: relative; z-index: 3; }
+header .logo-wrapper #logo { display: block; height: 74px; position: relative; width: 191px; z-index: 101; }
+header .logo-wrapper #logo img { height: auto; width: 100%; }
+header .nav-main, header .nav-product, header .nav-sub { font-family: "Duke Fill", Impact, Arial, sans-serif; text-align: center; text-transform: uppercase; }
+header .nav-main { background: url("../img/bg-main-menu.png") repeat-x center top; font-size: 1.625em; height: 36px; line-height: 1.125em; position: relative; z-index: 4; }
 header .nav-main li { display: inline-block; padding: 0 4%; }
 header .nav-main li a { font-style: normal; }
-header .nav-sub-wrapper { margin-top: -20px; position: relative; z-index: 2; background: url("../img/bg-sub-menu.png") repeat-x center bottom; padding: 20px 0; }
-header .nav-product { font-size: 1.375em; /* 22 / 16 */ background: url("../img/bg-product-menu-snow.png") repeat-x center bottom; padding-top: 20px; margin-top: -20px; position: relative; z-index: 2; }
+header .nav-sub-wrapper { background: url("../img/bg-sub-menu.png") repeat-x center bottom; margin-top: -20px; padding: 20px 0; position: relative; z-index: 2; }
+header .nav-product { background: url("../img/bg-product-menu-snow.png") repeat-x center bottom; font-size: 1.375em; margin-top: -20px; padding-top: 20px; position: relative; z-index: 2; }
 header .nav-product ul { padding-bottom: 15px; }
-header .nav-product ul li { padding: 10px; display: inline-block; }
-header .nav-product ul li a { font-style: normal; color: #000; }
+header .nav-product ul li { display: inline-block; padding: 10px; }
+header .nav-product ul li a { color: #000; font-style: normal; }
 header .nav-product ul li a:hover, header .nav-product ul li a:focus, header .nav-product ul li.current-menu-item a { color: #666; }
-header .nav-sub { position: relative; z-index: 1; padding-top: 8px; }
+header .nav-sub { padding-top: 8px; position: relative; z-index: 1; }
 header .nav-sub ul { padding-bottom: 10px; }
-header .nav-sub ul li { padding: 10px; display: inline-block; }
-header .nav-sub ul li a { font-style: normal; font-size: 1.125em; /* 18 / 16 */ }
-header .nav-sub-wrapper .mobile-btn { background: url("../img/sprite.png") -176px 0px; width: 23px; height: 23px; cursor: pointer; margin: 0 auto; }
+header .nav-sub ul li { display: inline-block; padding: 10px; }
+header .nav-sub ul li a { font-size: 1.125em; font-style: normal; }
+header .nav-sub-wrapper .mobile-btn { background: url("../img/sprite.png") -176px 0; width: 23px; height: 23px; cursor: pointer; margin: 0 auto; }
 header .nav-sub-wrapper.ski .mobile-btn { background-position: -176px -41px; }
 header .nav-sub-wrapper.surf .mobile-btn { background-position: -176px -82px; }
 header .nav-sub-wrapper.skate .mobile-btn { background-position: -176px -123px; }
-header .nav-utility { position: absolute; z-index: 100; top: 0; right: 0; padding: 30px 10px 0 0; }
-header .nav-utility a { font-size: 1em; /* 16 */ font-weight: bold; font-style: normal; text-transform: uppercase; }
+header .nav-utility { padding: 30px 10px 0 0; position: absolute; right: 0; top: 0; z-index: 100; }
+header .nav-utility a { font-size: 1em; font-style: normal; font-weight: bold; text-transform: uppercase; }
 header .nav-utility .search { display: none; padding: 3px 0 0 10px; }
-header .nav-utility .search a { display: block; width: 26px; height: 17px; background: url("../img/sprite.png") -130px 0px; text-indent: 110%; white-space: nowrap; overflow: hidden; }
-header .nav-utility .search #header-search { position: absolute; top: 4px; right: 0px; width: 25%; visibility: hidden; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; }
-header .nav-utility .search #header-search.visible { visibility: visible; -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
-header .nav-utility .search #header-search .text-input { width: 100%; position: absolute; top: 0px; right: -5px; padding-right: 35px; }
-header .nav-utility .search #header-search .submit { width: 26px; height: 17px; background: url("../img/sprite.png") -130px -37px; position: absolute; top: 8px; right: 0px; text-indent: 150%; white-space: nowrap; overflow: hidden; }
+header .nav-utility .search a { background: url("../img/sprite.png") -130px 0; display: block; height: 17px; overflow: hidden; text-indent: 110%; white-space: nowrap; width: 26px; }
+header .nav-utility .search #header-search { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; position: absolute; right: 0; top: 4px; visibility: hidden; width: 25%; }
+header .nav-utility .search #header-search.visible { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; visibility: visible; }
+header .nav-utility .search #header-search .text-input { padding-right: 35px; position: absolute; right: -5px; top: 0; width: 100%; }
+header .nav-utility .search #header-search .submit { background: url("../img/sprite.png") -130px -37px; height: 17px; overflow: hidden; position: absolute; right: 0; text-indent: 150%; top: 8px; white-space: nowrap; width: 26px; }
 header .nav-utility .link-dealer { display: none; }
 header .nav-utility .link-account { display: none; padding-right: 10px; }
-header .nav-utility #quick-cart { width: 61px; height: 22px; background: url("../img/sprite.png") -49px 0px; float: left; }
-header .nav-utility #quick-cart a { display: block; width: 31px; height: 20px; padding: 2px 0 0 30px; }
-header .nav-utility #quick-cart a span { width: 30px; font-size: 12px; font-weight: bold; text-align: center; display: block; margin-top: 1px; }
+header .nav-utility #quick-cart { background: url("../img/sprite.png") -49px 0; float: left; height: 22px; width: 61px; }
+header .nav-utility #quick-cart a { display: block; height: 20px; padding: 2px 0 0 30px; width: 31px; }
+header .nav-utility #quick-cart a span { display: block; font-size: 12px; font-weight: bold; margin-top: 1px; text-align: center; width: 30px; }
 header .nav-utility #quick-cart a:hover span, header .nav-utility #quick-cart a:focus span { color: #fff; }
 
 .snow header .nav-main .snow a { color: #FFFF00; }
@@ -285,22 +284,22 @@ header .nav-utility #quick-cart a:hover span, header .nav-utility #quick-cart a:
 
 .skate header .nav-utility a:hover { color: #66CC00; }
 
-.region-selector { float: left; padding-right: 10px; display: none; }
-.region-selector a { display: block; width: 33px; height: 20px; white-space: nowrap; overflow: hidden; }
-.region-selector a img { width: 100%; height: auto; }
+.region-selector { display: none; float: left; padding-right: 10px; }
+.region-selector a { display: block; height: 20px; overflow: hidden; white-space: nowrap; width: 33px; }
+.region-selector a img { height: auto; width: 100%; }
 
-@media screen and (min-width: 480px) { header .logo-wrapper { text-align: center; position: static; padding-bottom: 0; }
+@media screen and (min-width: 480px) { header .logo-wrapper { padding-bottom: 0; position: static; text-align: center; }
   header .logo-wrapper #logo { display: inline-block; }
   header .nav-main { margin-top: -40px; }
   header .nav-main li { padding: 0; }
-  header .nav-main li.ski { padding: 0 130px 0 40px; }
-  header .nav-main li.surf { padding: 0 40px 0 130px; }
-  header .nav-product ul li { padding: 5px 10px; display: inline-block; }
-  header .nav-sub { font-size: 1.125em; /* 18 / 16 */ }
+  header .nav-main li.skate { padding: 0 130px 0 40px; }
+  header .nav-main li.snow { padding: 0 40px 0 130px; }
+  header .nav-product ul li { display: inline-block; padding: 5px 10px; }
+  header .nav-sub { font-size: 1.125em; }
   header .nav-sub ul { padding-bottom: 5px; }
   header .nav-sub ul li { display: inline-block; padding: 0 10px; }
   header .nav-sub-wrapper .mobile-btn { display: none; }
-  header .nav-utility { padding: 9px 0 0 0; position: absolute; top: 0; left: 50%; width: 90%; margin-left: -45%; }
+  header .nav-utility { left: 50%; margin-left: -45%; padding: 9px 0 0; position: absolute; top: 0; width: 90%; }
   header .nav-utility .link-dealer { display: block; float: left; }
   header .nav-utility #quick-cart { float: right; }
   header .nav-utility .search { display: block; float: right; }
