@@ -32,9 +32,7 @@
 						for ($i = 0; $i < count($videoArray); $i++) {
 							if($videoArray[$i][0] == "YouTube"){ // check video type
 								// youtube
-								$apiUrl = "http://gdata.youtube.com/feeds/api/videos/" . $videoArray[$i][1] . "?v=2&alt=jsonc";
-								$json = json_decode(file_get_contents($apiUrl));
-								$thumbUrl = $json->data->thumbnail->hqDefault; // smaller image is sqDefault
+								$thumbUrl = 'http://img.youtube.com/vi/' . $videoArray[$i][1] . '/hqdefault.jpg';
 								$videoUrl = "http://www.youtube.com/watch?v=" . $videoArray[$i][1];
 							} else if ($videoArray[$i][0] == "Vimeo") {
 								// vimeo
