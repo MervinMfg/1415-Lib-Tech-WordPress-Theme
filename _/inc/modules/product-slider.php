@@ -38,7 +38,9 @@
 					?>
 
 					<div class="product-item grid-item-wrapper <?php echo $postSlug; ?>">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" />
+						<div class="image-wrapper">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" />
+						</div>
 						<div class="grid-item-info">
 							<p class="product-title"><?php echo $productTitle; ?></p>
 
@@ -128,7 +130,9 @@
 					?>
 
 					<div class="product-item grid-item-wrapper <?php echo $postSlug; ?>">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
+						<div class="image-wrapper">
+							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
+						</div>
 						<div class="grid-item-info">
 							<p class="product-title"><?php the_title(); ?></p>
 							<?php

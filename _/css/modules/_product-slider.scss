@@ -97,6 +97,27 @@
   }
 }
 
+.page-template-home-sport.surf,
+.single-libtech_surfboards, {
+  .product-slider {
+    .owl-loaded .product-item .image-wrapper {
+      width: 85%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+  }
+}
+
+.page-template-home-sport.surf,
+.single-libtech_surfboards, {
+  .product-list .product-item img {
+    height: auto;
+    margin-left: 0;
+    max-width: 220%;
+    width: 220%;
+  }
+}
+
 .product-details-nav {
   .product-list {
     padding-bottom: 0;

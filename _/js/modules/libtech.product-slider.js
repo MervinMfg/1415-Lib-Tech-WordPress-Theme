@@ -39,7 +39,7 @@ LIBTECH.ProductSlider.prototype = {
 			$('.product-slider .product-list .superbanana').remove();
 		}
     // check template to see if it should be square images
-    if ($('.page-template-home-sport.surf').length > 0 || $('.single-libtech_apparel').length > 0 || $('.single-libtech_luggage').length > 0 || $('.single-libtech_outerwear').length > 0 || $('.single-libtech_accessories').length > 0 || $('.single-libtech_surfboards').length > 0 || $('.product-slider-featured').length > 0) {
+    if ($('.single-libtech_apparel').length > 0 || $('.single-libtech_luggage').length > 0 || $('.single-libtech_outerwear').length > 0 || $('.single-libtech_accessories').length > 0 || $('.product-slider-featured').length > 0) {
       self.config.responsive = {
         0: { items: 2 },
         320: { items: 3 },
@@ -50,6 +50,18 @@ LIBTECH.ProductSlider.prototype = {
         1400: { items: 6 },
         1600: { items: 7 },
         1800: { items: 8 }
+      };
+    } else if ($('.page-template-home-sport.surf').length > 0 || $('.single-libtech_surfboards').length > 0) {
+      self.config.responsive = {
+        0: { items: 2 },
+        320: { items: 4 },
+        480: { items: 5 },
+        768: { items: 7 },
+        992: { items: 9 },
+        1200: { items: 10 },
+        1400: { items: 11 },
+        1600: { items: 13 },
+        1800: { items: 14 }
       };
     }
     // build slider
