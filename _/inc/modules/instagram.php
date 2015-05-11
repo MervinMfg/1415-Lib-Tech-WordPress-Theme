@@ -9,8 +9,11 @@
 				$value = get_field('libtech_instagram_tag');
 			}
 			$limit = get_field('libtech_instagram_limit');
+			if($value) :
 		?>
 
 		<section class="instagram-feed container-fluid" data-<?php echo $type; ?>="<?php echo $value; ?>" data-limit="<?php echo $limit; ?>">
 			<div class="section-content row"><?php // Add Instagram Photos Via JS ?></div>
 		</section>
+
+		<?php endif; ?>
