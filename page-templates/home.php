@@ -148,7 +148,7 @@ get_header();
 									<p class="product-title"><?php echo $productTitle; ?></p>
 									<?php echo $productPrice; ?>
 									<div class="call-to-action">
-										<a href="<?php echo $productLink; ?>" class="button">Buy Now</a>
+										<a href="<?php echo $productLink; ?>" class="button">Learn More</a>
 										<a href="<?php echo $postCatLink; ?>" class="button">Shop <?php echo $postCat; ?></a>
 									</div>
 								</div>

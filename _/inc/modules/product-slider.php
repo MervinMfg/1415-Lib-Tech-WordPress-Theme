@@ -56,7 +56,7 @@
 							?>
 
 							<div class="call-to-action">
-								<a href="<? echo $productLink; ?>" class="button">Buy Now</a>
+								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
 								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 							</div>
 						</div>
@@ -147,7 +147,7 @@
 							?>
 
 							<div class="call-to-action">
-								<a href="<? echo $productLink; ?>" class="button">Buy Now</a>
+								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
 								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 							</div>
 						</div>
