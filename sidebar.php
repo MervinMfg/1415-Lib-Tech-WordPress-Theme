@@ -63,7 +63,7 @@ switch ($GLOBALS['sport']) {
                             <li><?php wp_loginout(); ?></li>
                             <li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
                             <?php wp_meta(); ?>
-                        </ul>    	
+                        </ul>
                         <h2>Subscribe</h2>
                         <ul>
                             <li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
@@ -110,7 +110,7 @@ switch ($GLOBALS['sport']) {
                                         if( $my_query->have_posts() ) {
                                             while( $my_query->have_posts() ) {
                                                 $my_query->the_post();
-                                                $postImage = get_post_image('square-medium');
+                                                $postImage = get_post_image('rect-medium');
                                                 // get the main parent category
                                                 $category = get_the_category();
                                                 $catTree = get_category_parents($category[0]->term_id, true, '!', true);
@@ -130,17 +130,19 @@ switch ($GLOBALS['sport']) {
                                     <li class="post blog-post" id="post-<?php echo $relatedPost['id']; ?>">
                                         <div class="post-wrapper">
                                             <a href="<?php echo $relatedPost['url']; ?>">
+                                              <div class="post-image-wrapper">
                                                 <img src="<?php echo $relatedPost['image'][0]; ?>" alt="Image From <?php echo $relatedPost['title']; ?>" />
-                                                <h3 class="post-title"><?php echo $relatedPost['title']; ?></h3>
+                                              </div>
+                                              <div class="post-text-wrapper">
                                                 <p class="post-meta">
-                                                    <time datetime="<?php echo $relatedPost['dateTime']; ?>"><?php echo $relatedPost['displayTime']; ?></time> | <span><fb:comments-count href=<?php echo $relatedPost['url']; ?>></fb:comments-count> Comments</span>
+                                                  <time datetime="<?php echo $relatedPost['dateTime']; ?>"><?php echo $relatedPost['displayTime']; ?></time> | <span><fb:comments-count href=<?php echo $relatedPost['url']; ?>></fb:comments-count> Comments</span>
                                                 </p>
-                                                <p class="post-excerpt"><?php echo $relatedPost['excerpt']; ?></p>
-                                                <p class="post-more">READ MORE</p>
+                                                <h3 class="post-title"><?php echo $relatedPost['title']; ?></h3>
+                                              </div>
                                             </a>
                                         </div>
                                     </li>
-                                    
+
                                     <?
                                             $i++;
                                             if ($i == 3) {

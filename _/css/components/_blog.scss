@@ -4,13 +4,10 @@
 
 .blog-posts,
 .related-posts {
-  .section-content {
-    padding-top: 20px;
-		padding-bottom: 60px;
-  }
 
-  h2 {
-    padding-bottom: 20px;
+  .section-content {
+		padding-bottom: 60px;
+    padding-top: 20px;
   }
 
   .blog-post {
@@ -26,8 +23,8 @@
       a,
       a:hover,
       a:focus {
-        text-decoration: none;
         font-style: normal;
+        text-decoration: none;
       }
 
       a {
@@ -45,9 +42,9 @@
 
 				.post-text-wrapper {
 					.post-title {
+	          line-height: 1.05;
 	          margin-bottom: 10px;
 	          word-wrap: break-word;
-	          line-height: 1.05;
 	        }
 
 	        .post-meta {
@@ -64,15 +61,23 @@
   }
 }
 
+.blog-posts h2 {
+  padding-bottom: 20px;
+}
+
+.related-posts h2 {
+  padding-bottom: 5px;
+}
+
 .pagination {
   clear: both;
-  text-align: center;
   letter-spacing: -4px;
+  text-align: center;
 
   .page-numbers {
     background: $snowColor;
-    padding: 10px;
     letter-spacing: 1px;
+    padding: 10px;
   }
 
   span.page-numbers {
@@ -82,9 +87,9 @@
   a.page-numbers {
     color: #000;
     display: inline-block;
-    text-transform: uppercase;
-    font-weight: bold;
     font-style: normal;
+    font-weight: bold;
+    text-transform: uppercase;
   }
 }
 
@@ -108,6 +113,10 @@
     h3,
     h4 {
       margin: 40px 0 20px;
+
+      &.post-title {
+        margin: 0 0 10px;
+      }
     }
 
     .section-content-wrapper {
@@ -117,7 +126,7 @@
     .post {
       .entry-header {
         .entry-title {
-          margin-bottom: 0.25em;
+          margin-bottom: .25em;
         }
 
         .entry-meta {
@@ -136,35 +145,35 @@
           font-weight: bold;
 
           &:first-letter {
-            text-transform: uppercase;
+            color: #fff;
             float: left;
             font-size: 4.65em;
-            color: #fff;
-            line-height: 0.8em;
+            line-height: .8em;
             padding-right: 8px;
+            text-transform: uppercase;
           }
         }
 
         img {
-          width: auto !important;
           height: auto !important;
+          width: auto !important;
 
           &.alignleft,
           &.alignright,
           &.aligncenter {
             display: block;
-            margin-right: auto;
             margin-left: auto;
+            margin-right: auto;
             padding-bottom: 20px;
           }
         }
 
         blockquote {
-          text-align: center;
-          font-size: 1.3em;
-          font-weight: bold;
-          font-style: italic;
           color: #fff;
+          font-size: 1.3em;
+          font-style: italic;
+          font-weight: bold;
+          text-align: center;
         }
 
         .wp-caption {
@@ -191,8 +200,8 @@
 
         ol,
         ul {
-          padding: 0 0 20px 40px;
           display: table;
+          padding: 0 0 20px 40px;
         }
 
         ul {
@@ -205,22 +214,15 @@
       }
 
       .entry-categories-tags {
-        margin-bottom: 20px;
         clear: both;
-
-        .entry-categories {
-
-        }
-
-        .entry-tags {
-
-        }
+        margin-bottom: 20px;
       }
 
       .discussion {
+        clear: both;
         padding-left: 0;
         padding-right: 0;
-        clear: both;
+
         h2 {
           margin-bottom: 0;
         }
@@ -230,6 +232,7 @@
     #sidebar {
       .social-links {
         padding-top: 40px;
+
         .h4 {
           margin-bottom: 5px;
         }
@@ -238,27 +241,25 @@
       .widget {
         padding-bottom: 40px;
         display: none;
+
         &.widget_mycategoryorder {
           padding-bottom: 20px;
         }
 
         &.widget_archive {
-          h2 {
-            margin-bottom: 5px;
-          }
 
           select {
+            -webkit-appearance: none;
+            background: #fff;
+            border: 0;
+            border-radius: 0;
             font-family: $bodyFont;
             font-size: 1.25em;
             font-style: italic;
-            text-transform: uppercase;
-            background: #fff;
-            padding: 10px;
             line-height: 1;
-            border: 0;
-            border-radius: 0;
-            -webkit-appearance: none;
             margin-bottom: 10px;
+            padding: 10px;
+            text-transform: uppercase;
           }
         }
       }
@@ -270,6 +271,7 @@
     }
   }
 }
+
 .entry-share {
   li {
     float: left;
@@ -283,19 +285,19 @@
 
 .single-post {
   .mfp-zoom-in {
-    /* start state */
+    // start state
     .mfp-with-anim {
       opacity: 0;
-      transition: all 0.3s ease-in-out;
-      transform: scale(0.9);
+      transform: scale(.9);
+      transition: all .3s ease-in-out;
     }
 
     &.mfp-bg {
       opacity: 0;
-      transition: all 0.3s ease-in-out;
+      transition: all .3s ease-in-out;
     }
 
-    /* animate in */
+    // animate in
     &.mfp-ready {
       .mfp-with-anim {
         opacity: 1;
@@ -303,19 +305,20 @@
       }
 
       &.mfp-bg {
-        opacity: 0.95;
+        opacity: .95;
       }
     }
-    /* animate out */
+
+    // animate out
     &.mfp-removing {
       .mfp-with-anim {
-        transform: scale(0.9);
         opacity: 0;
+        transform: scale(.9);
       }
 
       &.mfp-bg {
         opacity: 0;
-        transition: all 0.9s ease-out;
+        transition: all .9s ease-out;
       }
     }
   }
@@ -358,14 +361,14 @@
         img {
           &.alignleft {
             float: left;
-            padding: 0 40px 20px 0;
             max-width: 72%;
+            padding: 0 40px 20px 0;
           }
 
           &.alignright {
             float: right;
-            padding: 0 0 20px 40px;
             max-width: 72%;
+            padding: 0 0 20px 40px;
           }
         }
 
@@ -374,14 +377,14 @@
 
           &.alignleft {
             float: left;
-            padding-right: 40px;
             max-width: 70%;
+            padding-right: 40px;
           }
 
           &.alignright {
             float: right;
-            padding-left: 40px;
             max-width: 70%;
+            padding-left: 40px;
           }
 
           &.aligncenter {
@@ -394,11 +397,12 @@
         display: block;
       }
     }
+
     #sidebar {
       .related-posts {
         .post {
-          width: 50%;
           float: left;
+          width: 50%;
 
           &:nth-child(1) .post-wrapper {
             padding-right: 10px;
@@ -418,8 +422,8 @@
   .blog-post .section-content .post .entry-content {
     .strobbr-list {
       li {
-        width: 50%;
         float: left;
+        width: 50%;
       }
     }
   }
@@ -428,13 +432,13 @@
 @media screen and (min-width: $breakpoint-large) {
   .blog-post .section-content {
     .post {
-      width: 75%;
       float: left;
+      width: 75%;
     }
 
     #sidebar {
-      width: 25%;
       float: right;
+      width: 25%;
 
       .widget {
         display: block;
@@ -445,8 +449,8 @@
         padding-left: 40px;
 
         .post {
-          width: 100%;
           float: none;
+          width: 100%;
 
           &:nth-child(1) .post-wrapper {
             padding-right: 0;
