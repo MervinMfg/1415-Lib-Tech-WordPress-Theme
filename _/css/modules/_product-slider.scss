@@ -16,6 +16,10 @@
     .owl-stage {
       display: inline-block;
     }
+
+    .owl-dots {
+      display: none;
+    }
   }
 
   .product-list {
@@ -148,5 +152,11 @@
         @include vendorize(opacity, 1);
       }
     }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .product-slider .owl-carousel .owl-dots {
+    display: block;
   }
 }

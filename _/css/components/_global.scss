@@ -175,7 +175,7 @@ body {
   background-image: url('../img/bg-texture-gradient.png');
   background-position: center;
   background-repeat: repeat-x;
-  background-size: cover;
+  background-size: auto 100%;
 }
 
 .page-template-default {
@@ -348,10 +348,6 @@ body {
     .button {
       font-size: 1.5em; // 24 / 16
     }
-  }
-
-  .bg-texture-gradient {
-    background-size: auto 100%;
   }
 }
 
