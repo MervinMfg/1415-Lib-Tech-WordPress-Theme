@@ -11,9 +11,21 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "id"
+            "return_format": "id",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_534cffca9b731",
@@ -24,9 +36,21 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "id"
+            "return_format": "id",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_534d008f9b732",
@@ -37,9 +61,21 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "id"
+            "return_format": "id",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_534d00a99b733",
@@ -50,6 +86,11 @@
             "instructions": "Add various board specifications here.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "row_min": "",
             "row_limit": "",
             "layout": "table",
@@ -66,7 +107,11 @@
                     "instructions": "(inches)",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -85,7 +130,11 @@
                     "instructions": "(inches)",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -104,7 +153,11 @@
                     "instructions": "(inches)",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -123,12 +176,38 @@
                     "instructions": "(inches)",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
                     "formatting": "none",
+                    "maxlength": "",
+                    "readonly": 0,
+                    "disabled": 0
+                },
+                {
+                    "key": "field_55523da67a5fc",
+                    "label": "Thickness",
+                    "name": "libtech_surfboard_specs_thickness",
+                    "prefix": "",
+                    "type": "text",
+                    "instructions": "(inches)",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "maxlength": "",
                     "readonly": 0,
                     "disabled": 0
@@ -142,7 +221,11 @@
                     "instructions": "(liters)",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -163,6 +246,11 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "row_min": "",
             "row_limit": "",
             "layout": "row",
@@ -179,7 +267,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "default_value": "",
                     "placeholder": "",
                     "prepend": "",
@@ -198,7 +290,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "choices": {
                         "Logo": "Logo",
                         "Graphic": "Graphic"
@@ -217,10 +313,21 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "preview_size": "thumbnail",
                     "library": "all",
-                    "return_format": "id"
+                    "return_format": "id",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": ""
                 },
                 {
                     "key": "field_534d02779b73d",
@@ -239,7 +346,11 @@
                             }
                         ]
                     ],
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "choices": {
                         "Ryan Davis": "Ryan Davis",
                         "Jamie Lynn": "Jamie Lynn",
@@ -259,7 +370,11 @@
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
-                    "column_width": "",
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "min": "",
                     "max": "",
                     "layout": "table",
@@ -274,7 +389,11 @@
                             "instructions": "(inches)",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "placeholder": "",
                             "prepend": "",
@@ -293,7 +412,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
                                 "3 Fin Box": "3 Fin Box",
                                 "5 Fin Box": "5 Fin Box"
@@ -312,7 +435,11 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "default_value": "",
                             "placeholder": "",
                             "prepend": "",
@@ -331,15 +458,19 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "Inventory": "Inventory",
                                 "Yes": "Yes",
-                                "No": "No"
+                                "No": "No",
+                                "Limited": "Limited"
                             },
                             "other_choice": 0,
                             "save_other_choice": 0,
-                            "default_value": "Inventory",
+                            "default_value": "Yes",
                             "layout": "vertical"
                         },
                         {
@@ -351,15 +482,19 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "Inventory": "Inventory",
                                 "Yes": "Yes",
-                                "No": "No"
+                                "No": "No",
+                                "Limited": "Limited"
                             },
                             "other_choice": 0,
                             "save_other_choice": 0,
-                            "default_value": "Inventory",
+                            "default_value": "Yes",
                             "layout": "vertical"
                         },
                         {
@@ -371,15 +506,19 @@
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
-                            "column_width": "",
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
                             "choices": {
-                                "Inventory": "Inventory",
                                 "Yes": "Yes",
-                                "No": "No"
+                                "No": "No",
+                                "Limited": "Limited"
                             },
                             "other_choice": 0,
                             "save_other_choice": 0,
-                            "default_value": "Inventory",
+                            "default_value": "Yes",
                             "layout": "vertical"
                         }
                     ]
@@ -395,10 +534,22 @@
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "min": "",
             "max": "",
             "preview_size": "thumbnail",
-            "library": "all"
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         }
     ],
     "location": [
@@ -415,5 +566,6 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1431453129
 }

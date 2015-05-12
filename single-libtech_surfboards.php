@@ -354,37 +354,63 @@ Template Name: Surfboard Detail
 						<div class="product-specs">
 							<h2>Specifications</h2>
 							<table>
+								<?php
+								$i = 1;
+								if(have_rows('libtech_surfboard_specs')):
+									while(have_rows('libtech_surfboard_specs')):
+										the_row();
+										$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
+										$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
+										$columns = 3; // length, width, volume by default
+										$noseWidth = get_sub_field('libtech_surfboard_specs_nose');
+										if($noseWidth) $columns++;
+										$tailWidth = get_sub_field('libtech_surfboard_specs_tail');
+										if($tailWidth) $columns++;
+										$thickness = get_sub_field('libtech_surfboard_specs_thickness');
+										if($thickness) $columns++;
+								?>
+
+								<?php if($i == 1) : ?>
 								<thead>
 									<tr>
 										<th>Length</th>
-										<th>Nose</th>
+										<?php if($noseWidth): ?><th>Nose</th><?php endif; ?>
 										<th>Width</th>
-										<th>Tail</th>
+										<?php if($tailWidth): ?><th>Tail</th><?php endif; ?>
+										<?php if($thickness): ?><th>Thickness</th><?php endif; ?>
 										<th>Volume</th>
 									</tr>
 								</thead>
 								<tbody>
-									<?php
-									if(get_field('libtech_surfboard_specs')): while(the_repeater_field('libtech_surfboard_specs')):
-										$surfboardLength = get_sub_field('libtech_surfboard_specs_length');
-										$surfboardLength = floor($surfboardLength/12) . "’" . ($surfboardLength - (floor($surfboardLength/12)*12)) . "”";
-									?>
+								<?php endif; ?>
+
 
 									<tr>
 										<td><?php echo $surfboardLength; ?></td>
-										<td><?php the_sub_field('libtech_surfboard_specs_nose'); ?>"</td>
+										<?php if($noseWidth): ?><td><?php the_sub_field('libtech_surfboard_specs_nose'); ?>"</td><?php endif; ?>
 										<td><?php the_sub_field('libtech_surfboard_specs_width'); ?>"</td>
-										<td><?php the_sub_field('libtech_surfboard_specs_tail'); ?>"</td>
+										<?php if($tailWidth): ?><td><?php the_sub_field('libtech_surfboard_specs_tail'); ?>"</td><?php endif; ?>
+										<?php if($thickness): ?><td><?php the_sub_field('libtech_surfboard_specs_thickness'); ?>"</td><?php endif; ?>
 										<td><?php the_sub_field('libtech_surfboard_specs_volume'); ?> cl</td>
 									</tr>
 
-									<?php endwhile; endif; ?>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="5"><!-- <a href="/surfing/specifications/" class="view-all-specs">View all specs</a> --></td>
-									</tr>
-								</tfoot>
+									<?php
+											$i++;
+											if($i > count(get_field('libtech_surfboard_specs'))) :
+									?>
+
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="<?php echo $columns; ?>"></td>
+										</tr>
+									</tfoot>
+
+									<?php
+											endif;
+										endwhile;
+									endif;
+									?>
 							</table>
 						</div>
 					</div><!-- END .product-desc-awards-specs -->
@@ -549,7 +575,7 @@ Template Name: Surfboard Detail
 				<div class="clearfix"></div>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-gallery -->
-		
+
 		<?php
 			endif;
 			// display disqus comments
