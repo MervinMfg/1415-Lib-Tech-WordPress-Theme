@@ -176,6 +176,7 @@ LIBTECH.ProductDetails.prototype = {
 		$navLink = $('.product-details-nav-btn');
 		// reset prod nav content position
 		$prodNavContent.removeAttr('style');
+		$navLink.find('.toggle-btn').removeClass('expanded');
 		// remove resize listener
 		$(window).off('resize.productNav');
 		// show nav if we're tablet+
