@@ -42,27 +42,16 @@
 										break;
 								}
 								// get product price
-								if ($postType == "libtech_surfboards") {
-									// check fin pricing and what to display by default
-									if (get_field('libtech_product_price_us_5fin', $post_object->ID) == "") {
-											$productPrice = getPrice(
-												get_field('libtech_product_price_us', $post_object->ID),
-												get_field('libtech_product_price_ca', $post_object->ID),
-												get_field('libtech_product_price_eur', $post_object->ID),
-												get_field('libtech_product_on_sale', $post_object->ID),
-												get_field('libtech_product_sale_percentage', $post_object->ID),
-												false
-											);
-									} else {
-											$productPrice = getPrice(
-												get_field('libtech_product_price_us_5fin', $post_object->ID),
-												get_field('libtech_product_price_ca_5fin', $post_object->ID),
-												get_field('libtech_product_price_eur_5fin', $post_object->ID),
-												get_field('libtech_product_on_sale', $post_object->ID),
-												get_field('libtech_product_sale_percentage', $post_object->ID),
-												false
-											);
-									}
+								if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us', $post_object->ID) == "") {
+									// display 5 fin pricing
+									$productPrice = getPrice(
+										get_field('libtech_product_price_us_5fin', $post_object->ID),
+										get_field('libtech_product_price_ca_5fin', $post_object->ID),
+										get_field('libtech_product_price_eur_5fin', $post_object->ID),
+										get_field('libtech_product_on_sale', $post_object->ID),
+										get_field('libtech_product_sale_percentage', $post_object->ID),
+										false
+									);
 								} else {
 									// grab default price of all other products
 									$productPrice = getPrice(

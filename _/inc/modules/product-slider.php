@@ -45,14 +45,27 @@
 							<p class="product-title"><?php echo $productTitle; ?></p>
 
 							<?php
-								echo getPrice(
-									get_field('libtech_product_price_us', $featuredProduct->ID),
-									get_field('libtech_product_price_ca', $featuredProduct->ID),
-									get_field('libtech_product_price_eur', $featuredProduct->ID),
-									get_field('libtech_product_on_sale', $featuredProduct->ID),
-									get_field('libtech_product_sale_percentage', $featuredProduct->ID),
-									true
-								);
+								if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us_5fin', $featuredProduct->ID) != "") {
+									// display 5 fin pricing
+									echo getPrice(
+										get_field('libtech_product_price_us_5fin', $featuredProduct->ID),
+										get_field('libtech_product_price_ca_5fin', $featuredProduct->ID),
+										get_field('libtech_product_price_eur_5fin', $featuredProduct->ID),
+										get_field('libtech_product_on_sale', $featuredProduct->ID),
+										get_field('libtech_product_sale_percentage', $featuredProduct->ID),
+										false
+									);
+								} else {
+									// grab default price of all other products
+									echo getPrice(
+										get_field('libtech_product_price_us', $featuredProduct->ID),
+										get_field('libtech_product_price_ca', $featuredProduct->ID),
+										get_field('libtech_product_price_eur', $featuredProduct->ID),
+										get_field('libtech_product_on_sale', $featuredProduct->ID),
+										get_field('libtech_product_sale_percentage', $featuredProduct->ID),
+										false
+									);
+								}
 							?>
 
 							<div class="call-to-action">
@@ -135,15 +148,29 @@
 						</div>
 						<div class="grid-item-info">
 							<p class="product-title"><?php the_title(); ?></p>
+
 							<?php
-								echo getPrice(
-									get_field('libtech_product_price_us'),
-									get_field('libtech_product_price_ca'),
-									get_field('libtech_product_price_eur'),
-									get_field('libtech_product_on_sale'),
-									get_field('libtech_product_sale_percentage'),
-									true
-								);
+								if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us', $post->ID) == "") {
+									// display 5 fin pricing
+									echo getPrice(
+										get_field('libtech_product_price_us_5fin', $post->ID),
+										get_field('libtech_product_price_ca_5fin', $post->ID),
+										get_field('libtech_product_price_eur_5fin', $post->ID),
+										get_field('libtech_product_on_sale', $post->ID),
+										get_field('libtech_product_sale_percentage', $post->ID),
+										false
+									);
+								} else {
+									// grab default price of all other products
+									echo getPrice(
+										get_field('libtech_product_price_us', $post->ID),
+										get_field('libtech_product_price_ca', $post->ID),
+										get_field('libtech_product_price_eur', $post->ID),
+										get_field('libtech_product_on_sale', $post->ID),
+										get_field('libtech_product_sale_percentage', $post->ID),
+										false
+									);
+								}
 							?>
 
 							<div class="call-to-action">
