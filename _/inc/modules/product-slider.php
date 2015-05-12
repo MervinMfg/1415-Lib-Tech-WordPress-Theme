@@ -57,9 +57,9 @@
 
 							<div class="call-to-action">
 								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
-								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 							</div>
 						</div>
+						<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 					</div>
 
 					<?
@@ -90,9 +90,9 @@
 							<p class="product-title">Lib Tech DIY</p>
 							<div class="call-to-action">
 								<a href="/snowboarding/snowboard-builder/" class="button">Build Now</a>
-								<a href="/snowboarding/snowboard-builder/" class="mobile-grid-link"></a>
 							</div>
 						</div>
+						<a href="/snowboarding/snowboard-builder/" class="mobile-grid-link"></a>
 					</div>
 
 					<?php
@@ -148,9 +148,9 @@
 
 							<div class="call-to-action">
 								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
-								<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 							</div>
 						</div>
+						<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
 					</div>
 
 					<?
