@@ -84,6 +84,8 @@
 }
 
 .mobile-grid-link {
+  background: url('../img/square.gif'); // dumb IE8/9 fix
+  // http://stackoverflow.com/questions/6914822/absolute-positioned-anchor-tag-with-no-text-not-clickable-in-ie
   display: block;
   height: 100%;
   left: 0;
