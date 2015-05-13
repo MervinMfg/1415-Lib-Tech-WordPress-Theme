@@ -45,13 +45,13 @@
       width: 101%;
 
       .username {
-        @include transition(transform);
+        @include transition(all);
         @include vendorize(transform, translate(0, -15px));
         margin-bottom: .2em;
       }
 
       .instagram-logo {
-        @include transition(transform);
+        @include transition(all);
         @include vendorize(transform, translate(0, -5px));
         color: #fff;
 
