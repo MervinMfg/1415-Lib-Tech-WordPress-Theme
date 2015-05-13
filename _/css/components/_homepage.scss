@@ -13,6 +13,7 @@
   }
 
   .sli-text {
+    @include vendorize(transform, translateY(-65%));
     left: 0;
     position: absolute;
     text-align: center;
