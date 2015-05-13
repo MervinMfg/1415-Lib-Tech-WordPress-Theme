@@ -288,12 +288,12 @@
         @include vendorize(opacity, 0);
 
         .product-title {
-          @include transition(transform);
+          @include transition(all);
           @include vendorize(transform, translate(0, -15px));
         }
 
         .price {
-          @include transition(transform);
+          @include transition(all);
           @include vendorize(transform, translate(0, -5px));
         }
       }
