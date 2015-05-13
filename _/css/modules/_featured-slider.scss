@@ -22,6 +22,15 @@
     img {
       height: auto;
       width: 100%;
+
+      &.lazy {
+        @include transition(opacity, 300ms);
+        @include vendorize(opacity, 0);
+
+        &.loaded {
+          @include vendorize(opacity, 1);
+        }
+      }
     }
   }
 
