@@ -17,11 +17,18 @@ LIBTECH.StorySlider.prototype = {
   init: function() {
     var self = this;
     self.carousel = $('.story-slider .owl-carousel');
-    self.buildCarousel();
     self.carousel.on('resized.owl.carousel', function(event) {
       self.positionDots();
     });
-    self.positionDots();
+    self.buildCarousel();
+    // lazy load of images
+		$(".story-slider img.lazy").unveil(0, function() {
+			$(this).on('load', function () {
+				$(this).addClass('loaded');
+				$(this).off('load');
+        self.positionDots();
+			});
+		});
   },
   buildCarousel: function() {
     var self = this;

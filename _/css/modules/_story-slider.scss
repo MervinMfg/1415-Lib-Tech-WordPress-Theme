@@ -8,9 +8,14 @@
   .section-content {
     max-width: 100%;
     padding: 0;
+  }
 
-    .slider-wrapper a img { // TEMP visual fix
-      width: 100%;
+  .lazy {
+    @include transition(opacity, 300ms);
+    @include vendorize(opacity, 0);
+
+    &.loaded {
+      @include vendorize(opacity, 1);
     }
   }
 
