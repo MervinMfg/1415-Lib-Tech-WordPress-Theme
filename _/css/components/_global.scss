@@ -30,7 +30,6 @@ body {
 .skate,
 .ski,
 .surf {
-  button,
   .button {
     @include transition(background);
     border: 2px solid #FFF;
@@ -201,7 +200,6 @@ body {
 }
 
 // PRICE General Styles
-//-------------------------------------------------------------------------------
 
 .price {
   .us-price,
@@ -344,7 +342,6 @@ body {
   .skate,
   .ski,
   .surf {
-    button,
     .button {
       font-size: 1.5em; // 24 / 16
     }
