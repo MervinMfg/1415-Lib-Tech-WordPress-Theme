@@ -126,3 +126,41 @@
     background-image: url('../img/home-sport-link-ski-sprite.jpg');
   }
 }
+
+// IE Fixes
+.ie-lt10 .home-sport-links {
+  a {
+    &:hover,
+    &:focus {
+      .sli-title {
+        @include vendorize(opacity, 1);
+        @include vendorize(transform, translate(0, 0));
+      }
+
+      .sli-subtitle {
+        @include vendorize(opacity, 1);
+        @include vendorize(transform, translate(0, 0));
+      }
+
+      .sli-image-hover {
+        display: none;
+      }
+    }
+  }
+
+  .snow .sli-image-hover {
+    background-image: none;
+  }
+
+  .surf .sli-image-hover {
+    background-image: none;
+  }
+
+  .skate .sli-image-hover {
+    background-image: none;
+  }
+
+  .ski .sli-image-hover {
+    background-image: none;
+  }
+}
