@@ -378,4 +378,26 @@
       }
     }
   }
+
+  // alter hovers in IE8
+  .ie-lt9 {
+    .grid-item-wrapper,
+    .product-item.grid-item-wrapper  {
+      .grid-item-info {
+        display: none;
+        top: 25%;
+      }
+
+      &:hover,
+      &:focus {
+        img {
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+        }
+
+        .grid-item-info {
+          display: block;
+        }
+      }
+    }
+  }
 }
