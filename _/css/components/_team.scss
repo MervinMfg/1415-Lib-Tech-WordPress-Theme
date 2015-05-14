@@ -79,7 +79,7 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-medium) {
+.no-touch {
   .team-members,
   .home-sport-team {
     a.team-item-link {
@@ -140,16 +140,18 @@
 }
 
 @media screen and (min-width: $breakpoint-large) {
-  .team-members,
-  .home-sport-team {
-    .team-item-info {
-      .team-item-name {
-        font-size: 2em;
-      }
+  .no-touch {
+    .team-members,
+    .home-sport-team {
+      .team-item-info {
+        .team-item-name {
+          font-size: 2em;
+        }
 
-      .team-item-category {
-        font-size: 1.25em;
+        .team-item-category {
+          font-size: 1.25em;
+        }
       }
-    }
+    }  
   }
 }
