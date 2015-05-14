@@ -118,16 +118,20 @@ if(!is_admin()){
 function is_tree($pid) {
     // $pid = The ID of the ancestor page
     global $post; // load details about this page
-    $anc = get_post_ancestors( $post->ID );
-    foreach($anc as $ancestor) {
-        if(is_page() && $ancestor == $pid) {
-            return true;
-        }
+    if(isset($post)) {
+      $anc = get_post_ancestors( $post->ID );
+      foreach($anc as $ancestor) {
+          if(is_page() && $ancestor == $pid) {
+              return true;
+          }
+      }
+      if(is_page() && (is_page($pid)))
+          return true; // we're at the page or at a sub page
+      else
+          return false; // we're elsewhere
+    } else {
+      return false;
     }
-    if(is_page() && (is_page($pid)))
-        return true; // we're at the page or at a sub page
-    else
-        return false; // we're elsewhere
 };
 // ADD ACF FIELDS TO JSON REST API
 // https://github.com/PanManAms/WP-JSON-API-ACF

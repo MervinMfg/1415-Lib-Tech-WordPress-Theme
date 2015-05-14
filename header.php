@@ -48,9 +48,11 @@
             $GLOBALS['pageImage'] = $GLOBALS['pageImage'][0];
         }
 	}else{
-		if(has_post_thumbnail($post->ID) && !is_home()){
-			$GLOBALS['pageImage'] = get_post_image('medium');
-			$GLOBALS['pageImage'] = $GLOBALS['pageImage'][0];
+		if(isset($post)) {
+			if(has_post_thumbnail($post->ID) && !is_home()){
+				$GLOBALS['pageImage'] = get_post_image('medium');
+				$GLOBALS['pageImage'] = $GLOBALS['pageImage'][0];
+			}
 		}
 		if (have_posts() && !is_home()){
 			while (have_posts()){
@@ -65,7 +67,8 @@
 		}
 	}
 	// get post type for checking sport
-	$postType = get_post_type($post->ID);
+	$postType = "";
+	if(isset($post)) $postType = get_post_type($post->ID);
 	// check for the appropriate sport
 	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || $archiveCatSlug == 'snow' || !is_archive() && post_is_in_descendant_category( '220' )) {
 		$GLOBALS['sport'] = "snow";
