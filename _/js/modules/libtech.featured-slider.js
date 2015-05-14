@@ -32,6 +32,7 @@ LIBTECH.FeaturedSlider.prototype = {
     // build new
     self.carousel.owlCarousel({
       autoplay: true,
+      autoplayHoverPause: true,
       autoplayTimeout: 8000,
       dots: true,
       items: 1,

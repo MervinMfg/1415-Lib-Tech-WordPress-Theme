@@ -80,6 +80,7 @@ LIBTECH.ProductSlider.prototype = {
     self.carousel.owlCarousel({
       margin: 10,
       autoplay: self.config.autoRotate,
+      autoplayHoverPause: true,
       autoplayTimeout: 8000,
       dots: self.config.displayDots,
       loop: self.config.loop,

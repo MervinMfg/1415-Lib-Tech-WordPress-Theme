@@ -35,6 +35,7 @@ LIBTECH.StorySlider.prototype = {
     // build new
     self.carousel.owlCarousel({
       autoplay: self.config.autoRotate,
+      autoplayHoverPause: true,
       autoplayTimeout: 8000,
       dots: true,
       items: 1,
