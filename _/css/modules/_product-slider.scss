@@ -128,6 +128,27 @@
   }
 }
 
+// alter hovers in IE8
+.ie-lt9 {
+  .product-slider .product-list .product-item a {
+    .product-info {
+      display: none;
+      top: 30%;
+    }
+
+    &:hover,
+    &:focus {
+      img {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+      }
+
+      .product-info {
+        display: block;
+      }
+    }
+  }
+}
+
 .single-libtech_accessories,
 .single-libtech_apparel,
 .single-libtech_luggage,
