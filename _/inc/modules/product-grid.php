@@ -66,18 +66,20 @@
 								// render out tall product
 								?>
 
-								<div class="grid-item">
-									<div class="grid-item-wrapper <?php echo $postCat; ?>">
+								<div class="grid-item <?php echo $postCat; ?>">
+									<div class="grid-item-wrapper">
 										<img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" />
 										<div class="grid-item-info">
-											<p class="product-title"><?php echo $productTitle; ?></p>
-											<?php echo $productPrice; ?>
+											<a href="<?php echo $productLink; ?>">
+												<p class="product-title"><?php echo $productTitle; ?></p>
+												<?php echo $productPrice; ?>
+											</a>
 											<div class="call-to-action">
 												<a href="<?php echo $productLink; ?>" class="button">Learn More</a>
 												<a href="<?php echo $postCatLink; ?>" class="button">Shop <?php echo $postCat; ?></a>
 											</div>
 										</div>
-										<a href="<?php echo $productLink; ?>" class="mobile-grid-link"></a>
+										<a href="<?php echo $productLink; ?>" class="grid-link"></a>
 									</div>
 								</div>
 
@@ -134,14 +136,16 @@
 									<div class="grid-item-wrapper <?php echo $postCat; ?>">
 										<img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" />
 										<div class="grid-item-info">
-											<p class="product-title"><?php echo $productTitle; ?></p>
-											<?php echo $productPrice; ?>
+											<a href="<?php echo $productLink; ?>">
+												<p class="product-title"><?php echo $productTitle; ?></p>
+												<?php echo $productPrice; ?>
+											</a>
 											<div class="call-to-action">
 												<a href="<?php echo $productLink; ?>" class="button">Learn More</a>
 												<a href="<?php echo $postCatLink; ?>" class="button">Shop <?php echo $postCat; ?></a>
 											</div>
 										</div>
-										<a href="<?php echo $productLink; ?>" class="mobile-grid-link"></a>
+										<a href="<?php echo $productLink; ?>" class="grid-link"></a>
 									</div>
 								</div>
 

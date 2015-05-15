@@ -9,10 +9,7 @@
     padding-left: 0;
     padding-right: 0;
   }
-}
 
-.product-grid,
-.featured-product-grid {
   .grid-item {
     position: relative;
 
@@ -20,89 +17,95 @@
       display: block;
       margin: 0 auto;
       overflow: hidden;
+      width: 100%;
+    }
+
+    img {
+      -webkit-backface-visibility: hidden;
+      height: auto;
+      -webkit-transform: scale(1);
+    }
+
+    .grid-item-info {
+      display: none;
+    }
+
+    .grid-link {
+      background: url('../img/square.gif'); // dumb IE8/9 fix
+      // http://stackoverflow.com/questions/6914822/absolute-positioned-anchor-tag-with-no-text-not-clickable-in-ie
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    &.snowboards {
+      .grid-item-wrapper {
+        width: 43%;
+      }
 
       img {
-        -webkit-backface-visibility: hidden;
-        height: auto;
-        -webkit-transform: scale(1);
+        margin-left: -129%;
+        max-width: 450%;
+        width: 450%;
       }
+    }
 
-      &.snowboards {
+    &.skis {
+      .grid-item-wrapper {
         width: 43%;
-
-        img {
-          margin-left: -129%;
-          max-width: 450%;
-          width: 450%;
-        }
       }
 
-      &.skis {
-        width: 43%;
-
-        img {
-          margin-left: -175%;
-          max-width: 450%;
-          width: 450%;
-        }
+      img {
+        margin-left: -175%;
+        max-width: 450%;
+        width: 450%;
       }
+    }
 
-      &.skateboards {
-        width: 100%;
-
-        img {
-          margin-left: -50%;
-          max-width: 200%;
-          width: 200%;
-        }
+    &.skateboards {
+      img {
+        margin-left: -50%;
+        max-width: 200%;
+        width: 200%;
       }
+    }
 
-      &.surfboards {
+    &.surfboards {
+      .grid-item-wrapper {
         width: 79%;
-
-        img {
-          margin-left: -3%;
-          max-width: 240%;
-          padding-top: 10px;
-          width: 240%;
-        }
       }
 
-      &.apparel,
-      &.outerwear,
-      &.luggage,
-      &.accessories {
+      img {
+        margin-left: -3%;
+        max-width: 240%;
+        padding-top: 10px;
+        width: 240%;
+      }
+    }
+
+    &.apparel,
+    &.outerwear,
+    &.luggage,
+    &.accessories {
+      .grid-item-wrapper {
         width: 97%;
         padding: 1%;
       }
     }
   }
-}
 
-.grid-item-info {
-  display: none;
-}
+  // different styles for smaller screen sizes
+  &.featured {
+    padding: 25px 0 60px;
 
-.mobile-grid-link {
-  background: url('../img/square.gif'); // dumb IE8/9 fix
-  // http://stackoverflow.com/questions/6914822/absolute-positioned-anchor-tag-with-no-text-not-clickable-in-ie
-  display: block;
-  height: 100%;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-// different styles for smaller screen sizes
-.featured-product-grid {
-  padding: 25px 0 60px;
-
-  .grid-item {
-    .grid-item-wrapper {
-
+    .grid-item {
       &.snowboards {
-        width: 82%;
+        .grid-item-wrapper {
+          width: 82%;
+        }
 
         img {
           margin-left: -113%;
@@ -112,7 +115,9 @@
       }
 
       &.skis {
-        width: 75%;
+        .grid-item-wrapper {
+          width: 75%;
+        }
 
         img {
           margin-left: -175%;
@@ -122,8 +127,6 @@
       }
 
       &.skateboards {
-        width: 100%;
-
         img {
           margin-left: -122%;
           max-width: 345%;
@@ -132,7 +135,9 @@
       }
 
       &.surfboards {
-        width: 100%;
+        .grid-item-wrapper {
+          width: 100%;
+        }
 
         img {
           margin-left: -22%;
@@ -147,58 +152,61 @@
 @media screen and (min-width: $breakpoint-small) {
   .product-grid {
     .grid-item {
-      .grid-item-wrapper {
-        &.snowboards,
-        &.skis {
+      &.snowboards,
+      &.skis {
+        .grid-item-wrapper {
           width: 40%;
         }
+      }
 
-        &.skateboards {
-          width: 100%;
-
-          img {
-            margin-left: -40%;
-            max-width: 180%;
-            width: 180%;
-          }
+      &.skateboards {
+        img {
+          margin-left: -40%;
+          max-width: 180%;
+          width: 180%;
         }
+      }
 
-        &.surfboards {
+      &.surfboards {
+        .grid-item-wrapper {
           width: 74%;
-
-          img {
-            margin-left: -2%;
-            max-width: 235%;
-            width: 235%;
-          }
         }
 
-        &.apparel,
-        &.outerwear,
-        &.luggage,
-        &.accessories {
+        img {
+          margin-left: -2%;
+          max-width: 235%;
+          width: 235%;
+        }
+      }
+
+      &.apparel,
+      &.outerwear,
+      &.luggage,
+      &.accessories {
+        .grid-item-wrapper {
           width: 90%;
+        }
 
-          img {
-            margin-left: 0;
-            max-width: 100%;
-            width: 100%;
-          }
-
+        img {
+          margin-left: 0;
+          max-width: 100%;
+          width: 100%;
         }
       }
     }
-  }
 
-  .featured-product-grid {
-    .grid-item {
-      .grid-item-wrapper {
+    &.featured {
+      .grid-item {
         &.snowboards {
-          width: 69%;
+          .grid-item-wrapper {
+            width: 69%;
+          }
         }
 
         &.skis {
-          width: 59%;
+          .grid-item-wrapper {
+            width: 59%;
+          }
         }
 
         &.skateboards {
@@ -209,7 +217,9 @@
         }
 
         &.surfboards {
-          width: 95%;
+          .grid-item-wrapper {
+            width: 95%;
+          }
 
           img {
             margin-left: -14%;
@@ -222,81 +232,63 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .grid-item-wrapper,
-  .product-item.grid-item-wrapper {
-    .grid-item-info {
-      @include vendorize(transform, translateY(-50%));
-      display: none;
-      left: 0;
-      position: absolute;
-      text-align: center;
-      top: 50%;
-      width: 100%;
-
-      .product-title {
-        font-size: 1.125em;
-        font-style: italic;
-        padding-bottom: 0;
-        text-transform: uppercase;
-      }
-
-      .call-to-action {
-        max-width: 100%;
-        width: 165px;
-        margin: 20px auto 0 auto;
-
-        .button {
-          font-size: 1.125em;
-          margin: 0 auto 10px;
-          width: 100%;
-        }
-      }
-
-      .price {
-        .currency-note {
-          text-transform: uppercase;
-        }
-
-        .strike {
-          display: none;
-        }
-      }
-    }
-  }
-
-  .touch {
-    .grid-item-wrapper,
-    .product-item.grid-item-wrapper {
-      .mobile-grid-link {
-        display: block;
-      }
-    }
-  }
-
-  .no-touch {
-    .grid-item-wrapper,
-    .product-item.grid-item-wrapper  {
-      .mobile-grid-link {
-        display: none;
-      }
-
+  .no-touch .product-grid {
+    .grid-item {
       img {
         @include transition(opacity);
       }
 
       .grid-item-info {
-        display: block;
         @include transition(opacity);
         @include vendorize(opacity, 0);
+        @include vendorize(transform, translateY(-50%));
+        display: block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        width: 100%;
+        z-index: 2;
+
+        a {
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
 
         .product-title {
           @include transition(all);
           @include vendorize(transform, translate(0, -15px));
+          font-size: 1.125em;
+          font-style: italic;
+          padding-bottom: 0;
+          text-transform: uppercase;
         }
 
         .price {
           @include transition(all);
           @include vendorize(transform, translate(0, -5px));
+
+          .currency-note {
+            text-transform: uppercase;
+          }
+
+          .strike {
+            display: none;
+          }
+        }
+
+        .call-to-action {
+          max-width: 100%;
+          width: 165px;
+          margin: 20px auto 0 auto;
+
+          .button {
+            font-size: 1.125em;
+            margin: 0 auto 10px;
+            width: 100%;
+          }
         }
       }
 
@@ -318,62 +310,70 @@
     }
   }
 
-  .featured-product-grid,
-  .product-grid {
+  .product-grid,
+  .product-grid.featured {
     .grid-item {
-      .grid-item-wrapper {
-        &.snowboards {
+      &.snowboards {
+        .grid-item-wrapper {
           width: 43%;
-
-          img {
-            margin-left: -129%;
-            max-width: 450%;
-            width: 450%;
-          }
         }
 
-        &.skis {
-          width: 43%;
+        img {
+          margin-left: -129%;
+          max-width: 450%;
+          width: 450%;
+        }
+      }
 
-          img {
-            margin-left: -175%;
-            max-width: 450%;
-            width: 450%;
-          }
+      &.skis {
+        .grid-item-wrapper {
+          width: 43%;
         }
 
-        &.skateboards {
+        img {
+          margin-left: -175%;
+          max-width: 450%;
+          width: 450%;
+        }
+      }
+
+      &.skateboards {
+        .grid-item-wrapper {
           width: 100%;
-
-          img {
-            margin-left: -50%;
-            max-width: 200%;
-            width: 200%;
-          }
         }
 
-        &.surfboards {
+        img {
+          margin-left: -50%;
+          max-width: 200%;
+          width: 200%;
+        }
+      }
+
+      &.surfboards {
+        .grid-item-wrapper {
           width: 78%;
-
-          img {
-            margin-left: -4%;
-            max-width: 240%;
-            padding-top: 10px;
-            width: 240%;
-          }
         }
 
-        &.apparel,
-        &.outerwear,
-        &.luggage,
-        &.accessories {
-          width: 100%;
+        img {
+          margin-left: -4%;
+          max-width: 240%;
+          padding-top: 10px;
+          width: 240%;
+        }
+      }
 
-          img {
-            margin-left: 0;
-            max-width: 100%;
-            width: 100%;
-          }
+      &.apparel,
+      &.outerwear,
+      &.luggage,
+      &.accessories {
+        .grid-item-wrapper {
+          width: 100%;
+        }
+
+        img {
+          margin-left: 0;
+          max-width: 100%;
+          width: 100%;
         }
       }
     }
@@ -381,21 +381,22 @@
 
   // alter hovers in IE8
   .ie-lt9 {
-    .grid-item-wrapper,
-    .product-item.grid-item-wrapper  {
-      .grid-item-info {
-        display: none;
-        top: 25%;
-      }
-
-      &:hover,
-      &:focus {
-        img {
-          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+    .product-grid {
+      .grid-item {
+        .grid-item-info {
+          display: none;
+          top: 25%;
         }
 
-        .grid-item-info {
-          display: block;
+        &:hover,
+        &:focus {
+          img {
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+          }
+
+          .grid-item-info {
+            display: block;
+          }
         }
       }
     }

@@ -75,7 +75,7 @@ get_header();
 			if( $post_objects ):
 		?>
 
-		<section class="featured-product-grid container-fluid bg-texture-gradient">
+		<section class="product-grid featured container-fluid bg-texture-gradient">
 			<div class="section-content row">
 				<ul>
 
@@ -141,18 +141,20 @@ get_header();
 					?>
 
 					<li class="col-xs-3 col-ms-3 col-sm-3 col-md-3">
-						<div class="grid-item">
-							<div class="grid-item-wrapper <?php echo $postCat; ?>">
+						<div class="grid-item <?php echo $postCat; ?>">
+							<div class="grid-item-wrapper">
 								<img src="<?php echo $productImage[0]; ?>" width="<?php echo $productImage[1]; ?>" height="<?php echo $productImage[2]; ?>" alt="<?php echo $productTitle; ?> Image" />
 								<div class="grid-item-info">
-									<p class="product-title"><?php echo $productTitle; ?></p>
-									<?php echo $productPrice; ?>
+									<a href="<?php echo $productLink; ?>">
+										<p class="product-title"><?php echo $productTitle; ?></p>
+										<?php echo $productPrice; ?>
+									</a>
 									<div class="call-to-action">
 										<a href="<?php echo $productLink; ?>" class="button">Learn More</a>
 										<a href="<?php echo $postCatLink; ?>" class="button">Shop <?php echo $postCat; ?></a>
 									</div>
 								</div>
-								<a href="<?php echo $productLink; ?>" class="mobile-grid-link"></a>
+								<a href="<?php echo $productLink; ?>" class="grid-link"></a>
 							</div>
 						</div>
 					</li>
