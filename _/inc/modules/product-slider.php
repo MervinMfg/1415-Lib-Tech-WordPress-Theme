@@ -37,42 +37,39 @@
 			            $productTitle = get_the_title($featuredProduct->ID);
 					?>
 
-					<div class="product-item grid-item-wrapper <?php echo $postSlug; ?>">
-						<div class="image-wrapper">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" />
-						</div>
-						<div class="grid-item-info">
-							<p class="product-title"><?php echo $productTitle; ?></p>
-
-							<?php
-								if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us_5fin', $featuredProduct->ID) != "") {
-									// display 5 fin pricing
-									echo getPrice(
-										get_field('libtech_product_price_us_5fin', $featuredProduct->ID),
-										get_field('libtech_product_price_ca_5fin', $featuredProduct->ID),
-										get_field('libtech_product_price_eur_5fin', $featuredProduct->ID),
-										get_field('libtech_product_on_sale', $featuredProduct->ID),
-										get_field('libtech_product_sale_percentage', $featuredProduct->ID),
-										false
-									);
-								} else {
-									// grab default price of all other products
-									echo getPrice(
-										get_field('libtech_product_price_us', $featuredProduct->ID),
-										get_field('libtech_product_price_ca', $featuredProduct->ID),
-										get_field('libtech_product_price_eur', $featuredProduct->ID),
-										get_field('libtech_product_on_sale', $featuredProduct->ID),
-										get_field('libtech_product_sale_percentage', $featuredProduct->ID),
-										false
-									);
-								}
-							?>
-
-							<div class="call-to-action">
-								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
+					<div class="product-item <?php echo $postSlug; ?>">
+						<a href="<? echo $productLink; ?>">
+							<div class="image-wrapper">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php echo $productTitle; ?> Image" class="lazy" />
 							</div>
-						</div>
-						<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
+							<div class="product-info">
+								<p class="product-title"><?php echo $productTitle; ?></p>
+
+								<?php
+									if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us_5fin', $featuredProduct->ID) != "") {
+										// display 5 fin pricing
+										echo getPrice(
+											get_field('libtech_product_price_us_5fin', $featuredProduct->ID),
+											get_field('libtech_product_price_ca_5fin', $featuredProduct->ID),
+											get_field('libtech_product_price_eur_5fin', $featuredProduct->ID),
+											get_field('libtech_product_on_sale', $featuredProduct->ID),
+											get_field('libtech_product_sale_percentage', $featuredProduct->ID),
+											false
+										);
+									} else {
+										// grab default price of all other products
+										echo getPrice(
+											get_field('libtech_product_price_us', $featuredProduct->ID),
+											get_field('libtech_product_price_ca', $featuredProduct->ID),
+											get_field('libtech_product_price_eur', $featuredProduct->ID),
+											get_field('libtech_product_on_sale', $featuredProduct->ID),
+											get_field('libtech_product_sale_percentage', $featuredProduct->ID),
+											false
+										);
+									}
+								?>
+							</div>
+						</a>
 					</div>
 
 					<?
@@ -97,15 +94,15 @@
 							if($postType == "libtech_snowboards") :
 					?>
 
-					<div class="product-item grid-item-wrapper diy">
-						<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
-						<div class="grid-item-info">
-							<p class="product-title">Lib Tech DIY</p>
-							<div class="call-to-action">
-								<a href="/snowboarding/snowboard-builder/" class="button">Build Now</a>
+					<div class="product-item diy">
+						<a href="<? echo $productLink; ?>">
+							<div class="image-wrapper">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php bloginfo('template_directory'); ?>/_/img/diy-board-builder-300x300.png" width="300" height="300" alt="DIY Snowboard Builder" class="lazy" />
 							</div>
-						</div>
-						<a href="/snowboarding/snowboard-builder/" class="mobile-grid-link"></a>
+							<div class="product-info">
+								<p class="product-title">Lib Tech DIY</p>
+							</div>
+						</a>
 					</div>
 
 					<?php
@@ -142,42 +139,40 @@
 								}
 					?>
 
-					<div class="product-item grid-item-wrapper <?php echo $postSlug; ?>">
-						<div class="image-wrapper">
-							<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
-						</div>
-						<div class="grid-item-info">
-							<p class="product-title"><?php the_title(); ?></p>
-
-							<?php
-								if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us', $post->ID) == "") {
-									// display 5 fin pricing
-									echo getPrice(
-										get_field('libtech_product_price_us_5fin', $post->ID),
-										get_field('libtech_product_price_ca_5fin', $post->ID),
-										get_field('libtech_product_price_eur_5fin', $post->ID),
-										get_field('libtech_product_on_sale', $post->ID),
-										get_field('libtech_product_sale_percentage', $post->ID),
-										false
-									);
-								} else {
-									// grab default price of all other products
-									echo getPrice(
-										get_field('libtech_product_price_us', $post->ID),
-										get_field('libtech_product_price_ca', $post->ID),
-										get_field('libtech_product_price_eur', $post->ID),
-										get_field('libtech_product_on_sale', $post->ID),
-										get_field('libtech_product_sale_percentage', $post->ID),
-										false
-									);
-								}
-							?>
-
-							<div class="call-to-action">
-								<a href="<? echo $productLink; ?>" class="button">Learn More</a>
+					<div class="product-item <?php echo $postSlug; ?>">
+						<a href="<? echo $productLink; ?>">
+							<div class="image-wrapper">
+								<img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $imageFile[0]; ?>" width="<?php echo $imageFile[1]; ?>" height="<?php echo $imageFile[2]; ?>" alt="<?php the_title(); ?> Image" class="lazy" />
 							</div>
-						</div>
-						<a href="<? echo $productLink; ?>" class="mobile-grid-link"></a>
+							<div class="product-info">
+								<p class="product-title"><?php the_title(); ?></p>
+
+								<?php
+									if ($postType == "libtech_surfboards" && get_field('libtech_product_price_us', $post->ID) == "") {
+										// display 5 fin pricing
+										echo getPrice(
+											get_field('libtech_product_price_us_5fin', $post->ID),
+											get_field('libtech_product_price_ca_5fin', $post->ID),
+											get_field('libtech_product_price_eur_5fin', $post->ID),
+											get_field('libtech_product_on_sale', $post->ID),
+											get_field('libtech_product_sale_percentage', $post->ID),
+											false
+										);
+									} else {
+										// grab default price of all other products
+										echo getPrice(
+											get_field('libtech_product_price_us', $post->ID),
+											get_field('libtech_product_price_ca', $post->ID),
+											get_field('libtech_product_price_eur', $post->ID),
+											get_field('libtech_product_on_sale', $post->ID),
+											get_field('libtech_product_sale_percentage', $post->ID),
+											false
+										);
+									}
+								?>
+
+							</div>
+						</a>
 					</div>
 
 					<?
