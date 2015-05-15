@@ -260,6 +260,7 @@
         .product-title {
           @include transition(all);
           @include vendorize(transform, translate(0, -15px));
+          color: #ccc;
           font-size: 1.125em;
           font-style: italic;
           padding-bottom: 0;
