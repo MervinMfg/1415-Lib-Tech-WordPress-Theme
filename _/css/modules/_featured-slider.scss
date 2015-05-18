@@ -68,8 +68,10 @@
   }
 
   .cta-theme-dark .button {
-    border-color: #000;
-    color: #000;
+    background: #000;
+    border: 0;
+    color: #FFF;
+    padding: 4px 24px;
 
     .icon-play {
       background-position-x: 0;
@@ -77,12 +79,25 @@
 
     &:hover,
     &:focus {
-      background-color: #000;
-      color: #fff;
+      background-color: #FFF;
+      color: #000;
 
       .icon-play {
         background-position-x: 100%;
       }
+    }
+  }
+
+  .cta-theme-light .button {
+    background: #FFF;
+    border: 0;
+    color: #000;
+    padding: 4px 24px;
+
+    &:hover,
+    &:focus {
+      background-color: #000;
+      color: #FFF;
     }
   }
 
