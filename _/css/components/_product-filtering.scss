@@ -212,6 +212,14 @@
       }
     }
 
+    &.skate-pricing .filter-list {
+      right: 0;
+
+      .filter-item {
+        width: 5.6em;
+      }
+    }
+
     &.accessories-pricing .filter-list,
     &.luggage-pricing .filter-list {
       right: 0;

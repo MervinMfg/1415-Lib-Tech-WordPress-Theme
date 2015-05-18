@@ -263,6 +263,8 @@ get_header();
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
             $productArray['available'] = Array('us' => 'No', 'ca' => 'No', 'eu' => 'No');
             $productArray['colorways'] = Array();
+            // check if product is on sale for filter list
+            if(get_field('libtech_product_on_sale') == "Yes") $filterList .= " sale";
             // check if we're surf because of varrying fin costs
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
@@ -465,6 +467,7 @@ get_header();
                             $optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
                             $optionSlug = str_replace('.', '_', strtolower($optionSlug));
                             $optionSlug = 'skateboards/' . str_replace('/', '', strtolower($optionSlug));
+                            $optionSlug = 'skateboards/bitchin'; // TEMPORARY COLORWAY FIX
                             // grab image
                             if(get_sub_field('libtech_skateboard_options_images')):
                                 while(the_repeater_field('libtech_skateboard_options_images')):
@@ -854,13 +857,14 @@ get_header();
                             <li class="filter-item" data-filter=".cruiser">Cruiser</li>
                         </ul>
                     </div>
-                    <div class="filters pricing">
+                    <div class="filters pricing skate-pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">
                             <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
                             <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
                             <li class="filter-item" data-filter=".available">Availabile</li>
+                            <li class="filter-item" data-filter=".sale">Sale</li>
                         </ul>
                     </div>
                     <?php elseif (get_the_title() == "Outerwear"): ?>

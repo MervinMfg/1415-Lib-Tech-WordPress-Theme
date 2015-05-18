@@ -265,7 +265,7 @@ LIBTECH.ProductOverview.prototype = {
 				if (isFilterSet === true) { // if filter set has items selected add remove features
 					filterGroup.find('.selected-items').each(function () {
 						$(this).html('Remove');
-						$(this).click(function () {
+						$(this).on('click', function () {
 							$(this).html('Select');
 							filterGroup.find('.filter-list .filter-item').each(function () {
 								$(this).removeClass('selected');
@@ -294,27 +294,60 @@ LIBTECH.ProductOverview.prototype = {
 		}
 	},
 	filterList: function () {
-		var filterArray = []; // set up array for recording filter options
+		var filterArray, pricingFilters;
+		filterArray = []; // set up array for recording filter options
 		$('.product-filtering .filters').each(function () { // loop through each filter group
 			if (filterArray.length < 1) { // first ul of filters have not been added yet, so lets do it
-				$(this).find('.filter-list .filter-item[data-filter]').each(function () {
-					var filterItem = $(this);
-					if (filterItem.hasClass('selected')) {
-						filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
+				if($(this).hasClass('pricing')) {
+					// pricing filters are adative and do not stand alone
+					pricingFilters = "";
+					$(this).find('.filter-list .filter-item[data-filter]').each(function () {
+						var filterItem = $(this);
+						if (filterItem.hasClass('selected')) {
+							pricingFilters = pricingFilters + filterItem.attr('data-filter'); // add filters to filter string
+						}
+					});
+					if(pricingFilters !== "") {
+						filterArray.push(pricingFilters); // add filters to array to track
 					}
-				});
+				} else {
+					// all other filters other than pricing
+					$(this).find('.filter-list .filter-item[data-filter]').each(function () {
+						var filterItem = $(this);
+						if (filterItem.hasClass('selected')) {
+							filterArray.push(filterItem.attr('data-filter')); // add filters to array to track
+						}
+					});
+				}
 			} else { // first list of filters have been added, now build upon them
 				var filterArrayTemp, filterSet;
 				filterArrayTemp = []; // new array to update filterArray after it's built based on filterArray and new filters to concatinate
-				$(this).find('.filter-list .filter-item[data-filter]').each(function () {
-					var filterItem = $(this);
-					if (filterItem.hasClass('selected')) {
-						filterSet = true; // mark that we found another filter so we need to update the filterArray
+				if($(this).hasClass('pricing')) {
+					// pricing filters are adative and do not stand alone
+					pricingFilters = "";
+					$(this).find('.filter-list .filter-item[data-filter]').each(function () {
+						var filterItem = $(this);
+						if (filterItem.hasClass('selected')) {
+							filterSet = true; // mark that we found another filter so we need to update the filterArray
+							pricingFilters = pricingFilters + filterItem.attr('data-filter'); // add filters to filter string
+						}
+					});
+					if(pricingFilters !== "") {
 						for (var i = 0; i < filterArray.length; i++) {
-							filterArrayTemp.push(filterArray[i] + filterItem.attr('data-filter')); // concatinate current filters with new
+							filterArrayTemp.push(filterArray[i] + pricingFilters); // concatinate current filters with new
 						}
 					}
-				});
+				} else {
+					$(this).find('.filter-list .filter-item[data-filter]').each(function () {
+						var filterItem = $(this);
+						if (filterItem.hasClass('selected')) {
+							filterSet = true; // mark that we found another filter so we need to update the filterArray
+							for (var i = 0; i < filterArray.length; i++) {
+								filterArrayTemp.push(filterArray[i] + filterItem.attr('data-filter')); // concatinate current filters with new
+							}
+						}
+					});
+				}
 				if (filterSet === true) {
 					filterArray = filterArrayTemp.slice(0); // update main array
 				}
