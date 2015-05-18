@@ -454,6 +454,26 @@ get_header();
                                 // add width to filter list
                                 $filterList .= " " . $variationWidth;
                             }
+                            // get colorways
+                            $optionColor = get_the_title();
+                            if (get_sub_field('libtech_skateboard_options_name')) {
+                                $optionColor .= " " . get_sub_field('libtech_skateboard_options_name');
+                            }
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = str_replace('&#8217;', '', strtolower($optionSlug));
+                            $optionSlug = str_replace('&#8243;', '', strtolower($optionSlug));
+                            $optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
+                            $optionSlug = str_replace('.', '_', strtolower($optionSlug));
+                            $optionSlug = 'skateboards/' . str_replace('/', '', strtolower($optionSlug));
+                            // grab image
+                            if(get_sub_field('libtech_skateboard_options_images')):
+                                while(the_repeater_field('libtech_skateboard_options_images')):
+                                    $optionImage = get_sub_field('libtech_skateboard_options_images_img');
+                                    $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                                    array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
+                                    break;
+                                endwhile;
+                            endif;
                         endwhile;
                     endif;
                     // sort sizes
