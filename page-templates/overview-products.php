@@ -467,7 +467,6 @@ get_header();
                             $optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
                             $optionSlug = str_replace('.', '_', strtolower($optionSlug));
                             $optionSlug = 'skateboards/' . str_replace('/', '', strtolower($optionSlug));
-                            $optionSlug = 'skateboards/bitchin'; // TEMPORARY COLORWAY FIX
                             // grab image
                             if(get_sub_field('libtech_skateboard_options_images')):
                                 while(the_repeater_field('libtech_skateboard_options_images')):
