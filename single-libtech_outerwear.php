@@ -58,9 +58,9 @@ Template Name: Outerwear Detail
 										$productColor = get_sub_field('libtech_outerwear_variations_color');
 										$productSKU = get_sub_field('libtech_outerwear_variations_sku');
 										// grab availability overwrite
-										$productAvailableUS = get_sub_field('libtech_apparel_variations_availability_us');
-										$productAvailableCA = get_sub_field('libtech_apparel_variations_availability_ca');
-										$productAvailableEU = get_sub_field('libtech_apparel_variations_availability_eur');
+										$productAvailableUS = get_sub_field('libtech_outerwear_variations_availability_us');
+										$productAvailableCA = get_sub_field('libtech_outerwear_variations_availability_ca');
+										$productAvailableEU = get_sub_field('libtech_outerwear_variations_availability_eur');
 										// get values for availability
 										$productAvailability = getAvailability($productSKU, $productAvailableUS, $productAvailableCA, $productAvailableEU);
 										// eval if we should show product or not for each location
