@@ -345,11 +345,14 @@ get_header();
                     $productWidth = Array();
                     if(get_field('libtech_snowboard_specs')):
                         while(the_repeater_field('libtech_snowboard_specs')):
-                            $snowboardLength = str_replace('&quot;', '_', get_sub_field('libtech_snowboard_specs_length'));
+                            $snowboardLength = str_replace('&quot;', '-', get_sub_field('libtech_snowboard_specs_length'));
+                            $snowboardLength = str_replace('.', '_', $snowboardLength);
                             $snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
                             // add size & width to arrays
                             array_push($productSize, $snowboardLength);
                             array_push($productWidth, $snowboardWidth);
+                            // update length to be unique with _0
+                            if(!strpos($snowboardLength, '_')) $snowboardLength = $snowboardLength . "_0";
                             // add length and width to filter list
                             $filterList .= " " . $snowboardLength;
                             $filterList .= " " . str_replace(' ', '_', $snowboardWidth);
@@ -442,6 +445,7 @@ get_header();
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
                                 $variationWidth = str_replace('.', '_', $optionVariations[$i]['libtech_skateboard_options_variations_width']);
+                                if(!strpos($variationWidth, '_')) $variationWidth = $variationWidth . "_0";
                                 $variationSKU = $optionVariations[$i]['libtech_skateboard_options_variations_sku'];
                                 $variationAvailableUS = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
                                 $variationAvailableCA = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
@@ -730,8 +734,12 @@ get_header();
                             endforeach;
                             array_multisort($sizeArray, SORT_ASC);
                             foreach ($sizeArray as $size):
+                              $filterSize = $size;
+                              if(!strpos($filterSize, '_')) $filterSize = $filterSize . "_0";
+                              $displaySize = str_replace('-', '&quot;', $size);
+                              $displaySize = str_replace('_', '.', $displaySize);
                             ?>
-                            <li class="filter-item" data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $filterSize; ?>"><?php echo $displaySize; ?></li>
                             <?php
                             endforeach;
                             ?>
