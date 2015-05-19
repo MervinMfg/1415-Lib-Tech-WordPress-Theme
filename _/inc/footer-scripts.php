@@ -20,7 +20,10 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/modules/libtech.region-selector.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/modules/libtech.story-slider.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.blog-single.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.faq.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.gallery.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.main-menu.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-details.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.product-overview.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.search.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/components/libtech.shop.js"></script>
