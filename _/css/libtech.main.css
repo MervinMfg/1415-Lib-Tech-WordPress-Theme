@@ -329,7 +329,7 @@ footer .subscribe form .email { width: 71%; float: left; }
 footer .subscribe form .submit { width: 25%; float: left; }
 footer .footer-copy { font-size: .75em; /* 12 / 16 */ color: #333; font-weight: 700; font-style: italic; }
 
-.ski footer .h2, .surf footer .h2, .skate footer .h2 { color: #000; }
+.snow footer .h2, .ski footer .h2, .surf footer .h2, .skate footer .h2 { color: #000; }
 
 .social-links li { padding: 0 5px 5px 0; float: left; }
 .social-links li a { background: url("../img/sprite.png"); width: 31px; height: 31px; display: block; text-indent: 100%; white-space: nowrap; overflow: hidden; }
@@ -1228,6 +1228,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .dealer-locator .section-content iframe { width: 100%; height: 700px; margin-top: 10px; background: none; }
 
 .blog-posts .section-content, .related-posts .section-content { padding-bottom: 60px; padding-top: 20px; }
+.blog-posts .snow a h4, .related-posts .snow a h4 { color: #FFFF00; }
+.blog-posts .ski a h4, .related-posts .ski a h4 { color: #0099FF; }
+.blog-posts .surf a h4, .related-posts .surf a h4 { color: #FF6600; }
+.blog-posts .skate a h4, .related-posts .skate a h4 { color: #66CC00; }
 .blog-posts .blog-post.col-xs-12, .blog-posts .blog-post.col-ms-12, .related-posts .blog-post.col-xs-12, .related-posts .blog-post.col-ms-12 { padding-left: 0; padding-right: 0; }
 .blog-posts .blog-post .post-wrapper, .related-posts .blog-post .post-wrapper { padding-bottom: 30px; }
 .blog-posts .blog-post .post-wrapper a, .blog-posts .blog-post .post-wrapper a:hover, .blog-posts .blog-post .post-wrapper a:focus, .related-posts .blog-post .post-wrapper a, .related-posts .blog-post .post-wrapper a:hover, .related-posts .blog-post .post-wrapper a:focus { font-style: normal; text-decoration: none; }
