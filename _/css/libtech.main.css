@@ -1304,7 +1304,7 @@ body.international .shopping-cart-wrapper { display: none; }
   .blog-post .section-content .post .entry-content .wp-caption.alignleft { float: left; max-width: 70%; padding-right: 40px; }
   .blog-post .section-content .post .entry-content .wp-caption.alignright { float: right; max-width: 70%; padding-left: 40px; }
   .blog-post .section-content .post .entry-content .wp-caption.aligncenter { text-align: center; }
-  .blog-post .section-content .post .discussion { display: block; }
+  .blog-post .section-content .post .discussion { display: block; padding-bottom: 30px; }
   .blog-post .section-content #sidebar .related-posts .post { float: left; width: 50%; }
   .blog-post .section-content #sidebar .related-posts .post:nth-child(1) .post-wrapper { padding-right: 10px; }
   .blog-post .section-content #sidebar .related-posts .post:nth-child(2) .post-wrapper { padding-left: 10px; } }
