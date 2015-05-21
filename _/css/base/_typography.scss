@@ -58,16 +58,28 @@ p,
 }
 
 // Selections
-::-moz-selection {
+::-moz-selection,
+.snow::-moz-selection {
   background: $snowColor;
   color: #000;
   text-shadow: none;
 }
 
-::selection {
+::selection,
+.snow::selection {
   background: $snowColor;
   color: #000;
   text-shadow: none;
+}
+
+.snow h1,
+.snow .h1,
+.snow h2,
+.snow .h2,
+.snow h4,
+.snow .h4,
+.snow a {
+  color: $snowColor;
 }
 
 // SKI General Styles
