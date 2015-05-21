@@ -172,9 +172,11 @@ h5, .h5 { color: #999; font-size: .75em; font-weight: 700; line-height: 1; text-
 
 p, .p { font-size: .875em; line-height: 1.32; }
 
-::-moz-selection { background: #FFFF00; color: #000; text-shadow: none; }
+::-moz-selection, .snow::-moz-selection { background: #FFFF00; color: #000; text-shadow: none; }
 
-::selection { background: #FFFF00; color: #000; text-shadow: none; }
+::selection, .snow::selection { background: #FFFF00; color: #000; text-shadow: none; }
+
+.snow h1, .snow .h1, .snow h2, .snow .h2, .snow h4, .snow .h4, .snow a { color: #FFFF00; }
 
 .ski h1, .ski .h1, .ski h2, .ski .h2, .ski h4, .ski .h4, .ski a { color: #0099FF; }
 
@@ -2255,7 +2257,7 @@ img.mfp-img { width: auto; max-width: 100%; height: auto; display: block; line-h
 
 .filetree span.file { background: url(images/file.gif) 0 0 no-repeat; }
 
-/*!
+/*
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license - http://opensource.org/licenses/MIT
 
