@@ -38,31 +38,6 @@ LIBTECH.ProductDetails.prototype = {
 				pagerCustom: '#image-list-thumbs'
 			});
 		}
-		// set up thumbnail slider
-		if ($('body').hasClass('single-libtech_surfboards')) { self.config.thumbSliderWidth = 45; }
-		thumbSlider = $('#image-list-thumbs').bxSlider({
-			slideWidth: self.config.thumbSliderWidth,
-			minSlides: 2,
-			maxSlides: 8,
-			slideMargin: 10,
-			controls: true,
-			pager: false,
-			mode: 'horizontal',
-			moveSlides: 2,
-			infiniteLoop: false,
-			hideControlOnEnd: true
-		});
-		// setup skate tech slider
-		techConstructionSlider = $('.product-tech-construction ul').bxSlider({
-			video: true,
-			useCSS: false,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal'
-		});
 		$(window).load(function () {
 			// init product navigation at top of page
 			self.initProductNav();
@@ -141,6 +116,31 @@ LIBTECH.ProductDetails.prototype = {
 		} else {
 			self.initBuyWithOneVariation();
 		}
+		// set up thumbnail slider
+		if ($('body').hasClass('single-libtech_surfboards')) { self.config.thumbSliderWidth = 45; }
+		thumbSlider = $('#image-list-thumbs').bxSlider({
+			slideWidth: self.config.thumbSliderWidth,
+			minSlides: 2,
+			maxSlides: 8,
+			slideMargin: 10,
+			controls: true,
+			pager: false,
+			mode: 'horizontal',
+			moveSlides: 2,
+			infiniteLoop: false,
+			hideControlOnEnd: true
+		});
+		// setup skate tech slider
+		techConstructionSlider = $('.product-tech-construction ul').bxSlider({
+			video: true,
+			useCSS: false,
+			auto: true,
+			autoHover: true,
+			speed: 500,
+			controls: true,
+			pager: false,
+			mode: 'horizontal'
+		});
 	},
 	initAvailability: function () {
 		var self, currencyCookie;
@@ -327,7 +327,7 @@ LIBTECH.ProductDetails.prototype = {
 		// grab active thumbnail so we know what to select after slider reset
 		activeThumbnail = $('#image-list-thumbs li a.active');
 		// reset slider
-		self.config.slider.reloadSlider();
+		if(self.config.slider.length > 0) self.config.slider.reloadSlider();
 		// select active color
 		activeThumbnail.click();
 	},
@@ -712,6 +712,32 @@ LIBTECH.ProductDetails.prototype = {
 	},
 	initBuySurf: function () {
 		var self = this;
+		// don't allow build and ship in Europe
+		if(self.config.currency == 'EUR') {
+			$('#product-variation-graphic option').each(function(index) {
+				var $option, optionValue, removeOption;
+				$option = $(this);
+				optionValue = $option.attr('value');
+				removeOption = true;
+				if(optionValue != "-1") {
+					$.each(productArray, function (key, value) {
+						if(value.name == optionValue) {
+							if(value.available.eu !== null) {
+								if(value.available.eu.amount != "No") {
+									removeOption = false;
+								}
+							}
+						}
+					});
+					if(removeOption === true) {
+						$option.remove();
+						if(optionValue != "Logo") {
+							$('#image-list-thumbs img[data-sub-alt="' + optionValue + '"]').parent().parent().remove();
+						}
+					}
+				}
+			});
+		}
 		var updatePrice = function () {
 			var selectedGraphic, selectedSize, defaultFinValue;
 			selectedGraphic = $('#product-variation-graphic').val();
