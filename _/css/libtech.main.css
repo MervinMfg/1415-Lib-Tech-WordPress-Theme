@@ -329,7 +329,7 @@ footer .subscribe form .email { width: 71%; float: left; }
 footer .subscribe form .submit { width: 25%; float: left; }
 footer .footer-copy { font-size: .75em; /* 12 / 16 */ color: #333; font-weight: 700; font-style: italic; }
 
-.ski footer .h2, .surf footer .h2, .skate footer .h2 { color: #000; }
+.snow footer .h2, .ski footer .h2, .surf footer .h2, .skate footer .h2 { color: #000; }
 
 .social-links li { padding: 0 5px 5px 0; float: left; }
 .social-links li a { background: url("../img/sprite.png"); width: 31px; height: 31px; display: block; text-indent: 100%; white-space: nowrap; overflow: hidden; }
