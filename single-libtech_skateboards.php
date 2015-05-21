@@ -28,12 +28,10 @@ Template Name: Skateboard Detail
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-    <div class="bg-product-details-top product-details-nav-bottom"></div>
     <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-			<section class="product-details bg-product-details <?php echo $slug; ?>">
-      	<div class="section-content">
-					<h1 itemprop="name"><?php the_title(); ?></h1>
-					<div class="product-images">
+			<section class="product-details <?php echo $slug; ?> container-fluid">
+      	<div class="section-content row">
+					<div class="product-images col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7 col-sm-offset-0">
 						<ul id="image-list">
 							<?php
 								$thumbnailImages = Array();
@@ -86,7 +84,8 @@ Template Name: Skateboard Detail
 							?>
 						</ul>
 					</div><!-- .product-images -->
-					<div class="product-details-right">
+					<div class="product-details-right col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5 col-sm-offset-0">
+						<h1 itemprop="name"><?php the_title(); ?></h1>
 						<h3><?php the_field('libtech_product_slogan'); ?></h3>
 						<div class="image-list-thumbs <?php if(count($thumbnailImages) < 2){ echo 'hidden'; }?>">
 							<ul id="image-list-thumbs">
@@ -187,7 +186,8 @@ Template Name: Skateboard Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/?product=skateboards">Find a Dealer</a></li>
 							</ul>
@@ -217,39 +217,43 @@ Template Name: Skateboard Detail
 							?>
 							<li><span>Sizes:</span><br /><?php echo $sizes; ?></li>
 						</ul>
-						<ul class="product-share">
-							<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechskate">Tweet</a></li>
-							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
-						</ul>
+						<div class="share-wrapper row">
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
+							</ul>
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
 					</div><!-- .product-details-right -->
 					<div class="clearfix"></div>
 				</div><!-- .section-content -->
 			</section>
-			<section class="product-zoom bg-product-details">
+			<section class="product-zoom">
 	    	<div class="section-content">
 	    		<div class="zoom-title"></div>
       		<div class="zoom-image">
       			<img src="" />
       		</div>
       		<div class="zoom-controls">
-      			<a href="#close-zoom" class="zoom-close h3">Close</a>
+      			<a href="#close-zoom" class="zoom-close button">Close</a>
       			<ul id="zoom-thumbnails"></ul>
       		</div>
 				</div><!-- .section-content -->
 			</section><!-- .product-zoom -->
-			<div class="bg2-top"></div>
-      <section class="product-extras bg2 info">
-      	<div class="section-content clearfix">
-	    		<div class="product-mobile-nav clearfix">
+      <section class="product-extras info container-fluid">
+      	<div class="section-content clearfix row">
+	    		<!-- <div class="product-mobile-nav clearfix">
 	    			<ul>
 	    				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
 	    				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
 	    				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
 	    			</ul>
-	    		</div>
-      		<div class="product-desc-awards-specs">
+	    		</div> -->
+      		<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
 	    			<div class="product-desc-awards">
 	        		<div class="product-description" itemprop="description">
 	        			<?php the_content(); ?>
@@ -329,7 +333,7 @@ Template Name: Skateboard Detail
 					}
 					if ($hesho == false):
 					?>
-					<div class="product-tech-construction">
+					<div class="product-tech-construction col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
 						<h2>Construction</h2>
 						<div class="construction-slideshow">
 							<ul>
@@ -428,6 +432,7 @@ Template Name: Skateboard Detail
 					<?php // display minor technology if there is any
 					$technology = get_field('libtech_product_technology');
 					if( $technology ):
+						$i = 1;
 						$technologyMajor = Array();
 						$technologyMinor = Array();
 						foreach( $technology as $techItem):
@@ -446,22 +451,29 @@ Template Name: Skateboard Detail
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>
-        	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?>">
+        	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?> col-xs-12">
 						<h2>Ingredients</h2>
-						<ul>
+						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
-							<li>
-								<div class="tech-pad">
+							<div class="item">
+								<div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
 									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
 									<div class="tech-copy">
 										<?php echo $techItem[1]; ?>
 									</div>
 								</div>
-							</li>
+							</div>
 
-							<?php endforeach; ?>
-						</ul>
+							<?php
+								if($i %2 == 0) echo '<div class="clearfix visible-xs visible-ms"></div>';
+								if($i %3 == 0) echo '<div class="clearfix visible-sm"></div>';
+								if($i %4 == 0) echo '<div class="clearfix visible-md visible-lg"></div>';
+								$i++;
+									endforeach;
+							?>
+
+						</div>
 					</div><!-- .product-tech-minor -->
 
 					<?
@@ -478,10 +490,9 @@ Template Name: Skateboard Detail
 			if( $videoID ):
 		?>
 
-		<div class="bg3-top product-video-top"></div>
-    <section class="bg3 product-video">
-    	<div class="section-content">
-				<div class="video-player">
+    <section class="product-video container-fluid">
+    	<div class="section-content row">
+				<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=66CC00&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				</div>
 			</div>
@@ -494,7 +505,7 @@ Template Name: Skateboard Detail
 			// display the related products
 			getRelatedProducts();
 		?>
-		
+
 <?php
 		endwhile;
 	endif;

@@ -13,12 +13,10 @@ Template Name: Accessories Detail
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-    <div class="bg-product-details-top product-details-nav-bottom"></div>
     <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-			<section class="product-details bg-product-details <?php echo $slug; ?>">
-	    	<div class="section-content">
-					<h1 itemprop="name"><?php the_title(); ?></h1>
-					<div class="product-images">
+			<section class="product-details <?php echo $slug; ?> container-fluid">
+	    	<div class="section-content row">
+					<div class="product-images col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7 col-sm-offset-0">
 						<ul id="image-list">
 							<?php
 							$thumbnailImages = Array();
@@ -39,7 +37,7 @@ Template Name: Accessories Detail
 							?>
 						</ul>
 					</div><!-- .product-images -->
-					<div class="product-details-right">
+					<div class="product-details-right  col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5 col-sm-offset-0">
 						<!-- product array -->
 						<script type='text/javascript'>
 							<?php
@@ -75,6 +73,7 @@ Template Name: Accessories Detail
 								echo "var productArray = ". $jsArray . ";\n";
 							?>
 						</script>
+						<h1 itemprop="name"><?php the_title(); ?></h1>
 						<h3><?php the_field('libtech_product_slogan'); ?></h3>
 						<div class="image-list-thumbs <?php if(count($thumbnailImages) < 2){ echo 'hidden'; }?>">
 							<ul id="image-list-thumbs">
@@ -151,7 +150,8 @@ Template Name: Accessories Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/">Find a Dealer</a></li>
 							</ul>
@@ -194,14 +194,14 @@ Template Name: Accessories Detail
 					<div class="clearfix"></div>
 				</div><!-- .section-content -->
 			</section><!-- .product-details -->
-			<section class="product-zoom bg-product-details">
+			<section class="product-zoom container-fluid">
       	<div class="section-content">
       		<div class="zoom-title"></div>
       		<div class="zoom-image">
       			<img src="" />
       		</div>
       		<div class="zoom-controls">
-      			<a href="#close-zoom" class="zoom-close h3">Close</a>
+      			<a href="#close-zoom" class="zoom-close button">Close</a>
       			<ul id="zoom-thumbnails"></ul>
       		</div>
       	</div><!-- .section-content -->

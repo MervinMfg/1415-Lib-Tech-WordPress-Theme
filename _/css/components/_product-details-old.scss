@@ -1,0 +1,1926 @@
+// ==========================================================================
+// COMPONENTS/_PRODUCT-DETAILS.SCSS
+// ==========================================================================
+
+.product-details-nav {
+  display: none;
+}
+
+.product-details {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  h1,
+  h3 {
+    padding: 0 0 20px;
+    text-align: center;
+  }
+
+  .product-images {
+    .bx-viewport {
+      background: none;
+    }
+
+    ul li a {
+      display: block;
+      margin-left: -30%;
+      width: 160%;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    // surf specific styles
+    .surf-images {
+      padding-bottom: 20px;
+
+      .surfboard-top,
+      .surfboard-bottom {
+        cursor: pointer;
+        float: left;
+        width: 45%;
+      }
+
+      .surfboard-side {
+        cursor: pointer;
+        float: left;
+        width: 10%;
+      }
+    }
+  }
+
+  .image-list-thumbs {
+    padding: 20px 0 40px;
+
+    &.hidden {
+      display: none;
+    }
+
+    .bx-wrapper {
+      margin: 0 !important;
+
+      .bx-viewport {
+        background: none;
+      }
+    }
+
+    .bx-loading {
+      background: none;
+    }
+
+    li {
+      float: left;
+
+      a {
+        img {
+          @include vendorize(opacity, .65);
+          @include transition(opacity, 200ms);
+        }
+
+        &:hover img,
+        &:focus img,
+        &.active img {
+          @include vendorize(opacity, 1);
+        }
+      }
+    }
+  }
+
+  .product-details-right {
+    .product-note-wrapper {
+      clear: both;
+      padding-bottom: 10px;
+
+      .product-note {
+        margin-top: -20px;
+        max-width: 540px;
+        padding-bottom: 25px;
+        text-align: center;
+
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .product-price {
+    clear: both;
+    font-size: 1.4em;
+    font-weight: bold;
+    padding-bottom: 20px;
+
+    .price-logo,
+    .price-graphic,
+    .price-logo-five,
+    .price-graphic-five {
+      display: none;
+
+      &.active {
+        display: inline-block;
+      }
+    }
+
+    .price {
+      display: inline-block;
+    }
+
+    .price-alert {
+      display: none;
+    }
+  }
+
+  .product-stock-alert p {
+    color: #fff;
+    display: none;
+    margin-bottom: 10px;
+
+    &.active {
+      display: block;
+    }
+
+    &.surf-graphic-limited {
+      color: $surfColor;
+    }
+  }
+
+  .product-variations {
+    display: none;
+    margin-bottom: 10px;
+  }
+
+  .product-alert p {
+    display: none;
+  }
+
+  .product-buy {
+    margin-bottom: 40px;
+
+    ul li {
+      &.loading {
+        background: url('../img/loader.gif') center center no-repeat #000;
+        height: 20px;
+        margin-bottom: 20px;
+        width: 64px;
+
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.cart-button {
+        display: none;
+        margin-bottom: 10px;
+
+        .add-to-cart {
+          background: $snowColor;
+          color: #000;
+          display: inline-block;
+          padding: 5px 10px;
+          text-decoration: none;
+
+          &:hover,
+          &:focus {
+            background: #000;
+            color: $snowColor;
+          }
+        }
+
+        img {
+          float: right;
+        }
+      }
+
+      &.find-dealer {
+        font-weight: normal;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        text-align: left;
+
+        a {
+          color: #999;
+          text-transform: uppercase;
+
+          &:hover,
+          &:focus {
+            color: #FFF;
+          }
+        }
+      }
+    }
+
+    .cart-success,
+    .cart-failure {
+      border: dashed 2px $snowColor;
+      color: #fff;
+      padding: 10px 10px 0;
+
+      p {
+        margin-bottom: 10px;
+
+        .cart-link {
+          background: $snowColor;
+          color: #000;
+          font-size: 1.2em;
+          padding: 2px 8px 2px 4px;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .cart-success.hidden,
+    .cart-failure.hidden {
+      display: none;
+    }
+  }
+
+  &.available {
+    .product-price .price-alert {
+      &.usd {
+        display: block;
+      }
+    }
+
+    .product-variations {
+      display: block;
+    }
+
+    .product-alert {
+      p {
+        margin-top: -10px;
+        padding-bottom: 10px;
+
+        span {
+          color: $snowColor;
+        }
+      }
+
+      &.low p.low-inventory,
+      &.no p.no-inventory {
+        display: block;
+      }
+    }
+
+    .product-buy ul li {
+      &.cart-button {
+        display: block;
+
+        &.hidden {
+          display: none;
+        }
+      }
+
+      &.unavailable {
+        display: none;
+      }
+    }
+  }
+
+  .product-quick-specs {
+    margin-bottom: 40px;
+
+    li {
+      margin-bottom: 5px;
+
+      span {
+        color: $snowColor;
+        padding-right: 10px;
+        text-transform: uppercase;
+
+        &.us-sizes,
+        &.eu-sizes {
+          color: #ccc;
+        }
+      }
+    }
+  }
+
+  .product-description {
+    margin-bottom: 40px;
+    max-width: 540px;
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      font-size: 1.1em;
+      list-style: square;
+      margin: 0 0 10px 25px;
+
+      li {
+        margin: 0 0 5px;
+      }
+    }
+  }
+
+  .product-share {
+    display: none;
+
+    li {
+      float: left;
+      margin-bottom: 5px;
+      width: 125px;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////
+// Surf specific product details
+.single-libtech_surfboards {
+  .product-details {
+    .product-quick-specs {
+      margin-bottom: 5px;
+    }
+
+    .view-tech-link {
+      text-transform: uppercase;
+    }
+
+    .product-share {
+      margin-top: 60px;
+    }
+  }
+
+  .product-extras {
+    &.info .product-specs,
+    &.info .product-tech-major,
+    &.info .product-tech-minor,
+    &.info .product-tech-construction {
+      display: block;
+    }
+
+    &.specs .product-description,
+    &.specs .product-awards,
+    &.specs .product-tech-major,
+    &.specs .product-tech-minor,
+    &.specs .product-tech-construction {
+      display: block;
+    }
+
+    &.tech .product-description,
+    &.tech .product-awards,
+    &.tech .product-specs {
+      display: block;
+    }
+
+    .product-tech-major {
+      .tech-image {
+        display: none;
+      }
+
+      .tech-copy {
+        width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+
+  .product-buy {
+    margin-bottom: 55px;
+  }
+}
+
+.currency-eur .product-details {
+  &.available {
+    .product-price .price-alert {
+      &.usd {
+        display: none;
+      }
+
+      &.cad {
+        display: none;
+      }
+
+      &.eur {
+        display: block;
+      }
+    }
+  }
+}
+
+.currency-usd .product-details {
+  &.available {
+    .product-price .price-alert {
+      &.eur {
+        display: none;
+      }
+    }
+  }
+}
+
+.currency-eur .product-details .product-quick-specs li span.us-sizes {
+  display: none;
+}
+
+.currency-usd,
+.currency-cad,
+.currency-int {
+  .product-details .product-quick-specs li {
+    span.eu-sizes {
+      display: none;
+    }
+  }
+}
+
+.international {
+  .product-details.available {
+    .product-price,
+    .product-variations,
+    .product-alert {
+      display: none;
+    }
+
+    .product-buy {
+      .cart-button {
+        display: none;
+      }
+
+      .unavailable {
+        display: block;
+      }
+    }
+  }
+}
+
+.ski .product-details {
+  h1 {
+    padding-bottom: 5px;
+  }
+
+  .product-alert p span {
+    color: $skiColor;
+  }
+
+  .product-buy {
+    ul li.cart-button .add-to-cart {
+      background: $skiColor;
+
+      &:hover,
+      &:focus {
+        background: #000;
+        color: $skiColor;
+      }
+    }
+
+    .cart-success,
+    .cart-failure {
+      border-color: $skiColor;
+    }
+
+    .cart-success p .cart-link {
+      background-color: $skiColor;
+    }
+  }
+
+  .product-quick-specs li span {
+    color: $skiColor;
+
+    &.us-sizes,
+    &.eu-sizes {
+      color: #ccc;
+    }
+  }
+}
+
+.single-libtech_nas .product-details {
+  h1 {
+    padding-bottom: 5px;
+  }
+
+  .nas-tech {
+    color: #ccc;
+    font-style: italic;
+    padding-top: 0;
+  }
+
+  .product-images {
+    padding-bottom: 30px;
+
+    ul li a {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .bx-controls {
+      display: none;
+    }
+  }
+}
+
+.surf .product-details {
+  .product-alert p span {
+    color: $surfColor;
+  }
+
+  .product-buy {
+    ul li.cart-button .button {
+      float: left;
+    }
+
+    .cart-success,
+    .cart-failure {
+      border-color: $surfColor;
+    }
+
+    .cart-success p .cart-link {
+      background-color: $surfColor;
+    }
+  }
+
+  .product-quick-specs li span {
+    color: $surfColor;
+
+    &.us-sizes,
+    &.eu-sizes {
+      color: #ccc;
+    }
+  }
+}
+
+.skate .product-details {
+  .product-alert p span {
+    color: $skateColor;
+  }
+
+  .product-buy {
+    ul li.cart-button .add-to-cart {
+      background: $skateColor;
+
+      &:hover,
+      &:focus {
+        background: #000;
+        color: $skateColor;
+      }
+    }
+
+    .cart-success,
+    .cart-failure {
+      border-color: $skateColor;
+    }
+
+    .cart-success p .cart-link {
+      background-color: $skateColor;
+    }
+  }
+
+  .product-quick-specs li span {
+    color: $skateColor;
+
+    &.us-sizes,
+    &.eu-sizes {
+      color: #ccc;
+    }
+  }
+}
+
+.single-libtech_apparel .product-details .product-images ul li a,
+.single-libtech_accessories .product-details .product-images ul li a,
+.single-libtech_luggage .product-details .product-images ul li a {
+  margin-left: 0;
+  width: 100%;
+}
+
+.product-zoom {
+  display: none;
+
+  .section-content {
+    min-height: 250px;
+    position: relative;
+
+    .zoom-title {
+      margin: 0 auto;
+      max-width: 45%;
+      text-align: center;
+
+      .h5 {
+        color: #fff;
+      }
+    }
+
+    .zoom-image {
+      img {
+        width: 100%;
+
+        &.surfboard-top,
+        &.surfboard-bottom {
+          float: left;
+          width: 45%;
+        }
+
+        &.surfboard-side {
+          float: left;
+          width: 10%;
+        }
+      }
+    }
+
+    .zoom-controls {
+      position: absolute;
+      right: 20px;
+      text-align: center;
+      top: 0;
+      width: 200px;
+
+      .zoom-close {
+        background: $snowColor;
+        clear: both;
+        color: #000;
+        display: inline-block;
+        margin-bottom: 40px;
+        padding: 5px 10px;
+      }
+
+      ul {
+        clear: both;
+
+        &.hidden {
+          display: none;
+        }
+
+        li {
+          float: left;
+          padding: 0 0 10px;
+
+          a {
+            img {
+              @include vendorize(opacity, .65);
+              @include transition(opacity, 200ms);
+            }
+
+            &:hover img,
+            &:focus img,
+            &.active img {
+              @include vendorize(opacity, 1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ski .product-zoom .section-content .zoom-controls .zoom-close {
+  background: $skiColor;
+}
+
+.surf .product-zoom .section-content .zoom-controls .zoom-close {
+  background: $surfColor;
+}
+
+.skate .product-zoom .section-content .zoom-controls .zoom-close {
+  background: $skateColor;
+}
+
+// custom zoom thumbnail layout for surfboards
+.single-libtech_surfboards .product-zoom .section-content .zoom-controls {
+  padding: 20px;
+  position: relative;
+  right: 0;
+  width: 100%;
+
+  .zoom-close {
+    clear: none;
+    position: absolute;
+    right: 20px;
+    top: -50px;
+  }
+
+  ul {
+    clear: none;
+  }
+
+  .bx-wrapper {
+    .bx-loading {
+      background: none;
+    }
+
+    .bx-viewport {
+      background: none;
+    }
+  }
+}
+
+.product-extras {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  .product-mobile-nav {
+    padding-bottom: 20px;
+    width: 100%;
+
+    li {
+      float: left;
+      width: 33.33%;
+
+      &.margin {
+        padding-right: 2%;
+      }
+
+      a {
+        background: $snowColor;
+        color: #000;
+        display: inline-block;
+        padding: 5px 10px;
+        text-align: center;
+        width: 100%;
+
+        &.selected {
+          background: none;
+          color: $snowColor;
+          cursor: default;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &.info .product-specs,
+  &.info .product-tech-major,
+  &.info .product-tech-minor,
+  &.info .product-tech-construction {
+    display: none;
+  }
+
+  &.specs .product-description,
+  &.specs .product-awards,
+  &.specs .product-tech-major,
+  &.specs .product-tech-minor,
+  &.specs .product-tech-construction {
+    display: none;
+  }
+
+  &.tech .product-description,
+  &.tech .product-awards,
+  &.tech .product-specs {
+    display: none;
+  }
+
+  .product-description {
+    margin-bottom: 20px;
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      font-size: 1.1em;
+      list-style: square;
+      margin: 0 0 20px 25px;
+
+      li {
+        margin: 0 0 5px;
+      }
+    }
+
+    .wp-caption {
+      width: auto !important;
+
+      img {
+        height: auto;
+      }
+    }
+  }
+
+  .product-awards {
+    padding-bottom: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      float: left;
+      padding: 0 20px 20px 0;
+      position: relative;
+      width: 120px;
+
+      img {
+        height: auto;
+        max-width: 100%;
+      }
+
+      .tool-tip {
+        @include vendorize(opacity, 0);
+        @include transition(opacity, 200ms);
+        background: #fff100;
+        background: rgba(255, 250, 5, .9);
+        border: solid 2px #000;
+        border-radius: 10px;
+        color: #000;
+        display: block;
+        font-size: .75em;
+        font-weight: bold;
+        left: -20px;
+        padding: 10px;
+        position: absolute;
+        text-align: center;
+        text-transform: uppercase;
+        top: 15px;
+        visibility: hidden;
+        width: 140px;
+        z-index: 100;
+      }
+
+      &:hover .tool-tip {
+        @include vendorize(opacity, 1);
+        visibility: visible;
+      }
+    }
+  }
+
+  .product-specs {
+    overflow: hidden;
+    padding-bottom: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+
+      thead {
+        background: #333;
+
+        th {
+          font-size: 11px;
+          padding: 10px;
+          text-align: left;
+          text-transform: uppercase;
+          vertical-align: top;
+
+          &:nth-child(4),
+          &:nth-child(6),
+          &:nth-child(7),
+          &:nth-child(9) {
+            display: none;
+          }
+
+          span {
+            font-size: 9px;
+            font-weight: normal;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          background: #000;
+
+          &:nth-child(even) {
+            background: #181818;
+          }
+
+          td {
+            padding: 10px;
+
+            &:nth-child(4),
+            &:nth-child(6),
+            &:nth-child(7),
+            &:nth-child(9) {
+              display: none;
+            }
+          }
+        }
+      }
+
+      tfoot {
+        background: #333;
+
+        td {
+          font-size: 11px;
+          padding: 10px;
+          text-transform: uppercase;
+          vertical-align: top;
+
+          a {
+            font-weight: bold;
+          }
+
+          &:nth-child(5),
+          &:nth-child(6),
+          &:nth-child(7),
+          &:nth-child(8),
+          &:nth-child(9) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .outerwear-fit {
+      padding-top: 20px;
+
+      li {
+        padding-bottom: 20px;
+
+        h3 {
+          margin-bottom: 10px;
+        }
+
+        a {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .product-tech-major {
+    /* check .tech-major */
+  }
+
+  .product-tech-construction {
+    clear: both;
+    margin-bottom: 20px;
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    ul li {
+      .construction-image {
+        img {
+          max-width: none;
+          width: 100%;
+        }
+      }
+
+      .construction-caption {
+        background: #000;
+        background: rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        padding: 10px;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+
+  .product-tech-minor {
+    // check .tech-minor
+  }
+}
+
+.snow .product-extras .product-tech-major ul strong {
+  color: $snowColor;
+}
+
+.ski .product-extras .product-tech-major ul strong {
+  color: $skiColor;
+}
+
+// Select correct fit on outerwear details
+.snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3,
+.snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p,
+.snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3,
+.snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p,
+.snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3,
+.snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p {
+  color: $snowColor;
+}
+
+.ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3,
+.ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p,
+.ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3,
+.ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p,
+.ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3,
+.ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p {
+  color: $skiColor;
+}
+
+// OUTERWEAR SPEC TABLE DISPLAY
+// BASED ON OUTERWEAR TYPE
+.single-libtech_outerwear,
+.page-template-page-templatesstorm-factory-php {
+  .product-extras {
+    &.jackets .product-specs,
+    &.layers .product-specs {
+      table {
+        thead th {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: table-cell;
+          }
+
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+        }
+
+        tbody tr td {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: table-cell;
+          }
+
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.pants .product-specs {
+      table {
+        thead th {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: none;
+          }
+
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: table-cell;
+          }
+        }
+
+        tbody tr td {
+          &:nth-child(2),
+          &:nth-child(3) {
+            display: none;
+          }
+
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: table-cell;
+          }
+        }
+      }
+    }
+  }
+}
+
+// SURFBOARD SPECS TABLE
+.single-libtech_surfboards .product-extras .product-specs {
+  table {
+    thead th,
+    tbody tr td {
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:nth-child(4) {
+        display: table-cell;
+      }
+    }
+  }
+}
+
+.single-libtech_outerwear .product-extras {
+  .product-tech-major {
+    ul {
+      list-style: square;
+      padding-left: 20px;
+
+      strong {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.ski .product-extras .product-mobile-nav li a {
+  background: $skiColor;
+
+  &.selected {
+    background: none;
+    color: $skiColor;
+  }
+}
+
+.surf .product-extras .product-mobile-nav li a {
+  background: $surfColor;
+
+  &.selected {
+    background: none;
+    color: $surfColor;
+  }
+}
+
+.skate .product-extras .product-mobile-nav li a {
+  background: $skateColor;
+
+  &.selected {
+    background: none;
+    color: $skateColor;
+  }
+}
+
+.product-video-top,
+.product-gallery-top {
+  &.specs,
+  &.tech {
+    display: none;
+  }
+}
+
+.product-video,
+.product-gallery {
+  .section-content {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &.specs,
+  &.tech {
+    display: none;
+  }
+
+  h2 {
+    margin-bottom: 10px;
+  }
+}
+
+.product-video {
+  .video-player {
+    padding: 10px 0;
+    width: 100%;
+  }
+}
+
+.single-libtech_snowboards,
+.single-libtech_skateboards,
+.single-libtech_nas,
+.single-libtech_apparel {
+  .mfp-iframe-scaler {
+    padding-top: 550px;
+  }
+}
+
+@media screen and (min-width: $breakpoint-small) {
+  .ski,
+  .skate,
+  .snow {
+    .product-details {
+      &.hide {
+        display: none;
+      }
+
+      h1 {
+        clear: right;
+        float: right;
+        text-align: left;
+        width: 40%;
+      }
+
+      .product-images {
+        float: left;
+        width: 60%;
+
+        .bx-wrapper {
+          max-width: 640px !important;
+        }
+
+        .surf-images {
+          margin: 0 auto;
+          max-width: 700px;
+        }
+      }
+
+      .product-details-right {
+        clear: right;
+        float: right;
+        width: 40%;
+      }
+
+      h3 {
+        text-align: left;
+      }
+
+      h3,
+      .image-list-thumbs,
+      .product-price,
+      .product-stock-alert,
+      .product-variations,
+      .product-alert,
+      .product-buy,
+      .product-quick-specs,
+      .product-share {
+        max-width: 540px;
+      }
+    }
+  }
+
+  .currency-eur .single-libtech_snowboards,
+  .single-libtech_skateboards {
+    .product-details {
+      h1 {
+        width: 50%;
+      }
+
+      .product-images {
+        width: 50%;
+
+        .bx-wrapper {
+          max-width: 540px !important;
+        }
+      }
+
+      .product-details-right {
+        width: 50%;
+      }
+    }
+  }
+
+  .single-libtech_nas {
+    .product-details {
+      h3,
+      .product-price,
+      .product-stock-alert,
+      .product-variations,
+      .product-buy,
+      .product-quick-specs,
+      .product-share {
+        max-width: 100%;
+      }
+
+      .product-images {
+        float: none;
+        width: 100%;
+
+        .bx-wrapper {
+          max-width: 100% !important;
+        }
+      }
+
+      h1 {
+        float: none;
+        text-align: center;
+        width: auto;
+      }
+
+      .nas-tech {
+        max-width: 100%;
+        text-align: center;
+      }
+
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+
+  .single-libtech_surfboards .product-details .product-images {
+    padding-top: 10px;
+  }
+
+  .product-zoom.show {
+    display: block;
+  }
+
+  .product-extras {
+    .product-mobile-nav {
+      display: none;
+    }
+
+    &.info .product-specs,
+    &.info .product-tech-major,
+    &.info .product-tech-construction,
+    &.info .product-tech-minor,
+    &.specs .product-description,
+    &.specs .product-awards,
+    &.specs .product-tech-major,
+    &.specs .product-tech-construction,
+    &.specs .product-tech-minor,
+    &.tech .product-description,
+    &.tech .product-awards,
+    &.tech .product-specs {
+      display: block;
+    }
+  }
+
+  // SURFBOARD SPECS TABLE
+  .single-libtech_surfboards .product-extras .product-specs {
+    table {
+      thead th,
+      tbody tr td {
+        &:nth-child(2) {
+          display: table-cell;
+        }
+      }
+    }
+  }
+
+  .product-video-top,
+  .product-gallery-top {
+    &.specs,
+    &.tech {
+      display: block;
+    }
+  }
+
+  .product-video,
+  .product-gallery {
+    &.specs,
+    &.tech {
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-medium) {
+  .product-details-nav {
+    position: relative;
+    z-index: 1;
+
+    &.active {
+      display: block;
+      margin-top: -50px;
+
+      .section-content {
+        margin-top: -265px;
+        padding-bottom: 35px;
+      }
+    }
+
+    .product-peek {
+      .product-title,
+      .product-type {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .product-details-nav-btn {
+    position: relative;
+    z-index: 3;
+
+    .toggle-btn {
+      background: url('../img/sprite.png') -79px -39px;
+      bottom: 40px;
+      cursor: pointer;
+      display: block;
+      height: 25px;
+      left: 50%;
+      margin-left: -25px;
+      position: absolute;
+      width: 50px;
+
+      &:hover,
+      &:focus {
+        background-color: #666;
+        background-position: -37px -39px;
+      }
+
+      &.expanded {
+        background-position: -79px -61px;
+
+        &:hover,
+        &:focus {
+          background-position: -37px -61px;
+        }
+      }
+    }
+  }
+
+  .product-details-nav-bottom {
+    position: relative;
+    z-index: 2;
+  }
+
+  .surf .product-details {
+    h1 {
+      text-align: left;
+    }
+
+    h3 {
+      text-align: left;
+    }
+    .product-details-right {
+      .product-buy {
+        text-align: center;
+      }
+    }
+  }
+
+  .single-libtech_accessories,
+  .single-libtech_apparel,
+  .single-libtech_luggage,
+  .single-libtech_surfboards {
+    .product-details-nav {
+      ul {
+        li {
+          a {
+            img {
+              margin-left: 0;
+              max-width: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-details .product-share {
+    display: block;
+  }
+
+  .product-extras {
+    .product-desc-awards {
+      float: left;
+      width: 40%;
+    }
+
+    .product-specs {
+      float: right;
+      width: 60%;
+
+      h2,
+      table {
+        margin-left: 40px;
+      }
+    }
+
+    .product-tech-major {
+      clear: both;
+    }
+
+    .product-tech-construction {
+      clear: both;
+    }
+  }
+
+  // Surf specific product details
+  .single-libtech_surfboards {
+    .product-extras {
+
+      .product-specs {
+
+        h2,
+        table {
+          margin-left: 0;
+        }
+      }
+
+      .product-tech-major {
+        clear: none;
+      }
+    }
+  }
+
+  .single-libtech_nas {
+    .product-details {
+      h1 {
+        display: inline-block;
+        width: auto;
+      }
+
+      h3 {
+        max-width: 540px;
+        text-align: left;
+      }
+
+      .product-price,
+      .product-stock-alert,
+      .product-variations,
+      .product-buy,
+      .product-quick-specs,
+      .product-share {
+        max-width: 540px;
+      }
+
+      .nas-tech {
+        display: inline-block;
+        padding: 18px 0 20px 20px;
+      }
+
+      .product-images {
+        float: none;
+        margin: 0 auto;
+        padding: 0 60px 20px;
+        width: 100%;
+
+        .nas-image a {
+          cursor: default;
+        }
+
+        .bx-controls {
+          display: block;
+
+          .bx-prev {
+            left: -60px;
+          }
+
+          .bx-next {
+            right: -60px;
+          }
+        }
+      }
+
+      .details-left {
+        float: left;
+        width: 40%;
+      }
+
+      .details-right {
+        float: right;
+        padding-top: 45px;
+        width: 60%;
+
+        .product-quick-specs {
+          padding-left: 40px;
+        }
+
+        .product-share {
+          padding-left: 40px;
+
+          li {
+            width: 100px;
+          }
+        }
+      }
+    }
+  }
+
+  .single-libtech_outerwear .product-extras {
+    .product-desc-awards {
+      float: left;
+      width: 60%;
+    }
+
+    .product-tech-major {
+      clear: none;
+      float: right;
+      width: 40%;
+
+      h2 {
+        padding-left: 20px;
+      }
+
+      ul {
+        padding-left: 40px;
+      }
+    }
+  }
+
+  .single-libtech_outerwear,
+  .page-template-page-templatesstorm-factory-php {
+    .product-extras {
+      .product-specs {
+        float: none;
+        width: 100%;
+
+        h2 {
+          margin-left: 0;
+        }
+
+        table {
+          float: left;
+          margin-left: 0;
+          width: 60%;
+        }
+
+        .outerwear-fit {
+          float: left;
+          padding-top: 0;
+          width: 40%;
+
+          li {
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .product-video {
+    .video-player {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
+}
+@media screen and (min-width: $breakpoint-large) {
+  .single-libtech_nas,
+  .single-libtech_apparel,
+  .single-libtech_luggage,
+  .single-libtech_outerwear,
+  .single-libtech_snowboards,
+  .single-libtech_skateboards,
+  .single-libtech_accessories {
+    .product-extras {
+      .product-desc-awards-specs {
+        width: 100%;
+
+        .product-desc-awards {
+          float: none;
+          width: 100%;
+
+          .product-description {
+            float: left;
+            width: 60%;
+
+            p {
+              padding-right: 40px;
+            }
+          }
+
+          .product-awards {
+            float: right;
+            width: 40%;
+          }
+        }
+
+        .product-specs {
+          clear: right;
+          float: right;
+          width: 40%;
+
+          h2,
+          table {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .product-tech-construction {
+        clear: none;
+        float: left;
+        width: 60%;
+
+        .construction-slideshow {
+          padding-right: 40px;
+        }
+      }
+
+      .product-tech-major {
+        clear: none;
+        float: left;
+        width: 60%;
+      }
+    }
+  }
+
+  .single-libtech_nas {
+    .product-details {
+      .section-content {
+        margin: 0 auto;
+        max-width: $breakpoint-xlarge;
+
+        .details-left {
+          width: 60%;
+
+          .product-price,
+          .product-variations,
+          .product-buy {
+            max-width: 100%;
+            padding-right: 40px;
+          }
+        }
+
+        .details-right {
+          float: right;
+          width: 40%;
+
+          .product-quick-specs {
+            padding-left: 0;
+          }
+          .product-share {
+            padding-left: 0;
+
+            li {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .single-libtech_outerwear .product-extras {
+    .product-desc-awards {
+      float: left;
+      width: 60%;
+
+      .product-description {
+        clear: none;
+        width: 100%;
+
+        p {
+          padding-right: 0;
+        }
+      }
+
+      .product-awards {
+        float: none;
+        width: 100%;
+      }
+    }
+  }
+
+  .product-details {
+    .product-details-right {
+      .product-note-wrapper {
+        .product-note {
+          span {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    &.available {
+      .product-price .price-alert {
+        padding-left: 20px;
+
+        &.usd {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .currency-eur .product-details {
+    &.available {
+      .product-price .price-alert {
+        &.eur {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .product-video .video-player {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xlarge) {
+  .product-extras .product-specs {
+    table {
+      thead th {
+        &:nth-child(4),
+        &:nth-child(6),
+        &:nth-child(9) {
+          display: table-cell;
+        }
+      }
+
+      tbody tr td {
+        &:nth-child(4),
+        &:nth-child(6),
+        &:nth-child(9) {
+          display: table-cell;
+        }
+      }
+
+      tfoot tr td {
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(8),
+        &:nth-child(9) {
+          display: table-cell;
+        }
+      }
+    }
+  }
+
+  // OUTERWEAR SPEC TABLE DISPLAY
+  // SHOW WHOLE TABLE
+  .single-libtech_outerwear {
+    .product-extras {
+      &.jackets .product-specs,
+      &.layers .product-specs,
+      &.pants .product-specs {
+        table {
+          thead th {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: table-cell;
+            }
+          }
+
+          tbody tr td {
+            &:nth-child(2),
+            &:nth-child(3),
+            &:nth-child(4),
+            &:nth-child(5) {
+              display: table-cell;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .product-video .video-player {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: $breakpoint-xxlarge) {
+  .single-libtech_nas,
+  .single-libtech_apparel,
+  .single-libtech_luggage,
+  .single-libtech_outerwear,
+  .single-libtech_snowboards,
+  .single-libtech_skateboards,
+  .single-libtech_accessories {
+    .product-extras {
+      .product-desc-awards-specs {
+        float: left;
+        width: 40%;
+
+        .product-desc-awards {
+          .product-description {
+            width: 100%;
+
+            p {
+              padding-right: 0;
+            }
+          }
+
+          .product-awards {
+            width: 100%;
+          }
+        }
+
+        .product-specs {
+          width: 100%;
+
+          table {
+            thead th:nth-child(7) {
+              display: table-cell;
+            }
+
+            tbody tr td:nth-child(7) {
+              display: table-cell;
+            }
+
+            tfoot tr td:nth-child(7) {
+              display: table-cell;
+            }
+          }
+        }
+      }
+
+      .product-tech-construction {
+        float: right;
+        width: 60%;
+
+        h2 {
+          padding-left: 40px;
+        }
+
+        .construction-slideshow {
+          padding-left: 40px;
+        }
+      }
+
+      .product-tech-major {
+        clear: none;
+        float: right;
+        width: 60%;
+
+        h2 {
+          padding-left: 40px;
+        }
+
+        ul {
+          padding-left: 40px;
+
+          li {
+            padding-right: 0;
+          }
+        }
+      }
+
+      .product-tech-minor.hesho {
+        clear: none;
+        float: right;
+        width: 60%;
+
+        h2,
+        ul {
+          padding-left: 40px;
+        }
+
+        ul li {
+          width: 48%;
+        }
+      }
+    }
+  }
+
+
+  .single-libtech_outerwear .product-extras {
+    .product-desc-awards-specs {
+      float: none;
+      width: auto;
+    }
+  }
+
+  .product-video .section-content {
+    max-width: 1680px;
+  }
+}

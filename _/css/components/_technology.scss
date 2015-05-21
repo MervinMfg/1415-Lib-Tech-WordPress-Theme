@@ -2,17 +2,17 @@
 // COMPONENTS/_TECHNOLOGY.SCSS
 // ==========================================================================
 .tech-major {
-  .section-content {
-    padding: 0 20px;
-  }
+  padding-top: 25px;
 
   h2 {
     margin-bottom: 10px;
   }
 
-  ul {
-    li {
-      margin-bottom: 20px;
+  .tech-video-list,
+  .surf-tech-list {
+    .tech-video-item,
+    .surf-tech-item {
+      margin-bottom: 10px;
 
       .tech-video,
       .tech-image {
@@ -20,8 +20,6 @@
       }
 
       .tech-copy {
-        margin-bottom: 20px;
-
         h4,
         h5 {
           margin-bottom: 5px;
@@ -33,7 +31,7 @@
 
         .tech-found-on {
           display: none;
-          margin: 10px 0 20px;
+          margin: 10px 0;
 
           ul li {
             float: left;
@@ -44,6 +42,7 @@
         ul {
           list-style: square;
           padding-left: 25px;
+          margin-bottom: 10px;
 
           li {
             margin-bottom: 3px;
@@ -51,6 +50,14 @@
         }
       }
     }
+  }
+}
+
+.page-template-page-technology-detail.surf {
+  padding: 30px 0 10px;
+
+  .section-content {
+    padding: 0 10px;
   }
 }
 
@@ -72,6 +79,7 @@
 
     img {
       border: solid #333 1px;
+      width: 100%;
     }
   }
 
@@ -100,19 +108,9 @@
   }
 }
 
-.single-libtech_bindings .product-extras .product-tech-major,
-.single-libtech_bindings .product-extras.info .product-tech-major,
-.single-libtech_bindings .product-extras.tech .product-tech-major,
-.single-libtech_bindings .product-extras.specs .product-tech-major {
-  display: none;
-}
-
 .tech-minor {
-  clear: both;
-
-  .section-content {
-    padding: 0 20px;
-  }
+  padding-bottom: 30px;
+  padding-top: 25px;
 
   h2 {
     margin-bottom: 10px;
@@ -121,40 +119,62 @@
 
 .tech-minor,
 .tech-minor .section-content {
-  & > ul > li {
-    padding-bottom: 20px;
+
+  & > .wrapper > .item {
+    vertical-align: top;
 
     h4 {
       img {
-        display: inline-block;
+        display: block;
         height: auto;
         padding-bottom: 10px;
         vertical-align: middle;
-        width: 25%;
-      }
-
-      & > span {
-        display: inline-block;
-        padding-left: 20px;
-        width: 75%;
+        width: 40%;
       }
     }
 
     .tech-copy {
-      clear: both;
-
       ul {
         list-style: square;
         margin-left: 25px;
       }
     }
+
+    .tech-pad {
+      padding-bottom: 30px;
+    }
+  }
+
+  &.surf {
+    .wrapper .item {
+      h4 {
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
+.product-tech-minor {
+  padding-bottom: 0;
+  padding-top: 25px;
+}
+
 .single-libtech_outerwear,
-.page-template-page-templatesstorm-factory-php {
-  .tech-minor > ul > li > img {
-    width: 100%;
+.page-template-storm-factory {
+  .product-tech-minor {
+    ul li {
+      padding-bottom: 20px;
+    }
+
+    .wrapper .item {
+      padding-bottom: 20px
+    }
+  }
+
+  .product-tech-major {
+    padding-bottom: 30px;
   }
 }
 
@@ -186,183 +206,35 @@
   .tech-minor,
   .tech-minor .section-content {
     & > ul > li {
-      display: inline-block;
       text-align: left;
       vertical-align: top;
-      width: 48%;
-
-      .tech-pad {
-        padding: 10px;
-      }
-    }
-  }
-
-  .single-libtech_outerwear,
-  .page-template-page-templatesstorm-factory-php {
-    .tech-minor > ul > li {
-      display: block;
-      float: left;
-      padding-right: 20px;
-      width: 50%;
     }
   }
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .tech-major ul li {
-    .tech-video {
-      float: left;
-      margin-bottom: 0;
-      padding-right: 10px;
-      width: 50%;
-    }
-
-    .tech-image {
-      float: left;
-      margin-bottom: 0;
-      width: 50%;
-    }
-
-    .tech-copy {
-      float: left;
-      margin-bottom: 0;
-      padding-left: 10px;
-      width: 50%;
-
-      ul {
-        margin-bottom: 0;
-      }
-    }
-
-    .tech-copy.surf {
-      h4,
-      h5,
-      p,
-      ul {
-        margin-left: 10px;
-      }
-    }
-  }
-
-  .tech-major.tech-surf ul li {
-    .tech-image {
-      width: 30%;
-    }
-
-    .tech-copy {
-      width: 70%;
-    }
-  }
 
   .tech-faq .faq-list ul {
     float: left;
     width: 50%;
   }
+
+  // .tech-major.product-tech-major {
+  //   padding-top: 0;
+  // }
 }
 
 @media screen and (min-width: $breakpoint-large) {
-  .tech-major ul li {
-    padding-right: 40px;
-  }
 
-  .page-template-page-technology-detail.surf {
-    .tech-major {
-      ul {
-        &.tech-top {
-          float: left;
-          padding-right: 20px;
-          width: 50%;
-        }
-
-        &.tech-bottom {
-          float: right;
-          padding-left: 20px;
-          width: 50%;
-        }
-
-        li {
-          padding-right: 0;
-        }
-      }
-    }
-  }
-
-  .tech-major .section-content > ul.tech-video-list > li {
-    float: left;
-    margin-bottom: 10px;
-    padding-right: 0;
-    width: 50%;
-
-    .tech-video {
-      float: none;
-      padding: 0 0 10px;
-      width: 100%;
-    }
-
-    &.odd {
-      clear: left;
-
-      .tech-wrapper {
-        padding-right: 20px;
-      }
-    }
-
-    &.even {
-      clear: right;
-
-      .tech-wrapper {
-        padding-left: 20px;
-      }
-    }
-
+  .tech-major .section-content .tech-video-list .tech-video-item {
     .tech-copy {
-      float: none;
-      padding-left: 0;
-      width: 100%;
-
       .tech-found-on {
         display: block;
       }
     }
   }
-
-  .tech-minor,
-  .tech-minor .section-content {
-    & > ul > li {
-      display: inline-block;
-      text-align: left;
-      vertical-align: top;
-      width: 33%;
-    }
-  }
-
-  .single-libtech_outerwear,
-  .page-template-page-templatesstorm-factory-php {
-    .tech-minor > ul > li {
-      display: block;
-      float: left;
-      width: 33.3%;
-    }
-  }
 }
 
 @media screen and (min-width: $breakpoint-xxlarge) {
-  .tech-minor,
-  .tech-minor .section-content {
-    & > ul > li {
-      display: inline-block;
-      text-align: left;
-      vertical-align: top;
-      width: 24%;
-    }
-  }
 
-  .single-libtech_outerwear,
-  .page-template-page-templatesstorm-factory-php {
-    .tech-minor > ul > li {
-      display: block;
-      float: left;
-      width: 25%;
-    }
-  }
 }

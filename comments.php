@@ -21,7 +21,7 @@
 				</div>
 				<div class="clearfix"></div>
 			</div>
-<?php 
+<?php
 		else :
 ?>
 		<div class="discussion-top bg1-top"></div>
