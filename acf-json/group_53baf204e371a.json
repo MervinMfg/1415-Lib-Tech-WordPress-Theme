@@ -6,11 +6,15 @@
             "key": "field_4fff6fb39bf2b",
             "label": "On Sale",
             "name": "libtech_product_on_sale",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "No": "No",
                 "Yes": "Yes"
@@ -24,11 +28,15 @@
             "key": "field_4fff6fb39c315",
             "label": "Percentage Off",
             "name": "libtech_product_sale_percentage",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "choices": {
                 "5": 5,
                 "10": 10,
@@ -94,14 +102,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "libtech_luggage"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "libtech_bindings"
+                "value": "post"
             }
         ],
         [
@@ -117,5 +118,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1432251553,
+    "local": "json"
 }

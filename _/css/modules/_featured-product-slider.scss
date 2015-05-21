@@ -123,14 +123,12 @@
 	}
 	&.surfboards .section-content ul.product-listing > li .product-image img,
 	&.accessories .section-content ul.product-listing > li .product-image img,
-	&.luggage .section-content ul.product-listing > li .product-image img,
 	&.apparel .section-content ul.product-listing > li .product-image img,
 	&.bindings .section-content ul.product-listing > li .product-image img {
 		width: 90%;
 		margin-left: 5%;
 	}
 	&.outerwear .section-content ul.product-listing > li .product-copy .description,
-	&.luggage .section-content ul.product-listing > li .product-copy .description,
 	&.accessories .section-content ul.product-listing > li .product-copy .description {
 		display: none;
 	}

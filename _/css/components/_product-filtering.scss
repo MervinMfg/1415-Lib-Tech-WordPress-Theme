@@ -128,14 +128,6 @@
       }
     }
 
-    &.luggage-categories .filter-list {
-      right: -110px;
-
-      .filter-item {
-        width: 7.35em;
-      }
-    }
-
     &.contours .filter-list .filter-item {
       width: 4em;
     }
@@ -220,8 +212,7 @@
       }
     }
 
-    &.accessories-pricing .filter-list,
-    &.luggage-pricing .filter-list {
+    &.accessories-pricing .filter-list {
       right: 0;
 
       .filter-item {

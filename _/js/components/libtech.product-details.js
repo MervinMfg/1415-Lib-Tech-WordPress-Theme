@@ -371,23 +371,6 @@ LIBTECH.ProductDetails.prototype = {
 				}
 			}
 		});
-		// check for luggage and do colorway click if so
-		if($('body').hasClass('single-libtech_luggage')){
-			// check thumbnails on right
-			$('#image-list-thumbs li a').on('click', function (e) {
-				e.preventDefault();
-				// select this image visually
-				$('#image-list-thumbs li a').removeClass('active');
-				$(this).addClass('active');
-				// use name to determine input selection
-				var selector = "#product-variation option[value='" + $(this).attr('data-sku') + "']";
-				// make sure option is available, if it is... select it
-				if(!$(selector).attr('disabled')) {
-					$(selector).prop('selected', true);
-					$('#product-variation').change();
-				}
-			});
-		}
 		// FUNCTIONALITY FOR PRODUCTS WITH ONLY 1 SELECTION
 		$('#product-variation').on('change', function () {
 			// display the correct image matching selected option

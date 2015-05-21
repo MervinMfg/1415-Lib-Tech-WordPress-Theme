@@ -41,7 +41,6 @@ LIBTECH.RegionSelector.prototype = {
 					$('body').hasClass('single-libtech_skateboards') ||
 					$('body').hasClass('single-libtech_apparel') ||
 					$('body').hasClass('single-libtech_accessories') ||
-					$('body').hasClass('single-libtech_luggage') ||
 					$('body').hasClass('single-libtech_outerwear')
 				) {
 					// Check to make sure IP Address is not Crazy Egg tracking

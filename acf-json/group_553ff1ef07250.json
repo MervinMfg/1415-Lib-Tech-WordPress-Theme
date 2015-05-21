@@ -6,7 +6,6 @@
             "key": "field_553ff1f58d237",
             "label": "Featured Products",
             "name": "libtech_product_slider_featured_products",
-            "prefix": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -23,10 +22,9 @@
                 "libtech_skateboards",
                 "libtech_outerwear",
                 "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_accessories"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
@@ -52,5 +50,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254156
+    "modified": 1432249704
 }

@@ -6,11 +6,15 @@
             "key": "field_4fff5da309e35",
             "label": "Slogan",
             "name": "libtech_product_slogan",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -24,24 +28,39 @@
             "key": "field_4fff5da30a21b",
             "label": "Image",
             "name": "libtech_product_image",
-            "prefix": "",
             "type": "image",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "preview_size": "thumbnail",
             "library": "all",
-            "return_format": "id"
+            "return_format": "id",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_4fff5da30a5a0",
             "label": "Video",
             "name": "libtech_product_video",
-            "prefix": "",
             "type": "text",
             "instructions": "Enter Vimeo Video ID",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -55,11 +74,15 @@
             "key": "field_51f7ff51c0106",
             "label": "Video Quote",
             "name": "libtech_product_video_quote",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -73,11 +96,15 @@
             "key": "field_51f80064c0107",
             "label": "Video Quote Attribution",
             "name": "libtech_product_video_quote_attribution",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -91,12 +118,15 @@
             "key": "field_4fff5da30a953",
             "label": "Associated Product",
             "name": "libtech_product_associated",
-            "prefix": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "object",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "libtech_snowboards",
                 "libtech_nas",
@@ -104,28 +134,31 @@
                 "libtech_skateboards",
                 "libtech_outerwear",
                 "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_accessories"
             ],
             "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
             ],
-            "max": "-1",
-            "elements": [
-                "post_type"
-            ]
+            "elements": "",
+            "min": "",
+            "max": -1,
+            "return_format": "object"
         },
         {
             "key": "field_500717777a83c",
             "label": "Awards",
             "name": "libtech_product_awards",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select the awards applicable to this product.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "return_format": "object",
             "post_type": [
                 "libtech_awards"
@@ -134,31 +167,37 @@
             "filters": [
                 "search"
             ],
-            "max": "-1",
+            "max": -1,
             "elements": [
                 "post_type"
-            ]
+            ],
+            "min": 0
         },
         {
             "key": "field_53bd8346c4eff",
             "label": "Technology",
             "name": "libtech_product_technology",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Select the technology applicable to this product.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "libtech_technology"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "taxonomy"
             ],
             "elements": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "object",
+            "min": 0
         }
     ],
     "location": [
@@ -194,7 +233,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "libtech_luggage"
+                "value": "post"
             }
         ],
         [
@@ -224,5 +263,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1432250699,
+    "local": "json"
 }

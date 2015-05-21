@@ -6,33 +6,35 @@
             "key": "field_51c8b4f043df5",
             "label": "Featured Products",
             "name": "libtech_featured_products",
-            "prefix": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
-            "return_format": "object",
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "post_type": [
                 "libtech_snowboards",
-                "libtech_bindings",
                 "libtech_nas",
                 "libtech_surfboards",
                 "libtech_skateboards",
                 "libtech_outerwear",
                 "libtech_apparel",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_accessories"
             ],
             "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
             ],
-            "max": 10,
             "elements": [
-                "featured_image",
-                "post_type"
-            ]
+                "featured_image"
+            ],
+            "min": "",
+            "max": 10,
+            "return_format": "object"
         }
     ],
     "location": [
@@ -49,5 +51,7 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1432251169,
+    "local": "json"
 }

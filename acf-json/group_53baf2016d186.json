@@ -1,16 +1,20 @@
 {
     "key": "group_53baf2016d186",
-    "title": "Technology Details",
+    "title": "Technology Detail Page",
     "fields": [
         {
             "key": "field_534475218c783",
             "label": "Vimeo Video ID",
             "name": "libtech_tech_video_id",
-            "prefix": "",
             "type": "text",
             "instructions": "Enter the ID of your Vimeo video",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -35,5 +39,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1432250833,
+    "local": "json"
 }
