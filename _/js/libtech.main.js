@@ -7,7 +7,6 @@ var LIBTECH = LIBTECH || {};
 
 LIBTECH.main = {
 	config: {
-		menuState: 'closed',
 		wpImgPath: 'http://cdn.lib-tech.com/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/',
 		shop: null,
 		regionSelector: null
@@ -20,9 +19,9 @@ LIBTECH.main = {
 		self.config.shop = new LIBTECH.Shop(); // init shopatron JS
 		self.config.regionSelector = new LIBTECH.RegionSelector(); // init the region selector
 		self.sportCookieInit(); // init/check the sport cookie
-		self.searchInit(); // init header search bar
+		new LIBTECH.Search(); // init header search bar
 		$(window).load(function () {
-			self.menuInit(); // init main menu
+			new LIBTECH.MainMenu(); // init main menu
 		});
 		// check body class and init proper class
 		if ($body.hasClass('home')) {
@@ -49,9 +48,9 @@ LIBTECH.main = {
 			self.blogInit();
 			self.blogSingleInit();
 		} else if ($body.hasClass('page-template-faqs')) {
-			self.faqsInit();
+			self.faqInit();
 		} else if ($body.hasClass('page-template-page-templatessnowboard-builder-php') || $body.hasClass('page-template-page-templatessnowboard-builder-share-php')) {
-			new LIBTECH.SnowboardBuilder();
+			self.snowboardBuilderInit();
 		} else if ($body.hasClass('page-template-page-templatespage-partners-php')) {
 			self.partnersInit();
 		} else if ($body.hasClass('page-template-page-templatespage-surfboard-fins-php')) {
@@ -71,94 +70,6 @@ LIBTECH.main = {
 		} else if ($body.hasClass('page-template-page-templatesjamie-lynn-collection-php')) {
 			self.jamieLynnCollectionInit();
 		}
-		/* Chrome Webfont Fix Styles
-			- https://code.google.com/p/chromium/issues/detail?id=336476
-			- https://productforums.google.com/forum/#!topic/chrome/elw8busIfJA
-		*/
-		var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
-		if(is_chrome === true) {
-			$('body').hide().show();
-		}
-	},
-	menuInit: function () {
-		var self, marginClosed, marginOpen;
-		self = this;
-		marginClosed = $(".nav-sub-wrapper").height() * -1 + 10;
-		marginOpen = -20;
-		// remove old handlers
-		$(".nav-sub-wrapper .mobile-btn").unbind('click');
-		$(window).off('resize.mainMenu');
-		// close menu by default
-		if (self.utilities.responsiveCheck() == 'base') {
-			$('.nav-sub-wrapper').stop().animate({
-				marginTop: marginClosed
-			}, {
-				duration: 500,
-				easing: 'swing'
-			});
-			self.config.menuState = 'closed';
-		}
-		// mobile menu
-		$(".nav-sub-wrapper .mobile-btn").click(function (e) {
-			e.preventDefault();
-			if (self.config.menuState == 'closed') {
-				$('.nav-sub-wrapper').stop().animate({
-					marginTop: marginOpen
-				}, {
-					duration: 500,
-					easing: 'swing'
-				});
-				self.config.menuState = 'open';
-			} else {
-				$('.nav-sub-wrapper').stop().animate({
-					marginTop: marginClosed
-				}, {
-					duration: 500,
-					easing: 'swing'
-				});
-				self.config.menuState = 'closed';
-			}
-		});
-		// reinit menu on resize
-		$(window).on('resize.mainMenu', function () {
-			if (self.utilities.responsiveCheck() == 'base') {
-				self.menuInit();
-			} else {
-				$('.nav-sub-wrapper').stop();
-				$('.nav-sub-wrapper').css('margin-top', '-20px');
-			}
-		});
-	},
-	searchInit: function () {
-		$('header .nav-utility .search a').click(function (e) {
-			e.preventDefault();
-			e.stopPropagation(); // kill even from firing further
-			$('#header-search').toggleClass('visible');
-			$('#header-search .text-input').focus();
-			$('#header-search .text-input').val('');
-			// listen for escape key
-			$(document).keyup(function (e) {
-				if (e.keyCode == 27) {
-					$('#header-search').toggleClass('visible');
-					// kill event listeners
-					$(document).unbind('keyup');
-					$(document).unbind('click');
-					$('#header-search').unbind('click');
-				}
-			});
-			// don't hide if clicked within search area
-			$('#header-search').click(function (e) {
-				e.stopPropagation();
-			});
-			// hide if clicked anywhere outside search area
-			$(document).click(function () {
-				$('#header-search').toggleClass('visible');
-				// kill event listeners
-				$(document).unbind('keyup');
-				$(document).unbind('click');
-				$('#header-search').unbind('click');
-			});
-		});
 	},
 	sportCookieInit: function () {
 		var self, sport;
@@ -166,8 +77,8 @@ LIBTECH.main = {
 		sport = "";
 		if (navigator.cookieEnabled === true) {
 			/* if cookies are enabled, make sure the right cookie gets set
-               this is needed for pages that get cached
-               to notify non cached pages where we came from */
+         this is needed for pages that get cached
+         to notify non cached pages where we came from */
 			if ($('body').hasClass('ski')) {
 				sport = "ski";
 			} else if ($('body').hasClass('surf')) {
@@ -181,22 +92,18 @@ LIBTECH.main = {
 		}
 	},
 	homeInit: function () {
-		var self = this;
 		new LIBTECH.FeaturedSlider();
 		new LIBTECH.StorySlider();
 		new LIBTECH.Instagram();
 	},
 	homeSportInit: function () {
-		var self, $teamCta;
-		self = this;
+		var $teamCta = $('.home-sport-team .call-to-action .button');
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider();
 		// setup product slider
 		new LIBTECH.ProductSlider();
 		// render instagram
 		new LIBTECH.Instagram();
-		// home sport team photos
-		$teamCta = $('.home-sport-team .call-to-action .button');
 		if($teamCta.length !== 0) {
 			$teamCta.on('click.team', function (e) {
 				e.preventDefault();
@@ -224,7 +131,7 @@ LIBTECH.main = {
 		// make video fit within target
 		$('.video-header.video .video-player').fitVids();
 		$('.tech-major .tech-video').fitVids();
-		self.faqsInit();
+		new LIBTECH.FAQ();
 	},
 	environmentalInit: function () {
 		$(".enviro-video").fitVids();
@@ -233,11 +140,10 @@ LIBTECH.main = {
 		var self = this;
 		// make video fit within target
 		$('.video-header.video .video-player').fitVids();
-		self.faqsInit();
+		new LIBTECH.FAQ();
 	},
 	blogInit: function () {
-		var self, fblikes, postUrl;
-		self = this;
+		var fblikes, postUrl;
 		// CATEGORY TREE VIEW ON BLOG PAGES
 		$(".widget_mycategoryorder ul").treeview({
 			persist: "location",
@@ -254,13 +160,17 @@ LIBTECH.main = {
 	blogSingleInit: function () {
 		new LIBTECH.BlogSingle();
 	},
+	faqInit: function () {
+		new LIBTECH.FAQ();
+	},
+	snowboardBuilderInit: function () {
+		new LIBTECH.SnowboardBuilder();
+	},
 	teamOverviewInit: function () {
-		var self = this;
 		// make video fit within target
 		$('.video-header.video .video-player').fitVids();
 	},
 	teamDetailsInit: function () {
-		var self = this;
 		// init instagram
 		new LIBTECH.Instagram();
 		// init gallery
@@ -283,48 +193,7 @@ LIBTECH.main = {
 			}
 		});
 	},
-	faqsInit: function () {
-		var self = this;
-		// fit videos
-		$('.faq-list .faq-question .answer').fitVids();
-		// hide answer
-		$(".faq-question").each(function (index, element) {
-			$(this).addClass("collapsed");
-		});
-		$(".faq-question a.question").next().each(function (index, element) {
-			$(this).css("display", "none");
-		});
-		// activate click listeners
-		$(".faq-question a.question").on({
-			click: function (e) {
-				if ($(this).next("div").css("display") === "none") {
-					$(this).next("div").slideDown(300);
-					$(this).parent().removeClass("collapsed");
-				} else {
-					$(this).next("div").slideUp(300);
-					$(this).parent().addClass("collapsed");
-				}
-				e.preventDefault();
-			}
-		});
-		// update page scroll on category change
-		$('.faq-categories .mobile-nav').on('change', function (e) {
-			var val = $(this).val();
-			if(val !== '' || val !== '#' || val !== undefined) {
-				self.utilities.pageScroll(val);
-			}
-		});
-		$('.faq-categories .desktop-nav a').on('click', function (e) {
-			var val = $(this).attr('href');
-			e.preventDefault();
-			e.stopPropagation();
-			if(val !== '' || val !== '#' || val !== undefined) {
-				self.utilities.pageScroll(val);
-			}
-		});
-	},
 	finsInit: function () {
-		var self = this;
 		// init fin positioning slideshow
 		$('.fins-adjusting .fins-positioning').bxSlider({
 			mode: 'fade',
@@ -334,7 +203,7 @@ LIBTECH.main = {
 			autoHover: false
 		});
 		// init faqs
-		self.faqsInit();
+		new LIBTECH.FAQ();
 	},
 	lbsInit: function () {
 		$('.lbs-updates .featured-video .video-player').fitVids();
@@ -350,7 +219,6 @@ LIBTECH.main = {
 		});
 	},
 	libLegsInit: function () {
-		var self = this;
 		$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider(false);
@@ -358,25 +226,20 @@ LIBTECH.main = {
 		new LIBTECH.ProductSlider();
 	},
 	stormFactoryInit: function () {
-		var self = this;
-		//$('.video-header .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider();
 		// setup product slider
 		new LIBTECH.ProductSlider();
 	},
 	dttdInit: function () {
-		var self = this;
 		$('.dttd-video .video-player').fitVids();
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider(false);
 	},
 	boardFinderInit: function () {
-		var self = this;
 		new LIBTECH.BoardFinder();
 	},
 	jamieLynnCollectionInit: function () {
-		var self = this;
 		// set up large featured images/videos
 		new LIBTECH.FeaturedSlider(false);
 		// init product overview code

@@ -263,6 +263,8 @@ get_header();
             $productArray['imageFile'] = wp_get_attachment_image_src($imageID, $imageSize);
             $productArray['available'] = Array('us' => 'No', 'ca' => 'No', 'eu' => 'No');
             $productArray['colorways'] = Array();
+            // check if product is on sale for filter list
+            if(get_field('libtech_product_on_sale') == "Yes") $filterList .= " sale";
             // check if we're surf because of varrying fin costs
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
@@ -343,11 +345,14 @@ get_header();
                     $productWidth = Array();
                     if(get_field('libtech_snowboard_specs')):
                         while(the_repeater_field('libtech_snowboard_specs')):
-                            $snowboardLength = str_replace('&quot;', '_', get_sub_field('libtech_snowboard_specs_length'));
+                            $snowboardLength = str_replace('&quot;', '-', get_sub_field('libtech_snowboard_specs_length'));
+                            $snowboardLength = str_replace('.', '_', $snowboardLength);
                             $snowboardWidth = get_sub_field('libtech_snowboard_specs_width');
                             // add size & width to arrays
                             array_push($productSize, $snowboardLength);
                             array_push($productWidth, $snowboardWidth);
+                            // update length to be unique with _0
+                            if(!strpos($snowboardLength, '_')) $snowboardLength = $snowboardLength . "_0";
                             // add length and width to filter list
                             $filterList .= " " . $snowboardLength;
                             $filterList .= " " . str_replace(' ', '_', $snowboardWidth);
@@ -440,6 +445,7 @@ get_header();
                             // loop through variations
                             for ($i = 0; $i < count($optionVariations); $i++) {
                                 $variationWidth = str_replace('.', '_', $optionVariations[$i]['libtech_skateboard_options_variations_width']);
+                                if(!strpos($variationWidth, '_')) $variationWidth = $variationWidth . "_0";
                                 $variationSKU = $optionVariations[$i]['libtech_skateboard_options_variations_sku'];
                                 $variationAvailableUS = $optionVariations[$i]['libtech_skateboard_options_variations_availability_us'];
                                 $variationAvailableCA = $optionVariations[$i]['libtech_skateboard_options_variations_availability_ca'];
@@ -454,6 +460,26 @@ get_header();
                                 // add width to filter list
                                 $filterList .= " " . $variationWidth;
                             }
+                            // get colorways
+                            $optionColor = get_the_title();
+                            if (get_sub_field('libtech_skateboard_options_name')) {
+                                $optionColor .= " " . get_sub_field('libtech_skateboard_options_name');
+                            }
+                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
+                            $optionSlug = str_replace('&#8217;', '', strtolower($optionSlug));
+                            $optionSlug = str_replace('&#8243;', '', strtolower($optionSlug));
+                            $optionSlug = str_replace('ñ', 'n', strtolower($optionSlug));
+                            $optionSlug = str_replace('.', '_', strtolower($optionSlug));
+                            $optionSlug = 'skateboards/' . str_replace('/', '', strtolower($optionSlug));
+                            // grab image
+                            if(get_sub_field('libtech_skateboard_options_images')):
+                                while(the_repeater_field('libtech_skateboard_options_images')):
+                                    $optionImage = get_sub_field('libtech_skateboard_options_images_img');
+                                    $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
+                                    array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
+                                    break;
+                                endwhile;
+                            endif;
                         endwhile;
                     endif;
                     // sort sizes
@@ -708,8 +734,12 @@ get_header();
                             endforeach;
                             array_multisort($sizeArray, SORT_ASC);
                             foreach ($sizeArray as $size):
+                              $filterSize = $size;
+                              if(!strpos($filterSize, '_')) $filterSize = $filterSize . "_0";
+                              $displaySize = str_replace('-', '&quot;', $size);
+                              $displaySize = str_replace('_', '.', $displaySize);
                             ?>
-                            <li class="filter-item" data-filter=".<?php echo $size; ?>"><?php echo str_replace('_', '&quot;', $size); ?></li>
+                            <li class="filter-item" data-filter=".<?php echo $filterSize; ?>"><?php echo $displaySize; ?></li>
                             <?php
                             endforeach;
                             ?>
@@ -834,13 +864,14 @@ get_header();
                             <li class="filter-item" data-filter=".cruiser">Cruiser</li>
                         </ul>
                     </div>
-                    <div class="filters pricing">
+                    <div class="filters pricing skate-pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">
                             <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
                             <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
                             <li class="filter-item" data-filter=".available">Availabile</li>
+                            <li class="filter-item" data-filter=".sale">Sale</li>
                         </ul>
                     </div>
                     <?php elseif (get_the_title() == "Outerwear"): ?>

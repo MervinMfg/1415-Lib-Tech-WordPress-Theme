@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     '_/js/lib/modernizr-2.7.2.js'
   ];
   var footerScripts = [
-    '_/js/lib/jquery-1.11.1.js',
-    '_/js/lib/jquery.fitvids-1.1.0.js',
+    '_/js/lib/jquery.js',
+    '_/js/lib/jquery.fitvids.js',
     '_/js/lib/jquery.bxslider.js',
     '_/js/lib/jquery.magnific-popup.js',
     '_/js/lib/jquery.treeview.js',
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
     '_/js/lib/GSAP/TweenMax.js',
     '_/js/lib/GSAP/plugins/ScrollToPlugin.js',
     '_/js/lib/froogaloop.js',
-    '_/js/lib/clamp-0.5.1.js',
+    '_/js/lib/clamp.js',
     '_/js/lib/underscore.js',
     '_/js/libtech.main.js',
     '_/js/modules/*.js',
@@ -42,11 +42,11 @@ module.exports = function(grunt) {
     '_/apps/snowboard-finder/why/contour.js'
   ];
   var jamieLynnScripts = [
-    '_/js/lib/jquery-1.11.1.js',
+    '_/js/lib/jquery.js',
     '_/js/lib/owl.carousel.js',
     '_/js/lib/GSAP/TweenMax.js',
     '_/js/lib/GSAP/plugins/ScrollToPlugin.js',
-    '_/js/lib/jquery.scrollmagic-1.3.0.js',
+    '_/js/lib/jquery.scrollmagic.js',
     '_/js/lib/froogaloop.js',
     '_/js/libtech.jamie-lynn.js'
   ];
