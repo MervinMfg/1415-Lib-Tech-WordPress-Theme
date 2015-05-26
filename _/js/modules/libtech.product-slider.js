@@ -39,7 +39,7 @@ LIBTECH.ProductSlider.prototype = {
 			$('.product-slider .product-list .superbanana').remove();
 		}
     // check template to see if it should be square images
-    if ($('.single-libtech_apparel').length > 0 || $('.single-libtech_luggage').length > 0 || $('.single-libtech_outerwear').length > 0 || $('.single-libtech_accessories').length > 0 || $('.product-slider-featured').length > 0) {
+    if ($('.single-libtech_apparel').length > 0 || $('.single-libtech_outerwear').length > 0 || $('.single-libtech_accessories').length > 0 || $('.product-slider-featured').length > 0) {
       self.config.responsive = {
         0: { items: 2 },
         320: { items: 3 },

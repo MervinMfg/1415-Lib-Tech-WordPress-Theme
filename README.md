@@ -2,7 +2,7 @@
 
 **WordPress theme for the lib-tech.com Wordpress website.**
 
-The primary goals of this build process are a clean, component based organization, mixed with automation for CSS/SASS and JavaScript concatenation and minification/uglification. 
+The primary goals of this build process are a clean, component based organization, mixed with automation for CSS/SASS and JavaScript concatenation and minification/uglification.
 
 ## Author(s) / Inspiration
 Build process, base styles, and JavaScript by [Brian Behrens](http://github.com/brainbrian) with help from [Nick Katarow](http://github.com/nkatarow).
@@ -20,7 +20,7 @@ CSS development files are compiled into the **_/compiled/** directory from the f
 The CSS directory structure broken into four categories.
 
 * **helpers** - Used primarily for things like CSS reset/normalize files, SASS variables and mixins.
-* **base** - Intended for base, classless, global styles for HTML elements. In addition, utilities like clear fixes and offscreen text can be considered base styles. 
+* **base** - Intended for base, classless, global styles for HTML elements. In addition, utilities like clear fixes and offscreen text can be considered base styles.
 * **components** - Where the majority of your custom styling should take place. For best organization, create a new file for each new component you build and take advantage of SASS nesting techniques to keep your components self contained.
 * **lib** - 3rd party CSS that is used to style JavaScript components imported from 3rd party libraries should live here.
 
@@ -52,7 +52,7 @@ To get the app up and running, you will need to make sure you have the following
 ```
 $ npm install grunt-cli -g
 ```
- 
+
 * [Sass](http://sass-lang.com/) - Assuming you're running ruby, run the following command (if you get an error, try running with sudo):
 
 ```
@@ -84,21 +84,21 @@ The watch task will look for changes on all SCSS and JS files, automatically run
 
 ```
 grunt build
-``` 
+```
 The build task should be run when you're ready to generate or update your optimized production files.
 
 * **CSS/SASS**
-	* Again, the task will check your **_/css/libtech.main.scss** file for which SASS files to include. 
-	* This time, it will compile to **_/css/libtech.main.css** but will be compressed and will not include any of the debug options turned on for the development build. 
+	* Again, the task will check your **_/css/libtech.main.scss** file for which SASS files to include.
+	* This time, it will compile to **_/css/libtech.main.css** but will be compressed and will not include any of the debug options turned on for the development build.
 	* From that compiled file, CSS minification will be performed, further compressing the file size to a new production ready file **_/css/libtech.main.min.css**.
-* **JavaScript** 
-	* Again, the **_/inc/header-scripts.php** and **_/inc/footer-scripts.php** files will be created. 
-	* From those, two files will be created (**_/js/libtech.header.min.js** and **_/js/libtech.footer.min.js**) where all of the separate files listed in the PHP includes will be concatenated. 
+* **JavaScript**
+	* Again, the **_/inc/header-scripts.php** and **_/inc/footer-scripts.php** files will be created.
+	* From those, two files will be created (**_/js/libtech.header.min.js** and **_/js/libtech.footer.min.js**) where all of the separate files listed in the PHP includes will be concatenated.
 	* From there, both of the concatinated JS files will be uglified (compressed).
 
 ## Libraries Included
-* jQuery 1.11.1
-* Modernizr 2.7.2
-* FitVids 1.1.0
-* RespondJS 1.4.2
-* GSAP 1.11.8
+* jQuery
+* Modernizr
+* FitVids
+* RespondJS
+* GSAP

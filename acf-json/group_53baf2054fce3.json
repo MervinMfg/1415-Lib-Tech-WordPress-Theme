@@ -6,11 +6,15 @@
             "key": "field_4fff589d0e480",
             "label": "US Price",
             "name": "libtech_product_price_us",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "0.00",
             "placeholder": "",
             "prepend": "",
@@ -24,11 +28,15 @@
             "key": "field_4fff589d0e952",
             "label": "CA Price",
             "name": "libtech_product_price_ca",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "0.00",
             "placeholder": "",
             "prepend": "",
@@ -42,11 +50,15 @@
             "key": "field_53a9bc78b21a2",
             "label": "EUR Price",
             "name": "libtech_product_price_eur",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "0.00",
             "placeholder": "",
             "prepend": "",
@@ -104,14 +116,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "libtech_luggage"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "libtech_bindings"
+                "value": "post"
             }
         ]
     ],
@@ -120,5 +125,7 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1432250388,
+    "local": "json"
 }

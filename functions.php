@@ -520,7 +520,7 @@ CODE FOR CUSTOM POST TYPES
 function set_custom_post_types_admin_order($wp_query) {
   if (is_admin()) {
     $post_type = $wp_query->query['post_type'];
-    if ( $post_type == 'libtech_snowboards' || $post_type == 'libtech_nas' || $post_type == 'libtech_skateboards' || $post_type == 'libtech_awards' || $post_type == 'libtech_technology' || $post_type == 'libtech_outerwear' || $post_type == 'libtech_apparel' || $post_type == 'libtech_accessories' || $post_type == 'libtech_luggage' || $post_type == 'libtech_team_snow' || $post_type == 'libtech_team_nas' || $post_type == 'libtech_team_skate' || $post_type == 'libtech_dealers' || $post_type == 'libtech_partners') {
+    if ( $post_type == 'libtech_snowboards' || $post_type == 'libtech_nas' || $post_type == 'libtech_skateboards' || $post_type == 'libtech_awards' || $post_type == 'libtech_technology' || $post_type == 'libtech_outerwear' || $post_type == 'libtech_apparel' || $post_type == 'libtech_accessories' || $post_type == 'libtech_team_snow' || $post_type == 'libtech_team_nas' || $post_type == 'libtech_team_skate' || $post_type == 'libtech_dealers' || $post_type == 'libtech_partners') {
       $wp_query->set('orderby', 'menu_order');
       $wp_query->set('order', 'ASC');
     }
@@ -899,67 +899,6 @@ function register_custom_post_types() {
     );
     register_taxonomy( 'libtech_accessories_categories', 'libtech_accessories', $args );
     // END ACCESSORIES
-
-    // START LUGGAGE
-    $labels = array(
-        'name' => _x('Luggage', 'post type general name'),
-        'singular_name' => _x('Luggage', 'post type singular name'),
-        'add_new' => _x('Add New', 'libtech_luggage'),
-        'add_new_item' => __('Add New Luggage'),
-        'edit_item' => __('Edit Luggage'),
-        'new_item' => __('New Luggage'),
-        'all_items' => __('All Luggage'),
-        'view_item' => __('View Luggage'),
-        'search_items' => __('Search Luggage'),
-        'not_found' =>  __('No Luggage Found'),
-        'not_found_in_trash' => __('No Luggage Found In Trash'),
-        'parent_item_colon' => '',
-        'menu_name' => 'Luggage'
-    );
-    $args = array(
-        'labels' => $labels,
-        'public' => true,
-        'publicly_queryable' => true,
-        'show_ui' => true,
-        'show_in_menu' => true,
-        'query_var' => true,
-        'rewrite' => array("slug" => 'luggage'),
-        'capability_type' => 'page',
-        'has_archive' => false,
-        'hierarchical' => false,
-        'menu_position' => null,
-        'supports' => array( 'title', 'editor', 'page-attributes', 'comments' )
-    );
-    register_post_type('libtech_luggage',$args);
-    // start taxonamy for luggage
-    $labels = array(
-        'name'                          => 'Categories',
-        'singular_name'                 => 'Category',
-        'search_items'                  => 'Search Category',
-        'popular_items'                 => 'Popular Categories',
-        'all_items'                     => 'All Categories',
-        'parent_item'                   => 'Parent Category',
-        'edit_item'                     => 'Edit Category',
-        'update_item'                   => 'Update Category',
-        'add_new_item'                  => 'Add New Category',
-        'new_item_name'                 => 'New Category',
-        'separate_items_with_commas'    => 'Separate Categories with commas',
-        'add_or_remove_items'           => 'Add or remove Categories',
-        'choose_from_most_used'         => 'Choose from most used Categories'
-    );
-    $args = array(
-        'label'                         => 'Categories',
-        'labels'                        => $labels,
-        'public'                        => true,
-        'hierarchical'                  => true,
-        'show_ui'                       => true,
-        'show_in_nav_menus'             => true,
-        'args'                          => array( 'orderby' => 'term_order' ),
-        //'rewrite'                       => array( 'slug' => 'luggage' ),
-        'query_var'                     => true
-    );
-    register_taxonomy( 'libtech_luggage_categories', 'libtech_luggage', $args );
-    // END LUGGAGE
 
     // START AWARDS
     $labels = array(

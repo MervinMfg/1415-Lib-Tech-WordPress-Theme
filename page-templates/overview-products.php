@@ -232,15 +232,6 @@ get_header();
                     'order' => 'ASC'
                 );
                 break;
-            case "Luggage":
-                $imageSize = "square-medium";
-                $args = array(
-                    'post_type' => "libtech_luggage",
-                    'posts_per_page' => -1,
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC'
-                );
-                break;
             default:
                 $imageSize = "square-large";
                 $args = array(
@@ -611,49 +602,6 @@ get_header();
                         }
                     }
                     break;
-                case "libtech_luggage":
-                    if(get_field('libtech_luggage_variations')):
-                        while(the_repeater_field('libtech_luggage_variations')):
-                            // get luggage availability
-                            $variationSKU = get_sub_field('libtech_luggage_variations_sku');
-                            $variationAvailableUS = get_sub_field('libtech_luggage_variations_availability_us');
-                            $variationAvailableCA = get_sub_field('libtech_luggage_variations_availability_ca');
-                            $variationAvailableEU = get_sub_field('libtech_luggage_variations_availability_eur');
-                            $variationAvailability = getAvailability($variationSKU, $variationAvailableUS, $variationAvailableCA, $variationAvailableEU);
-                            // eval if we should show product or not for each location
-                            if($variationAvailability['us']['amount'] > 0 || $variationAvailability['us']['amount'] == "Yes") $productArray['available']['us'] = "Yes";
-                            if($variationAvailability['ca']['amount'] > 0 || $variationAvailability['ca']['amount'] == "Yes") $productArray['available']['ca'] = "Yes";
-                            if($variationAvailability['eu']['amount'] > 0 || $variationAvailability['eu']['amount'] == "Yes") $productArray['available']['eu'] = "Yes";
-                        endwhile;
-                    endif;
-                    // get colorways
-                    if(get_field('libtech_luggage_images')):
-                        while(the_repeater_field('libtech_luggage_images')):
-                            $optionColor = get_sub_field('libtech_luggage_images_color');
-                            $optionSlug = str_replace(' ', '-', strtolower($optionColor));
-                            $optionSlug = 'luggage/' . str_replace('/', '', strtolower($optionSlug));
-                            $optionImage = get_sub_field('libtech_luggage_images_image');
-                            $optionImage = wp_get_attachment_image_src($optionImage, $imageSize);
-                            // don't add duplicate colors
-                            $colorFound = false;
-                            foreach ($productArray['colorways'] as $colorway) {
-                                if ($optionColor == $colorway['color']) {
-                                    $colorFound = true;
-                                }
-                            }
-                            if (!$colorFound) {
-                                array_push($productArray['colorways'], Array('color' => $optionColor, 'slug' => $optionSlug, 'img' => $optionImage));
-                            }
-                        endwhile;
-                    endif;
-                    // get categories for outerwear
-                    $terms = get_the_terms( $post->ID, 'libtech_luggage_categories' );
-                    if( $terms && !is_wp_error( $terms ) ) {
-                        foreach( $terms as $term ) {
-                            $filterList .= " " . $term->slug;
-                        }
-                    }
-                    break;
             }
             // if product is available set filter list class
             if ($productArray['available']['us'] == "Yes") {
@@ -990,26 +938,6 @@ get_header();
                         </ul>
                     </div>
                     <div class="filters accessories-pricing">
-                        <p class="select-title">Pricing</p>
-                        <p class="selected-items">Select</p>
-                        <ul class="filter-list">
-                            <li class="filter-item" data-sort="price" data-sort-asc="true">Low - High</li>
-                            <li class="filter-item" data-sort="price" data-sort-asc="false">High - Low</li>
-                            <li class="filter-item" data-filter=".available">Availabile</li>
-                        </ul>
-                    </div>
-                    <?php elseif (get_the_title() == "Luggage"): ?>
-                    <div class="filters luggage-categories">
-                        <p class="select-title">Board Sports</p>
-                        <p class="selected-items">Select</p>
-                        <ul class="filter-list">
-                            <li class="filter-item" data-filter=".luggage-snow">Snow</li>
-                            <li class="filter-item" data-filter=".luggage-ski">Ski</li>
-                            <li class="filter-item" data-filter=".luggage-surf">Surf</li>
-                            <li class="filter-item" data-filter=".luggage-skate">Skate</li>
-                        </ul>
-                    </div>
-                    <div class="filters luggage-pricing">
                         <p class="select-title">Pricing</p>
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">

@@ -6,7 +6,6 @@
             "key": "field_55369620e1262",
             "label": "Grid Item Tall First",
             "name": "libtech_grid_tall_first",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Choose one vertical product to display in the first grid.",
             "required": 0,
@@ -22,7 +21,7 @@
                 "libtech_surfboards",
                 "libtech_skateboards"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
@@ -36,7 +35,6 @@
             "key": "field_553696bfe1263",
             "label": "Grid Items Short First",
             "name": "libtech_grid_short_first",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Choose two short products to display in the first grid.",
             "required": 0,
@@ -49,24 +47,22 @@
             "post_type": [
                 "libtech_apparel",
                 "libtech_outerwear",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_accessories"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
             ],
             "elements": "",
+            "min": "",
             "max": 2,
-            "return_format": "object",
-            "min": 0
+            "return_format": "object"
         },
         {
             "key": "field_553698c5eeb0c",
             "label": "Grid Item Tall Second",
             "name": "libtech_grid_tall_second",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Choose one vertical product to display in the second grid.",
             "required": 0,
@@ -82,7 +78,7 @@
                 "libtech_surfboards",
                 "libtech_skateboards"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
@@ -96,7 +92,6 @@
             "key": "field_553698c8eeb0d",
             "label": "Grid Items Short Second",
             "name": "libtech_grid_short_second",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Choose two short products to display in the second grid.",
             "required": 0,
@@ -109,18 +104,17 @@
             "post_type": [
                 "libtech_apparel",
                 "libtech_outerwear",
-                "libtech_accessories",
-                "libtech_luggage"
+                "libtech_accessories"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
             ],
             "elements": "",
+            "min": "",
             "max": 2,
-            "return_format": "object",
-            "min": 0
+            "return_format": "object"
         }
     ],
     "location": [
@@ -173,5 +167,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430869487
+    "modified": 1432250116
 }

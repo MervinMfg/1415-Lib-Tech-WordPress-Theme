@@ -111,10 +111,6 @@
 										$postCat = "outerwear";
 										$postCatLink = "/outerwear/";
 										break;
-									case "libtech_luggage":
-										$postCat = "luggage";
-										$postCatLink = "/luggage/";
-										break;
 									case "libtech_accessories":
 										$postCat = "accessories";
 										$postCatLink = "/accessories/";

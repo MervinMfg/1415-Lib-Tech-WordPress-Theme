@@ -164,7 +164,7 @@ LIBTECH.ProductOverview.prototype = {
 				}
 			}
 			// max width for 2 filter sets
-			if ($('.product-filtering').hasClass('accessories') || $('.product-filtering').hasClass('luggage')) {
+			if ($('.product-filtering').hasClass('accessories')) {
 				if (widthTotal > 206) {
 					widthTotal = 206;
 				}

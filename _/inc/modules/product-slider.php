@@ -9,8 +9,7 @@
 			|| $postType == "libtech_skateboards"
 			|| $postType == "libtech_outerwear"
 			|| $postType == "libtech_apparel"
-			|| $postType == "libtech_accessories"
-			|| $postType == "libtech_luggage") {
+			|| $postType == "libtech_accessories") {
 				return $postType;
 		} else {
 			return false;

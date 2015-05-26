@@ -12,7 +12,7 @@ header('Content-Type: application/xml');
 		<?php
 			$imageSize = "square-large";
 			$args = array(
-				'post_type' => array( 'libtech_snowboards', 'libtech_nas', 'libtech_surfboards', 'libtech_skateboards', 'libtech_outerwear', 'libtech_apparel', 'libtech_accessories', 'libtech_luggage' ),
+				'post_type' => array( 'libtech_snowboards', 'libtech_nas', 'libtech_surfboards', 'libtech_skateboards', 'libtech_outerwear', 'libtech_apparel', 'libtech_accessories' ),
 				'posts_per_page' => -1,
 				'orderby' => 'menu_order',
 				'order' => 'ASC'
@@ -45,9 +45,6 @@ header('Content-Type: application/xml');
 							break;
 						case "libtech_accessories":
 							$type = "Accessory";
-							break;
-						case "libtech_luggage":
-							$type = "Luggage";
 							break;
 					}
 					$link = get_permalink();

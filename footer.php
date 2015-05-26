@@ -69,7 +69,6 @@
 							<li><a href="/outerwear/">Outerwear</a></li>
 							<li><a href="/apparel/">Apparel</a></li>
 							<li><a href="/accessories/">Accessories</a></li>
-							<li><a href="/luggage/">Luggage</a></li>
 						</ul>
 					</div>
 					<div class="about">
