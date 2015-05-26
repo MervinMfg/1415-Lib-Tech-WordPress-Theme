@@ -233,13 +233,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "libtech_nas"
             }
         ],
@@ -264,6 +257,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432250699,
+    "modified": 1432667644,
     "local": "json"
 }

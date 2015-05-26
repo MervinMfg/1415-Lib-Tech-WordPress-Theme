@@ -102,13 +102,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "libtech_surfboards"
             }
         ]
@@ -119,6 +112,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432251553,
+    "modified": 1432667644,
     "local": "json"
 }
