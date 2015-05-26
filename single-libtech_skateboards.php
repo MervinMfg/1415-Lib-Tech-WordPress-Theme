@@ -322,7 +322,7 @@ Template Name: Skateboard Detail
 					$terms = get_the_terms( $post->ID, 'libtech_skateboard_categories' );
 					if( $terms && !is_wp_error( $terms ) ) {
 						foreach( $terms as $term ) {
-							if ($term->slug == "hesho-disposable-standards") {
+							if ($term->slug == "hesho") {
 								$hesho = true;
 							}
 						}
@@ -494,7 +494,7 @@ Template Name: Skateboard Detail
 			// display the related products
 			getRelatedProducts();
 		?>
-		
+
 <?php
 		endwhile;
 	endif;
