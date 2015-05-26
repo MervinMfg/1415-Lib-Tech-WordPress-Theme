@@ -7,8 +7,6 @@
 }
 
 .product-details {
-  // padding-bottom: 30px;
-  // padding-top: 30px;
 
   h1 {
     padding: 0 0 20px;
@@ -305,7 +303,7 @@
 
   .product-description {
     margin-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 25px;
 
     p {
       font-size: 1.1em;
@@ -641,7 +639,6 @@
 }
 
 .product-extras {
-  // padding-top: 25px;
 
   .product-description {
     padding-bottom: 10px;
@@ -800,22 +797,6 @@
         }
       }
     }
-
-    .outerwear-fit {
-      padding-top: 20px;
-
-      li {
-        padding-bottom: 20px;
-
-        h3 {
-          margin-bottom: 10px;
-        }
-
-        a {
-          text-transform: uppercase;
-        }
-      }
-    }
   }
 
   .product-tech-major {
@@ -847,6 +828,22 @@
         padding: 10px;
         position: absolute;
         width: 100%;
+      }
+    }
+  }
+
+  .outerwear-fit {
+    padding-top: 25px;
+
+    li {
+      padding-bottom: 20px;
+
+      h3 {
+        margin-bottom: 10px;
+      }
+
+      a {
+        text-transform: uppercase;
       }
     }
   }

@@ -177,12 +177,20 @@ Template Name: Outerwear Detail
 							<li><span>Sizes</span> <?php echo $sizes; ?></li>
 							<li><a href="#sizing-chart" class="sizing-chart-link">View Sizing Chart</a></li>
 						</ul>
-						<ul class="product-share">
-							<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
-							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
-						</ul>
+						<div class="product-description" itemprop="description">
+							<?php the_content(); ?>
+						</div>
+						<div class="share-wrapper row">
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
+							</ul>
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
 					</div><!-- .product-details-right -->
 					<div class="clearfix"></div>
 				</div><!-- .section-content -->
@@ -213,11 +221,54 @@ Template Name: Outerwear Detail
 
 			<section class="product-extras info<?php echo $catList; ?> container-fluid">
 				<div class="section-content row">
-					<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
-      			<div class="product-desc-awards">
-	        		<div class="product-description" itemprop="description">
-	        			<?php the_content(); ?>
-	        		</div>
+
+					<?php // display minor technology if there is any
+					$technology = get_field('libtech_product_technology');
+					if( $technology ):
+						$technologyMajor = Array();
+						$technologyMinor = Array();
+						foreach( $technology as $techItem):
+							$title = get_the_title($techItem->ID);
+							$content = apply_filters('the_content', $techItem->post_content);
+							$techType = get_field("libtech_technology_type", $techItem->ID);
+							$videoID = get_field("libtech_technology_video", $techItem->ID);
+							$imageID = get_field("libtech_technology_icon", $techItem->ID);
+							$imageFile = wp_get_attachment_image_src($imageID, 'full');
+							if ($techType == "Major") {
+								array_push($technologyMajor, Array($title, $content, $videoID));
+							} else {
+								array_push($technologyMinor, Array($title, $content, $imageFile));
+							}
+						endforeach;
+						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
+						$i = 1;
+						if (count($technologyMinor) > 0) :
+					?>
+					<div class="product-tech-minor tech-minor col-xs-12">
+						<h2>Features</h2>
+						<div class="wrapper row">
+							<?php foreach( $technologyMinor as $techItem): ?>
+
+							<div class="item col-xs-6 col-ms-4 col-sm-3">
+								<img src="<?php echo $techItem[2][0]; ?>" alt="<?php echo $techItem[0]; ?> Image" />
+								<h4><?php echo $techItem[0]; ?></h4>
+							</div>
+
+							<?php
+								if($i %2 == 0) echo '<div class="clearfix visible-xs"></div>';
+								if($i %3 == 0) echo '<div class="clearfix visible-ms"></div>';
+								if($i %4 == 0) echo '<div class="clearfix visible-sm visible-md visible-lg"></div>';
+								$i++;
+										endforeach; ?>
+						</div>
+						<div class="clearfix"></div>
+					</div><!-- .product-tech-minor -->
+
+					<?php
+				endif; // end tech minor check ?>
+
+					<div class="product-desc-awards-specs">
+      			<div class="product-desc-awards col-xs-12 col-sm-5">
 	        		<?php // display awards if there are any
 							$awards = get_field('libtech_product_awards');
 							if( $awards ):
@@ -295,83 +346,40 @@ Template Name: Outerwear Detail
 										</tr>
 									</tbody>
 								</table>
-								<ul class="outerwear-fit">
-									<li class="ripper-fit">
-										<h3>Ripper Fit</h3>
-										<p>Relaxed fit allowing room for layering to accommodate comfort and style.</p>
-										<a href="/outerwear/#filter=.ripper-fit">View ripper fits</a>
-									</li>
-									<li class="true-action-fit">
-										<h3>True Action Fit</h3>
-										<p>Designed with a focus on articulation to move with your body for maximized mobility.</p>
-										<a href="/outerwear/#filter=.true-action-fit">View action fits</a>
-									</li>
-									<li class="street-fit">
-										<h3>Street Fit</h3>
-										<p>Slimmer style to fit like a street pant or jacket.<br />"More hotdog, less cheeseburger" – Ted Boreland</p>
-										<a href="/outerwear/#filter=.street-fit">View street fits</a>
-									</li>
-								</ul>
 							</div><!-- .product-specs -->
 						</div><!-- .product-desc-awards -->
+						<div class="outerwear-fit-wrapper">
+							<ul class="outerwear-fit col-xs-12 col-sm-7">
+								<li class="ripper-fit">
+									<h3>Ripper Fit</h3>
+									<p>Relaxed fit allowing room for layering to accommodate comfort and style.</p>
+									<a href="/outerwear/#filter=.ripper-fit">View ripper fits</a>
+								</li>
+								<li class="true-action-fit">
+									<h3>True Action Fit</h3>
+									<p>Designed with a focus on articulation to move with your body for maximized mobility.</p>
+									<a href="/outerwear/#filter=.true-action-fit">View action fits</a>
+								</li>
+								<li class="street-fit">
+									<h3>Street Fit</h3>
+									<p>Slimmer style to fit like a street pant or jacket.<br />"More hotdog, less cheeseburger" – Ted Boreland</p>
+									<a href="/outerwear/#filter=.street-fit">View street fits</a>
+								</li>
+							</ul>
+						</div>
 					</div><!-- .product-desc-awards-specs -->
-					<div class="tech-wrapper col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7 col-sm-offset-0">
+					<div class="tech-wrapper col-xs-12">
 						<?php $outerwearTech = get_field('libtech_outerwear_technology'); if( $outerwearTech ): ?>
 						<div class="product-tech-major tech-major">
-
-
-
 							<h2>Technology</h2>
 							<?php echo $outerwearTech; ?>
 							<div class="clearfix"></div>
 						</div><!-- .product-tech-major -->
-						<?php endif; ?>
 
-						<?php // display minor technology if there is any
-						$technology = get_field('libtech_product_technology');
-						if( $technology ):
-							$technologyMajor = Array();
-							$technologyMinor = Array();
-							foreach( $technology as $techItem):
-								$title = get_the_title($techItem->ID);
-								$content = apply_filters('the_content', $techItem->post_content);
-								$techType = get_field("libtech_technology_type", $techItem->ID);
-								$videoID = get_field("libtech_technology_video", $techItem->ID);
-								$imageID = get_field("libtech_technology_icon", $techItem->ID);
-								$imageFile = wp_get_attachment_image_src($imageID, 'full');
-								if ($techType == "Major") {
-									array_push($technologyMajor, Array($title, $content, $videoID));
-								} else {
-									array_push($technologyMinor, Array($title, $content, $imageFile));
-								}
-							endforeach;
-							// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
-							$i = 1;
-							if (count($technologyMinor) > 0) :
-						?>
-	        	<div class="product-tech-minor tech-minor">
-							<h2>Features</h2>
-							<ul class="row">
-								<?php foreach( $technologyMinor as $techItem): ?>
-
-								<li class="col-xs-6 col-ms-6 col-sm-6 col-md-6">
-									<img src="<?php echo $techItem[2][0]; ?>" alt="<?php echo $techItem[0]; ?> Image" />
-									<h4><?php echo $techItem[0]; ?></h4>
-								</li>
-
-								<?php
-									if($i %2 == 0) echo '<div class="clearfix visible-xs visible-ms visible-sm visible-md"></div>';
-
-									$i++;
-											 endforeach; ?>
-							</ul>
-							<div class="clearfix"></div>
-						</div><!-- .product-tech-minor -->
-
-						<?
-							endif; // end tech minor check
+						<?php endif;
 						endif;// end technology check
 						?>
+
 					</div><!-- .tech-wrapper -->
 
 					<?php
