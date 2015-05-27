@@ -72,16 +72,12 @@
 	// check for the appropriate sport
 	if (is_front_page() || is_tree('6886') || is_tree('7124') || is_tree('21159') || $postType == "libtech_snowboards" || $postType == "libtech_bindings" || is_tree('18848') || $postType == "libtech_team_snow" || $archiveCatSlug == 'snow' || !is_archive() && post_is_in_descendant_category( '220' )) {
 		$GLOBALS['sport'] = "snow";
-		echo '<!-- TEST - SNOW -->';
 	} else if (is_tree('6884') || is_tree('18938') || $postType == "libtech_nas" || $postType == "libtech_team_nas" || $archiveCatSlug == 'ski' ||  !is_archive() && post_is_in_descendant_category( '828' )) {
 		$GLOBALS['sport'] = "ski";
-		echo '<!-- TEST - SKI -->';
 	} else if (is_tree('11418') || is_tree('18952') || $postType == "libtech_surfboards" || $postType == "libtech_team_surf" || $archiveCatSlug == 'surf' ||  !is_archive() && post_is_in_descendant_category( '5540' )) {
 		$GLOBALS['sport'] = "surf";
-		echo '<!-- TEST - SURF -->';
 	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || $archiveCatSlug == 'skate' ||  !is_archive() && post_is_in_descendant_category( '190' ) || is_page('environmental')) {
 		$GLOBALS['sport'] = "skate";
-		echo '<!-- TEST - SKATE -->';
 	} else if (is_page('storm-factory')) {
 		// storm factory needs to be ski or snow, default to snow
 		if (isset($_COOKIE["libtech_sport"])) { // check cookie for stored sport
@@ -94,7 +90,6 @@
 			$GLOBALS['sport'] = "snow";
 		}
 	} else {
-		echo '<!-- TEST - DEFAULT -->';
 		if (isset($_COOKIE["libtech_sport"])) { // check cookie for stored sport
 			$GLOBALS['sport'] = $_COOKIE['libtech_sport'];
 		} else {
