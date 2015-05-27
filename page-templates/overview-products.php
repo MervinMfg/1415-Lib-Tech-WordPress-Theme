@@ -931,10 +931,10 @@ get_header();
                         <p class="select-title">Categories</p>
                         <p class="selected-items">Select</p>
                         <ul class="filter-list">
-                            <li class="filter-item" data-filter=".goggles">Goggles</li>
-                            <li class="filter-item" data-filter=".helmets">Helmets</li>
+                            <li class="filter-item" data-filter=".snowboard-accessory">Snowboard</li>
+                            <li class="filter-item" data-filter=".ski-accessory">Ski</li>
+                            <li class="filter-item" data-filter=".surf-accessory">Surf</li>
                             <li class="filter-item" data-filter=".wax-tuning-tools">Wax, Tuning and Tools</li>
-                            <li class="filter-item" data-filter=".stickers">Stickers</li>
                         </ul>
                     </div>
                     <div class="filters accessories-pricing">
