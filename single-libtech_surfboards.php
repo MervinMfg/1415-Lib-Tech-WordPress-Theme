@@ -258,7 +258,7 @@ Template Name: Surfboard Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="button">Add to Cart</a><img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart button">Add to Cart</a><img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
 								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/?product=surfboards">Find a Dealer</a></li>
@@ -478,6 +478,13 @@ Template Name: Surfboard Detail
 						</ul>
 						<div class="clearfix"></div>
 					</div><!-- END .product-tech-major -->
+				</div><!-- END .section-content -->
+			</section><!-- END .product-extras -->
+
+					<?php include get_template_directory() . '/_/inc/modules/story-slider.php'; ?>
+
+			<section class="product-extras info container-fluid">
+				<div class="section-content clearfix row">
 
 					<?php // display minor technology if there is any
 					$technology = get_field('libtech_product_technology');

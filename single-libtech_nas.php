@@ -13,14 +13,10 @@ Template Name: NAS Detail
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-		<div class="bg-product-details-top product-details-nav-bottom"></div>
 		<div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-			<section class="product-details bg-product-details <?php echo $slug; ?>">
-				<div class="section-content">
-					<h1 itemprop="name"><?php the_title(); ?></h1>
-					<h3 class="nas-tech">With Magne-traction</h3>
-					<h3><?php the_field('libtech_product_slogan'); ?></h3>
-					<div class="product-images">
+			<section class="product-details <?php echo $slug; ?> container-fluid">
+				<div class="section-content row">
+					<div class="product-images col-xs-12">
 						<ul id="image-list">
 							<?php
 								$productArray = Array();
@@ -91,7 +87,10 @@ Template Name: NAS Detail
 				      ?>
 						</ul>
 					</div><!-- .product-images -->
-					<div class="details-left">
+					<div class="details-left col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7 col-sm-offset-0">
+						<h1 itemprop="name"><?php the_title(); ?></h1>
+						<h3 class="nas-tech">With Magne-traction</h3>
+						<h3><?php the_field('libtech_product_slogan'); ?></h3>
 						<div class="image-list-thumbs hidden">
 							<ul id="image-list-thumbs">
 								<li><a href="<?php echo $productImageFull[0]; ?>" title="<?php the_title(); ?>" data-sku="<?php echo $productSkus; ?>" data-slide-index="<?php echo $i; ?>"><img src="<?php echo $productImageThumb[0]; ?>" alt="<?php the_title(); ?>" data-sub-alt="Sizes: <?php echo $sizes; ?>" width="<?php echo $productImageThumb[1]; ?>" height="<?php echo $productImageThumb[2]; ?>" /></a></li>
@@ -127,7 +126,7 @@ Template Name: NAS Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/?product=skis">Find a Dealer</a></li>
 							</ul>
@@ -135,45 +134,43 @@ Template Name: NAS Detail
 							<div class="cart-failure hidden"><p>There has been an error adding the item to your cart.</p><p>Try again later or <a href="/contact/">contact us</a> if the problem persists.</p></div>
 						</div>
 					</div><!-- .details-left -->
-					<div class="details-right">
+					<div class="details-right col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5 col-sm-offset-0">
 						<ul class="product-quick-specs">
 							<li><span>Shape</span> <?php the_field('libtech_nas_shape'); ?></li>
 							<li><span>Contour</span> <?php the_field('libtech_nas_contour'); ?></li>
 							<li><span>Sizes:</span> <?php echo $sizes; ?></li>
+							<li><a href="#" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
 						</ul>
-						<ul class="product-share">
-							<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnas">Tweet</a></li>
-							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
-						</ul>
+						<div class="share-wrapper row">
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
+							</ul>
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
 					</div><!-- .nas-details-right -->
 					<div class="clearfix"></div>
 				</div><!-- .section-content -->
 			</section>
-			<section class="product-zoom bg-product-details">
+			<section class="product-zoom">
 				<div class="section-content">
 					<div class="zoom-title"></div>
 					<div class="zoom-image">
 						<img src="" />
 					</div>
 					<div class="zoom-controls">
-						<a href="#close-zoom" class="zoom-close h3">Close</a>
+						<a href="#close-zoom" class="zoom-close button">Close</a>
 						<ul id="zoom-thumbnails"></ul>
 					</div>
 				</div><!-- .section-content -->
 			</section><!-- .product-zoom -->
-			<div class="bg2-top"></div>
-      <section class="product-extras bg2 info">
-      	<div class="section-content clearfix">
-	    		<div class="product-mobile-nav clearfix">
-	    			<ul>
-	    				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-	    				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-	    				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-	    			</ul>
-	    		</div>
-      		<div class="product-desc-awards-specs">
+      <section class="product-extras info container-fluid">
+      	<div class="section-content clearfix row">
+      		<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
 	    			<div class="product-desc-awards">
 	        		<div class="product-description" itemprop="description">
 	        			<?php the_content(); ?>
@@ -184,7 +181,7 @@ Template Name: NAS Detail
 							if( $awards ):
 							?>
 
-		        	<div class="product-awards">
+		        	<div class="product-awards col-xs-12">
 								<h2>Awards</h2>
 								<ul>
 
@@ -202,7 +199,7 @@ Template Name: NAS Detail
 							<? endif; // end awards ?>
 
 						</div><!-- END .product-desc-awards -->
-						<div class="product-specs">
+						<div class="product-specs col-xs-12">
 							<h2>Specifications</h2>
 							<table>
 								<thead>
@@ -257,6 +254,7 @@ Template Name: NAS Detail
 					<?php // grab technology if there is any
 					$technology = get_field('libtech_product_technology');
 					if( $technology ):
+						$i = 1;
 						$technologyMajor = Array();
 						$technologyMinor = Array();
 						foreach( $technology as $techItem):
@@ -276,16 +274,16 @@ Template Name: NAS Detail
 						if (count($technologyMajor) > 0) :
 					?>
 
-        	<div class="product-tech-major tech-major">
+        	<div class="product-tech-major tech-major col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
 						<h2>Technology</h2>
-						<ul>
+						<ul class="tech-video-list">
 							<?php foreach( $technologyMajor as $techItem): ?>
 
-							<li>
-								<div class="tech-video">
+							<li class="tech-video-item row">
+								<div class="tech-video col-xs-12">
 									<iframe src="http://player.vimeo.com/video/<?php echo $techItem[2]; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 								</div>
-								<div class="tech-copy">
+								<div class="tech-copy col-xs-12">
 									<h4><?php echo $techItem[0]; ?></h4>
 									<?php echo $techItem[1]; ?>
 								</div>
@@ -302,22 +300,29 @@ Template Name: NAS Detail
 						if (count($technologyMinor) > 0) :
 					?>
 
-					<div class="product-tech-minor tech-minor">
+					<div class="product-tech-minor tech-minor col-xs-12">
 						<h2>Ingredients</h2>
-						<ul>
+						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
-							<li>
-								<div class="tech-pad">
+							<div class="item">
+								<div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
 									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
 									<div class="tech-copy">
 										<?php echo $techItem[1]; ?>
 									</div>
 								</div>
-							</li>
+							</div>
 
-							<?php endforeach; ?>
-						</ul>
+							<?php
+								if($i %2 == 0) echo '<div class="clearfix visible-xs visible-ms"></div>';
+								if($i %3 == 0) echo '<div class="clearfix visible-sm"></div>';
+								if($i %4 == 0) echo '<div class="clearfix visible-md visible-lg"></div>';
+								$i++;
+									endforeach;
+							?>
+
+						</div>
 					</div><!-- END .product-tech-minor -->
 
 					<?
@@ -335,10 +340,9 @@ Template Name: NAS Detail
 			if( $videoID ):
 		?>
 
-		<div class="bg3-top product-video-top"></div>
-    <section class="bg3 product-video">
-    	<div class="section-content">
-				<div class="video-player">
+    <section class="product-video container-fluid">
+    	<div class="section-content row">
+				<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				</div>
 			</div>

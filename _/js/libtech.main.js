@@ -125,6 +125,9 @@ LIBTECH.main = {
 	},
 	productDetailInit: function () {
 		new LIBTECH.ProductDetails();
+		if($('body').hasClass('single-libtech_skateboards') || $('body').hasClass('single-libtech_surfboards')) {
+			new LIBTECH.StorySlider();
+		}
 	},
 	technologyDetailInit: function () {
 		var self = this;

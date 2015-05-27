@@ -17,18 +17,20 @@
 						?>
 
 						<div class="story">
-							<a href="<?php echo $storyUrl; ?>" class="story-link">
+							<?php if($storyUrl) : ?><a href="<?php echo $storyUrl; ?>" class="story-link"><?php else: ?><div class="story-link"><?php endif; ?>
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/featured-slider-small.gif" data-src="<?php echo $storyImageSmall['url']; ?>" alt="<?php echo $storyAltText; ?>" class="story-img-small lazy" />
 								<img src="<?php bloginfo('template_directory'); ?>/_/img/story-slider-large.gif" data-src="<?php echo $storyImageLarge['url']; ?>" alt="<?php echo $storyAltText; ?>" class="story-img-large lazy" />
-							</a>
+								<?php if($storyUrl) : ?></a><?php else: ?></div><?php endif; ?>
 							<div class="story-copy col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 								<h3><?php echo $storyHeadline; ?></h3>
 								<p><?php echo $storyBody; ?></p>
 							</div>
 							<div class="clearfix"></div>
+							<?php if($storyUrl) : ?>
 							<div class="call-to-action">
 								<a href="<?php echo $storyUrl; ?>" class="button">Learn More</a>
 							</div>
+							<?php endif; ?>
 						</div>
 
 						<?php endwhile; ?>

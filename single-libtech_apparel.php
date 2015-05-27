@@ -148,7 +148,7 @@ Template Name: Apparel Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
 								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/">Find a Dealer</a></li>

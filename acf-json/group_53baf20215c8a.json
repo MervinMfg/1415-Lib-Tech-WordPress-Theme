@@ -6,7 +6,6 @@
             "key": "field_536c3471c30db",
             "label": "Featured Products",
             "name": "libtech_homepage_featured_products",
-            "prefix": "",
             "type": "relationship",
             "instructions": "Choose 4 vertical products to appear at the bottom of the homepage. Click and drag to reorder.",
             "required": 0,
@@ -22,7 +21,7 @@
                 "libtech_surfboards",
                 "libtech_skateboards"
             ],
-            "taxonomy": "",
+            "taxonomy": [],
             "filters": [
                 "search",
                 "post_type"
@@ -48,6 +47,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
+    "modified": 1432675627,
     "local": "json"
 }

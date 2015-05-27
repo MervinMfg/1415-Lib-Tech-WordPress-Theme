@@ -186,7 +186,7 @@ Template Name: Skateboard Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart button">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
 								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/?product=skateboards">Find a Dealer</a></li>
@@ -211,11 +211,12 @@ Template Name: Skateboard Detail
 								for ($i = 0; $i < count($variationSizes); $i++) {
 									$sizes .= $variationSizes[$i];
 									if($i < count($variationSizes)-1){
-										$sizes .= "<br />";
+										$sizes .= ", ";
 									}
 								}
 							?>
-							<li><span>Sizes:</span><br /><?php echo $sizes; ?></li>
+							<li><span>Sizes:</span><?php echo $sizes; ?></li>
+							<li><a href="#" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
 						</ul>
 						<div class="share-wrapper row">
 							<ul class="product-share col-sm-12 col-md-6">
@@ -246,13 +247,6 @@ Template Name: Skateboard Detail
 			</section><!-- .product-zoom -->
       <section class="product-extras info container-fluid">
       	<div class="section-content clearfix row">
-	    		<!-- <div class="product-mobile-nav clearfix">
-	    			<ul>
-	    				<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-	    				<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-	    				<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-	    			</ul>
-	    		</div> -->
       		<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
 	    			<div class="product-desc-awards">
 	        		<div class="product-description" itemprop="description">
@@ -331,105 +325,7 @@ Template Name: Skateboard Detail
 							}
 						}
 					}
-					if ($hesho == false):
-					?>
-					<div class="product-tech-construction col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
-						<h2>Construction</h2>
-						<div class="construction-slideshow">
-							<ul>
-								<li>
-									<iframe src="http://player.vimeo.com/video/25848035?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-1.jpg" alt="Plastihide top sheet" />
-									</div>
-									<p class="construction-caption">Skate Kraftsmen Cass prepping plastihide top sheet.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-2.jpg" alt="Biaxial fiberglass layer" />
-									</div>
-									<p class="construction-caption">Biaxial fiberglass layer for extra pop!</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-3.jpg" alt="Light weight aspen wood core" />
-									</div>
-									<p class="construction-caption">Light weight aspen wood core with golfball tough tip &amp; tail material.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-4.jpg" alt="84 vertical wood laminates" />
-									</div>
-									<p class="construction-caption">84 vertical wood laminates alternating 0&deg; to 90&deg; on the tip &amp; tail, pushing the limits of energy boost &amp; longer skate life!</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-5.jpg" alt="Carbon" />
-									</div>
-									<p class="construction-caption">Carbon! For record setting pop!</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-6.jpg" alt="Tough UHMW tip and tails" />
-									</div>
-									<p class="construction-caption">Tough abrasion-resistant UHMW tip &amp; tails and impact resistant birch wood sidewalls. Oval power pocket for optimum strenght over truck.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-7.jpg" alt="Semi-Slick or Pickled Maple" />
-									</div>
-									<p class="construction-caption">Sublimated semi-slick plastihide bottom for slide control or pickled maple epoxy wood bottom.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-8.jpg" alt="Lay-up" />
-									</div>
-									<p class="construction-caption">Lay-up.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-9.jpg" alt="Finishing" />
-									</div>
-									<p class="construction-caption">Finish me up!</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-10.jpg" alt="Milling" />
-									</div>
-									<p class="construction-caption">Milling to shape.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-11.jpg" alt="Tuning the shape" />
-									</div>
-									<p class="construction-caption">Skate kraftsmen Huntz fine tuning the shape.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-12.jpg" alt="Sanding" />
-									</div>
-									<p class="construction-caption">Sanding.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-13.jpg" alt="Buffing" />
-									</div>
-									<p class="construction-caption">Buffing and waxing.</p>
-								</li>
-								<li>
-									<div class="construction-image">
-										<img src="<?php bloginfo('template_directory'); ?>/_/img/skate-construction-2.jpg" alt="Polishing" />
-									</div>
-									<p class="construction-caption">Polishing and quality control.</p>
-								</li>
-							</ul>
-						</div>
-					</div><!-- END .product-tech-construction -->
-					<?php endif; ?>
-
-					<?php // display minor technology if there is any
+					// display minor technology if there is any
 					$technology = get_field('libtech_product_technology');
 					if( $technology ):
 						$i = 1;
@@ -448,6 +344,35 @@ Template Name: Skateboard Detail
 								array_push($technologyMinor, Array($title, $content, $imageFile));
 							}
 						endforeach;
+						// CHECK IF WE SHOULD DISPLAY MAJOR TECHNOLOGY
+						if (count($technologyMajor) > 0) :
+					?>
+					<div class="product-tech-major tech-major col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
+						<div class="wrapper">
+							<?php foreach( $technologyMajor as $techItem): ?>
+
+							<div class="item">
+								<h3><?php echo $techItem[0]; ?></h3>
+								<?php echo $techItem[1]; ?>
+							</div>
+						</div>
+					<?php endforeach; ?>
+					</div>
+				</div><!-- END .section-content -->
+			</section><!-- END .product-extras -->
+
+					<?php
+						endif;
+
+						if ($hesho == false):
+
+						include get_template_directory() . '/_/inc/modules/story-slider.php';
+
+						endif; ?>
+
+			<section class="product-extras info container-fluid">
+      	<div class="section-content clearfix row">
+					<?php
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>

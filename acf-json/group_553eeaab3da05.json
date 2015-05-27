@@ -6,7 +6,6 @@
             "key": "field_553eeaab4ca38",
             "label": "Slider",
             "name": "libtech_story_silder",
-            "prefix": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -25,7 +24,6 @@
                     "key": "field_553eeaab50444",
                     "label": "Small Image",
                     "name": "libtech_story_silder_image_small",
-                    "prefix": "",
                     "type": "image",
                     "instructions": "980px by 600px",
                     "required": 0,
@@ -50,7 +48,6 @@
                     "key": "field_553eeaab50459",
                     "label": "Large Image",
                     "name": "libtech_story_silder_image",
-                    "prefix": "",
                     "type": "image",
                     "instructions": "1400px by 467px",
                     "required": 0,
@@ -75,7 +72,6 @@
                     "key": "field_553eeaab50476",
                     "label": "Alt Text",
                     "name": "libtech_story_silder_alt_text",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "Specify alt text for the images",
                     "required": 0,
@@ -97,7 +93,6 @@
                     "key": "field_553eeaab50468",
                     "label": "URL",
                     "name": "libtech_story_silder_url",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "Specify the link used when a user selects an image",
                     "required": 0,
@@ -119,7 +114,6 @@
                     "key": "field_553eeb183b5f4",
                     "label": "Headline",
                     "name": "libtech_story_silder_headline",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -141,7 +135,6 @@
                     "key": "field_553eeb2f3b5f5",
                     "label": "Body",
                     "name": "libtech_story_silder_body",
-                    "prefix": "",
                     "type": "textarea",
                     "instructions": "",
                     "required": 0,
@@ -169,6 +162,20 @@
                 "operator": "==",
                 "value": "page-templates\/home.php"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_skateboards"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "libtech_surfboards"
+            }
         ]
     ],
     "menu_order": 0,
@@ -177,6 +184,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
-    "local": "json"
+    "modified": 1432749663
 }
