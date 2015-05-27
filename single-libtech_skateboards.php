@@ -356,23 +356,24 @@ Template Name: Skateboard Detail
 								<?php echo $techItem[1]; ?>
 							</div>
 						</div>
-					<?php endforeach; ?>
+							<?php endforeach; ?>
 					</div>
-				</div><!-- END .section-content -->
-			</section><!-- END .product-extras -->
 
 					<?php
 						endif;
 
-						if ($hesho == false):
+						if ($hesho == false): ?>
 
-						include get_template_directory() . '/_/inc/modules/story-slider.php';
+				</div><!-- END .section-content -->
+			</section><!-- END .product-extras -->
 
-						endif; ?>
+						<?php include get_template_directory() . '/_/inc/modules/story-slider.php'; ?>
 
 			<section class="product-extras info container-fluid">
-      	<div class="section-content clearfix row">
-					<?php
+				<div class="section-content clearfix row">
+
+						<?php endif;
+
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>
