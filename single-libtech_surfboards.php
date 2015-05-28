@@ -325,8 +325,8 @@ Template Name: Surfboard Detail
 			</section><!-- END .product-zoom -->
 			<section class="product-extras info container-fluid">
 				<div class="section-content clearfix row">
-					<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
-						<div class="product-desc-awards">
+					<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-12 col-sm-offset-0">
+						<div class="product-desc-awards col-xs-12 col-sm-5">
 							<div class="product-description" itemprop="description" >
 								<?php the_content(); ?>
 							</div>
@@ -350,8 +350,8 @@ Template Name: Surfboard Detail
 							</div>
 							<? endif; // end awards ?>
 						</div><!-- END .product-desc-awards -->
-						<div class="product-specs">
-							<h2>Specifications</h2>
+						<div class="product-specs col-xs-12 col-sm-7">
+							<h3>Board Specs</h3>
 							<table>
 								<?php
 								$i = 1;
@@ -413,71 +413,6 @@ Template Name: Surfboard Detail
 							</table>
 						</div>
 					</div><!-- END .product-desc-awards-specs -->
-					<div class="product-tech-major tech-major tech-surf col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
-						<h2>Technology</h2>
-						<ul class="surf-tech-list">
-							<li class="surf-technology surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-technology.jpg" alt="Radically Different Surfboard Technology" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>Radically Different</h4>
-									<p>30 years of experience crafting and riding high performance environMENTALLY friendly composite surf, skate and snowboards went into designing our unique waterboard process, materials and shapes. Each of the 31 pieces used to construct our surfboards are new materials to the surf industry.</p>
-								</div>
-							</li>
-							<li class="surf-environmental surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-environmental.jpg" alt="Environmental Surfboards" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>Environmentally Nicer</h4>
-									<p>100% closed cell foam won’t absorb water... won't rot &bullet; More durable: Lasts longer, less dings, less boards in landfills &bullet; Recycled foam core: up to 50% recycled content in blank &bullet; Blank scraps all recycled &bullet; Elimination of hazardous resin systems &bullet; Non ozone depleting blowing agent &bullet; Basalt fiber: no additives, no boron &bullet; No solvents except water &bullet; No paint brushes &bullet; No sandpaper, no tape</p>
-								</div>
-							</li>
-							<li class="surf-ding surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-ding.gif" alt="Durable Lib Tech Surfboard being rode over by a man on a bike" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>Dang Difficult to Ding</h4>
-									<ul>
-										<li>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</li>
-										<li>Voted toughest board of the year by Outside Magazine.</li>
-										<li>Crossing the street or the globe, tougher surfboards - free your mind!</li>
-										<li>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</li>
-									</ul>
-								</div>
-							</li>
-							<li class="surf-fins surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-fins.jpg" alt="Freedom of Choice multi-fin system" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>FOC Adjustable Fin System</h4>
-									<p>F.O.C. "Freedom of Choice" multi-fin system compatible with 5/8" performance tuning adjustability</p>
-								</div>
-							</li>
-							<li class="surf-performance surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-performance.jpg" alt="Performance - Ryan Carlson" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>Performance</h4>
-									<p>SMOOTH &bullet; FAST &bullet; POPPY</p>
-								</div>
-							</li>
-							<li class="surf-handcrafted surf-tech-item row">
-								<div class="tech-image col-sm-5 col-lg-4">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-handcrafted.jpg" alt="Handcrafted in the USA" />
-								</div>
-								<div class="tech-copy col-sm-7 col-lg-8">
-									<h4>Handcrafted in the USA</h4>
-									<p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
-								</div>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
-					</div><!-- END .product-tech-major -->
 				</div><!-- END .section-content -->
 			</section><!-- END .product-extras -->
 
@@ -509,13 +444,13 @@ Template Name: Surfboard Detail
 						if (count($technologyMinor) > 0) :
 					?>
         	<div class="product-tech-minor tech-minor surf col-xs-12">
-						<h2>Ingredients</h2>
 						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
 							<div class="item">
 								<div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
-									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
+									<h4><?php echo $techItem[0]; ?></h4>
+									<img src="<?php echo $techItem[2][0]; ?>" />
 									<div class="tech-copy">
 										<?php echo $techItem[1]; ?>
 									</div>
@@ -559,23 +494,6 @@ Template Name: Surfboard Detail
 
 		<?php
 			endif;
-		?>
-
-		<section class="product-gallery container-fluid">
-			<div class="section-content row">
-				<h2 class="col-xs-12 col-md-10 col-md-offset-1">Gallery</h2>
-				<div class="gallery-wrapper col-xs-12 col-md-10 col-md-offset-1">
-					<?php
-						$image_ids = get_field('libtech_surfboard_gallery', false, false);
-						$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
-						echo do_shortcode( $shortcode );
-					?>
-				</div>
-				<div class="clearfix"></div>
-			</div><!-- END .section-content -->
-		</section><!-- END .product-gallery -->
-
-		<?php
 			// display disqus comments
 			libtech_comments_template();
 			// display the related products
