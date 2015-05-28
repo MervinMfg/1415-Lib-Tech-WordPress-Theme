@@ -76,7 +76,7 @@
 		$GLOBALS['sport'] = "ski";
 	} else if (is_tree('11418') || is_tree('18952') || $postType == "libtech_surfboards" || $postType == "libtech_team_surf" || $archiveCatSlug == 'surf' ||  !is_archive() && post_is_in_descendant_category( '5540' )) {
 		$GLOBALS['sport'] = "surf";
-	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || $archiveCatSlug == 'skate' ||  !is_archive() && post_is_in_descendant_category( 'skate' ) || is_page('environmental')) {
+	} else if (is_tree('7159') || is_tree('7161') || $postType == "libtech_skateboards" || $postType == "libtech_team_skate" || $archiveCatSlug == 'skate' ||  !is_archive() && post_is_in_descendant_category( '190' ) || is_page('environmental')) {
 		$GLOBALS['sport'] = "skate";
 	} else if (is_page('storm-factory')) {
 		// storm factory needs to be ski or snow, default to snow
