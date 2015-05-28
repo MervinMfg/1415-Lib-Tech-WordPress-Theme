@@ -32,7 +32,7 @@ LIBTECH.main = {
 			self.productOverviewInit();
 		} else if ($body.hasClass('single-libtech_snowboards') || $body.hasClass('single-libtech_nas') || $body.hasClass('single-libtech_surfboards') || $body.hasClass('single-libtech_skateboards') || $body.hasClass('single-libtech_apparel') || $body.hasClass('single-libtech_accessories') || $body.hasClass('single-libtech_outerwear') || $body.hasClass('single-libtech_bindings')) {
 			self.productDetailInit();
-		} else if ($body.hasClass('page-template-page-templatespage-technology-detail-php')) {
+		} else if ($body.hasClass('page-template-technology-detail')) {
 			self.technologyDetailInit();
 		} else if ($body.hasClass('page-template-page-templatesenvironmental-php')) {
 			self.environmentalInit();

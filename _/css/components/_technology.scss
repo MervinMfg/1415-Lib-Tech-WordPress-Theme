@@ -1,6 +1,7 @@
 // ==========================================================================
 // COMPONENTS/_TECHNOLOGY.SCSS
 // ==========================================================================
+
 .tech-major {
   padding-top: 25px;
 
@@ -8,10 +9,8 @@
     margin-bottom: 10px;
   }
 
-  .tech-video-list,
-  .surf-tech-list {
-    .tech-video-item,
-    .surf-tech-item {
+  .tech-video-list {
+    .tech-video-item {
       margin-bottom: 10px;
 
       .tech-video,
@@ -61,59 +60,36 @@
   }
 }
 
-.tech-major.tech-surf {
-  h2 {
-    display: none;
-  }
-
-  .surf-technology,
-  .surf-environmental,
-  .surf-ding,
-  .surf-fins,
-  .surf-performance,
-  .surf-handcrafted {
-    h4 {
-      color: #000;
-      padding: 5px;
-    }
-
-    img {
-      border: solid #333 1px;
-      width: 100%;
-    }
-  }
-
-  .surf-technology h4 {
-    background-color: #f00;
-  }
-
-  .surf-environmental h4 {
-    background-color: $skateColor;
-  }
-
-  .surf-ding h4 {
-    background-color: $surfColor;
-  }
-
-  .surf-fins h4 {
-    background-color: $snowColor;
-  }
-
-  .surf-performance h4 {
-    background-color: $skiColor;
-  }
-
-  .surf-handcrafted h4 {
-    background-color: #fff;
-  }
-}
-
 .tech-minor {
   padding-bottom: 30px;
   padding-top: 25px;
 
   h2 {
     margin-bottom: 10px;
+  }
+
+  .surf-tech-logo {
+    .tech-logo {
+      padding-bottom: 20px;
+    }
+
+    .tech-slogan {
+      padding-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  .surf-handcrafted {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    .handcrafted-image {
+      padding-bottom: 20px;
+    }
+
+    .handcrafted-title {
+      padding-bottom: 10px;
+    }
   }
 }
 
@@ -213,19 +189,13 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-
   .tech-faq .faq-list ul {
     float: left;
     width: 50%;
   }
-
-  // .tech-major.product-tech-major {
-  //   padding-top: 0;
-  // }
 }
 
 @media screen and (min-width: $breakpoint-large) {
-
   .tech-major .section-content .tech-video-list .tech-video-item {
     .tech-copy {
       .tech-found-on {
@@ -233,8 +203,4 @@
       }
     }
   }
-}
-
-@media screen and (min-width: $breakpoint-xxlarge) {
-
 }
