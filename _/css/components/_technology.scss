@@ -52,20 +52,29 @@
   }
 }
 
-.page-template-page-technology-detail.surf {
-  padding: 30px 0 10px;
-
-  .section-content {
-    padding: 0 10px;
+.tech-minor {
+  h2 {
+    margin-bottom: 10px;
   }
 }
 
-.tech-minor {
+.surf .tech-minor {
   padding-bottom: 30px;
   padding-top: 25px;
 
-  h2 {
-    margin-bottom: 10px;
+  h5 {
+    margin-bottom: 5px;
+  }
+
+  .tech-copy {
+    strong {
+      color: $skateColor;
+      font-weight: normal;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
   }
 
   .surf-tech-logo {
@@ -82,7 +91,7 @@
   .surf-handcrafted {
     padding-top: 20px;
     padding-bottom: 20px;
-    
+
     .handcrafted-image {
       padding-bottom: 20px;
     }

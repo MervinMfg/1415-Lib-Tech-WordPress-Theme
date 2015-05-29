@@ -146,11 +146,16 @@ switch ($parentSlug) {
             // check if item is major
             if(get_field("libtech_technology_type") == "Minor"):
               $imageID = get_field("libtech_technology_icon");
-              $imageFile = wp_get_attachment_image_src($imageID, 'thumbnail');
+              $imageFile = wp_get_attachment_image_src($imageID, 'full');
           ?>
           <div class="item">
             <div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
+              <?php if ($parentSlug != "surfing"): ?>
               <h4><img src="<?php echo $imageFile[0]; ?>" /><span><?php the_title(); ?></span></h4>
+              <?php else: ?>
+              <h5><?php the_title(); ?></h5>
+              <img src="<?php echo $imageFile[0]; ?>" />
+              <?php endif; ?>
               <div class="tech-copy">
                 <?php the_content(); ?>
               </div>

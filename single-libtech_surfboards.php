@@ -449,7 +449,7 @@ Template Name: Surfboard Detail
 
 							<div class="item">
 								<div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
-									<h4><?php echo $techItem[0]; ?></h4>
+									<h5><?php echo $techItem[0]; ?></h5>
 									<img src="<?php echo $techItem[2][0]; ?>" />
 									<div class="tech-copy">
 										<?php echo $techItem[1]; ?>
