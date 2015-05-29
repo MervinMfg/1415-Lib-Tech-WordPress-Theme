@@ -63,6 +63,10 @@
   padding-top: 25px;
 
   h5 {
+    margin-bottom: 10px;
+  }
+
+  img {
     margin-bottom: 5px;
   }
 
@@ -74,6 +78,15 @@
 
     p {
       margin-bottom: 10px;
+    }
+
+    ul {
+      font-size: .875em;
+      line-height: 1.32;
+
+      li {
+        margin-bottom: 5px;
+      }
     }
   }
 
@@ -201,6 +214,10 @@
   .tech-faq .faq-list ul {
     float: left;
     width: 50%;
+  }
+
+  .surf .tech-minor .tech-copy ul {
+    font-size: 1em;
   }
 }
 
