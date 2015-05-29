@@ -290,7 +290,7 @@ Template Name: Surfboard Detail
 								}
 							?>
 							<li><span>Sizes</span> <?php echo $sizes; ?></li>
-							<li><a href="#" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
+							<li><a href="#technology" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
 						</ul>
 
 						<div class="share-wrapper row">
@@ -443,7 +443,11 @@ Template Name: Surfboard Detail
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>
-        	<div class="product-tech-minor tech-minor surf col-xs-12">
+        	<div id="technology" class="product-tech-minor tech-minor surf col-xs-12">
+						<div class="surf-tech-logo clearfix">
+		          <div class="tech-logo col-xs-8 col-xs-offset-2 col-ms-6 col-ms-offset-3 col-sm-4 col-sm-offset-4"><img src="<?php bloginfo('template_directory'); ?>/_/img/lib-tech-surf-eco-isotropic.png" /></div>
+		          <h3 class="tech-slogan col-xs-12">Technologically Tougher - NEW Phase 3 Construction</h3>
+		        </div>
 						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
