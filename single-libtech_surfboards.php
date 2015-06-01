@@ -456,8 +456,9 @@ Template Name: Surfboard Detail
 					?>
         	<div id="technology" class="product-tech-minor tech-minor surf col-xs-12">
 						<div class="surf-tech-logo clearfix">
-		          <div class="tech-logo col-xs-8 col-xs-offset-2 col-ms-6 col-ms-offset-3 col-sm-4 col-sm-offset-4"><img src="<?php bloginfo('template_directory'); ?>/_/img/lib-tech-surf-eco-isotropic.png" /></div>
-		          <h3 class="tech-slogan col-xs-12">Technologically Tougher - NEW Phase 3 Construction</h3>
+		          <h3 class="tech-logo col-xs-10 col-xs-offset-1 col-ms-6 col-ms-offset-3 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4"><span class="tech-logo-new">NEW</span> <img src="<?php bloginfo('template_directory'); ?>/_/img/lib-tech-surf-eco-isotropic.png" alt="Eco Isotropic" /> <span class="tech-logo-phase">PHASE 3 CONSTRUCTION!</span></h3>
+		          <h3 class="tech-slogan tech-slogan-left col-xs-12 col-sm-6">TECHNOLOGICALLY TOUGHER</h3>
+		          <h3 class="tech-slogan tech-slogan-right col-xs-12 col-sm-6">environMENTALLY NICER!</h3>
 		        </div>
 						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>

@@ -119,11 +119,6 @@ switch ($parentSlug) {
       <div class="section-content row">
         <?php if ($parentSlug != "surfing"): ?>
         <h2>Ingredients</h2>
-        <?php else: ?>
-        <div class="surf-tech-logo clearfix">
-          <div class="tech-logo col-xs-8 col-xs-offset-2 col-ms-6 col-ms-offset-3 col-sm-4 col-sm-offset-4"><img src="<?php bloginfo('template_directory'); ?>/_/img/lib-tech-surf-eco-isotropic.png" /></div>
-          <h3 class="tech-slogan col-xs-12">Technologically Tougher - NEW Phase 3 Construction</h3>
-        </div>
         <?php endif; ?>
         <div class="wrapper">
           <?php

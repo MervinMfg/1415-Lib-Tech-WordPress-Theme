@@ -17,7 +17,7 @@ LIBTECH.ProductDetails = function () {
 };
 LIBTECH.ProductDetails.prototype = {
 	init: function () {
-		var self, thumbSlider, techConstructionSlider;
+		var self, thumbSlider;
 		self = this;
 		// set availability
 		self.initAvailability();
@@ -47,25 +47,6 @@ LIBTECH.ProductDetails.prototype = {
 			}
 			if (typeof thumbSlider !== 'undefined') {
 				if (thumbSlider.length > 0) thumbSlider.reloadSlider();
-			}
-			if (typeof techConstructionSlider !== 'undefined') {
-				if (techConstructionSlider.length > 0) techConstructionSlider.reloadSlider();
-			}
-		});
-		// navigation when displayed below 600px (mobile phone)
-		$('.product-extras .product-mobile-nav ul li a').click(function (e) {
-			e.preventDefault();
-			// update extras, video and gallery display
-			$('.product-extras, .product-video-top, .product-video, .product-gallery-top, .product-gallery').removeClass('info specs tech');
-			$('.product-extras, .product-video-top, .product-video, .product-gallery-top, .product-gallery').addClass($(this).attr('id'));
-			// update nav item state
-			$('.product-extras .product-mobile-nav ul li a').each(function () {
-				$(this).removeClass('selected');
-			});
-			$(this).addClass('selected');
-			// reload slider to fix responsive bug when visible
-			if ($('body').hasClass('single-libtech_skateboards') && $(this).attr('id') == 'tech') {
-				techConstructionSlider.reloadSlider();
 			}
 		});
 		// init gallery if it exists
@@ -129,17 +110,6 @@ LIBTECH.ProductDetails.prototype = {
 			moveSlides: 2,
 			infiniteLoop: false,
 			hideControlOnEnd: true
-		});
-		// setup skate tech slider
-		techConstructionSlider = $('.product-tech-construction ul').bxSlider({
-			video: true,
-			useCSS: false,
-			auto: true,
-			autoHover: true,
-			speed: 500,
-			controls: true,
-			pager: false,
-			mode: 'horizontal'
 		});
 	},
 	initAvailability: function () {
