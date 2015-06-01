@@ -92,12 +92,32 @@
 
   .surf-tech-logo {
     .tech-logo {
+      color: #666;
       padding-bottom: 20px;
+      text-align: center;
+
+      img {
+        display: block;
+      }
+
+      .tech-logo-new {
+        display: block;
+        text-align: left;
+      }
+
+      .tech-logo-phase {
+        display: block;
+        text-align: right;
+      }
     }
 
     .tech-slogan {
       padding-bottom: 40px;
       text-align: center;
+
+      &.tech-slogan-left {
+        padding-bottom: 10px;
+      }
     }
   }
 
@@ -216,8 +236,21 @@
     width: 50%;
   }
 
-  .surf .tech-minor .tech-copy ul {
-    font-size: 1em;
+  .surf .tech-minor {
+    .tech-copy ul {
+      font-size: 1em;
+    }
+
+    .surf-tech-logo .tech-slogan {
+      &.tech-slogan-left {
+        padding-bottom: 40px;
+        text-align: right;
+      }
+
+      &.tech-slogan-right {
+        text-align: left;
+      }
+    }
   }
 }
 
