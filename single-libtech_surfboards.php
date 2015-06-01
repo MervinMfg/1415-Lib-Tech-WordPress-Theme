@@ -291,6 +291,17 @@ Template Name: Surfboard Detail
 							?>
 							<li><span>Sizes</span> <?php echo $sizes; ?></li>
 							<li><a href="#technology" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
+
+							<?php
+								// display video if we have an id
+								$videoID = get_field('libtech_product_video');
+								if( $videoID ):
+							?>
+
+							<li><a href="#video" class="view-video-link">Watch video <span class="view-arrow"></span></a></li>
+
+							<?php endif; ?>
+
 						</ul>
 
 						<div class="share-wrapper row">
@@ -488,7 +499,7 @@ Template Name: Surfboard Detail
 			if( $videoID ):
 		?>
 
-    <section class="product-video container-fluid">
+    <section id="video" class="product-video container-fluid">
 	  	<div class="section-content row">
 				<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

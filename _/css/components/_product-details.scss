@@ -317,8 +317,52 @@
   }
 
   .view-tech-link,
+  .view-video-link,
   .specs-link {
     text-transform: uppercase;
+  }
+}
+
+.view-arrow {
+  @include transition(all, 100ms);
+  @include vendorize(transform, translate(0, 0));
+  background: url('../img/sprite.png');
+  display: inline-block;
+  height: 14px;
+  margin-left: 5px;
+  width: 14px;
+}
+
+.view-tech-link,
+.view-video-link {
+  &:hover {
+    .view-arrow {
+      @include vendorize(transform, translate(5px, 0));
+    }
+  }
+}
+
+.single-libtech_snowboards {
+  .view-arrow {
+    background-position:  -409px 0;
+  }
+}
+
+.single-libtech_nas {
+  .view-arrow {
+    background-position: -409px -24px;
+  }
+}
+
+.single-libtech_surfboards {
+  .view-arrow {
+    background-position: -409px -49px;
+  }
+}
+
+.single-libtech_skateboards {
+  .view-arrow {
+    background-position: -409px -74px;
   }
 }
 
@@ -644,7 +688,7 @@
     padding-bottom: 10px;
     padding-top: 25px;
 
-    h2 {
+    h3 {
       margin-bottom: 10px;
     }
 
@@ -772,10 +816,17 @@
   }
 
   .product-tech-major {
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
     .tech-image {
       display: none;
     }
+
     .item {
+
       ul {
         font-size: 1.1em;
         list-style: square;

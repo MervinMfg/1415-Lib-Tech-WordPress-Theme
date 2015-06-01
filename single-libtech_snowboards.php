@@ -246,7 +246,18 @@ Template Name: Snowboard Detail
 								}
 							?>
 							<li><span>Sizes</span> <?php echo $sizes; ?></li>
-							<li><a href="#" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
+							<li><a href="#technology" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
+
+							<?php
+								// display video if we have an id
+								$videoID = get_field('libtech_product_video');
+								if( $videoID ):
+							?>
+
+							<li><a href="#video" class="view-video-link">Watch video <span class="view-arrow"></span></a></li>
+
+							<?php endif; ?>
+
 						</ul>
 						<div class="share-wrapper row">
 							<ul class="product-share col-sm-12 col-md-6">
@@ -287,7 +298,7 @@ Template Name: Snowboard Detail
 									if( $awards ):
 								?>
 			        	<div class="product-awards">
-									<h2>Awards</h2>
+									<h3>Awards</h3>
 									<ul>
 										<?php
 											foreach( $awards as $award):
@@ -302,7 +313,7 @@ Template Name: Snowboard Detail
 								<? endif; // end awards ?>
 							</div><!-- END .product-desc-awards -->
 							<div class="product-specs">
-								<h2>Specifications</h2>
+								<h3>Board Specs</h3>
 								<table>
 									<thead>
 										<tr>
@@ -386,7 +397,7 @@ Template Name: Snowboard Detail
 						?>
 
 	        	<div class="product-tech-major tech-major col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7">
-							<h2>Technology</h2>
+							<h3>Technology</h3>
 							<ul class="tech-video-list">
 
 								<?php foreach( $technologyMajor as $techItem): ?>
@@ -413,7 +424,7 @@ Template Name: Snowboard Detail
 							if (count($technologyMinor) > 0) :
 						?>
 
-						<div class="product-tech-minor tech-minor col-xs-12">
+						<div id="technology" class="product-tech-minor tech-minor col-xs-12">
 							<h2>Ingredients</h2>
 							<div class="wrapper row">
 								<?php foreach( $technologyMinor as $techItem): ?>
@@ -452,7 +463,7 @@ Template Name: Snowboard Detail
 				$videoID = get_field('libtech_product_video');
 				if( $videoID ):
 			?>
-      <section class="product-video container-fluid">
+      <section id="video" class="product-video container-fluid">
       	<div class="section-content row">
 					<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 						<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
