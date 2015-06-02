@@ -336,6 +336,8 @@
 .view-tech-link,
 .view-video-link {
   &:hover {
+    text-decoration: none;
+
     .view-arrow {
       @include vendorize(transform, translate(5px, 0));
     }
@@ -857,6 +859,17 @@
 
   .product-tech-minor {
     // check .tech-minor
+  }
+}
+
+.single-libtech_nas,
+.single-libtech_snowboards,
+.single-libtech_skateboards {
+  .product-tech-minor {
+    h3 {
+      text-transform: capitalize;
+      margin-bottom: 10px;
+    }
   }
 }
 

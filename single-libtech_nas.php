@@ -312,7 +312,7 @@ Template Name: NAS Detail
 					?>
 
 					<div id="technology" class="product-tech-minor tech-minor col-xs-12">
-						<h2>Ingredients</h2>
+						<h3>Technologically tougher</h3>
 						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 

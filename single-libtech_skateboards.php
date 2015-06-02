@@ -389,7 +389,7 @@ Template Name: Skateboard Detail
 						if (count($technologyMinor) > 0) :
 					?>
         	<div class="product-tech-minor tech-minor<?php if ($hesho == true) { echo " hesho"; } ?> col-xs-12">
-						<h2>Ingredients</h2>
+						<h3>Technologically tougher</h3>
 						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
