@@ -255,6 +255,16 @@ body {
   }
 }
 
+.page-template-environmental-detail.surf {
+  .video-header {
+    .video-text {
+      li {
+        color: $skateColor;
+      }
+    }
+  }
+}
+
 .video-header {
   padding-bottom: 20px;
 
