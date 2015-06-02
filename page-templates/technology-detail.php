@@ -168,7 +168,7 @@ switch ($parentSlug) {
         </div>
 
         <?php if ($parentSlug == "surfing"): ?>
-        <div class="surf-handcrafted col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <div class="surf-handcrafted col-xs-10 col-xs-offset-1 col-ms-8 col-ms-offset-2 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
           <img src="<?php bloginfo('template_directory'); ?>/_/img/surf-handcrafted-usa.png" alt="Handcrafted in the USA" class="handcrafted-image" />
           <h3 class="handcrafted-title">Handcrafted in the USA</h3>
           <p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
@@ -198,12 +198,11 @@ switch ($parentSlug) {
       if ($loop->have_posts()) :
         $columnOnePostNum = ceil($loop->post_count / 2);
     ?>
-    <div class="bg2-top"></div>
-    <section class="tech-faq bg2">
-      <div class="section-content">
+    <section class="tech-faq container-fluid">
+      <div class="section-content row">
         <div class="faq-list">
-          <h2>FAQ</h2>
-          <ul>
+          <h3 class="section-headline col-xs-12">FAQ</h3>
+          <ul class="col-xs-12 col-sm-6">
             <?php
               $i = 0;
               // get first set of posts
@@ -220,7 +219,7 @@ switch ($parentSlug) {
               endwhile;
             ?>
           </ul>
-          <ul>
+          <ul class="col-xs-12 col-sm-6">
             <?php
               // redo loop again
               $loop = new WP_Query( $args );
