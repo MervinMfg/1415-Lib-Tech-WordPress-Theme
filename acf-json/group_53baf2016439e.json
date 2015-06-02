@@ -6,11 +6,15 @@
             "key": "field_53470d0263de9",
             "label": "Vimeo Video ID",
             "name": "libtech_enviro_video_id",
-            "prefix": "",
             "type": "text",
             "instructions": "Enter the ID of your Vimeo video",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -26,7 +30,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/page-environmental-detail.php"
+                "value": "page-templates\/environmental-detail.php"
             }
         ]
     ],
@@ -35,5 +39,6 @@
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": ""
+    "hide_on_screen": "",
+    "modified": 1433206052
 }

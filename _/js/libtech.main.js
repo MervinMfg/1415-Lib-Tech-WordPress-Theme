@@ -34,9 +34,9 @@ LIBTECH.main = {
 			self.productDetailInit();
 		} else if ($body.hasClass('page-template-technology-detail')) {
 			self.technologyDetailInit();
-		} else if ($body.hasClass('page-template-page-templatesenvironmental-php')) {
+		} else if ($body.hasClass('page-template-environmental')) {
 			self.environmentalInit();
-		} else if ($body.hasClass('page-template-page-templatespage-environmental-detail-php')) {
+		} else if ($body.hasClass('page-template-environmental-detail')) {
 			self.environmentalDetailInit();
 		} else if ($body.hasClass('page-template-team-sport-overview')) {
 			self.teamOverviewInit();
@@ -140,7 +140,6 @@ LIBTECH.main = {
 		$(".enviro-video").fitVids();
 	},
 	environmentalDetailInit: function () {
-		var self = this;
 		// make video fit within target
 		$('.video-header.video .video-player').fitVids();
 		new LIBTECH.FAQ();
