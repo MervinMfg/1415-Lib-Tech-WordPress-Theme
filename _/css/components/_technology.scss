@@ -198,26 +198,17 @@
 }
 
 .tech-faq {
-  .section-content {
-    padding: 0 10px;
-  }
+  padding-bottom: 45px;
+  padding-top: 25px;
 
-  h2 {
+  .section-headline {
     margin-bottom: 20px;
-    padding: 0 10px;
+    margin-top: 0;
+
   }
 
   .faq-list {
     width: 100%;
-
-    ul {
-      li {
-        max-width: 100%;
-        padding-left: 10px;
-        padding-right: 10px;
-        width: 100%;
-      }
-    }
   }
 }
 
@@ -232,11 +223,6 @@
 }
 
 @media screen and (min-width: $breakpoint-medium) {
-  .tech-faq .faq-list ul {
-    float: left;
-    width: 50%;
-  }
-
   .surf .tech-minor {
     .tech-copy ul {
       font-size: 1em;

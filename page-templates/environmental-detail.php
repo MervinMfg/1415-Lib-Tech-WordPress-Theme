@@ -67,12 +67,11 @@ if (have_posts()) :
         $columnOnePostNum = ceil($loop->post_count / 2);
     ?>
 
-    <div class="bg2-top"></div>
-    <section class="tech-faq bg2">
-      <div class="section-content">
+    <section class="tech-faq container-fluid">
+      <div class="section-content row">
         <div class="faq-list">
-          <h2>FAQ</h2>
-          <ul>
+          <h3 class="section-headline col-xs-12">FAQ</h3>
+          <ul class="col-xs-12 col-sm-6">
             <?php
               $i = 0;
               // get first set of posts
@@ -89,7 +88,7 @@ if (have_posts()) :
               endwhile;
             ?>
           </ul>
-          <ul>
+          <ul class="col-xs-12 col-sm-6">
             <?php
               // redo loop again
               $loop = new WP_Query( $args );
