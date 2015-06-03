@@ -20,6 +20,20 @@
 		}
 	}
 }
+
+// margin fix on product pages
+.single-libtech_surfboards,
+.single-libtech_snowboards,
+.single-libtech_skateboards,
+.single-libtech_nas,
+.single-libtech_outerwear,
+.single-libtech_apparel,
+.single-libtech_accessories {
+	.discussion {
+		margin-bottom: 60px;
+	}
+}
+
 @media screen and (min-width: $breakpoint-small) {
 	.discussion-top,
 	.discussion {
