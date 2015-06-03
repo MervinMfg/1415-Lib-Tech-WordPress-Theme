@@ -62,7 +62,7 @@
     &:hover,
     &:focus {
       .icon-play {
-        background-position-x: 0;
+        background-position-x: 0%;
       }
     }
   }
@@ -74,7 +74,7 @@
     padding: 4px 24px;
 
     .icon-play {
-      background-position-x: 0;
+      background-position: 0% 0%;
     }
 
     &:hover,
@@ -83,7 +83,7 @@
       color: #000;
 
       .icon-play {
-        background-position-x: 100%;
+        background-position: 100% 0%;
       }
     }
   }
