@@ -59,13 +59,11 @@ Template Name: Surfboard Detail
 					$availableEU = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
 					// get values for availability
 					$availability = getAvailability($sku, $availableUS, $availableCA, $availableEU);
-					// eval if we should show product or not for each location
-					// in US and CA we allow sales of boards when we don't have in stock, made to order, but not 3 fins
-					if($availability['us']['amount'] > 0 || ($availability['us']['amount'] == "" && $fins != "3 Fin Box") || ($availability['us']['amount'] == 0 && $fins != "3 Fin Box") || $availability['us']['amount'] == "Yes") $productAvailUS = "Yes";
-					if($availability['ca']['amount'] > 0 || ($availability['ca']['amount'] == "" && $fins != "3 Fin Box") || ($availability['ca']['amount'] == 0 && $fins != "3 Fin Box") || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
-					// waterboards are treated direct in Europe
+					// set board to available based on location if we have stock or yes override is set
+					if($availability['us']['amount'] > 0 || $availability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+					if($availability['ca']['amount'] > 0 || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
 					if($availability['eu']['amount'] > 0 || $availability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
-					//
+					// choose bottom image based on fin options
 					if ($fins == "3 Fin Box") {
 						$bImg = $bottomImage[0];
 						$bImgFull = $bottomImageFull[0];
@@ -228,10 +226,12 @@ Template Name: Surfboard Detail
 							<div class="clearfix"></div>
 						</div><!-- .product-price -->
 						<div class="product-stock-alert">
+							<?php if(get_the_title() == "Puddle Jumper") : ?>
+							<p class="surf-logo">Lost logos come in different colorways based on size, see image below.</p>
+							<?php else : ?>
 							<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website.</p>
-							<p class="surf-logo-limited">We are currently out of stock on this Waterboard, but we can build one for you! It can take up to 4-6 weeks to build and ship.</p>
+							<?php endif; ?>
 							<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose.</p>
-							<p class="surf-graphic-limited">Our graphic options are built to order. They can take up to 4-6 weeks to build and ship.</p>
 						</div><!-- .product-stock-alert -->
 						<div class="product-variations">
 							<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">

@@ -665,31 +665,49 @@ LIBTECH.ProductDetails.prototype = {
 	},
 	initBuySurf: function () {
 		var self = this;
-		// don't allow build and ship in Europe
-		if(self.config.currency == 'EUR') {
-			$('#product-variation-graphic option').each(function(index) {
-				var $option, optionValue, removeOption;
-				$option = $(this);
-				optionValue = $option.attr('value');
-				removeOption = true;
-				if(optionValue != "-1") {
-					$.each(productArray, function (key, value) {
-						if(value.name == optionValue) {
-							if(value.available.eu !== null) {
-								if(value.available.eu.amount != "No") {
-									removeOption = false;
-								}
+		// hide graphic options we don't have in stock
+		$('#product-variation-graphic option').each(function(index) {
+			var $option, optionValue, removeOption;
+			$option = $(this);
+			optionValue = $option.attr('value');
+			removeOption = true;
+			if(optionValue != "-1") {
+				$.each(productArray, function (key, value) {
+					if(value.name == optionValue) {
+						var optionAvail;
+						switch(self.config.currency) {
+							case 'USD':
+								optionAvail = value.available.us;
+								break;
+							case 'CAD':
+								optionAvail = value.available.ca;
+								break;
+							case 'EUR':
+								optionAvail = value.available.eu;
+								break;
+							default:
+								// international
+								optionAvail = value.available.us;
+						}
+						// check if we should remove option based on avail
+						if(optionAvail !== null) {
+							if(optionAvail.amount != "No") {
+								removeOption = false;
 							}
 						}
-					});
-					if(removeOption === true) {
-						$option.remove();
-						if(optionValue != "Logo") {
-							$('#image-list-thumbs img[data-sub-alt="' + optionValue + '"]').parent().parent().remove();
-						}
+					}
+				});
+				if(removeOption === true) {
+					$option.remove();
+					if(optionValue != "Logo") {
+						$('#image-list-thumbs img[data-sub-alt="' + optionValue + '"]').parent().parent().remove();
 					}
 				}
-			});
+			}
+		});
+		// hide thumbnails if less than 2 options
+		if($('#image-list-thumbs li').length < 2) {
+			$('.image-list-thumbs').addClass('hidden');
 		}
 		var updatePrice = function () {
 			var selectedGraphic, selectedSize, defaultFinValue;
@@ -754,13 +772,8 @@ LIBTECH.ProductDetails.prototype = {
 								// international
 								skuAvail = value.available.us ? value.available.us.amount : 0;
 						}
-						if(value.type === "Logo" && skuAvail === 0) {
-							// show limited logo option messaging
-							$('.product-stock-alert .surf-logo-limited').addClass('active');
-						} else if (value.type === "Graphic" && skuAvail === 0) {
-							// show limited graphic option messaging
-							$('.product-stock-alert .surf-graphic-limited').addClass('active');
-						} else if (skuAvail < 10 && skuAvail > 0) {
+						// check for low inventory alert
+						if (skuAvail < 10 && skuAvail > 0) {
 							$('.product-alert').addClass('low');
 						}
 						return;
@@ -824,13 +837,7 @@ LIBTECH.ProductDetails.prototype = {
 								// international
 								skuAvail = value.available.us ? value.available.us.amount : 0;
 						}
-						if( skuAvail === "Yes" ||
-							skuAvail > 0 ||
-							(self.config.currency == "USD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
-							(self.config.currency == "USD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
-							(self.config.currency == "CAD" && skuAvail === 0 && fins.indexOf("5 Fin") !== -1) ||
-							(self.config.currency == "CAD" && skuAvail === 0 && seriesName.indexOf("Vert") !== -1) ||
-							(self.config.currency == "EUR" && skuAvail > 0)) {
+						if( skuAvail === "Yes" || skuAvail > 0 ) {
 							// check to see if we matched an size that was already selected
 							if (selectedSize == fullName) {
 								sizeOptions += '<option value="' + fullName + '" selected="selected" data-img="' + value.bottomImage + '" data-img-full="' + value.bottomImageFull + '">' + fullName + '</option>';
