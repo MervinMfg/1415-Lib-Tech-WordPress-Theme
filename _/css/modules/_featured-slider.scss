@@ -52,7 +52,7 @@
   }
 
   .icon-play {
-    background-position-x: 100%;
+    background-position: 100% 0%;
     height: 16px;
     margin: 0 0 -2px 5px;
     width: 16px;
@@ -62,7 +62,7 @@
     &:hover,
     &:focus {
       .icon-play {
-        background-position-x: 0%;
+        background-position: 0% 0%;
       }
     }
   }
