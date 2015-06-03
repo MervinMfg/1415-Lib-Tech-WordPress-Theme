@@ -168,7 +168,7 @@ h3, .h3 { color: #fff; font-size: 1.375em; font-weight: 700; line-height: 1.25; 
 
 h4, .h4 { color: #FFFF00; font-size: 1.125em; font-weight: 700; line-height: 1; }
 
-h5, .h5 { color: #999; font-size: .75em; font-weight: 700; line-height: 1; text-transform: uppercase; }
+h5, .h5 { color: #fff; font-size: .75em; font-weight: 700; line-height: 1; text-transform: uppercase; }
 
 p, .p { font-size: .875em; line-height: 1.32; }
 
@@ -436,6 +436,8 @@ body { background: #000; }
 .surf .price .active .currency-note { color: #FF6600; }
 
 .skate .price .active .currency-note { color: #66CC00; }
+
+.page-template-environmental-detail.surf .video-header .video-text li { color: #66CC00; }
 
 .video-header { padding-bottom: 20px; }
 .video-header .section-content h1 { color: #FFFF00; margin-bottom: 20px; }
@@ -811,7 +813,6 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-price .price-alert { display: none; }
 .product-details .product-stock-alert p { color: #fff; display: none; margin-bottom: 10px; }
 .product-details .product-stock-alert p.active { display: block; }
-.product-details .product-stock-alert p.surf-graphic-limited { color: #FF6600; }
 .product-details .product-variations { display: none; margin-bottom: 30px; }
 .product-details .product-alert p { display: none; }
 .product-details .product-buy { margin-bottom: 55px; }
@@ -844,7 +845,20 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-description ul { font-size: 1.1em; list-style: square; margin: 0 0 10px 25px; }
 .product-details .product-description ul li { margin: 0 0 5px; }
 .product-details .product-share { display: none; }
-.product-details .view-tech-link, .product-details .specs-link { text-transform: uppercase; }
+.product-details .view-tech-link, .product-details .view-video-link, .product-details .specs-link { text-transform: uppercase; }
+
+.view-arrow { -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); background: url("../img/sprite.png"); display: inline-block; height: 14px; margin-left: 5px; width: 14px; }
+
+.view-tech-link:hover, .view-video-link:hover { text-decoration: none; }
+.view-tech-link:hover .view-arrow, .view-video-link:hover .view-arrow { -webkit-transform: translate(5px, 0); -moz-transform: translate(5px, 0); -ms-transform: translate(5px, 0); -o-transform: translate(5px, 0); transform: translate(5px, 0); }
+
+.single-libtech_snowboards .view-arrow { background-position: -409px 0; }
+
+.single-libtech_nas .view-arrow { background-position: -409px -24px; }
+
+.single-libtech_surfboards .view-arrow { background-position: -409px -49px; }
+
+.single-libtech_skateboards .view-arrow { background-position: -409px -74px; }
 
 .currency-eur .product-details.available .product-price .price-alert.usd { display: none; }
 .currency-eur .product-details.available .product-price .price-alert.cad { display: none; }
@@ -916,13 +930,13 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-extras .product-description .wp-caption { width: auto !important; }
 .product-extras .product-description .wp-caption img { height: auto; }
 .product-extras .product-awards { padding-bottom: 10px; padding-top: 25px; }
-.product-extras .product-awards h2 { margin-bottom: 10px; }
+.product-extras .product-awards h3 { margin-bottom: 10px; }
 .product-extras .product-awards ul li { float: left; padding: 0 20px 20px 0; position: relative; width: 120px; }
 .product-extras .product-awards ul li img { height: auto; max-width: 100%; }
 .product-extras .product-awards ul li .tool-tip { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 200ms ease-in-out; -moz-transition: opacity 200ms ease-in-out; -ms-transition: opacity 200ms ease-in-out; -o-transition: opacity 200ms ease-in-out; transition: opacity 200ms ease-in-out; background: #fff100; background: rgba(255, 250, 5, 0.9); border: solid 2px #000; border-radius: 10px; color: #000; display: block; font-size: .75em; font-weight: bold; left: -20px; padding: 10px; position: absolute; text-align: center; text-transform: uppercase; top: 15px; visibility: hidden; width: 140px; z-index: 100; }
 .product-extras .product-awards ul li:hover .tool-tip { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; visibility: visible; }
 .product-extras .product-specs { overflow: hidden; padding-top: 25px; }
-.product-extras .product-specs h2 { margin-bottom: 10px; }
+.product-extras .product-specs h3 { margin-bottom: 10px; }
 .product-extras .product-specs table { width: 100%; margin-bottom: 30px; }
 .product-extras .product-specs table thead { background: #333; }
 .product-extras .product-specs table thead th { font-size: 11px; padding: 10px; text-align: left; text-transform: uppercase; vertical-align: top; }
@@ -936,17 +950,16 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-extras .product-specs table tfoot td { font-size: 11px; padding: 10px; text-transform: uppercase; vertical-align: top; }
 .product-extras .product-specs table tfoot td a { font-weight: bold; }
 .product-extras .product-specs table tfoot td:nth-child(5), .product-extras .product-specs table tfoot td:nth-child(6), .product-extras .product-specs table tfoot td:nth-child(7), .product-extras .product-specs table tfoot td:nth-child(8), .product-extras .product-specs table tfoot td:nth-child(9) { display: none; }
+.product-extras .product-tech-major h3 { margin-bottom: 10px; }
 .product-extras .product-tech-major .tech-image { display: none; }
 .product-extras .product-tech-major .item ul { font-size: 1.1em; list-style: square; margin: 0 0 20px 25px; }
 .product-extras .product-tech-major .item ul li { margin: 0 0 5px; }
-.product-extras .product-tech-construction { padding-bottom: 30px; padding-top: 25px; }
-.product-extras .product-tech-construction h2 { margin-bottom: 10px; }
-.product-extras .product-tech-construction ul li .construction-image img { max-width: none; width: 100%; }
-.product-extras .product-tech-construction ul li .construction-caption { background: #000; background: rgba(0, 0, 0, 0.5); bottom: 0; padding: 10px; position: absolute; width: 100%; }
 .product-extras .outerwear-fit { padding-top: 25px; }
 .product-extras .outerwear-fit li { padding-bottom: 20px; }
 .product-extras .outerwear-fit li h3 { margin-bottom: 10px; }
 .product-extras .outerwear-fit li a { text-transform: uppercase; }
+
+.single-libtech_nas .product-tech-minor h3, .single-libtech_snowboards .product-tech-minor h3, .single-libtech_skateboards .product-tech-minor h3 { text-transform: capitalize; margin-bottom: 10px; }
 
 .product-video { padding-bottom: 30px; padding-top: 30px; }
 
@@ -976,30 +989,33 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-extras .product-tech-major .tech-image { display: block; margin-bottom: 0; } }
 .tech-major { padding-top: 25px; }
 .tech-major h2 { margin-bottom: 10px; }
-.tech-major .tech-video-list .tech-video-item, .tech-major .tech-video-list .surf-tech-item, .tech-major .surf-tech-list .tech-video-item, .tech-major .surf-tech-list .surf-tech-item { margin-bottom: 10px; }
-.tech-major .tech-video-list .tech-video-item .tech-video, .tech-major .tech-video-list .tech-video-item .tech-image, .tech-major .tech-video-list .surf-tech-item .tech-video, .tech-major .tech-video-list .surf-tech-item .tech-image, .tech-major .surf-tech-list .tech-video-item .tech-video, .tech-major .surf-tech-list .tech-video-item .tech-image, .tech-major .surf-tech-list .surf-tech-item .tech-video, .tech-major .surf-tech-list .surf-tech-item .tech-image { margin-bottom: 10px; }
-.tech-major .tech-video-list .tech-video-item .tech-copy h4, .tech-major .tech-video-list .tech-video-item .tech-copy h5, .tech-major .tech-video-list .surf-tech-item .tech-copy h4, .tech-major .tech-video-list .surf-tech-item .tech-copy h5, .tech-major .surf-tech-list .tech-video-item .tech-copy h4, .tech-major .surf-tech-list .tech-video-item .tech-copy h5, .tech-major .surf-tech-list .surf-tech-item .tech-copy h4, .tech-major .surf-tech-list .surf-tech-item .tech-copy h5 { margin-bottom: 5px; }
-.tech-major .tech-video-list .tech-video-item .tech-copy p, .tech-major .tech-video-list .surf-tech-item .tech-copy p, .tech-major .surf-tech-list .tech-video-item .tech-copy p, .tech-major .surf-tech-list .surf-tech-item .tech-copy p { margin-bottom: 15px; }
-.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on, .tech-major .tech-video-list .surf-tech-item .tech-copy .tech-found-on, .tech-major .surf-tech-list .tech-video-item .tech-copy .tech-found-on, .tech-major .surf-tech-list .surf-tech-item .tech-copy .tech-found-on { display: none; margin: 10px 0; }
-.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on ul li, .tech-major .tech-video-list .surf-tech-item .tech-copy .tech-found-on ul li, .tech-major .surf-tech-list .tech-video-item .tech-copy .tech-found-on ul li, .tech-major .surf-tech-list .surf-tech-item .tech-copy .tech-found-on ul li { float: left; width: 50%; }
-.tech-major .tech-video-list .tech-video-item .tech-copy ul, .tech-major .tech-video-list .surf-tech-item .tech-copy ul, .tech-major .surf-tech-list .tech-video-item .tech-copy ul, .tech-major .surf-tech-list .surf-tech-item .tech-copy ul { list-style: square; padding-left: 25px; margin-bottom: 10px; }
-.tech-major .tech-video-list .tech-video-item .tech-copy ul li, .tech-major .tech-video-list .surf-tech-item .tech-copy ul li, .tech-major .surf-tech-list .tech-video-item .tech-copy ul li, .tech-major .surf-tech-list .surf-tech-item .tech-copy ul li { margin-bottom: 3px; }
+.tech-major .tech-video-list .tech-video-item { margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-video, .tech-major .tech-video-list .tech-video-item .tech-image { margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy h4, .tech-major .tech-video-list .tech-video-item .tech-copy h5 { margin-bottom: 5px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy p { margin-bottom: 15px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on { display: none; margin: 10px 0; }
+.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on ul li { float: left; width: 50%; }
+.tech-major .tech-video-list .tech-video-item .tech-copy ul { list-style: square; padding-left: 25px; margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy ul li { margin-bottom: 3px; }
 
-.page-template-page-technology-detail.surf { padding: 30px 0 10px; }
-.page-template-page-technology-detail.surf .section-content { padding: 0 10px; }
-
-.tech-major.tech-surf h2 { display: none; }
-.tech-major.tech-surf .surf-technology h4, .tech-major.tech-surf .surf-environmental h4, .tech-major.tech-surf .surf-ding h4, .tech-major.tech-surf .surf-fins h4, .tech-major.tech-surf .surf-performance h4, .tech-major.tech-surf .surf-handcrafted h4 { color: #000; padding: 5px; }
-.tech-major.tech-surf .surf-technology img, .tech-major.tech-surf .surf-environmental img, .tech-major.tech-surf .surf-ding img, .tech-major.tech-surf .surf-fins img, .tech-major.tech-surf .surf-performance img, .tech-major.tech-surf .surf-handcrafted img { border: solid #333 1px; width: 100%; }
-.tech-major.tech-surf .surf-technology h4 { background-color: #f00; }
-.tech-major.tech-surf .surf-environmental h4 { background-color: #66CC00; }
-.tech-major.tech-surf .surf-ding h4 { background-color: #FF6600; }
-.tech-major.tech-surf .surf-fins h4 { background-color: #FFFF00; }
-.tech-major.tech-surf .surf-performance h4 { background-color: #0099FF; }
-.tech-major.tech-surf .surf-handcrafted h4 { background-color: #fff; }
-
-.tech-minor { padding-bottom: 30px; padding-top: 25px; }
 .tech-minor h2 { margin-bottom: 10px; }
+
+.surf .tech-minor { padding-bottom: 30px; padding-top: 25px; }
+.surf .tech-minor h5 { margin-bottom: 10px; }
+.surf .tech-minor img { margin-bottom: 5px; }
+.surf .tech-minor .tech-copy strong { color: #66CC00; font-weight: normal; }
+.surf .tech-minor .tech-copy p { margin-bottom: 10px; }
+.surf .tech-minor .tech-copy ul { font-size: .875em; line-height: 1.32; }
+.surf .tech-minor .tech-copy ul li { margin-bottom: 5px; }
+.surf .tech-minor .surf-tech-logo .tech-logo { color: #666; padding-bottom: 20px; text-align: center; }
+.surf .tech-minor .surf-tech-logo .tech-logo img { display: block; }
+.surf .tech-minor .surf-tech-logo .tech-logo .tech-logo-new { display: block; text-align: left; }
+.surf .tech-minor .surf-tech-logo .tech-logo .tech-logo-phase { display: block; text-align: right; }
+.surf .tech-minor .surf-tech-logo .tech-slogan { padding-bottom: 40px; text-align: center; }
+.surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-left { padding-bottom: 10px; }
+.surf .tech-minor .surf-handcrafted { padding-top: 30px; }
+.surf .tech-minor .surf-handcrafted .handcrafted-image { padding-bottom: 20px; }
+.surf .tech-minor .surf-handcrafted .handcrafted-title { padding-bottom: 10px; text-align: center; }
 
 .tech-minor > .wrapper > .item, .tech-minor .section-content > .wrapper > .item { vertical-align: top; }
 .tech-minor > .wrapper > .item h4 img, .tech-minor .section-content > .wrapper > .item h4 img { display: block; height: auto; padding-bottom: 10px; vertical-align: middle; width: 40%; }
@@ -1013,13 +1029,14 @@ body.international .shopping-cart-wrapper { display: none; }
 .single-libtech_outerwear .product-tech-minor .wrapper .item, .page-template-storm-factory .product-tech-minor .wrapper .item { padding-bottom: 30px; }
 .single-libtech_outerwear .product-tech-major, .page-template-storm-factory .product-tech-major { padding-bottom: 30px; }
 
-.tech-faq .section-content { padding: 0 10px; }
-.tech-faq h2 { margin-bottom: 20px; padding: 0 10px; }
+.tech-faq { padding-bottom: 45px; padding-top: 25px; }
+.tech-faq .section-headline { margin-bottom: 20px; margin-top: 0; }
 .tech-faq .faq-list { width: 100%; }
-.tech-faq .faq-list ul li { max-width: 100%; padding-left: 10px; padding-right: 10px; width: 100%; }
 
 @media screen and (min-width: 480px) { .tech-minor > ul > li, .tech-minor .section-content > ul > li { text-align: left; vertical-align: top; } }
-@media screen and (min-width: 768px) { .tech-faq .faq-list ul { float: left; width: 50%; } }
+@media screen and (min-width: 768px) { .surf .tech-minor .tech-copy ul { font-size: 1em; }
+  .surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-left { padding-bottom: 40px; text-align: right; }
+  .surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-right { text-align: left; } }
 @media screen and (min-width: 992px) { .tech-major .section-content .tech-video-list .tech-video-item .tech-copy .tech-found-on { display: block; } }
 .enviro-video .section-content h1 { margin-bottom: 20px; }
 .enviro-video .section-content .video-player { margin-bottom: 10px; }
@@ -1218,14 +1235,13 @@ body.international .shopping-cart-wrapper { display: none; }
   .partners .section-content .entry-content ul li .partner-entry .partner-images { width: 30%; float: left; }
   .partners .section-content .entry-content ul li .partner-entry .partner-images img { padding-right: 20px; }
   .partners .section-content .entry-content ul li .partner-entry p { width: 70%; float: right; } }
-/* ========================================================================== COMPONENTS/_FAQ.SCSS ========================================================================== */
-.faqs .section-content { padding: 0 20px; }
+.faqs { padding-bottom: 45px; padding-top: 30px; }
 .faqs .section-content h1 { margin-bottom: 20px; }
-.faqs .section-content > p { margin-bottom: 20px; font-size: 1.125em; }
+.faqs .section-content p { font-size: 1.125em; margin-bottom: 20px; }
 
 .faq-nav ul { text-align: center; }
-.faq-nav ul li { display: inline-block; padding: 0 8px 10px 0; }
-.faq-nav ul li a { display: block; padding: 3px 5px; background: #FFFF00; font-style: normal; color: #000; width: 100px; text-align: center; text-transform: uppercase; font-size: 1.375em; /* 22 / 16 */ line-height: 1; font-weight: 700; }
+.faq-nav ul li { display: inline-block; margin-bottom: 10px; margin-right: 10px; }
+.faq-nav ul li a { background: #FFFF00; color: #000; display: block; font-size: 1.375em; font-style: normal; font-weight: 700; line-height: 1; padding: 3px 5px; text-align: center; text-transform: uppercase; width: 100px; }
 .faq-nav ul li.current-menu-item a { background: none; color: #FFFF00; }
 
 .ski .faq-nav ul li a { background: #0099FF; }
@@ -1241,43 +1257,41 @@ body.international .shopping-cart-wrapper { display: none; }
 .faq-categories .desktop-nav { display: none; }
 .faq-categories .mobile-nav { margin-top: 20px; }
 
-.faq-list h3 { margin: 20px 0 10px 0; }
+.faq-list h3 { margin: 15px 0 10px; }
 .faq-list .faq-question { padding-bottom: 10px; }
-.faq-list .faq-question .question { font-style: italic; display: block; background: #000; padding: 10px; text-decoration: none; font-weight: bold; color: #FFFF00; }
-.faq-list .faq-question .question span { float: right; display: inline-block; width: 0; height: 0; margin-left: 10px; border-bottom: none; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 15px solid #FFFF00; }
-.faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 15px solid #FFFF00; }
-.faq-list .faq-question .answer { color: #000; background: #FFFF00; padding: 10px; }
+.faq-list .faq-question .question { background: #000; color: #FFFF00; display: block; font-style: italic; font-weight: bold; padding: 5px 0; text-decoration: none; }
+.faq-list .faq-question .question span { border-bottom: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 15px solid #FFFF00; display: inline-block; float: right; height: 0; margin-left: 10px; width: 0; }
+.faq-list .faq-question.collapsed .question span { border-bottom: 8px solid transparent; border-left: 15px solid #FFFF00; border-top: 8px solid transparent; }
+.faq-list .faq-question .answer { background: #FFFF00; color: #000; padding: 10px; }
 .faq-list .faq-question .answer p { margin-bottom: 10px; }
 .faq-list .faq-question .answer p:last-child { margin-bottom: 0; }
-.faq-list .faq-question .answer ul { padding: 0 0 0 10px; margin-left: 20px; list-style: square; }
-.faq-list .faq-question .answer ol { padding: 0 0 0 10px; margin-left: 20px; }
-.faq-list .faq-question .answer a { color: #000; text-decoration: underline; font-style: normal; }
+.faq-list .faq-question .answer ul { list-style: square; margin-left: 20px; padding: 0 0 0 10px; }
+.faq-list .faq-question .answer ol { margin-left: 20px; padding: 0 0 0 10px; }
+.faq-list .faq-question .answer a { color: #000; font-style: normal; text-decoration: underline; }
 
 .ski .faq-list .faq-question .question { color: #0099FF; }
 .ski .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #0099FF; }
-.ski .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #0099FF; }
+.ski .faq-list .faq-question.collapsed .question span { border-left: 15px solid #0099FF; border-top: 8px solid transparent; }
 .ski .faq-list .faq-question .answer { background: #0099FF; }
 
 .surf .faq-list .faq-question .question { color: #FF6600; }
 .surf .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #FF6600; }
-.surf .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #FF6600; }
+.surf .faq-list .faq-question.collapsed .question span { border-left: 15px solid #FF6600; border-top: 8px solid transparent; }
 .surf .faq-list .faq-question .answer { background: #FF6600; }
 
 .skate .faq-list .faq-question .question { color: #66CC00; }
 .skate .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #66CC00; }
-.skate .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #66CC00; }
+.skate .faq-list .faq-question.collapsed .question span { border-left: 15px solid #66CC00; border-top: 8px solid transparent; }
 .skate .faq-list .faq-question .answer { background: #66CC00; }
 
 @media screen and (min-width: 768px) { .faq-nav ul { text-align: left; }
-  .faq-nav ul li a { width: 120px; font-size: 1.875em; /* 30 / 16 */ }
+  .faq-nav ul li a { font-size: 1.875em; width: 120px; }
   .faq-categories { float: right; width: 25%; }
   .faq-categories h2 { display: block; margin-bottom: 10px; }
   .faq-categories .desktop-nav { display: block; }
   .faq-categories .desktop-nav ul li { margin-bottom: 6px; }
   .faq-categories .desktop-nav ul li a { color: #fff; text-transform: uppercase; }
-  .faq-categories .mobile-nav { display: none; }
-  .faq-list { width: 75%; }
-  .faq-list .faq-question { padding-right: 20px; max-width: 900px; } }
+  .faq-categories .mobile-nav { display: none; } }
 /* ========================================================================== COMPONENTS/_LBS.SCSS ========================================================================== */
 .lbs-details .section-content { padding: 0 20px; }
 .lbs-details .section-content h1, .lbs-details .section-content p { margin-bottom: 10px; }
@@ -1505,7 +1519,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .home-sport-team .call-to-action { text-align: center; }
 
 @media screen and (min-width: 768px) { .home-sport-team h2 { display: block; padding-bottom: 30px; } }
-.featured-slider { padding: 30px 0 25px; }
+.featured-slider { padding: 0 0 25px; }
 .featured-slider .section-content { max-width: 100%; overflow: hidden; }
 .featured-slider .section-content .slider-wrapper { width: 100%; }
 .featured-slider .slide:nth-child(n+2) { display: none; }
@@ -1524,6 +1538,7 @@ body.international .shopping-cart-wrapper { display: none; }
 .featured-slider .cta-theme-light .button { background: #FFF; border: 0; color: #000; padding: 4px 24px; }
 .featured-slider .cta-theme-light .button:hover, .featured-slider .cta-theme-light .button:focus { background-color: #000; color: #FFF; }
 .featured-slider .owl-carousel { display: block; }
+.featured-slider .owl-carousel .owl-stage-outer .owl-stage { border-bottom: 1px solid #666; border-top: 1px solid #666; }
 .featured-slider .owl-loaded .slide:nth-child(n+2) { display: block; }
 .featured-slider .owl-dots { padding-top: 5px; }
 .featured-slider .video-container { background-color: #000; height: 100%; left: 0; padding: 5% 0 0; position: absolute; top: 0; width: 100%; z-index: 100; }
