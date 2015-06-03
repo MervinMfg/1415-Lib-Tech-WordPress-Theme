@@ -23,7 +23,7 @@ if (have_posts()) :
         $faqSlug = "snow-environmental";
     }
 ?>
-    <section class="video-header <?php if ($videoID) { echo " video"; }; ?> container-fluid">
+    <section class="video-header <?php if ($videoID) { echo " video"; }; ?> container-fluid bg-texture-gradient">
       <div class="section-content row">
         <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
           <div class="video-wrapper">

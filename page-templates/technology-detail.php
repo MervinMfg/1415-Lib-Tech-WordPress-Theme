@@ -27,7 +27,6 @@ switch ($parentSlug) {
 ?>
     <section class="video-header video container-fluid bg-texture-gradient">
       <div class="section-content row">
-        <h1 class="<?php echo $GLOBALS['sport']; ?> col-xs-12 col-md-10 col-md-offset-1"><?php the_title(); ?></h1>
         <div class="video-player col-xs-12 col-md-10 col-md-offset-1">
           <div class="video-wrapper">
             <?php if (get_field('libtech_tech_video_id')) : $videoID = get_field('libtech_tech_video_id'); ?>
