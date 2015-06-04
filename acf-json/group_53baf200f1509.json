@@ -502,31 +502,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "key": "field_53506bd849d8c",
-            "label": "Gallery",
-            "name": "libtech_surfboard_gallery",
-            "type": "gallery",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "min": "",
-            "max": "",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
         }
     ],
     "location": [
@@ -544,6 +519,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432675628,
-    "local": "json"
+    "modified": 1433442119
 }
