@@ -59,13 +59,11 @@ Template Name: Surfboard Detail
 					$availableEU = $variationOptions[$i]['libtech_surfboard_variations_options_avail_eur'];
 					// get values for availability
 					$availability = getAvailability($sku, $availableUS, $availableCA, $availableEU);
-					// eval if we should show product or not for each location
-					// in US and CA we allow sales of boards when we don't have in stock, made to order, but not 3 fins
-					if($availability['us']['amount'] > 0 || ($availability['us']['amount'] == "" && $fins != "3 Fin Box") || ($availability['us']['amount'] == 0 && $fins != "3 Fin Box") || $availability['us']['amount'] == "Yes") $productAvailUS = "Yes";
-					if($availability['ca']['amount'] > 0 || ($availability['ca']['amount'] == "" && $fins != "3 Fin Box") || ($availability['ca']['amount'] == 0 && $fins != "3 Fin Box") || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
-					// waterboards are treated direct in Europe
+					// set board to available based on location if we have stock or yes override is set
+					if($availability['us']['amount'] > 0 || $availability['us']['amount'] == "Yes") $productAvailUS = "Yes";
+					if($availability['ca']['amount'] > 0 || $availability['ca']['amount'] == "Yes") $productAvailCA = "Yes";
 					if($availability['eu']['amount'] > 0 || $availability['eu']['amount'] == "Yes") $productAvailEU = "Yes";
-					//
+					// choose bottom image based on fin options
 					if ($fins == "3 Fin Box") {
 						$bImg = $bottomImage[0];
 						$bImgFull = $bottomImageFull[0];
@@ -124,12 +122,10 @@ Template Name: Surfboard Detail
 		<div class="product-details-nav-btn">
 			<div class="toggle-btn"></div>
 		</div>
-    <div class="bg-product-details-top product-details-nav-bottom"></div>
     <div class="schema-wrapper" itemscope itemtype="http://schema.org/Product">
-	    <section class="product-details bg-product-details <?php echo $slug; ?>">
-	    	<div class="section-content">
-					<h1 itemprop="name"><?php the_title(); ?></h1>
-					<div class="product-images">
+	    <section class="product-details <?php echo $slug; ?> container-fluid">
+	    	<div class="section-content row">
+					<div class="product-images col-xs-12 col-ms-10 col-ms-offset-1 col-sm-7 col-sm-offset-0">
 						<div class="surf-images">
 							<div class="surfboard-top">
 								<img src="<?php echo $defaultTopImage; ?>" alt="Surfboard Top" data-img="<?php echo $defaultTopImage; ?>" data-img-full="<?php echo $defaultTopImageFull; ?>" itemprop="image" />
@@ -147,13 +143,14 @@ Template Name: Surfboard Detail
 							<div class="clearfix"></div>
 						</div>
 					</div><!-- .product-images -->
-					<div class="product-details-right">
+					<div class="product-details-right col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5 col-sm-offset-0">
 						<script type='text/javascript'>
 							<?php
 								$jsArray = json_encode($surfboards);
 								echo "var productArray = ". $jsArray . ";\n";
 							?>
 						</script>
+						<h1 itemprop="name"><?php the_title(); ?></h1>
 						<h3><?php the_field('libtech_product_slogan'); ?></h3>
 						<div class="image-list-thumbs">
 							<ul id="image-list-thumbs">
@@ -229,10 +226,12 @@ Template Name: Surfboard Detail
 							<div class="clearfix"></div>
 						</div><!-- .product-price -->
 						<div class="product-stock-alert">
-							<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website. Each board is handmade in the USA by surfers.</p>
-							<p class="surf-logo-limited">We are currently out of stock on this Waterboard, but we can build one for you! It can take up to 4-6 weeks to build and ship.</p>
-							<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose. Each board is handmade in the USA by surfers.</p>
-							<p class="surf-graphic-limited">Most of our Waterboard graphic options are built to order, they can take up to 4-6 weeks to build and ship.</p>
+							<?php if(get_the_title() == "Puddle Jumper") : ?>
+							<p class="surf-logo">Lost logos come in different colorways based on size, see image below.</p>
+							<?php else : ?>
+							<p class="surf-logo">The top and bottom logos come in random assorted colorways. They may not be exactly the same as the images you see on our website.</p>
+							<?php endif; ?>
+							<p class="surf-graphic">The bottom logos may not be exactly the same as the images you see on our website. We match them as close as we can to the top graphic you choose.</p>
 						</div><!-- .product-stock-alert -->
 						<div class="product-variations">
 							<select id="product-variation-graphic" class="select<?php if(count($surfboardGraphics) == 1){echo ' hidden';} ?>">
@@ -259,7 +258,8 @@ Template Name: Surfboard Detail
 						<div class="product-buy" data-avail-us="<?php echo $productAvailUS; ?>" data-avail-ca="<?php echo $productAvailCA; ?>" data-avail-eur="<?php echo $productAvailEU; ?>">
 							<ul>
 								<li class="loading hidden"></li>
-								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart h3">Add to Cart</a> <img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="cart-button"><a href="#add-to-cart" class="add-to-cart button">Add to Cart</a><img src="<?php bloginfo('template_directory'); ?>/_/img/shopatron-secure-logo.png" alt="Shopatron Secure" /></li>
+								<li class="clearfix"></li>
 								<li class="unavailable">Item is currently not available online.</li>
 								<li class="find-dealer h4"><a href="/dealer-locator/?product=surfboards">Find a Dealer</a></li>
 							</ul>
@@ -290,22 +290,40 @@ Template Name: Surfboard Detail
 								}
 							?>
 							<li><span>Sizes</span> <?php echo $sizes; ?></li>
+							<li><a href="#technology" class="view-tech-link">View our technology <span class="view-arrow"></span></a></li>
+
+							<?php
+								// display video if we have an id
+								$videoID = get_field('libtech_product_video');
+								if( $videoID ):
+							?>
+
+							<li><a href="#video" class="view-video-link">Watch video <span class="view-arrow"></span></a></li>
+
+							<?php endif; ?>
+
 						</ul>
-						<ul class="product-share">
-							<li><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
-							<li><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
-							<li><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
-							<li><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
-						</ul>
+
+						<div class="share-wrapper row">
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="fb-like" data-href="<? the_permalink(); ?>" data-layout="button_count" data-width="120" data-show-faces="false" data-colorscheme="dark" data-font="trebuchet ms"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="https://twitter.com/share" class="twitter-share-button" data-via="libtechnologies">Tweet</a></li>
+							</ul>
+							<ul class="product-share col-sm-12 col-md-6">
+								<li class="col-sm-6 col-md-3"><div class="g-plusone" data-size="medium" data-href="<? the_permalink(); ?>"></div></li>
+								<li class="col-sm-6 col-md-3"><a href="http://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&media=<?php echo $GLOBALS['pageImage']; ?>&description=<?php echo $GLOBALS['pageTitle']; ?>" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
 					</div><!-- .product-details-right -->
 					<div class="clearfix"></div>
 				</div><!-- .section-content -->
 			</section><!-- .product-details -->
-			<section class="product-zoom bg-product-details">
+			<section class="product-zoom container-fluid">
 				<div class="section-content">
 					<div class="zoom-title"></div>
 					<div class="zoom-controls">
-						<a href="#close-zoom" class="zoom-close h3">Close</a>
+						<a href="#close-zoom" class="zoom-close button">Close</a>
 						<ul id="zoom-thumbnails"></ul>
 					</div>
 					<div class="zoom-image">
@@ -316,18 +334,10 @@ Template Name: Surfboard Detail
 					</div>
 				</div><!-- END .section-content -->
 			</section><!-- END .product-zoom -->
-			<div class="bg2-top"></div>
-			<section class="product-extras bg2 info">
-				<div class="section-content clearfix">
-					<div class="product-mobile-nav clearfix">
-						<ul>
-							<li class="margin"><a href="#info" class="h3 selected" id="info">Info</a></li>
-							<li class="margin"><a href="#specs" class="h3" id="specs">Specs</a></li>
-							<li><a href="#tech" class="h3" id="tech">Tech</a></li>
-						</ul>
-					</div>
-					<div class="product-desc-awards-specs">
-						<div class="product-desc-awards">
+			<section class="product-extras info container-fluid">
+				<div class="section-content clearfix row">
+					<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-12 col-sm-offset-0">
+						<div class="product-desc-awards col-xs-12 col-sm-5">
 							<div class="product-description" itemprop="description" >
 								<?php the_content(); ?>
 							</div>
@@ -351,8 +361,8 @@ Template Name: Surfboard Detail
 							</div>
 							<? endif; // end awards ?>
 						</div><!-- END .product-desc-awards -->
-						<div class="product-specs">
-							<h2>Specifications</h2>
+						<div class="product-specs col-xs-12 col-sm-7">
+							<h3>Board Specs</h3>
 							<table>
 								<?php
 								$i = 1;
@@ -414,81 +424,18 @@ Template Name: Surfboard Detail
 							</table>
 						</div>
 					</div><!-- END .product-desc-awards-specs -->
-					<div class="product-tech-major tech-major tech-surf">
-						<h2>Technology</h2>
-						<ul>
-							<li class="surf-technology">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-technology.jpg" alt="Radically Different Surfboard Technology" />
-								</div>
-								<div class="tech-copy">
-									<h4>Radically Different</h4>
-									<p>30 years of experience crafting and riding high performance environMENTALLY friendly composite surf, skate and snowboards went into designing our unique waterboard process, materials and shapes. Each of the 31 pieces used to construct our surfboards are new materials to the surf industry.</p>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li class="surf-environmental">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-environmental.jpg" alt="Environmental Surfboards" />
-								</div>
-								<div class="tech-copy">
-									<h4>Environmentally Nicer</h4>
-									<p>100% closed cell foam won’t absorb water... won't rot &bullet; More durable: Lasts longer, less dings, less boards in landfills &bullet; Recycled foam core: up to 50% recycled content in blank &bullet; Blank scraps all recycled &bullet; Elimination of hazardous resin systems &bullet; Non ozone depleting blowing agent &bullet; Basalt fiber: no additives, no boron &bullet; No solvents except water &bullet; No paint brushes &bullet; No sandpaper, no tape</p>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li class="surf-ding">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-ding.gif" alt="Durable Lib Tech Surfboard being rode over by a man on a bike" />
-								</div>
-								<div class="tech-copy">
-									<h4>Dang Difficult to Ding</h4>
-									<ul>
-										<li>Years of composite panel impact testing went into our unique combination of fibers, Basalt and Resin systems.</li>
-										<li>Voted toughest board of the year by Outside Magazine.</li>
-										<li>Crossing the street or the globe, tougher surfboards - free your mind!</li>
-										<li>If you do ding it, you don't have to get out of the water. Our core doesn't take on water.</li>
-									</ul>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li class="surf-fins">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-fins.jpg" alt="Freedom of Choice multi-fin system" />
-								</div>
-								<div class="tech-copy">
-									<h4>FOC Adjustable Fin System</h4>
-									<p>F.O.C. "Freedom of Choice" multi-fin system compatible with 5/8" performance tuning adjustability</p>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li class="surf-performance">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-performance.jpg" alt="Performance - Ryan Carlson" />
-								</div>
-								<div class="tech-copy">
-									<h4>Performance</h4>
-									<p>SMOOTH &bullet; FAST &bullet; POPPY</p>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-							<li class="surf-handcrafted">
-								<div class="tech-image">
-									<img src="<?php bloginfo('template_directory'); ?>/_/img/surf-detail-handcrafted.jpg" alt="Handcrafted in the USA" />
-								</div>
-								<div class="tech-copy">
-									<h4>Handcrafted in the USA</h4>
-									<p>Every waterboard is hand made by surfers in the USA near Canada at the world's most environMENTAL board factory!</p>
-								</div>
-								<div class="clearfix"></div>
-							</li>
-						</ul>
-						<div class="clearfix"></div>
-					</div><!-- END .product-tech-major -->
+				</div><!-- END .section-content -->
+			</section><!-- END .product-extras -->
+
+					<?php include get_template_directory() . '/_/inc/modules/story-slider.php'; ?>
+
+			<section class="product-extras info container-fluid">
+				<div class="section-content clearfix row">
 
 					<?php // display minor technology if there is any
 					$technology = get_field('libtech_product_technology');
 					if( $technology ):
+						$i = 1;
 						$technologyMajor = Array();
 						$technologyMinor = Array();
 						foreach( $technology as $techItem):
@@ -507,22 +454,34 @@ Template Name: Surfboard Detail
 						// CHECK IF WE SHOULD DISPLAY MINOR TECHNOLOGY
 						if (count($technologyMinor) > 0) :
 					?>
-		        	<div class="product-tech-minor tech-minor">
-						<h2>Ingredients</h2>
-						<ul>
+        	<div id="technology" class="product-tech-minor tech-minor surf col-xs-12">
+						<div class="surf-tech-logo clearfix">
+		          <h3 class="tech-logo col-xs-10 col-xs-offset-1 col-ms-6 col-ms-offset-3 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4"><span class="tech-logo-new">NEW</span> <img src="<?php bloginfo('template_directory'); ?>/_/img/lib-tech-surf-eco-isotropic.png" alt="Eco Isotropic" /> <span class="tech-logo-phase">PHASE 3 CONSTRUCTION!</span></h3>
+		          <h3 class="tech-slogan tech-slogan-left col-xs-12 col-sm-6">TECHNOLOGICALLY TOUGHER</h3>
+		          <h3 class="tech-slogan tech-slogan-right col-xs-12 col-sm-6">environMENTALLY NICER!</h3>
+		        </div>
+						<div class="wrapper row">
 							<?php foreach( $technologyMinor as $techItem): ?>
 
-							<li>
-								<div class="tech-pad">
-									<h4><img src="<?php echo $techItem[2][0]; ?>" /><span><?php echo $techItem[0]; ?></span></h4>
+							<div class="item">
+								<div class="tech-pad col-xs-6 col-ms-6 col-sm-4 col-md-3">
+									<h5><?php echo $techItem[0]; ?></h5>
+									<img src="<?php echo $techItem[2][0]; ?>" />
 									<div class="tech-copy">
 										<?php echo $techItem[1]; ?>
 									</div>
 								</div>
-							</li>
+							</div>
 
-							<?php endforeach; ?>
-						</ul>
+							<?php
+								if($i %2 == 0) echo '<div class="clearfix visible-xs visible-ms"></div>';
+                if($i %3 == 0) echo '<div class="clearfix visible-sm"></div>';
+								if($i %4 == 0) echo '<div class="clearfix visible-md visible-lg"></div>';
+                $i++;
+										endforeach;
+							?>
+
+						</div>
 						<div class="clearfix"></div>
 					</div><!-- END .product-tech-minor -->
 
@@ -541,40 +500,13 @@ Template Name: Surfboard Detail
 			if( $videoID ):
 		?>
 
-		<div class="bg3-top product-video-top"></div>
-    <section class="bg3 product-video">
-	  	<div class="section-content">
-				<div class="video-player">
+    <section id="video" class="product-video container-fluid">
+	  	<div class="section-content row">
+				<div class="video-player col-xs-12 col-md-10 col-md-offset-1">
 					<iframe src="http://player.vimeo.com/video/<?php echo $videoID; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=fff100&amp;loop=1" width="940" height="528" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 				</div>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-video -->
-
-		<?php
-			endif;
-			// display gallery if we have one
-			if( get_field('libtech_surfboard_gallery') ):
-				if( $videoID ) {
-					$topClass = "bg2-top";
-					$sectionClass = "bg2";
-				} else {
-					$topClass = "bg3-top";
-					$sectionClass = "bg3";
-				}
-		?>
-
-		<div class="<?php echo $topClass; ?> product-gallery-top"></div>
-		<section class="<?php echo $sectionClass; ?> product-gallery">
-			<div class="section-content">
-				<h2>Gallery</h2>
-				<?php
-					$image_ids = get_field('libtech_surfboard_gallery', false, false);
-					$shortcode = '[gallery ids="' . implode(',', $image_ids) . '"]';
-					echo do_shortcode( $shortcode );
-				?>
-				<div class="clearfix"></div>
-			</div><!-- END .section-content -->
-		</section><!-- END .product-gallery -->
 
 		<?php
 			endif;

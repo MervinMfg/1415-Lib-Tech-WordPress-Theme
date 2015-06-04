@@ -24,12 +24,11 @@ get_header();
 			</div><!-- END .section-content -->
 			<div class="clearfix"></div>
 		</section><!-- END .storm-factory-overview -->
-		<div class="bg1-top"></div>
-		<section class="product-extras bg1">
-			<div class="section-content">
+		<section class="product-extras container-fluid">
+			<div class="section-content row">
 				<div class="product-tech-minor tech-minor">
-					<h2>Features</h2>
-					<ul>
+					<h2 class="col-xs-12">Features</h2>
+					<div class="wrapper">
 
 					<?php
 						$args = array(
@@ -46,6 +45,7 @@ get_header();
 							)
 						);
 						$loop = new WP_Query( $args );
+						$i = 1;
 						while ( $loop->have_posts() ) : $loop->the_post();
 							$imageID = get_field("libtech_technology_icon");
 							$imageFile = wp_get_attachment_image_src($imageID, 'full');
@@ -53,26 +53,29 @@ get_header();
 							if(strpos(get_the_title(), 'Waterproofing') == false ):
 					?>
 
-					<li>
-						<img src="<?php echo $imageFile[0]; ?>" alt="<?php the_title(); ?> Image" />
-						<h4><?php the_title(); ?></h4>
-					</li>
+						<div class="item col-xs-6 col-ms-4 col-sm-3 col-md-3">
+							<img src="<?php echo $imageFile[0]; ?>" alt="<?php the_title(); ?> Image" />
+							<h4><?php the_title(); ?></h4>
+						</div>
 
 					<?php
+						if($i %2 == 0) echo '<div class="clearfix visible-xs"></div>';
+						if($i %3 == 0) echo '<div class="clearfix visible-ms"></div>';
+						if($i %4 == 0) echo '<div class="clearfix visible-sm visible-md visible-lg"></div>';
+						$i++;
 							endif;
 						endwhile;
 						wp_reset_query();
 					?>
 
-					</ul>
+					</div>
 					<div class="clearfix"></div>
 				</div><!-- END .product-tech-minor -->
 			</div><!-- END .section-content -->
 		</section><!-- END .product-extras -->
-		<div class="bg2-top"></div>
-		<section class="product-extras bg2 jackets">
-			<div class="section-content">
-				<div class="product-specs">
+		<section class="product-extras jackets container-fluid">
+			<div class="section-content row">
+				<div class="product-specs col-xs-12 col-md-7">
 					<h2>Sizing</h2>
 					<h3 class="sizing-header">Jacket Sizing</h3>
 					<table>
@@ -186,6 +189,8 @@ get_header();
 							</tr>
 						</tbody>
 					</table>
+				</div><!-- .product-specs -->
+				<div class="product-fit col-xs-12 col-md-5">
 					<ul class="outerwear-fit">
 						<li class="ripper-fit">
 							<h3>Ripper Fit</h3>
@@ -203,7 +208,7 @@ get_header();
 							<a href="/outerwear/#filter=.street-fit">View street fits</a>
 						</li>
 					</ul>
-				</div><!-- .product-specs -->
+				</div>
 			</div><!-- END .section-content -->
 		</section><!-- END .product-extras -->
 

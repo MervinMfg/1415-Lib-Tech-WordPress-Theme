@@ -69,24 +69,24 @@ get_header();
                         // check if we're surf because of varrying fin costs
                         if ($postType == "libtech_surfboards") {
                             // check fin pricing and what to display by default
-                            if (get_field('libtech_product_price_us_5fin', $post_object->ID) == "") {
-                                $productPrice = getPrice(
-                                  get_field('libtech_product_price_us', $post_object->ID),
-                                  get_field('libtech_product_price_ca', $post_object->ID),
-                                  get_field('libtech_product_price_eur', $post_object->ID),
-                                  get_field('libtech_product_on_sale', $post_object->ID),
-                                  get_field('libtech_product_sale_percentage', $post_object->ID),
-                                  false
-                                );
+                            if (get_field('libtech_product_price_us', $post_object->ID) == "") {
+                              $productPrice = getPrice(
+                                get_field('libtech_product_price_us_5fin', $post_object->ID),
+                                get_field('libtech_product_price_ca_5fin', $post_object->ID),
+                                get_field('libtech_product_price_eur_5fin', $post_object->ID),
+                                get_field('libtech_product_on_sale', $post_object->ID),
+                                get_field('libtech_product_sale_percentage', $post_object->ID),
+                                false
+                              );
                             } else {
-                                $productPrice = getPrice(
-                                  get_field('libtech_product_price_us_5fin', $post_object->ID),
-                                  get_field('libtech_product_price_ca_5fin', $post_object->ID),
-                                  get_field('libtech_product_price_eur_5fin', $post_object->ID),
-                                  get_field('libtech_product_on_sale', $post_object->ID),
-                                  get_field('libtech_product_sale_percentage', $post_object->ID),
-                                  false
-                                );
+                              $productPrice = getPrice(
+                                get_field('libtech_product_price_us', $post_object->ID),
+                                get_field('libtech_product_price_ca', $post_object->ID),
+                                get_field('libtech_product_price_eur', $post_object->ID),
+                                get_field('libtech_product_on_sale', $post_object->ID),
+                                get_field('libtech_product_sale_percentage', $post_object->ID),
+                                false
+                              );
                             }
                         } else {
                             // grab default price of all other products
@@ -259,24 +259,24 @@ get_header();
             // check if we're surf because of varrying fin costs
             if ($productArray['postType'] == "libtech_surfboards") {
                 // check fin pricing and what to display by default
-                if (get_field('libtech_product_price_us_5fin') == "") {
-                    $productArray['price'] = getPrice(
-                      get_field('libtech_product_price_us'),
-                      get_field('libtech_product_price_ca'),
-                      get_field('libtech_product_price_eur'),
-                      get_field('libtech_product_on_sale'),
-                      get_field('libtech_product_sale_percentage'),
-                      false
-                    );
+                if (get_field('libtech_product_price_us') == "") {
+                  $productArray['price'] = getPrice(
+                    get_field('libtech_product_price_us_5fin'),
+                    get_field('libtech_product_price_ca_5fin'),
+                    get_field('libtech_product_price_eur_5fin'),
+                    get_field('libtech_product_on_sale'),
+                    get_field('libtech_product_sale_percentage'),
+                    false
+                  );
                 } else {
-                    $productArray['price'] = getPrice(
-                      get_field('libtech_product_price_us_5fin'),
-                      get_field('libtech_product_price_ca_5fin'),
-                      get_field('libtech_product_price_eur_5fin'),
-                      get_field('libtech_product_on_sale'),
-                      get_field('libtech_product_sale_percentage'),
-                      false
-                    );
+                  $productArray['price'] = getPrice(
+                    get_field('libtech_product_price_us'),
+                    get_field('libtech_product_price_ca'),
+                    get_field('libtech_product_price_eur'),
+                    get_field('libtech_product_on_sale'),
+                    get_field('libtech_product_sale_percentage'),
+                    false
+                  );
                 }
             } else {
                 // grab default price of all other products

@@ -6,7 +6,6 @@
             "key": "field_50230c4b5af96",
             "label": "Specifications Table",
             "name": "libtech_specs_table",
-            "prefix": "",
             "type": "radio",
             "instructions": "Which specs table?",
             "required": 0,
@@ -43,6 +42,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
+    "modified": 1432675628,
     "local": "json"
 }

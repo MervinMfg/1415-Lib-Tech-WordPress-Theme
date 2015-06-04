@@ -4,9 +4,8 @@ Template Name: FAQs
 */
 get_header();
 ?>
-    <div class="bg2-top"></div>
-    <section class="faqs bg2">
-      <div class="section-content">
+    <section class="faqs container-fluid">
+      <div class="section-content row">
 
         <?php
           if (have_posts()) :
@@ -14,7 +13,8 @@ get_header();
               the_post();
         ?>
 
-        <h1><?php the_title(); ?></h1>
+        <h1 class="col-xs-12"><?php the_title(); ?></h1>
+        <div class="content-nav-wrapper col-xs-12 col-sm-8">
         <?php the_content(); ?>
 
         <?php
@@ -28,38 +28,38 @@ get_header();
             )
           );
         ?>
-
+        </div>
         <div class="clearfix"></div>
-        <div class="faq-categories">
+        <div class="faq-categories col-xs-12 col-sm-4 col-sm-push-8">
           <h2>Categories</h2>
-          <nav class="desktop-nav">
+          <nav class="desktop-nav col-xs-12">
             <ul>
               <?php
-                  // get parent category for this page
-                  if (get_field('libtech_faq_type')) {
-                      $faqType = get_field('libtech_faq_type');
-                  } else {
-                      $faqType = 'general';
-                  }
-                  $parentCategory = get_term_by( 'slug', $faqType, 'libtech_faqs_categories' );
-                  // request subcategories
-                  $subCategories = get_terms( 'libtech_faqs_categories', array(
-                      'orderby' => 'name',
-                      'order' => 'ASC',
-                      'parent' => $parentCategory->term_id
-                  ));
+                // get parent category for this page
+                if (get_field('libtech_faq_type')) {
+                    $faqType = get_field('libtech_faq_type');
+                } else {
+                    $faqType = 'general';
+                }
+                $parentCategory = get_term_by( 'slug', $faqType, 'libtech_faqs_categories' );
+                // request subcategories
+                $subCategories = get_terms( 'libtech_faqs_categories', array(
+                    'orderby' => 'name',
+                    'order' => 'ASC',
+                    'parent' => $parentCategory->term_id
+                ));
 
-                  if($subCategories){
-                      $count = count($subCategories);
-                      if ( $count > 0 ){
-                          foreach ( $subCategories as $category ) {
-                              // get taxonimy slug
-                              $catSlug = $category->slug;
-                              $catName = $category->name;
-                              echo "\n\t\t\t\t<li><a href=\"#". $catSlug ."\">". $catName ."</a></li>";
-                          }
-                      }
-                  }
+                if($subCategories){
+                    $count = count($subCategories);
+                    if ( $count > 0 ){
+                        foreach ( $subCategories as $category ) {
+                            // get taxonimy slug
+                            $catSlug = $category->slug;
+                            $catName = $category->name;
+                            echo "\n\t\t\t\t<li><a href=\"#". $catSlug ."\">". $catName ."</a></li>";
+                        }
+                    }
+                }
               ?>
             </ul>
           </nav>
@@ -81,7 +81,7 @@ get_header();
             ?>
           </select>
         </div><!-- .faq-categories -->
-        <div class="faq-list">
+        <div class="faq-list col-xs-12 col-sm-8 col-sm-pull-4">
           <?php
             $count = count($subCategories);
             if ( $count > 0 ){

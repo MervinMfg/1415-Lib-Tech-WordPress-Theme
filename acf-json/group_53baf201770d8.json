@@ -6,7 +6,6 @@
             "key": "field_533dcc174e1e5",
             "label": "Type",
             "name": "libtech_faq_type",
-            "prefix": "",
             "type": "radio",
             "instructions": "",
             "required": 1,
@@ -44,5 +43,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430959005
+    "modified": 1433271160
 }

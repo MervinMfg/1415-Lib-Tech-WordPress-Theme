@@ -1,6 +1,6 @@
 {
     "key": "group_53baf2016d186",
-    "title": "Technology Detail Page",
+    "title": "Technology Detail",
     "fields": [
         {
             "key": "field_534475218c783",
@@ -30,7 +30,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/page-technology-detail.php"
+                "value": "page-templates\/technology-detail.php"
             }
         ]
     ],
@@ -40,6 +40,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1432250833,
+    "modified": 1433270087,
     "local": "json"
 }

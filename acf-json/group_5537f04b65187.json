@@ -6,7 +6,6 @@
             "key": "field_5537f104907e2",
             "label": "Type",
             "name": "libtech_instagram_type",
-            "prefix": "",
             "type": "radio",
             "instructions": "Select wether you want to pull in a user's photos or a hashtag.",
             "required": 1,
@@ -29,7 +28,6 @@
             "key": "field_5537f051907e0",
             "label": "Username",
             "name": "libtech_instagram_username",
-            "prefix": "",
             "type": "text",
             "instructions": "Instagram username you want to view photos from",
             "required": 0,
@@ -59,7 +57,6 @@
             "key": "field_5537f181907e3",
             "label": "Tag",
             "name": "libtech_instagram_tag",
-            "prefix": "",
             "type": "text",
             "instructions": "Instagram tag you want to view photos from",
             "required": 0,
@@ -89,7 +86,6 @@
             "key": "field_5537f063907e1",
             "label": "Limit",
             "name": "libtech_instagram_limit",
-            "prefix": "",
             "type": "number",
             "instructions": "Number of Instagram photos to appear on page.",
             "required": 1,
@@ -160,5 +156,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430956350
+    "modified": 1432675627,
+    "local": "json"
 }

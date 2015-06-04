@@ -90,7 +90,7 @@ function libtech_comments_template() {
       echo '</div><div class="clearfix"></div></div>';
     else :
       // render product post comment block
-      echo '<div class="discussion-top bg1-top"></div><section class="discussion bg1"><div class="section-content"><div class="discussion-thread">';
+      echo '<section class="discussion container-fluid"><div class="section-content row"><div class="discussion-thread col-ms-12">';
       comments_template();
       echo '</div><div class="clearfix"></div></div></section>';
     endif;

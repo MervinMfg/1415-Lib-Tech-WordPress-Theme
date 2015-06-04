@@ -6,7 +6,6 @@
             "key": "field_528d50fcb1207",
             "label": "Video",
             "name": "libtech_team_overview_video",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -41,6 +40,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430254291,
+    "modified": 1432675628,
     "local": "json"
 }

@@ -6,7 +6,6 @@
             "key": "field_501b04da27b51",
             "label": "Facebook Username",
             "name": "libtech_homepage_fb_username",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -29,7 +28,6 @@
             "key": "field_50abd392e7343",
             "label": "Instagram Username",
             "name": "libtech_homepage_instagram_username",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -52,7 +50,6 @@
             "key": "field_51a552f84023d",
             "label": "Vimeo Username",
             "name": "libtech_homepage_vimeo_username",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -75,7 +72,6 @@
             "key": "field_51a553664023e",
             "label": "Twitter Username",
             "name": "libtech_homepage_twitter_username",
-            "prefix": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -110,5 +106,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430956246
+    "modified": 1432675627,
+    "local": "json"
 }

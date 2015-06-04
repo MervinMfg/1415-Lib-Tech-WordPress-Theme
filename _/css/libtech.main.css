@@ -168,7 +168,7 @@ h3, .h3 { color: #fff; font-size: 1.375em; font-weight: 700; line-height: 1.25; 
 
 h4, .h4 { color: #FFFF00; font-size: 1.125em; font-weight: 700; line-height: 1; }
 
-h5, .h5 { color: #999; font-size: .75em; font-weight: 700; line-height: 1; text-transform: uppercase; }
+h5, .h5 { color: #fff; font-size: .75em; font-weight: 700; line-height: 1; text-transform: uppercase; }
 
 p, .p { font-size: .875em; line-height: 1.32; }
 
@@ -437,6 +437,8 @@ body { background: #000; }
 
 .skate .price .active .currency-note { color: #66CC00; }
 
+.page-template-environmental-detail.surf .video-header .video-text li { color: #66CC00; }
+
 .video-header { padding-bottom: 20px; }
 .video-header .section-content h1 { color: #FFFF00; margin-bottom: 20px; }
 .video-header .section-content h1.ski { color: #0099FF; }
@@ -458,8 +460,6 @@ body { background: #000; }
 @media screen and (min-width: 1400px) { .section-content { margin: 0 auto; max-width: 1640px; }
   .container-fluid { max-width: 100%; } }
 .page-template-lib-legs .video-header { padding-bottom: 50px; }
-
-.page-template-page-technology-detail .video-header { padding-bottom: 60px; }
 
 /* ========================================================================== COMPONENTS/_REGION-SELECTOR.SCSS ========================================================================== */
 /* Region Selector Styles
@@ -786,14 +786,14 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-filtering .details p:first-child { color: #FFFF00; font-weight: bold; } }
 .product-details-nav { display: none; }
 
-.product-details { padding-left: 20px; padding-right: 20px; }
-.product-details h1, .product-details h3 { padding: 0 0 20px; text-align: center; }
+.product-details h1 { padding: 0 0 20px; text-align: center; }
+.product-details h3 { padding: 0 0 20px; text-align: center; }
+.product-details .product-images { padding-bottom: 30px; padding-top: 30px; }
 .product-details .product-images .bx-viewport { background: none; }
-.product-details .product-images ul li a { display: block; margin-left: -30%; width: 160%; }
+.product-details .product-images ul li a { display: block; width: 160%; margin-left: -30%; }
 .product-details .product-images ul li a img { height: auto; width: 100%; }
-.product-details .product-images .surf-images { padding-bottom: 20px; }
-.product-details .product-images .surf-images .surfboard-top, .product-details .product-images .surf-images .surfboard-bottom { cursor: pointer; float: left; width: 45%; }
-.product-details .product-images .surf-images .surfboard-side { cursor: pointer; float: left; width: 10%; }
+.product-details .surf-images .surfboard-top, .product-details .surf-images .surfboard-bottom { cursor: pointer; float: left; width: 45%; }
+.product-details .surf-images .surfboard-side { cursor: pointer; float: left; width: 10%; }
 .product-details .image-list-thumbs { padding: 20px 0 40px; }
 .product-details .image-list-thumbs.hidden { display: none; }
 .product-details .image-list-thumbs .bx-wrapper { margin: 0 !important; }
@@ -802,8 +802,9 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .image-list-thumbs li { float: left; }
 .product-details .image-list-thumbs li a img { -webkit-opacity: 0.65; -moz-opacity: 0.65; -ms-opacity: 0.65; -o-opacity: 0.65; opacity: 0.65; -webkit-transition: opacity 200ms ease-in-out; -moz-transition: opacity 200ms ease-in-out; -ms-transition: opacity 200ms ease-in-out; -o-transition: opacity 200ms ease-in-out; transition: opacity 200ms ease-in-out; }
 .product-details .image-list-thumbs li a:hover img, .product-details .image-list-thumbs li a:focus img, .product-details .image-list-thumbs li a.active img { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
+.product-details .product-details-right { padding-top: 25px; }
 .product-details .product-details-right .product-note-wrapper { clear: both; padding-bottom: 10px; }
-.product-details .product-details-right .product-note-wrapper .product-note { margin-top: -20px; max-width: 540px; padding-bottom: 25px; text-align: center; }
+.product-details .product-details-right .product-note-wrapper .product-note { margin-top: -20px; padding-bottom: 25px; text-align: center; }
 .product-details .product-details-right .product-note-wrapper .product-note span { display: block; }
 .product-details .product-price { clear: both; font-size: 1.4em; font-weight: bold; padding-bottom: 20px; }
 .product-details .product-price .price-logo, .product-details .product-price .price-graphic, .product-details .product-price .price-logo-five, .product-details .product-price .price-graphic-five { display: none; }
@@ -812,16 +813,17 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-price .price-alert { display: none; }
 .product-details .product-stock-alert p { color: #fff; display: none; margin-bottom: 10px; }
 .product-details .product-stock-alert p.active { display: block; }
-.product-details .product-variations { display: none; margin-bottom: 10px; }
+.product-details .product-variations { display: none; margin-bottom: 30px; }
 .product-details .product-alert p { display: none; }
-.product-details .product-buy { margin-bottom: 40px; }
+.product-details .product-buy { margin-bottom: 55px; }
 .product-details .product-buy ul li.loading { background: url("../img/loader.gif") center center no-repeat #000; height: 20px; margin-bottom: 20px; width: 64px; }
 .product-details .product-buy ul li.loading.hidden { display: none; }
 .product-details .product-buy ul li.cart-button { display: none; margin-bottom: 10px; }
-.product-details .product-buy ul li.cart-button .add-to-cart { background: #FFFF00; color: #000; display: inline-block; padding: 5px 10px; text-decoration: none; }
-.product-details .product-buy ul li.cart-button .add-to-cart:hover, .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #FFFF00; }
+.product-details .product-buy ul li.cart-button .add-to-cart { display: inline-block; text-decoration: none; }
 .product-details .product-buy ul li.cart-button img { float: right; }
-.product-details .product-buy ul li.find-dealer { font-weight: normal; margin-bottom: 10px; }
+.product-details .product-buy ul li.find-dealer { font-weight: normal; margin-bottom: 10px; margin-top: 20px; text-align: left; }
+.product-details .product-buy ul li.find-dealer a { color: #999; text-transform: uppercase; }
+.product-details .product-buy ul li.find-dealer a:hover, .product-details .product-buy ul li.find-dealer a:focus { color: #FFF; }
 .product-details .product-buy .cart-success, .product-details .product-buy .cart-failure { border: dashed 2px #FFFF00; color: #fff; padding: 10px 10px 0; }
 .product-details .product-buy .cart-success p, .product-details .product-buy .cart-failure p { margin-bottom: 10px; }
 .product-details .product-buy .cart-success p .cart-link, .product-details .product-buy .cart-failure p .cart-link { background: #FFFF00; color: #000; font-size: 1.2em; padding: 2px 8px 2px 4px; text-transform: uppercase; }
@@ -834,16 +836,29 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details.available .product-buy ul li.cart-button { display: block; }
 .product-details.available .product-buy ul li.cart-button.hidden { display: none; }
 .product-details.available .product-buy ul li.unavailable { display: none; }
-.product-details .product-quick-specs { margin-bottom: 40px; }
+.product-details .product-quick-specs { margin-bottom: 30px; }
 .product-details .product-quick-specs li { margin-bottom: 5px; }
 .product-details .product-quick-specs li span { color: #FFFF00; padding-right: 10px; text-transform: uppercase; }
 .product-details .product-quick-specs li span.us-sizes, .product-details .product-quick-specs li span.eu-sizes { color: #ccc; }
-.product-details .product-description { margin-bottom: 40px; max-width: 540px; }
+.product-details .product-description { margin-bottom: 30px; padding-top: 25px; }
 .product-details .product-description p { font-size: 1.1em; margin-bottom: 10px; }
 .product-details .product-description ul { font-size: 1.1em; list-style: square; margin: 0 0 10px 25px; }
 .product-details .product-description ul li { margin: 0 0 5px; }
 .product-details .product-share { display: none; }
-.product-details .product-share li { float: left; margin-bottom: 5px; width: 125px; }
+.product-details .view-tech-link, .product-details .view-video-link, .product-details .specs-link { text-transform: uppercase; }
+
+.view-arrow { -webkit-transition: margin-left 100ms ease-in-out; -moz-transition: margin-left 100ms ease-in-out; -ms-transition: margin-left 100ms ease-in-out; -o-transition: margin-left 100ms ease-in-out; transition: margin-left 100ms ease-in-out; background: url("../img/sprite.png"); display: inline-block; height: 14px; margin-left: 5px; width: 14px; }
+
+.view-tech-link:hover, .view-video-link:hover { text-decoration: none; }
+.view-tech-link:hover .view-arrow, .view-video-link:hover .view-arrow { margin-left: 10px; }
+
+.single-libtech_snowboards .view-arrow { background-position: -409px 0; }
+
+.single-libtech_nas .view-arrow { background-position: -409px -24px; }
+
+.single-libtech_surfboards .view-arrow { background-position: -409px -49px; }
+
+.single-libtech_skateboards .view-arrow { background-position: -409px -74px; }
 
 .currency-eur .product-details.available .product-price .price-alert.usd { display: none; }
 .currency-eur .product-details.available .product-price .price-alert.cad { display: none; }
@@ -861,8 +876,6 @@ body.international .shopping-cart-wrapper { display: none; }
 
 .ski .product-details h1 { padding-bottom: 5px; }
 .ski .product-details .product-alert p span { color: #0099FF; }
-.ski .product-details .product-buy ul li.cart-button .add-to-cart { background: #0099FF; }
-.ski .product-details .product-buy ul li.cart-button .add-to-cart:hover, .ski .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #0099FF; }
 .ski .product-details .product-buy .cart-success, .ski .product-details .product-buy .cart-failure { border-color: #0099FF; }
 .ski .product-details .product-buy .cart-success p .cart-link { background-color: #0099FF; }
 .ski .product-details .product-quick-specs li span { color: #0099FF; }
@@ -875,164 +888,90 @@ body.international .shopping-cart-wrapper { display: none; }
 .single-libtech_nas .product-details .product-images .bx-controls { display: none; }
 
 .surf .product-details .product-alert p span { color: #FF6600; }
-.surf .product-details .product-buy ul li.cart-button .add-to-cart { background: #FF6600; }
-.surf .product-details .product-buy ul li.cart-button .add-to-cart:hover, .surf .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #FF6600; }
+.surf .product-details .product-buy ul li.cart-button .button { float: left; }
 .surf .product-details .product-buy .cart-success, .surf .product-details .product-buy .cart-failure { border-color: #FF6600; }
 .surf .product-details .product-buy .cart-success p .cart-link { background-color: #FF6600; }
 .surf .product-details .product-quick-specs li span { color: #FF6600; }
 .surf .product-details .product-quick-specs li span.us-sizes, .surf .product-details .product-quick-specs li span.eu-sizes { color: #ccc; }
 
 .skate .product-details .product-alert p span { color: #66CC00; }
-.skate .product-details .product-buy ul li.cart-button .add-to-cart { background: #66CC00; }
-.skate .product-details .product-buy ul li.cart-button .add-to-cart:hover, .skate .product-details .product-buy ul li.cart-button .add-to-cart:focus { background: #000; color: #66CC00; }
 .skate .product-details .product-buy .cart-success, .skate .product-details .product-buy .cart-failure { border-color: #66CC00; }
 .skate .product-details .product-buy .cart-success p .cart-link { background-color: #66CC00; }
 .skate .product-details .product-quick-specs li span { color: #66CC00; }
 .skate .product-details .product-quick-specs li span.us-sizes, .skate .product-details .product-quick-specs li span.eu-sizes { color: #ccc; }
 
-.single-libtech_apparel .product-details .product-images ul li a, .single-libtech_accessories .product-details .product-images ul li a, .single-libtech_accessories .product-details .product-images ul li a, .single-libtech_bindings .product-details .product-images ul li a { margin-left: 0; width: 100%; }
+.single-libtech_apparel .product-details .product-images ul li a, .single-libtech_accessories .product-details .product-images ul li a { margin-left: 0; width: 100%; }
 
 .product-zoom { display: none; }
 .product-zoom .section-content { min-height: 250px; position: relative; }
 .product-zoom .section-content .zoom-title { margin: 0 auto; max-width: 45%; text-align: center; }
 .product-zoom .section-content .zoom-title .h5 { color: #fff; }
-.product-zoom .section-content .zoom-image img { width: 100%; }
+.product-zoom .section-content .zoom-image img { width: 100%; padding-bottom: 30px; padding-top: 30px; }
 .product-zoom .section-content .zoom-image img.surfboard-top, .product-zoom .section-content .zoom-image img.surfboard-bottom { float: left; width: 45%; }
 .product-zoom .section-content .zoom-image img.surfboard-side { float: left; width: 10%; }
-.product-zoom .section-content .zoom-controls { position: absolute; right: 20px; text-align: center; top: 0; width: 200px; }
-.product-zoom .section-content .zoom-controls .zoom-close { background: #FFFF00; clear: both; color: #000; display: inline-block; margin-bottom: 40px; padding: 5px 10px; }
+.product-zoom .section-content .zoom-controls { position: absolute; right: 0; text-align: center; top: 0; width: 200px; }
+.product-zoom .section-content .zoom-controls .zoom-close { margin-bottom: 30px; margin-top: 5px; }
 .product-zoom .section-content .zoom-controls ul { clear: both; }
 .product-zoom .section-content .zoom-controls ul.hidden { display: none; }
 .product-zoom .section-content .zoom-controls ul li { float: left; padding: 0 0 10px; }
 .product-zoom .section-content .zoom-controls ul li a img { -webkit-opacity: 0.65; -moz-opacity: 0.65; -ms-opacity: 0.65; -o-opacity: 0.65; opacity: 0.65; -webkit-transition: opacity 200ms ease-in-out; -moz-transition: opacity 200ms ease-in-out; -ms-transition: opacity 200ms ease-in-out; -o-transition: opacity 200ms ease-in-out; transition: opacity 200ms ease-in-out; }
 .product-zoom .section-content .zoom-controls ul li a:hover img, .product-zoom .section-content .zoom-controls ul li a:focus img, .product-zoom .section-content .zoom-controls ul li a.active img { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; }
 
-.ski .product-zoom .section-content .zoom-controls .zoom-close { background: #0099FF; }
-
-.surf .product-zoom .section-content .zoom-controls .zoom-close { background: #FF6600; }
-
-.skate .product-zoom .section-content .zoom-controls .zoom-close { background: #66CC00; }
-
-/* custom zoom thumbnail layout for surfboards */
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls { padding: 20px; position: relative; right: 0; width: 100%; }
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls .zoom-close { clear: none; position: absolute; right: 20px; top: -50px; }
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls ul { clear: none; }
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls .bx-wrapper .bx-loading { background: none; }
 .single-libtech_surfboards .product-zoom .section-content .zoom-controls .bx-wrapper .bx-viewport { background: none; }
 
-.product-extras { padding-left: 20px; padding-right: 20px; }
-.product-extras .product-mobile-nav { padding-bottom: 20px; width: 100%; }
-.product-extras .product-mobile-nav li { float: left; width: 33.33%; }
-.product-extras .product-mobile-nav li.margin { padding-right: 2%; }
-.product-extras .product-mobile-nav li a { background: #FFFF00; color: #000; display: inline-block; padding: 5px 10px; text-align: center; width: 100%; }
-.product-extras .product-mobile-nav li a.selected { background: none; color: #FFFF00; cursor: default; text-decoration: none; }
-.product-extras.info .product-specs, .product-extras.info .product-tech-major, .product-extras.info .product-tech-minor, .product-extras.info .product-tech-construction { display: none; }
-.product-extras.specs .product-description, .product-extras.specs .product-awards, .product-extras.specs .product-tech-major, .product-extras.specs .product-tech-minor, .product-extras.specs .product-tech-construction { display: none; }
-.product-extras.tech .product-description, .product-extras.tech .product-awards, .product-extras.tech .product-specs { display: none; }
-.product-extras .product-description { margin-bottom: 20px; }
+.product-extras .product-description { padding-bottom: 10px; padding-top: 25px; }
 .product-extras .product-description p { font-size: 1.1em; margin-bottom: 20px; }
 .product-extras .product-description ul { font-size: 1.1em; list-style: square; margin: 0 0 20px 25px; }
 .product-extras .product-description ul li { margin: 0 0 5px; }
 .product-extras .product-description .wp-caption { width: auto !important; }
 .product-extras .product-description .wp-caption img { height: auto; }
-.product-extras .product-awards { padding-bottom: 20px; }
-.product-extras .product-awards h2 { margin-bottom: 10px; }
+.product-extras .product-awards { padding-bottom: 10px; padding-top: 25px; }
+.product-extras .product-awards h3 { margin-bottom: 10px; }
 .product-extras .product-awards ul li { float: left; padding: 0 20px 20px 0; position: relative; width: 120px; }
 .product-extras .product-awards ul li img { height: auto; max-width: 100%; }
 .product-extras .product-awards ul li .tool-tip { -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; -webkit-transition: opacity 200ms ease-in-out; -moz-transition: opacity 200ms ease-in-out; -ms-transition: opacity 200ms ease-in-out; -o-transition: opacity 200ms ease-in-out; transition: opacity 200ms ease-in-out; background: #fff100; background: rgba(255, 250, 5, 0.9); border: solid 2px #000; border-radius: 10px; color: #000; display: block; font-size: .75em; font-weight: bold; left: -20px; padding: 10px; position: absolute; text-align: center; text-transform: uppercase; top: 15px; visibility: hidden; width: 140px; z-index: 100; }
 .product-extras .product-awards ul li:hover .tool-tip { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; visibility: visible; }
-.product-extras .product-specs { overflow: hidden; padding-bottom: 20px; }
-.product-extras .product-specs h2 { margin-bottom: 10px; }
-.product-extras .product-specs table { width: 100%; }
+.product-extras .product-specs { overflow: hidden; padding-top: 25px; }
+.product-extras .product-specs h3 { margin-bottom: 10px; }
+.product-extras .product-specs table { margin-bottom: 30px; width: 100%; }
 .product-extras .product-specs table thead { background: #333; }
-.product-extras .product-specs table thead th { font-size: 11px; padding: 10px; text-align: left; text-transform: uppercase; vertical-align: top; }
-.product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(7), .product-extras .product-specs table thead th:nth-child(9) { display: none; }
+.product-extras .product-specs table thead th { font-size: .7em; padding: 10px; text-align: left; text-transform: uppercase; vertical-align: top; }
 .product-extras .product-specs table thead th span { font-size: 9px; font-weight: normal; }
 .product-extras .product-specs table tbody tr { background: #000; }
 .product-extras .product-specs table tbody tr:nth-child(even) { background: #181818; }
-.product-extras .product-specs table tbody tr td { padding: 10px; }
-.product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(7), .product-extras .product-specs table tbody tr td:nth-child(9) { display: none; }
+.product-extras .product-specs table tbody tr td { font-size: .7em; padding: 10px; }
 .product-extras .product-specs table tfoot { background: #333; }
-.product-extras .product-specs table tfoot td { font-size: 11px; padding: 10px; text-transform: uppercase; vertical-align: top; }
+.product-extras .product-specs table tfoot td { font-size: .7em; padding: 10px; text-transform: uppercase; vertical-align: top; }
 .product-extras .product-specs table tfoot td a { font-weight: bold; }
-.product-extras .product-specs table tfoot td:nth-child(5), .product-extras .product-specs table tfoot td:nth-child(6), .product-extras .product-specs table tfoot td:nth-child(7), .product-extras .product-specs table tfoot td:nth-child(8), .product-extras .product-specs table tfoot td:nth-child(9) { display: none; }
-.product-extras .product-specs .outerwear-fit { padding-top: 20px; }
-.product-extras .product-specs .outerwear-fit li { padding-bottom: 20px; }
-.product-extras .product-specs .outerwear-fit li h3 { margin-bottom: 10px; }
-.product-extras .product-specs .outerwear-fit li a { text-transform: uppercase; }
-.product-extras .product-tech-major { /* check .tech-major */ }
-.product-extras .product-tech-construction { clear: both; margin-bottom: 20px; }
-.product-extras .product-tech-construction h2 { margin-bottom: 10px; }
-.product-extras .product-tech-construction ul li .construction-image img { max-width: none; width: 100%; }
-.product-extras .product-tech-construction ul li .construction-caption { background: #000; background: rgba(0, 0, 0, 0.5); bottom: 0; padding: 10px; position: absolute; width: 100%; }
+.product-extras .product-tech-major h3 { margin-bottom: 10px; }
+.product-extras .product-tech-major .tech-image { display: none; }
+.product-extras .product-tech-major .item ul { font-size: 1.1em; list-style: square; margin: 0 0 20px 25px; }
+.product-extras .product-tech-major .item ul li { margin: 0 0 5px; }
+.product-extras .outerwear-fit { padding-top: 25px; }
+.product-extras .outerwear-fit li { padding-bottom: 20px; }
+.product-extras .outerwear-fit li h3 { margin-bottom: 10px; }
+.product-extras .outerwear-fit li a { text-transform: uppercase; }
 
-.snow .product-extras .product-tech-major ul strong { color: #FFFF00; }
+.single-libtech_snowboards .product-specs th:nth-child(3), .single-libtech_snowboards .product-specs th:nth-child(4), .single-libtech_snowboards .product-specs th:nth-child(6), .single-libtech_snowboards .product-specs th:nth-child(9), .single-libtech_snowboards .product-specs td:nth-child(3), .single-libtech_snowboards .product-specs td:nth-child(4), .single-libtech_snowboards .product-specs td:nth-child(6), .single-libtech_snowboards .product-specs td:nth-child(9) { display: none; }
 
-.ski .product-extras .product-tech-major ul strong { color: #0099FF; }
+.single-libtech_nas .product-specs th:nth-child(4), .single-libtech_nas .product-specs th:nth-child(5), .single-libtech_nas .product-specs th:nth-child(6), .single-libtech_nas .product-specs th:nth-child(8), .single-libtech_nas .product-specs td:nth-child(4), .single-libtech_nas .product-specs td:nth-child(5), .single-libtech_nas .product-specs td:nth-child(6), .single-libtech_nas .product-specs td:nth-child(8) { display: none; }
 
-.snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3, .snow .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p, .snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3, .snow .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p, .snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3, .snow .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p { color: #FFFF00; }
+.single-libtech_skateboards .product-specs th:nth-child(6), .single-libtech_skateboards .product-specs td:nth-child(6) { display: none; }
 
-.ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit h3, .ski .product-extras.ripper-fit .product-specs .outerwear-fit li.ripper-fit p, .ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit h3, .ski .product-extras.true-action-fit .product-specs .outerwear-fit li.true-action-fit p, .ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit h3, .ski .product-extras.street-fit .product-specs .outerwear-fit li.street-fit p { color: #0099FF; }
+.single-libtech_nas .product-tech-minor h3, .single-libtech_snowboards .product-tech-minor h3, .single-libtech_skateboards .product-tech-minor h3 { text-transform: capitalize; margin-bottom: 10px; }
 
-.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(3) { display: table-cell; }
-.single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(5) { display: none; }
-.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(3) { display: table-cell; }
-.single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table tbody tr td:nth-child(5) { display: none; }
-.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(3) { display: none; }
-.single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(5) { display: table-cell; }
-.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(3) { display: none; }
-.single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; }
+.product-video { padding-bottom: 30px; padding-top: 30px; }
 
-.single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(2), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(2) { display: none; }
-.single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(4), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(4) { display: table-cell; }
+.product-gallery { padding-bottom: 10px; padding-top: 30px; }
 
-.single-libtech_outerwear .product-extras .product-tech-major ul { list-style: square; padding-left: 20px; }
-.single-libtech_outerwear .product-extras .product-tech-major ul strong { text-transform: uppercase; }
-
-.ski .product-extras .product-mobile-nav li a { background: #0099FF; }
-.ski .product-extras .product-mobile-nav li a.selected { background: none; color: #0099FF; }
-
-.surf .product-extras .product-mobile-nav li a { background: #FF6600; }
-.surf .product-extras .product-mobile-nav li a.selected { background: none; color: #FF6600; }
-
-.skate .product-extras .product-mobile-nav li a { background: #66CC00; }
-.skate .product-extras .product-mobile-nav li a.selected { background: none; color: #66CC00; }
-
-.product-video-top.specs, .product-video-top.tech, .product-gallery-top.specs, .product-gallery-top.tech { display: none; }
-
-.product-video .section-content, .product-gallery .section-content { padding-left: 20px; padding-right: 20px; }
-.product-video.specs, .product-video.tech, .product-gallery.specs, .product-gallery.tech { display: none; }
-.product-video h2, .product-gallery h2 { margin-bottom: 10px; }
-
-.product-video .video-player { padding: 10px 0; width: 100%; }
-
-.single-libtech_snowboards .mfp-iframe-scaler, .single-libtech_skateboards .mfp-iframe-scaler, .single-libtech_nas .mfp-iframe-scaler, .single-libtech_apparel .mfp-iframe-scaler { padding-top: 550px; }
-
-@media screen and (min-width: 480px) { .product-details.hide { display: none; }
-  .product-details h1 { clear: right; float: right; text-align: left; width: 40%; }
-  .product-details .product-images { float: left; width: 60%; }
-  .product-details .product-images .bx-wrapper { max-width: 640px !important; }
-  .product-details .product-images .surf-images { margin: 0 auto; max-width: 700px; }
-  .product-details .product-details-right { clear: right; float: right; width: 40%; }
-  .product-details h3 { text-align: left; }
-  .product-details h3, .product-details .image-list-thumbs, .product-details .product-price, .product-details .product-stock-alert, .product-details .product-variations, .product-details .product-alert, .product-details .product-buy, .product-details .product-quick-specs, .product-details .product-share { max-width: 540px; }
-  .currency-eur .single-libtech_snowboards .product-details h1, .single-libtech_skateboards .product-details h1 { width: 50%; }
-  .currency-eur .single-libtech_snowboards .product-details .product-images, .single-libtech_skateboards .product-details .product-images { width: 50%; }
-  .currency-eur .single-libtech_snowboards .product-details .product-images .bx-wrapper, .single-libtech_skateboards .product-details .product-images .bx-wrapper { max-width: 540px !important; }
-  .currency-eur .single-libtech_snowboards .product-details .product-details-right, .single-libtech_skateboards .product-details .product-details-right { width: 50%; }
-  .single-libtech_nas .product-details h3, .single-libtech_nas .product-details .product-price, .single-libtech_nas .product-details .product-stock-alert, .single-libtech_nas .product-details .product-variations, .single-libtech_nas .product-details .product-buy, .single-libtech_nas .product-details .product-quick-specs, .single-libtech_nas .product-details .product-share { max-width: 100%; }
-  .single-libtech_nas .product-details .product-images { float: none; width: 100%; }
-  .single-libtech_nas .product-details .product-images .bx-wrapper { max-width: 100% !important; }
-  .single-libtech_nas .product-details h1 { float: none; text-align: center; width: auto; }
-  .single-libtech_nas .product-details .nas-tech { max-width: 100%; text-align: center; }
-  .single-libtech_nas .product-details h3 { text-align: center; }
-  .single-libtech_surfboards .product-details .product-images { padding-top: 10px; }
-  .product-zoom.show { display: block; }
-  .product-extras .product-mobile-nav { display: none; }
-  .product-extras.info .product-specs, .product-extras.info .product-tech-major, .product-extras.info .product-tech-construction, .product-extras.info .product-tech-minor, .product-extras.specs .product-description, .product-extras.specs .product-awards, .product-extras.specs .product-tech-major, .product-extras.specs .product-tech-construction, .product-extras.specs .product-tech-minor, .product-extras.tech .product-description, .product-extras.tech .product-awards, .product-extras.tech .product-specs { display: block; }
-  .single-libtech_surfboards .product-extras .product-specs table thead th:nth-child(2), .single-libtech_surfboards .product-extras .product-specs table tbody tr td:nth-child(2) { display: table-cell; }
-  .product-video-top.specs, .product-video-top.tech, .product-gallery-top.specs, .product-gallery-top.tech { display: block; }
-  .product-video.specs, .product-video.tech, .product-gallery.specs, .product-gallery.tech { display: block; } }
+@media screen and (min-width: 480px) { .single-libtech_skateboards .product-details .product-images ul li a, .single-libtech_outerwear .product-details .product-images ul li a { margin-left: -15%; width: 130%; }
+  .single-libtech_snowboards .product-details .product-images ul li a { margin-left: -10%; width: 120%; }
+  .single-libtech_surfboards .product-details .surf-images { width: 110%; margin-left: -5%; }
+  .product-zoom.show { display: block; } }
 @media screen and (min-width: 768px) { .product-details-nav { position: relative; z-index: 1; }
   .product-details-nav.active { display: block; margin-top: -50px; }
   .product-details-nav.active .section-content { margin-top: -265px; padding-bottom: 35px; }
@@ -1044,156 +983,67 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-details-nav-btn .toggle-btn.expanded:hover, .product-details-nav-btn .toggle-btn.expanded:focus { background-position: -37px -61px; }
   .product-details-nav-bottom { position: relative; z-index: 2; }
   .single-libtech_accessories .product-details-nav ul li a img, .single-libtech_apparel .product-details-nav ul li a img, .single-libtech_surfboards .product-details-nav ul li a img { margin-left: 0; max-width: 100%; width: 100%; }
-  .product-details .product-share { display: block; }
-  .product-extras .product-desc-awards { float: left; width: 40%; }
-  .product-extras .product-specs { float: right; width: 60%; }
-  .product-extras .product-specs h2, .product-extras .product-specs table { margin-left: 40px; }
-  .product-extras .product-tech-major { clear: both; }
-  .product-extras .product-tech-construction { clear: both; }
-  .single-libtech_nas .product-details h1 { display: inline-block; width: auto; }
-  .single-libtech_nas .product-details h3 { max-width: 540px; text-align: left; }
-  .single-libtech_nas .product-details .product-price, .single-libtech_nas .product-details .product-stock-alert, .single-libtech_nas .product-details .product-variations, .single-libtech_nas .product-details .product-buy, .single-libtech_nas .product-details .product-quick-specs, .single-libtech_nas .product-details .product-share { max-width: 540px; }
-  .single-libtech_nas .product-details .nas-tech { display: inline-block; padding: 18px 0 20px 20px; }
-  .single-libtech_nas .product-details .product-images { float: none; margin: 0 auto; padding: 0 60px 20px; width: 100%; }
-  .single-libtech_nas .product-details .product-images .nas-image a { cursor: default; }
-  .single-libtech_nas .product-details .product-images .bx-controls { display: block; }
-  .single-libtech_nas .product-details .product-images .bx-controls .bx-prev { left: -60px; }
-  .single-libtech_nas .product-details .product-images .bx-controls .bx-next { right: -60px; }
-  .single-libtech_nas .product-details .details-left { float: left; width: 40%; }
-  .single-libtech_nas .product-details .details-right { float: right; padding-top: 45px; width: 60%; }
-  .single-libtech_nas .product-details .details-right .product-quick-specs { padding-left: 40px; }
-  .single-libtech_nas .product-details .details-right .product-share { padding-left: 40px; }
-  .single-libtech_nas .product-details .details-right .product-share li { width: 100px; }
-  .single-libtech_outerwear .product-extras .product-desc-awards { float: left; width: 60%; }
-  .single-libtech_outerwear .product-extras .product-tech-major { clear: none; float: right; width: 40%; }
-  .single-libtech_outerwear .product-extras .product-tech-major h2 { padding-left: 20px; }
-  .single-libtech_outerwear .product-extras .product-tech-major ul { padding-left: 40px; }
-  .single-libtech_outerwear .product-extras .product-specs, .page-template-page-templatesstorm-factory-php .product-extras .product-specs { float: none; width: 100%; }
-  .single-libtech_outerwear .product-extras .product-specs h2, .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 { margin-left: 0; }
-  .single-libtech_outerwear .product-extras .product-specs table, .page-template-page-templatesstorm-factory-php .product-extras .product-specs table { float: left; margin-left: 0; width: 60%; }
-  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit, .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit { float: left; padding-top: 0; width: 40%; }
-  .single-libtech_outerwear .product-extras .product-specs .outerwear-fit li, .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit li { padding-left: 20px; }
-  .product-video .video-player { margin: 0 auto; width: 90%; } }
-@media screen and (min-width: 992px) { .product-extras .product-desc-awards-specs { width: 100%; }
-  .product-extras .product-desc-awards-specs .product-desc-awards { float: none; width: 100%; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-description { float: left; width: 60%; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-description p { padding-right: 40px; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-awards { float: right; width: 40%; }
-  .product-extras .product-desc-awards-specs .product-specs { clear: right; float: right; width: 40%; }
-  .product-extras .product-desc-awards-specs .product-specs h2, .product-extras .product-desc-awards-specs .product-specs table { margin-left: 0; }
-  .product-extras .product-tech-construction { clear: none; float: left; width: 60%; }
-  .product-extras .product-tech-construction .construction-slideshow { padding-right: 40px; }
-  .product-extras .product-tech-major { clear: none; float: left; width: 60%; }
-  .single-libtech_nas .product-details .section-content { margin: 0 auto; max-width: 1200px; }
-  .single-libtech_nas .product-details .section-content .details-left { width: 60%; }
-  .single-libtech_nas .product-details .section-content .details-left .product-price, .single-libtech_nas .product-details .section-content .details-left .product-variations, .single-libtech_nas .product-details .section-content .details-left .product-buy { max-width: 100%; padding-right: 40px; }
-  .single-libtech_nas .product-details .section-content .details-right { float: right; width: 40%; }
-  .single-libtech_nas .product-details .section-content .details-right .product-quick-specs { padding-left: 0; }
-  .single-libtech_nas .product-details .section-content .details-right .product-share { padding-left: 0; }
-  .single-libtech_nas .product-details .section-content .details-right .product-share li { width: 100px; }
-  .single-libtech_outerwear .product-extras .product-desc-awards { float: left; width: 60%; }
-  .single-libtech_outerwear .product-extras .product-desc-awards .product-description { clear: none; width: 100%; }
-  .single-libtech_outerwear .product-extras .product-desc-awards .product-description p { padding-right: 0; }
-  .single-libtech_outerwear .product-extras .product-desc-awards .product-awards { float: none; width: 100%; }
-  .product-details .product-details-right .product-note-wrapper .product-note span { display: inline; }
-  .product-details.available .product-price .price-alert { padding-left: 20px; }
-  .product-details.available .product-price .price-alert.usd { display: inline-block; }
-  .currency-eur .product-details.available .product-price .price-alert.eur { display: inline-block; }
-  .product-video .video-player { width: 75%; } }
-@media screen and (min-width: 1200px) { .product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(9) { display: table-cell; }
-  .product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(9) { display: table-cell; }
-  .product-extras .product-specs table tfoot tr td:nth-child(5), .product-extras .product-specs table tfoot tr td:nth-child(6), .product-extras .product-specs table tfoot tr td:nth-child(8), .product-extras .product-specs table tfoot tr td:nth-child(9) { display: table-cell; }
-  .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table thead th:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table thead th:nth-child(5) { display: table-cell; }
-  .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.jackets .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.layers .product-specs table tbody tr td:nth-child(5), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(2), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(3), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(4), .single-libtech_outerwear .product-extras.pants .product-specs table tbody tr td:nth-child(5) { display: table-cell; }
-  .product-video .video-player { width: 50%; } }
-@media screen and (min-width: 1400px) { .product-extras .product-desc-awards-specs { float: left; width: 40%; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-description { width: 100%; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-description p { padding-right: 0; }
-  .product-extras .product-desc-awards-specs .product-desc-awards .product-awards { width: 100%; }
-  .product-extras .product-desc-awards-specs .product-specs { width: 100%; }
-  .product-extras .product-desc-awards-specs .product-specs table thead th:nth-child(7) { display: table-cell; }
-  .product-extras .product-desc-awards-specs .product-specs table tbody tr td:nth-child(7) { display: table-cell; }
-  .product-extras .product-desc-awards-specs .product-specs table tfoot tr td:nth-child(7) { display: table-cell; }
-  .product-extras .product-tech-construction { float: right; width: 60%; }
-  .product-extras .product-tech-construction h2 { padding-left: 40px; }
-  .product-extras .product-tech-construction .construction-slideshow { padding-left: 40px; }
-  .product-extras .product-tech-major { clear: none; float: right; width: 60%; }
-  .product-extras .product-tech-major h2 { padding-left: 40px; }
-  .product-extras .product-tech-major ul { padding-left: 40px; }
-  .product-extras .product-tech-major ul li { padding-right: 0; }
-  .product-extras .product-tech-minor.hesho { clear: none; float: right; width: 60%; }
-  .product-extras .product-tech-minor.hesho h2, .product-extras .product-tech-minor.hesho ul { padding-left: 40px; }
-  .product-extras .product-tech-minor.hesho ul li { width: 48%; }
-  .single-libtech_outerwear .product-extras .product-desc-awards-specs { float: none; width: auto; }
-  .product-video .section-content { max-width: 1680px; } }
-.tech-major .section-content { padding: 0 20px; }
+  .product-details .share-wrapper { padding-bottom: 25px; }
+  .product-details .share-wrapper .product-share { display: block; margin-left: -10px; margin-right: -10px; }
+  .product-details .share-wrapper .product-share li { padding-top: 20px; text-align: left; width: 100px; }
+  .product-details h1 { text-align: left; }
+  .product-details h3 { text-align: left; }
+  .product-details .product-images { padding-bottom: 30px; }
+  .product-extras .product-tech-major .tech-image { display: block; margin-bottom: 0; } }
+@media screen and (min-width: 1200px) { .single-libtech_snowboards .product-specs th:nth-child(3), .single-libtech_snowboards .product-specs th:nth-child(4), .single-libtech_snowboards .product-specs th:nth-child(6), .single-libtech_snowboards .product-specs th:nth-child(9), .single-libtech_snowboards .product-specs td:nth-child(3), .single-libtech_snowboards .product-specs td:nth-child(4), .single-libtech_snowboards .product-specs td:nth-child(6), .single-libtech_snowboards .product-specs td:nth-child(9) { display: table-cell; }
+  .single-libtech_nas .product-specs th:nth-child(4), .single-libtech_nas .product-specs th:nth-child(5), .single-libtech_nas .product-specs th:nth-child(6), .single-libtech_nas .product-specs th:nth-child(8), .single-libtech_nas .product-specs td:nth-child(4), .single-libtech_nas .product-specs td:nth-child(5), .single-libtech_nas .product-specs td:nth-child(6), .single-libtech_nas .product-specs td:nth-child(8) { display: table-cell; }
+  .single-libtech_skateboards .product-specs th:nth-child(6), .single-libtech_skateboards .product-specs td:nth-child(6) { display: table-cell; } }
+.tech-major { padding-top: 25px; }
 .tech-major h2 { margin-bottom: 10px; }
-.tech-major ul li { margin-bottom: 20px; }
-.tech-major ul li .tech-video, .tech-major ul li .tech-image { margin-bottom: 10px; }
-.tech-major ul li .tech-copy { margin-bottom: 20px; }
-.tech-major ul li .tech-copy h4, .tech-major ul li .tech-copy h5 { margin-bottom: 5px; }
-.tech-major ul li .tech-copy p { margin-bottom: 15px; }
-.tech-major ul li .tech-copy .tech-found-on { display: none; margin: 10px 0 20px; }
-.tech-major ul li .tech-copy .tech-found-on ul li { float: left; width: 50%; }
-.tech-major ul li .tech-copy ul { list-style: square; padding-left: 25px; }
-.tech-major ul li .tech-copy ul li { margin-bottom: 3px; }
+.tech-major .tech-video-list .tech-video-item { margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-video, .tech-major .tech-video-list .tech-video-item .tech-image { margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy h4, .tech-major .tech-video-list .tech-video-item .tech-copy h5 { margin-bottom: 5px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy p { margin-bottom: 15px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on { display: none; margin: 10px 0; }
+.tech-major .tech-video-list .tech-video-item .tech-copy .tech-found-on ul li { float: left; width: 50%; }
+.tech-major .tech-video-list .tech-video-item .tech-copy ul { list-style: square; padding-left: 25px; margin-bottom: 10px; }
+.tech-major .tech-video-list .tech-video-item .tech-copy ul li { margin-bottom: 3px; }
 
-.tech-major.tech-surf h2 { display: none; }
-.tech-major.tech-surf .surf-technology h4, .tech-major.tech-surf .surf-environmental h4, .tech-major.tech-surf .surf-ding h4, .tech-major.tech-surf .surf-fins h4, .tech-major.tech-surf .surf-performance h4, .tech-major.tech-surf .surf-handcrafted h4 { color: #000; padding: 5px; }
-.tech-major.tech-surf .surf-technology img, .tech-major.tech-surf .surf-environmental img, .tech-major.tech-surf .surf-ding img, .tech-major.tech-surf .surf-fins img, .tech-major.tech-surf .surf-performance img, .tech-major.tech-surf .surf-handcrafted img { border: solid #333 1px; }
-.tech-major.tech-surf .surf-technology h4 { background-color: #f00; }
-.tech-major.tech-surf .surf-environmental h4 { background-color: #66CC00; }
-.tech-major.tech-surf .surf-ding h4 { background-color: #FF6600; }
-.tech-major.tech-surf .surf-fins h4 { background-color: #FFFF00; }
-.tech-major.tech-surf .surf-performance h4 { background-color: #0099FF; }
-.tech-major.tech-surf .surf-handcrafted h4 { background-color: #fff; }
-
-.single-libtech_bindings .product-extras .product-tech-major, .single-libtech_bindings .product-extras.info .product-tech-major, .single-libtech_bindings .product-extras.tech .product-tech-major, .single-libtech_bindings .product-extras.specs .product-tech-major { display: none; }
-
-.tech-minor { clear: both; }
-.tech-minor .section-content { padding: 0 20px; }
 .tech-minor h2 { margin-bottom: 10px; }
 
-.tech-minor > ul > li, .tech-minor .section-content > ul > li { padding-bottom: 20px; }
-.tech-minor > ul > li h4 img, .tech-minor .section-content > ul > li h4 img { display: inline-block; height: auto; padding-bottom: 10px; vertical-align: middle; width: 25%; }
-.tech-minor > ul > li h4 > span, .tech-minor .section-content > ul > li h4 > span { display: inline-block; padding-left: 20px; width: 75%; }
-.tech-minor > ul > li .tech-copy, .tech-minor .section-content > ul > li .tech-copy { clear: both; }
-.tech-minor > ul > li .tech-copy ul, .tech-minor .section-content > ul > li .tech-copy ul { list-style: square; margin-left: 25px; }
+.surf .tech-minor { padding-bottom: 30px; padding-top: 25px; }
+.surf .tech-minor h5 { margin-bottom: 10px; }
+.surf .tech-minor img { margin-bottom: 5px; }
+.surf .tech-minor .tech-copy strong { color: #66CC00; font-weight: normal; }
+.surf .tech-minor .tech-copy p { margin-bottom: 10px; }
+.surf .tech-minor .tech-copy ul { font-size: .875em; line-height: 1.32; }
+.surf .tech-minor .tech-copy ul li { margin-bottom: 5px; }
+.surf .tech-minor .surf-tech-logo .tech-logo { color: #666; padding-bottom: 20px; text-align: center; }
+.surf .tech-minor .surf-tech-logo .tech-logo img { display: block; }
+.surf .tech-minor .surf-tech-logo .tech-logo .tech-logo-new { display: block; text-align: left; }
+.surf .tech-minor .surf-tech-logo .tech-logo .tech-logo-phase { display: block; text-align: right; }
+.surf .tech-minor .surf-tech-logo .tech-slogan { padding-bottom: 40px; text-align: center; }
+.surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-left { padding-bottom: 10px; }
+.surf .tech-minor .surf-handcrafted { padding-top: 30px; }
+.surf .tech-minor .surf-handcrafted .handcrafted-image { padding-bottom: 20px; }
+.surf .tech-minor .surf-handcrafted .handcrafted-title { padding-bottom: 10px; text-align: center; }
 
-.single-libtech_outerwear .tech-minor > ul > li > img, .page-template-page-templatesstorm-factory-php .tech-minor > ul > li > img { width: 100%; }
+.tech-minor > .wrapper > .item, .tech-minor .section-content > .wrapper > .item { vertical-align: top; }
+.tech-minor > .wrapper > .item h4 img, .tech-minor .section-content > .wrapper > .item h4 img { display: block; height: auto; padding-bottom: 10px; vertical-align: middle; width: 40%; }
+.tech-minor > .wrapper > .item .tech-copy ul, .tech-minor .section-content > .wrapper > .item .tech-copy ul { list-style: square; margin-left: 25px; }
+.tech-minor > .wrapper > .item .tech-pad, .tech-minor .section-content > .wrapper > .item .tech-pad { padding-bottom: 30px; }
+.tech-minor.surf .wrapper .item h4 img, .tech-minor .section-content.surf .wrapper .item h4 img { width: 100%; }
 
-.tech-faq .section-content { padding: 0 10px; }
-.tech-faq h2 { margin-bottom: 20px; padding: 0 10px; }
+.product-tech-minor { padding-bottom: 0; padding-top: 25px; }
+
+.single-libtech_outerwear .product-tech-minor ul li, .page-template-storm-factory .product-tech-minor ul li { padding-bottom: 20px; }
+.single-libtech_outerwear .product-tech-minor .wrapper .item, .page-template-storm-factory .product-tech-minor .wrapper .item { padding-bottom: 30px; }
+.single-libtech_outerwear .product-tech-major, .page-template-storm-factory .product-tech-major { padding-bottom: 30px; }
+
+.tech-faq { padding-bottom: 45px; padding-top: 25px; }
+.tech-faq .section-headline { margin-bottom: 20px; margin-top: 0; }
 .tech-faq .faq-list { width: 100%; }
-.tech-faq .faq-list ul li { max-width: 100%; padding-left: 10px; padding-right: 10px; width: 100%; }
 
-@media screen and (min-width: 480px) { .tech-minor > ul > li, .tech-minor .section-content > ul > li { display: inline-block; text-align: left; vertical-align: top; width: 48%; }
-  .tech-minor > ul > li .tech-pad, .tech-minor .section-content > ul > li .tech-pad { padding: 10px; }
-  .single-libtech_outerwear .tech-minor > ul > li, .page-template-page-templatesstorm-factory-php .tech-minor > ul > li { display: block; float: left; padding-right: 20px; width: 50%; } }
-@media screen and (min-width: 768px) { .tech-major ul li .tech-video { float: left; margin-bottom: 0; padding-right: 10px; width: 50%; }
-  .tech-major ul li .tech-image { float: left; margin-bottom: 0; width: 50%; }
-  .tech-major ul li .tech-copy { float: left; margin-bottom: 0; padding-left: 10px; width: 50%; }
-  .tech-major ul li .tech-copy ul { margin-bottom: 0; }
-  .tech-major ul li .tech-copy.surf h4, .tech-major ul li .tech-copy.surf h5, .tech-major ul li .tech-copy.surf p, .tech-major ul li .tech-copy.surf ul { margin-left: 10px; }
-  .tech-major.tech-surf ul li .tech-image { width: 30%; }
-  .tech-major.tech-surf ul li .tech-copy { width: 70%; }
-  .tech-faq .faq-list ul { float: left; width: 50%; } }
-@media screen and (min-width: 992px) { .tech-major ul li { padding-right: 40px; }
-  .page-template-page-technology-detail.surf .tech-major ul.tech-top { float: left; padding-right: 20px; width: 50%; }
-  .page-template-page-technology-detail.surf .tech-major ul.tech-bottom { float: right; padding-left: 20px; width: 50%; }
-  .page-template-page-technology-detail.surf .tech-major ul li { padding-right: 0; }
-  .tech-major .section-content > ul.tech-video-list > li { float: left; margin-bottom: 10px; padding-right: 0; width: 50%; }
-  .tech-major .section-content > ul.tech-video-list > li .tech-video { float: none; padding: 0 0 10px; width: 100%; }
-  .tech-major .section-content > ul.tech-video-list > li.odd { clear: left; }
-  .tech-major .section-content > ul.tech-video-list > li.odd .tech-wrapper { padding-right: 20px; }
-  .tech-major .section-content > ul.tech-video-list > li.even { clear: right; }
-  .tech-major .section-content > ul.tech-video-list > li.even .tech-wrapper { padding-left: 20px; }
-  .tech-major .section-content > ul.tech-video-list > li .tech-copy { float: none; padding-left: 0; width: 100%; }
-  .tech-major .section-content > ul.tech-video-list > li .tech-copy .tech-found-on { display: block; }
-  .tech-minor > ul > li, .tech-minor .section-content > ul > li { display: inline-block; text-align: left; vertical-align: top; width: 33%; }
-  .single-libtech_outerwear .tech-minor > ul > li, .page-template-page-templatesstorm-factory-php .tech-minor > ul > li { display: block; float: left; width: 33.3%; } }
-@media screen and (min-width: 1400px) { .tech-minor > ul > li, .tech-minor .section-content > ul > li { display: inline-block; text-align: left; vertical-align: top; width: 24%; }
-  .single-libtech_outerwear .tech-minor > ul > li, .page-template-page-templatesstorm-factory-php .tech-minor > ul > li { display: block; float: left; width: 25%; } }
+@media screen and (min-width: 480px) { .tech-minor > ul > li, .tech-minor .section-content > ul > li { text-align: left; vertical-align: top; } }
+@media screen and (min-width: 768px) { .surf .tech-minor .tech-copy ul { font-size: 1em; }
+  .surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-left { padding-bottom: 40px; text-align: right; }
+  .surf .tech-minor .surf-tech-logo .tech-slogan.tech-slogan-right { text-align: left; } }
+@media screen and (min-width: 992px) { .tech-major .section-content .tech-video-list .tech-video-item .tech-copy .tech-found-on { display: block; } }
 .enviro-video .section-content h1 { margin-bottom: 20px; }
 .enviro-video .section-content .video-player { margin-bottom: 10px; }
 .enviro-video .section-content .video-copy h3 { margin-bottom: .5em; }
@@ -1391,14 +1241,13 @@ body.international .shopping-cart-wrapper { display: none; }
   .partners .section-content .entry-content ul li .partner-entry .partner-images { width: 30%; float: left; }
   .partners .section-content .entry-content ul li .partner-entry .partner-images img { padding-right: 20px; }
   .partners .section-content .entry-content ul li .partner-entry p { width: 70%; float: right; } }
-/* ========================================================================== COMPONENTS/_FAQ.SCSS ========================================================================== */
-.faqs .section-content { padding: 0 20px; }
+.faqs { padding-bottom: 45px; padding-top: 30px; }
 .faqs .section-content h1 { margin-bottom: 20px; }
-.faqs .section-content > p { margin-bottom: 20px; font-size: 1.125em; }
+.faqs .section-content p { font-size: 1.125em; margin-bottom: 20px; }
 
 .faq-nav ul { text-align: center; }
-.faq-nav ul li { display: inline-block; padding: 0 8px 10px 0; }
-.faq-nav ul li a { display: block; padding: 3px 5px; background: #FFFF00; font-style: normal; color: #000; width: 100px; text-align: center; text-transform: uppercase; font-size: 1.375em; /* 22 / 16 */ line-height: 1; font-weight: 700; }
+.faq-nav ul li { display: inline-block; margin-bottom: 10px; margin-right: 10px; }
+.faq-nav ul li a { background: #FFFF00; color: #000; display: block; font-size: 1.375em; font-style: normal; font-weight: 700; line-height: 1; padding: 3px 5px; text-align: center; text-transform: uppercase; width: 100px; }
 .faq-nav ul li.current-menu-item a { background: none; color: #FFFF00; }
 
 .ski .faq-nav ul li a { background: #0099FF; }
@@ -1414,43 +1263,41 @@ body.international .shopping-cart-wrapper { display: none; }
 .faq-categories .desktop-nav { display: none; }
 .faq-categories .mobile-nav { margin-top: 20px; }
 
-.faq-list h3 { margin: 20px 0 10px 0; }
+.faq-list h3 { margin: 15px 0 10px; }
 .faq-list .faq-question { padding-bottom: 10px; }
-.faq-list .faq-question .question { font-style: italic; display: block; background: #000; padding: 10px; text-decoration: none; font-weight: bold; color: #FFFF00; }
-.faq-list .faq-question .question span { float: right; display: inline-block; width: 0; height: 0; margin-left: 10px; border-bottom: none; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 15px solid #FFFF00; }
-.faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-bottom: 8px solid transparent; border-left: 15px solid #FFFF00; }
-.faq-list .faq-question .answer { color: #000; background: #FFFF00; padding: 10px; }
+.faq-list .faq-question .question { background: #000; color: #FFFF00; display: block; font-style: italic; font-weight: bold; padding: 5px 0; text-decoration: none; }
+.faq-list .faq-question .question span { border-bottom: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 15px solid #FFFF00; display: inline-block; float: right; height: 0; margin-left: 10px; width: 0; }
+.faq-list .faq-question.collapsed .question span { border-bottom: 8px solid transparent; border-left: 15px solid #FFFF00; border-top: 8px solid transparent; }
+.faq-list .faq-question .answer { background: #FFFF00; color: #000; padding: 10px; }
 .faq-list .faq-question .answer p { margin-bottom: 10px; }
 .faq-list .faq-question .answer p:last-child { margin-bottom: 0; }
-.faq-list .faq-question .answer ul { padding: 0 0 0 10px; margin-left: 20px; list-style: square; }
-.faq-list .faq-question .answer ol { padding: 0 0 0 10px; margin-left: 20px; }
-.faq-list .faq-question .answer a { color: #000; text-decoration: underline; font-style: normal; }
+.faq-list .faq-question .answer ul { list-style: square; margin-left: 20px; padding: 0 0 0 10px; }
+.faq-list .faq-question .answer ol { margin-left: 20px; padding: 0 0 0 10px; }
+.faq-list .faq-question .answer a { color: #000; font-style: normal; text-decoration: underline; }
 
 .ski .faq-list .faq-question .question { color: #0099FF; }
 .ski .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #0099FF; }
-.ski .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #0099FF; }
+.ski .faq-list .faq-question.collapsed .question span { border-left: 15px solid #0099FF; border-top: 8px solid transparent; }
 .ski .faq-list .faq-question .answer { background: #0099FF; }
 
 .surf .faq-list .faq-question .question { color: #FF6600; }
 .surf .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #FF6600; }
-.surf .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #FF6600; }
+.surf .faq-list .faq-question.collapsed .question span { border-left: 15px solid #FF6600; border-top: 8px solid transparent; }
 .surf .faq-list .faq-question .answer { background: #FF6600; }
 
 .skate .faq-list .faq-question .question { color: #66CC00; }
 .skate .faq-list .faq-question .question span { border-left: 8px solid transparent; border-top: 15px solid #66CC00; }
-.skate .faq-list .faq-question.collapsed .question span { border-top: 8px solid transparent; border-left: 15px solid #66CC00; }
+.skate .faq-list .faq-question.collapsed .question span { border-left: 15px solid #66CC00; border-top: 8px solid transparent; }
 .skate .faq-list .faq-question .answer { background: #66CC00; }
 
 @media screen and (min-width: 768px) { .faq-nav ul { text-align: left; }
-  .faq-nav ul li a { width: 120px; font-size: 1.875em; /* 30 / 16 */ }
+  .faq-nav ul li a { font-size: 1.875em; width: 120px; }
   .faq-categories { float: right; width: 25%; }
   .faq-categories h2 { display: block; margin-bottom: 10px; }
   .faq-categories .desktop-nav { display: block; }
   .faq-categories .desktop-nav ul li { margin-bottom: 6px; }
   .faq-categories .desktop-nav ul li a { color: #fff; text-transform: uppercase; }
-  .faq-categories .mobile-nav { display: none; }
-  .faq-list { width: 75%; }
-  .faq-list .faq-question { padding-right: 20px; max-width: 900px; } }
+  .faq-categories .mobile-nav { display: none; } }
 /* ========================================================================== COMPONENTS/_LBS.SCSS ========================================================================== */
 .lbs-details .section-content { padding: 0 20px; }
 .lbs-details .section-content h1, .lbs-details .section-content p { margin-bottom: 10px; }
@@ -1542,13 +1389,20 @@ body.international .shopping-cart-wrapper { display: none; }
 @media screen and (min-width: 992px) { .pass-it-on-contest .contest-wrapper iframe { height: 1920px; } }
 .page-template-page-pass-it-on-project .video-header { padding-bottom: 40px; padding-top: 30px; }
 
-.storm-factory-overview { padding: 30px 0 60px; }
+.storm-factory-overview { padding: 30px 0; }
 .storm-factory-overview .section-content .overview-content-wrapper .storm-image img { padding-bottom: 10px; width: 100%; }
 .storm-factory-overview .section-content .overview-content-wrapper .storm-copy h3 { margin-bottom: 10px; }
 
+.product-fit { padding-bottom: 10px; }
+.product-fit .outerwear-fit li { padding-bottom: 20px; }
+.product-fit .outerwear-fit li h3 { margin-bottom: 10px; }
+.product-fit .outerwear-fit li a { text-transform: uppercase; }
+
+.page-template-page-templatesstorm-factory-php .product-extras.jackets { padding-bottom: 30px; padding-top: 0; }
+.page-template-page-templatesstorm-factory-php .product-extras table { margin-bottom: 20px; }
+.page-template-page-templatesstorm-factory-php .product-extras .product-specs { padding-bottom: 10px; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs h2 { display: none; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs .sizing-header { margin-bottom: 10px; }
-.page-template-page-templatesstorm-factory-php .product-extras .product-specs table { margin-bottom: 20px; }
 .page-template-page-templatesstorm-factory-php .product-extras .product-specs .outerwear-fit { padding-top: 0; }
 
 @media screen and (min-width: 768px) { .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.jackets .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.layers .product-specs table thead th:nth-child(5), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(2), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(3), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(4), .page-template-page-templatesstorm-factory-php .product-extras.pants .product-specs table thead th:nth-child(5) { display: table-cell; }
@@ -1671,9 +1525,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .home-sport-team .call-to-action { text-align: center; }
 
 @media screen and (min-width: 768px) { .home-sport-team h2 { display: block; padding-bottom: 30px; } }
-.featured-slider { padding: 30px 0 25px; }
+.featured-slider { padding: 0 0 25px; }
 .featured-slider .section-content { max-width: 100%; overflow: hidden; }
 .featured-slider .section-content .slider-wrapper { width: 100%; }
+.featured-slider .slide { border-bottom: 1px solid #666; border-top: 1px solid #666; }
 .featured-slider .slide:nth-child(n+2) { display: none; }
 .featured-slider .slide img { height: auto; width: 100%; }
 .featured-slider .slide img.lazy { -webkit-transition: opacity 300ms ease-in-out; -moz-transition: opacity 300ms ease-in-out; -ms-transition: opacity 300ms ease-in-out; -o-transition: opacity 300ms ease-in-out; transition: opacity 300ms ease-in-out; -webkit-opacity: 0; -moz-opacity: 0; -ms-opacity: 0; -o-opacity: 0; opacity: 0; }
@@ -1681,18 +1536,18 @@ body.international .shopping-cart-wrapper { display: none; }
 .featured-slider .content-large { display: none; }
 .featured-slider .content-ctas { bottom: 2%; position: absolute; text-align: center; width: 100%; }
 .featured-slider .content-ctas .cta { display: inline-block; margin: 0 5px; padding-top: 5px; }
-.featured-slider .icon-play { background-position-x: 100%; height: 16px; margin: 0 0 -2px 5px; width: 16px; }
-.featured-slider .button:hover .icon-play, .featured-slider .button:focus .icon-play { background-position-x: 0; }
+.featured-slider .icon-play { background-position: 100% 0%; height: 16px; margin: 0 0 -2px 5px; width: 16px; }
+.featured-slider .button:hover .icon-play, .featured-slider .button:focus .icon-play { background-position: 0% 0%; }
 .featured-slider .cta-theme-dark .button { background: #000; border: 0; color: #FFF; padding: 4px 24px; }
-.featured-slider .cta-theme-dark .button .icon-play { background-position-x: 0; }
+.featured-slider .cta-theme-dark .button .icon-play { background-position: 0% 0%; }
 .featured-slider .cta-theme-dark .button:hover, .featured-slider .cta-theme-dark .button:focus { background-color: #FFF; color: #000; }
-.featured-slider .cta-theme-dark .button:hover .icon-play, .featured-slider .cta-theme-dark .button:focus .icon-play { background-position-x: 100%; }
+.featured-slider .cta-theme-dark .button:hover .icon-play, .featured-slider .cta-theme-dark .button:focus .icon-play { background-position: 100% 0%; }
 .featured-slider .cta-theme-light .button { background: #FFF; border: 0; color: #000; padding: 4px 24px; }
 .featured-slider .cta-theme-light .button:hover, .featured-slider .cta-theme-light .button:focus { background-color: #000; color: #FFF; }
 .featured-slider .owl-carousel { display: block; }
 .featured-slider .owl-loaded .slide:nth-child(n+2) { display: block; }
 .featured-slider .owl-dots { padding-top: 5px; }
-.featured-slider .video-container { background-color: #000; height: 100%; left: 0; padding: 5% 0 0; position: absolute; top: 0; width: 100%; z-index: 100; }
+.featured-slider .video-container { background-color: #000; border-bottom: 1px solid #666; border-top: 1px solid #666; height: 100%; left: 0; padding: 5% 0 0; position: absolute; top: 0; width: 100%; z-index: 100; }
 .featured-slider .video-container .close-btn { height: 10px; position: absolute; right: 10px; top: 0; width: 10px; }
 .featured-slider .video-container .fluid-width-video-wrapper { background: #000 url("../img/loader.gif") no-repeat center center; }
 
@@ -1705,8 +1560,8 @@ body.international .shopping-cart-wrapper { display: none; }
 @media screen and (min-width: 768px) { .featured-slider .content-small { display: none; }
   .featured-slider .content-large { display: block; }
   .featured-slider .icon-play { height: 20px; width: 20px; }
-  .featured-slider .video-container { padding: 0 14.5%; }
-  .featured-slider .video-container .close-btn { right: 11%; top: 10px; }
+  .featured-slider .video-container { padding: 0 20.35%; }
+  .featured-slider .video-container .close-btn { right: 17.5%; top: 10px; }
   .featured-slider .content-ctas { bottom: 3%; }
   .featured-slider .content-ctas .cta { margin: 0 10px; padding-top: 10px; } }
 @media screen and (min-width: 992px) { .featured-slider .content-ctas { bottom: 4%; } }
@@ -1811,9 +1666,11 @@ body.international .shopping-cart-wrapper { display: none; }
 /* ========================================================================== MODULES/_DISCUSSION.SCSS ========================================================================== */
 .discussion-top { display: none; }
 
-.discussion { display: none; padding-left: 20px; padding-right: 20px; }
+.discussion { display: none; padding-top: 20px; }
 .discussion h2 { padding-bottom: 20px; }
 .discussion .discussion-thread .fb_iframe_widget, .discussion .discussion-thread .fb_iframe_widget span, .discussion .discussion-thread .fb_iframe_widget iframe { width: 100% !important; }
+
+.single-libtech_surfboards .discussion, .single-libtech_snowboards .discussion, .single-libtech_skateboards .discussion, .single-libtech_nas .discussion, .single-libtech_outerwear .discussion, .single-libtech_apparel .discussion, .single-libtech_accessories .discussion { margin-bottom: 60px; }
 
 @media screen and (min-width: 480px) { .discussion-top, .discussion { display: block; } }
 .gallery { margin-bottom: 20px; }

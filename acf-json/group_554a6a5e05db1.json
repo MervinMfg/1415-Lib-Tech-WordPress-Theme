@@ -6,7 +6,6 @@
             "key": "field_554a6a7fdca1e",
             "label": "Featured Videos",
             "name": "libtech_featured_videos",
-            "prefix": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -25,7 +24,6 @@
                     "key": "field_554a6b78dca1f",
                     "label": "Type",
                     "name": "libtech_featured_videos_type",
-                    "prefix": "",
                     "type": "radio",
                     "instructions": "",
                     "required": 0,
@@ -48,7 +46,6 @@
                     "key": "field_554a6bbadca20",
                     "label": "ID",
                     "name": "libtech_featured_videos_id",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -70,7 +67,6 @@
                     "key": "field_554a6befdca21",
                     "label": "Name",
                     "name": "libtech_featured_videos_name",
-                    "prefix": "",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -92,7 +88,6 @@
                     "key": "field_554a6c02dca22",
                     "label": "Details",
                     "name": "libtech_featured_videos_details",
-                    "prefix": "",
                     "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
@@ -146,5 +141,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430940733
+    "modified": 1432675627,
+    "local": "json"
 }

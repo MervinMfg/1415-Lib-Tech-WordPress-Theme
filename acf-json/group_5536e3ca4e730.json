@@ -6,7 +6,6 @@
             "key": "field_5536e3d271ac8",
             "label": "Posts Category",
             "name": "libtech_latest_posts_category",
-            "prefix": "",
             "type": "taxonomy",
             "instructions": "Select the parent category you want to view posts from. Leave blank if you want to show all posts from all categories.",
             "required": 0,
@@ -75,5 +74,6 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1430869526
+    "modified": 1432675627,
+    "local": "json"
 }

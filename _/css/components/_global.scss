@@ -255,6 +255,16 @@ body {
   }
 }
 
+.page-template-environmental-detail.surf {
+  .video-header {
+    .video-text {
+      li {
+        color: $skateColor;
+      }
+    }
+  }
+}
+
 .video-header {
   padding-bottom: 20px;
 
@@ -363,11 +373,5 @@ body {
 .page-template-lib-legs {
   .video-header {
     padding-bottom: 50px;
-  }
-}
-
-.page-template-page-technology-detail {
-  .video-header {
-    padding-bottom: 60px;
   }
 }
