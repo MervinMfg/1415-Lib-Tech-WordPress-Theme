@@ -1,1 +1,1 @@
-<?php $GLOBALS['SCRIPT_VERSION'] = '2.0.2'; ?>
+<?php $GLOBALS['SCRIPT_VERSION'] = '2.0.3'; ?>

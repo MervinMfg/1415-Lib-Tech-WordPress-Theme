@@ -215,7 +215,7 @@ Template Name: NAS Detail
 							<table>
 								<thead>
 									<tr>
-										<th>Model<br />Name</th>
+										<th>Size</th>
 										<th>Contact<br />Length</th>
 										<th>Side<br />Cut</th>
 										<th>Nose<br />Width</th>
@@ -249,13 +249,7 @@ Template Name: NAS Detail
 								</tbody>
 								<tfoot>
 									<tr>
-										<td colspan="2"><a href="/skiing/specifications/" class="view-all-specs">View all specs</a></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td colspan="8"><a href="/skiing/specifications/" class="view-all-specs">View all specs</a></td>
 									</tr>
 								</tfoot>
 							</table>

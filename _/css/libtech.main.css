@@ -937,19 +937,16 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-extras .product-awards ul li:hover .tool-tip { -webkit-opacity: 1; -moz-opacity: 1; -ms-opacity: 1; -o-opacity: 1; opacity: 1; visibility: visible; }
 .product-extras .product-specs { overflow: hidden; padding-top: 25px; }
 .product-extras .product-specs h3 { margin-bottom: 10px; }
-.product-extras .product-specs table { width: 100%; margin-bottom: 30px; }
+.product-extras .product-specs table { margin-bottom: 30px; width: 100%; }
 .product-extras .product-specs table thead { background: #333; }
-.product-extras .product-specs table thead th { font-size: 11px; padding: 10px; text-align: left; text-transform: uppercase; vertical-align: top; }
-.product-extras .product-specs table thead th:nth-child(4), .product-extras .product-specs table thead th:nth-child(6), .product-extras .product-specs table thead th:nth-child(7), .product-extras .product-specs table thead th:nth-child(9) { display: none; }
+.product-extras .product-specs table thead th { font-size: .7em; padding: 10px; text-align: left; text-transform: uppercase; vertical-align: top; }
 .product-extras .product-specs table thead th span { font-size: 9px; font-weight: normal; }
 .product-extras .product-specs table tbody tr { background: #000; }
 .product-extras .product-specs table tbody tr:nth-child(even) { background: #181818; }
-.product-extras .product-specs table tbody tr td { padding: 10px; }
-.product-extras .product-specs table tbody tr td:nth-child(4), .product-extras .product-specs table tbody tr td:nth-child(6), .product-extras .product-specs table tbody tr td:nth-child(7), .product-extras .product-specs table tbody tr td:nth-child(9) { display: none; }
+.product-extras .product-specs table tbody tr td { font-size: .7em; padding: 10px; }
 .product-extras .product-specs table tfoot { background: #333; }
-.product-extras .product-specs table tfoot td { font-size: 11px; padding: 10px; text-transform: uppercase; vertical-align: top; }
+.product-extras .product-specs table tfoot td { font-size: .7em; padding: 10px; text-transform: uppercase; vertical-align: top; }
 .product-extras .product-specs table tfoot td a { font-weight: bold; }
-.product-extras .product-specs table tfoot td:nth-child(5), .product-extras .product-specs table tfoot td:nth-child(6), .product-extras .product-specs table tfoot td:nth-child(7), .product-extras .product-specs table tfoot td:nth-child(8), .product-extras .product-specs table tfoot td:nth-child(9) { display: none; }
 .product-extras .product-tech-major h3 { margin-bottom: 10px; }
 .product-extras .product-tech-major .tech-image { display: none; }
 .product-extras .product-tech-major .item ul { font-size: 1.1em; list-style: square; margin: 0 0 20px 25px; }
@@ -958,6 +955,12 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-extras .outerwear-fit li { padding-bottom: 20px; }
 .product-extras .outerwear-fit li h3 { margin-bottom: 10px; }
 .product-extras .outerwear-fit li a { text-transform: uppercase; }
+
+.single-libtech_snowboards .product-specs th:nth-child(3), .single-libtech_snowboards .product-specs th:nth-child(4), .single-libtech_snowboards .product-specs th:nth-child(6), .single-libtech_snowboards .product-specs th:nth-child(9), .single-libtech_snowboards .product-specs td:nth-child(3), .single-libtech_snowboards .product-specs td:nth-child(4), .single-libtech_snowboards .product-specs td:nth-child(6), .single-libtech_snowboards .product-specs td:nth-child(9) { display: none; }
+
+.single-libtech_nas .product-specs th:nth-child(4), .single-libtech_nas .product-specs th:nth-child(5), .single-libtech_nas .product-specs th:nth-child(6), .single-libtech_nas .product-specs th:nth-child(8), .single-libtech_nas .product-specs td:nth-child(4), .single-libtech_nas .product-specs td:nth-child(5), .single-libtech_nas .product-specs td:nth-child(6), .single-libtech_nas .product-specs td:nth-child(8) { display: none; }
+
+.single-libtech_skateboards .product-specs th:nth-child(6), .single-libtech_skateboards .product-specs td:nth-child(6) { display: none; }
 
 .single-libtech_nas .product-tech-minor h3, .single-libtech_snowboards .product-tech-minor h3, .single-libtech_skateboards .product-tech-minor h3 { text-transform: capitalize; margin-bottom: 10px; }
 
@@ -987,6 +990,9 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-details h3 { text-align: left; }
   .product-details .product-images { padding-bottom: 30px; }
   .product-extras .product-tech-major .tech-image { display: block; margin-bottom: 0; } }
+@media screen and (min-width: 1200px) { .single-libtech_snowboards .product-specs th:nth-child(3), .single-libtech_snowboards .product-specs th:nth-child(4), .single-libtech_snowboards .product-specs th:nth-child(6), .single-libtech_snowboards .product-specs th:nth-child(9), .single-libtech_snowboards .product-specs td:nth-child(3), .single-libtech_snowboards .product-specs td:nth-child(4), .single-libtech_snowboards .product-specs td:nth-child(6), .single-libtech_snowboards .product-specs td:nth-child(9) { display: table-cell; }
+  .single-libtech_nas .product-specs th:nth-child(4), .single-libtech_nas .product-specs th:nth-child(5), .single-libtech_nas .product-specs th:nth-child(6), .single-libtech_nas .product-specs th:nth-child(8), .single-libtech_nas .product-specs td:nth-child(4), .single-libtech_nas .product-specs td:nth-child(5), .single-libtech_nas .product-specs td:nth-child(6), .single-libtech_nas .product-specs td:nth-child(8) { display: table-cell; }
+  .single-libtech_skateboards .product-specs th:nth-child(6), .single-libtech_skateboards .product-specs td:nth-child(6) { display: table-cell; } }
 .tech-major { padding-top: 25px; }
 .tech-major h2 { margin-bottom: 10px; }
 .tech-major .tech-video-list .tech-video-item { margin-bottom: 10px; }
@@ -1663,6 +1669,8 @@ body.international .shopping-cart-wrapper { display: none; }
 .discussion { display: none; padding-top: 20px; }
 .discussion h2 { padding-bottom: 20px; }
 .discussion .discussion-thread .fb_iframe_widget, .discussion .discussion-thread .fb_iframe_widget span, .discussion .discussion-thread .fb_iframe_widget iframe { width: 100% !important; }
+
+.single-libtech_surfboards .discussion, .single-libtech_snowboards .discussion, .single-libtech_skateboards .discussion, .single-libtech_nas .discussion, .single-libtech_outerwear .discussion, .single-libtech_apparel .discussion, .single-libtech_accessories .discussion { margin-bottom: 60px; }
 
 @media screen and (min-width: 480px) { .discussion-top, .discussion { display: block; } }
 .gallery { margin-bottom: 20px; }
