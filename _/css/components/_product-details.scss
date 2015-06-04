@@ -320,8 +320,7 @@
 }
 
 .view-arrow {
-  @include transition(all, 100ms);
-  @include vendorize(transform, translate(0, 0));
+  @include transition(margin-left, 100ms);
   background: url('../img/sprite.png');
   display: inline-block;
   height: 14px;
@@ -335,7 +334,7 @@
     text-decoration: none;
 
     .view-arrow {
-      @include vendorize(transform, translate(5px, 0));
+      margin-left: 10px;
     }
   }
 }
