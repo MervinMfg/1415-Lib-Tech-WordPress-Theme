@@ -847,10 +847,10 @@ body.international .shopping-cart-wrapper { display: none; }
 .product-details .product-share { display: none; }
 .product-details .view-tech-link, .product-details .view-video-link, .product-details .specs-link { text-transform: uppercase; }
 
-.view-arrow { -webkit-transition: all 100ms ease-in-out; -moz-transition: all 100ms ease-in-out; -ms-transition: all 100ms ease-in-out; -o-transition: all 100ms ease-in-out; transition: all 100ms ease-in-out; -webkit-transform: translate(0, 0); -moz-transform: translate(0, 0); -ms-transform: translate(0, 0); -o-transform: translate(0, 0); transform: translate(0, 0); background: url("../img/sprite.png"); display: inline-block; height: 14px; margin-left: 5px; width: 14px; }
+.view-arrow { -webkit-transition: margin-left 100ms ease-in-out; -moz-transition: margin-left 100ms ease-in-out; -ms-transition: margin-left 100ms ease-in-out; -o-transition: margin-left 100ms ease-in-out; transition: margin-left 100ms ease-in-out; background: url("../img/sprite.png"); display: inline-block; height: 14px; margin-left: 5px; width: 14px; }
 
 .view-tech-link:hover, .view-video-link:hover { text-decoration: none; }
-.view-tech-link:hover .view-arrow, .view-video-link:hover .view-arrow { -webkit-transform: translate(5px, 0); -moz-transform: translate(5px, 0); -ms-transform: translate(5px, 0); -o-transform: translate(5px, 0); transform: translate(5px, 0); }
+.view-tech-link:hover .view-arrow, .view-video-link:hover .view-arrow { margin-left: 10px; }
 
 .single-libtech_snowboards .view-arrow { background-position: -409px 0; }
 
