@@ -15,6 +15,9 @@
   }
 
   .slide {
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
+
     &:nth-child(n+2) { // before slide is rendered
       display: none;
     }
@@ -103,11 +106,6 @@
 
   .owl-carousel {
     display: block;
-
-    .owl-stage-outer .owl-stage {
-      border-bottom: 1px solid #666;
-      border-top: 1px solid #666;
-    }
   }
 
   .owl-loaded .slide {
@@ -122,6 +120,8 @@
 
   .video-container {
     background-color: #000;
+    border-bottom: 1px solid #666;
+    border-top: 1px solid #666;
     height: 100%;
     left: 0;
     padding: 5% 0 0;
@@ -198,10 +198,10 @@
     }
 
     .video-container {
-      padding: 0 14.5%;
+      padding: 0 20.35%;
 
       .close-btn {
-        right: 11%;
+        right: 17.5%;
         top: 10px;
       }
     }
