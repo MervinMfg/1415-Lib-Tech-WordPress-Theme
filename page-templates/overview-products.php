@@ -620,9 +620,9 @@ get_header();
         wp_reset_query();
         ?>
 
-        <div class="bg3-top"></div>
-        <section class="product-overview bg3">
-            <div class="section-content">
+        <div class="bg1-top"></div>
+        <section class="product-overview container-fluid">
+            <div class="section-content row">
                 <h1><?php the_title(); ?></h1>
                 <div class="product-filtering <?php echo strtolower(get_the_title()); ?>">
                     <div class="details">
@@ -952,6 +952,7 @@ get_header();
                 <ul class="product-listing <?php echo strtolower(get_the_title()); ?>">
                     <?php foreach ($productsArray as $product): ?>
                     <li class="product-item <?php echo $product['slug'] . $product['filterList']; ?>">
+                      <div class="product-item-wrapper">
                         <a href="<? echo $product['link']; ?>">
                             <img src="<?php bloginfo('template_directory'); ?>/_/img/square.gif" data-src="<?php echo $product['imageFile'][0]; ?>" width="<?php echo $product['imageFile'][1]; ?>" height="<?php echo $product['imageFile'][2]; ?>" alt="<?php echo $product['title']; ?> Image" class="product-img lazy" />
                             <div class="colorways">
@@ -962,6 +963,7 @@ get_header();
                             <h5><?php echo $product['title']; ?></h5>
                             <div class="price"><?php echo $product['price']; ?></div>
                         </a>
+                      </div>
                     </li>
                     <?php endforeach; ?>
 

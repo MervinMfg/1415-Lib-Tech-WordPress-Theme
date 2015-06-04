@@ -3,6 +3,8 @@
 // ==========================================================================
 
 .product-overview {
+  padding-bottom: 20px;
+  
   .section-content {
     h1 {
       padding: 0 0 20px 20px;
@@ -29,7 +31,7 @@
       &:hover,
       &:focus {
         h5 {
-          color: #fff;
+          color: #666;
         }
       }
     }
@@ -79,12 +81,25 @@
   }
 
   &.bindings li.product-item img.product-img,
-  &.surfboards li.product-item img.product-img,
   &.apparel li.product-item img.product-img,
   &.clearance li.product-item img.product-img,
   &.accessories li.product-item img.product-img {
     margin-left: 0;
     width: 90%;
+  }
+
+  &.surfboards li.product-item {
+    .product-item-wrapper {
+      margin: 0 auto;
+      overflow: hidden;
+      width: 50%;
+
+      img.product-img {
+        margin-left: -13%;
+        width: 280%;
+        max-width: 280%;
+      }
+    }
   }
 }
 
