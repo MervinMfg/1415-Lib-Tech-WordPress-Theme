@@ -257,9 +257,17 @@
             snowboard.match = updateMatch(snowboard.match, snowboard.terrain.powder);
             break;
         }
+        // check if flex filter is set and award points if it is based on rating
+        if(user.flex == "Soft" && snowboard.flex < 6) {
+          snowboard.match = updateMatch(snowboard.match, 5);
+        } else if(user.flex == "Medium" && snowboard.flex >= 4 && snowboard.flex <= 6) {
+          snowboard.match = updateMatch(snowboard.match, 5);
+        } else if(user.flex == "Stiff" && snowboard.flex > 6) {
+          snowboard.match = updateMatch(snowboard.match, 5);
+        }
         // push snowboard if it scored more than 2
         // ability and terrain give 1 point each by default
-        if (snowboard.match > 2) {
+        if (snowboard.match > 30) {
           filteredSnowboards.push(snowboard);
         }
       });

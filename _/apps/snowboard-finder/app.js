@@ -65,7 +65,7 @@
 		user.bootSize = -1; // updated in size step
 		user.ability = "Default"; // updated in style step
 		user.terrain = "Default"; // updated in style step
-		user.flex = 5; // updated in results step
+		user.flex = "Default"; // updated in results step
 		user.contours = []; // updated in results section
 		user.bmi = 22; // average bmi, updated in results section
 		user.lengthRange = ""; // updated in results
