@@ -15,6 +15,7 @@ LIBTECH.ProductDetails = function () {
 	};
 	this.init();
 };
+
 LIBTECH.ProductDetails.prototype = {
 	init: function () {
 		var self, thumbSlider;
@@ -111,6 +112,8 @@ LIBTECH.ProductDetails.prototype = {
 			infiniteLoop: false,
 			hideControlOnEnd: true
 		});
+		// check for sku in url
+		self.checkForSKU();
 	},
 	initAvailability: function () {
 		var self, currencyCookie;
@@ -926,5 +929,32 @@ LIBTECH.ProductDetails.prototype = {
 				}
 			});
 		});
+	},
+	checkForSKU: function () {
+		var self, sku;
+		self = this;
+		// check to see if SKU exists as URL GET Param
+		sku = self.getParameterByName('sku');
+		if (sku !== '') {
+			// we have a sku, now see if that sku is avail for puchase
+			$('#product-variation option').each(function (index) {
+				var $this, optionSKU;
+				$this = $(this);
+				optionSKU = $this.val();
+				optionDisabled = $this.attr('disabled');
+				// if we match the sku and it's not disabled, select it
+				if(sku == optionSKU && !optionDisabled) {
+					$this.attr('selected', 'selected');
+					$('#product-variation').trigger('change');
+				}
+			});
+		}
+	},
+	getParameterByName: function (name) {
+		// used for getting URL GET params by name
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+			results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 	}
 };

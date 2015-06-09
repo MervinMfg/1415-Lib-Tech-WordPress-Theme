@@ -74,8 +74,7 @@ Template Name: Snowboard Detail
 							?>
 
 						</ul>
-					</div><!-- END .product-images -->
-
+					</div><!-- .product-images -->
 					<div class="product-details-right col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5 col-sm-offset-0">
 						<h1 itemprop="name"><?php the_title(); ?></h1>
 						<h3><?php the_field('libtech_product_slogan'); ?></h3>
@@ -270,10 +269,10 @@ Template Name: Snowboard Detail
 							</ul>
 							<div class="clearfix"></div>
 						</div>
-					</div><!-- END .product-details-right -->
+					</div><!-- .product-details-right -->
 					<div class="clearfix"></div>
-				</div><!-- END .section-content -->
-			</section><!-- END .product-details -->
+				</div><!-- .section-content -->
+			</section><!-- .product-details -->
 			<section class="product-zoom">
       	<div class="section-content">
       		<div class="zoom-title"></div>
@@ -284,8 +283,8 @@ Template Name: Snowboard Detail
       			<a href="#close-zoom" class="zoom-close button">Close</a>
       			<ul id="zoom-thumbnails"></ul>
       		</div>
-      	</div><!-- END .section-content -->
-      </section><!-- END .product-zoom -->
+      	</div><!-- .section-content -->
+      </section><!-- .product-zoom -->
         <section class="product-extras info container-fluid">
         	<div class="section-content clearfix row">
         		<div class="product-desc-awards-specs col-xs-12 col-ms-10 col-ms-offset-1 col-sm-5">
@@ -311,7 +310,7 @@ Template Name: Snowboard Detail
 									<div class="clearfix"></div>
 								</div>
 								<? endif; // end awards ?>
-							</div><!-- END .product-desc-awards -->
+							</div><!-- .product-desc-awards -->
 							<div class="product-specs">
 								<h3>Board Specs</h3>
 								<table>
@@ -371,7 +370,7 @@ Template Name: Snowboard Detail
 									</tfoot>
 								</table>
 							</div>
-						</div><!-- END .product-desc-awards-specs -->
+						</div><!-- .product-desc-awards-specs -->
 
 						<?php // grab technology if there is any
 						$technology = get_field('libtech_product_technology');
@@ -416,7 +415,7 @@ Template Name: Snowboard Detail
 								<?php endforeach; ?>
 
 							</ul>
-						</div><!-- END .product-tech-major -->
+						</div><!-- .product-tech-major -->
 
 						<?
 							endif; // end tech major check
@@ -447,7 +446,7 @@ Template Name: Snowboard Detail
 								?>
 
 							</div>
-						</div><!-- END .product-tech-minor -->
+						</div><!-- .product-tech-minor -->
 
 						<?
 							endif; // end tech minor check
@@ -455,8 +454,8 @@ Template Name: Snowboard Detail
 						?>
 
 					</div>
-				</section><!-- END .product-extras -->
-			</div><!-- END .schema-wrapper -->
+				</section><!-- .product-extras -->
+			</div><!-- .schema-wrapper -->
 
 			<?php
 				// display video if we have an id
@@ -487,8 +486,8 @@ Template Name: Snowboard Detail
 						?>
 					</div>
 					<div class="clearfix"></div>
-				</div><!-- END .section-content -->
-			</section><!-- END .product-gallery -->
+				</div><!-- .section-content -->
+			</section><!-- .product-gallery -->
 			<?php endif; ?>
 
 		<?php
