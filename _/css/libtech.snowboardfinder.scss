@@ -13,6 +13,7 @@
 @import 'lib/owl-theme-libtech';
 
 .board-finder {
+  min-height: 480px;
   padding-bottom: 0;
 }
 
@@ -343,6 +344,10 @@
 }
 
 @media screen and (min-width: $breakpoint-small) {
+  .board-finder {
+    min-height: 380px;
+  }
+
   .finder-step {
     min-height: 380px;
   }
@@ -462,6 +467,10 @@
   .bf-quote-fade-in {
     -webkit-animation-name: bf-quote-fade-in;
     animation-name: bf-quote-fade-in;
+  }
+
+  .board-finder {
+    min-height: 800px;
   }
 
   .finder-step {
