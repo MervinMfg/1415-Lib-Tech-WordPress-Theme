@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.why', ['ngRoute', 'boardFinder.contour']);
+	var app = angular.module('boardFinder.why', ['ngRoute', 'ngAnimate', 'boardFinder.contour']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/why/', {
@@ -16,7 +16,7 @@
 		});
 	}]);
 
-	app.controller('WhyController', ['$scope', '$routeParams', 'config', 'user', function WhyController($scope, $routeParams, config, user) {
+	app.controller('WhyController', ['$scope', '$routeParams', '$animate', 'config', 'user', function WhyController($scope, $routeParams, $animate, config, user) {
 		$scope.name = "WhyController";
 		$scope.params = $routeParams;
 		$scope.currentSection = "Length";
@@ -24,6 +24,7 @@
 		$scope.user = user;
 		$scope.feet = 0;
 		$scope.inches = 0;
+		$animate.enabled($('.bf-step-5'), false); // disable ngAnimate inside this step
 
 		function init() {
 			// set

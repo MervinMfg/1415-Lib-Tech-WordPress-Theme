@@ -12,6 +12,7 @@
 	var app = angular.module('boardFinder', [
 		'ngRoute',
 		'ngCookies',
+		'ngAnimate',
 		'boardFinder.gender',
 		'boardFinder.size',
 		'boardFinder.style',
@@ -27,7 +28,7 @@
 		//$locationProvider.html5Mode(true);
 	}]);
 
-	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, config) {
+	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', '$animateCss', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, $animateCss, config) {
 		$scope.$route = $route;
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;

@@ -292,6 +292,8 @@
 
   .back-button {
     padding-left: 0;
+    position: relative;
+    z-index: 1;
   }
 
   .button-list {
@@ -471,6 +473,40 @@
 
   .board-finder {
     min-height: 800px;
+
+    .section-content {
+      position: relative;
+    }
+  }
+
+  .view-animation {
+    @include vendorize(opacity, 1);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    &.ng-enter,
+    &.ng-leave {
+      @include transition(all, 200ms);
+    }
+
+    &.ng-enter {
+      @include vendorize(opacity, 0);
+    }
+
+    &.ng-enter-active {
+      @include vendorize(opacity, 1);
+    }
+
+    &.ng-leave {
+      @include vendorize(opacity, 1);
+    }
+
+    &.ng-leave-active {
+      @include vendorize(opacity, 0);
+    }
   }
 
   .finder-step {

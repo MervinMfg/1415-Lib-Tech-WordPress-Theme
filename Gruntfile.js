@@ -28,6 +28,7 @@ module.exports = function(grunt) {
   ];
   var snowboardFinderScripts = [
     '_/js/lib/angular/angular.js',
+    '_/js/lib/angular/angular-animate.js',
     '_/js/lib/angular/angular-route.js',
     '_/js/lib/angular/angular-cookies.js',
     '_/apps/snowboard-finder/app.js',
