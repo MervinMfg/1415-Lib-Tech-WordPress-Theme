@@ -1,4 +1,4 @@
-/**
+ /**
  * 1415 Lib Tech WordPress Theme - Snowboard Finder - http://www.lib-tech.com
  * Authors: brian.behrens@mervin.com & tony.keller@mervin.com - http://www.mervin.com
  */
@@ -6,41 +6,48 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.style', ['ngRoute']);
+	var app = angular.module('boardFinder.style', ['ngRoute', 'boardFinder.user']);
 
-	app.config(['$routeProvider', function($routeProvider) {
+	app.config(['$routeProvider', 'userProvider', function($routeProvider, userProvider) {
 		$routeProvider.when('/style/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/style/style.html',
 			controller: 'StyleController',
-			controllerAs: 'styleCtrl'
+			controllerAs: 'styleCtrl',
+			resolve: {
+				// be sure we have the data we need, if not redirect
+				dataCheck: ['$location', function ($location) {
+					if(userProvider.checkGender()) {
+						if(userProvider.checkSize()) {
+							return true;
+						} else {
+							$location.path('/size/');
+						}
+					} else {
+						$location.path('/');
+					}
+				}]
+			}
 		});
 	}]);
 
 	app.controller('StyleController', ['$scope', '$location', '$routeParams', '$log', 'user', function StyleController($scope, $location, $routeParams, $log, user) {
 		$scope.name = "StyleController";
 		$scope.params = $routeParams;
+		$scope.user = user;
 		$scope.quote = "";
 
-		function getAbility() {
-			return user.ability;
-		}
-
-		function setAbility(ability) {
-			user.ability = ability;
+		function setAbility(value) {
+			user.ability(value);
 			checkAdvance();
 		}
 
-		function getTerrain() {
-			return user.terrain;
-		}
-
-		function setTerrain(terrain) {
-			user.terrain = terrain;
+		function setTerrain(value) {
+			user.terrain(value);
 			checkAdvance();
 		}
 
 		function checkAdvance() {
-			if(user.ability != "Default" && user.terrain != "Default") {
+			if(user.ability() != "Default" && user.terrain() != "Default") {
 				$location.path( '/results/' );
 			}
 		}
@@ -75,9 +82,7 @@
 		}
 
 		// set public methods
-		$scope.getAbility = getAbility;
 		$scope.setAbility = setAbility;
-		$scope.getTerrain = getTerrain;
 		$scope.setTerrain = setTerrain;
 		$scope.updateQuote = updateQuote;
 	}]);

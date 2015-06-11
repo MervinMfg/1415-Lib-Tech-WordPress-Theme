@@ -6,7 +6,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('boardFinder.productFilter', []);
+  var app = angular.module('boardFinder.productFilter', ['boardFinder.user']);
 
   app.directive("productFilter", function productFilter() {
     return {
@@ -20,7 +20,6 @@
 
   app.controller('ProductFilterController', ['$rootScope', '$scope', '$log', 'user', function ProductFilterController($rootScope, $scope, $log, user) {
     $scope.name = "ProductFilterController";
-    $scope.user = user;
 
     function init() {
       //
@@ -34,13 +33,13 @@
       var returnValue = "";
       switch($scope.prodFilter.title) {
         case 'Ability':
-          returnValue = $scope.user.ability;
+          returnValue = user.ability();
           break;
         case 'Terrain':
-          returnValue = $scope.user.terrain;
+          returnValue = user.terrain();
           break;
         case 'Flex':
-          returnValue = $scope.user.flex;
+          returnValue = user.flex();
           break;
       }
       return returnValue;
@@ -57,13 +56,13 @@
     function resetUserValue() {
       switch($scope.prodFilter.title) {
         case 'Ability':
-          $scope.user.ability = "Default";
+          user.ability("Default");
           break;
         case 'Terrain':
-          $scope.user.terrain = "Default";
+          user.terrain("Default");
           break;
         case 'Flex':
-          $scope.user.flex = "Default";
+          user.flex("Default");
           break;
       }
     }

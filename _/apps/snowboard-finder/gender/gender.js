@@ -6,7 +6,7 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.gender', ['ngRoute']);
+	var app = angular.module('boardFinder.gender', ['ngRoute', 'boardFinder.user']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/', {
@@ -27,14 +27,6 @@
 			//
 		}
 
-		function getGender() {
-			return $scope.user.gender;
-		}
-
-		function setGender(newGender) {
-			$scope.user.gender = newGender;
-		}
-
 		function updateQuote(section) {
 			switch(section) {
 				case 'Male':
@@ -47,8 +39,6 @@
 		}
 
 		// set public methods
-		$scope.getGender = getGender;
-		$scope.setGender = setGender;
 		$scope.updateQuote = updateQuote;
 
 		init();

@@ -32,6 +32,7 @@ module.exports = function(grunt) {
     '_/js/lib/angular/angular-route.js',
     '_/js/lib/angular/angular-cookies.js',
     '_/apps/snowboard-finder/app.js',
+    '_/apps/snowboard-finder/user.js',
     '_/apps/snowboard-finder/gender/gender.js',
     '_/apps/snowboard-finder/size/size.js',
     '_/apps/snowboard-finder/style/style.js',

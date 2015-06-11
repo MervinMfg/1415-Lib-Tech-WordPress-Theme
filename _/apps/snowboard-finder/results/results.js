@@ -6,9 +6,9 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.productFilter', 'boardFinder.snowboard', 'boardFinder.snowboardFilters']);
+	var app = angular.module('boardFinder.results', ['ngRoute', 'boardFinder.productFilter', 'boardFinder.snowboard', 'boardFinder.snowboardFilters', 'boardFinder.user']);
 
-	app.config(['$routeProvider', function($routeProvider) {
+	app.config(['$routeProvider', 'userProvider', function($routeProvider, userProvider) {
 		$routeProvider.when('/results/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/results/results.html',
 			controller: 'ResultsController',
@@ -17,7 +17,22 @@
 				// make sure snowboard data has loaded before showing view
 				delay: function(snowboards) {
 					return snowboards;
-				}
+				},
+				dataCheck: ['$location', function ($location) {
+					if(userProvider.checkGender()) {
+						if(userProvider.checkSize()) {
+							if(userProvider.checkStyle()) {
+								return true;
+							} else {
+								$location.path('/style/');
+							}
+						} else {
+							$location.path('/size/');
+						}
+					} else {
+						$location.path('/');
+					}
+				}]
 			}
 		});
 	}]);
@@ -26,7 +41,6 @@
 		$scope.name = "ResultsController";
 		$scope.params = $routeParams;
 		$scope.config = config;
-		$scope.user = user;
 		$scope.snowboards = {};
 		$scope.productFilters = [
 			{
@@ -88,33 +102,33 @@
 		}
 
 		function resetUser() {
-			$scope.user.gender = "Default";
-			$scope.user.weight = -1;
-			$scope.user.height = -1;
-			$scope.user.bootSize = -1;
-			$scope.user.ability = "Default";
-			$scope.user.terrain = "Default";
-			$scope.user.flex = "Default";
-			$scope.user.contours = [];
+			user.gender("Default");
+			user.weight(-1);
+			user.height(-1);
+			user.bootSize(-1);
+			user.ability("Default");
+			user.terrain("Default");
+			user.flex("Default");
+			user.contours([]);
 		}
 
 		function updateFilters(filter, value) {
 			switch(filter) {
 				case 'Ability':
-					$scope.user.ability = value;
+					user.ability(value);
 					break;
 				case 'Terrain':
-					$scope.user.terrain = value;
+					user.terrain(value);
 					break;
 				case 'Flex':
-					$scope.user.flex = value;
+					user.flex(value);
 					break;
 			}
 		}
 
 		function watchUserChange() {
 			listenerCleanup.userChange = $scope.$watch(
-				function() { return $scope.user; },
+				function() { return {ability: user.ability(), terrain: user.terrain(), flex: user.flex()}; },
 				function() {
 					buildCarousel();
 				},
@@ -137,15 +151,15 @@
 				owl.html(''); // make sure content is cleared
 			}
 			// filter boards based on custom snowboardFilter
-			filteredSnowboards = $filter('snowboardFilter')($scope.snowboards, $scope.user);
+			filteredSnowboards = $filter('snowboardFilter')($scope.snowboards, user);
 			// limit to top 6 restuls
 			filteredSnowboards = $filter('limitTo')(filteredSnowboards, 6);
-			$scope.user.contours = [];
+			user.contours([]);
 			// loop through and render snowboard directive
 			angular.forEach(filteredSnowboards, function(value, key) {
 				// Insert directive programatically angular
 				angular.element('#snowboards').append( $compile("<snowboard data-snowboard='" + angular.toJson(value) + "'></snowboard>")($scope) );
-				$scope.user.contours.push(value.contour);
+				user.contours().push(value.contour);
 			});
 			// build new
 			owl.owlCarousel({

@@ -50,7 +50,7 @@
 				<div class="boot-measurement">
 					<div ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('boot');" ng-mouseleave="showQuote = 'fadeOut';">
 						<h4>Boot</h4>
-						<select id="select-boot-size" class="select" ng-model="user.bootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes" required-select required>
+						<select id="select-boot-size" class="select" ng-model="inputBootSize" ng-options="bootSize.value as bootSize.label for bootSize in bootSizes" ng-change="changeBootSize()" required-select required>
 							<option value="" label="Size">Size</option>
 						</select>
 					</div>

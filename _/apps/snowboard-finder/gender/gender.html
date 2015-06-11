@@ -6,8 +6,8 @@
 		<div class="selection-who">
 			<h4>What are you?</h4>
 			<ul class="button-list">
-				<li class="list-item left"><a href="#/size/" class="bf-button" ng-click="setGender('Male')" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Male');" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': getGender() == 'Male'}">Guy</a></li>
-				<li class="list-item right"><a href="#/size/" class="bf-button" ng-click="setGender('Female')" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Female');" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': getGender() == 'Female'}">Girl</a></li>
+				<li class="list-item left"><a href="#/size/" class="bf-button" ng-click="user.gender('Male')" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Male');" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': user.gender() == 'Male'}">Guy</a></li>
+				<li class="list-item right"><a href="#/size/" class="bf-button" ng-click="user.gender('Female')" ng-mouseover="showQuote = 'bf-quote-fade-in'; updateQuote('Female');" ng-mouseleave="showQuote = 'fadeOut';" ng-class="{'selected': user.gender() == 'Female'}">Girl</a></li>
 			</ul>
 		</div>
 	</div>

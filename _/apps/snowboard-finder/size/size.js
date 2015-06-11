@@ -6,13 +6,24 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.size', ['ngRoute']);
+	var app = angular.module('boardFinder.size', ['ngRoute', 'boardFinder.user']);
 
-	app.config(['$routeProvider', function($routeProvider) {
+	app.config(['$routeProvider', '$locationProvider', 'userProvider', function($routeProvider, $locationProvider, userProvider) {
+		//if(!userProvider.genderComplete()) $location.path( '/style/' );
 		$routeProvider.when('/size/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/size/size.html',
 			controller: 'SizeController',
-			controllerAs: 'sizeCtrl'
+			controllerAs: 'sizeCtrl',
+			resolve: {
+				// be sure we have the data we need, if not redirect
+				dataCheck: ['$location', function ($location) {
+					if(userProvider.checkGender()) {
+						return true;
+					} else {
+						$location.path('/');
+					}
+				}]
+			}
 		});
 	}]);
 
@@ -20,7 +31,6 @@
 		$scope.name = "SizeController";
 		$scope.params = $routeParams;
 		$scope.config = config;
-		$scope.user = user;
 		$scope.inputHeight = {
 			feet: -1,
 			inches: -1,
@@ -30,6 +40,7 @@
 			lbs: -1,
 			kg: -1
 		};
+		$scope.inputBootSize = -1;
 		$scope.weightImperial = [
 			{label: '40 lbs', value: 40}, {label: '50 lbs', value: 50}, {label: '60 lbs', value: 60}, {label: '70 lbs', value: 70},
 			{label: '80 lbs', value: 80}, {label: '90 lbs', value: 90}, {label: '100 lbs', value: 100}, {label: '110 lbs', value: 110},
@@ -84,15 +95,18 @@
 
 		function init() {
 			// check values on init of controller
-			if($scope.user.weight != -1) {
-				$scope.inputWeight.kg = $scope.user.weight;
-				$scope.inputWeight.lbs = Math.round($scope.user.weight * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
+			if(user.weight() != -1) {
+				$scope.inputWeight.kg = user.weight();
+				$scope.inputWeight.lbs = Math.round(user.weight() * 2.20462 / 10) * 10; // convert kg to lbs, round to nearest 10 lbs
 			}
-			if($scope.user.height != -1) {
-				$scope.inputHeight.cm = Math.round($scope.user.height);
+			if(user.height() != -1) {
+				$scope.inputHeight.cm = Math.round(user.height());
 				// convert inches into values for form fields
-				$scope.inputHeight.feet = Math.floor($scope.user.height/30.48);
-				$scope.inputHeight.inches = Math.floor(($scope.user.height/2.54) % 12);
+				$scope.inputHeight.feet = Math.floor(user.height()/30.48);
+				$scope.inputHeight.inches = Math.floor((user.height()/2.54) % 12);
+			}
+			if(user.bootSize() != -1) {
+				$scope.inputBootSize = user.bootSize();
 			}
 		}
 
@@ -113,7 +127,7 @@
 					$scope.inputWeight.lbs = -1;
 				}
 			}
-			$scope.user.weight = updatedWeight;
+			user.weight(updatedWeight);
 		}
 
 		function changeHeight() {
@@ -140,7 +154,15 @@
 					$scope.inputHeight.inches = Math.floor((updatedHeight/2.54) % 12);
 				}
 			}
-			$scope.user.height = updatedHeight;
+			user.height(updatedHeight);
+		}
+
+		function changeBootSize() {
+			var updatedBootSize = -1;
+			if($scope.inputBootSize != -1) {
+				updatedBootSize = $scope.inputBootSize;
+			}
+			user.bootSize(updatedBootSize);
 		}
 
 		function setSize() {
@@ -164,6 +186,7 @@
 		// set public methods
 		$scope.changeWeight = changeWeight;
 		$scope.changeHeight = changeHeight;
+		$scope.changeBootSize = changeBootSize;
 		$scope.setSize = setSize;
 		$scope.updateQuote = updateQuote;
 

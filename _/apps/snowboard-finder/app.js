@@ -51,20 +51,6 @@
 		config.measurement = "imperial"; // or metric
 	});
 
-	app.service('user', function User() {
-		var user = this;
-		user.gender = "Default"; // updated in gender step
-		user.weight = -1; // updated in size step
-		user.height = -1; // updated in size step
-		user.bootSize = -1; // updated in size step
-		user.ability = "Default"; // updated in style step
-		user.terrain = "Default"; // updated in style step
-		user.flex = "Default"; // updated in results step
-		user.contours = []; // updated in results section
-		user.bmi = 22; // average bmi, updated in results section
-		user.lengthRange = ""; // updated in results
-	});
-
 	app.service('snowboards', function Snowboards($http, $q) {
 		var deferred = $q.defer();
 		$http({
