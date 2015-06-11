@@ -20,58 +20,58 @@
 		<div class="description-wrapper">
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Length'}" ng-show="currentSection == 'Length'">
 				<h4>Length</h4>
-				<p ng-show="config.measurement == 'imperial'">At a height of {{ feet }}'{{ inches }}" and a weight of {{ lbs }} lbs, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
-				<p ng-show="config.measurement == 'metric'">At a height of {{ user.height }} cm and a weight of {{ user.weight }} kg, a board length of {{ user.lengthRange }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'imperial'">At a height of {{ feet }}'{{ inches }}" and a weight of {{ lbs }} lbs, a board length of {{ user.lengthRange() }} cm will give you a nice ride.</p>
+				<p ng-show="config.measurement == 'metric'">At a height of {{ user.height() }} cm and a weight of {{ user.weight() }} kg, a board length of {{ user.lengthRange() }} cm will give you a nice ride.</p>
 				<p>A longer board will ride more stable, while a shorter board will be more maneuverable. With your specs, we can help you find the right balance, and tweak it to your riding style.</p>
 			</div>
 			<div class="description animated" ng-class="{'fadeIn': currentSection == 'Width'}" ng-show="currentSection == 'Width'">
 				<h4>Width</h4>
 				<p>A bigger foot requires a bigger board width underfoot. If your board is too narrow your toes and heels will drag, likely throwing off your balance. While a wide board will float in deep snow, a board too wide will hinder your ability to make ripping fast, precise, toe and heel edge turns.</p>
-				<table class="boot-sizes" ng-show="user.gender == 'Male'">
+				<table class="boot-sizes" ng-show="user.gender() == 'Male'">
 					<tr>
 						<td>
-							<h5 ng-class="{'current': user.bootSize <= 7.5 }">Narrow</h5>
+							<h5 ng-class="{'current': user.bootSize() <= 7.5 }">Narrow</h5>
 							<p>Size 4 - 7.5</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 7.5 && user.bootSize <= 10 }">Regular</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 7.5 && user.bootSize() <= 10 }">Regular</h5>
 							<p>Size 7.5 - 10</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 10 && user.bootSize <= 11.5 }">Mid-Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 10 && user.bootSize() <= 11.5 }">Mid-Wide</h5>
 							<p>Size 10 - 11.5</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 14 }">Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 11.5 && user.bootSize() <= 14 }">Wide</h5>
 							<p>Size 11.5 - 14</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 14 }">Ultra Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 14 }">Ultra Wide</h5>
 							<p>Size 14+</p>
 						</td>
 					</tr>
 				</table>
 				<!-- women's shoes are 1.5 sizes smaller than men -->
-				<table class="boot-sizes" ng-show="user.gender == 'Female'">
+				<table class="boot-sizes" ng-show="user.gender() == 'Female'">
 					<tr>
 						<td>
-							<h5 ng-class="{'current': user.bootSize <= 9 }">Narrow</h5>
+							<h5 ng-class="{'current': user.bootSize() <= 9 }">Narrow</h5>
 							<p>Size 5.5 - 9</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 9 && user.bootSize <= 11.5 }">Regular</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 9 && user.bootSize() <= 11.5 }">Regular</h5>
 							<p>Size 9 - 11.5</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 11.5 && user.bootSize <= 13 }">Mid-Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 11.5 && user.bootSize() <= 13 }">Mid-Wide</h5>
 							<p>Size 11.5 - 13</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 13 && user.bootSize <= 15.5 }">Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 13 && user.bootSize() <= 15.5 }">Wide</h5>
 							<p>Size 13 - 15.5</p>
 						</td>
 						<td>
-							<h5 ng-class="{'current': user.bootSize >= 15.5 }">Ultra Wide</h5>
+							<h5 ng-class="{'current': user.bootSize() >= 15.5 }">Ultra Wide</h5>
 							<p>Size 15.5+</p>
 						</td>
 					</tr>
