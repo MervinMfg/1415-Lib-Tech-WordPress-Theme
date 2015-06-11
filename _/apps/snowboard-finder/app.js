@@ -28,20 +28,14 @@
 		//$locationProvider.html5Mode(true);
 	}]);
 
-	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', '$animateCss', 'config', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, $animateCss, config) {
+	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', 'config', 'snowboards', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, config, snowboards) {
 		$scope.$route = $route;
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;
 		$scope.config = config;
 
 		function init() {
-			$http.get('/feeds/snowboard-finder/').success(function(data, status) {
-				$scope.status = status;
-				$scope.config.snowboards = data;
-			}).error(function(data, status) {
-				$scope.data = data || "Request failed";
-				$scope.status = status;
-			});
+			// snowboard data starts loading automagically by injecting the service into the controller
 			// look up currency, if none, keep default USD
 			if(typeof $cookies.libtech_currency !== 'undefined') {
 				$scope.config.currency = $cookies.libtech_currency;
@@ -55,7 +49,6 @@
 		var config = this;
 		config.currency = "USD";
 		config.measurement = "imperial"; // or metric
-		config.snowboards = [];
 	});
 
 	app.service('user', function User() {
@@ -70,6 +63,19 @@
 		user.contours = []; // updated in results section
 		user.bmi = 22; // average bmi, updated in results section
 		user.lengthRange = ""; // updated in results
+	});
+
+	app.service('snowboards', function Snowboards($http, $q) {
+		var deferred = $q.defer();
+		$http({
+			method: 'GET',
+			url: '/feeds/snowboard-finder/'
+		}).success(function(data) {
+			deferred.resolve(data);
+		}).error(function() {
+			deferred.reject('There was an error loading snowboards data!');
+		});
+		return deferred.promise;
 	});
 
 	// DIRECTIVE TO CHECK FOR REQUIRED SELECT FIELDS

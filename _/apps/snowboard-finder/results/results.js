@@ -12,15 +12,22 @@
 		$routeProvider.when('/results/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/results/results.html',
 			controller: 'ResultsController',
-			controllerAs: 'resultsCtrl'
+			controllerAs: 'resultsCtrl',
+			resolve: {
+				// make sure snowboard data has loaded before showing view
+				delay: function(snowboards) {
+					return snowboards;
+				}
+			}
 		});
 	}]);
 
-	app.controller('ResultsController', ['$scope', '$routeParams', '$log', '$filter', '$compile', 'config', 'user', function ResultsController($scope, $routeParams, $log, $filter, $compile, config, user) {
+	app.controller('ResultsController', ['$scope', '$routeParams', '$log', '$filter', '$compile', 'config', 'user', 'snowboards', function ResultsController($scope, $routeParams, $log, $filter, $compile, config, user, snowboards) {
 		$scope.name = "ResultsController";
 		$scope.params = $routeParams;
 		$scope.config = config;
 		$scope.user = user;
+		$scope.snowboards = {};
 		$scope.productFilters = [
 			{
 				title: "Ability",
@@ -62,9 +69,9 @@
 			});
 			// do initial build
 			listenerCleanup.snowboardWatch = $scope.$watch(
-				function() { return $scope.config.snowboards; },
+				function() { return $scope.snowboards; },
 				function() {
-					if ($scope.config.snowboards.length > 0) {
+					if ($scope.snowboards.length > 0) {
 						buildCarousel();
 						listenerCleanup.snowboardWatch(); // kill this watch, only fire once
 						watchUserChange();
@@ -74,6 +81,10 @@
 			);
 			// listen for destroy event
 			listenerCleanup.destroy = $scope.$on('$destroy', function() { uninit(); });
+			// add snowboard data
+			snowboards.then(function(data) {
+				$scope.snowboards = data;
+			});
 		}
 
 		function resetUser() {
@@ -126,7 +137,7 @@
 				owl.html(''); // make sure content is cleared
 			}
 			// filter boards based on custom snowboardFilter
-			filteredSnowboards = $filter('snowboardFilter')($scope.config.snowboards, $scope.user);
+			filteredSnowboards = $filter('snowboardFilter')($scope.snowboards, $scope.user);
 			// limit to top 6 restuls
 			filteredSnowboards = $filter('limitTo')(filteredSnowboards, 6);
 			$scope.user.contours = [];
