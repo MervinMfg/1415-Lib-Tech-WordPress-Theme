@@ -33,6 +33,7 @@
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;
 		$scope.config = config;
+		$scope.loading = true;
 
 		function init() {
 			// snowboard data starts loading automagically by injecting the service into the controller
@@ -40,6 +41,16 @@
 			if(typeof $cookies.libtech_currency !== 'undefined') {
 				$scope.config.currency = $cookies.libtech_currency;
 			}
+			// set up preloader display
+			$scope.$on('$routeChangeStart', function() {
+				TweenMax.to($('.loading'), 0.5, {autoAlpha: 1, overwrite: true, delay: 0.5});
+			});
+			$scope.$on('$routeChangeSuccess', function() {
+				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, overwrite: true});
+			});
+			$scope.$on('$routeChangeError', function() {
+				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, overwrite: true});
+			});
 		}
 		init();
 	}]);

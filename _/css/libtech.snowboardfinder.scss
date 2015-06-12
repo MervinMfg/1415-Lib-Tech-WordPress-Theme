@@ -15,12 +15,29 @@
 .board-finder {
   min-height: 480px;
   padding-bottom: 0;
+  position: relative;
+
+  .section-content {
+    position: relative;
+  }
+
+  .loading {
+    background: url('../img/loader.gif') no-repeat center center;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+  }
 }
 
 .finder-step {
   clear: both;
   min-height: 480px;
   padding: 0 20px;
+  position: relative;
 
   h1 {
     text-align: center;
@@ -473,10 +490,6 @@
 
   .board-finder {
     min-height: 800px;
-
-    .section-content {
-      position: relative;
-    }
   }
 
   .view-animation {
