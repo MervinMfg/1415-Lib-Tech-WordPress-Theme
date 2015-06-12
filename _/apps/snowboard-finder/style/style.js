@@ -61,22 +61,22 @@
 					$scope.quote = "You love turning your board, now you are looking to specialize your ripping?";
 					break;
 				case 'Advanced':
-						$scope.quote = "So you know what you are doing? Looking for the World’s Best Board for an all-time adventure?";
+						$scope.quote = "So it's no your first rodeo?";
 						break;
 				case 'Expert':
-						$scope.quote = "We need an expert quote!!!";
-						break;
-				case 'Jib':
-						$scope.quote = "We need a jib quote!!!";
-						break;
-				case 'Park':
-						$scope.quote = "Good for parks, rails, butters, side hits, jamming, bonking, slashing and sliding.";
+						$scope.quote = "So you know what you are doing? Looking for the World’s Best Board for an all-time adventure?";
 						break;
 				case 'All Mountain':
-						$scope.quote = "Good for resort ripping, groomers, steeps and trees.";
+						$scope.quote = "Resort ripping, groomers, steeps and trees.";
+						break;
+				case 'Park':
+						$scope.quote = "Parks, rails, butters, side hits, jamming, bonking, slashing and sliding.";
+						break;
+				case 'Jib':
+						$scope.quote = "Flex and stability in the park or the streets";
 						break;
 				case 'Powder':
-						$scope.quote = "Good for pillows and deep days.";
+						$scope.quote = "Pillows and deep days.";
 						break;
 			}
 		}
