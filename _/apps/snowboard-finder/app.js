@@ -43,13 +43,13 @@
 			}
 			// set up preloader display
 			$scope.$on('$routeChangeStart', function() {
-				TweenMax.to($('.loading'), 0.5, {autoAlpha: 1, overwrite: true, delay: 0.5});
+				TweenMax.from($('.loading'), 0.5, {autoAlpha: 0, y: '40px', ease: 'Back.easeOut', overwrite: true, delay: 1});
 			});
 			$scope.$on('$routeChangeSuccess', function() {
-				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, overwrite: true});
+				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, y: '40px', ease: 'Back.easeIn', overwrite: true});
 			});
 			$scope.$on('$routeChangeError', function() {
-				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, overwrite: true});
+				TweenMax.to($('.loading'), 0.5, {autoAlpha: 0, y: '40px', ease: 'Back.easeIn', overwrite: true});
 			});
 		}
 		init();
