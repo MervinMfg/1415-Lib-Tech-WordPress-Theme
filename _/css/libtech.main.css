@@ -989,7 +989,11 @@ body.international .shopping-cart-wrapper { display: none; }
   .product-details h1 { text-align: left; }
   .product-details h3 { text-align: left; }
   .product-details .product-images { padding-bottom: 30px; }
-  .product-extras .product-tech-major .tech-image { display: block; margin-bottom: 0; } }
+  .product-extras .product-tech-major .tech-image { display: block; margin-bottom: 0; }
+  .single-libtech_nas .product-details .product-images .nas-image a { cursor: default; }
+  .single-libtech_nas .product-details .product-images .bx-controls { display: block; }
+  .single-libtech_nas .product-details .product-images .bx-controls .bx-prev { left: -10px; }
+  .single-libtech_nas .product-details .product-images .bx-controls .bx-next { right: -10px; } }
 @media screen and (min-width: 1200px) { .single-libtech_snowboards .product-specs th:nth-child(3), .single-libtech_snowboards .product-specs th:nth-child(4), .single-libtech_snowboards .product-specs th:nth-child(6), .single-libtech_snowboards .product-specs th:nth-child(9), .single-libtech_snowboards .product-specs td:nth-child(3), .single-libtech_snowboards .product-specs td:nth-child(4), .single-libtech_snowboards .product-specs td:nth-child(6), .single-libtech_snowboards .product-specs td:nth-child(9) { display: table-cell; }
   .single-libtech_nas .product-specs th:nth-child(4), .single-libtech_nas .product-specs th:nth-child(5), .single-libtech_nas .product-specs th:nth-child(6), .single-libtech_nas .product-specs th:nth-child(8), .single-libtech_nas .product-specs td:nth-child(4), .single-libtech_nas .product-specs td:nth-child(5), .single-libtech_nas .product-specs td:nth-child(6), .single-libtech_nas .product-specs td:nth-child(8) { display: table-cell; }
   .single-libtech_skateboards .product-specs th:nth-child(6), .single-libtech_skateboards .product-specs td:nth-child(6) { display: table-cell; } }

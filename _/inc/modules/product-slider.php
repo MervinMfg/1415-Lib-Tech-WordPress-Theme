@@ -194,7 +194,7 @@
 							echo '<a href="/surfboards/" class="view-all-link button">View all boards</a>';
 						} else if($GLOBALS['sport'] == 'skate') {
 							echo '<a href="/skateboards/#filter=.available" class="view-all-link button">View all boards</a>';
-						} else if($GLOBALS['sport'] == 'skate') {
+						} else if($GLOBALS['sport'] == 'ski') {
 							echo '<a href="/skis/" class="view-all-link button">View all skis</a>';
 						}
 					?>

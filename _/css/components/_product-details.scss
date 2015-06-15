@@ -1030,6 +1030,28 @@
       }
     }
   }
+
+  .single-libtech_nas {
+    .product-details {
+      .product-images {
+        .nas-image a {
+          cursor: default;
+        }
+
+        .bx-controls {
+          display: block;
+
+          .bx-prev {
+            left: -10px;
+          }
+
+          .bx-next {
+            right: -10px;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media screen and (min-width: $breakpoint-xlarge) {
