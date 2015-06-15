@@ -13,6 +13,7 @@
 		'ngRoute',
 		'ngCookies',
 		'ngAnimate',
+		'boardFinder.user',
 		'boardFinder.gender',
 		'boardFinder.size',
 		'boardFinder.style',
@@ -28,7 +29,7 @@
 		//$locationProvider.html5Mode(true);
 	}]);
 
-	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', 'config', 'snowboards', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, config, snowboards) {
+	app.controller('BoardFinderController', ['$scope', '$route', '$routeParams', '$location', '$http', '$cookies', 'config', 'user', 'snowboards', function BoardFinderController($scope, $route, $routeParams, $location, $http, $cookies, config, user, snowboards) {
 		$scope.$route = $route;
 		$scope.$location = $location;
 		$scope.$routeParams = $routeParams;
@@ -41,6 +42,8 @@
 			if(typeof $cookies.libtech_currency !== 'undefined') {
 				$scope.config.currency = $cookies.libtech_currency;
 			}
+			// update user object if set via cookies
+			user.checkCookie();
 			// set up preloader display
 			$scope.$on('$routeChangeStart', function() {
 				TweenMax.from($('.loading'), 0.5, {autoAlpha: 0, y: '40px', ease: 'Back.easeOut', overwrite: true, delay: 1});

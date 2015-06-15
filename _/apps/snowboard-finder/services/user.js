@@ -6,19 +6,20 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.user', []);
+	var app = angular.module('boardFinder.user', ['ngCookies']);
 
 	app.provider('user', function User() {
-		var _gender = "Default"; // updated in gender step
+		var _cookie = 'libtech_bf_user';
+		var _gender = 'Default'; // updated in gender step
 		var _weight = -1; // updated in size step
 		var _height = -1; // updated in size step
 		var _bootSize = -1; // updated in size step
-		var _ability = "Default"; // updated in style step
-		var _terrain = "Default"; // updated in style step
-		var _flex = "Default"; // updated in results step
+		var _ability = 'Default'; // updated in style step
+		var _terrain = 'Default'; // updated in style step
+		var _flex = 'Default'; // updated in results step
 		var _contours = []; // updated in results section
 		var _bmi = 22; // average bmi, updated in results section
-		var _lengthRange = ""; // updated in results
+		var _lengthRange = ''; // updated in results
 
 		this.checkGender = function() {
 			if(_gender == "Default") {
@@ -44,39 +45,118 @@
 			}
 		};
 
-		this.$get = function() {
+		this.$get = ['$cookies', function($cookies) {
 			return {
 				gender: function(value) {
-					return arguments.length ? (_gender = value) : _gender;
+					if(arguments.length) {
+						_gender = value;
+						this.updateCookie();
+					} else {
+						return _gender;
+					}
 				},
 				weight: function(value) {
-					return arguments.length ? (_weight = value) : _weight;
+					if(arguments.length) {
+						_weight = value;
+						this.updateCookie();
+					} else {
+						return _weight;
+					}
 				},
 				height: function(value) {
-					return arguments.length ? (_height = value) : _height;
+					if(arguments.length) {
+						_height = value;
+						this.updateCookie();
+					} else {
+						return _height;
+					}
 				},
 				bootSize: function(value) {
-					return arguments.length ? (_bootSize = value) : _bootSize;
+					if(arguments.length) {
+						_bootSize = value;
+						this.updateCookie();
+					} else {
+						return _bootSize;
+					}
 				},
 				ability: function(value) {
-					return arguments.length ? (_ability = value) : _ability;
+					if(arguments.length) {
+						_ability = value;
+						this.updateCookie();
+					} else {
+						return _ability;
+					}
 				},
 				terrain: function(value) {
-					return arguments.length ? (_terrain = value) : _terrain;
+					if(arguments.length) {
+						_terrain = value;
+						this.updateCookie();
+					} else {
+						return _terrain;
+					}
 				},
 				flex: function(value) {
-					return arguments.length ? (_flex = value) : _flex;
+					if(arguments.length) {
+						_flex = value;
+						this.updateCookie();
+					} else {
+						return _flex;
+					}
 				},
 				contours: function(value) {
-					return arguments.length ? (_contours = value) : _contours;
+					if(arguments.length) {
+						_contours = value;
+						this.updateCookie();
+					} else {
+						return _contours;
+					}
 				},
 				bmi: function(value) {
-					return arguments.length ? (_bmi = value) : _bmi;
+					if(arguments.length) {
+						_bmi = value;
+						this.updateCookie();
+					} else {
+						return _bmi;
+					}
 				},
 				lengthRange: function(value) {
-					return arguments.length ? (_lengthRange = value) : _lengthRange;
+					if(arguments.length) {
+						_lengthRange = value;
+						this.updateCookie();
+					} else {
+						return _lengthRange;
+					}
+				},
+				checkCookie: function() {
+					if(typeof $cookies.get('libtech_bf_user') !== 'undefined') {
+						var user = $cookies.getObject('libtech_bf_user');
+						_gender = user.gender;
+						_weight = user.weight;
+						_height = user.height;
+						_bootSize = user.bootSize;
+						_ability = user.ability;
+						_terrain = user.terrain;
+						_flex = user.flex;
+						_contours = user.contours;
+						_bmi = user.bmi;
+						_lengthRange = user.lengthRange;
+					}
+				},
+				updateCookie: function() {
+					var user = {};
+					user.gender = _gender;
+					user.weight = _weight;
+					user.height = _height;
+					user.bootSize = _bootSize;
+					user.ability = _ability;
+					user.terrain = _terrain;
+					user.flex = _flex;
+					user.contours = _contours;
+					user.bmi = _bmi;
+					user.lengthRange = _lengthRange;
+					$cookies.putObject('libtech_bf_user', user);
 				}
 			};
-		};
+		}];
 	});
 })();
