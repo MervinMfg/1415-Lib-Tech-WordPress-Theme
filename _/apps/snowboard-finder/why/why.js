@@ -28,7 +28,16 @@
 					} else {
 						$location.path('/');
 					}
-				}]
+				}],
+				preloadImageLength: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-length.png');
+	      }],
+				preloadImageWidth: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-width.png');
+	      }],
+				preloadImageContour: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-contour.png');
+	      }]
 			}
 		});
 	}]);

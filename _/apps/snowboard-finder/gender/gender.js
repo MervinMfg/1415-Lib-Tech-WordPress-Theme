@@ -6,13 +6,18 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.gender', ['ngRoute', 'boardFinder.user']);
+	var app = angular.module('boardFinder.gender', ['ngRoute', 'boardFinder.user', 'boardFinder.preloadImage']);
 
 	app.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/gender/gender.html',
 			controller: 'GenderController',
-			controllerAs: 'genderCtrl'
+			controllerAs: 'genderCtrl',
+			resolve: {
+				preloadImage: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-step-1-kraftsman.png');
+	      }]
+			}
 		});
 	}]);
 

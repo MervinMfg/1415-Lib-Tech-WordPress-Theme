@@ -25,7 +25,10 @@
 					} else {
 						$location.path('/');
 					}
-				}]
+				}],
+				preloadImage: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-step-3-kraftsman.png');
+	      }]
 			}
 		});
 	}]);

@@ -4,7 +4,8 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/angular/angular-route.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/js/lib/angular/angular-cookies.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/app.js"></script>
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/user.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/services/user.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/services/preload-image.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/gender/gender.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/size/size.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/_/apps/snowboard-finder/style/style.js"></script>

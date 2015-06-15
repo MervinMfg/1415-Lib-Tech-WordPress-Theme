@@ -6,10 +6,9 @@
 (function() {
 	'use strict';
 
-	var app = angular.module('boardFinder.size', ['ngRoute', 'boardFinder.user']);
+	var app = angular.module('boardFinder.size', ['ngRoute', 'boardFinder.user', 'boardFinder.preloadImage']);
 
 	app.config(['$routeProvider', '$locationProvider', 'userProvider', function($routeProvider, $locationProvider, userProvider) {
-		//if(!userProvider.genderComplete()) $location.path( '/style/' );
 		$routeProvider.when('/size/', {
 			templateUrl: '/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/apps/snowboard-finder/size/size.html',
 			controller: 'SizeController',
@@ -22,7 +21,10 @@
 					} else {
 						$location.path('/');
 					}
-				}]
+				}],
+				preloadImage: ['preloadImage', function(preloadImage){
+          return preloadImage.loadImage('/wp-content/themes/1415-Lib-Tech-WordPress-Theme/_/img/board-finder/bf-step-2-kraftsman.png');
+	      }]
 			}
 		});
 	}]);
